@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -104,15 +104,15 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a4b4feda6618cd27c7b0430043d90322b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d96/_kernel_param_calculator_8device_8hh.html#a4b4feda6618cd27c7b0430043d90322b">CELER_LAUNCH_KERNEL</a>(NAME,  BLOCK_SIZE,  THREADS, ...)</td></tr>
-<tr class="memdesc:a4b4feda6618cd27c7b0430043d90322b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a kernel param calculator with the given kernel, assuming the function itself has a <code>_kernel</code> suffix, and launch with the given block/thread sizes and arguments list.  <a href="../../d1/d96/_kernel_param_calculator_8device_8hh.html#a4b4feda6618cd27c7b0430043d90322b">More...</a><br /></td></tr>
-<tr class="separator:a4b4feda6618cd27c7b0430043d90322b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91821f9c606aa2bee6504716dd121b1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d96/_kernel_param_calculator_8device_8hh.html#a91821f9c606aa2bee6504716dd121b1c">CELER_LAUNCH_KERNEL</a>(NAME,  BLOCK_SIZE,  THREADS,  STREAM, ...)</td></tr>
+<tr class="memdesc:a91821f9c606aa2bee6504716dd121b1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a kernel param calculator with the given kernel, assuming the function itself has a <code>_kernel</code> suffix, and launch with the given block/thread sizes and arguments list.  <a href="../../d1/d96/_kernel_param_calculator_8device_8hh.html#a91821f9c606aa2bee6504716dd121b1c">More...</a><br /></td></tr>
+<tr class="separator:a91821f9c606aa2bee6504716dd121b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0171abfe3023dc1de3dd8c68356e9456"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d96/_kernel_param_calculator_8device_8hh.html#a0171abfe3023dc1de3dd8c68356e9456">CELER_LAUNCH_KERNEL_IMPL</a>(KERNEL,  GRID,  BLOCK,  SHARED,  STREAM, ...)</td></tr>
 <tr class="separator:a0171abfe3023dc1de3dd8c68356e9456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a4b4feda6618cd27c7b0430043d90322b" name="a4b4feda6618cd27c7b0430043d90322b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b4feda6618cd27c7b0430043d90322b">&#9670;&#160;</a></span>CELER_LAUNCH_KERNEL</h2>
+<a id="a91821f9c606aa2bee6504716dd121b1c" name="a91821f9c606aa2bee6504716dd121b1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91821f9c606aa2bee6504716dd121b1c">&#9670;&#160;</a></span>CELER_LAUNCH_KERNEL</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -139,6 +139,12 @@ Macros</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
+          <td class="paramname">STREAM, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
           <td class="paramname"><em>...</em>&#160;</td>
         </tr>
         <tr>
@@ -158,7 +164,7 @@ Macros</h2></td></tr>
 <div class="line">                                 grid_.blocks_per_grid,                      \</div>
 <div class="line">                                 grid_.threads_per_block,                    \</div>
 <div class="line">                                 0,                                          \</div>
-<div class="line">                                 0,                                          \</div>
+<div class="line">                                 STREAM,                                     \</div>
 <div class="line">                                 __VA_ARGS__);                               \</div>
 <div class="line">        CELER_DEVICE_CHECK_ERROR();                                          \</div>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>

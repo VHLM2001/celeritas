@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -108,7 +108,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9a1b78561c4c5677cd85f8d4161957e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a simulation management view. <br /></td></tr>
 <tr class="separator:a9a1b78561c4c5677cd85f8d4161957e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9affbab8d547dc27dce47cd4c8ac4487"><td class="memItemLeft" align="right" valign="top"><a id="a9affbab8d547dc27dce47cd4c8ac4487" name="a9affbab8d547dc27dce47cd4c8ac4487"></a>
-<a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../d4/d53/classceleritas_1_1_orange_track_view.html">GeoTrackView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>make_geo_view</b> () const</td></tr>
+<a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../d1/d0f/classceleritas_1_1_vecgeom_track_view.html">GeoTrackView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>make_geo_view</b> () const</td></tr>
 <tr class="memdesc:a9affbab8d547dc27dce47cd4c8ac4487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a geometry view. <br /></td></tr>
 <tr class="separator:a9affbab8d547dc27dce47cd4c8ac4487"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0777d3d64fe46636d1cbfb6f64d536d6"><td class="memItemLeft" align="right" valign="top"><a id="a0777d3d64fe46636d1cbfb6f64d536d6" name="a0777d3d64fe46636d1cbfb6f64d536d6"></a>
@@ -123,6 +123,10 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../da/dd5/classceleritas_1_1_particle_track_view.html">ParticleTrackView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>make_particle_view</b> () const</td></tr>
 <tr class="memdesc:a804043dd409858724f1c636907e85b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a particle view. <br /></td></tr>
 <tr class="separator:a804043dd409858724f1c636907e85b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a347f3c9d20bdd03a0e7ba472c49d50a1"><td class="memItemLeft" align="right" valign="top"><a id="a347f3c9d20bdd03a0e7ba472c49d50a1" name="a347f3c9d20bdd03a0e7ba472c49d50a1"></a>
+<a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../d6/d95/classceleritas_1_1_particle_view.html">ParticleView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>make_particle_view</b> (<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a3cea071f272f04902f40d2de68a9d7d6">ParticleId</a>) const</td></tr>
+<tr class="memdesc:a347f3c9d20bdd03a0e7ba472c49d50a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a particle view of another particle type. <br /></td></tr>
+<tr class="separator:a347f3c9d20bdd03a0e7ba472c49d50a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0f08284c4100f96a73efc17698c2ace"><td class="memItemLeft" align="right" valign="top"><a id="ac0f08284c4100f96a73efc17698c2ace" name="ac0f08284c4100f96a73efc17698c2ace"></a>
 <a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../dd/d82/classceleritas_1_1_cutoff_view.html">CutoffView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>make_cutoff_view</b> () const</td></tr>
 <tr class="memdesc:ac0f08284c4100f96a73efc17698c2ace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a cutoff view. <br /></td></tr>
@@ -158,10 +162,41 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a98b21e11852c06d3845c53dd5df84797">ActionId</a>&#160;</td><td class="memItemRight" valign="bottom"><b>abandon_looping_action</b> () const</td></tr>
 <tr class="memdesc:a3abbd645727ff9ce41fe6acfc3d670c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the action ID for being abandoned while looping. <br /></td></tr>
 <tr class="separator:a3abbd645727ff9ce41fe6acfc3d670c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac57fc8390037735874da96fdc5afc8e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../d3/d98/structceleritas_1_1_core_scalars.html">CoreScalars</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9d/classceleritas_1_1_core_track_view.html#ac57fc8390037735874da96fdc5afc8e4">core_scalars</a> () const</td></tr>
+<tr class="memdesc:ac57fc8390037735874da96fdc5afc8e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get access to all the core scalars.  <a href="../../da/d9d/classceleritas_1_1_core_track_view.html#ac57fc8390037735874da96fdc5afc8e4">More...</a><br /></td></tr>
+<tr class="separator:ac57fc8390037735874da96fdc5afc8e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Helper class to create views from core track data. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac57fc8390037735874da96fdc5afc8e4" name="ac57fc8390037735874da96fdc5afc8e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac57fc8390037735874da96fdc5afc8e4">&#9670;&#160;</a></span>core_scalars()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../d3/d98/structceleritas_1_1_core_scalars.html">CoreScalars</a> const  &amp; celeritas::CoreTrackView::core_scalars </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get access to all the core scalars. </p>
+<p >TODO: maybe have a struct for all actions to simplify the class? </p>
+
+</div>
+</div>
 <a id="a87aa21af244c59d5c92362dbe9726b2e" name="a87aa21af244c59d5c92362dbe9726b2e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a87aa21af244c59d5c92362dbe9726b2e">&#9670;&#160;</a></span>propagation_limit_action()</h2>
 

@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -100,9 +100,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da4/structceleritas_1_1_step_limit.html">celeritas::StepLimit</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Step length and limiting action to take.  <a href="../../da/da4/structceleritas_1_1_step_limit.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d63/structceleritas_1_1_no_data.html">celeritas::NoData</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Placeholder for helper functions whose interface requires data.  <a href="../../db/d63/structceleritas_1_1_no_data.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -166,10 +163,14 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a800890e6861f463657c8cd8d797518d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolation type. <br /></td></tr>
 <tr class="separator:a800890e6861f463657c8cd8d797518d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe5a95994e3e711bded652307a2d8ad1"><td class="memItemLeft" align="right" valign="top"><a id="afe5a95994e3e711bded652307a2d8ad1" name="afe5a95994e3e711bded652307a2d8ad1"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da7/celeritas_2_types_8hh.html#afe5a95994e3e711bded652307a2d8ad1">celeritas::MatterState</a> { <b>unspecified</b> = 0
+<tr class="memitem:afe5a95994e3e711bded652307a2d8ad1"><td class="memItemLeft" align="right" valign="top"><a id="afe5a95994e3e711bded652307a2d8ad1" name="afe5a95994e3e711bded652307a2d8ad1"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da7/celeritas_2_types_8hh.html#afe5a95994e3e711bded652307a2d8ad1">celeritas::MatterState</a> { <br />
+&#160;&#160;<b>unspecified</b> = 0
 , <b>solid</b>
 , <b>liquid</b>
 , <b>gas</b>
+, <br />
+&#160;&#160;<b>size_</b>
+<br />
  }</td></tr>
 <tr class="memdesc:afe5a95994e3e711bded652307a2d8ad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical state of matter. <br /></td></tr>
 <tr class="separator:afe5a95994e3e711bded652307a2d8ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,12 +182,16 @@ Enumerations</h2></td></tr>
 <tr class="separator:a598dde2863bcfe90a35289a2418218fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cf02fdde066d68cf56bdc61f55215c1"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1">celeritas::ActionOrder</a> { <br />
 &#160;&#160;<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1aea2b2676c28c0db26d39331a336c6b92">start</a>
+, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a7c490acaae2f01d79b8966f5118be6f8">sort_start</a>
 , <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a6bf9e70a1f928aba143ef1eebe2720b5">pre</a>
-, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a66c2500371dfb92fd5c8503511ad3b28">along</a>
-, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1ac051881e5985fc37169e0bff74a39e69">pre_post</a>
+, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a00d12d070dbafe1cb54e867b57370fb2">sort_pre</a>
 , <br />
-&#160;&#160;<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a42b90196b487c54069097a68fe98ab6f">post</a>
-, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a42f6312cdda13f7f3ca6a6497c7b8d79">post_post</a>
+&#160;&#160;<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a66c2500371dfb92fd5c8503511ad3b28">along</a>
+, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1ae4da819753a4f919fa7bd2659157d40d">sort_along</a>
+, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1ac051881e5985fc37169e0bff74a39e69">pre_post</a>
+, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a42b90196b487c54069097a68fe98ab6f">post</a>
+, <br />
+&#160;&#160;<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a42f6312cdda13f7f3ca6a6497c7b8d79">post_post</a>
 , <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a7f021a1415b86f2d013b2618fb31ae53">end</a>
 , <b>size_</b>
 <br />
@@ -199,19 +204,34 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a69703bb2c384c279e4be7a6c711c427f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Differentiate between result data at the beginning and end of a step. <br /></td></tr>
 <tr class="separator:a69703bb2c384c279e4be7a6c711c427f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a235414f18146be6e98cf4e1e5ccf0fe6"><td class="memItemLeft" align="right" valign="top"><a id="a235414f18146be6e98cf4e1e5ccf0fe6" name="a235414f18146be6e98cf4e1e5ccf0fe6"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6">celeritas::TrackOrder</a> { <b>unsorted</b>
-, <b>shuffled</b>
+<tr class="memitem:a235414f18146be6e98cf4e1e5ccf0fe6"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6">celeritas::TrackOrder</a> { <br />
+&#160;&#160;<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6af7c21b1db8ca6073a1c79cb49f351822">unsorted</a>
+, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6acee46c30b0d1f2d0c136c830230fe75a">shuffled</a>
+, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6a97c1c4398c277301d8729444f6b10747">partition_status</a>
+, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6a7babed0e0a844776f4ce3127a67253e2">sort_along_step_action</a>
+, <br />
+&#160;&#160;<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6aa4bb2354b598b609dc852c6b149cdc4c">sort_step_limit_action</a>
+, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6af899ee80ffe7cdbb2d860e6aac0da901">sort_action</a>
 , <b>size_</b>
+<br />
  }</td></tr>
-<tr class="memdesc:a235414f18146be6e98cf4e1e5ccf0fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ordering / sorting of tracks on GPU. <br /></td></tr>
+<tr class="memdesc:a235414f18146be6e98cf4e1e5ccf0fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ordering / sorting of tracks on GPU.  <a href="../../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6">More...</a><br /></td></tr>
 <tr class="separator:a235414f18146be6e98cf4e1e5ccf0fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:acc83dd780e5837154079c48989f1e42e"><td class="memItemLeft" align="right" valign="top"><a id="acc83dd780e5837154079c48989f1e42e" name="acc83dd780e5837154079c48989f1e42e"></a>
+char const *&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to_cstring</b> (MatterState value)</td></tr>
+<tr class="memdesc:acc83dd780e5837154079c48989f1e42e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string corresponding to a state of matter. <br /></td></tr>
+<tr class="separator:acc83dd780e5837154079c48989f1e42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af020036e01c66ec8f16617d049bf146b"><td class="memItemLeft" align="right" valign="top"><a id="af020036e01c66ec8f16617d049bf146b" name="af020036e01c66ec8f16617d049bf146b"></a>
 char const *&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to_cstring</b> (ActionOrder value)</td></tr>
 <tr class="memdesc:af020036e01c66ec8f16617d049bf146b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string corresponding to an action order. <br /></td></tr>
 <tr class="separator:af020036e01c66ec8f16617d049bf146b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb6669ea3b1cb8a6dc5dd8d88e1f2c1c"><td class="memItemLeft" align="right" valign="top"><a id="acb6669ea3b1cb8a6dc5dd8d88e1f2c1c" name="acb6669ea3b1cb8a6dc5dd8d88e1f2c1c"></a>
+char const *&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to_cstring</b> (TrackOrder value)</td></tr>
+<tr class="memdesc:acb6669ea3b1cb8a6dc5dd8d88e1f2c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string corresponding to a track ordering policy. <br /></td></tr>
+<tr class="separator:acb6669ea3b1cb8a6dc5dd8d88e1f2c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Type definitions for simulation management. </p>
@@ -240,9 +260,15 @@ char const *&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8cf02fdde066d68cf56bdc61f55215c1aea2b2676c28c0db26d39331a336c6b92" name="a8cf02fdde066d68cf56bdc61f55215c1aea2b2676c28c0db26d39331a336c6b92"></a>start&#160;</td><td class="fielddoc"><p >Initialize tracks. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a8cf02fdde066d68cf56bdc61f55215c1a7c490acaae2f01d79b8966f5118be6f8" name="a8cf02fdde066d68cf56bdc61f55215c1a7c490acaae2f01d79b8966f5118be6f8"></a>sort_start&#160;</td><td class="fielddoc"><p >Sort track slots after initialization. </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a8cf02fdde066d68cf56bdc61f55215c1a6bf9e70a1f928aba143ef1eebe2720b5" name="a8cf02fdde066d68cf56bdc61f55215c1a6bf9e70a1f928aba143ef1eebe2720b5"></a>pre&#160;</td><td class="fielddoc"><p >Pre-step physics and setup. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a8cf02fdde066d68cf56bdc61f55215c1a00d12d070dbafe1cb54e867b57370fb2" name="a8cf02fdde066d68cf56bdc61f55215c1a00d12d070dbafe1cb54e867b57370fb2"></a>sort_pre&#160;</td><td class="fielddoc"><p >Sort track slots after setting pre-step. </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a8cf02fdde066d68cf56bdc61f55215c1a66c2500371dfb92fd5c8503511ad3b28" name="a8cf02fdde066d68cf56bdc61f55215c1a66c2500371dfb92fd5c8503511ad3b28"></a>along&#160;</td><td class="fielddoc"><p >Along-step. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8cf02fdde066d68cf56bdc61f55215c1ae4da819753a4f919fa7bd2659157d40d" name="a8cf02fdde066d68cf56bdc61f55215c1ae4da819753a4f919fa7bd2659157d40d"></a>sort_along&#160;</td><td class="fielddoc"><p >Sort track slots after determining first step action. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a8cf02fdde066d68cf56bdc61f55215c1ac051881e5985fc37169e0bff74a39e69" name="a8cf02fdde066d68cf56bdc61f55215c1ac051881e5985fc37169e0bff74a39e69"></a>pre_post&#160;</td><td class="fielddoc"><p >Discrete selection kernel. </p>
 </td></tr>
@@ -251,6 +277,44 @@ char const *&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to
 <tr><td class="fieldname"><a id="a8cf02fdde066d68cf56bdc61f55215c1a42f6312cdda13f7f3ca6a6497c7b8d79" name="a8cf02fdde066d68cf56bdc61f55215c1a42f6312cdda13f7f3ca6a6497c7b8d79"></a>post_post&#160;</td><td class="fielddoc"><p >User actions after boundary crossing, collision. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a8cf02fdde066d68cf56bdc61f55215c1a7f021a1415b86f2d013b2618fb31ae53" name="a8cf02fdde066d68cf56bdc61f55215c1a7f021a1415b86f2d013b2618fb31ae53"></a>end&#160;</td><td class="fielddoc"><p >Processing secondaries, including replacing primaries. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a235414f18146be6e98cf4e1e5ccf0fe6" name="a235414f18146be6e98cf4e1e5ccf0fe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a235414f18146be6e98cf4e1e5ccf0fe6">&#9670;&#160;</a></span>TrackOrder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6">celeritas::TrackOrder</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ordering / sorting of tracks on GPU. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a235414f18146be6e98cf4e1e5ccf0fe6af7c21b1db8ca6073a1c79cb49f351822" name="a235414f18146be6e98cf4e1e5ccf0fe6af7c21b1db8ca6073a1c79cb49f351822"></a>unsorted&#160;</td><td class="fielddoc"><p >Don't do any sorting: tracks are in an arbitrary order. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a235414f18146be6e98cf4e1e5ccf0fe6acee46c30b0d1f2d0c136c830230fe75a" name="a235414f18146be6e98cf4e1e5ccf0fe6acee46c30b0d1f2d0c136c830230fe75a"></a>shuffled&#160;</td><td class="fielddoc"><p >Tracks are shuffled at the start of the simulation. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a235414f18146be6e98cf4e1e5ccf0fe6a97c1c4398c277301d8729444f6b10747" name="a235414f18146be6e98cf4e1e5ccf0fe6a97c1c4398c277301d8729444f6b10747"></a>partition_status&#160;</td><td class="fielddoc"><p >Tracks are partitioned by status at the start of each step. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a235414f18146be6e98cf4e1e5ccf0fe6a7babed0e0a844776f4ce3127a67253e2" name="a235414f18146be6e98cf4e1e5ccf0fe6a7babed0e0a844776f4ce3127a67253e2"></a>sort_along_step_action&#160;</td><td class="fielddoc"><p >Sort only by the along-step action id. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a235414f18146be6e98cf4e1e5ccf0fe6aa4bb2354b598b609dc852c6b149cdc4c" name="a235414f18146be6e98cf4e1e5ccf0fe6aa4bb2354b598b609dc852c6b149cdc4c"></a>sort_step_limit_action&#160;</td><td class="fielddoc"><p >Sort only by the step limit action id. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a235414f18146be6e98cf4e1e5ccf0fe6af899ee80ffe7cdbb2d860e6aac0da901" name="a235414f18146be6e98cf4e1e5ccf0fe6af899ee80ffe7cdbb2d860e6aac0da901"></a>sort_action&#160;</td><td class="fielddoc"><p >Sort by along-step id, then post-step ID. </p>
 </td></tr>
 </table>
 

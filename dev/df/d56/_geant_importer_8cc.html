@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -105,6 +105,7 @@ $(function() {
 <code>#include &lt;G4ProcessVector.hh&gt;</code><br />
 <code>#include &lt;G4ProductionCuts.hh&gt;</code><br />
 <code>#include &lt;G4ProductionCutsTable.hh&gt;</code><br />
+<code>#include &lt;G4PropagatorInField.hh&gt;</code><br />
 <code>#include &lt;G4RToEConvForElectron.hh&gt;</code><br />
 <code>#include &lt;G4RToEConvForGamma.hh&gt;</code><br />
 <code>#include &lt;G4RToEConvForPositron.hh&gt;</code><br />
@@ -122,6 +123,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="../../d3/de4/_range_8hh.html">corecel/cont/Range.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d2/d8a/corecel_2io_2_logger_8hh.html">corecel/io/Logger.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../db/d47/_scoped_time_log_8hh.html">corecel/io/ScopedTimeLog.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d17/_scoped_mem_8hh.html">corecel/sys/ScopedMem.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d8/d5a/_type_demangler_8hh.html">corecel/sys/TypeDemangler.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../de/d02/_geant_setup_8hh.html">celeritas/ext/GeantSetup.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d9/d42/_atomic_relaxation_reader_8hh.html">celeritas/io/AtomicRelaxationReader.hh</a>&quot;</code><br />
@@ -129,6 +131,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="../../d3/d2e/_livermore_p_e_reader_8hh.html">celeritas/io/LivermorePEReader.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../de/da4/_seltzer_berger_reader_8hh.html">celeritas/io/SeltzerBergerReader.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d1/de0/_p_d_g_number_8hh.html">celeritas/phys/PDGNumber.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/da2/_scoped_geant_exception_handler_8hh.html">ScopedGeantExceptionHandler.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/d00/_all_element_reader_8hh.html">detail/AllElementReader.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../dc/da4/_geant_process_importer_8hh.html">detail/GeantProcessImporter.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../df/d04/_geant_volume_visitor_8hh.html">detail/GeantVolumeVisitor.hh</a>&quot;</code><br />

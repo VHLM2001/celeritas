@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Celeritas &mdash; Celeritas v0.3.0-dev.62+f351e714 documentation</title>
+  <title>Celeritas &mdash; Celeritas 0.3.0-rc.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -30,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Celeritas
-            <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Celeritas
+              <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-dev
+                0.3.0-rc.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -47,18 +51,24 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API documentation</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Using Celeritas</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">Library API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="corecel.html">Core package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orange.html">ORANGE</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Celeritas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#fundamentals">Fundamentals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#problem-definition">Problem definition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#transport-interface">Transport interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#external-code-interfaces">External code interfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#geant4-physics-interfaces">Geant4 physics interfaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#geant4-physics-options">Geant4 physics options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#geometry-interfaces">Geometry interfaces</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#on-device-access">On-device access</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#random-number-distributions">Random number distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physics-distributions">Physics distributions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physics-implementations">Physics implementations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physics-data">Physics data</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#material-and-geometry-properties">Material and geometry properties</a></li>
@@ -96,9 +106,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../api.html">API documentation</a> &raquo;</li>
-      <li>Celeritas</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">Library API</a></li>
+      <li class="breadcrumb-item active">Celeritas</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/celeritas.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -148,7 +158,7 @@ See also:<ul class="simple">
 <span id="_CPPv39constants"></span><span id="_CPPv29constants"></span><span id="constants"></span><span class="target" id="d7/d28/namespaceconstants"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">constants</span></span></span><a class="headerlink" href="#_CPPv49constants" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Mathematical, numerical, and physical constants. </p>
 <p>Some of the physical constants listed here are <em>exact</em> numerical values: see the International System of Units, 9th ed. (2019), for definition of constants and how they relate to the different units.</p>
-<p><table class="colwidths-auto docutils align-default">
+<p><table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Celeritas   </p></th>
 <th class="head"><p>CLHEP   </p></th>
@@ -340,7 +350,7 @@ See also:<ul class="simple">
 
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units7MevMassE">
-<span id="_CPPv3N9celeritas5units7MevMassE"></span><span id="_CPPv2N9celeritas5units7MevMassE"></span><span class="target" id="de/d40/_quantities_8hh_1ac64185c796a559efc632031deadd4b83"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MevMass</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas10UnitDivideE" title="celeritas::UnitDivide"><span class="n"><span class="pre">UnitDivide</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Mev</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">CLightSq</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units7MevMassE" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N9celeritas5units7MevMassE"></span><span id="_CPPv2N9celeritas5units7MevMassE"></span><span class="target" id="de/d40/_quantities_8hh_1a5d737b573a3188ef62801ba24a08a22f"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MevMass</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">MevPerCsq</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units7MevMassE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp type">
@@ -505,7 +515,7 @@ See also:<ul class="simple">
 <h2>Problem definition<a class="headerlink" href="#problem-definition" title="Permalink to this heading"></a></h2>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas14MaterialParamsE">
-<span id="_CPPv3N9celeritas14MaterialParamsE"></span><span id="_CPPv2N9celeritas14MaterialParamsE"></span><span id="celeritas::MaterialParams"></span><span class="target" id="df/d18/classceleritas_1_1_material_params"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MaterialParams</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas14MaterialParamsE" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N9celeritas14MaterialParamsE"></span><span id="_CPPv2N9celeritas14MaterialParamsE"></span><span id="celeritas::MaterialParams"></span><span class="target" id="df/d18/classceleritas_1_1_material_params"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MaterialParams</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49celeritas" title="celeritas"><span class="n"><span class="pre">celeritas</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ParamsDataInterface</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">MaterialParamsData</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas14MaterialParamsE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Data management for material, element, and nuclide properties. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-material-metadata">Material metadata</p>
@@ -592,21 +602,21 @@ See also:<ul class="simple">
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14MaterialParams22max_element_componentsEv">
+<span id="_CPPv3NK9celeritas14MaterialParams22max_element_componentsEv"></span><span id="_CPPv2NK9celeritas14MaterialParams22max_element_componentsEv"></span><span id="celeritas::MaterialParams::max_element_componentsC"></span><span class="target" id="df/d18/classceleritas_1_1_material_params_1a6894c0942d1d1129195cfb6224780d19"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">ElementComponentId</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_element_components</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14MaterialParams22max_element_componentsEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Maximum number of elements in any one material. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14MaterialParams8host_refEv">
-<span id="_CPPv3NK9celeritas14MaterialParams8host_refEv"></span><span id="_CPPv2NK9celeritas14MaterialParams8host_refEv"></span><span id="celeritas::MaterialParams::host_refC"></span><span class="target" id="df/d18/classceleritas_1_1_material_params_1a6626206c7143395946be01841f181fb2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas7HostRefE" title="celeritas::HostRef"><span class="n"><span class="pre">HostRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">host_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14MaterialParams8host_refEv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3NK9celeritas14MaterialParams8host_refEv"></span><span id="_CPPv2NK9celeritas14MaterialParams8host_refEv"></span><span id="celeritas::MaterialParams::host_refC"></span><span class="target" id="df/d18/classceleritas_1_1_material_params_1aeb7a2708c4cc8d18419e7b562486da40"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas7HostRefE" title="celeritas::HostRef"><span class="n"><span class="pre">HostRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">host_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14MaterialParams8host_refEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Access material properties on the host. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14MaterialParams10device_refEv">
-<span id="_CPPv3NK9celeritas14MaterialParams10device_refEv"></span><span id="_CPPv2NK9celeritas14MaterialParams10device_refEv"></span><span id="celeritas::MaterialParams::device_refC"></span><span class="target" id="df/d18/classceleritas_1_1_material_params_1afaa2553b528fd2f6e00280ee7c24a39b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas9DeviceRefE" title="celeritas::DeviceRef"><span class="n"><span class="pre">DeviceRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">device_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14MaterialParams10device_refEv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3NK9celeritas14MaterialParams10device_refEv"></span><span id="_CPPv2NK9celeritas14MaterialParams10device_refEv"></span><span id="celeritas::MaterialParams::device_refC"></span><span class="target" id="df/d18/classceleritas_1_1_material_params_1af7eec59d37e706b99376bf7791deae00"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas9DeviceRefE" title="celeritas::DeviceRef"><span class="n"><span class="pre">DeviceRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">device_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14MaterialParams10device_refEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Access material properties on the device. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14MaterialParams22max_element_componentsEv">
-<span id="_CPPv3NK9celeritas14MaterialParams22max_element_componentsEv"></span><span id="_CPPv2NK9celeritas14MaterialParams22max_element_componentsEv"></span><span id="celeritas::MaterialParams::max_element_componentsC"></span><span class="target" id="df/d18/classceleritas_1_1_material_params_1a6894c0942d1d1129195cfb6224780d19"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">ElementComponentId</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_element_components</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14MaterialParams22max_element_componentsEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Maximum number of elements in any one material. </p>
 </dd></dl>
 
 </div>
@@ -695,7 +705,7 @@ See also:<ul class="simple">
 
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas14ParticleParamsE">
-<span id="_CPPv3N9celeritas14ParticleParamsE"></span><span id="_CPPv2N9celeritas14ParticleParamsE"></span><span id="celeritas::ParticleParams"></span><span class="target" id="d8/d0b/classceleritas_1_1_particle_params"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ParticleParams</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas14ParticleParamsE" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N9celeritas14ParticleParamsE"></span><span id="_CPPv2N9celeritas14ParticleParamsE"></span><span id="celeritas::ParticleParams"></span><span class="target" id="d8/d0b/classceleritas_1_1_particle_params"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ParticleParams</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49celeritas" title="celeritas"><span class="n"><span class="pre">celeritas</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ParamsDataInterface</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">ParticleParamsData</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas14ParticleParamsE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Data management for Standard Model particle classifications. </p>
 <p>This class represents “per-problem” shared data about standard model particles being used.</p>
 <p>The <a class="reference internal" href="#d8/d0b/classceleritas_1_1_particle_params"><span class="std std-ref">ParticleParams</span></a> is constructed on the host with a vector that combines metadata (used for debugging output and interfacing with physics setup) and data (used for on-device transport). Each entry in the construction is assigned a unique <code class="docutils literal notranslate"><span class="pre">ParticleId</span></code> used for runtime access.</p>
@@ -757,13 +767,13 @@ See also:<ul class="simple">
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14ParticleParams8host_refEv">
-<span id="_CPPv3NK9celeritas14ParticleParams8host_refEv"></span><span id="_CPPv2NK9celeritas14ParticleParams8host_refEv"></span><span id="celeritas::ParticleParams::host_refC"></span><span class="target" id="d8/d0b/classceleritas_1_1_particle_params_1a038ed5579a7be0ce222b82b9bdc07e90"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas7HostRefE" title="celeritas::HostRef"><span class="n"><span class="pre">HostRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">host_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14ParticleParams8host_refEv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3NK9celeritas14ParticleParams8host_refEv"></span><span id="_CPPv2NK9celeritas14ParticleParams8host_refEv"></span><span id="celeritas::ParticleParams::host_refC"></span><span class="target" id="d8/d0b/classceleritas_1_1_particle_params_1a2570b3aba7522f8b1a07e0caa43eb14a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas7HostRefE" title="celeritas::HostRef"><span class="n"><span class="pre">HostRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">host_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14ParticleParams8host_refEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Access material properties on the host. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14ParticleParams10device_refEv">
-<span id="_CPPv3NK9celeritas14ParticleParams10device_refEv"></span><span id="_CPPv2NK9celeritas14ParticleParams10device_refEv"></span><span id="celeritas::ParticleParams::device_refC"></span><span class="target" id="d8/d0b/classceleritas_1_1_particle_params_1a8b997e02970dbe1fa0f9adbbb2529f26"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas9DeviceRefE" title="celeritas::DeviceRef"><span class="n"><span class="pre">DeviceRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">device_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14ParticleParams10device_refEv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3NK9celeritas14ParticleParams10device_refEv"></span><span id="_CPPv2NK9celeritas14ParticleParams10device_refEv"></span><span id="celeritas::ParticleParams::device_refC"></span><span class="target" id="d8/d0b/classceleritas_1_1_particle_params_1acc7fdaaab971d45f50097d1a1221d74c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas9DeviceRefE" title="celeritas::DeviceRef"><span class="n"><span class="pre">DeviceRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">device_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14ParticleParams10device_refEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Access material properties on the device. </p>
 </dd></dl>
 
@@ -820,7 +830,7 @@ See also:<ul class="simple">
 
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas13PhysicsParamsE">
-<span id="_CPPv3N9celeritas13PhysicsParamsE"></span><span id="_CPPv2N9celeritas13PhysicsParamsE"></span><span id="celeritas::PhysicsParams"></span><span class="target" id="db/da1/classceleritas_1_1_physics_params"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PhysicsParams</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas13PhysicsParamsE" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N9celeritas13PhysicsParamsE"></span><span id="_CPPv2N9celeritas13PhysicsParamsE"></span><span id="celeritas::PhysicsParams"></span><span class="target" id="db/da1/classceleritas_1_1_physics_params"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PhysicsParams</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49celeritas" title="celeritas"><span class="n"><span class="pre">celeritas</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ParamsDataInterface</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">PhysicsParamsData</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas13PhysicsParamsE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Manage physics processes and models. </p>
 <p>The physics params takes a vector of processes and sets up the processes and models. It constructs data and mappings of data:<ul class="simple">
 <li><p>particle type and process to tabulated values of cross sections etc,</p></li>
@@ -900,13 +910,13 @@ See also:<ul class="simple">
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13PhysicsParams8host_refEv">
-<span id="_CPPv3NK9celeritas13PhysicsParams8host_refEv"></span><span id="_CPPv2NK9celeritas13PhysicsParams8host_refEv"></span><span id="celeritas::PhysicsParams::host_refC"></span><span class="target" id="db/da1/classceleritas_1_1_physics_params_1aeb18c4f332170b5365c623c6be8e6c31"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas7HostRefE" title="celeritas::HostRef"><span class="n"><span class="pre">HostRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">host_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13PhysicsParams8host_refEv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3NK9celeritas13PhysicsParams8host_refEv"></span><span id="_CPPv2NK9celeritas13PhysicsParams8host_refEv"></span><span id="celeritas::PhysicsParams::host_refC"></span><span class="target" id="db/da1/classceleritas_1_1_physics_params_1a2f3347392551b645588d24f8f9318d40"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas7HostRefE" title="celeritas::HostRef"><span class="n"><span class="pre">HostRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">host_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13PhysicsParams8host_refEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Access physics properties on the host. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13PhysicsParams10device_refEv">
-<span id="_CPPv3NK9celeritas13PhysicsParams10device_refEv"></span><span id="_CPPv2NK9celeritas13PhysicsParams10device_refEv"></span><span id="celeritas::PhysicsParams::device_refC"></span><span class="target" id="db/da1/classceleritas_1_1_physics_params_1a1f82fb53c55daba19c50aa9b51077d32"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas9DeviceRefE" title="celeritas::DeviceRef"><span class="n"><span class="pre">DeviceRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">device_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13PhysicsParams10device_refEv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3NK9celeritas13PhysicsParams10device_refEv"></span><span id="_CPPv2NK9celeritas13PhysicsParams10device_refEv"></span><span id="celeritas::PhysicsParams::device_refC"></span><span class="target" id="db/da1/classceleritas_1_1_physics_params_1ab4ae2541747e2514d2697b3d8b713fd7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas9DeviceRefE" title="celeritas::DeviceRef"><span class="n"><span class="pre">DeviceRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">device_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13PhysicsParams10device_refEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Access physics properties on the device. </p>
 </dd></dl>
 
@@ -948,39 +958,6 @@ See also:<ul class="simple">
 </div>
  </p>
 <div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas7Stepper7StepperEv">
-<span id="_CPPv3N9celeritas7Stepper7StepperEv"></span><span id="_CPPv2N9celeritas7Stepper7StepperEv"></span><span id="celeritas::Stepper::Stepper"></span><span class="target" id="d4/db3/classceleritas_1_1_stepper_1a6c860f5f5ae0e0fbbfcc3bf5b1fc1d45"></span><span class="sig-name descname"><span class="n"><span class="pre">Stepper</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N9celeritas7Stepper7StepperEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Prohibit copying but allow moving and empty construction </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas7Stepper7StepperERR7Stepper">
-<span id="_CPPv3N9celeritas7Stepper7StepperERR7Stepper"></span><span id="_CPPv2N9celeritas7Stepper7StepperERR7Stepper"></span><span id="celeritas::Stepper::Stepper__StepperRR"></span><span class="target" id="d4/db3/classceleritas_1_1_stepper_1a97df7333a000b1519f730ad9c19f2fb3"></span><span class="sig-name descname"><span class="n"><span class="pre">Stepper</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N9celeritas7Stepper7StepperERR7Stepper" title="celeritas::Stepper::Stepper"><span class="n"><span class="pre">Stepper</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N9celeritas7Stepper7StepperERR7Stepper" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Prohibit copying but allow moving and empty construction </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas7Stepper7StepperERK7Stepper">
-<span id="_CPPv3N9celeritas7Stepper7StepperERK7Stepper"></span><span id="_CPPv2N9celeritas7Stepper7StepperERK7Stepper"></span><span id="celeritas::Stepper::Stepper__StepperCR"></span><span class="target" id="d4/db3/classceleritas_1_1_stepper_1afc819afbae4a51e958193ab445d3c0e0"></span><span class="sig-name descname"><span class="n"><span class="pre">Stepper</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N9celeritas7Stepper7StepperERK7Stepper" title="celeritas::Stepper::Stepper"><span class="n"><span class="pre">Stepper</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N9celeritas7Stepper7StepperERK7Stepper" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Prohibit copying but allow moving and empty construction </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas7StepperaSERR7Stepper">
-<span id="_CPPv3N9celeritas7StepperaSERR7Stepper"></span><span id="_CPPv2N9celeritas7StepperaSERR7Stepper"></span><span id="celeritas::Stepper::assign-operator__StepperRR"></span><span class="target" id="d4/db3/classceleritas_1_1_stepper_1aa468b6bacb2a6752b424709035192e72"></span><a class="reference internal" href="#_CPPv4I_8MemSpaceEN9celeritas7StepperE" title="celeritas::Stepper"><span class="n"><span class="pre">Stepper</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I_8MemSpaceEN9celeritas7StepperE" title="celeritas::Stepper"><span class="n"><span class="pre">Stepper</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N9celeritas7StepperaSERR7Stepper" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Prohibit copying but allow moving and empty construction </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas7StepperaSERK7Stepper">
-<span id="_CPPv3N9celeritas7StepperaSERK7Stepper"></span><span id="_CPPv2N9celeritas7StepperaSERK7Stepper"></span><span id="celeritas::Stepper::assign-operator__StepperCR"></span><span class="target" id="d4/db3/classceleritas_1_1_stepper_1a3b13eebd5c6b18638b728502b0223d29"></span><a class="reference internal" href="#_CPPv4I_8MemSpaceEN9celeritas7StepperE" title="celeritas::Stepper"><span class="n"><span class="pre">Stepper</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I_8MemSpaceEN9celeritas7StepperE" title="celeritas::Stepper"><span class="n"><span class="pre">Stepper</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N9celeritas7StepperaSERK7Stepper" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Prohibit copying but allow moving and empty construction </p>
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas7Stepper7StepperE5Input">
@@ -1008,29 +985,29 @@ See also:<ul class="simple">
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas7SteppercvbEv">
-<span id="_CPPv3NK9celeritas7SteppercvbEv"></span><span id="_CPPv2NK9celeritas7SteppercvbEv"></span><span id="celeritas::Stepper::castto-b-operatorC"></span><span class="target" id="d4/db3/classceleritas_1_1_stepper_1afd35e2068608c5309e13333bf6ecb50d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas7SteppercvbEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Whether the stepper is assigned/valid. </p>
-</dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK9celeritas7Stepper7actionsEv">
 <span id="_CPPv3NK9celeritas7Stepper7actionsEv"></span><span id="_CPPv2NK9celeritas7Stepper7actionsEv"></span><span id="celeritas::Stepper::actionsC"></span><span class="target" id="d4/db3/classceleritas_1_1_stepper_1aef8743acd80a257bffb56355b0c3d613"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">ActionSequence</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">actions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas7Stepper7actionsEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get action sequence for timing diagnostics. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas7Stepper9core_dataEv">
-<span id="_CPPv3NK9celeritas7Stepper9core_dataEv"></span><span id="_CPPv2NK9celeritas7Stepper9core_dataEv"></span><span id="celeritas::Stepper::core_dataC"></span><span class="target" id="d4/db3/classceleritas_1_1_stepper_1a8bc9cccd253d8152320b081cede05d9c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">CoreRef</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_8MemSpaceEN9celeritas7StepperE" title="celeritas::Stepper::M"><span class="n"><span class="pre">M</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">core_data</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas7Stepper9core_dataEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Access core data for debugging. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas7Stepper9state_refEv">
+<span id="_CPPv3NK9celeritas7Stepper9state_refEv"></span><span id="_CPPv2NK9celeritas7Stepper9state_refEv"></span><span id="celeritas::Stepper::state_refC"></span><span class="target" id="d4/db3/classceleritas_1_1_stepper_1ace5e97ce5edf548e99ecc48eb1d42a7f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">StateRef</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">state_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas7Stepper9state_refEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Access core data, primarily for debugging. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas7Stepper5stateEv">
+<span id="_CPPv3NK9celeritas7Stepper5stateEv"></span><span id="_CPPv2NK9celeritas7Stepper5stateEv"></span><span id="celeritas::Stepper::stateC"></span><span class="target" id="d4/db3/classceleritas_1_1_stepper_1a8b6b57858103fe4e6ab6c91b78c72bef"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">CoreStateInterface</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">state</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas7Stepper5stateEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the core state interface for diagnostic output. </p>
 </dd></dl>
 
 </div>
 </dd></dl>
 
 </section>
-<section id="external-code-interfaces">
-<h2>External code interfaces<a class="headerlink" href="#external-code-interfaces" title="Permalink to this heading"></a></h2>
+<section id="geant4-physics-interfaces">
+<h2>Geant4 physics interfaces<a class="headerlink" href="#geant4-physics-interfaces" title="Permalink to this heading"></a></h2>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas13GeantImporterE">
 <span id="_CPPv3N9celeritas13GeantImporterE"></span><span id="_CPPv2N9celeritas13GeantImporterE"></span><span id="celeritas::GeantImporter"></span><span class="target" id="d5/d9d/classceleritas_1_1_geant_importer"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GeantImporter</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas13GeantImporterE" title="Permalink to this definition"></a><br /></dt>
@@ -1094,7 +1071,7 @@ See also:<ul class="simple">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-type-aliases">Type aliases</p>
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas10GeantSetup7OptionsE">
-<span id="_CPPv3N9celeritas10GeantSetup7OptionsE"></span><span id="_CPPv2N9celeritas10GeantSetup7OptionsE"></span><span class="target" id="de/d0d/classceleritas_1_1_geant_setup_1a2e278a71b582345a670c5f15fc499f73"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Options</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">GeantPhysicsOptions</span></span><a class="headerlink" href="#_CPPv4N9celeritas10GeantSetup7OptionsE" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N9celeritas10GeantSetup7OptionsE"></span><span id="_CPPv2N9celeritas10GeantSetup7OptionsE"></span><span class="target" id="de/d0d/classceleritas_1_1_geant_setup_1a2e278a71b582345a670c5f15fc499f73"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Options</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas19GeantPhysicsOptionsE" title="celeritas::GeantPhysicsOptions"><span class="n"><span class="pre">GeantPhysicsOptions</span></span></a><a class="headerlink" href="#_CPPv4N9celeritas10GeantSetup7OptionsE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Default move assignment/construction </p>
 </dd></dl>
 
@@ -1138,11 +1115,200 @@ See also:<ul class="simple">
 </dd></dl>
 
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas10GeantSetup22disable_signal_handlerEv">
+<span id="_CPPv3N9celeritas10GeantSetup22disable_signal_handlerEv"></span><span id="_CPPv2N9celeritas10GeantSetup22disable_signal_handlerEv"></span><span id="celeritas::GeantSetup::disable_signal_handler"></span><span class="target" id="de/d0d/classceleritas_1_1_geant_setup_1a93d537f5d2d2695dacd21d358a871eaf"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">disable_signal_handler</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas10GeantSetup22disable_signal_handlerEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Clear ROOT’s signal handlers that get installed on startup/activation. </p>
 </dd></dl>
 
+</div>
+</dd></dl>
+
+<section id="geant4-physics-options">
+<span id="api-geant4-physics-options"></span><h3>Geant4 physics options<a class="headerlink" href="#geant4-physics-options" title="Permalink to this heading"></a></h3>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptionsE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptionsE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptionsE"></span><span id="celeritas::GeantPhysicsOptions"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GeantPhysicsOptions</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptionsE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Construction options for Geant physics. </p>
+<p>These options attempt to default to our closest match to <code class="docutils literal notranslate"><span class="pre">G4StandardEmPhysics</span></code>. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-gamma-physics">Gamma physics</p>
+<p>Enable discrete Coulomb </p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions18coulomb_scatteringE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions18coulomb_scatteringE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions18coulomb_scatteringE"></span><span id="celeritas::GeantPhysicsOptions::coulomb_scattering__b"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a6c59cbb19a06ecd238aa14c3ef56c400"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">coulomb_scattering</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions18coulomb_scatteringE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Enable Compton scattering. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions18compton_scatteringE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions18compton_scatteringE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions18compton_scatteringE"></span><span id="celeritas::GeantPhysicsOptions::compton_scattering__b"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1aa5ca9ec233f3af6c13984de266f069ae"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compton_scattering</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions18compton_scatteringE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Enable Compton scattering. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions13photoelectricE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions13photoelectricE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions13photoelectricE"></span><span id="celeritas::GeantPhysicsOptions::photoelectric__b"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a886c8e8acd31f10600cb0457f4ad3803"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">photoelectric</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions13photoelectricE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Enable the photoelectric effect. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions19rayleigh_scatteringE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions19rayleigh_scatteringE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions19rayleigh_scatteringE"></span><span id="celeritas::GeantPhysicsOptions::rayleigh_scattering__b"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1ad802e5b2c5b59de257ef77b88f4fb99e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rayleigh_scattering</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions19rayleigh_scatteringE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Enable Rayleigh scattering. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions16gamma_conversionE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions16gamma_conversionE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions16gamma_conversionE"></span><span id="celeritas::GeantPhysicsOptions::gamma_conversion__b"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1ab0caf39079fd43cc047dcf7c2903a980"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gamma_conversion</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions16gamma_conversionE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Enable electron pair production. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions13gamma_generalE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions13gamma_generalE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions13gamma_generalE"></span><span id="celeritas::GeantPhysicsOptions::gamma_general__b"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1aa3e8d377e96d5d3276b339f59cf1c035"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gamma_general</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions13gamma_generalE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Use G4GammaGeneral instead of individual gamma processes. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-electron-and-positron-physics">Electron and positron physics</p>
+<p>Enable e- and e+ ionization </p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions10ionizationE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions10ionizationE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions10ionizationE"></span><span id="celeritas::GeantPhysicsOptions::ionization__b"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1ab8e961aa103a0d5ff9d802816bd24152"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ionization</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions10ionizationE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Enable positron annihilation. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions12annihilationE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions12annihilationE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions12annihilationE"></span><span id="celeritas::GeantPhysicsOptions::annihilation__b"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1ac43fc03332f39f98c2c358ba33ee029a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">annihilation</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions12annihilationE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Enable positron annihilation. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions5bremsE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions5bremsE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions5bremsE"></span><span id="celeritas::GeantPhysicsOptions::brems__BremsModelSelection"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1aabc0d710be0c52e7c68ffcbb6e6bdbbd"></span><span class="n"><span class="pre">BremsModelSelection</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">brems</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="n"><span class="pre">BremsModelSelection</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">all</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions5bremsE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Enable bremsstrahlung and select a model. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions3mscE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions3mscE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions3mscE"></span><span id="celeritas::GeantPhysicsOptions::msc__MscModelSelection"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1af3b47dc075095188d1d7f06856508b3f"></span><span class="n"><span class="pre">MscModelSelection</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">msc</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="n"><span class="pre">MscModelSelection</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">urban_extended</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions3mscE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Enable multiple coulomb scattering and select a model. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions10relaxationE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions10relaxationE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions10relaxationE"></span><span id="celeritas::GeantPhysicsOptions::relaxation__RelaxationSelection"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a274f40d93fb6d3d37de93c546c2ccad1"></span><span class="n"><span class="pre">RelaxationSelection</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">relaxation</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="n"><span class="pre">RelaxationSelection</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">none</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions10relaxationE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Enable atomic relaxation and select a model. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-physics-options">Physics options</p>
+<p>Number of log-spaced bins per factor of 10 in energy </p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions18em_bins_per_decadeE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions18em_bins_per_decadeE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions18em_bins_per_decadeE"></span><span id="celeritas::GeantPhysicsOptions::em_bins_per_decade__i"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a8ad303dbab0755a3e25ae0212a68fc32"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">em_bins_per_decade</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">7</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions18em_bins_per_decadeE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Enable universal energy fluctuations. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions17eloss_fluctuationE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions17eloss_fluctuationE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions17eloss_fluctuationE"></span><span id="celeritas::GeantPhysicsOptions::eloss_fluctuation__b"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a2885261cf67cedcff6d0f20e2c95c6a8"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">eloss_fluctuation</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions17eloss_fluctuationE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Enable universal energy fluctuations. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions3lpmE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions3lpmE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions3lpmE"></span><span id="celeritas::GeantPhysicsOptions::lpm__b"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a65982ee39807dbb4ad43e4a3c3f79c2f"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lpm</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions3lpmE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Apply relativistic corrections for select models. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions17integral_approachE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions17integral_approachE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions17integral_approachE"></span><span id="celeritas::GeantPhysicsOptions::integral_approach__b"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a5baa3f25183cf9c20418a84fc4c02ace"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">integral_approach</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">true</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions17integral_approachE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>See <code class="docutils literal notranslate"><span class="pre">PhysicsParamsOptions::disable_integral_xs</span></code>. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-cutoff-options">Cutoff options</p>
+<p>Lowest energy of any EM physics process </p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions10min_energyE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions10min_energyE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions10min_energyE"></span><span id="celeritas::GeantPhysicsOptions::min_energy__units::MevEnergy"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1acc29a2d6f5a91efc236e31af2f91fde0"></span><a class="reference internal" href="#_CPPv4N9celeritas5unitsE" title="celeritas::units"><span class="n"><span class="pre">units</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas5units9MevEnergyE" title="celeritas::units::MevEnergy"><span class="n"><span class="pre">MevEnergy</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_energy</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.1</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><span class="m"><span class="pre">1e-3</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions10min_energyE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Highest energy of any EM physics process. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions10max_energyE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions10max_energyE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions10max_energyE"></span><span id="celeritas::GeantPhysicsOptions::max_energy__units::MevEnergy"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a34830da5ab98b26c5adb9be1b2288665"></span><a class="reference internal" href="#_CPPv4N9celeritas5unitsE" title="celeritas::units"><span class="n"><span class="pre">units</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas5units9MevEnergyE" title="celeritas::units::MevEnergy"><span class="n"><span class="pre">MevEnergy</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_energy</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">100</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><span class="m"><span class="pre">1e6</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions10max_energyE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Highest energy of any EM physics process. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions17linear_loss_limitE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions17linear_loss_limitE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions17linear_loss_limitE"></span><span id="celeritas::GeantPhysicsOptions::linear_loss_limit__real_type"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a2e0717222f6c7ce3540554bcfd92360f"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">linear_loss_limit</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.01</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions17linear_loss_limitE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>See <code class="docutils literal notranslate"><span class="pre">PhysicsParamsOptions::linear_loss_limit</span></code>. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions22lowest_electron_energyE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions22lowest_electron_energyE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions22lowest_electron_energyE"></span><span id="celeritas::GeantPhysicsOptions::lowest_electron_energy__units::MevEnergy"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a05dd21e4ba68215f80556e2bbc2b565c"></span><a class="reference internal" href="#_CPPv4N9celeritas5unitsE" title="celeritas::units"><span class="n"><span class="pre">units</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas5units9MevEnergyE" title="celeritas::units::MevEnergy"><span class="n"><span class="pre">MevEnergy</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lowest_electron_energy</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.001</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions22lowest_electron_energyE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Tracking cutoff kinetic energy for e-/e+. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions10apply_cutsE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions10apply_cutsE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions10apply_cutsE"></span><span id="celeritas::GeantPhysicsOptions::apply_cuts__b"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a1f12cbf0df9f2ed69f9d0f57351af3ed"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">apply_cuts</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions10apply_cutsE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Kill secondaries below the production cut. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-multiple-scattering-configuration">Multiple scattering configuration</p>
+<p>E-/e+ range factor for MSC models </p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions16msc_range_factorE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions16msc_range_factorE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions16msc_range_factorE"></span><span id="celeritas::GeantPhysicsOptions::msc_range_factor__real_type"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a734f5d471fbde00079eeb898102c5d50"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">msc_range_factor</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.04</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions16msc_range_factorE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Safety factor for MSC models. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions17msc_safety_factorE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions17msc_safety_factorE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions17msc_safety_factorE"></span><span id="celeritas::GeantPhysicsOptions::msc_safety_factor__real_type"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a8de2e3d6d1642773ad1ea513a5825ba2"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">msc_safety_factor</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.6</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions17msc_safety_factorE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Safety factor for MSC models. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions16msc_lambda_limitE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions16msc_lambda_limitE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions16msc_lambda_limitE"></span><span id="celeritas::GeantPhysicsOptions::msc_lambda_limit__real_type"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1ae67607b32f4cab1ba38daf0df57d9870"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">msc_lambda_limit</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.1</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions16msc_lambda_limitE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Lambda limit for MSC models [cm]. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions7verboseE">
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions7verboseE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions7verboseE"></span><span id="celeritas::GeantPhysicsOptions::verbose__b"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a052567aa12825c953035faf25419ed77"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">verbose</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions7verboseE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Print detailed Geant4 output. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+<section id="geometry-interfaces">
+<h2>Geometry interfaces<a class="headerlink" href="#geometry-interfaces" title="Permalink to this heading"></a></h2>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas13VecgeomParamsE">
-<span id="_CPPv3N9celeritas13VecgeomParamsE"></span><span id="_CPPv2N9celeritas13VecgeomParamsE"></span><span id="celeritas::VecgeomParams"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VecgeomParams</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas13VecgeomParamsE" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N9celeritas13VecgeomParamsE"></span><span id="_CPPv2N9celeritas13VecgeomParamsE"></span><span id="celeritas::VecgeomParams"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VecgeomParams</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49celeritas" title="celeritas"><span class="n"><span class="pre">celeritas</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">GeoParamsInterface</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49celeritas" title="celeritas"><span class="n"><span class="pre">celeritas</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ParamsDataInterface</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">VecgeomParamsData</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas13VecgeomParamsE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Shared model parameters for a VecGeom geometry. </p>
 <p>The model defines the shapes, volumes, etc. </p>
 <div class="breathe-sectiondef docutils container">
@@ -1157,7 +1323,6 @@ See also:<ul class="simple">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas13VecgeomParams13VecgeomParamsEPK17G4VPhysicalVolume">
 <span id="_CPPv3N9celeritas13VecgeomParams13VecgeomParamsEPK17G4VPhysicalVolume"></span><span id="_CPPv2N9celeritas13VecgeomParams13VecgeomParamsEPK17G4VPhysicalVolume"></span><span id="celeritas::VecgeomParams::VecgeomParams__G4VPhysicalVolumeCP"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1abc567274e60e1a5e5823e616de8f43a9"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VecgeomParams</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">G4VPhysicalVolume</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">world</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas13VecgeomParams13VecgeomParamsEPK17G4VPhysicalVolume" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Translate a geometry from Geant4. </p>
-<p>At present this just exports the geometry to GDML, then loads it through the VGDML reader. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1168,47 +1333,14 @@ See also:<ul class="simple">
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams15supports_safetyEv">
-<span id="_CPPv3NK9celeritas13VecgeomParams15supports_safetyEv"></span><span id="_CPPv2NK9celeritas13VecgeomParams15supports_safetyEv"></span><span id="celeritas::VecgeomParams::supports_safetyC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1a6f0179bbfde288f27fdcb2d86e263da8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">supports_safety</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams15supports_safetyEv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3NK9celeritas13VecgeomParams15supports_safetyEv"></span><span id="_CPPv2NK9celeritas13VecgeomParams15supports_safetyEv"></span><span id="celeritas::VecgeomParams::supports_safetyC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1a08be1b115341f3b367a9425db4e5cfc2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">supports_safety</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams15supports_safetyEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Whether safety distance calculations are accurate and precise. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams11num_volumesEv">
-<span id="_CPPv3NK9celeritas13VecgeomParams11num_volumesEv"></span><span id="_CPPv2NK9celeritas13VecgeomParams11num_volumesEv"></span><span id="celeritas::VecgeomParams::num_volumesC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1ad7142f067d77b344761d622791fcca0d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">VolumeId</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_volumes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams11num_volumesEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Number of volumes. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams11id_to_labelE8VolumeId">
-<span id="_CPPv3NK9celeritas13VecgeomParams11id_to_labelE8VolumeId"></span><span id="_CPPv2NK9celeritas13VecgeomParams11id_to_labelE8VolumeId"></span><span id="celeritas::VecgeomParams::id_to_label__VolumeIdC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1a024f56884817af39a43ebecf6a0584fb"></span><span class="n"><span class="pre">Label</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">id_to_label</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">VolumeId</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vol_id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams11id_to_labelE8VolumeId" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Get the label for a placed volume ID. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams11find_volumeEPKc">
-<span id="_CPPv3NK9celeritas13VecgeomParams11find_volumeEPKc"></span><span id="_CPPv2NK9celeritas13VecgeomParams11find_volumeEPKc"></span><span id="celeritas::VecgeomParams::find_volume__cCPC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1ab23872f07ace74821bb8af9461b7f1c1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">VolumeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find_volume</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams11find_volumeEPKc" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Find the unique volume corresponding to a unique name. </p>
-<p>This method is here to disambiguate the implicit std::string and Label constructors. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams11find_volumeERKNSt6stringE">
-<span id="_CPPv3NK9celeritas13VecgeomParams11find_volumeERKNSt6stringE"></span><span id="_CPPv2NK9celeritas13VecgeomParams11find_volumeERKNSt6stringE"></span><span id="celeritas::VecgeomParams::find_volume__ssCRC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1a9584aa37e986b46634b23ec76c13f6e5"></span><span class="n"><span class="pre">VolumeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find_volume</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams11find_volumeERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Get the ID corresponding to a label. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams11find_volumeERK5Label">
-<span id="_CPPv3NK9celeritas13VecgeomParams11find_volumeERK5Label"></span><span id="_CPPv2NK9celeritas13VecgeomParams11find_volumeERK5Label"></span><span id="celeritas::VecgeomParams::find_volume__LabelCRC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1a1aa2470eccaed48b141b5936c2f21835"></span><span class="n"><span class="pre">VolumeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find_volume</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Label</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams11find_volumeERK5Label" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Locate the volume ID corresponding to a label. </p>
-<p>If the label isn’t in the geometry, a null ID will be returned. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams12find_volumesERKNSt6stringE">
-<span id="_CPPv3NK9celeritas13VecgeomParams12find_volumesERKNSt6stringE"></span><span id="_CPPv2NK9celeritas13VecgeomParams12find_volumesERKNSt6stringE"></span><span id="celeritas::VecgeomParams::find_volumes__ssCRC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1af316db23420da96876196a6c04c3799d"></span><span class="n"><span class="pre">SpanConstVolumeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find_volumes</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams12find_volumesERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Get zero or more volume IDs corresponding to a name. </p>
-<p>This is useful for volumes that are repeated in the geometry with different uniquifying ‘extensions’ from Geant4. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams4bboxEv">
+<span id="_CPPv3NK9celeritas13VecgeomParams4bboxEv"></span><span id="_CPPv2NK9celeritas13VecgeomParams4bboxEv"></span><span id="celeritas::VecgeomParams::bboxC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1a6cf08acd41b3ef8f79e5c4cf3e7246c3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">BoundingBox</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">bbox</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams4bboxEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Outer bounding box of geometry. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1218,34 +1350,150 @@ See also:<ul class="simple">
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams11id_to_labelE9SurfaceId">
-<span id="_CPPv3NK9celeritas13VecgeomParams11id_to_labelE9SurfaceId"></span><span id="_CPPv2NK9celeritas13VecgeomParams11id_to_labelE9SurfaceId"></span><span id="celeritas::VecgeomParams::id_to_label__SurfaceIdC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1ab11b0a3a4c3d79cad62913827b733edf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">Label</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">id_to_label</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">SurfaceId</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams11id_to_labelE9SurfaceId" title="Permalink to this definition"></a><br /></dt>
-<dd><p>No surface IDs are defined in vecgeom. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams11num_volumesEv">
+<span id="_CPPv3NK9celeritas13VecgeomParams11num_volumesEv"></span><span id="_CPPv2NK9celeritas13VecgeomParams11num_volumesEv"></span><span id="celeritas::VecgeomParams::num_volumesC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1a044ac74ed2149b4c8d2e1b6f2c554e15"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">VolumeId</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_volumes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams11num_volumesEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Number of volumes. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams12find_surfaceERKNSt6stringE">
-<span id="_CPPv3NK9celeritas13VecgeomParams12find_surfaceERKNSt6stringE"></span><span id="_CPPv2NK9celeritas13VecgeomParams12find_surfaceERKNSt6stringE"></span><span id="celeritas::VecgeomParams::find_surface__ssCRC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1a5575383542ed7573fea0abeaa1285ee6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">SurfaceId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find_surface</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams12find_surfaceERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>No surface IDs are defined in vecgeom. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams11id_to_labelE8VolumeId">
+<span id="_CPPv3NK9celeritas13VecgeomParams11id_to_labelE8VolumeId"></span><span id="_CPPv2NK9celeritas13VecgeomParams11id_to_labelE8VolumeId"></span><span id="celeritas::VecgeomParams::id_to_label__VolumeIdC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1ac3275b336085c031aafc02a8c30b24ee"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Label</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">id_to_label</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">VolumeId</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vol_id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams11id_to_labelE8VolumeId" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the label for a placed volume ID. </p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams12num_surfacesEv">
-<span id="_CPPv3NK9celeritas13VecgeomParams12num_surfacesEv"></span><span id="_CPPv2NK9celeritas13VecgeomParams12num_surfacesEv"></span><span id="celeritas::VecgeomParams::num_surfacesC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1a77340a9fce319a9e1e825f7a73ccfd50"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9size_typeE" title="celeritas::size_type"><span class="n"><span class="pre">size_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_surfaces</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams12num_surfacesEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Number of distinct surfaces. </p>
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams11find_volumeERKNSt6stringE">
+<span id="_CPPv3NK9celeritas13VecgeomParams11find_volumeERKNSt6stringE"></span><span id="_CPPv2NK9celeritas13VecgeomParams11find_volumeERKNSt6stringE"></span><span id="celeritas::VecgeomParams::find_volume__ssCRC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1ad75207661cd87e9ca10893bc812ca6cb"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">VolumeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find_volume</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams11find_volumeERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the ID corresponding to a label. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams11find_volumeERK5Label">
+<span id="_CPPv3NK9celeritas13VecgeomParams11find_volumeERK5Label"></span><span id="_CPPv2NK9celeritas13VecgeomParams11find_volumeERK5Label"></span><span id="celeritas::VecgeomParams::find_volume__LabelCRC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1aab6659b1623fd4df62bfb0a3981803fb"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">VolumeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find_volume</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Label</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams11find_volumeERK5Label" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Locate the volume ID corresponding to a label. </p>
+<p>If the label isn’t in the geometry, a null ID will be returned. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams11find_volumeEPK15G4LogicalVolume">
+<span id="_CPPv3NK9celeritas13VecgeomParams11find_volumeEPK15G4LogicalVolume"></span><span id="_CPPv2NK9celeritas13VecgeomParams11find_volumeEPK15G4LogicalVolume"></span><span id="celeritas::VecgeomParams::find_volume__G4LogicalVolumeCPC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1a4f5e8f6b741856a05add22869d7a840d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">VolumeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find_volume</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">G4LogicalVolume</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">volume</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams11find_volumeEPK15G4LogicalVolume" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Locate the volume ID corresponding to a Geant4 logical volume. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams12find_volumesERKNSt6stringE">
+<span id="_CPPv3NK9celeritas13VecgeomParams12find_volumesERKNSt6stringE"></span><span id="_CPPv2NK9celeritas13VecgeomParams12find_volumesERKNSt6stringE"></span><span id="celeritas::VecgeomParams::find_volumes__ssCRC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1a62d2e0d57fbcc5e66e96ad05e90b689b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">SpanConstVolumeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find_volumes</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams12find_volumesERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get zero or more volume IDs corresponding to a name. </p>
+<p>This is useful for volumes that are repeated in the geometry with different uniquifying ‘extensions’ from Geant4. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams8host_refEv">
-<span id="_CPPv3NK9celeritas13VecgeomParams8host_refEv"></span><span id="_CPPv2NK9celeritas13VecgeomParams8host_refEv"></span><span id="celeritas::VecgeomParams::host_refC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1a8b4b220563481855e47da015c33b6212"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas7HostRefE" title="celeritas::HostRef"><span class="n"><span class="pre">HostRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">host_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams8host_refEv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3NK9celeritas13VecgeomParams8host_refEv"></span><span id="_CPPv2NK9celeritas13VecgeomParams8host_refEv"></span><span id="celeritas::VecgeomParams::host_refC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1a5886466dcc43f186133dd66e622229d9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas7HostRefE" title="celeritas::HostRef"><span class="n"><span class="pre">HostRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">host_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams8host_refEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Access geometry data on host. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK9celeritas13VecgeomParams10device_refEv">
-<span id="_CPPv3NK9celeritas13VecgeomParams10device_refEv"></span><span id="_CPPv2NK9celeritas13VecgeomParams10device_refEv"></span><span id="celeritas::VecgeomParams::device_refC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1affaf3b589112aae13d876ede7edb0508"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas9DeviceRefE" title="celeritas::DeviceRef"><span class="n"><span class="pre">DeviceRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">device_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams10device_refEv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3NK9celeritas13VecgeomParams10device_refEv"></span><span id="_CPPv2NK9celeritas13VecgeomParams10device_refEv"></span><span id="celeritas::VecgeomParams::device_refC"></span><span class="target" id="d6/d56/classceleritas_1_1_vecgeom_params_1a5681c849bfd26839f5b5fb0ed8cb7ecd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas9DeviceRefE" title="celeritas::DeviceRef"><span class="n"><span class="pre">DeviceRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">device_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas13VecgeomParams10device_refEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Access geometry data on device. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas14GeantGeoParamsE">
+<span id="_CPPv3N9celeritas14GeantGeoParamsE"></span><span id="_CPPv2N9celeritas14GeantGeoParamsE"></span><span id="celeritas::GeantGeoParams"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GeantGeoParams</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49celeritas" title="celeritas"><span class="n"><span class="pre">celeritas</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">GeoParamsInterface</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49celeritas" title="celeritas"><span class="n"><span class="pre">celeritas</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ParamsDataInterface</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">GeantGeoParamsData</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas14GeantGeoParamsE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Shared Geant4 geometry model wrapper. </p>
+<p>This can be consructed directly by loading a GDML file, or in-memory using an existing physical volume. One “gotcha” is that due to persistent static variables in Geant4, the volume IDs will be offset if a geometry has been loaded and closed previously. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas14GeantGeoParams14GeantGeoParamsERKNSt6stringE">
+<span id="_CPPv3N9celeritas14GeantGeoParams14GeantGeoParamsERKNSt6stringE"></span><span id="_CPPv2N9celeritas14GeantGeoParams14GeantGeoParamsERKNSt6stringE"></span><span id="celeritas::GeantGeoParams::GeantGeoParams__ssCR"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params_1aa855c684a7e81d8ab8aef4818ad2ab29"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GeantGeoParams</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">gdml_filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas14GeantGeoParams14GeantGeoParamsERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Construct from a GDML input. </p>
+<p>This assumes that Celeritas is driving and will manage Geant4 exceptions etc. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas14GeantGeoParams14GeantGeoParamsEPK17G4VPhysicalVolume">
+<span id="_CPPv3N9celeritas14GeantGeoParams14GeantGeoParamsEPK17G4VPhysicalVolume"></span><span id="_CPPv2N9celeritas14GeantGeoParams14GeantGeoParamsEPK17G4VPhysicalVolume"></span><span id="celeritas::GeantGeoParams::GeantGeoParams__G4VPhysicalVolumeCP"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params_1ac3508bf9384bdb971b8b33ebdd4eb5cc"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GeantGeoParams</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">G4VPhysicalVolume</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">world</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas14GeantGeoParams14GeantGeoParamsEPK17G4VPhysicalVolume" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Use an existing loaded Geant4 geometry. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas14GeantGeoParamsD0Ev">
+<span id="_CPPv3N9celeritas14GeantGeoParamsD0Ev"></span><span id="_CPPv2N9celeritas14GeantGeoParamsD0Ev"></span><span id="celeritas::GeantGeoParams::~GeantGeoParams"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params_1a4ede87dcf6619dfd91fa958fb53e5e03"></span><span class="sig-name descname"><span class="n"><span class="pre">~GeantGeoParams</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas14GeantGeoParamsD0Ev" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Clean up on destruction. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14GeantGeoParams5worldEv">
+<span id="_CPPv3NK9celeritas14GeantGeoParams5worldEv"></span><span id="_CPPv2NK9celeritas14GeantGeoParams5worldEv"></span><span id="celeritas::GeantGeoParams::worldC"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params_1a129271b46dd586f454c2730b802699a6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">G4VPhysicalVolume</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">world</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14GeantGeoParams5worldEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Access the world volume. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14GeantGeoParams15supports_safetyEv">
+<span id="_CPPv3NK9celeritas14GeantGeoParams15supports_safetyEv"></span><span id="_CPPv2NK9celeritas14GeantGeoParams15supports_safetyEv"></span><span id="celeritas::GeantGeoParams::supports_safetyC"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params_1a0a9a8c10750eeddeb3b113e688ec3d91"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">supports_safety</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14GeantGeoParams15supports_safetyEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Whether safety distance calculations are accurate and precise. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14GeantGeoParams4bboxEv">
+<span id="_CPPv3NK9celeritas14GeantGeoParams4bboxEv"></span><span id="_CPPv2NK9celeritas14GeantGeoParams4bboxEv"></span><span id="celeritas::GeantGeoParams::bboxC"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params_1a465667cb201e3222e6b96aba40ccd6b3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">BoundingBox</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">bbox</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14GeantGeoParams4bboxEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Outer bounding box of geometry. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14GeantGeoParams11num_volumesEv">
+<span id="_CPPv3NK9celeritas14GeantGeoParams11num_volumesEv"></span><span id="_CPPv2NK9celeritas14GeantGeoParams11num_volumesEv"></span><span id="celeritas::GeantGeoParams::num_volumesC"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params_1afd39b68c738470c77a9f96ea182c87c4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">VolumeId</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_volumes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14GeantGeoParams11num_volumesEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Number of volumes. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14GeantGeoParams11id_to_labelE8VolumeId">
+<span id="_CPPv3NK9celeritas14GeantGeoParams11id_to_labelE8VolumeId"></span><span id="_CPPv2NK9celeritas14GeantGeoParams11id_to_labelE8VolumeId"></span><span id="celeritas::GeantGeoParams::id_to_label__VolumeIdC"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params_1a040c85aadc78bdd129d0885750e247dd"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Label</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">id_to_label</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">VolumeId</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vol_id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14GeantGeoParams11id_to_labelE8VolumeId" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the label for a placed volume ID. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14GeantGeoParams11find_volumeERKNSt6stringE">
+<span id="_CPPv3NK9celeritas14GeantGeoParams11find_volumeERKNSt6stringE"></span><span id="_CPPv2NK9celeritas14GeantGeoParams11find_volumeERKNSt6stringE"></span><span id="celeritas::GeantGeoParams::find_volume__ssCRC"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params_1a32a7cd540a0591c369ebdd02ed457d76"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">VolumeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find_volume</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14GeantGeoParams11find_volumeERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the ID corresponding to a label. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14GeantGeoParams11find_volumeERK5Label">
+<span id="_CPPv3NK9celeritas14GeantGeoParams11find_volumeERK5Label"></span><span id="_CPPv2NK9celeritas14GeantGeoParams11find_volumeERK5Label"></span><span id="celeritas::GeantGeoParams::find_volume__LabelCRC"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params_1a81f7ff9668bff0120248def9d3f5089e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">VolumeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find_volume</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Label</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">label</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14GeantGeoParams11find_volumeERK5Label" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Locate the volume ID corresponding to a label. </p>
+<p>If the label isn’t in the geometry, a null ID will be returned. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14GeantGeoParams11find_volumeEPK15G4LogicalVolume">
+<span id="_CPPv3NK9celeritas14GeantGeoParams11find_volumeEPK15G4LogicalVolume"></span><span id="_CPPv2NK9celeritas14GeantGeoParams11find_volumeEPK15G4LogicalVolume"></span><span id="celeritas::GeantGeoParams::find_volume__G4LogicalVolumeCPC"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params_1a149b2798bb5f08be5bf3676dabd6db62"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">VolumeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find_volume</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">G4LogicalVolume</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">volume</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14GeantGeoParams11find_volumeEPK15G4LogicalVolume" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Locate the volume ID corresponding to a Geant4 logical volume. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14GeantGeoParams12find_volumesERKNSt6stringE">
+<span id="_CPPv3NK9celeritas14GeantGeoParams12find_volumesERKNSt6stringE"></span><span id="_CPPv2NK9celeritas14GeantGeoParams12find_volumesERKNSt6stringE"></span><span id="celeritas::GeantGeoParams::find_volumes__ssCRC"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params_1a74c9d26fb85b9c0d209bc26f34067daf"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">SpanConstVolumeId</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find_volumes</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14GeantGeoParams12find_volumesERKNSt6stringE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get zero or more volume IDs corresponding to a name. </p>
+<p>This is useful for volumes that are repeated in the geometry with different uniquifying ‘extensions’ from Geant4. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14GeantGeoParams8host_refEv">
+<span id="_CPPv3NK9celeritas14GeantGeoParams8host_refEv"></span><span id="_CPPv2NK9celeritas14GeantGeoParams8host_refEv"></span><span id="celeritas::GeantGeoParams::host_refC"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params_1a0b599b97d9da0c8154fdb66b19e37444"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas7HostRefE" title="celeritas::HostRef"><span class="n"><span class="pre">HostRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">host_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14GeantGeoParams8host_refEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Access geometry data on host. </p>
-<p>Access geometry data on device. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas14GeantGeoParams10device_refEv">
+<span id="_CPPv3NK9celeritas14GeantGeoParams10device_refEv"></span><span id="_CPPv2NK9celeritas14GeantGeoParams10device_refEv"></span><span id="celeritas::GeantGeoParams::device_refC"></span><span class="target" id="df/d26/classceleritas_1_1_geant_geo_params_1a5226c3e3d3b442711db2aee012bf99b2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4II_9Ownership_8MemSpaceE0EN9celeritas9DeviceRefE" title="celeritas::DeviceRef"><span class="n"><span class="pre">DeviceRef</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">device_ref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas14GeantGeoParams10device_refEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>No GPU support code. </p>
 </dd></dl>
 
 </div>
@@ -1700,6 +1948,18 @@ p^2 = \frac{K^2}{c^2} + 2 * m * K
 </section>
 <section id="random-number-distributions">
 <span id="celeritas-random"></span><h2>Random number distributions<a class="headerlink" href="#random-number-distributions" title="Permalink to this heading"></a></h2>
+<p>The 2011 ISO C++ standard defined a new functional paradigm for sampling from
+random number distributions. In this paradigm, random number <em>engines</em> generate
+a uniformly distributed stream of bits. Then, <em>distributions</em> use that entropy
+to sample a random number from a distribution. Distributions are function-like
+objects whose constructors take the <em>parameters</em> of the distribution: for
+example, a uniform distribution over the range <span class="math notranslate nohighlight">\([a, b)\)</span> takes the <em>a</em> and
+<em>b</em> parameters as constructor arguments. The templated call operator accepts a
+random engine as its sole argument.</p>
+<p>Celeritas extends this paradigm to physics distributions. At a low level,
+it has <a class="reference internal" href="#celeritas-random"><span class="std std-ref">random number distributions</span></a> that result in
+single real values (such as uniform, exponential, gamma) and correlated
+three-vectors (such as sampling an isotropic direction).</p>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas21BernoulliDistributionE">
 <span id="_CPPv3N9celeritas21BernoulliDistributionE"></span><span id="_CPPv2N9celeritas21BernoulliDistributionE"></span><span id="celeritas::BernoulliDistribution"></span><span class="target" id="d8/d04/classceleritas_1_1_bernoulli_distribution"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BernoulliDistribution</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas21BernoulliDistributionE" title="Permalink to this definition"></a><br /></dt>
@@ -1819,11 +2079,75 @@ x = a \left( \frac{b}{a} \right)^{\xi}
 </dd></dl>
 
 </section>
+<section id="physics-distributions">
+<span id="celeritas-physics"></span><h2>Physics distributions<a class="headerlink" href="#physics-distributions" title="Permalink to this heading"></a></h2>
+<p>At a higher level, Celeritas expresses many physics operations as
+distributions of <em>updated</em> track states based on <em>original</em> track states. For
+example, the Tsai-Urban distribution used for sampling exiting angles of
+bremsstrahlung and pair production has parameters of incident particle energy
+and mass, and it samples the exiting polar angle cosine.</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas24BhabhaEnergyDistributionE">
+<span id="_CPPv3N9celeritas24BhabhaEnergyDistributionE"></span><span id="_CPPv2N9celeritas24BhabhaEnergyDistributionE"></span><span id="celeritas::BhabhaEnergyDistribution"></span><span class="target" id="dc/d43/classceleritas_1_1_bhabha_energy_distribution"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BhabhaEnergyDistribution</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas24BhabhaEnergyDistributionE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Helper class for <code class="docutils literal notranslate"><a class="reference internal" href="#d3/d6d/classceleritas_1_1_moller_bhabha_interactor"><span class="std std-ref"><span class="pre">MollerBhabhaInteractor</span></span></a></code> . </p>
+<p>Sample the exiting energy for Bhabha scattering. </p>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas27EnergyLossGammaDistributionE">
+<span id="_CPPv3N9celeritas27EnergyLossGammaDistributionE"></span><span id="_CPPv2N9celeritas27EnergyLossGammaDistributionE"></span><span id="celeritas::EnergyLossGammaDistribution"></span><span class="target" id="df/d58/classceleritas_1_1_energy_loss_gamma_distribution"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EnergyLossGammaDistribution</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas27EnergyLossGammaDistributionE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Sample energy loss from a gamma distribution. </p>
+<p>This model is valid for heavy particles with small mean losses (less than 2 Bohr standard deviations). It is a special case of <code class="docutils literal notranslate"><a class="reference internal" href="#db/d4b/classceleritas_1_1_energy_loss_gaussian_distribution"><span class="std std-ref"><span class="pre">EnergyLossGaussianDistribution</span></span></a></code> (see that class for more documentation).</p>
+<p>Note that while this appears in G4UniversalFluctuation, the Geant4 documentation does not explain why the loss is sampled from a gamma distribution in this case. </p>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas30EnergyLossGaussianDistributionE">
+<span id="_CPPv3N9celeritas30EnergyLossGaussianDistributionE"></span><span id="_CPPv2N9celeritas30EnergyLossGaussianDistributionE"></span><span id="celeritas::EnergyLossGaussianDistribution"></span><span class="target" id="db/d4b/classceleritas_1_1_energy_loss_gaussian_distribution"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EnergyLossGaussianDistribution</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas30EnergyLossGaussianDistributionE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Sample energy loss from a Gaussian distribution. </p>
+<p>In a thick absorber, the total energy transfer is a result of many small energy losses from a large number of collisions. The central limit theorem applies, and the energy loss fluctuations can be described by a Gaussian distribution. See section 7.3.1 of the Geant4 Physics Reference Manual and GEANT3 PHYS332 section 2.3.</p>
+<p>The Gaussian approximation is valid for heavy particles and in the regime <span class="math notranslate nohighlight">\( \kappa = \xi / T_\textrm{max} &gt; 10 \)</span>. Fluctuations of the unrestricted energy loss follow a Gaussian distribution if <span class="math notranslate nohighlight">\( \Delta E &gt; \kappa T_{max} \)</span>, where <span class="math notranslate nohighlight">\( T_{max} \)</span> is the maximum energy transfer (PHYS332 section 2). For fluctuations of the <em>restricted</em> energy loss, the condition is modified to <span class="math notranslate nohighlight">\( \Delta E &gt; \kappa T_{c} \)</span> and <span class="math notranslate nohighlight">\( T_{max} \le 2 T_c
+\)</span>, where <span class="math notranslate nohighlight">\( T_c \)</span> is the delta ray cutoff energy (PRM Eq. 7.6-7.7). </p>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas27EnergyLossUrbanDistributionE">
+<span id="_CPPv3N9celeritas27EnergyLossUrbanDistributionE"></span><span id="_CPPv2N9celeritas27EnergyLossUrbanDistributionE"></span><span id="celeritas::EnergyLossUrbanDistribution"></span><span class="target" id="d5/d7c/classceleritas_1_1_energy_loss_urban_distribution"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EnergyLossUrbanDistribution</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas27EnergyLossUrbanDistributionE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Sample from the Urban model of energy loss fluctuations in thin layers. </p>
+<p>The Urban model is used to compute the energy loss fluctuation when <span class="math notranslate nohighlight">\(
+\kappa \)</span> is small. It assumes atoms have only two energy levels with binding energies <span class="math notranslate nohighlight">\( E_1 \)</span> and <span class="math notranslate nohighlight">\( E_2 \)</span> and that the particle-atom interaction will either be an excitation with energy loss <span class="math notranslate nohighlight">\( E_1 \)</span> or <span class="math notranslate nohighlight">\(
+E_2 \)</span> or an ionization with energy loss proportional to <span class="math notranslate nohighlight">\( 1 / E^2 \)</span>. The number of collisions for each interaction type has a Poisson distribution with mean proportional to the interaction cross section. The energy loss in a step will be the sum of the energy loss contributions from excitation and ionization.</p>
+<p>When the number of ionizations is larger than a given threshold, a fast sampling method can be used instead. The possible energy loss interval is divided into two parts: a lower range in which the number of collisions is large and the energy loss can be sampled from a Gaussian distribution, and an upper range in which the energy loss is sampled for each collision.</p>
+<p>See section 7.3.2 of the Geant4 Physics Reference Manual and GEANT3 PHYS332 section 2.4 for details. </p>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas24MollerEnergyDistributionE">
+<span id="_CPPv3N9celeritas24MollerEnergyDistributionE"></span><span id="_CPPv2N9celeritas24MollerEnergyDistributionE"></span><span id="celeritas::MollerEnergyDistribution"></span><span class="target" id="d7/da9/classceleritas_1_1_moller_energy_distribution"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MollerEnergyDistribution</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas24MollerEnergyDistributionE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Helper class for <code class="docutils literal notranslate"><a class="reference internal" href="#d3/d6d/classceleritas_1_1_moller_bhabha_interactor"><span class="std std-ref"><span class="pre">MollerBhabhaInteractor</span></span></a></code> . </p>
+<p>Sample the exiting energy for Moller scattering. </p>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas21TsaiUrbanDistributionE">
+<span id="_CPPv3N9celeritas21TsaiUrbanDistributionE"></span><span id="_CPPv2N9celeritas21TsaiUrbanDistributionE"></span><span id="celeritas::TsaiUrbanDistribution"></span><span class="target" id="dd/da0/classceleritas_1_1_tsai_urban_distribution"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TsaiUrbanDistribution</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas21TsaiUrbanDistributionE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Polar angular distribution for pair-production and bremsstrahlung processes. </p>
+<p>For pair-production, the polar angle of the electron (or positron) is defined with respect to the direction of the parent photon. The energy- angle distribution given by Tsai is quite complicated to sample and can be approximated by a density function suggested by Urban.</p>
+<p>The angular distribution of the emitted photons is obtained from a simplified formula based on the Tsai cross-section, which is expected to become isotropic in the low energy limit.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This performs the same sampling routine as in Geant4’s ModifiedTsai class, based on derivation from Tsai (Rev Mod Phys 49,421(1977) and documented in section 6.5.2 (pair-production), and 10.2.1 and 10.2.4 (bremsstrahlung) of the Geant4 Physics Reference (release 10.6). </p>
+</div>
+</dd></dl>
+
+</section>
 <section id="physics-implementations">
-<span id="celeritas-physics"></span><h2>Physics implementations<a class="headerlink" href="#physics-implementations" title="Permalink to this heading"></a></h2>
-<p>Each “interactor” applies the discrete interaction of a model when sampled. It
-is equivalent to the “post-step doit” of Geant4, including sampling of
-secondaries.</p>
+<h2>Physics implementations<a class="headerlink" href="#physics-implementations" title="Permalink to this heading"></a></h2>
+<p>Additional distributions are built on top of the helper distributions above.
+All discrete interactions (in Geant4 parlance, “post-step do-it”s) use
+distributions to sample an <em>Interaction</em> based on incident particle properties.
+The sampled result contains the updated particle direction and energy, as well
+as properties of any secondary particles produced.</p>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas22BetheHeitlerInteractorE">
 <span id="_CPPv3N9celeritas22BetheHeitlerInteractorE"></span><span id="_CPPv2N9celeritas22BetheHeitlerInteractorE"></span><span id="celeritas::BetheHeitlerInteractor"></span><span class="target" id="d3/d20/classceleritas_1_1_bethe_heitler_interactor"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BetheHeitlerInteractor</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas22BetheHeitlerInteractorE" title="Permalink to this definition"></a><br /></dt>
@@ -1941,7 +2265,8 @@ secondaries.</p>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas6detail17UrbanMscStepLimitE">
 <span id="_CPPv3N9celeritas6detail17UrbanMscStepLimitE"></span><span id="_CPPv2N9celeritas6detail17UrbanMscStepLimitE"></span><span id="celeritas::detail::UrbanMscStepLimit"></span><span class="target" id="db/de0/classceleritas_1_1detail_1_1_urban_msc_step_limit"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UrbanMscStepLimit</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas6detail17UrbanMscStepLimitE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>This is the step limitation algorithm of the Urban model for the e-/e+ multiple scattering. </p>
+<dd><p>Sample a step limit for the Urban MSC model. </p>
+<p>This distribution is to be used for tracks that have non-negligible steps and are near the boundary. Otherwise, no displacement or step limiting is needed.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This code performs the same method as in ComputeTruePathLengthLimit of G4UrbanMscModel, as documented in section 8.1.6 of the Geant4 10.7 Physics Reference Manual or CERN-OPEN-2006-077 by L. Urban. </p>
@@ -1960,7 +2285,7 @@ secondaries.</p>
 
 </section>
 <section id="physics-data">
-<h2>Physics data<a class="headerlink" href="#physics-data" title="Permalink to this heading"></a></h2>
+<span id="api-importdata"></span><h2>Physics data<a class="headerlink" href="#physics-data" title="Permalink to this heading"></a></h2>
 <p>Celeritas reads physics data from Geant4 (or from a ROOT file exported from
 data previously loaded into Geant4). Different versions of Geant4 (and Geant4
 data) can be used seamlessly with any version of Celeritas, allowing
@@ -1995,14 +2320,6 @@ The following classes enumerate all the data used at runtime.</p>
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas10ImportData25ImportAtomicRelaxationMapE">
 <span id="_CPPv3N9celeritas10ImportData25ImportAtomicRelaxationMapE"></span><span id="_CPPv2N9celeritas10ImportData25ImportAtomicRelaxationMapE"></span><span class="target" id="d2/dd6/structceleritas_1_1_import_data_1ae7f78d95624f70d25b8f9f88d4dddf15"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ImportAtomicRelaxationMap</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N9celeritas10ImportData4ZIntE" title="celeritas::ImportData::ZInt"><span class="n"><span class="pre">ZInt</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas22ImportAtomicRelaxationE" title="celeritas::ImportAtomicRelaxation"><span class="n"><span class="pre">ImportAtomicRelaxation</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas10ImportData25ImportAtomicRelaxationMapE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas10ImportDatacvbEv">
-<span id="_CPPv3NK9celeritas10ImportDatacvbEv"></span><span id="_CPPv2NK9celeritas10ImportDatacvbEv"></span><span id="celeritas::ImportData::castto-b-operatorC"></span><span class="target" id="d2/dd6/structceleritas_1_1_import_data_1a19abcb6d6f0cfcb02b917903ff4fdaa8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas10ImportDatacvbEv" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -2348,11 +2665,6 @@ The following classes enumerate all the data used at runtime.</p>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas19ImportMaterialState11not_definedE">
-<span id="_CPPv3N9celeritas19ImportMaterialState11not_definedE"></span><span id="_CPPv2N9celeritas19ImportMaterialState11not_definedE"></span><span class="target" id="d6/d70/_import_material_8hh_1a8636399326b6c3c13961c1b3ca4ca161a308178bc9cbd979f6e2e056175b76aba"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">not_defined</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas19ImportMaterialState11not_definedE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas19ImportMaterialState5solidE">
 <span id="_CPPv3N9celeritas19ImportMaterialState5solidE"></span><span id="_CPPv2N9celeritas19ImportMaterialState5solidE"></span><span class="target" id="d6/d70/_import_material_8hh_1a8636399326b6c3c13961c1b3ca4ca161aec03f91ae56e478455e3786e91559194"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">solid</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas19ImportMaterialState5solidE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
@@ -2540,7 +2852,7 @@ The following classes enumerate all the data used at runtime.</p>
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas19ImportModelMaterialE">
 <span id="_CPPv3N9celeritas19ImportModelMaterialE"></span><span id="_CPPv2N9celeritas19ImportModelMaterialE"></span><span id="celeritas::ImportModelMaterial"></span><span class="target" id="dc/dc5/structceleritas_1_1_import_model_material"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ImportModelMaterial</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas19ImportModelMaterialE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Imported data for one material in a particluar model. </p>
+<dd><p>Imported data for one material in a particular model. </p>
 <p>Microscopic cross-section data are stored in the element-selector physics vector is in cm^2. They will not be present for all model types, as some models only do on-the-fly calculation (e.g., photoelectric effect) or don’t depend on elemental interactions (e.g., compton scattering). The <code class="docutils literal notranslate"><span class="pre">needs_micro_xs</span></code> function indicates which models should store the cross section data.</p>
 <p>The energy grid’s boundaries determine the model’s energy bounds and will always be set. </p>
 <div class="breathe-sectiondef docutils container">
@@ -2666,11 +2978,6 @@ The following classes enumerate all the data used at runtime.</p>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas17ImportProcessType11not_definedE">
-<span id="_CPPv3N9celeritas17ImportProcessType11not_definedE"></span><span id="_CPPv2N9celeritas17ImportProcessType11not_definedE"></span><span class="target" id="de/de8/_import_process_8hh_1acf5f32379a6c7a59d83d33cb15bf5d89a308178bc9cbd979f6e2e056175b76aba"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">not_defined</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas17ImportProcessType11not_definedE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas17ImportProcessType14transportationE">
 <span id="_CPPv3N9celeritas17ImportProcessType14transportationE"></span><span id="_CPPv2N9celeritas17ImportProcessType14transportationE"></span><span class="target" id="de/de8/_import_process_8hh_1acf5f32379a6c7a59d83d33cb15bf5d89a4d70921065c00a293597936b693345aa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">transportation</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas17ImportProcessType14transportationE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
@@ -2746,11 +3053,6 @@ The following classes enumerate all the data used at runtime.</p>
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas18ImportProcessClass5otherE">
 <span id="_CPPv3N9celeritas18ImportProcessClass5otherE"></span><span id="_CPPv2N9celeritas18ImportProcessClass5otherE"></span><span class="target" id="de/de8/_import_process_8hh_1aee9f70862dd95ace9074262973ad3904a795f3202b17cb6bc3d4b771d8c6c9eaf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">other</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas18ImportProcessClass5otherE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18ImportProcessClass7unknownE">
-<span id="_CPPv3N9celeritas18ImportProcessClass7unknownE"></span><span id="_CPPv2N9celeritas18ImportProcessClass7unknownE"></span><span class="target" id="de/de8/_import_process_8hh_1aee9f70862dd95ace9074262973ad3904aad921d60486366258809553a3db49a4a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unknown</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas18ImportProcessClass7unknownE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
@@ -2861,11 +3163,6 @@ The following classes enumerate all the data used at runtime.</p>
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas16ImportModelClass5otherE">
 <span id="_CPPv3N9celeritas16ImportModelClass5otherE"></span><span id="_CPPv2N9celeritas16ImportModelClass5otherE"></span><span class="target" id="d3/d48/_import_model_8hh_1a1b287483adb07ba06a198644b6cb0114a795f3202b17cb6bc3d4b771d8c6c9eaf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">other</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas16ImportModelClass5otherE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas16ImportModelClass7unknownE">
-<span id="_CPPv3N9celeritas16ImportModelClass7unknownE"></span><span id="_CPPv2N9celeritas16ImportModelClass7unknownE"></span><span class="target" id="d3/d48/_import_model_8hh_1a1b287483adb07ba06a198644b6cb0114aad921d60486366258809553a3db49a4a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unknown</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas16ImportModelClass7unknownE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">

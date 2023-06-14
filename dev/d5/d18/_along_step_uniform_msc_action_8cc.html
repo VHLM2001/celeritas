@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -81,15 +81,18 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d5/d93/_along_step_uniform_msc_action_8hh.html">AlongStepUniformMscAction.hh</a>&quot;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/d10/_assert_8hh.html">corecel/Assert.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d3/de4/_range_8hh.html">corecel/cont/Range.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/dc5/_macros_8hh.html">corecel/Macros.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d9/df9/_ref_8hh.html">corecel/data/Ref.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../df/dfb/_device_8hh.html">corecel/sys/Device.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d5/d5d/_multi_exception_handler_8hh.html">corecel/sys/MultiExceptionHandler.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d9/d65/_urban_msc_params_8hh.html">celeritas/em/UrbanMscParams.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d7/de3/_core_track_data_8hh.html">celeritas/global/CoreTrackData.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../dd/dc5/_kernel_context_exception_8hh.html">celeritas/global/KernelContextException.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../de/df7/_along_step_launcher_8hh.html">celeritas/global/alongstep/AlongStepLauncher.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d4/df2/_along_step_uniform_msc_8hh.html">detail/AlongStepUniformMsc.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/dd2/_urban_msc_8hh.html">celeritas/em/msc/UrbanMsc.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/d95/_action_launcher_8hh.html">celeritas/global/ActionLauncher.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/d5d/_core_params_8hh.html">celeritas/global/CoreParams.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d74/_core_state_8hh.html">celeritas/global/CoreState.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../de/de1/_track_executor_8hh.html">celeritas/global/TrackExecutor.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/d42/_along_step_8hh.html">AlongStep.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/d8c/_mean_e_loss_8hh.html">detail/MeanELoss.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/d5c/_uniform_field_track_propagator_8hh.html">detail/UniformFieldTrackPropagator.hh</a>&quot;</code><br />
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

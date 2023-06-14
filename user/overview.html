@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overview &mdash; Celeritas v0.3.0-dev.62+f351e714 documentation</title>
+  <title>Overview &mdash; Celeritas 0.3.0-rc.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API documentation" href="api.html" />
-    <link rel="prev" title="Installation" href="installation.html" /> 
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -30,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Celeritas
-            <img src="_static/celeritas-square.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Celeritas
+              <img src="_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-dev
+                0.3.0-rc.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -47,17 +51,17 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#units">Units</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#distributions">Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#physics">Physics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#geometry">Geometry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#stepping-loop">Stepping loop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gpu-usage">GPU usage</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Using Celeritas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Library API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="acknowledgments.html">Acknowledgments</a></li>
@@ -83,8 +87,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Overview</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Overview</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/overview.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -126,45 +130,13 @@ allows their conversion back to native units. This allows, for example,
 particles to represent their energy as MeV and charge as fractions of e but
 work seamlessly with a field definition in native (macro-scale quantity) units.</p>
 </section>
-<section id="distributions">
-<h2>Distributions<a class="headerlink" href="#distributions" title="Permalink to this heading"></a></h2>
-<p>The 2011 ISO C++ standard defined a new functional paradigm for sampling from
-random number distributions. In this paradigm, random number <em>engines</em> generate
-a uniformly distributed stream of bits. Then, <em>distributions</em> use that entropy
-to sample a random number from a distribution. Distributions are function-like
-objects whose constructors take the <em>parameters</em> of the distribution: for
-example, a uniform distribution over the range <span class="math notranslate nohighlight">\([a, b)\)</span> takes the <em>a</em> and
-<em>b</em> parameters as constructor arguments. The templated call operator accepts a
-random engine as its sole argument.</p>
-<p>Celeritas extends this paradigm to physics distributions. At a low level,
-it has <a class="reference internal" href="api/celeritas.html#celeritas-random"><span class="std std-ref">random number distributions</span></a> that result in
-single real values (such as uniform, exponential, gamma) and correlated
-three-vectors (such as sampling an isotropic direction).</p>
-<p>At a higher level, though, it expresses many physics operations as
-distributions of <em>updated</em> track states based on <em>original</em> track states. For
-example, the Tsai-Urban distribution used for sampling exiting angles of
-bremsstrahlung and pair production has parameters of incident particle energy
-and mass, and it samples the exiting polar angle cosine. Additional
-distributions are built on top of those: all discrete interactions (in Geant4
-parlance, “post-step do-it”s) use distributions to sample an <em>Interaction</em>
-based on incident particle properties. The sampled result contains the updated
-particle direction and energy, as well as properties of any secondary particles
-produced.</p>
-</section>
 <section id="physics">
 <h2>Physics<a class="headerlink" href="#physics" title="Permalink to this heading"></a></h2>
 <p>Celeritas implements physics processes and models for transporting electron, positron,
 and gamma particles as shown in the accompanying table. Implementation details of these models
-and their corresponding Geant4 classes are documented in <a class="reference internal" href="api/celeritas.html#celeritas-physics"><span class="std std-ref">Physics implementations</span></a>.</p>
+and their corresponding Geant4 classes are documented in <a class="reference internal" href="api/celeritas.html#celeritas-physics"><span class="std std-ref">Physics distributions</span></a>.</p>
 <table class="docutils align-default" id="id3">
 <caption><span class="caption-text">Electromagnetic physics processes and models available in Celeritas.</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 15%" />
-<col style="width: 20%" />
-<col style="width: 36%" />
-<col style="width: 18%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Particle</strong></p></td>
 <td><p><strong>Processes</strong></p></td>
@@ -278,8 +250,8 @@ as the GPU is enabled.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="api.html" class="btn btn-neutral float-right" title="API documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

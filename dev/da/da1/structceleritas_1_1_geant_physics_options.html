@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -82,96 +82,128 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Construction options for geant physics.  
+<p>Construction options for Geant physics.  
  <a href="../../da/da1/structceleritas_1_1_geant_physics_options.html#details">More...</a></p>
 
 <p><code>#include &lt;GeantPhysicsOptions.hh&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a052567aa12825c953035faf25419ed77"><td class="memItemLeft" align="right" valign="top"><a id="a052567aa12825c953035faf25419ed77" name="a052567aa12825c953035faf25419ed77"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>verbose</b> {false}</td></tr>
+<tr class="memdesc:a052567aa12825c953035faf25419ed77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print detailed Geant4 output. <br /></td></tr>
+<tr class="separator:a052567aa12825c953035faf25419ed77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Gamma physics</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >Enable discrete Coulomb </p>
+</div></td></tr>
 <tr class="memitem:a6c59cbb19a06ecd238aa14c3ef56c400"><td class="memItemLeft" align="right" valign="top"><a id="a6c59cbb19a06ecd238aa14c3ef56c400" name="a6c59cbb19a06ecd238aa14c3ef56c400"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>coulomb_scattering</b> {false}</td></tr>
+<tr class="memdesc:a6c59cbb19a06ecd238aa14c3ef56c400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Compton scattering. <br /></td></tr>
 <tr class="separator:a6c59cbb19a06ecd238aa14c3ef56c400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ca9ec233f3af6c13984de266f069ae"><td class="memItemLeft" align="right" valign="top"><a id="aa5ca9ec233f3af6c13984de266f069ae" name="aa5ca9ec233f3af6c13984de266f069ae"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>compton_scattering</b> {true}</td></tr>
+<tr class="memdesc:aa5ca9ec233f3af6c13984de266f069ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Compton scattering. <br /></td></tr>
+<tr class="separator:aa5ca9ec233f3af6c13984de266f069ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a886c8e8acd31f10600cb0457f4ad3803"><td class="memItemLeft" align="right" valign="top"><a id="a886c8e8acd31f10600cb0457f4ad3803" name="a886c8e8acd31f10600cb0457f4ad3803"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>photoelectric</b> {true}</td></tr>
+<tr class="memdesc:a886c8e8acd31f10600cb0457f4ad3803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the photoelectric effect. <br /></td></tr>
+<tr class="separator:a886c8e8acd31f10600cb0457f4ad3803"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad802e5b2c5b59de257ef77b88f4fb99e"><td class="memItemLeft" align="right" valign="top"><a id="ad802e5b2c5b59de257ef77b88f4fb99e" name="ad802e5b2c5b59de257ef77b88f4fb99e"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>rayleigh_scattering</b> {true}</td></tr>
+<tr class="memdesc:ad802e5b2c5b59de257ef77b88f4fb99e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable Rayleigh scattering. <br /></td></tr>
 <tr class="separator:ad802e5b2c5b59de257ef77b88f4fb99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2885261cf67cedcff6d0f20e2c95c6a8"><td class="memItemLeft" align="right" valign="top"><a id="a2885261cf67cedcff6d0f20e2c95c6a8" name="a2885261cf67cedcff6d0f20e2c95c6a8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>eloss_fluctuation</b> {true}</td></tr>
-<tr class="separator:a2885261cf67cedcff6d0f20e2c95c6a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65982ee39807dbb4ad43e4a3c3f79c2f"><td class="memItemLeft" align="right" valign="top"><a id="a65982ee39807dbb4ad43e4a3c3f79c2f" name="a65982ee39807dbb4ad43e4a3c3f79c2f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>lpm</b> {true}</td></tr>
-<tr class="separator:a65982ee39807dbb4ad43e4a3c3f79c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5baa3f25183cf9c20418a84fc4c02ace"><td class="memItemLeft" align="right" valign="top"><a id="a5baa3f25183cf9c20418a84fc4c02ace" name="a5baa3f25183cf9c20418a84fc4c02ace"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>integral_approach</b> {true}</td></tr>
-<tr class="separator:a5baa3f25183cf9c20418a84fc4c02ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0caf39079fd43cc047dcf7c2903a980"><td class="memItemLeft" align="right" valign="top"><a id="ab0caf39079fd43cc047dcf7c2903a980" name="ab0caf39079fd43cc047dcf7c2903a980"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>gamma_conversion</b> {true}</td></tr>
+<tr class="memdesc:ab0caf39079fd43cc047dcf7c2903a980"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable electron pair production. <br /></td></tr>
+<tr class="separator:ab0caf39079fd43cc047dcf7c2903a980"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3e8d377e96d5d3276b339f59cf1c035"><td class="memItemLeft" align="right" valign="top"><a id="aa3e8d377e96d5d3276b339f59cf1c035" name="aa3e8d377e96d5d3276b339f59cf1c035"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>gamma_general</b> {false}</td></tr>
+<tr class="memdesc:aa3e8d377e96d5d3276b339f59cf1c035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use G4GammaGeneral instead of individual gamma processes. <br /></td></tr>
 <tr class="separator:aa3e8d377e96d5d3276b339f59cf1c035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Electron and positron physics</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >Enable e- and e+ ionization </p>
+</div></td></tr>
+<tr class="memitem:ab8e961aa103a0d5ff9d802816bd24152"><td class="memItemLeft" align="right" valign="top"><a id="ab8e961aa103a0d5ff9d802816bd24152" name="ab8e961aa103a0d5ff9d802816bd24152"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>ionization</b> {true}</td></tr>
+<tr class="memdesc:ab8e961aa103a0d5ff9d802816bd24152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable positron annihilation. <br /></td></tr>
+<tr class="separator:ab8e961aa103a0d5ff9d802816bd24152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac43fc03332f39f98c2c358ba33ee029a"><td class="memItemLeft" align="right" valign="top"><a id="ac43fc03332f39f98c2c358ba33ee029a" name="ac43fc03332f39f98c2c358ba33ee029a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>annihilation</b> {true}</td></tr>
+<tr class="memdesc:ac43fc03332f39f98c2c358ba33ee029a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable positron annihilation. <br /></td></tr>
+<tr class="separator:ac43fc03332f39f98c2c358ba33ee029a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabc0d710be0c52e7c68ffcbb6e6bdbbd"><td class="memItemLeft" align="right" valign="top"><a id="aabc0d710be0c52e7c68ffcbb6e6bdbbd" name="aabc0d710be0c52e7c68ffcbb6e6bdbbd"></a>
 <a class="el" href="../../d7/d98/_geant_physics_options_8hh.html#a52dd41185099c946893d59a78dd72393">BremsModelSelection</a>&#160;</td><td class="memItemRight" valign="bottom"><b>brems</b> {BremsModelSelection::all}</td></tr>
+<tr class="memdesc:aabc0d710be0c52e7c68ffcbb6e6bdbbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable bremsstrahlung and select a model. <br /></td></tr>
 <tr class="separator:aabc0d710be0c52e7c68ffcbb6e6bdbbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3b47dc075095188d1d7f06856508b3f"><td class="memItemLeft" align="right" valign="top"><a id="af3b47dc075095188d1d7f06856508b3f" name="af3b47dc075095188d1d7f06856508b3f"></a>
 <a class="el" href="../../d7/d98/_geant_physics_options_8hh.html#a4f683a34fef933febc46736cd3f4edbf">MscModelSelection</a>&#160;</td><td class="memItemRight" valign="bottom"><b>msc</b> {<a class="el" href="../../d7/d98/_geant_physics_options_8hh.html#a4f683a34fef933febc46736cd3f4edbfad698b9a44743532b5d503a026d9df1bb">MscModelSelection::urban_extended</a>}</td></tr>
+<tr class="memdesc:af3b47dc075095188d1d7f06856508b3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable multiple coulomb scattering and select a model. <br /></td></tr>
 <tr class="separator:af3b47dc075095188d1d7f06856508b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a274f40d93fb6d3d37de93c546c2ccad1"><td class="memItemLeft" align="right" valign="top"><a id="a274f40d93fb6d3d37de93c546c2ccad1" name="a274f40d93fb6d3d37de93c546c2ccad1"></a>
 <a class="el" href="../../d7/d98/_geant_physics_options_8hh.html#a9f2911f461c6f4865a1a5d9a37e1b3c6">RelaxationSelection</a>&#160;</td><td class="memItemRight" valign="bottom"><b>relaxation</b> {RelaxationSelection::none}</td></tr>
+<tr class="memdesc:a274f40d93fb6d3d37de93c546c2ccad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable atomic relaxation and select a model. <br /></td></tr>
 <tr class="separator:a274f40d93fb6d3d37de93c546c2ccad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Physics options</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >Number of log-spaced bins per factor of 10 in energy </p>
+</div></td></tr>
 <tr class="memitem:a8ad303dbab0755a3e25ae0212a68fc32"><td class="memItemLeft" align="right" valign="top"><a id="a8ad303dbab0755a3e25ae0212a68fc32" name="a8ad303dbab0755a3e25ae0212a68fc32"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>em_bins_per_decade</b> {7}</td></tr>
+<tr class="memdesc:a8ad303dbab0755a3e25ae0212a68fc32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable universal energy fluctuations. <br /></td></tr>
 <tr class="separator:a8ad303dbab0755a3e25ae0212a68fc32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2885261cf67cedcff6d0f20e2c95c6a8"><td class="memItemLeft" align="right" valign="top"><a id="a2885261cf67cedcff6d0f20e2c95c6a8" name="a2885261cf67cedcff6d0f20e2c95c6a8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>eloss_fluctuation</b> {true}</td></tr>
+<tr class="memdesc:a2885261cf67cedcff6d0f20e2c95c6a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable universal energy fluctuations. <br /></td></tr>
+<tr class="separator:a2885261cf67cedcff6d0f20e2c95c6a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65982ee39807dbb4ad43e4a3c3f79c2f"><td class="memItemLeft" align="right" valign="top"><a id="a65982ee39807dbb4ad43e4a3c3f79c2f" name="a65982ee39807dbb4ad43e4a3c3f79c2f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>lpm</b> {true}</td></tr>
+<tr class="memdesc:a65982ee39807dbb4ad43e4a3c3f79c2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply relativistic corrections for select models. <br /></td></tr>
+<tr class="separator:a65982ee39807dbb4ad43e4a3c3f79c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5baa3f25183cf9c20418a84fc4c02ace"><td class="memItemLeft" align="right" valign="top"><a id="a5baa3f25183cf9c20418a84fc4c02ace" name="a5baa3f25183cf9c20418a84fc4c02ace"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>integral_approach</b> {true}</td></tr>
+<tr class="memdesc:a5baa3f25183cf9c20418a84fc4c02ace"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <code>PhysicsParamsOptions::disable_integral_xs</code>. <br /></td></tr>
+<tr class="separator:a5baa3f25183cf9c20418a84fc4c02ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Cutoff options</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >Lowest energy of any EM physics process </p>
+</div></td></tr>
 <tr class="memitem:acc29a2d6f5a91efc236e31af2f91fde0"><td class="memItemLeft" align="right" valign="top"><a id="acc29a2d6f5a91efc236e31af2f91fde0" name="acc29a2d6f5a91efc236e31af2f91fde0"></a>
 <a class="el" href="../../dc/dff/classceleritas_1_1_quantity.html">units::MevEnergy</a>&#160;</td><td class="memItemRight" valign="bottom"><b>min_energy</b> {0.1 * 1e-3}</td></tr>
+<tr class="memdesc:acc29a2d6f5a91efc236e31af2f91fde0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Highest energy of any EM physics process. <br /></td></tr>
 <tr class="separator:acc29a2d6f5a91efc236e31af2f91fde0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34830da5ab98b26c5adb9be1b2288665"><td class="memItemLeft" align="right" valign="top"><a id="a34830da5ab98b26c5adb9be1b2288665" name="a34830da5ab98b26c5adb9be1b2288665"></a>
 <a class="el" href="../../dc/dff/classceleritas_1_1_quantity.html">units::MevEnergy</a>&#160;</td><td class="memItemRight" valign="bottom"><b>max_energy</b> {100 * 1e6}</td></tr>
+<tr class="memdesc:a34830da5ab98b26c5adb9be1b2288665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Highest energy of any EM physics process. <br /></td></tr>
 <tr class="separator:a34830da5ab98b26c5adb9be1b2288665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e0717222f6c7ce3540554bcfd92360f"><td class="memItemLeft" align="right" valign="top"><a id="a2e0717222f6c7ce3540554bcfd92360f" name="a2e0717222f6c7ce3540554bcfd92360f"></a>
 <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac97c7d9259eb113cfcc54c671fd2173d">real_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>linear_loss_limit</b> {0.01}</td></tr>
+<tr class="memdesc:a2e0717222f6c7ce3540554bcfd92360f"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <code>PhysicsParamsOptions::linear_loss_limit</code>. <br /></td></tr>
 <tr class="separator:a2e0717222f6c7ce3540554bcfd92360f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05dd21e4ba68215f80556e2bbc2b565c"><td class="memItemLeft" align="right" valign="top"><a id="a05dd21e4ba68215f80556e2bbc2b565c" name="a05dd21e4ba68215f80556e2bbc2b565c"></a>
 <a class="el" href="../../dc/dff/classceleritas_1_1_quantity.html">units::MevEnergy</a>&#160;</td><td class="memItemRight" valign="bottom"><b>lowest_electron_energy</b> {0.001}</td></tr>
+<tr class="memdesc:a05dd21e4ba68215f80556e2bbc2b565c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tracking cutoff kinetic energy for e-/e+. <br /></td></tr>
 <tr class="separator:a05dd21e4ba68215f80556e2bbc2b565c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f12cbf0df9f2ed69f9d0f57351af3ed"><td class="memItemLeft" align="right" valign="top"><a id="a1f12cbf0df9f2ed69f9d0f57351af3ed" name="a1f12cbf0df9f2ed69f9d0f57351af3ed"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>apply_cuts</b> {false}</td></tr>
+<tr class="memdesc:a1f12cbf0df9f2ed69f9d0f57351af3ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kill secondaries below the production cut. <br /></td></tr>
+<tr class="separator:a1f12cbf0df9f2ed69f9d0f57351af3ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Multiple scattering configuration</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >E-/e+ range factor for MSC models </p>
+</div></td></tr>
 <tr class="memitem:a734f5d471fbde00079eeb898102c5d50"><td class="memItemLeft" align="right" valign="top"><a id="a734f5d471fbde00079eeb898102c5d50" name="a734f5d471fbde00079eeb898102c5d50"></a>
 <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac97c7d9259eb113cfcc54c671fd2173d">real_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>msc_range_factor</b> {0.04}</td></tr>
+<tr class="memdesc:a734f5d471fbde00079eeb898102c5d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safety factor for MSC models. <br /></td></tr>
 <tr class="separator:a734f5d471fbde00079eeb898102c5d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8de2e3d6d1642773ad1ea513a5825ba2"><td class="memItemLeft" align="right" valign="top"><a id="a8de2e3d6d1642773ad1ea513a5825ba2" name="a8de2e3d6d1642773ad1ea513a5825ba2"></a>
 <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac97c7d9259eb113cfcc54c671fd2173d">real_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>msc_safety_factor</b> {0.6}</td></tr>
+<tr class="memdesc:a8de2e3d6d1642773ad1ea513a5825ba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safety factor for MSC models. <br /></td></tr>
 <tr class="separator:a8de2e3d6d1642773ad1ea513a5825ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae67607b32f4cab1ba38daf0df57d9870"><td class="memItemLeft" align="right" valign="top"><a id="ae67607b32f4cab1ba38daf0df57d9870" name="ae67607b32f4cab1ba38daf0df57d9870"></a>
 <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac97c7d9259eb113cfcc54c671fd2173d">real_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>msc_lambda_limit</b> {0.1}</td></tr>
+<tr class="memdesc:ae67607b32f4cab1ba38daf0df57d9870"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lambda limit for MSC models [cm]. <br /></td></tr>
 <tr class="separator:ae67607b32f4cab1ba38daf0df57d9870"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f12cbf0df9f2ed69f9d0f57351af3ed"><td class="memItemLeft" align="right" valign="top"><a id="a1f12cbf0df9f2ed69f9d0f57351af3ed" name="a1f12cbf0df9f2ed69f9d0f57351af3ed"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>apply_cuts</b> {false}</td></tr>
-<tr class="separator:a1f12cbf0df9f2ed69f9d0f57351af3ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a052567aa12825c953035faf25419ed77"><td class="memItemLeft" align="right" valign="top"><a id="a052567aa12825c953035faf25419ed77" name="a052567aa12825c953035faf25419ed77"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>verbose</b> {false}</td></tr>
-<tr class="separator:a052567aa12825c953035faf25419ed77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Construction options for geant physics. </p>
-<p >These options attempt to default to our closest match to <code>G4StandardEmPhysics</code>.</p>
-<p >Note that not all Geant physics choices are implemented in Celeritas.</p>
-<ul>
-<li><code>coulomb_scattering:</code> enable a discrete Coulomb scattering process</li>
-<li><code>rayleigh_scattering:</code> enable the Rayleigh scattering process</li>
-<li><code>eloss_fluctuation:</code> enable universal energy fluctuations</li>
-<li><code>lpm:</code> apply relativistic corrections for select models</li>
-<li><code>integral_approach:</code> see <code>PhysicsParamsOptions::disable_integral_xs</code> </li>
-<li><code>gamma_general:</code> load G4GammaGeneral instead of individual processes</li>
-<li><code>brems:</code> Bremsstrahlung model selection</li>
-<li><code>msc:</code> Multiple scattering model selection</li>
-<li><code>relaxation:</code> Atomic relaxation selection</li>
-<li><code>em_bins_per_decade:</code> number of log-spaced energy bins per factor of 10</li>
-<li><code>min_energy:</code> lowest energy of any EM physics process</li>
-<li><code>max_energy:</code> highest energy of any EM physics process</li>
-<li><code>linear_loss_limit:</code> see <code>PhysicsParamsOptions::linear_loss_limit</code> </li>
-<li><code>lowest_electron_energy:</code> lowest e-/e+ kinetic energy</li>
-<li><code>msc_range_factor:</code> e-/e+ range factor for MSC models</li>
-<li><code>msc_safety_factor:</code> safety factor for MSC models</li>
-<li><code>msc_lambda_limit:</code> lambda limit for MSC models [cm]</li>
-<li><code>apply_cuts:</code> kill secondaries below the production cut</li>
-<li><code>verbose:</code> print detailed Geant4 output </li>
-</ul>
+<div class="textblock"><p >Construction options for Geant physics. </p>
+<p >These options attempt to default to our closest match to <code>G4StandardEmPhysics</code>. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="../../d7/d98/_geant_physics_options_8hh.html">GeantPhysicsOptions.hh</a></li>
 </ul>

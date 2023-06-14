@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -79,7 +79,7 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="../../de/df0/classceleritas_1_1_track_init_params-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">celeritas::TrackInitParams Class Reference</div></div>
+  <div class="headertitle"><div class="title">celeritas::TrackInitParams Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -87,22 +87,21 @@ $(function() {
  <a href="../../d8/d9a/classceleritas_1_1_track_init_params.html#details">More...</a></p>
 
 <p><code>#include &lt;TrackInitParams.hh&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for celeritas::TrackInitParams:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../d8/d9a/classceleritas_1_1_track_init_params.png" usemap="#celeritas::TrackInitParams_map" alt=""/>
+  <map id="celeritas::TrackInitParams_map" name="celeritas::TrackInitParams_map">
+<area href="../../d5/d03/classceleritas_1_1_params_data_interface.html" alt="celeritas::ParamsDataInterface&lt; TrackInitParamsData &gt;" shape="rect" coords="0,0,324,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d00/structceleritas_1_1_track_init_params_1_1_input.html">Input</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Track initializer construction arguments.  <a href="../../df/d00/structceleritas_1_1_track_init_params_1_1_input.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader">Type aliases</div></td></tr>
-<tr class="memitem:a0924bd53a08288194656b1ec50cf9f6a"><td class="memItemLeft" align="right" valign="top"><a id="a0924bd53a08288194656b1ec50cf9f6a" name="a0924bd53a08288194656b1ec50cf9f6a"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>HostRef</b> = <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#a68689dbf9eb486a67222e2fe2b496e71">HostCRef</a>&lt; <a class="el" href="../../d1/d29/structceleritas_1_1_track_init_params_data.html">TrackInitParamsData</a> &gt;</td></tr>
-<tr class="separator:a0924bd53a08288194656b1ec50cf9f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68d21f1175820212e960bfc06694edbd"><td class="memItemLeft" align="right" valign="top"><a id="a68d21f1175820212e960bfc06694edbd" name="a68d21f1175820212e960bfc06694edbd"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>DeviceRef</b> = <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac406c12413f5d3ee1538ef452c821ec2">DeviceCRef</a>&lt; <a class="el" href="../../d1/d29/structceleritas_1_1_track_init_params_data.html">TrackInitParamsData</a> &gt;</td></tr>
-<tr class="separator:a68d21f1175820212e960bfc06694edbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -114,18 +113,99 @@ Public Member Functions</h2></td></tr>
 size_type&#160;</td><td class="memItemRight" valign="bottom"><b>max_events</b> () const</td></tr>
 <tr class="memdesc:a3405781ce00605481aae8432f83d36da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event number cannot exceed this value. <br /></td></tr>
 <tr class="separator:a3405781ce00605481aae8432f83d36da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7305fdd40ed522755ac222da7ac77b66"><td class="memItemLeft" align="right" valign="top"><a id="a7305fdd40ed522755ac222da7ac77b66" name="a7305fdd40ed522755ac222da7ac77b66"></a>
-HostRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>host_ref</b> () const</td></tr>
-<tr class="memdesc:a7305fdd40ed522755ac222da7ac77b66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access primaries for contructing track initializer states. <br /></td></tr>
-<tr class="separator:a7305fdd40ed522755ac222da7ac77b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a236541c4025aa0a08eb01d206f12e1be"><td class="memItemLeft" align="right" valign="top"><a id="a236541c4025aa0a08eb01d206f12e1be" name="a236541c4025aa0a08eb01d206f12e1be"></a>
-DeviceRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>device_ref</b> () const</td></tr>
-<tr class="memdesc:a236541c4025aa0a08eb01d206f12e1be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access data on device. <br /></td></tr>
-<tr class="separator:a236541c4025aa0a08eb01d206f12e1be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb1e2f2c6d492e2f0657567b886d29f"><td class="memItemLeft" align="right" valign="top">HostRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d9a/classceleritas_1_1_track_init_params.html#a2cb1e2f2c6d492e2f0657567b886d29f">host_ref</a> () const final</td></tr>
+<tr class="memdesc:a2cb1e2f2c6d492e2f0657567b886d29f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access primaries for contructing track initializer states.  <a href="../../d8/d9a/classceleritas_1_1_track_init_params.html#a2cb1e2f2c6d492e2f0657567b886d29f">More...</a><br /></td></tr>
+<tr class="separator:a2cb1e2f2c6d492e2f0657567b886d29f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d42eb077dcb59f49619fcf2af96f5d1"><td class="memItemLeft" align="right" valign="top">DeviceRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d9a/classceleritas_1_1_track_init_params.html#a6d42eb077dcb59f49619fcf2af96f5d1">device_ref</a> () const final</td></tr>
+<tr class="memdesc:a6d42eb077dcb59f49619fcf2af96f5d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access data on device.  <a href="../../d8/d9a/classceleritas_1_1_track_init_params.html#a6d42eb077dcb59f49619fcf2af96f5d1">More...</a><br /></td></tr>
+<tr class="separator:a6d42eb077dcb59f49619fcf2af96f5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classceleritas_1_1_params_data_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classceleritas_1_1_params_data_interface')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html">celeritas::ParamsDataInterface&lt; TrackInitParamsData &gt;</a></td></tr>
+<tr class="memitem:adf6901a7db942b30b9d58ff3b8fcf5a7 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memItemLeft" align="right" valign="top">virtual HostRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html#adf6901a7db942b30b9d58ff3b8fcf5a7">host_ref</a> () const=0</td></tr>
+<tr class="memdesc:adf6901a7db942b30b9d58ff3b8fcf5a7 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference CPU geometry data.  <a href="../../d5/d03/classceleritas_1_1_params_data_interface.html#adf6901a7db942b30b9d58ff3b8fcf5a7">More...</a><br /></td></tr>
+<tr class="separator:adf6901a7db942b30b9d58ff3b8fcf5a7 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab315abf0954c0a342b6659efa9b87a08 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memItemLeft" align="right" valign="top">virtual DeviceRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html#ab315abf0954c0a342b6659efa9b87a08">device_ref</a> () const=0</td></tr>
+<tr class="memdesc:ab315abf0954c0a342b6659efa9b87a08 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference managed GPU geometry data.  <a href="../../d5/d03/classceleritas_1_1_params_data_interface.html#ab315abf0954c0a342b6659efa9b87a08">More...</a><br /></td></tr>
+<tr class="separator:ab315abf0954c0a342b6659efa9b87a08 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad368c8b6a395a75dcf391b237e84fc37 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memItemLeft" align="right" valign="top"><a id="ad368c8b6a395a75dcf391b237e84fc37" name="ad368c8b6a395a75dcf391b237e84fc37"></a>
+<a class="el" href="../../d1/d29/structceleritas_1_1_track_init_params_data.html">TrackInitParamsData</a>&lt; Ownership::const_reference, M &gt; const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>ref</b> () const</td></tr>
+<tr class="separator:ad368c8b6a395a75dcf391b237e84fc37 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad368c8b6a395a75dcf391b237e84fc37 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memItemLeft" align="right" valign="top"><a id="ad368c8b6a395a75dcf391b237e84fc37" name="ad368c8b6a395a75dcf391b237e84fc37"></a>
+<a class="el" href="../../d1/d29/structceleritas_1_1_track_init_params_data.html">TrackInitParamsData</a>&lt; Ownership::const_reference, M &gt; const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>ref</b> () const</td></tr>
+<tr class="memdesc:ad368c8b6a395a75dcf391b237e84fc37 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatch a "ref" call to host or device data. <br /></td></tr>
+<tr class="separator:ad368c8b6a395a75dcf391b237e84fc37 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_classceleritas_1_1_params_data_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classceleritas_1_1_params_data_interface')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html">celeritas::ParamsDataInterface&lt; TrackInitParamsData &gt;</a></td></tr>
+<tr class="memitem:a6d53ec9725737d47ec03998d63d57ef7 inherit pub_types_classceleritas_1_1_params_data_interface"><td class="memItemLeft" align="right" valign="top"><a id="a6d53ec9725737d47ec03998d63d57ef7" name="a6d53ec9725737d47ec03998d63d57ef7"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>HostRef</b> = <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#a68689dbf9eb486a67222e2fe2b496e71">HostCRef</a>&lt; <a class="el" href="../../d1/d29/structceleritas_1_1_track_init_params_data.html">TrackInitParamsData</a> &gt;</td></tr>
+<tr class="separator:a6d53ec9725737d47ec03998d63d57ef7 inherit pub_types_classceleritas_1_1_params_data_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab70ff56cd94f1d7a62917974ccfceeba inherit pub_types_classceleritas_1_1_params_data_interface"><td class="memItemLeft" align="right" valign="top"><a id="ab70ff56cd94f1d7a62917974ccfceeba" name="ab70ff56cd94f1d7a62917974ccfceeba"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>DeviceRef</b> = <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac406c12413f5d3ee1538ef452c821ec2">DeviceCRef</a>&lt; <a class="el" href="../../d1/d29/structceleritas_1_1_track_init_params_data.html">TrackInitParamsData</a> &gt;</td></tr>
+<tr class="separator:ab70ff56cd94f1d7a62917974ccfceeba inherit pub_types_classceleritas_1_1_params_data_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Manage persistent track initializer data. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6d42eb077dcb59f49619fcf2af96f5d1" name="a6d42eb077dcb59f49619fcf2af96f5d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d42eb077dcb59f49619fcf2af96f5d1">&#9670;&#160;</a></span>device_ref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DeviceRef const  &amp; celeritas::TrackInitParams::device_ref </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access data on device. </p>
+
+<p>Implements <a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html#ab315abf0954c0a342b6659efa9b87a08">celeritas::ParamsDataInterface&lt; TrackInitParamsData &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a2cb1e2f2c6d492e2f0657567b886d29f" name="a2cb1e2f2c6d492e2f0657567b886d29f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb1e2f2c6d492e2f0657567b886d29f">&#9670;&#160;</a></span>host_ref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HostRef const  &amp; celeritas::TrackInitParams::host_ref </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access primaries for contructing track initializer states. </p>
+
+<p>Implements <a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html#adf6901a7db942b30b9d58ff3b8fcf5a7">celeritas::ParamsDataInterface&lt; TrackInitParamsData &gt;</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="../../dc/dbf/_track_init_params_8hh.html">TrackInitParams.hh</a></li>
 <li><a class="el" href="../../d9/deb/_track_init_params_8cc.html">TrackInitParams.cc</a></li>
 </ul>

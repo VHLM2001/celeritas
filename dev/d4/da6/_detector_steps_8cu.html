@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -83,59 +83,56 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../db/de5/_detector_steps_8hh.html">DetectorSteps.hh</a>&quot;</code><br />
 <code>#include &lt;thrust/copy.h&gt;</code><br />
-<code>#include &lt;thrust/count.h&gt;</code><br />
 <code>#include &lt;thrust/device_ptr.h&gt;</code><br />
-<code>#include &lt;thrust/device_vector.h&gt;</code><br />
 <code>#include &lt;thrust/execution_policy.h&gt;</code><br />
-<code>#include &lt;thrust/partition.h&gt;</code><br />
+<code>#include &lt;thrust/iterator/counting_iterator.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../db/d8b/_collection_8hh.html">corecel/data/Collection.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d40/_copier_8hh.html">corecel/data/Copier.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/dfb/_device_8hh.html">corecel/sys/Device.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/d96/_kernel_param_calculator_8device_8hh.html">corecel/sys/KernelParamCalculator.device.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/da7/_stream_8hh.html">corecel/sys/Stream.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d9/dec/_step_data_8hh.html">StepData.hh</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a6c648d5c0a1876609deeb5682be93790"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/da6/_detector_steps_8cu.html#a6c648d5c0a1876609deeb5682be93790">DS_COPY_IF_SELECTED</a>(FIELD)</td></tr>
+<tr class="separator:a6c648d5c0a1876609deeb5682be93790"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac145d17177e16f1e845098e6a086ebed"><td class="memItemLeft" align="right" valign="top"><a id="ac145d17177e16f1e845098e6a086ebed" name="ac145d17177e16f1e845098e6a086ebed"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DS_ASSIGN</b>(FIELD)&#160;&#160;&#160;    assign_field(&amp;(output-&gt;FIELD), state.FIELD, orig_ids, size)</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DS_ASSIGN</b>(FIELD)&#160;&#160;&#160;    copy_field(&amp;(output-&gt;FIELD), state.scratch.FIELD, num_valid)</td></tr>
 <tr class="separator:ac145d17177e16f1e845098e6a086ebed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab5c250f874ef9014a2abcc1f3dc502c9"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
-<tr class="memitem:ab5c250f874ef9014a2abcc1f3dc502c9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/da6/_detector_steps_8cu.html#ab5c250f874ef9014a2abcc1f3dc502c9">celeritas::copy_steps&lt; MemSpace::device &gt;</a> (DetectorStepOutput *output, StepStateData&lt; Ownership::reference, MemSpace::device &gt; const &amp;state)</td></tr>
-<tr class="memdesc:ab5c250f874ef9014a2abcc1f3dc502c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy to host results from tracks that interacted with a detector.  <a href="../../d4/da6/_detector_steps_8cu.html#ab5c250f874ef9014a2abcc1f3dc502c9">More...</a><br /></td></tr>
+<tr class="memitem:ab5c250f874ef9014a2abcc1f3dc502c9"><td class="memItemLeft" align="right" valign="top"><a id="ab5c250f874ef9014a2abcc1f3dc502c9" name="ab5c250f874ef9014a2abcc1f3dc502c9"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:ab5c250f874ef9014a2abcc1f3dc502c9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::copy_steps&lt; MemSpace::device &gt;</b> (DetectorStepOutput *output, StepStateData&lt; Ownership::reference, MemSpace::device &gt; const &amp;state)</td></tr>
+<tr class="memdesc:ab5c250f874ef9014a2abcc1f3dc502c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy to host results from tracks that interacted with a detector. <br /></td></tr>
 <tr class="separator:ab5c250f874ef9014a2abcc1f3dc502c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ab5c250f874ef9014a2abcc1f3dc502c9" name="ab5c250f874ef9014a2abcc1f3dc502c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5c250f874ef9014a2abcc1f3dc502c9">&#9670;&#160;</a></span>copy_steps&lt; MemSpace::device &gt;()</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a6c648d5c0a1876609deeb5682be93790" name="a6c648d5c0a1876609deeb5682be93790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c648d5c0a1876609deeb5682be93790">&#9670;&#160;</a></span>DS_COPY_IF_SELECTED</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void celeritas::copy_steps&lt; MemSpace::device &gt; </td>
+          <td class="memname">#define DS_COPY_IF_SELECTED</td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../db/dfe/structceleritas_1_1_detector_step_output.html">DetectorStepOutput</a> *&#160;</td>
-          <td class="paramname"><em>output</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">FIELD</td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../dd/d0b/structceleritas_1_1_step_state_data.html">StepStateData</a>&lt; <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#aeb6446bfcf4853c1dd9248791d829148ab8af13ea9c8fe890c9979a1fa8dbde22">Ownership::reference</a>, MemSpace::device &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>state</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Copy to host results from tracks that interacted with a detector. </p>
-<dl class="section warning"><dt>Warning</dt><dd>this mutates the original, but the mutated version will still have consistent values for all tracks with valid detector IDs. </dd></dl>
-
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                                                              \</div>
+<div class="line">    {                                                               \</div>
+<div class="line">        if (!state.data.FIELD.empty())                              \</div>
+<div class="line">        {                                                           \</div>
+<div class="line">            state.scratch.FIELD[tid] = state.data.FIELD[valid_tid]; \</div>
+<div class="line">        }                                                           \</div>
+<div class="line">    } <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -94,7 +94,7 @@ Public Types</h2></td></tr>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>SPStepInterface</b> = std::shared_ptr&lt; <a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">StepInterface</a> &gt;</td></tr>
 <tr class="separator:a72ce0bafa6a6943fb39a05fb08176367"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab13018d6bd48d313394eb55b78b78d78"><td class="memItemLeft" align="right" valign="top"><a id="ab13018d6bd48d313394eb55b78b78d78" name="ab13018d6bd48d313394eb55b78b78d78"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>SPConstGeo</b> = std::shared_ptr&lt; <a class="el" href="../../d6/d3e/classceleritas_1_1_orange_params.html">GeoParams</a> const  &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>SPConstGeo</b> = std::shared_ptr&lt; <a class="el" href="../../d6/d56/classceleritas_1_1_vecgeom_params.html">GeoParams</a> const  &gt;</td></tr>
 <tr class="separator:ab13018d6bd48d313394eb55b78b78d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84fcf8833d83fffb57809968103bc7ee"><td class="memItemLeft" align="right" valign="top"><a id="a84fcf8833d83fffb57809968103bc7ee" name="a84fcf8833d83fffb57809968103bc7ee"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>VecInterface</b> = std::vector&lt; SPStepInterface &gt;</td></tr>
@@ -102,10 +102,10 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>VecInterface</b> = s
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acbebe1883e2a4cdfd1b4995175dd7f1b"><td class="memItemLeft" align="right" valign="top"><a id="acbebe1883e2a4cdfd1b4995175dd7f1b" name="acbebe1883e2a4cdfd1b4995175dd7f1b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>StepCollector</b> (VecInterface callbacks, SPConstGeo geo, <a class="el" href="../../d4/de4/classceleritas_1_1_action_registry.html">ActionRegistry</a> *action_registry)</td></tr>
-<tr class="memdesc:acbebe1883e2a4cdfd1b4995175dd7f1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with options and register pre and/or post-step actions. <br /></td></tr>
-<tr class="separator:acbebe1883e2a4cdfd1b4995175dd7f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5118f74005e814b90030e93f24e3b635"><td class="memItemLeft" align="right" valign="top"><a id="a5118f74005e814b90030e93f24e3b635" name="a5118f74005e814b90030e93f24e3b635"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>StepCollector</b> (VecInterface callbacks, SPConstGeo geo, size_type max_streams, <a class="el" href="../../d4/de4/classceleritas_1_1_action_registry.html">ActionRegistry</a> *action_registry)</td></tr>
+<tr class="memdesc:a5118f74005e814b90030e93f24e3b635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with options and register pre and/or post-step actions. <br /></td></tr>
+<tr class="separator:a5118f74005e814b90030e93f24e3b635"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac55059b66c15bec9cee4a6e2785a93cb"><td class="memItemLeft" align="right" valign="top"><a id="ac55059b66c15bec9cee4a6e2785a93cb" name="ac55059b66c15bec9cee4a6e2785a93cb"></a>
 <a class="el" href="../../d7/d26/structceleritas_1_1_step_selection.html">StepSelection</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>selection</b> () const</td></tr>
 <tr class="memdesc:ac55059b66c15bec9cee4a6e2785a93cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">See which data are being gathered. <br /></td></tr>
@@ -121,7 +121,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Gather and transfer track states at each step. </p>
 <p >This defines the interface to set up and manage a generic class for interfacing with the GPU track states at the beginning and/or end of every step.</p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000014">Todo:</a></b></dt><dd>The step collector serves two purposes: supporting "sensitive
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000013">Todo:</a></b></dt><dd>The step collector serves two purposes: supporting "sensitive
 detectors" (mapping volume IDs to detector IDs and ignoring unmapped volumes) and supporting unfiltered output for "MC truth" . Right now only one or the other can be used, not both. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac157d8df477dc1d9e5ca6b8ce2b4df4d" name="ac157d8df477dc1d9e5ca6b8ce2b4df4d"></a>

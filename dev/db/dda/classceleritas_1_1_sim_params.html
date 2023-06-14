@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -80,7 +80,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="../../d5/dab/classceleritas_1_1_sim_params-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">celeritas::SimParams Class Reference</div></div>
+  <div class="headertitle"><div class="title">celeritas::SimParams Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -88,6 +88,15 @@ $(function() {
  <a href="../../db/dda/classceleritas_1_1_sim_params.html#details">More...</a></p>
 
 <p><code>#include &lt;SimParams.hh&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for celeritas::SimParams:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../db/dda/classceleritas_1_1_sim_params.png" usemap="#celeritas::SimParams_map" alt=""/>
+  <map id="celeritas::SimParams_map" name="celeritas::SimParams_map">
+<area href="../../d5/d03/classceleritas_1_1_params_data_interface.html" alt="celeritas::ParamsDataInterface&lt; SimParamsData &gt;" shape="rect" coords="0,0,296,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -101,12 +110,13 @@ Public Types</h2></td></tr>
 <tr class="memitem:a75653e52b97983d2b3aa0fa64127d432"><td class="memItemLeft" align="right" valign="top"><a id="a75653e52b97983d2b3aa0fa64127d432" name="a75653e52b97983d2b3aa0fa64127d432"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>SPConstParticles</b> = std::shared_ptr&lt; <a class="el" href="../../d8/d0b/classceleritas_1_1_particle_params.html">ParticleParams</a> const  &gt;</td></tr>
 <tr class="separator:a75653e52b97983d2b3aa0fa64127d432"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bdd79c722e3f194a6892892f15d7b66"><td class="memItemLeft" align="right" valign="top"><a id="a7bdd79c722e3f194a6892892f15d7b66" name="a7bdd79c722e3f194a6892892f15d7b66"></a>
+<tr class="inherit_header pub_types_classceleritas_1_1_params_data_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classceleritas_1_1_params_data_interface')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html">celeritas::ParamsDataInterface&lt; SimParamsData &gt;</a></td></tr>
+<tr class="memitem:a6d53ec9725737d47ec03998d63d57ef7 inherit pub_types_classceleritas_1_1_params_data_interface"><td class="memItemLeft" align="right" valign="top"><a id="a6d53ec9725737d47ec03998d63d57ef7" name="a6d53ec9725737d47ec03998d63d57ef7"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>HostRef</b> = <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#a68689dbf9eb486a67222e2fe2b496e71">HostCRef</a>&lt; <a class="el" href="../../d2/deb/structceleritas_1_1_sim_params_data.html">SimParamsData</a> &gt;</td></tr>
-<tr class="separator:a7bdd79c722e3f194a6892892f15d7b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34ae474c05cfc8610f9321dfaa8ebe14"><td class="memItemLeft" align="right" valign="top"><a id="a34ae474c05cfc8610f9321dfaa8ebe14" name="a34ae474c05cfc8610f9321dfaa8ebe14"></a>
+<tr class="separator:a6d53ec9725737d47ec03998d63d57ef7 inherit pub_types_classceleritas_1_1_params_data_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab70ff56cd94f1d7a62917974ccfceeba inherit pub_types_classceleritas_1_1_params_data_interface"><td class="memItemLeft" align="right" valign="top"><a id="ab70ff56cd94f1d7a62917974ccfceeba" name="ab70ff56cd94f1d7a62917974ccfceeba"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>DeviceRef</b> = <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac406c12413f5d3ee1538ef452c821ec2">DeviceCRef</a>&lt; <a class="el" href="../../d2/deb/structceleritas_1_1_sim_params_data.html">SimParamsData</a> &gt;</td></tr>
-<tr class="separator:a34ae474c05cfc8610f9321dfaa8ebe14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ab70ff56cd94f1d7a62917974ccfceeba inherit pub_types_classceleritas_1_1_params_data_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -114,14 +124,26 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>SimParams</b> (<a class="el" href="../../d4/d22/structceleritas_1_1_sim_params_1_1_input.html">Input</a> const &amp;)</td></tr>
 <tr class="memdesc:af5e339fa4045d19ce57f89c8e210b643"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with simulation options. <br /></td></tr>
 <tr class="separator:af5e339fa4045d19ce57f89c8e210b643"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef1981a8b4b05c188cd890e69a37a0f9"><td class="memItemLeft" align="right" valign="top"><a id="aef1981a8b4b05c188cd890e69a37a0f9" name="aef1981a8b4b05c188cd890e69a37a0f9"></a>
-HostRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>host_ref</b> () const</td></tr>
-<tr class="memdesc:aef1981a8b4b05c188cd890e69a37a0f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access data on host. <br /></td></tr>
-<tr class="separator:aef1981a8b4b05c188cd890e69a37a0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a022b25a730c24ddc278f298a13de2904"><td class="memItemLeft" align="right" valign="top"><a id="a022b25a730c24ddc278f298a13de2904" name="a022b25a730c24ddc278f298a13de2904"></a>
-DeviceRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>device_ref</b> () const</td></tr>
-<tr class="memdesc:a022b25a730c24ddc278f298a13de2904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access data on device. <br /></td></tr>
-<tr class="separator:a022b25a730c24ddc278f298a13de2904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab001b514a4d6bd8e5ea57b80c99d4121"><td class="memItemLeft" align="right" valign="top">HostRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classceleritas_1_1_sim_params.html#ab001b514a4d6bd8e5ea57b80c99d4121">host_ref</a> () const final</td></tr>
+<tr class="memdesc:ab001b514a4d6bd8e5ea57b80c99d4121"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access data on host.  <a href="../../db/dda/classceleritas_1_1_sim_params.html#ab001b514a4d6bd8e5ea57b80c99d4121">More...</a><br /></td></tr>
+<tr class="separator:ab001b514a4d6bd8e5ea57b80c99d4121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2345f9c887ec655a3b4b6e8279760feb"><td class="memItemLeft" align="right" valign="top">DeviceRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classceleritas_1_1_sim_params.html#a2345f9c887ec655a3b4b6e8279760feb">device_ref</a> () const final</td></tr>
+<tr class="memdesc:a2345f9c887ec655a3b4b6e8279760feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access data on device.  <a href="../../db/dda/classceleritas_1_1_sim_params.html#a2345f9c887ec655a3b4b6e8279760feb">More...</a><br /></td></tr>
+<tr class="separator:a2345f9c887ec655a3b4b6e8279760feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classceleritas_1_1_params_data_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classceleritas_1_1_params_data_interface')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html">celeritas::ParamsDataInterface&lt; SimParamsData &gt;</a></td></tr>
+<tr class="memitem:adf6901a7db942b30b9d58ff3b8fcf5a7 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memItemLeft" align="right" valign="top">virtual HostRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html#adf6901a7db942b30b9d58ff3b8fcf5a7">host_ref</a> () const=0</td></tr>
+<tr class="memdesc:adf6901a7db942b30b9d58ff3b8fcf5a7 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference CPU geometry data.  <a href="../../d5/d03/classceleritas_1_1_params_data_interface.html#adf6901a7db942b30b9d58ff3b8fcf5a7">More...</a><br /></td></tr>
+<tr class="separator:adf6901a7db942b30b9d58ff3b8fcf5a7 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab315abf0954c0a342b6659efa9b87a08 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memItemLeft" align="right" valign="top">virtual DeviceRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html#ab315abf0954c0a342b6659efa9b87a08">device_ref</a> () const=0</td></tr>
+<tr class="memdesc:ab315abf0954c0a342b6659efa9b87a08 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference managed GPU geometry data.  <a href="../../d5/d03/classceleritas_1_1_params_data_interface.html#ab315abf0954c0a342b6659efa9b87a08">More...</a><br /></td></tr>
+<tr class="separator:ab315abf0954c0a342b6659efa9b87a08 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad368c8b6a395a75dcf391b237e84fc37 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memItemLeft" align="right" valign="top"><a id="ad368c8b6a395a75dcf391b237e84fc37" name="ad368c8b6a395a75dcf391b237e84fc37"></a>
+<a class="el" href="../../d2/deb/structceleritas_1_1_sim_params_data.html">SimParamsData</a>&lt; Ownership::const_reference, M &gt; const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>ref</b> () const</td></tr>
+<tr class="separator:ad368c8b6a395a75dcf391b237e84fc37 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad368c8b6a395a75dcf391b237e84fc37 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memItemLeft" align="right" valign="top"><a id="ad368c8b6a395a75dcf391b237e84fc37" name="ad368c8b6a395a75dcf391b237e84fc37"></a>
+<a class="el" href="../../d2/deb/structceleritas_1_1_sim_params_data.html">SimParamsData</a>&lt; Ownership::const_reference, M &gt; const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>ref</b> () const</td></tr>
+<tr class="memdesc:ad368c8b6a395a75dcf391b237e84fc37 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatch a "ref" call to host or device data. <br /></td></tr>
+<tr class="separator:ad368c8b6a395a75dcf391b237e84fc37 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -132,7 +154,66 @@ static std::shared_ptr&lt; <a class="el" href="../../db/dda/classceleritas_1_1_s
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Manage persistent simulation data. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2345f9c887ec655a3b4b6e8279760feb" name="a2345f9c887ec655a3b4b6e8279760feb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2345f9c887ec655a3b4b6e8279760feb">&#9670;&#160;</a></span>device_ref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DeviceRef const  &amp; celeritas::SimParams::device_ref </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access data on device. </p>
+
+<p>Implements <a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html#ab315abf0954c0a342b6659efa9b87a08">celeritas::ParamsDataInterface&lt; SimParamsData &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ab001b514a4d6bd8e5ea57b80c99d4121" name="ab001b514a4d6bd8e5ea57b80c99d4121"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab001b514a4d6bd8e5ea57b80c99d4121">&#9670;&#160;</a></span>host_ref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HostRef const  &amp; celeritas::SimParams::host_ref </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access data on host. </p>
+
+<p>Implements <a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html#adf6901a7db942b30b9d58ff3b8fcf5a7">celeritas::ParamsDataInterface&lt; SimParamsData &gt;</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="../../de/db4/_sim_params_8hh.html">SimParams.hh</a></li>
 <li><a class="el" href="../../d7/d78/_sim_params_8cc.html">SimParams.cc</a></li>
 </ul>

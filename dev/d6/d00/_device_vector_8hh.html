@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -85,6 +85,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="../../dd/d78/_initialized_value_8hh.html">corecel/cont/InitializedValue.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../df/dbd/_span_8hh.html">corecel/cont/Span.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d8/dbc/_device_allocation_8hh.html">DeviceAllocation.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/d99/_observer_ptr_8hh.html">ObserverPtr.hh</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -108,6 +109,16 @@ template&lt;class T &gt; </td></tr>
 <tr class="memitem:afa9f03380736b39d232aab620278a878"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> Span&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::make_span</b> (DeviceVector&lt; T &gt; &amp;dv)</td></tr>
 <tr class="memdesc:afa9f03380736b39d232aab620278a878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prevent accidental construction of <a class="el" href="../../dd/d15/classceleritas_1_1_span.html" title="Modified backport of C++20 span.">Span</a> from a device vector. <br /></td></tr>
 <tr class="separator:afa9f03380736b39d232aab620278a878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba6c64e9b28b40c52997db1ef9719066"><td class="memTemplParams" colspan="2"><a id="aba6c64e9b28b40c52997db1ef9719066" name="aba6c64e9b28b40c52997db1ef9719066"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:aba6c64e9b28b40c52997db1ef9719066"><td class="memTemplItemLeft" align="right" valign="top">ObserverPtr&lt; T, MemSpace::device &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::make_observer</b> (DeviceVector&lt; T &gt; &amp;vec) noexcept</td></tr>
+<tr class="memdesc:aba6c64e9b28b40c52997db1ef9719066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an observer pointer from a device vector. <br /></td></tr>
+<tr class="separator:aba6c64e9b28b40c52997db1ef9719066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae68b9ab8fa6782f5439242e578a8fb21"><td class="memTemplParams" colspan="2"><a id="ae68b9ab8fa6782f5439242e578a8fb21" name="ae68b9ab8fa6782f5439242e578a8fb21"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:ae68b9ab8fa6782f5439242e578a8fb21"><td class="memTemplItemLeft" align="right" valign="top">ObserverPtr&lt; T const, MemSpace::device &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::make_observer</b> (DeviceVector&lt; T &gt; const &amp;vec) noexcept</td></tr>
+<tr class="memdesc:ae68b9ab8fa6782f5439242e578a8fb21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an observer pointer from a pointer in the native memspace. <br /></td></tr>
+<tr class="separator:ae68b9ab8fa6782f5439242e578a8fb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a8aae7eefd3176883e8136c33bb342c0d" name="a8aae7eefd3176883e8136c33bb342c0d"></a>

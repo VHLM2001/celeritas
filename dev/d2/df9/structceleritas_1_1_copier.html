@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -78,6 +78,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="../../d9/dbf/structceleritas_1_1_copier-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">celeritas::Copier&lt; T, M &gt; Struct Template Reference</div></div>
 </div><!--header-->
@@ -90,23 +91,31 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a87fcf3f10f30919ee648aa8cd6904d6d"><td class="memItemLeft" align="right" valign="top"><a id="a87fcf3f10f30919ee648aa8cd6904d6d" name="a87fcf3f10f30919ee648aa8cd6904d6d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> dstmem, <a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; T &gt; dst) const</td></tr>
-<tr class="memdesc:a87fcf3f10f30919ee648aa8cd6904d6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy data to the given destination and memory space. <br /></td></tr>
-<tr class="separator:a87fcf3f10f30919ee648aa8cd6904d6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab370161b367cfc4d7c060e66a8eed3ad"><td class="memItemLeft" align="right" valign="top"><a id="ab370161b367cfc4d7c060e66a8eed3ad" name="ab370161b367cfc4d7c060e66a8eed3ad"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> srcmem, <a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; T const &gt; src) const</td></tr>
+<tr class="memdesc:ab370161b367cfc4d7c060e66a8eed3ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy data from the given source and memory space. <br /></td></tr>
+<tr class="separator:ab370161b367cfc4d7c060e66a8eed3ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a9809a9d86636b7295553d4965d6afa28"><td class="memItemLeft" align="right" valign="top"><a id="a9809a9d86636b7295553d4965d6afa28" name="a9809a9d86636b7295553d4965d6afa28"></a>
-<a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; T const  &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>src</b></td></tr>
-<tr class="separator:a9809a9d86636b7295553d4965d6afa28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b047096b44d18ee6d79e49a29f52fbd"><td class="memItemLeft" align="right" valign="top"><a id="a2b047096b44d18ee6d79e49a29f52fbd" name="a2b047096b44d18ee6d79e49a29f52fbd"></a>
+<a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>dst</b></td></tr>
+<tr class="separator:a2b047096b44d18ee6d79e49a29f52fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a498f54e1dc0370f741536b8c867cd50b"><td class="memItemLeft" align="right" valign="top"><a id="a498f54e1dc0370f741536b8c867cd50b" name="a498f54e1dc0370f741536b8c867cd50b"></a>
+static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>dstmem</b> = M</td></tr>
+<tr class="separator:a498f54e1dc0370f741536b8c867cd50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T, <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> M&gt;<br />
 struct celeritas::Copier&lt; T, M &gt;</div><p >Copy spans of data. </p>
-<p >Example of copying data from host to device: </p><div class="fragment"><div class="line"><a class="code hl_struct" href="../../d2/df9/structceleritas_1_1_copier.html">Copier&lt;int, MemSpace::host&gt;</a> copy_from_host_to{host_ints};</div>
-<div class="line">copy_from_host_to(MemSpace::device, device_ints);</div>
-<div class="ttc" id="astructceleritas_1_1_copier_html"><div class="ttname"><a href="../../d2/df9/structceleritas_1_1_copier.html">celeritas::Copier</a></div><div class="ttdoc">Copy spans of data.</div><div class="ttdef"><b>Definition:</b> Copier.hh:31</div></div>
+<p >The destination (which can be a reusable buffer) is the constructor argument, and the source of the data to copy is the function argument.</p>
+<p >Example of copying data from device to host: </p><div class="fragment"><div class="line"><a class="code hl_struct" href="../../d2/df9/structceleritas_1_1_copier.html">Copier&lt;int, MemSpace::host&gt;</a> <a class="code hl_function" href="../../d9/de8/_collection_algorithms_8hh.html#ae34cd2504b2fb23abe84b7ab24d1e388">copy_to_host</a>{host_ints};</div>
+<div class="line"><a class="code hl_function" href="../../d9/de8/_collection_algorithms_8hh.html#ae34cd2504b2fb23abe84b7ab24d1e388">copy_to_host</a>(MemSpace::device, device_ints);</div>
+<div class="ttc" id="a_collection_algorithms_8hh_html_ae34cd2504b2fb23abe84b7ab24d1e388"><div class="ttname"><a href="../../d9/de8/_collection_algorithms_8hh.html#ae34cd2504b2fb23abe84b7ab24d1e388">celeritas::copy_to_host</a></div><div class="ttdeci">void copy_to_host(Collection&lt; T, W, M, I &gt; const &amp;src, Span&lt; T, E &gt; dst)</div><div class="ttdoc">Copy from the given collection to host.</div><div class="ttdef"><b>Definition:</b> CollectionAlgorithms.hh:35</div></div>
+<div class="ttc" id="astructceleritas_1_1_copier_html"><div class="ttname"><a href="../../d2/df9/structceleritas_1_1_copier.html">celeritas::Copier</a></div><div class="ttdoc">Copy spans of data.</div><div class="ttdef"><b>Definition:</b> Copier.hh:34</div></div>
 </div><!-- fragment --> </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="../../d7/d40/_copier_8hh.html">Copier.hh</a></li>
 </ul>

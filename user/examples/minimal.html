@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Minimal Celeritas usage &mdash; Celeritas v0.3.0-dev.62+f351e714 documentation</title>
+  <title>Minimal Celeritas usage &mdash; Celeritas 0.3.0-rc.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Minimal Geant4 integration" href="geant4-minimal.html" />
+    <link rel="next" title="Minimal Geant4 integration" href="geant4.html" />
     <link rel="prev" title="Examples" href="../examples.html" /> 
 </head>
 
@@ -29,15 +29,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Celeritas
-            <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Celeritas
+              <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-dev
+                0.3.0-rc.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -46,17 +50,17 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Using Celeritas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Library API</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Minimal Celeritas usage</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#cmake-infrastructure">CMake infrastructure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#main-executable">Main executable</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="geant4-minimal.html">Minimal Geant4 integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geant4-full.html">Geant4 integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geant4.html">Minimal Geant4 integration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
@@ -83,9 +87,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../examples.html">Examples</a> &raquo;</li>
-      <li>Minimal Celeritas usage</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../examples.html">Examples</a></li>
+      <li class="breadcrumb-item active">Minimal Celeritas usage</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/examples/minimal.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -185,7 +189,7 @@ support CUDA RDC, which is required by VecGeom.</p>
 <span class="w">               </span><span class="o">:</span><span class="w"> </span><span class="n">MpiCommunicator</span><span class="o">::</span><span class="n">comm_world</span><span class="p">());</span><span class="w"></span>
 
 <span class="w">    </span><span class="c1">// Initialize GPU</span>
-<span class="w">    </span><span class="n">celeritas</span><span class="o">::</span><span class="n">activate_device</span><span class="p">(</span><span class="n">celeritas</span><span class="o">::</span><span class="n">make_device</span><span class="p">(</span><span class="n">comm</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">celeritas</span><span class="o">::</span><span class="n">activate_device</span><span class="p">(</span><span class="n">comm</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="c1">// Create particle definitions (copies to GPU if available)</span>
 <span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">particles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_particles</span><span class="p">();</span><span class="w"></span>
@@ -213,7 +217,7 @@ support CUDA RDC, which is required by VecGeom.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../examples.html" class="btn btn-neutral float-left" title="Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="geant4-minimal.html" class="btn btn-neutral float-right" title="Minimal Geant4 integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="geant4.html" class="btn btn-neutral float-right" title="Minimal Geant4 integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

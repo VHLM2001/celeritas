@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -97,12 +97,18 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Type aliases</div></td></tr>
+<tr class="memitem:a827a8dd5f590eaf70d46935c2f66ec54"><td class="memItemLeft" align="right" valign="top"><a id="a827a8dd5f590eaf70d46935c2f66ec54" name="a827a8dd5f590eaf70d46935c2f66ec54"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>SPBegin</b> = std::shared_ptr&lt; <a class="el" href="../../d0/d19/classceleritas_1_1_begin_run_action_interface.html">BeginRunActionInterface</a> &gt;</td></tr>
+<tr class="separator:a827a8dd5f590eaf70d46935c2f66ec54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7309f5a7c04e75a01741aab94c9862dd"><td class="memItemLeft" align="right" valign="top"><a id="a7309f5a7c04e75a01741aab94c9862dd" name="a7309f5a7c04e75a01741aab94c9862dd"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>SPConstExplicit</b> = std::shared_ptr&lt; <a class="el" href="../../d8/d6b/classceleritas_1_1_explicit_action_interface.html">ExplicitActionInterface</a> const  &gt;</td></tr>
 <tr class="separator:a7309f5a7c04e75a01741aab94c9862dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1e99eb9d1e9b8e493f2c994d2d58cce"><td class="memItemLeft" align="right" valign="top"><a id="ac1e99eb9d1e9b8e493f2c994d2d58cce" name="ac1e99eb9d1e9b8e493f2c994d2d58cce"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>VecAction</b> = std::vector&lt; SPConstExplicit &gt;</td></tr>
-<tr class="separator:ac1e99eb9d1e9b8e493f2c994d2d58cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa452d580062b48b78ffc3bc45aa267e9"><td class="memItemLeft" align="right" valign="top"><a id="aa452d580062b48b78ffc3bc45aa267e9" name="aa452d580062b48b78ffc3bc45aa267e9"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>VecBeginAction</b> = std::vector&lt; SPBegin &gt;</td></tr>
+<tr class="separator:aa452d580062b48b78ffc3bc45aa267e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a571fd80b978f573cdb9498bfb716d8f4"><td class="memItemLeft" align="right" valign="top"><a id="a571fd80b978f573cdb9498bfb716d8f4" name="a571fd80b978f573cdb9498bfb716d8f4"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>VecExplicitAction</b> = std::vector&lt; SPConstExplicit &gt;</td></tr>
+<tr class="separator:a571fd80b978f573cdb9498bfb716d8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acad119ac06fd32432e16166d2294c7ec"><td class="memItemLeft" align="right" valign="top"><a id="acad119ac06fd32432e16166d2294c7ec" name="acad119ac06fd32432e16166d2294c7ec"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>VecDouble</b> = std::vector&lt; double &gt;</td></tr>
 <tr class="separator:acad119ac06fd32432e16166d2294c7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,22 +119,28 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ActionSequence</b> (<a class="el" href="../../d4/de4/classceleritas_1_1_action_registry.html">ActionRegistry</a> const &amp;, <a class="el" href="../../db/d01/structceleritas_1_1detail_1_1_action_sequence_1_1_options.html">Options</a> options)</td></tr>
 <tr class="memdesc:ad226f7c6238505e2e13a1b3424e2e91b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from an action registry and sequence options. <br /></td></tr>
 <tr class="separator:ad226f7c6238505e2e13a1b3424e2e91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaf3430455749bf47a9d6cdd2fe16e59"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> M&gt; </td></tr>
-<tr class="memitem:abaf3430455749bf47a9d6cdd2fe16e59"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d40/classceleritas_1_1detail_1_1_action_sequence.html#abaf3430455749bf47a9d6cdd2fe16e59">execute</a> (<a class="el" href="../../dd/da8/structceleritas_1_1_core_ref.html">CoreRef</a>&lt; M &gt; const &amp;data)</td></tr>
-<tr class="memdesc:abaf3430455749bf47a9d6cdd2fe16e59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the given action ID with host or device data.  <a href="../../d3/d40/classceleritas_1_1detail_1_1_action_sequence.html#abaf3430455749bf47a9d6cdd2fe16e59">More...</a><br /></td></tr>
-<tr class="separator:abaf3430455749bf47a9d6cdd2fe16e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52f6045162265ee607287db494a9a99b"><td class="memItemLeft" align="right" valign="top"><a id="a52f6045162265ee607287db494a9a99b" name="a52f6045162265ee607287db494a9a99b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>operator bool</b> () const</td></tr>
-<tr class="memdesc:a52f6045162265ee607287db494a9a99b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the sequence is assigned/valid. <br /></td></tr>
-<tr class="separator:a52f6045162265ee607287db494a9a99b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a062932c189ddf0fea6584bc8fd296443"><td class="memTemplParams" colspan="2"><a id="a062932c189ddf0fea6584bc8fd296443" name="a062932c189ddf0fea6584bc8fd296443"></a>
+template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> M&gt; </td></tr>
+<tr class="memitem:a062932c189ddf0fea6584bc8fd296443"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>begin_run</b> (<a class="el" href="../../de/d76/classceleritas_1_1_core_params.html">CoreParams</a> const &amp;params, <a class="el" href="../../d0/dee/classceleritas_1_1_core_state.html">CoreState</a>&lt; M &gt; &amp;state)</td></tr>
+<tr class="memdesc:a062932c189ddf0fea6584bc8fd296443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize actions and states. <br /></td></tr>
+<tr class="separator:a062932c189ddf0fea6584bc8fd296443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6544089a640610fc18be559751a90b31"><td class="memTemplParams" colspan="2"><a id="a6544089a640610fc18be559751a90b31" name="a6544089a640610fc18be559751a90b31"></a>
+template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> M&gt; </td></tr>
+<tr class="memitem:a6544089a640610fc18be559751a90b31"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>execute</b> (<a class="el" href="../../de/d76/classceleritas_1_1_core_params.html">CoreParams</a> const &amp;params, <a class="el" href="../../d0/dee/classceleritas_1_1_core_state.html">CoreState</a>&lt; M &gt; &amp;state)</td></tr>
+<tr class="memdesc:a6544089a640610fc18be559751a90b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call all explicit actions with host or device data. <br /></td></tr>
+<tr class="separator:a6544089a640610fc18be559751a90b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4f096135b8c5f114d7b078c93239091"><td class="memItemLeft" align="right" valign="top"><a id="ae4f096135b8c5f114d7b078c93239091" name="ae4f096135b8c5f114d7b078c93239091"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>sync</b> () const</td></tr>
 <tr class="memdesc:ae4f096135b8c5f114d7b078c93239091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether synchronization is taking place. <br /></td></tr>
 <tr class="separator:ae4f096135b8c5f114d7b078c93239091"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adad82290178a9dbc7f36a89e228590b7"><td class="memItemLeft" align="right" valign="top"><a id="adad82290178a9dbc7f36a89e228590b7" name="adad82290178a9dbc7f36a89e228590b7"></a>
-VecAction const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>actions</b> () const</td></tr>
-<tr class="memdesc:adad82290178a9dbc7f36a89e228590b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ordered vector of actions in the sequence. <br /></td></tr>
-<tr class="separator:adad82290178a9dbc7f36a89e228590b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bbf760c46d6544cb979df7dac80addc"><td class="memItemLeft" align="right" valign="top"><a id="a9bbf760c46d6544cb979df7dac80addc" name="a9bbf760c46d6544cb979df7dac80addc"></a>
+VecBeginAction const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>begin_run_actions</b> () const</td></tr>
+<tr class="memdesc:a9bbf760c46d6544cb979df7dac80addc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the set of beginning-of-run actions. <br /></td></tr>
+<tr class="separator:a9bbf760c46d6544cb979df7dac80addc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a40bf7a9caa9daa698291e306279eec"><td class="memItemLeft" align="right" valign="top"><a id="a3a40bf7a9caa9daa698291e306279eec" name="a3a40bf7a9caa9daa698291e306279eec"></a>
+VecExplicitAction const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>actions</b> () const</td></tr>
+<tr class="memdesc:a3a40bf7a9caa9daa698291e306279eec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ordered vector of actions in the sequence. <br /></td></tr>
+<tr class="separator:a3a40bf7a9caa9daa698291e306279eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5f77253b86e8820522d4e39adcc2c7f"><td class="memItemLeft" align="right" valign="top"><a id="ac5f77253b86e8820522d4e39adcc2c7f" name="ac5f77253b86e8820522d4e39adcc2c7f"></a>
 VecDouble const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>accum_time</b> () const</td></tr>
 <tr class="memdesc:ac5f77253b86e8820522d4e39adcc2c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the corresponding accumulated time, if 'sync' or host called. <br /></td></tr>
@@ -136,31 +148,7 @@ VecDouble const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>accu
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Sequence of explicit actions to invoke as part of a single step. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="abaf3430455749bf47a9d6cdd2fe16e59" name="abaf3430455749bf47a9d6cdd2fe16e59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abaf3430455749bf47a9d6cdd2fe16e59">&#9670;&#160;</a></span>execute()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> M&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">template void celeritas::detail::ActionSequence::execute </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../dd/da8/structceleritas_1_1_core_ref.html">CoreRef</a>&lt; M &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Call the given action ID with host or device data. </p>
-<p >The given action ID <em>must</em> be an explicit action. </p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="../../da/dde/_action_sequence_8hh.html">ActionSequence.hh</a></li>
 <li><a class="el" href="../../da/ddc/_action_sequence_8cc.html">ActionSequence.cc</a></li>
 </ul>

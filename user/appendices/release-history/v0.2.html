@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Version 0.2.1 &mdash; Celeritas v0.3.0-dev.62+f351e714 documentation</title>
+  <title>Version 0.2.2 &mdash; Celeritas 0.3.0-rc.1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Version 0.1.5" href="v0.1.html" />
-    <link rel="prev" title="Release History" href="../release-history.html" /> 
+    <link rel="prev" title="Version 0.3.0" href="v0.3.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -29,15 +29,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> Celeritas
-            <img src="../../_static/celeritas-square.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Celeritas
+              <img src="../../_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-dev
+                0.3.0-rc.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -46,9 +50,10 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Using Celeritas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Library API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../acknowledgments.html">Acknowledgments</a></li>
@@ -56,18 +61,25 @@
 <p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../release-history.html">Release History</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Version 0.2.1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#new-features">New features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.3.html">Version 0.3.0</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Version 0.2.2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#bug-fixes">Bug fixes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#documentation-improvements">Documentation improvements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#minor-internal-changes">Minor internal changes</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-2-1">Version 0.2.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#new-features">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Documentation improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Minor internal changes</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#version-0-2-0">Version 0.2.0</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">New features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Bug fixes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Documentation improvements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Minor internal changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Documentation improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Minor internal changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="v0.1.html">Version 0.1.5</a></li>
@@ -96,9 +108,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../release-history.html">Release History</a> &raquo;</li>
-      <li>Version 0.2.1</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../release-history.html">Release History</a></li>
+      <li class="breadcrumb-item active">Version 0.2.2</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/appendices/release-history/v0.2.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -108,7 +120,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="version-0-2-1">
+  <section id="version-0-2-2">
+<span id="release-v0-2-2"></span><h1>Version 0.2.2<a class="headerlink" href="#version-0-2-2" title="Permalink to this heading"></a></h1>
+<p><em>Released 2023/05/16</em></p>
+<p>Version 0.2.2 will be the last release in the v0.2 series and includes
+a few minor bug fixes. Additional fixes on the v0.3 develop branch require
+enhancements specific to the new code base, so those were not backported.</p>
+<section id="bug-fixes">
+<h2>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Fix hit mapping when using GDML geometry with pointers <em>(&#64;sethrj, #672)</em></p></li>
+<li><p>Fail fast instead of giving wrong answers for multithreading <em>(&#64;sethrj, #691)</em></p></li>
+<li><p>Fix a few edge cases in field propagation <em>(&#64;amandalund, #700)</em></p></li>
+</ul>
+<p>Reviewers: &#64;stognini <em>(1)</em>, &#64;amandalund <em>(1)</em>, &#64;sethrj <em>(1)</em></p>
+</section>
+<section id="documentation-improvements">
+<h2>Documentation improvements<a class="headerlink" href="#documentation-improvements" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Reenable and patch up HIP tests <em>(&#64;sethrj, #711)</em></p></li>
+</ul>
+<p>Reviewers: &#64;amandalund <em>(1)</em></p>
+</section>
+<section id="minor-internal-changes">
+<h2>Minor internal changes<a class="headerlink" href="#minor-internal-changes" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Update CI VecGeom to 1.2.2 <em>(&#64;sethrj, #682)</em></p></li>
+</ul>
+<p>Reviewers: &#64;pcanal <em>(1)</em></p>
+<p><strong>Full Changelog</strong>: <a class="reference external" href="https://github.com/celeritas-project/celeritas/compare/v0.2.1...v0.2.2">https://github.com/celeritas-project/celeritas/compare/v0.2.1…v0.2.2</a></p>
+</section>
+</section>
+<section id="version-0-2-1">
 <span id="release-v0-2-1"></span><h1>Version 0.2.1<a class="headerlink" href="#version-0-2-1" title="Permalink to this heading"></a></h1>
 <p><em>Released 2023/02/24</em></p>
 <p>Version 0.2.1 corrects several major tracking and physics bugs
@@ -139,8 +182,8 @@ miscalculation of the step length when slowing down near 10 MeV.</p></li>
 </ul>
 <p>Reviewers: &#64;amandalund <em>(2)</em>, &#64;pcanal <em>(1)</em>, &#64;sethrj <em>(1)</em></p>
 </section>
-<section id="bug-fixes">
-<h2>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this heading"></a></h2>
+<section id="id1">
+<h2>Bug fixes<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Allow invalid volume IDs in ROOT MC truth output <em>(&#64;amandalund, #603)</em></p></li>
 <li><p>Fix missing Geant4 environment in unit test <em>(&#64;drbenmorgan, #602)</em></p></li>
@@ -159,8 +202,8 @@ miscalculation of the step length when slowing down near 10 MeV.</p></li>
 </ul>
 <p>Reviewers: &#64;sethrj <em>(6)</em>, &#64;whokion <em>(4)</em>, &#64;amandalund <em>(3)</em>, &#64;stognini <em>(2)</em>, &#64;elliottbiondo <em>(1)</em>, &#64;mrguilima <em>(1)</em></p>
 </section>
-<section id="documentation-improvements">
-<h2>Documentation improvements<a class="headerlink" href="#documentation-improvements" title="Permalink to this heading"></a></h2>
+<section id="id2">
+<h2>Documentation improvements<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Add new examples and flesh out user documentation <em>(&#64;sethrj, #605)</em></p></li>
 <li><p>Minor documentation updates <em>(&#64;sethrj, #622)</em></p></li>
@@ -170,8 +213,8 @@ miscalculation of the step length when slowing down near 10 MeV.</p></li>
 </ul>
 <p>Reviewers: &#64;amandalund <em>(3)</em>, &#64;whokion <em>(1)</em>, &#64;sethrj <em>(1)</em></p>
 </section>
-<section id="minor-internal-changes">
-<h2>Minor internal changes<a class="headerlink" href="#minor-internal-changes" title="Permalink to this heading"></a></h2>
+<section id="id3">
+<h2>Minor internal changes<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Remove MSC data from core physics class <em>(&#64;sethrj, #604)</em></p></li>
 <li><p>Update crusher environment to use AMD LLVM compilers <em>(&#64;sethrj, #609)</em></p></li>
@@ -190,8 +233,8 @@ miscalculation of the step length when slowing down near 10 MeV.</p></li>
 using the Acceleritas interface library. It features new ROOT output capabilities
 including MC truth output, a set of high-level API classes for integrating
 into existing Geant4 toolkit-based apps, and better support for multithreaded use.</p>
-<section id="id1">
-<h2>New features<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<section id="id4">
+<h2>New features<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Export SB, Livermore PE, and atomic relaxation data to ROOT file <em>(&#64;stognini, #481)</em></p></li>
 <li><p>Refactor ORANGE input to be more extensible <em>(&#64;sethrj, #510)</em></p></li>
@@ -229,8 +272,8 @@ into existing Geant4 toolkit-based apps, and better support for multithreaded us
 </ul>
 <p>Reviewers: &#64;sethrj <em>(13)</em>, &#64;amandalund <em>(10)</em>, &#64;stognini <em>(2)</em>, &#64;paulromano <em>(2)</em>, &#64;whokion <em>(2)</em>, &#64;tmdelellis <em>(1)</em>, &#64;pcanal <em>(1)</em>, &#64;elliottbiondo <em>(1)</em>, &#64;mrguilima <em>(1)</em></p>
 </section>
-<section id="id2">
-<h2>Bug fixes<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<section id="id5">
+<h2>Bug fixes<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Fix infrastructure and build issues for summit <em>(&#64;sethrj, #509)</em></p></li>
 <li><p>Fix indexing of imported micro xs <em>(&#64;amandalund, #512)</em></p></li>
@@ -249,8 +292,8 @@ into existing Geant4 toolkit-based apps, and better support for multithreaded us
 </ul>
 <p>Reviewers: &#64;amandalund <em>(6)</em>, &#64;pcanal <em>(4)</em>, &#64;sethrj <em>(2)</em>, &#64;whokion <em>(2)</em>, &#64;elliottbiondo <em>(1)</em>, &#64;tmdelellis <em>(1)</em>, &#64;paulromano <em>(1)</em></p>
 </section>
-<section id="id3">
-<h2>Documentation improvements<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<section id="id6">
+<h2>Documentation improvements<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Add release procedure, roles, and 0.1.x release notes <em>(&#64;sethrj, #519)</em></p></li>
 <li><p>Add DOE DOI and improve PR process documentation <em>(&#64;sethrj, #533)</em></p></li>
@@ -261,8 +304,8 @@ into existing Geant4 toolkit-based apps, and better support for multithreaded us
 </ul>
 <p>Reviewers: &#64;paulromano <em>(2)</em>, &#64;amandalund <em>(2)</em>, &#64;tmdelellis <em>(1)</em>, &#64;pcanal <em>(1)</em>, &#64;sethrj <em>(1)</em>, &#64;whokion <em>(1)</em></p>
 </section>
-<section id="id4">
-<h2>Minor internal changes<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<section id="id7">
+<h2>Minor internal changes<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Add granularity to Geant setup <em>(&#64;sethrj, #485)</em></p></li>
 <li><p>Format code base (clang-format version 14.0.6) <em>(&#64;sethrj, #506)</em></p></li>
@@ -289,7 +332,7 @@ into existing Geant4 toolkit-based apps, and better support for multithreaded us
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../release-history.html" class="btn btn-neutral float-left" title="Release History" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="v0.3.html" class="btn btn-neutral float-left" title="Version 0.3.0" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="v0.1.html" class="btn btn-neutral float-right" title="Version 0.1.5" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -92,8 +92,10 @@ Inheritance diagram for celeritas::StepInterface:</div>
  <div class="center">
   <img src="../../d6/dc0/classceleritas_1_1_step_interface.png" usemap="#celeritas::StepInterface_map" alt=""/>
   <map id="celeritas::StepInterface_map" name="celeritas::StepInterface_map">
-<area href="../../d9/d56/classceleritas_1_1_root_step_writer.html" title="Write &quot;MC truth&quot; data to ROOT at every step." alt="celeritas::RootStepWriter" shape="rect" coords="0,56,168,80"/>
-<area href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html" title="Manage the conversion of hits from Celeritas to Geant4." alt="celeritas::detail::HitManager" shape="rect" coords="178,56,346,80"/>
+<area href="../../d9/d56/classceleritas_1_1_root_step_writer.html" title="Write &quot;MC truth&quot; data to ROOT at every step." alt="celeritas::RootStepWriter" shape="rect" coords="0,56,181,80"/>
+<area href="../../d7/d37/classceleritas_1_1_simple_calo.html" title="Accumulate energy deposition in volumes." alt="celeritas::SimpleCalo" shape="rect" coords="191,56,372,80"/>
+<area href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html" title="Manage the conversion of hits from Celeritas to Geant4." alt="celeritas::detail::HitManager" shape="rect" coords="382,56,563,80"/>
+<area href="../../d4/d6b/classceleritas_1_1test_1_1_example_mctruth.html" title="Store all step data in an AOS." alt="celeritas::test::ExampleMctruth" shape="rect" coords="573,56,754,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -104,14 +106,14 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Type aliases</h2></td></tr>
-<tr class="memitem:a7e422a75399af8523dbcae5445cf109d"><td class="memItemLeft" align="right" valign="top"><a id="a7e422a75399af8523dbcae5445cf109d" name="a7e422a75399af8523dbcae5445cf109d"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>StateHostRef</b> = <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#afcc496fb064835f19a6c4506a430fec6">HostRef</a>&lt; <a class="el" href="../../dd/d0b/structceleritas_1_1_step_state_data.html">StepStateData</a> &gt;</td></tr>
-<tr class="memdesc:a7e422a75399af8523dbcae5445cf109d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector filtering required for this interface. <br /></td></tr>
-<tr class="separator:a7e422a75399af8523dbcae5445cf109d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1a50ef5dcf0d2b72b2d6171bb3092ea"><td class="memItemLeft" align="right" valign="top"><a id="ab1a50ef5dcf0d2b72b2d6171bb3092ea" name="ab1a50ef5dcf0d2b72b2d6171bb3092ea"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>StateDeviceRef</b> = <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#abd6577dbd8a882077b6b36372a789f68">DeviceRef</a>&lt; <a class="el" href="../../dd/d0b/structceleritas_1_1_step_state_data.html">StepStateData</a> &gt;</td></tr>
-<tr class="memdesc:ab1a50ef5dcf0d2b72b2d6171bb3092ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector filtering required for this interface. <br /></td></tr>
-<tr class="separator:ab1a50ef5dcf0d2b72b2d6171bb3092ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a02c3c9deda25d19195de16b283f947"><td class="memItemLeft" align="right" valign="top"><a id="a6a02c3c9deda25d19195de16b283f947" name="a6a02c3c9deda25d19195de16b283f947"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>HostStepState</b> = <a class="el" href="../../da/d07/structceleritas_1_1_step_state.html">StepState</a>&lt; MemSpace::host &gt;</td></tr>
+<tr class="memdesc:a6a02c3c9deda25d19195de16b283f947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector filtering required for this interface. <br /></td></tr>
+<tr class="separator:a6a02c3c9deda25d19195de16b283f947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72e3f023a31ddd87945b23ec47164c45"><td class="memItemLeft" align="right" valign="top"><a id="a72e3f023a31ddd87945b23ec47164c45" name="a72e3f023a31ddd87945b23ec47164c45"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>DeviceStepState</b> = <a class="el" href="../../da/d07/structceleritas_1_1_step_state.html">StepState</a>&lt; MemSpace::device &gt;</td></tr>
+<tr class="memdesc:a72e3f023a31ddd87945b23ec47164c45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector filtering required for this interface. <br /></td></tr>
+<tr class="separator:a72e3f023a31ddd87945b23ec47164c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada9256c6cc789d3a6ebe0e3862fd3514"><td class="memItemLeft" align="right" valign="top"><a id="ada9256c6cc789d3a6ebe0e3862fd3514" name="ada9256c6cc789d3a6ebe0e3862fd3514"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>MapVolumeDetector</b> = std::map&lt; <a class="el" href="../../d1/dd1/_vecgeom_data_8hh.html#a8c97752c08c841e3faf0173adb2e1525">VolumeId</a>, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#ac2659ed100e11ccffa767695ca6b8a81">DetectorId</a> &gt;</td></tr>
 <tr class="memdesc:ada9256c6cc789d3a6ebe0e3862fd3514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector filtering required for this interface. <br /></td></tr>
@@ -122,12 +124,12 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>MapVolumeDetector</b
 <tr class="memitem:af15dc19ee4822aa1ed3950869eca3dc9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d7/d26/structceleritas_1_1_step_selection.html">StepSelection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#af15dc19ee4822aa1ed3950869eca3dc9">selection</a> () const =0</td></tr>
 <tr class="memdesc:af15dc19ee4822aa1ed3950869eca3dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selection of data required for this interface.  <a href="../../d6/dc0/classceleritas_1_1_step_interface.html#af15dc19ee4822aa1ed3950869eca3dc9">More...</a><br /></td></tr>
 <tr class="separator:af15dc19ee4822aa1ed3950869eca3dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4261c584e9fd5af310806fdde740ed96"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a4261c584e9fd5af310806fdde740ed96">execute</a> (<a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a7e422a75399af8523dbcae5445cf109d">StateHostRef</a> const &amp;)=0</td></tr>
-<tr class="memdesc:a4261c584e9fd5af310806fdde740ed96"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../de/db8/classceleritas_1_1_process.html" title="An interface/factory method for creating models.">Process</a> CPU-generated hit data.  <a href="../../d6/dc0/classceleritas_1_1_step_interface.html#a4261c584e9fd5af310806fdde740ed96">More...</a><br /></td></tr>
-<tr class="separator:a4261c584e9fd5af310806fdde740ed96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a037ab88e17c3b220e2df9ef43e82df9c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a037ab88e17c3b220e2df9ef43e82df9c">execute</a> (<a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#ab1a50ef5dcf0d2b72b2d6171bb3092ea">StateDeviceRef</a> const &amp;)=0</td></tr>
-<tr class="memdesc:a037ab88e17c3b220e2df9ef43e82df9c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../de/db8/classceleritas_1_1_process.html" title="An interface/factory method for creating models.">Process</a> device-generated hit data.  <a href="../../d6/dc0/classceleritas_1_1_step_interface.html#a037ab88e17c3b220e2df9ef43e82df9c">More...</a><br /></td></tr>
-<tr class="separator:a037ab88e17c3b220e2df9ef43e82df9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a523e376049116bf35a5800b143e61578"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a523e376049116bf35a5800b143e61578">process_steps</a> (<a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a6a02c3c9deda25d19195de16b283f947">HostStepState</a>)=0</td></tr>
+<tr class="memdesc:a523e376049116bf35a5800b143e61578"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../de/db8/classceleritas_1_1_process.html" title="An interface/factory method for creating models.">Process</a> CPU-generated hit data.  <a href="../../d6/dc0/classceleritas_1_1_step_interface.html#a523e376049116bf35a5800b143e61578">More...</a><br /></td></tr>
+<tr class="separator:a523e376049116bf35a5800b143e61578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5080ba6aa99249efdf08fcce3d3f6c45"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a5080ba6aa99249efdf08fcce3d3f6c45">process_steps</a> (<a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a72e3f023a31ddd87945b23ec47164c45">DeviceStepState</a>)=0</td></tr>
+<tr class="memdesc:a5080ba6aa99249efdf08fcce3d3f6c45"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../de/db8/classceleritas_1_1_process.html" title="An interface/factory method for creating models.">Process</a> device-generated hit data.  <a href="../../d6/dc0/classceleritas_1_1_step_interface.html#a5080ba6aa99249efdf08fcce3d3f6c45">More...</a><br /></td></tr>
+<tr class="separator:a5080ba6aa99249efdf08fcce3d3f6c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c4a75bd3e4825b104e9bbf678265e1b"><td class="memItemLeft" align="right" valign="top"><a id="a7c4a75bd3e4825b104e9bbf678265e1b" name="a7c4a75bd3e4825b104e9bbf678265e1b"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~StepInterface</b> ()=default</td></tr>
 <tr class="memdesc:a7c4a75bd3e4825b104e9bbf678265e1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector filtering required for this interface. <br /></td></tr>
@@ -135,68 +137,8 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>MapVolumeDetector</b
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Callback class to gather and process data from many tracks at a single step. </p>
-<p >The filtering mechanism allows different step interfaces to gather data from different detector volumes. Filtered step interfaces cannot be combined with unfiltered in a single hit collector. (FIXME: maybe we need a slightly different class hierarchy for the two cases?) If detectors are in use, and all <code><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html" title="Callback class to gather and process data from many tracks at a single step.">StepInterface</a></code> instances in use by a <code><a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html" title="Gather and transfer track states at each step.">StepCollector</a></code> select the "nonzero_energy_deposition" flag, then the <code><a class="el" href="../../dd/d0b/structceleritas_1_1_step_state_data.html#a1a6802c7c04fe9000e8663a1bf8f801d" title="Detector ID is non-empty if params.detector is nonempty.">StepStateData::detector</a></code> entry for a thread with no energy deposition will be cleared even if it is in a sensitive detector. Otherwise entries with zero energy deposition will remain. </p>
+<p >The filtering mechanism allows different step interfaces to gather data from different detector volumes. Filtered step interfaces cannot be combined with unfiltered in a single hit collector. (FIXME: maybe we need a slightly different class hierarchy for the two cases?) If detectors are in use, and all <code><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html" title="Callback class to gather and process data from many tracks at a single step.">StepInterface</a></code> instances in use by a <code><a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html" title="Gather and transfer track states at each step.">StepCollector</a></code> select the "nonzero_energy_deposition" flag, then the <code>StepStateData::detector</code> entry for a thread with no energy deposition will be cleared even if it is in a sensitive detector. Otherwise entries with zero energy deposition will remain. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a037ab88e17c3b220e2df9ef43e82df9c" name="a037ab88e17c3b220e2df9ef43e82df9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a037ab88e17c3b220e2df9ef43e82df9c">&#9670;&#160;</a></span>execute() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void celeritas::StepInterface::execute </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#ab1a50ef5dcf0d2b72b2d6171bb3092ea">StateDeviceRef</a> const &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="../../de/db8/classceleritas_1_1_process.html" title="An interface/factory method for creating models.">Process</a> device-generated hit data. </p>
-
-<p>Implemented in <a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#a5ca7e13a04f50aa6224a65bab3dadc67">celeritas::detail::HitManager</a>, and <a class="el" href="../../d9/d56/classceleritas_1_1_root_step_writer.html#a15f554c8a7c210102ea5cf0088219545">celeritas::RootStepWriter</a>.</p>
-
-</div>
-</div>
-<a id="a4261c584e9fd5af310806fdde740ed96" name="a4261c584e9fd5af310806fdde740ed96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4261c584e9fd5af310806fdde740ed96">&#9670;&#160;</a></span>execute() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void celeritas::StepInterface::execute </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a7e422a75399af8523dbcae5445cf109d">StateHostRef</a> const &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="../../de/db8/classceleritas_1_1_process.html" title="An interface/factory method for creating models.">Process</a> CPU-generated hit data. </p>
-
-<p>Implemented in <a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#a1d01782de50a913373ecf2c3f5614925">celeritas::detail::HitManager</a>, and <a class="el" href="../../d9/d56/classceleritas_1_1_root_step_writer.html#a2372e3b3b0592db67e4562c8ec5ba28f">celeritas::RootStepWriter</a>.</p>
-
-</div>
-</div>
 <a id="a8fde9750e57072a4382bf00c6adb09bc" name="a8fde9750e57072a4382bf00c6adb09bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8fde9750e57072a4382bf00c6adb09bc">&#9670;&#160;</a></span>filters()</h2>
 
@@ -222,7 +164,67 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>MapVolumeDetector</b
 
 <p>Detector filtering required for this interface. </p>
 
-<p>Implemented in <a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#afcaae9ed7dbb85c061e296d5afa78114">celeritas::detail::HitManager</a>, and <a class="el" href="../../d9/d56/classceleritas_1_1_root_step_writer.html#a4b5f0b1e71566ef4eccc6e9111df3fe6">celeritas::RootStepWriter</a>.</p>
+<p>Implemented in <a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#afcaae9ed7dbb85c061e296d5afa78114">celeritas::detail::HitManager</a>, <a class="el" href="../../d9/d56/classceleritas_1_1_root_step_writer.html#a4b5f0b1e71566ef4eccc6e9111df3fe6">celeritas::RootStepWriter</a>, <a class="el" href="../../d7/d37/classceleritas_1_1_simple_calo.html#a040e7dbc151cc836e109271794f43e19">celeritas::SimpleCalo</a>, and <a class="el" href="../../d4/d6b/classceleritas_1_1test_1_1_example_mctruth.html#a9c99490733a775ee1c98ab73e1d306ab">celeritas::test::ExampleMctruth</a>.</p>
+
+</div>
+</div>
+<a id="a5080ba6aa99249efdf08fcce3d3f6c45" name="a5080ba6aa99249efdf08fcce3d3f6c45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5080ba6aa99249efdf08fcce3d3f6c45">&#9670;&#160;</a></span>process_steps() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void celeritas::StepInterface::process_steps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a72e3f023a31ddd87945b23ec47164c45">DeviceStepState</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../de/db8/classceleritas_1_1_process.html" title="An interface/factory method for creating models.">Process</a> device-generated hit data. </p>
+
+<p>Implemented in <a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#a9cd3659fdcb33542d423cd3e15987fa1">celeritas::detail::HitManager</a>, <a class="el" href="../../d9/d56/classceleritas_1_1_root_step_writer.html#a376f1126573bfb0d3753ff6a53768b18">celeritas::RootStepWriter</a>, <a class="el" href="../../d7/d37/classceleritas_1_1_simple_calo.html#a8c07fc9764ce54bfeaec1704052c760b">celeritas::SimpleCalo</a>, <a class="el" href="../../d4/d6b/classceleritas_1_1test_1_1_example_mctruth.html#a2e4700b156d565b3954f869cfbb62881">celeritas::test::ExampleMctruth</a>, <a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#a8c76de050bbfec86177e49a154f7b1f6">celeritas::detail::HitManager</a>, <a class="el" href="../../d9/d56/classceleritas_1_1_root_step_writer.html#a97b33367de42dad95c541cb299e65f34">celeritas::RootStepWriter</a>, <a class="el" href="../../d7/d37/classceleritas_1_1_simple_calo.html#a203c96d9bd08a55ed46538afe6d15343">celeritas::SimpleCalo</a>, and <a class="el" href="../../d4/d6b/classceleritas_1_1test_1_1_example_mctruth.html#a2da9aebbd86ca06f1ed7817c38da7100">celeritas::test::ExampleMctruth</a>.</p>
+
+</div>
+</div>
+<a id="a523e376049116bf35a5800b143e61578" name="a523e376049116bf35a5800b143e61578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a523e376049116bf35a5800b143e61578">&#9670;&#160;</a></span>process_steps() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void celeritas::StepInterface::process_steps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a6a02c3c9deda25d19195de16b283f947">HostStepState</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../de/db8/classceleritas_1_1_process.html" title="An interface/factory method for creating models.">Process</a> CPU-generated hit data. </p>
+
+<p>Implemented in <a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#a9cd3659fdcb33542d423cd3e15987fa1">celeritas::detail::HitManager</a>, <a class="el" href="../../d9/d56/classceleritas_1_1_root_step_writer.html#a376f1126573bfb0d3753ff6a53768b18">celeritas::RootStepWriter</a>, <a class="el" href="../../d7/d37/classceleritas_1_1_simple_calo.html#a8c07fc9764ce54bfeaec1704052c760b">celeritas::SimpleCalo</a>, <a class="el" href="../../d4/d6b/classceleritas_1_1test_1_1_example_mctruth.html#a2e4700b156d565b3954f869cfbb62881">celeritas::test::ExampleMctruth</a>, <a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#a8c76de050bbfec86177e49a154f7b1f6">celeritas::detail::HitManager</a>, <a class="el" href="../../d9/d56/classceleritas_1_1_root_step_writer.html#a97b33367de42dad95c541cb299e65f34">celeritas::RootStepWriter</a>, <a class="el" href="../../d7/d37/classceleritas_1_1_simple_calo.html#a203c96d9bd08a55ed46538afe6d15343">celeritas::SimpleCalo</a>, and <a class="el" href="../../d4/d6b/classceleritas_1_1test_1_1_example_mctruth.html#a2da9aebbd86ca06f1ed7817c38da7100">celeritas::test::ExampleMctruth</a>.</p>
 
 </div>
 </div>
@@ -251,7 +253,7 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>MapVolumeDetector</b
 
 <p>Selection of data required for this interface. </p>
 
-<p>Implemented in <a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#a35813a0da1552b3b492f6e14a903f25a">celeritas::detail::HitManager</a>, and <a class="el" href="../../d9/d56/classceleritas_1_1_root_step_writer.html#a2fef9b5998126183295ffa47728f2ea5">celeritas::RootStepWriter</a>.</p>
+<p>Implemented in <a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#a35813a0da1552b3b492f6e14a903f25a">celeritas::detail::HitManager</a>, <a class="el" href="../../d9/d56/classceleritas_1_1_root_step_writer.html#a2fef9b5998126183295ffa47728f2ea5">celeritas::RootStepWriter</a>, <a class="el" href="../../d7/d37/classceleritas_1_1_simple_calo.html#a554239744bf653cd6fdc4fdd56c634dd">celeritas::SimpleCalo</a>, and <a class="el" href="../../d4/d6b/classceleritas_1_1test_1_1_example_mctruth.html#a3e95d6015ef48069c125b2f2a31991c4">celeritas::test::ExampleMctruth</a>.</p>
 
 </div>
 </div>

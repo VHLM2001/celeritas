@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API documentation &mdash; Celeritas v0.3.0-dev.62+f351e714 documentation</title>
+  <title>Library API &mdash; Celeritas 0.3.0-rc.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Core package" href="api/corecel.html" />
-    <link rel="prev" title="Overview" href="overview.html" /> 
+    <link rel="prev" title="Using Celeritas" href="usage.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -29,15 +29,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Celeritas
-            <img src="_static/celeritas-square.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Celeritas
+              <img src="_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-dev
+                0.3.0-rc.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -46,9 +50,10 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">API documentation</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Using Celeritas</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Library API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/corecel.html">Core package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/orange.html">ORANGE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/celeritas.html">Celeritas</a></li>
@@ -80,8 +85,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>API documentation</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Library API</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -91,11 +96,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="api-documentation">
-<span id="api"></span><h1>API documentation<a class="headerlink" href="#api-documentation" title="Permalink to this heading"></a></h1>
-<p>The Celeritas codebase lives under the <code class="docutils literal notranslate"><span class="pre">src/</span></code> directory and is divided into
-four packages. Additional top-level files provide access to version and
+  <section id="library-api">
+<span id="api"></span><h1>Library API<a class="headerlink" href="#library-api" title="Permalink to this heading"></a></h1>
+<p>The bulk of Celeritas’ code is in several code libraries meant (with varying
+degrees of polish) to be used by external users and application developers.
+Currently, the most stable and user-ready component of Celeritas is its
+<a class="reference internal" href="api/accel.html#accel"><span class="std std-ref">Acceleritas</span></a> code library for offloading to Geant4.</p>
+<p>The Celeritas codebase lives under the <code class="docutils literal notranslate"><span class="pre">src/</span></code> directory and is partitioned
+into several libraries of increasing complexity: <code class="docutils literal notranslate"><span class="pre">corecel</span></code> for GPU/CPU
+abstractions, <code class="docutils literal notranslate"><span class="pre">orange</span></code> for a platform-portable geometry implementation,
+<code class="docutils literal notranslate"><span class="pre">celeritas</span></code> for the GPU implementation of physics and MC particle tracking,
+and <code class="docutils literal notranslate"><span class="pre">accel</span></code> for the Geant4 integration library.</p>
+<p>Additional top-level files provide access to version and
 configuration attributes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When building Celeritas, regardless of the configured <a class="reference internal" href="installation.html#dependencies"><span class="std std-ref">dependencies</span></a>, all of the documented API code in <code class="docutils literal notranslate"><span class="pre">corecel</span></code>, <code class="docutils literal notranslate"><span class="pre">orange</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">celeritas</span></code> (except possibly headers ending in <code class="docutils literal notranslate"><span class="pre">.json.hh</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.device.hh</span></code>, etc.) will compile and can link to downstream code. However,
+some classes will throw <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code> if they lack the required
+functionality.</p>
+<p>If Geant4 is disabled, the <code class="docutils literal notranslate"><span class="pre">accel</span></code> library will not be built or installed,
+because every component of that library requires Geant4.</p>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="api/corecel.html">Core package</a><ul>
@@ -112,9 +135,14 @@ configuration attributes.</p>
 <li class="toctree-l2"><a class="reference internal" href="api/celeritas.html#fundamentals">Fundamentals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/celeritas.html#problem-definition">Problem definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/celeritas.html#transport-interface">Transport interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/celeritas.html#external-code-interfaces">External code interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/celeritas.html#geant4-physics-interfaces">Geant4 physics interfaces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/celeritas.html#geant4-physics-options">Geant4 physics options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/celeritas.html#geometry-interfaces">Geometry interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/celeritas.html#on-device-access">On-device access</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/celeritas.html#random-number-distributions">Random number distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/celeritas.html#physics-distributions">Physics distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/celeritas.html#physics-implementations">Physics implementations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/celeritas.html#physics-data">Physics data</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/celeritas.html#material-and-geometry-properties">Material and geometry properties</a></li>
@@ -139,7 +167,7 @@ configuration attributes.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-left" title="Using Celeritas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="api/corecel.html" class="btn btn-neutral float-right" title="Core package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

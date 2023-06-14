@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -118,8 +118,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>level</b> (<a class="
 <p >This should generally be called by the <code>world_logger</code> and <code>self_logger</code> functions below. The call <code>operator()</code> returns an object that should be streamed into in order to create a log message.</p>
 <p >This object <em>is</em> assignable, so to replace the default log handler with a different one, you can call </p><div class="fragment"><div class="line"><a class="code hl_function" href="../../d6/dfc/corecel_2io_2_logger_8cc.html#a248afb6ca187313ac2813574810047fc">world_logger</a> = <a class="code hl_class" href="../../d4/da5/classceleritas_1_1_logger.html">Logger</a>(<a class="code hl_function" href="../../d1/d7a/classceleritas_1_1_mpi_communicator.html#aec2545b14ee3e70afd9a8a310f248589">MpiCommunicator::comm_world</a>(), my_handler);</div>
 <div class="ttc" id="aclassceleritas_1_1_logger_html"><div class="ttname"><a href="../../d4/da5/classceleritas_1_1_logger.html">celeritas::Logger</a></div><div class="ttdoc">Manage logging in serial and parallel.</div><div class="ttdef"><b>Definition:</b> corecel/io/Logger.hh:77</div></div>
-<div class="ttc" id="aclassceleritas_1_1_mpi_communicator_html_aec2545b14ee3e70afd9a8a310f248589"><div class="ttname"><a href="../../d1/d7a/classceleritas_1_1_mpi_communicator.html#aec2545b14ee3e70afd9a8a310f248589">celeritas::MpiCommunicator::comm_world</a></div><div class="ttdeci">static MpiCommunicator comm_world()</div><div class="ttdoc">Construct a communicator with MPI_COMM_WORLD.</div><div class="ttdef"><b>Definition:</b> MpiCommunicator.hh:85</div></div>
-<div class="ttc" id="acorecel_2io_2_logger_8cc_html_a248afb6ca187313ac2813574810047fc"><div class="ttname"><a href="../../d6/dfc/corecel_2io_2_logger_8cc.html#a248afb6ca187313ac2813574810047fc">celeritas::world_logger</a></div><div class="ttdeci">Logger &amp; world_logger()</div><div class="ttdoc">Parallel-enabled logger: print only on &quot;main&quot; process.</div><div class="ttdef"><b>Definition:</b> corecel/io/Logger.cc:169</div></div>
+<div class="ttc" id="aclassceleritas_1_1_mpi_communicator_html_aec2545b14ee3e70afd9a8a310f248589"><div class="ttname"><a href="../../d1/d7a/classceleritas_1_1_mpi_communicator.html#aec2545b14ee3e70afd9a8a310f248589">celeritas::MpiCommunicator::comm_world</a></div><div class="ttdeci">static MpiCommunicator comm_world()</div><div class="ttdoc">Construct a communicator with MPI_COMM_WORLD.</div><div class="ttdef"><b>Definition:</b> MpiCommunicator.hh:79</div></div>
+<div class="ttc" id="acorecel_2io_2_logger_8cc_html_a248afb6ca187313ac2813574810047fc"><div class="ttname"><a href="../../d6/dfc/corecel_2io_2_logger_8cc.html#a248afb6ca187313ac2813574810047fc">celeritas::world_logger</a></div><div class="ttdeci">Logger &amp; world_logger()</div><div class="ttdoc">Parallel-enabled logger: print only on &quot;main&quot; process.</div><div class="ttdef"><b>Definition:</b> corecel/io/Logger.cc:166</div></div>
 </div><!-- fragment --> </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="../../d2/d8a/corecel_2io_2_logger_8hh.html">corecel/io/Logger.hh</a></li>
 <li><a class="el" href="../../d6/dfc/corecel_2io_2_logger_8cc.html">corecel/io/Logger.cc</a></li>

@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -120,20 +120,20 @@ class celeritas::Interpolator&lt; XI, YI, T &gt;</div><p >Interpolate, with eith
   </dd>
 </dl>
 <p>The inputs are given as two (x,y) pairs. The same two pairs can be used to interpolate successively with this functor.</p>
-<p >Interpolation on the transformed coordinates is the solution for <picture><source srcset="../../form_138_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ y $" src="../../form_138.png" width="8" height="9"/></picture> in </p><p class="formulaDsp">
-<picture><source srcset="../../form_139_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<p >Interpolation on the transformed coordinates is the solution for <picture><source srcset="../../form_193_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ y $" src="../../form_193.png" width="8" height="9"/></picture> in </p><p class="formulaDsp">
+<picture><source srcset="../../form_194_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
 \frac{f_y(y) - f_y(y_l)}{f_y(y_r) - f_y(y_l)}
 = \frac{f_x(x) - f_x(x_l)}{f_x(x_r) - f_x(x_l)}
-\]" src="../../form_139.png" width="184" height="31"/></picture>
+\]" src="../../form_194.png" width="184" height="31"/></picture>
 </p>
-<p >where <picture><source srcset="../../form_140_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ f_d(v) = v $" src="../../form_140.png" width="51" height="14"/></picture> for linear interpolation on the <picture><source srcset="../../form_141_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ d $" src="../../form_141.png" width="6" height="10"/></picture> axis and <picture><source srcset="../../form_142_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ f_d(v) = \log v $" src="../../form_142.png" width="69" height="14"/></picture> for log interpolation.</p>
-<p >Solving for <picture><source srcset="../../form_143_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$y$" src="../../form_143.png" width="8" height="9"/></picture>, the interpolation can be rewritten to minimize transcendatal operations and efficiently perform multiple interpolations over the same point range:  </p><p class="formulaDsp">
-<picture><source srcset="../../form_144_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<p >where <picture><source srcset="../../form_195_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ f_d(v) = v $" src="../../form_195.png" width="51" height="14"/></picture> for linear interpolation on the <picture><source srcset="../../form_196_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ d $" src="../../form_196.png" width="6" height="10"/></picture> axis and <picture><source srcset="../../form_197_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ f_d(v) = \log v $" src="../../form_197.png" width="69" height="14"/></picture> for log interpolation.</p>
+<p >Solving for <picture><source srcset="../../form_198_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$y$" src="../../form_198.png" width="8" height="9"/></picture>, the interpolation can be rewritten to minimize transcendatal operations and efficiently perform multiple interpolations over the same point range:  </p><p class="formulaDsp">
+<picture><source srcset="../../form_199_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
  y = f^{-1}_y \left( f_y(y_l) + \frac{ p_y(n_y(y_l), y_r) }{ p_x(n_x(x_l),
 x_r)} \times p_x(n_x(x_l), x) \right)
-\]" src="../../form_144.png" width="271" height="31"/></picture>
+\]" src="../../form_199.png" width="271" height="31"/></picture>
 </p>
-<p >where transformed addition is <picture><source srcset="../../form_145_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$p_y(y_1, y_2) \equiv f_y(y_1) + f_y(y_2)$" src="../../form_145.png" width="150" height="14"/></picture> , transformed negation is <picture><source srcset="../../form_146_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$n_y(y_1) \equiv f^{-1}_y( - f_y(y_1) )$" src="../../form_146.png" width="125" height="16"/></picture> and <picture><source srcset="../../form_147_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ f_y(y) = y $" src="../../form_147.png" width="51" height="14"/></picture> for linear interpolation in y and <picture><source srcset="../../form_148_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ f_y(y) = \log y $" src="../../form_148.png" width="70" height="14"/></picture> for log interpolation in y.</p>
+<p >where transformed addition is <picture><source srcset="../../form_200_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$p_y(y_1, y_2) \equiv f_y(y_1) + f_y(y_2)$" src="../../form_200.png" width="150" height="14"/></picture> , transformed negation is <picture><source srcset="../../form_201_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$n_y(y_1) \equiv f^{-1}_y( - f_y(y_1) )$" src="../../form_201.png" width="125" height="16"/></picture> and <picture><source srcset="../../form_202_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ f_y(y) = y $" src="../../form_202.png" width="51" height="14"/></picture> for linear interpolation in y and <picture><source srcset="../../form_203_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ f_y(y) = \log y $" src="../../form_203.png" width="70" height="14"/></picture> for log interpolation in y.</p>
 <p >Instantiating the interpolator precalculates the transformed intercept and slope terms, as well as the negated x-left term. At each evaluation of the instantiated <a class="el" href="../../dc/df6/classceleritas_1_1_interpolator.html" title="Interpolate, with either linear or log in x and y.">Interpolator</a>, only the inverse-transform and add-transformed operation need be applied. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="../../d5/df8/_interpolator_8hh.html">Interpolator.hh</a></li>

@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -84,23 +84,20 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Gathered data for a single step for many tracks in parallel.  
+<p>Gathered data and persistent scratch space for gathering and copying data.  
  <a href="../../dd/d0b/structceleritas_1_1_step_state_data.html#details">More...</a></p>
 
 <p><code>#include &lt;StepData.hh&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a9733b4d2fc3bd810c81c3c04c933ee43"><td class="memItemLeft" align="right" valign="top"><a id="a9733b4d2fc3bd810c81c3c04c933ee43" name="a9733b4d2fc3bd810c81c3c04c933ee43"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>StepPointData</b> = <a class="el" href="../../d7/d97/structceleritas_1_1_step_point_state_data.html">StepPointStateData</a>&lt; W, M &gt;</td></tr>
-<tr class="separator:a9733b4d2fc3bd810c81c3c04c933ee43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad16dccf491610ad1328ad111a90cce73"><td class="memItemLeft" align="right" valign="top"><a id="ad16dccf491610ad1328ad111a90cce73" name="ad16dccf491610ad1328ad111a90cce73"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>StepDataImpl</b> = <a class="el" href="../../db/db9/structceleritas_1_1_step_state_data_impl.html">StepStateDataImpl</a>&lt; W, M &gt;</td></tr>
+<tr class="separator:ad16dccf491610ad1328ad111a90cce73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2593a2b8214918abaec59fb71292e6d2"><td class="memTemplParams" colspan="2"><a id="a2593a2b8214918abaec59fb71292e6d2" name="a2593a2b8214918abaec59fb71292e6d2"></a>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:a2593a2b8214918abaec59fb71292e6d2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>StateItems</b> = <a class="el" href="../../db/d8b/_collection_8hh.html#a3b2cddd69a67a4cca1eb022f8a24bb5b">celeritas::StateCollection</a>&lt; T, W, M &gt;</td></tr>
 <tr class="separator:a2593a2b8214918abaec59fb71292e6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad19a677c01cd1098e1fa90dc0864ee47"><td class="memItemLeft" align="right" valign="top"><a id="ad19a677c01cd1098e1fa90dc0864ee47" name="ad19a677c01cd1098e1fa90dc0864ee47"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Energy</b> = <a class="el" href="../../dc/dff/classceleritas_1_1_quantity.html">units::MevEnergy</a></td></tr>
-<tr class="separator:ad19a677c01cd1098e1fa90dc0864ee47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -120,48 +117,27 @@ template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#aeb6446bfc
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ab0e4f92c98d955fa2ddd14beaed7ef56"><td class="memItemLeft" align="right" valign="top"><a id="ab0e4f92c98d955fa2ddd14beaed7ef56" name="ab0e4f92c98d955fa2ddd14beaed7ef56"></a>
-<a class="el" href="../../da/d24/structceleritas_1_1_enum_array.html">EnumArray</a>&lt; <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a69703bb2c384c279e4be7a6c711c427f">StepPoint</a>, <a class="el" href="../../d7/d97/structceleritas_1_1_step_point_state_data.html">StepPointData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>points</b></td></tr>
-<tr class="separator:ab0e4f92c98d955fa2ddd14beaed7ef56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbb3ce206b8dae93f7964272461b8b46"><td class="memItemLeft" align="right" valign="top"><a id="afbb3ce206b8dae93f7964272461b8b46" name="afbb3ce206b8dae93f7964272461b8b46"></a>
-<a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">StateItems</a>&lt; <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8818fc42ce8589e94fa581a2a9804d68">TrackId</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>track_id</b></td></tr>
-<tr class="memdesc:afbb3ce206b8dae93f7964272461b8b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Track ID is always assigned (but will be false for inactive tracks) <br /></td></tr>
-<tr class="separator:afbb3ce206b8dae93f7964272461b8b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a6802c7c04fe9000e8663a1bf8f801d"><td class="memItemLeft" align="right" valign="top"><a id="a1a6802c7c04fe9000e8663a1bf8f801d" name="a1a6802c7c04fe9000e8663a1bf8f801d"></a>
-<a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">StateItems</a>&lt; <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#ac2659ed100e11ccffa767695ca6b8a81">DetectorId</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>detector</b></td></tr>
-<tr class="memdesc:a1a6802c7c04fe9000e8663a1bf8f801d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector ID is non-empty if params.detector is nonempty. <br /></td></tr>
-<tr class="separator:a1a6802c7c04fe9000e8663a1bf8f801d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca881c09590187f486676c72b5144e35"><td class="memItemLeft" align="right" valign="top"><a id="aca881c09590187f486676c72b5144e35" name="aca881c09590187f486676c72b5144e35"></a>
-<a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">StateItems</a>&lt; <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#aa18dd26663111c85cf45bc6652e02d95">EventId</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>event_id</b></td></tr>
-<tr class="separator:aca881c09590187f486676c72b5144e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37bece4cbaf44d31399eeba3b4b36471"><td class="memItemLeft" align="right" valign="top"><a id="a37bece4cbaf44d31399eeba3b4b36471" name="a37bece4cbaf44d31399eeba3b4b36471"></a>
-<a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">StateItems</a>&lt; <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8818fc42ce8589e94fa581a2a9804d68">TrackId</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>parent_id</b></td></tr>
-<tr class="separator:a37bece4cbaf44d31399eeba3b4b36471"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a9c0a3ad6d8bb64ed9c542bf4226d53"><td class="memItemLeft" align="right" valign="top"><a id="a9a9c0a3ad6d8bb64ed9c542bf4226d53" name="a9a9c0a3ad6d8bb64ed9c542bf4226d53"></a>
-<a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">StateItems</a>&lt; <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a98b21e11852c06d3845c53dd5df84797">ActionId</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>action_id</b></td></tr>
-<tr class="separator:a9a9c0a3ad6d8bb64ed9c542bf4226d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7502d781ed2232ec1275bd99221f0757"><td class="memItemLeft" align="right" valign="top"><a id="a7502d781ed2232ec1275bd99221f0757" name="a7502d781ed2232ec1275bd99221f0757"></a>
-<a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">StateItems</a>&lt; size_type &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>track_step_count</b></td></tr>
-<tr class="separator:a7502d781ed2232ec1275bd99221f0757"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a025137709f6c80623b3e0fe59ef5e111"><td class="memItemLeft" align="right" valign="top"><a id="a025137709f6c80623b3e0fe59ef5e111" name="a025137709f6c80623b3e0fe59ef5e111"></a>
-<a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">StateItems</a>&lt; <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac97c7d9259eb113cfcc54c671fd2173d">real_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>step_length</b></td></tr>
-<tr class="separator:a025137709f6c80623b3e0fe59ef5e111"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68d3f46bfa00a57ea254598c2a6be31b"><td class="memItemLeft" align="right" valign="top"><a id="a68d3f46bfa00a57ea254598c2a6be31b" name="a68d3f46bfa00a57ea254598c2a6be31b"></a>
-<a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">StateItems</a>&lt; <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a3cea071f272f04902f40d2de68a9d7d6">ParticleId</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>particle</b></td></tr>
-<tr class="separator:a68d3f46bfa00a57ea254598c2a6be31b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05f79b65d81908350985680c71a7bfa2"><td class="memItemLeft" align="right" valign="top"><a id="a05f79b65d81908350985680c71a7bfa2" name="a05f79b65d81908350985680c71a7bfa2"></a>
-<a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">StateItems</a>&lt; <a class="el" href="../../dc/dff/classceleritas_1_1_quantity.html">Energy</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>energy_deposition</b></td></tr>
-<tr class="separator:a05f79b65d81908350985680c71a7bfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5933a4602f1af37ed6feb3ec1a2bd63f"><td class="memItemLeft" align="right" valign="top"><a id="a5933a4602f1af37ed6feb3ec1a2bd63f" name="a5933a4602f1af37ed6feb3ec1a2bd63f"></a>
+<a class="el" href="../../db/db9/structceleritas_1_1_step_state_data_impl.html">StepDataImpl</a>&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+<tr class="memdesc:a5933a4602f1af37ed6feb3ec1a2bd63f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gathered data for a single step. <br /></td></tr>
+<tr class="separator:a5933a4602f1af37ed6feb3ec1a2bd63f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f25a88a36b5a9f78370e9531399b194"><td class="memItemLeft" align="right" valign="top"><a id="a1f25a88a36b5a9f78370e9531399b194" name="a1f25a88a36b5a9f78370e9531399b194"></a>
+<a class="el" href="../../db/db9/structceleritas_1_1_step_state_data_impl.html">StepDataImpl</a>&#160;</td><td class="memItemRight" valign="bottom"><b>scratch</b></td></tr>
+<tr class="memdesc:a1f25a88a36b5a9f78370e9531399b194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scratch space for gathering the data on device based on track validity. <br /></td></tr>
+<tr class="separator:a1f25a88a36b5a9f78370e9531399b194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28afaac635cf39cd622a2c9ba82b38a1"><td class="memItemLeft" align="right" valign="top"><a id="a28afaac635cf39cd622a2c9ba82b38a1" name="a28afaac635cf39cd622a2c9ba82b38a1"></a>
+<a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">StateItems</a>&lt; size_type &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>valid_id</b></td></tr>
+<tr class="memdesc:a28afaac635cf39cd622a2c9ba82b38a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread IDs of active tracks that are in a detector. <br /></td></tr>
+<tr class="separator:a28afaac635cf39cd622a2c9ba82b38a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a683a06a2d40b77a739450a203cf35e86"><td class="memItemLeft" align="right" valign="top"><a id="a683a06a2d40b77a739450a203cf35e86" name="a683a06a2d40b77a739450a203cf35e86"></a>
+<a class="el" href="../../d3/d83/_thread_id_8hh.html#af299ab85716f04c5675e69a71c221718">StreamId</a>&#160;</td><td class="memItemRight" valign="bottom"><b>stream_id</b></td></tr>
+<tr class="memdesc:a683a06a2d40b77a739450a203cf35e86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for "thread-local" data. <br /></td></tr>
+<tr class="separator:a683a06a2d40b77a739450a203cf35e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#aeb6446bfcf4853c1dd9248791d829148">Ownership</a> W, <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> M&gt;<br />
-struct celeritas::StepStateData&lt; W, M &gt;</div><p >Gathered data for a single step for many tracks in parallel. </p>
-<ul>
-<li>Each data member corresponds exactly to a flag in <code><a class="el" href="../../d7/d26/structceleritas_1_1_step_selection.html" title="Which track properties to gather at every step.">StepSelection</a></code> .</li>
-<li>If the flag is disabled (no step interfaces require the data), then the corresponding member data will be empty.</li>
-<li>The track ID will be set to "false" if the track is inactive.</li>
-<li>If sensitive detector are specified, the <code>detector</code> field is set based on the pre-step geometric volume. Data members will have <b>unspecified</b> values if the detector ID is "false" (i.e. no information is being collected). The detector ID for inactive threads is always "false". </li>
-</ul>
+struct celeritas::StepStateData&lt; W, M &gt;</div><p >Gathered data and persistent scratch space for gathering and copying data. </p>
+<p >Extra storage <code>scratch</code> and <code>valid_id</code> is needed to efficiently gather and copy the step data on the device but will not be allocated on the host. </p>
 </div><hr/>The documentation for this struct was generated from the following files:<ul>
 <li><a class="el" href="../../db/de5/_detector_steps_8hh.html">DetectorSteps.hh</a></li>
 <li><a class="el" href="../../d9/dec/_step_data_8hh.html">StepData.hh</a></li>

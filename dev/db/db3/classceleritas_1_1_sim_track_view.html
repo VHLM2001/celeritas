@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -181,6 +181,17 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a> <a class="el" href="../../da/da4/structceleritas_1_1_step_limit.html">StepLimit</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>step_limit</b> () const</td></tr>
 <tr class="memdesc:a21bc0515e4bf4e4cfd2905b1b627f17f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current limiting step and action. <br /></td></tr>
 <tr class="separator:a21bc0515e4bf4e4cfd2905b1b627f17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c4b5ad0dff3e1a5b2fa549144a7c35c"><td class="memItemLeft" align="right" valign="top"><a id="a0c4b5ad0dff3e1a5b2fa549144a7c35c" name="a0c4b5ad0dff3e1a5b2fa549144a7c35c"></a>
+<a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a> <a class="el" href="../../da/da4/structceleritas_1_1_step_limit.html">StepLimit</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>step_limit</b> ()</td></tr>
+<tr class="memdesc:a0c4b5ad0dff3e1a5b2fa549144a7c35c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable access to step limit. <br /></td></tr>
+<tr class="separator:a0c4b5ad0dff3e1a5b2fa549144a7c35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac772876ad284eec38be37b2a20e0d78d"><td class="memItemLeft" align="right" valign="top"><a id="ac772876ad284eec38be37b2a20e0d78d" name="ac772876ad284eec38be37b2a20e0d78d"></a>
+<a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a98b21e11852c06d3845c53dd5df84797">ActionId</a>&#160;</td><td class="memItemRight" valign="bottom"><b>along_step_action</b> () const</td></tr>
+<tr class="memdesc:ac772876ad284eec38be37b2a20e0d78d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access along-step action to take. <br /></td></tr>
+<tr class="separator:ac772876ad284eec38be37b2a20e0d78d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedf0ad6905fe19b0fd278a8e883a84dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a98b21e11852c06d3845c53dd5df84797">ActionId</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db3/classceleritas_1_1_sim_track_view.html#aedf0ad6905fe19b0fd278a8e883a84dc">along_step_action</a> ()</td></tr>
+<tr class="memdesc:aedf0ad6905fe19b0fd278a8e883a84dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable access to along-step action to take.  <a href="../../db/db3/classceleritas_1_1_sim_track_view.html#aedf0ad6905fe19b0fd278a8e883a84dc">More...</a><br /></td></tr>
+<tr class="separator:aedf0ad6905fe19b0fd278a8e883a84dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d4d859e98460f01cabd9f414f9935b5"><td class="memItemLeft" align="right" valign="top"><a id="a2d4d859e98460f01cabd9f414f9935b5" name="a2d4d859e98460f01cabd9f414f9935b5"></a>
 <a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a> <a class="el" href="../../d1/d08/structceleritas_1_1_looping_threshold.html">LoopingThreshold</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>looping_threshold</b> (<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a3cea071f272f04902f40d2de68a9d7d6">ParticleId</a>) const</td></tr>
 <tr class="memdesc:a2d4d859e98460f01cabd9f414f9935b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Particle-dependent parameters for killing looping tracks. <br /></td></tr>
@@ -189,6 +200,34 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Simulation properties for a single track. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aedf0ad6905fe19b0fd278a8e883a84dc" name="aedf0ad6905fe19b0fd278a8e883a84dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedf0ad6905fe19b0fd278a8e883a84dc">&#9670;&#160;</a></span>along_step_action()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a98b21e11852c06d3845c53dd5df84797">ActionId</a> &amp; celeritas::SimTrackView::along_step_action </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mutable access to along-step action to take. </p>
+<p >(TODO: hack) </p>
+
+</div>
+</div>
 <a id="a3d85bc1f69c6ecb524416e7aea2cf5c7" name="a3d85bc1f69c6ecb524416e7aea2cf5c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d85bc1f69c6ecb524416e7aea2cf5c7">&#9670;&#160;</a></span>force_step_limit() <span class="overload">[1/2]</span></h2>
 

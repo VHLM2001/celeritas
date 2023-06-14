@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -90,12 +90,12 @@ $(function() {
 <code>#include &quot;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html">corecel/Types.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../dc/de9/_array_8hh.html">corecel/cont/Array.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/d5d/_array_i_o_8json_8hh.html">corecel/cont/ArrayIO.json.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d7/d46/_label_8hh.html">corecel/cont/Label.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../dd/ddb/_label_i_o_8json_8hh.html">corecel/cont/LabelIO.json.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/de4/_range_8hh.html">corecel/cont/Range.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../df/dbd/_span_8hh.html">corecel/cont/Span.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d46/_label_8hh.html">corecel/io/Label.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/ddb/_label_i_o_8json_8hh.html">corecel/io/LabelIO.json.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d6/d32/_string_enum_mapper_8hh.html">corecel/io/StringEnumMapper.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../dc/d1e/_bounding_box_8hh.html">orange/BoundingBox.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/d69/_bounding_box_i_o_8json_8hh.html">orange/BoundingBoxIO.json.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d7/d3b/_orange_types_8hh.html">orange/OrangeTypes.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/d57/_orange_input_8hh.html">orange/construct/OrangeInput.hh</a>&quot;</code><br />
 </div><table class="memberdecls">
@@ -113,6 +113,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::from_json<
 void&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::from_json</b> (nlohmann::json const &amp;j, UnitInput &amp;value)</td></tr>
 <tr class="memdesc:a9a35bcaba6de80f5db89adb7c6eadb29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a unit definition from an ORANGE input file. <br /></td></tr>
 <tr class="separator:a9a35bcaba6de80f5db89adb7c6eadb29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48140424a633808b348fce22d9c1efa1"><td class="memItemLeft" align="right" valign="top"><a id="a48140424a633808b348fce22d9c1efa1" name="a48140424a633808b348fce22d9c1efa1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::from_json</b> (nlohmann::json const &amp;j, RectArrayInput &amp;value)</td></tr>
+<tr class="memdesc:a48140424a633808b348fce22d9c1efa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a rectangular array universe definition from an ORANGE input file. <br /></td></tr>
+<tr class="separator:a48140424a633808b348fce22d9c1efa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afee7a290a82c83114e04d4042d7767af"><td class="memItemLeft" align="right" valign="top"><a id="afee7a290a82c83114e04d4042d7767af" name="afee7a290a82c83114e04d4042d7767af"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::from_json</b> (nlohmann::json const &amp;j, OrangeInput &amp;value)</td></tr>
 <tr class="memdesc:afee7a290a82c83114e04d4042d7767af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a partially preprocessed geometry definition from an ORANGE JSON file. <br /></td></tr>

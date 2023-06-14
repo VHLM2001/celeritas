@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Version 0.3.0 &mdash; Celeritas 0.3.0-rc.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Version 0.2.2" href="v0.2.html" />
+    <link rel="prev" title="Release History" href="../release-history.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Celeritas
+              <img src="../../_static/celeritas-square.svg" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                0.3.0-rc.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Using Celeritas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Library API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgments.html">Acknowledgments</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../release-history.html">Release History</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Version 0.3.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#new-features">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bug-fixes">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-improvements">Documentation improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minor-internal-changes">Minor internal changes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="v0.2.html">Version 0.2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.2.html#version-0-2-1">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.2.html#version-0-2-0">Version 0.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.1.html">Version 0.1.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.1.html#version-0-1-4">Version 0.1.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.1.html#version-0-1-3">Version 0.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.1.html#version-0-1-2">Version 0.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.1.html#version-0-1-1">Version 0.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.1.html#version-0-1-0">Version 0.1.0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Celeritas</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../release-history.html">Release History</a></li>
+      <li class="breadcrumb-item active">Version 0.3.0</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/appendices/release-history/v0.3.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="version-0-3-0">
+<span id="release-v0-3-0"></span><h1>Version 0.3.0<a class="headerlink" href="#version-0-3-0" title="Permalink to this heading"></a></h1>
+<p><em>Released 2023/06/13</em></p>
+<p>Version 0.3.0 is a major new release of Celeritas. Key enhancements are:</p>
+<ul class="simple">
+<li><p>Full, efficient support for multithreading inside Geant4 apps</p></li>
+<li><p>Improved Geant4 integration, including support for Geant4 11.1</p></li>
+<li><p>Automatic in-memory conversion of Geant4 geometry to VecGeom</p></li>
+<li><p>New diagnostic functionality and quality-of-life improvements</p></li>
+<li><p>Performance improvements</p></li>
+</ul>
+<p>Key changes:</p>
+<ul class="simple">
+<li><p>“Stuck” tracks are killed after a certain number of steps without an intersection</p></li>
+<li><p>The Urban cross section model is used by default for all energies</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">demo-loop</span></code> is now <code class="docutils literal notranslate"><span class="pre">celer-sim</span></code> and is installed alongside the library</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">demo-geant</span></code> is now <code class="docutils literal notranslate"><span class="pre">celer-g4</span></code> and is also installed</p></li>
+<li><p>Building with the C++17 or later is required</p></li>
+</ul>
+<section id="new-features">
+<h2>New features<a class="headerlink" href="#new-features" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Add filtering to <cite>RootStepWriter</cite> <em>(&#64;stognini, #630)</em></p></li>
+<li><p>Add math operators to Quantity <em>(&#64;sethrj, #658)</em></p></li>
+<li><p>Disable Geant4+ROOT system signal hooks <em>(&#64;sethrj, #656)</em></p></li>
+<li><p>ORANGE: find next step across multiple universes <em>(&#64;elliottbiondo, #607)</em></p></li>
+<li><p>Wrap track extender/initializer functions inside concrete Actions <em>(&#64;drbenmorgan, #664)</em></p></li>
+<li><p>Read EM processes from G4GammaGeneral <em>(&#64;sethrj, #690)</em></p></li>
+<li><p>Identify and kill looping tracks <em>(&#64;amandalund, #685)</em></p></li>
+<li><p>Add StreamId to allow thread-safe data access in Actions <em>(&#64;sethrj, #693)</em></p></li>
+<li><p>Cross universe boundaries in ORANGE <em>(&#64;elliottbiondo, #684)</em></p></li>
+<li><p>Import a few more EM parameters from Geant4 <em>(&#64;amandalund, #703)</em></p></li>
+<li><p>Add UniformAlongStepFactory for Geant4 integration <em>(&#64;sethrj, #702)</em></p></li>
+<li><p>Add option for ordering and shuffling track slots <em>(&#64;esseivaju, #701)</em></p></li>
+<li><p>Define SimpleOffload for dead-simple Geant4 integration <em>(&#64;sethrj, #704)</em></p></li>
+<li><p>Extend Urban MSC to high energy by default <em>(&#64;sethrj, #705)</em></p></li>
+<li><p>Add an option to apply cuts to all secondaries <em>(&#64;amandalund, #709)</em></p></li>
+<li><p>Add more output diagnostics from internal classes <em>(&#64;sethrj, #714)</em></p></li>
+<li><p>Add new capabilities to run CMS with sensitive detectors <em>(&#64;sethrj, #713)</em></p></li>
+<li><p>Add memory diagnostic <em>(&#64;sethrj, #716)</em></p></li>
+<li><p>Convert Geant4 geometry to VecGeom in memory <em>(&#64;mrguilima, #557)</em></p></li>
+<li><p>Create ORANGE RectArrayRecord objects <em>(&#64;elliottbiondo, #718)</em></p></li>
+<li><p>Add StreamStore for thread-safe storage of states in a params object <em>(&#64;sethrj, #722)</em></p></li>
+<li><p>Partition tracks by status at the start of each simulation step <em>(&#64;esseivaju, #717)</em></p></li>
+<li><p>Sort track slots by step limit <cite>ActionId</cite> <em>(&#64;esseivaju, #727)</em></p></li>
+<li><p>Add simple calorimeter <em>(&#64;sethrj, #733)</em></p></li>
+<li><p>Add debugging/profiling utilities <em>(&#64;sethrj, #738)</em></p></li>
+<li><p>Add an along step action with a RZMapField <em>(&#64;whokion, #736)</em></p></li>
+<li><p>Add ActionDiagnostic, replacing ParticleProcessDiagnostic <em>(&#64;amandalund, #740)</em></p></li>
+<li><p>Replace demo loop <cite>StepDiagnostic</cite> with thread-safe version <em>(&#64;amandalund, #746)</em></p></li>
+<li><p>Improve and add internal utilities before refactoring action interface <em>(&#64;sethrj, #742)</em></p></li>
+<li><p>Expand <cite>GeantPhysicsOptions</cite> to encompass all physics processes <em>(&#64;stognini, #744)</em></p></li>
+<li><p>Output descriptive state on CPU when an offloaded track dies <em>(&#64;sethrj, #752)</em></p></li>
+<li><p>Use separate along-step kernel for neutral particles for 25% performance boost <em>(&#64;sethrj, #745)</em></p></li>
+<li><p>Extend and update SWIG wrappers <em>(&#64;sethrj, #767)</em></p></li>
+<li><p>Add option to throw an exception when ROOT encountered an “error” <em>(&#64;sethrj, #760)</em></p></li>
+<li><p>Support Geant4 11.1+ <em>(&#64;sethrj, #768)</em></p></li>
+<li><p>Add begin-of-run interface to initialize states and actions <em>(&#64;sethrj, #769)</em></p></li>
+<li><p>Support multithreaded CPU using single GPU in demo loop <em>(&#64;amandalund, #774)</em></p></li>
+<li><p>Support running kernels on different CUDA streams <em>(&#64;amandalund, #777)</em></p></li>
+<li><p>Rename demo loop/geant to celer-sim and celer-g4 <em>(&#64;sethrj, #779)</em></p></li>
+<li><p>Implement a Geant4 geometry tracker for comparing with VecGeom <em>(&#64;sethrj, #759)</em></p></li>
+<li><p>Add RectArrayTracker class <em>(&#64;elliottbiondo, #758)</em></p></li>
+<li><p>Rename <cite>max_num_tracks</cite> to <cite>num_track_slots</cite> and divide by <cite>num_streams</cite> <em>(&#64;sethrj, #785)</em></p></li>
+<li><p>Simulate zero cross section for particles without processes <em>(&#64;stognini, #782)</em></p></li>
+<li><p>Improve logger interaction with Geant4 <em>(&#64;sethrj, #804)</em></p></li>
+<li><p>Improve stream redirection behavior and logger destination <em>(&#64;sethrj, #815)</em></p></li>
+<li><p>Add G4ExtrudedSolid conversion <em>(&#64;sethrj, #813)</em></p></li>
+<li><p>Improve performance of gathering and copying detector step data on device <em>(&#64;amandalund, #814)</em></p></li>
+<li><p>Extend user-facing app/environment options <em>(&#64;sethrj, #816)</em></p></li>
+</ul>
+<p>Reviewers: &#64;sethrj <em>(20)</em>, &#64;amandalund <em>(19)</em>, &#64;pcanal <em>(4)</em>, &#64;esseivaju <em>(4)</em>, &#64;whokion <em>(3)</em>, &#64;stognini <em>(2)</em>, &#64;drbenmorgan <em>(1)</em>, &#64;mrguilima <em>(1)</em></p>
+</section>
+<section id="bug-fixes">
+<h2>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Fix MSC cross section units <em>(&#64;sethrj, #644)</em></p></li>
+<li><p>Fix SWIG and update requirements <em>(&#64;sethrj, #657)</em></p></li>
+<li><p>Only capture kernel context if corresponding track is alive <em>(&#64;sethrj, #661)</em></p></li>
+<li><p>Fix hit mapping when using GDML geometry with pointers <em>(&#64;sethrj, #673)</em></p></li>
+<li><p>Fix small bugs and remove special cases in Urban MSC <em>(&#64;sethrj, #674)</em></p></li>
+<li><p>Fix imported micro xs when lower energy grid bound is higher than upper bound <em>(&#64;amandalund, #679)</em></p></li>
+<li><p>Fix unique Geant4/GDML volume names <em>(&#64;amandalund, #680)</em></p></li>
+<li><p>Fix Collection usage from inside .cu files <em>(&#64;sethrj, #688)</em></p></li>
+<li><p>Give different streams unique RNG seeds <em>(&#64;sethrj, #696)</em></p></li>
+<li><p>Fix a few edge cases in field propagation <em>(&#64;amandalund, #700)</em></p></li>
+<li><p>Fix multithreading in Geant4 and HitManager <em>(&#64;sethrj, #694)</em></p></li>
+<li><p>Fix SWIG and mac builds <em>(&#64;sethrj, #706)</em></p></li>
+<li><p>Fix energy deposition for killed looping positrons <em>(&#64;amandalund, #708)</em></p></li>
+<li><p>Fix minor warning with VecGeom and test failures when JSON is unavailable <em>(&#64;sethrj, #729)</em></p></li>
+<li><p>Use weak_ptr to fix ActionDiagnostic shared cycle <em>(&#64;sethrj, #748)</em></p></li>
+<li><p>Fail consistently when trying to track in unsupported volumes <em>(&#64;sethrj, #751)</em></p></li>
+<li><p>Fix duplicate volume warnings and missing material IDs <em>(&#64;sethrj, #753)</em></p></li>
+<li><p>Fix conversion of Geant4 reflected shapes  <em>(&#64;mrguilima, #761)</em></p></li>
+<li><p>Remove next-distance caching from geometry and add limited-distance safety search <em>(&#64;sethrj, #776)</em></p></li>
+<li><p>Fix step limiter when losing all energy over a step <em>(&#64;sethrj, #780)</em></p></li>
+<li><p>Fix G4VExceptionHandler lifetime and improve exception wrapping <em>(&#64;sethrj, #773)</em></p></li>
+<li><p>Only use ROOT in celer-g4 when Celeritas uses Geant4 <em>(&#64;drbenmorgan, #798)</em></p></li>
+<li><p>Fix celer-g4 ROOT PCM load error <em>(&#64;pcanal, #799)</em></p></li>
+<li><p>Fix UrbanMsc safety edge case <em>(&#64;sethrj, #803)</em></p></li>
+<li><p>Fix build on Summit <em>(&#64;sethrj, #806)</em></p></li>
+<li><p>Fix along-step with uniform field on CPU when no MSC <em>(&#64;sethrj, #807)</em></p></li>
+<li><p>Fix assertion when field driver step has zero error <em>(&#64;sethrj, #808)</em></p></li>
+<li><p>Fix Bremsstrahlung process construction based on <cite>Geant4PhysicsOptions</cite> <em>(&#64;stognini, #811)</em></p></li>
+<li><p>Fix some VecGeom CMS Run 3 issues <em>(&#64;sethrj, #797)</em></p></li>
+<li><p>Rewrite VecGeom converter to fix mapping issues with reflecting volumes <em>(&#64;sethrj, #812)</em></p></li>
+</ul>
+<p>Reviewers: &#64;amandalund <em>(12)</em>, &#64;sethrj <em>(8)</em>, &#64;whokion <em>(4)</em>, &#64;pcanal <em>(3)</em>, &#64;stognini <em>(1)</em>, &#64;drbenmorgan <em>(1)</em>, &#64;elliottbiondo <em>(1)</em>, &#64;mrguilima <em>(1)</em></p>
+</section>
+<section id="documentation-improvements">
+<h2>Documentation improvements<a class="headerlink" href="#documentation-improvements" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Add minimal failing test for #620 <em>(&#64;amandalund, #655)</em></p></li>
+<li><p>Fix documentation links and update celeritas logo <em>(&#64;sethrj, #686)</em></p></li>
+<li><p>Fix KernelContext Exception test for cases where ThreadId != TrackSlotId <em>(&#64;esseivaju, #695)</em></p></li>
+<li><p>Improve documentation failure mode when sphinx is unavailable <em>(&#64;sethrj, #712)</em></p></li>
+<li><p>Reenable and patch up HIP tests <em>(&#64;sethrj, #711)</em></p></li>
+<li><p>Add documentation about deprecation <em>(&#64;sethrj, #723)</em></p></li>
+<li><p>Add tests for AlongStepAction with RZMapField <em>(&#64;whokion, #747)</em></p></li>
+<li><p>Improve documentation and action descriptions <em>(&#64;sethrj, #749)</em></p></li>
+<li><p>Define virtual geometry interface and improve documentation <em>(&#64;sethrj, #754)</em></p></li>
+<li><p>Release v0.2.2 <em>(&#64;sethrj, #763)</em></p></li>
+<li><p>Refactor TrackInitTest and fix when JSON is unavailable <em>(&#64;sethrj, #793)</em></p></li>
+<li><p>Add new vecgeom tests to emulate CMS run 3 issues <em>(&#64;sethrj, #800)</em></p></li>
+</ul>
+<p>Reviewers: &#64;amandalund <em>(6)</em>, &#64;sethrj <em>(3)</em>, &#64;mrguilima <em>(1)</em>, &#64;paulromano <em>(1)</em>, &#64;stognini <em>(1)</em></p>
+</section>
+<section id="minor-internal-changes">
+<h2>Minor internal changes<a class="headerlink" href="#minor-internal-changes" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Remove multiple scattering from Processes <em>(&#64;sethrj, #631)</em></p></li>
+<li><p>Require C++17 and use a few C++17 features <em>(&#64;sethrj, #633)</em></p></li>
+<li><p>Auto-write ROOT objects before deleting <em>(&#64;stognini, #610)</em></p></li>
+<li><p>Refactor import process into multiple import models <em>(&#64;sethrj, #634)</em></p></li>
+<li><p>Switch from genreflex/xml to rootcling/LinkDef for demo-geant-integration <em>(&#64;pcanal, #636)</em></p></li>
+<li><p>Disable rootmap file for demo-geant-integration dictionary. <em>(&#64;pcanal, #647)</em></p></li>
+<li><p>Fix duplicate CMake presets <em>(&#64;sethrj, #660)</em></p></li>
+<li><p>Differentiate between local and global Volume and Surface Ids within ORANGE <em>(&#64;elliottbiondo, #669)</em></p></li>
+<li><p>Refactor MSC implementation and add further tests <em>(&#64;sethrj, #641)</em></p></li>
+<li><p>Use TrackSlotId to index into states <em>(&#64;sethrj, #676)</em></p></li>
+<li><p>Update CI VecGeom to 1.2.2 <em>(&#64;sethrj, #682)</em></p></li>
+<li><p>Loosen test tolerances for VecGeom <em>(&#64;sethrj, #681)</em></p></li>
+<li><p>Update the CMakePreset and env script for building on Zeus <em>(&#64;esseivaju, #689)</em></p></li>
+<li><p>Index tracks by <cite>TrackSlotId</cite> <em>(&#64;esseivaju, #678)</em></p></li>
+<li><p>Fix HIP test failure in field propagation <em>(&#64;sethrj, #697)</em></p></li>
+<li><p>Use more IIFE, constexpr inline, string_view <em>(&#64;sethrj, #699)</em></p></li>
+<li><p>Use SoA for <cite>SimTrackView</cite> state data <em>(&#64;esseivaju, #707)</em></p></li>
+<li><p>Rename OutputManager to OutputRegistry and add to CoreParams <em>(&#64;sethrj, #710)</em></p></li>
+<li><p>Move basic grid functionality to corecel <em>(&#64;elliottbiondo, #719)</em></p></li>
+<li><p>Use independent params and state arguments for actions <em>(&#64;sethrj, #720)</em></p></li>
+<li><p>Remove universe_types/universe_indices from OrangeInput and rename UnitIndexer <em>(&#64;elliottbiondo, #724)</em></p></li>
+<li><p>Add more assertions and minor fixes <em>(&#64;amandalund, #730)</em></p></li>
+<li><p>Move some ROOT files and refactor demo-app input <em>(&#64;sethrj, #728)</em></p></li>
+<li><p>Move Label to corecel/io <em>(&#64;sethrj, #731)</em></p></li>
+<li><p>Replace RZ field reader with JSON <em>(&#64;sethrj, #735)</em></p></li>
+<li><p>Refactor demo-loop into Runner class <em>(&#64;sethrj, #732)</em></p></li>
+<li><p>Move and rename volume-based magnetic field map classes  <em>(&#64;whokion, #725)</em></p></li>
+<li><p>Allow geometry selection independent of VecGeom being enabled <em>(&#64;sethrj, #726)</em></p></li>
+<li><p>Decompose along-step GPU kernel for 10% performance boost <em>(&#64;sethrj, #737)</em></p></li>
+<li><p>Pass host-only classes to actions <em>(&#64;sethrj, #741)</em></p></li>
+<li><p>Access params/state through global rather than constant memory <em>(&#64;sethrj, #743)</em></p></li>
+<li><p>Add a VecGeom+RelWithDebInfo+debug build to the CI <em>(&#64;amandalund, #715)</em></p></li>
+<li><p>Update CMake presets and gitignore <em>(&#64;esseivaju, #756)</em></p></li>
+<li><p>Use UniformGrid for RZMapField <em>(&#64;whokion, #755)</em></p></li>
+<li><p>Refactor primary-to-initializer as an action <em>(&#64;sethrj, #764)</em></p></li>
+<li><p>Consolidate Geant4 geometry conversion utilities <em>(&#64;sethrj, #771)</em></p></li>
+<li><p>Improve VecGeom testing <em>(&#64;sethrj, #770)</em></p></li>
+<li><p>Refactor track initialization kernels and initialization scalars <em>(&#64;sethrj, #766)</em></p></li>
+<li><p>Separate app CMakeLists and install executables <em>(&#64;sethrj, #775)</em></p></li>
+<li><p>Rename Launch⇄Execute <em>(&#64;sethrj, #781)</em></p></li>
+<li><p>Add a Launch helper functor to fully abstract device execution <em>(&#64;sethrj, #783)</em></p></li>
+<li><p>Use <cite>ActionLauncher</cite> for Moller-Bhabha, action diagnostic, and step gather action <em>(&#64;amandalund, #790)</em></p></li>
+<li><p>Use ActionLauncher for LivermorePE, CombinedBrem, MuBremsstrahlung, RelativisticBrem <em>(&#64;pcanal, #789)</em></p></li>
+<li><p>Use ActionLauncher for Klein-Nishina model <em>(&#64;esseivaju, #787)</em></p></li>
+<li><p>Use ActionLauncher for boundary action <em>(&#64;esseivaju, #788)</em></p></li>
+<li><p>Use ActionLauncher for positron annihilation, Rayleigh scattering, and Seltzer-Berger models <em>(&#64;stognini, #786)</em></p></li>
+<li><p>Remove CelerGen and associated scripts <em>(&#64;sethrj, #792)</em></p></li>
+<li><p>Use ActionLauncher for along-step methods <em>(&#64;sethrj, #791)</em></p></li>
+<li><p>Use constrained safety distance for MSC step limit and scattering <em>(&#64;sethrj, #784)</em></p></li>
+<li><p>Account for zero-processes only in pre-step action <em>(&#64;sethrj, #795)</em></p></li>
+<li><p>Finalize launch simplification <em>(&#64;sethrj, #796)</em></p></li>
+<li><p>Create CUDA streams when integrating with Geant4 <em>(&#64;amandalund, #805)</em></p></li>
+<li><p>Fix G4 version check for <cite>G4Step::Reset[Pre|Post]StepPoint</cite> <em>(&#64;esseivaju, #810)</em></p></li>
+</ul>
+<p>Reviewers: &#64;amandalund <em>(21)</em>, &#64;sethrj <em>(21)</em>, &#64;pcanal <em>(4)</em>, &#64;esseivaju <em>(4)</em>, &#64;whokion <em>(2)</em>, &#64;stognini <em>(2)</em>, &#64;mrguilima <em>(1)</em></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../release-history.html" class="btn btn-neutral float-left" title="Release History" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="v0.2.html" class="btn btn-neutral float-right" title="Version 0.2.2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, UT–Battelle/ORNL and Celeritas team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

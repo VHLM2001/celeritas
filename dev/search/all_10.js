@@ -8,9 +8,11 @@ var searchData=
   ['quantity_3c_20amu_20_3e_5',['Quantity&lt; Amu &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
   ['quantity_3c_20eelectron_20_3e_6',['Quantity&lt; EElectron &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
   ['quantity_3c_20energyunits_20_3e_7',['Quantity&lt; EnergyUnits &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
-  ['quantity_3c_20logmev_20_3e_8',['Quantity&lt; LogMev &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
-  ['quantity_3c_20mev_20_3e_9',['Quantity&lt; Mev &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
-  ['quantity_3c_20unitdivide_3c_20mev_2c_20clightsq_20_3e_20_3e_10',['Quantity&lt; UnitDivide&lt; Mev, CLightSq &gt; &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
-  ['quantityio_2ejson_2ehh_11',['QuantityIO.json.hh',['../d6/d09/_quantity_i_o_8json_8hh.html',1,'']]],
-  ['queued_12',['queued',['../d1/dd0/structceleritas_1_1_stepper_result.html#adb71afdd81269dd706c0d69889514c36',1,'celeritas::StepperResult']]]
+  ['quantity_3c_20kibi_2c_20int_20_3e_8',['Quantity&lt; Kibi, int &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
+  ['quantity_3c_20logmev_20_3e_9',['Quantity&lt; LogMev &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
+  ['quantity_3c_20mev_20_3e_10',['Quantity&lt; Mev &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
+  ['quantity_3c_20mevpercsq_20_3e_11',['Quantity&lt; MevPerCsq &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
+  ['quantityio_2ehh_12',['QuantityIO.hh',['../de/d1c/_quantity_i_o_8hh.html',1,'']]],
+  ['quantityio_2ejson_2ehh_13',['QuantityIO.json.hh',['../d6/d09/_quantity_i_o_8json_8hh.html',1,'']]],
+  ['queued_14',['queued',['../d1/dd0/structceleritas_1_1_stepper_result.html#adb71afdd81269dd706c0d69889514c36',1,'celeritas::StepperResult']]]
 ];

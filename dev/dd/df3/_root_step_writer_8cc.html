@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -71,20 +71,25 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_54b4dc0a5a8b71d7ed2a0028b382827b.html">celeritas</a></li><li class="navelem"><a class="el" href="../../dir_8d5c76c033875822d1f52197f4f1af8a.html">io</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_54b4dc0a5a8b71d7ed2a0028b382827b.html">celeritas</a></li><li class="navelem"><a class="el" href="../../dir_899e21acf90f5e54c1f6f6de7b9031be.html">user</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">RootStepWriter.cc File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d2/d64/_root_step_writer_8hh.html">RootStepWriter.hh</a>&quot;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
 <code>#include &lt;TBranch.h&gt;</code><br />
 <code>#include &lt;TFile.h&gt;</code><br />
 <code>#include &lt;TTree.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/d10/_assert_8hh.html">corecel/Assert.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/db8/_root_file_manager_8hh.html">celeritas/ext/RootFileManager.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d90/_particle_params_8hh.html">celeritas/phys/ParticleParams.hh</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
@@ -92,6 +97,12 @@ Macros</h2></td></tr>
 <tr class="separator:a7dd649547b9c4933c9046642b088e9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c3008ac683e986fd7fee8aa4784e5a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df3/_root_step_writer_8cc.html#a3c3008ac683e986fd7fee8aa4784e5a8">RSW_CREATE_BRANCH</a>(ATTR,  BRANCH_NAME)</td></tr>
 <tr class="separator:a3c3008ac683e986fd7fee8aa4784e5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:abde239b2023e959c558b61668bb2f684"><td class="memItemLeft" align="right" valign="top"><a id="abde239b2023e959c558b61668bb2f684" name="abde239b2023e959c558b61668bb2f684"></a>
+RootStepWriter::WriteFilter&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::make_write_filter</b> (SimpleRootFilterInput const &amp;inp)</td></tr>
+<tr class="separator:abde239b2023e959c558b61668bb2f684"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a3c3008ac683e986fd7fee8aa4784e5a8" name="a3c3008ac683e986fd7fee8aa4784e5a8"></a>
@@ -154,12 +165,12 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                                                             \</div>
-<div class="line">    {                                                              \</div>
-<div class="line">        if (selection_.ATTR)                                       \</div>
-<div class="line">        {                                                          \</div>
-<div class="line">            copy_if_selected(steps.ATTR[tid] GETTER, tstep_.ATTR); \</div>
-<div class="line">        }                                                          \</div>
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                                                                        \</div>
+<div class="line">    {                                                                         \</div>
+<div class="line">        if (selection_.ATTR)                                                  \</div>
+<div class="line">        {                                                                     \</div>
+<div class="line">            copy_if_selected(state.steps.data.ATTR[tid] GETTER, tstep_.ATTR); \</div>
+<div class="line">        }                                                                     \</div>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment -->
 </div>

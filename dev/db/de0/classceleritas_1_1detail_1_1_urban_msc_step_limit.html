@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -76,14 +76,13 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="../../d4/d03/classceleritas_1_1detail_1_1_urban_msc_step_limit-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">celeritas::detail::UrbanMscStepLimit Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the step limitation algorithm of the Urban model for the e-/e+ multiple scattering.  
+<p>Sample a step limit for the Urban MSC model.  
  <a href="../../db/de0/classceleritas_1_1detail_1_1_urban_msc_step_limit.html#details">More...</a></p>
 
 <p><code>#include &lt;UrbanMscStepLimit.hh&gt;</code></p>
@@ -94,15 +93,6 @@ Public Types</h2></td></tr>
 <tr class="memitem:aa9337c3fac21ae3a6ffe319aa7c1dc51"><td class="memItemLeft" align="right" valign="top"><a id="aa9337c3fac21ae3a6ffe319aa7c1dc51" name="aa9337c3fac21ae3a6ffe319aa7c1dc51"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>Energy</b> = <a class="el" href="../../dc/dff/classceleritas_1_1_quantity.html">units::MevEnergy</a></td></tr>
 <tr class="separator:aa9337c3fac21ae3a6ffe319aa7c1dc51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2356487f1e2ef7be26d663f9341b436"><td class="memItemLeft" align="right" valign="top"><a id="ae2356487f1e2ef7be26d663f9341b436" name="ae2356487f1e2ef7be26d663f9341b436"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Mass</b> = <a class="el" href="../../dc/dff/classceleritas_1_1_quantity.html">units::MevMass</a></td></tr>
-<tr class="separator:ae2356487f1e2ef7be26d663f9341b436"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac93e9077216dbd25de92867717fedd87"><td class="memItemLeft" align="right" valign="top"><a id="ac93e9077216dbd25de92867717fedd87" name="ac93e9077216dbd25de92867717fedd87"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>MscParameters</b> = <a class="el" href="../../dc/dbd/structceleritas_1_1_urban_msc_parameters.html">UrbanMscParameters</a></td></tr>
-<tr class="separator:ac93e9077216dbd25de92867717fedd87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7b1de788bf6cfda54ac9f8cc9bf2ad4"><td class="memItemLeft" align="right" valign="top"><a id="ae7b1de788bf6cfda54ac9f8cc9bf2ad4" name="ae7b1de788bf6cfda54ac9f8cc9bf2ad4"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>MaterialData</b> = <a class="el" href="../../d3/ddf/structceleritas_1_1_urban_msc_material_data.html">UrbanMscMaterialData</a></td></tr>
-<tr class="separator:ae7b1de788bf6cfda54ac9f8cc9bf2ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a643869c368c6cdb55c20db0de4c8c030"><td class="memItemLeft" align="right" valign="top"><a id="a643869c368c6cdb55c20db0de4c8c030" name="a643869c368c6cdb55c20db0de4c8c030"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>UrbanMscRef</b> = <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#a35e5b1955aa5d7269b34c6f5044b3b69">NativeCRef</a>&lt; <a class="el" href="../../dd/d80/structceleritas_1_1_urban_msc_data.html">UrbanMscData</a> &gt;</td></tr>
 <tr class="separator:a643869c368c6cdb55c20db0de4c8c030"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,44 +103,21 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a>&#160;</td><td class="memItemRight" valign="bottom"><b>UrbanMscStepLimit</b> (UrbanMscRef const &amp;shared, <a class="el" href="../../dc/da3/classceleritas_1_1detail_1_1_urban_msc_helper.html">UrbanMscHelper</a> const &amp;helper, <a class="el" href="../../dc/dff/classceleritas_1_1_quantity.html">Energy</a> inc_energy, <a class="el" href="../../d4/dd9/classceleritas_1_1_physics_track_view.html">PhysicsTrackView</a> *physics, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a1cade572974306b924a14c099e1a5ef0">MaterialId</a> matid, bool on_boundary, <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac97c7d9259eb113cfcc54c671fd2173d">real_type</a> safety, <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac97c7d9259eb113cfcc54c671fd2173d">real_type</a> phys_step)</td></tr>
 <tr class="memdesc:a9a9c98c9296a1b9cdbc0a030b1da99ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with shared and state data. <br /></td></tr>
 <tr class="separator:a9a9c98c9296a1b9cdbc0a030b1da99ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23e975d2446524691b880e13cdde55a7"><td class="memTemplParams" colspan="2"><a id="a23e975d2446524691b880e13cdde55a7" name="a23e975d2446524691b880e13cdde55a7"></a>
+<tr class="memitem:a612072e7053c6c78b1baa9d1784799d8"><td class="memTemplParams" colspan="2"><a id="a612072e7053c6c78b1baa9d1784799d8" name="a612072e7053c6c78b1baa9d1784799d8"></a>
 template&lt;class Engine &gt; </td></tr>
-<tr class="memitem:a23e975d2446524691b880e13cdde55a7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../da/da0/structceleritas_1_1_msc_step.html">MscStep</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (Engine &amp;rng)</td></tr>
-<tr class="separator:a23e975d2446524691b880e13cdde55a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa485d7fb38d16bd685b9a3f8c96ff97d"><td class="memTemplParams" colspan="2">template&lt;class Engine &gt; </td></tr>
-<tr class="memitem:aa485d7fb38d16bd685b9a3f8c96ff97d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/de0/classceleritas_1_1detail_1_1_urban_msc_step_limit.html#aa485d7fb38d16bd685b9a3f8c96ff97d">operator()</a> (Engine &amp;rng) -&gt; <a class="el" href="../../da/da0/structceleritas_1_1_msc_step.html">MscStep</a></td></tr>
-<tr class="memdesc:aa485d7fb38d16bd685b9a3f8c96ff97d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the true path length using the Urban multiple scattering model as well as the geometry path length for a given proposed physics step.  <a href="../../db/de0/classceleritas_1_1detail_1_1_urban_msc_step_limit.html#aa485d7fb38d16bd685b9a3f8c96ff97d">More...</a><br /></td></tr>
-<tr class="separator:aa485d7fb38d16bd685b9a3f8c96ff97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a612072e7053c6c78b1baa9d1784799d8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac97c7d9259eb113cfcc54c671fd2173d">real_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (Engine &amp;rng)</td></tr>
+<tr class="separator:a612072e7053c6c78b1baa9d1784799d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eda01a3dab46c43dc69a88475e81be2"><td class="memTemplParams" colspan="2"><a id="a7eda01a3dab46c43dc69a88475e81be2" name="a7eda01a3dab46c43dc69a88475e81be2"></a>
+template&lt;class Engine &gt; </td></tr>
+<tr class="memitem:a7eda01a3dab46c43dc69a88475e81be2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (Engine &amp;rng) -&gt; <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac97c7d9259eb113cfcc54c671fd2173d">real_type</a></td></tr>
+<tr class="memdesc:a7eda01a3dab46c43dc69a88475e81be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample the true path length using the Urban multiple scattering model. <br /></td></tr>
+<tr class="separator:a7eda01a3dab46c43dc69a88475e81be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >This is the step limitation algorithm of the Urban model for the e-/e+ multiple scattering. </p>
+<div class="textblock"><p >Sample a step limit for the Urban MSC model. </p>
+<p >This distribution is to be used for tracks that have non-negligible steps and are near the boundary. Otherwise, no displacement or step limiting is needed.</p>
 <dl class="section note"><dt>Note</dt><dd>This code performs the same method as in ComputeTruePathLengthLimit of G4UrbanMscModel, as documented in section 8.1.6 of the Geant4 10.7 Physics Reference Manual or CERN-OPEN-2006-077 by L. Urban. </dd></dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa485d7fb38d16bd685b9a3f8c96ff97d" name="aa485d7fb38d16bd685b9a3f8c96ff97d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa485d7fb38d16bd685b9a3f8c96ff97d">&#9670;&#160;</a></span>operator()()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Engine &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> auto celeritas::detail::UrbanMscStepLimit::operator() </td>
-          <td>(</td>
-          <td class="paramtype">Engine &amp;&#160;</td>
-          <td class="paramname"><em>rng</em></td><td>)</td>
-          <td> -&gt; <a class="el" href="../../da/da0/structceleritas_1_1_msc_step.html">MscStep</a>
-</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calculate the true path length using the Urban multiple scattering model as well as the geometry path length for a given proposed physics step. </p>
-<p >The model is selected for the candidate process governing the step if the true path length is smaller than the current physics step length. However, the geometry path length will be used for the further step length competition (either with the linear or field propagator). If the geometry path length is smaller than the distance to the next volume, then the model is finally selected for the interaction by the multiple scattering. </p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="../../d0/df5/_urban_msc_step_limit_8hh.html">UrbanMscStepLimit.hh</a></li>
 </ul>
 </div><!-- contents -->

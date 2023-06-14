@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Development Guide &mdash; Celeritas v0.3.0-dev.62+f351e714 documentation</title>
+  <title>Development Guide &mdash; Celeritas 0.3.0-rc.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -29,15 +29,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Celeritas
-            <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Celeritas
+              <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-dev
+                0.3.0-rc.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -46,9 +50,10 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Using Celeritas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Library API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgments.html">Acknowledgments</a></li>
@@ -103,8 +108,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Development Guide</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Development Guide</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/appendices/development.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -160,7 +165,7 @@ how to structure the decorations.</p>
 </section>
 <section id="submitting-code-changes">
 <h3>Submitting code changes<a class="headerlink" href="#submitting-code-changes" title="Permalink to this heading"></a></h3>
-<p>When you believe that you’ve made a substantive <a class="footnote-reference brackets" href="#id2" id="id1">1</a> and self-contained
+<p>When you believe that you’ve made a substantive <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> and self-contained
 improvement to the code, it’s time to create a <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">pull request</a> (PR) to get
 feedback on your changes before they’re merged into the code base.</p>
 <p>Before opening the pull request, check that the <a class="reference internal" href="#code-guidelines"><span class="std std-ref">code</span></a>
@@ -190,16 +195,17 @@ they conflict.</p>
 <p>After the CI tests pass and the reviewers have approved your changes,
 your branch will be squashed and merged, and you will officially be a Celeritas
 <a class="reference internal" href="administration.html#roles"><span class="std std-ref">contributor</span></a>! Congratulations!</p>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>All changes to the codebase must go through the pull request, but due to
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>All changes to the codebase must go through the pull request, but due to
 the overhead of reviewing, testing, merging, and documenting a PR, we’d like
 to avoid small changes that have almost no effect in terms of operation or
 readability. For example, if you find a typo in the documentation, check the
 rest of the docs for any other typos or improvements you’d like to make, and
 submit a single PR with those changes.</p>
-</dd>
-</dl>
+</aside>
+</aside>
 </section>
 </section>
 <section id="code-development-guidelines">

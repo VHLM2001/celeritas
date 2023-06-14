@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -71,12 +71,13 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_54b4dc0a5a8b71d7ed2a0028b382827b.html">celeritas</a></li><li class="navelem"><a class="el" href="../../dir_8d5c76c033875822d1f52197f4f1af8a.html">io</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_54b4dc0a5a8b71d7ed2a0028b382827b.html">celeritas</a></li><li class="navelem"><a class="el" href="../../dir_899e21acf90f5e54c1f6f6de7b9031be.html">user</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">RootStepWriter.hh File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -84,12 +85,13 @@ $(function() {
 <code>#include &quot;<a class="el" href="../../d8/d28/celeritas__config_8h.html">celeritas_config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/d10/_assert_8hh.html">corecel/Assert.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d6/d70/_root_unique_ptr_8hh.html">celeritas/ext/RootUniquePtr.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d2/db8/_root_file_manager_8hh.html">celeritas/io/RootFileManager.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d7/d90/_particle_params_8hh.html">celeritas/phys/ParticleParams.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../df/d16/_step_interface_8hh.html">celeritas/user/StepInterface.hh</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/ddc/structceleritas_1_1_simple_root_filter_input.html">celeritas::SimpleRootFilterInput</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input to <code>make_write_filter</code> (below) for filtering ROOT MC truth output.  <a href="../../dd/ddc/structceleritas_1_1_simple_root_filter_input.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d56/classceleritas_1_1_root_step_writer.html">celeritas::RootStepWriter</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write "MC truth" data to ROOT at every step.  <a href="../../d9/d56/classceleritas_1_1_root_step_writer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -97,8 +99,14 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truth step point data; Naming convention must match <a class="el" href="../../d7/d97/structceleritas_1_1_step_point_state_data.html" title="Gathered state data for beginning/end of step data for tracks in parallel.">StepPointStateData</a>.  <a href="../../db/d1a/structceleritas_1_1_root_step_writer_1_1_t_step_point.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d48/structceleritas_1_1_root_step_writer_1_1_t_step_data.html">celeritas::RootStepWriter::TStepData</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truth step data; Naming convention must match <a class="el" href="../../dd/d0b/structceleritas_1_1_step_state_data.html" title="Gathered data for a single step for many tracks in parallel.">StepStateData</a>.  <a href="../../dd/d48/structceleritas_1_1_root_step_writer_1_1_t_step_data.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truth step data; Naming convention must match <a class="el" href="../../dd/d0b/structceleritas_1_1_step_state_data.html" title="Gathered data and persistent scratch space for gathering and copying data.">StepStateData</a>.  <a href="../../dd/d48/structceleritas_1_1_root_step_writer_1_1_t_step_data.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:abde239b2023e959c558b61668bb2f684"><td class="memItemLeft" align="right" valign="top"><a id="abde239b2023e959c558b61668bb2f684" name="abde239b2023e959c558b61668bb2f684"></a>
+RootStepWriter::WriteFilter&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::make_write_filter</b> (SimpleRootFilterInput const &amp;inp)</td></tr>
+<tr class="separator:abde239b2023e959c558b61668bb2f684"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

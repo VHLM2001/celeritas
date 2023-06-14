@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -131,7 +131,7 @@ VecExceptionPtr&#160;</td><td class="memItemRight" valign="bottom"><b>release</b
 <div class="line"><span class="preprocessor">#pragma omp parallel for</span></div>
 <div class="line"><span class="keywordflow">for</span> (size_type i = 0; i &lt; data.states.size(); ++i)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_define" href="../../db/dc5/_macros_8hh.html#a572ccbb99d1225e67ed87d234b41f436">CELER_TRY_HANDLE</a>(launch(<a class="code hl_class" href="../../dd/dbb/classceleritas_1_1_opaque_id.html">TrackSlotId</a>{i}), capture_exception);</div>
+<div class="line">    <a class="code hl_define" href="../../db/dc5/_macros_8hh.html#a572ccbb99d1225e67ed87d234b41f436">CELER_TRY_HANDLE</a>(execute(<a class="code hl_class" href="../../dd/dbb/classceleritas_1_1_opaque_id.html">TrackSlotId</a>{i}), capture_exception);</div>
 <div class="line">}</div>
 <div class="line">log_and_rethrow(std::move(capture_exception));</div>
 <div class="ttc" id="a_macros_8hh_html_a572ccbb99d1225e67ed87d234b41f436"><div class="ttname"><a href="../../db/dc5/_macros_8hh.html#a572ccbb99d1225e67ed87d234b41f436">CELER_TRY_HANDLE</a></div><div class="ttdeci">#define CELER_TRY_HANDLE(STATEMENT, HANDLE_EXCEPTION)</div><div class="ttdoc">&quot;Try&quot; to execute the statement, and &quot;handle&quot; all thrown errors by calling the given function-like err...</div><div class="ttdef"><b>Definition:</b> Macros.hh:183</div></div>

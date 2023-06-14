@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Acceleritas &mdash; Celeritas v0.3.0-dev.62+f351e714 documentation</title>
+  <title>Acceleritas &mdash; Celeritas 0.3.0-rc.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -29,15 +29,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Celeritas
-            <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Celeritas
+              <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-dev
+                0.3.0-rc.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -46,9 +50,10 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API documentation</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Using Celeritas</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">Library API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="corecel.html">Core package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orange.html">ORANGE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="celeritas.html">Celeritas</a></li>
@@ -86,9 +91,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../api.html">API documentation</a> &raquo;</li>
-      <li>Acceleritas</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">Library API</a></li>
+      <li class="breadcrumb-item active">Acceleritas</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/accel.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -101,13 +106,11 @@
   <section id="acceleritas">
 <span id="accel"></span><h1>Acceleritas<a class="headerlink" href="#acceleritas" title="Permalink to this heading"></a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">accel</span></code> directory contains components exclusive to coupling Celeritas
-with Geant4 for user-oriented integration. See <a class="reference internal" href="../examples/geant4-full.html#example-geant-full"><span class="std std-ref">Geant4 integration</span></a> for a
-detailed example of how to use Celeritas to offload EM tracks to GPU and
-dispatch hits back to Geant4 sensitive detectors. The simpler interface for
-multithreaded or serial applications is demonstrated in
-<a class="reference internal" href="../examples/geant4-minimal.html#example-geant-minimal"><span class="std std-ref">Minimal Geant4 integration</span></a>.</p>
+with Geant4 for user-oriented integration. A simple interface for multithreaded
+or serial applications is demonstrated in <a class="reference internal" href="../examples/geant4.html#example-geant"><span class="std std-ref">Minimal Geant4 integration</span></a>, and the more
+advanced implementation can be inspected in the <a class="reference internal" href="../usage.html#celer-g4"><span class="std std-ref">Integrated Geant4 application (celer-g4)</span></a> app.</p>
 <section id="high-level-interface">
-<h2>High-level interface<a class="headerlink" href="#high-level-interface" title="Permalink to this heading"></a></h2>
+<span id="api-accel-high-level"></span><h2>High-level interface<a class="headerlink" href="#high-level-interface" title="Permalink to this heading"></a></h2>
 <p>The SimpleOffload class is an extremely easy-to-use interface for
 offloading tracks to Celeritas in a multithreaded or serial application. The
 class names correspond to user actions and ActionInitialization. It requires a
@@ -187,6 +190,77 @@ provided.</p>
 </div>
 </dd></dl>
 
+<p>The SetupOptionsMessenger can be instantiated with a reference to a global
+SetupOptions instance in order to provide a Geant4 “UI” macro interface to an
+app’s celeritas options.</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas21SetupOptionsMessengerE">
+<span id="_CPPv3N9celeritas21SetupOptionsMessengerE"></span><span id="_CPPv2N9celeritas21SetupOptionsMessengerE"></span><span id="celeritas::SetupOptionsMessenger"></span><span class="target" id="d0/d56/classceleritas_1_1_setup_options_messenger"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SetupOptionsMessenger</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">G4UImessenger</span></span><a class="headerlink" href="#_CPPv4N9celeritas21SetupOptionsMessengerE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Expose setup options through the Geant4 “macro” UI interface. </p>
+<p>The following options are exposed in the <code class="docutils literal notranslate"><span class="pre">/celer/</span></code> command “directory”:</p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>geometryFile   </p></td>
+<td><p>Override detector geometry with a custom GDML    </p></td>
+</tr>
+<tr class="row-odd"><td><p>outputFile   </p></td>
+<td><p>Filename for JSON diagnostic output    </p></td>
+</tr>
+<tr class="row-even"><td><p>physicsOutputFile   </p></td>
+<td><p>Filename for ROOT dump of physics data    </p></td>
+</tr>
+<tr class="row-odd"><td><p>maxNumTracks   </p></td>
+<td><p>Number of tracks to be transported simultaneously    </p></td>
+</tr>
+<tr class="row-even"><td><p>maxNumEvents   </p></td>
+<td><p>Maximum number of events in use    </p></td>
+</tr>
+<tr class="row-odd"><td><p>maxNumSteps   </p></td>
+<td><p>Limit on number of step iterations before aborting    </p></td>
+</tr>
+<tr class="row-even"><td><p>maxInitializers   </p></td>
+<td><p>Maximum number of track initializers    </p></td>
+</tr>
+<tr class="row-odd"><td><p>secondaryStackFactor   </p></td>
+<td><p>At least the average number of secondaries per track   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<p>If a CUDA/HIP device is available, additional options are available under <code class="docutils literal notranslate"><span class="pre">/celer/cuda/</span></code> :</p>
+<p><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command   </p></th>
+<th class="head"><p>Description    </p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>stackSize   </p></td>
+<td><p>Set the CUDA per-thread stack size for VecGeom    </p></td>
+</tr>
+<tr class="row-odd"><td><p>heapSize   </p></td>
+<td><p>Set the CUDA per-thread heap size for VecGeom    </p></td>
+</tr>
+<tr class="row-even"><td><p>sync   </p></td>
+<td><p>Sync the GPU at every kernel for timing    </p></td>
+</tr>
+<tr class="row-odd"><td><p>default_stream   </p></td>
+<td><p>Launch all kernels on the default stream   </p></td>
+</tr>
+</tbody>
+</table>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The given <a class="reference internal" href="#d9/df4/structceleritas_1_1_setup_options"><span class="std std-ref">SetupOptions</span></a> should be global <em>or</em> otherwise must exceed the scope of this UI messenger. </p>
+</div>
+</dd></dl>
+
 </section>
 <section id="celeritas-setup">
 <h2>Celeritas setup<a class="headerlink" href="#celeritas-setup" title="Permalink to this heading"></a></h2>
@@ -212,6 +286,12 @@ settings.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas12SetupOptions11output_fileE">
 <span id="_CPPv3N9celeritas12SetupOptions11output_fileE"></span><span id="_CPPv2N9celeritas12SetupOptions11output_fileE"></span><span id="celeritas::SetupOptions::output_file__ss"></span><span class="target" id="d9/df4/structceleritas_1_1_setup_options_1a6cea4c6f6586eee12a9afd6f5f4d6fff"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_file</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas12SetupOptions11output_fileE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Filename for JSON diagnostic output. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas12SetupOptions19physics_output_fileE">
+<span id="_CPPv3N9celeritas12SetupOptions19physics_output_fileE"></span><span id="_CPPv2N9celeritas12SetupOptions19physics_output_fileE"></span><span id="celeritas::SetupOptions::physics_output_file__ss"></span><span class="target" id="d9/df4/structceleritas_1_1_setup_options_1a441df3b876fce0f529b1ba269b6e33d8"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">physics_output_file</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas12SetupOptions19physics_output_fileE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Filename for ROOT dump of physics data. </p>
 </dd></dl>
 
 </div>
@@ -248,10 +328,40 @@ settings.</p>
 <dd><p>At least the average number of secondaries per track slot. </p>
 </dd></dl>
 
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-cuda-options">CUDA options</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas12SetupOptions15cuda_stack_sizeE">
+<span id="_CPPv3N9celeritas12SetupOptions15cuda_stack_sizeE"></span><span id="_CPPv2N9celeritas12SetupOptions15cuda_stack_sizeE"></span><span id="celeritas::SetupOptions::cuda_stack_size__size_type"></span><span class="target" id="d9/df4/structceleritas_1_1_setup_options_1a1f59210578a46bd8086edd221e4e4bc0"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9size_typeE" title="celeritas::size_type"><span class="n"><span class="pre">size_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cuda_stack_size</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas12SetupOptions15cuda_stack_sizeE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Sync the GPU at every kernel for timing. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas12SetupOptions14cuda_heap_sizeE">
+<span id="_CPPv3N9celeritas12SetupOptions14cuda_heap_sizeE"></span><span id="_CPPv2N9celeritas12SetupOptions14cuda_heap_sizeE"></span><span id="celeritas::SetupOptions::cuda_heap_size__size_type"></span><span class="target" id="d9/df4/structceleritas_1_1_setup_options_1a91a9bea92346873ffae832f5abcde01f"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9size_typeE" title="celeritas::size_type"><span class="n"><span class="pre">size_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cuda_heap_size</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas12SetupOptions14cuda_heap_sizeE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Sync the GPU at every kernel for timing. </p>
+</dd></dl>
+
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas12SetupOptions4syncE">
 <span id="_CPPv3N9celeritas12SetupOptions4syncE"></span><span id="_CPPv2N9celeritas12SetupOptions4syncE"></span><span id="celeritas::SetupOptions::sync__b"></span><span class="target" id="d9/df4/structceleritas_1_1_setup_options_1a8762949e2e942a9526dfb4fe7976c27c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sync</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas12SetupOptions4syncE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Sync the GPU at every kernel for error checking. </p>
+<dd><p>Sync the GPU at every kernel for timing. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas12SetupOptions14default_streamE">
+<span id="_CPPv3N9celeritas12SetupOptions14default_streamE"></span><span id="_CPPv2N9celeritas12SetupOptions14default_streamE"></span><span id="celeritas::SetupOptions::default_stream__b"></span><span class="target" id="d9/df4/structceleritas_1_1_setup_options_1a510b5ee223389ff0b630d961e8bb3711"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">default_stream</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas12SetupOptions14default_streamE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Launch all kernels on the default stream. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas12SetupOptions15get_num_streamsE">
+<span id="_CPPv3N9celeritas12SetupOptions15get_num_streamsE"></span><span id="_CPPv2N9celeritas12SetupOptions15get_num_streamsE"></span><span id="celeritas::SetupOptions::get_num_streams__IntAccessor"></span><span class="target" id="d9/df4/structceleritas_1_1_setup_options_1afa8735fe0a7b5b5512ab5705915cc049"></span><span class="n"><span class="pre">IntAccessor</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_num_streams</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas12SetupOptions15get_num_streamsE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Set the number of streams (defaults to run manager # threads) </p>
 </dd></dl>
 
 </div>
@@ -527,6 +637,13 @@ applications you can choose to use these classes directly instead of it.</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18ExceptionConverter18ExceptionConverterEPKcPK12SharedParams">
+<span id="_CPPv3N9celeritas18ExceptionConverter18ExceptionConverterEPKcPK12SharedParams"></span><span id="_CPPv2N9celeritas18ExceptionConverter18ExceptionConverterEPKcPK12SharedParams"></span><span id="celeritas::ExceptionConverter::ExceptionConverter__cCP.SharedParamsCP"></span><span class="target" id="d4/df4/classceleritas_1_1_exception_converter_1abf9a9876d17d2f082293715358e64c13"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ExceptionConverter</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">err_code</span></span>, <a class="reference internal" href="#_CPPv4N9celeritas12SharedParamsE" title="celeritas::SharedParams"><span class="n"><span class="pre">SharedParams</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas18ExceptionConverter18ExceptionConverterEPKcPK12SharedParams" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Construct with an error code and shared parameters. </p>
+<p>The error code is reported to the Geant4 exception manager. The shared parameters are used to translate internal particle data if an exception occurs. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas18ExceptionConverter18ExceptionConverterEPKc">
 <span id="_CPPv3N9celeritas18ExceptionConverter18ExceptionConverterEPKc"></span><span id="_CPPv2N9celeritas18ExceptionConverter18ExceptionConverterEPKc"></span><span id="celeritas::ExceptionConverter::ExceptionConverter__cCP"></span><span class="target" id="d4/df4/classceleritas_1_1_exception_converter_1aced6fc67f4e05f50065af95356b66861"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ExceptionConverter</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">err_code</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas18ExceptionConverter18ExceptionConverterEPKc" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Construct with an error code for dispatching to Geant4. </p>
@@ -548,7 +665,7 @@ applications you can choose to use these classes directly instead of it.</p>
 <p>Currently Celeritas accepts a single along-step action (i.e., the same stepper is used for both neutral and charged particles, across all energies and regions of the problem). The along-step action is a single GPU kernel that combines the field stepper selection, the magnetic field, slowing-down calculation, multiple scattering, and energy loss fluctuations.</p>
 <p>The factory will be called from the thread that initializes <code class="docutils literal notranslate"><a class="reference internal" href="#d8/da0/classceleritas_1_1_shared_params"><span class="std std-ref"><span class="pre">SharedParams</span></span></a></code>. Instead of a daughter class, you can provide any function-like object that has the same interface.</p>
 <p>Celeritas provides a few “default” configurations of along-step actions in <code class="docutils literal notranslate"><span class="pre">celeritas/global/alongstep</span></code>. </p>
-<p>Subclassed by <a class="reference internal" href="#d3/d64/classceleritas_1_1_uniform_along_step_factory"><span class="std std-ref">celeritas::UniformAlongStepFactory</span></a></p>
+<p>Subclassed by celeritas::RZMapFieldAlongStepFactory, <a class="reference internal" href="#d3/d64/classceleritas_1_1_uniform_along_step_factory"><span class="std std-ref">celeritas::UniformAlongStepFactory</span></a></p>
 </dd></dl>
 
 </section>

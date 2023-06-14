@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -142,7 +142,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to_json</b
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                                        \</div>
 <div class="line">    {                                         \</div>
-<div class="line">        if (j.count(#NAME))                   \</div>
+<div class="line">        if (j.contains(#NAME))                \</div>
 <div class="line">            j.at(#NAME).get_to(options.NAME); \</div>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment -->

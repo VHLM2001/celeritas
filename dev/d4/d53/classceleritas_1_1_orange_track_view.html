@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -159,6 +159,9 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac97c7d9259eb113cfcc54c671fd2173d">real_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>find_safety</b> ()</td></tr>
 <tr class="memdesc:aa3b48bebeaef25f58967938aacdb9708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the distance to the nearest boundary in any direction. <br /></td></tr>
 <tr class="separator:aa3b48bebeaef25f58967938aacdb9708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d14e5ee05cf8942978306a95646c3a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac97c7d9259eb113cfcc54c671fd2173d">real_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d53/classceleritas_1_1_orange_track_view.html#a1d14e5ee05cf8942978306a95646c3a4">find_safety</a> (<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac97c7d9259eb113cfcc54c671fd2173d">real_type</a> max_step)</td></tr>
+<tr class="memdesc:a1d14e5ee05cf8942978306a95646c3a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the distance to the nearest nearby boundary.  <a href="../../d4/d53/classceleritas_1_1_orange_track_view.html#a1d14e5ee05cf8942978306a95646c3a4">More...</a><br /></td></tr>
+<tr class="separator:a1d14e5ee05cf8942978306a95646c3a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a908bb91dad8ea97b3422ec17f1507caf"><td class="memItemLeft" align="right" valign="top"><a id="a908bb91dad8ea97b3422ec17f1507caf" name="a908bb91dad8ea97b3422ec17f1507caf"></a>
 <a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> void&#160;</td><td class="memItemRight" valign="bottom"><b>move_to_boundary</b> ()</td></tr>
 <tr class="memdesc:a908bb91dad8ea97b3422ec17f1507caf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move to the next straight-line boundary but do not change volume. <br /></td></tr>
@@ -181,11 +184,10 @@ Public Member Functions</h2></td></tr>
 <p >Ordering requirements:</p><ul>
 <li>initialize (through assignment) must come first</li>
 <li>access (pos, dir, volume/surface/is_outside/is_on_boundary) good at any time</li>
-<li><code>find_safety</code> (fine at any time)</li>
 <li><code>find_next_step</code> </li>
-<li><code>move_internal</code> or <code>move_to_boundary</code> </li>
+<li><code>find_safety</code> or <code>move_internal</code> or <code>move_to_boundary</code> </li>
 <li>if on boundary, <code>cross_boundary</code> </li>
-<li>at any time, <code>set_dir</code> , but then must do <code>find_next_step</code> before any following action above</li>
+<li>at any time, <code>set_dir</code> , but then must do <code>find_next_step</code> before any <code>move</code> or <code>cross</code> action above</li>
 </ul>
 <p >The main point is that <code>find_next_step</code> depends on the current straight-line direction, <code>move_to_boundary</code> and <code>move_internal</code> (with a step length) depends on that distance, and <code>cross_boundary</code> depends on being on the boundary with a knowledge of the post-boundary state.</p>
 <p ><code>move_internal</code> with a position <em>should</em> depend on the safety distance but that's not yet implemented. </p>
@@ -244,6 +246,35 @@ Public Member Functions</h2></td></tr>
 
 <p>Find a nearby distance to the next geometric boundary up to a distance. </p>
 <p >This may reduce the number of surfaces needed to check, sort, or write to temporary memory, thereby speeding up transport. </p>
+
+</div>
+</div>
+<a id="a1d14e5ee05cf8942978306a95646c3a4" name="a1d14e5ee05cf8942978306a95646c3a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d14e5ee05cf8942978306a95646c3a4">&#9670;&#160;</a></span>find_safety()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac97c7d9259eb113cfcc54c671fd2173d">real_type</a> celeritas::OrangeTrackView::find_safety </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/df5/corecel_2_types_8hh.html#ac97c7d9259eb113cfcc54c671fd2173d">real_type</a>&#160;</td>
+          <td class="paramname"><em>max_step</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find the distance to the nearest nearby boundary. </p>
+<p >Since we currently support only "simple" safety distances, we can't eliminate anything by checking only nearby surfaces. </p>
 
 </div>
 </div>

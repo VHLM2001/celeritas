@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -232,12 +232,12 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>Construct from a long-lived const reference. </p>
-<p >This is a dangerous but sometimes necessary way to make an interface adapter. The object's lifespan <em>must be guaranteed</em> to exceed that of the <code><a class="el" href="../../db/d97/classceleritas_1_1_output_manager.html" title="Store classes that can output data at the end of the run.">OutputManager</a></code>.</p>
+<p >This is a dangerous but sometimes necessary way to make an interface adapter. The object's lifespan <em>must be guaranteed</em> to exceed that of the <code>OutputManager</code>.</p>
 <p >Example: </p><div class="fragment"><div class="line">output_manager.insert(<a class="code hl_class" href="../../d4/dab/classceleritas_1_1_output_interface_adapter.html">OutputInterfaceAdapter&lt;Device&gt;::from_const_ref</a>(</div>
 <div class="line">     OutputInterface::Category::system,</div>
 <div class="line">     <span class="stringliteral">&quot;device&quot;</span>,</div>
 <div class="line">     celeritas::device()));</div>
-<div class="ttc" id="aclassceleritas_1_1_output_interface_adapter_html"><div class="ttname"><a href="../../d4/dab/classceleritas_1_1_output_interface_adapter.html">celeritas::OutputInterfaceAdapter</a></div><div class="ttdoc">Adapter class for writing a JSON-serializable data to output.</div><div class="ttdef"><b>Definition:</b> OutputInterfaceAdapter.hh:29</div></div>
+<div class="ttc" id="aclassceleritas_1_1_output_interface_adapter_html"><div class="ttname"><a href="../../d4/dab/classceleritas_1_1_output_interface_adapter.html">celeritas::OutputInterfaceAdapter</a></div><div class="ttdoc">Adapter class for writing a JSON-serializable data to output.</div><div class="ttdef"><b>Definition:</b> OutputInterfaceAdapter.hh:30</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -293,7 +293,7 @@ template&lt;class T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

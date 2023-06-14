@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -86,6 +86,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html">corecel/Types.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/de4/_range_8hh.html">corecel/cont/Range.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/d83/_thread_id_8hh.html">corecel/sys/ThreadId.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/d99/_observer_ptr_8hh.html">ObserverPtr.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../de/d57/_collection_impl_8hh.html">detail/CollectionImpl.hh</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -141,7 +142,7 @@ template&lt;class T , class Size  = size_type&gt; </div>
 </dl>
 <p>An ItemRange is a range of <code>OpaqueId&lt;T&gt;</code> that reference a range of values of type <code>T</code> in a <code>Collection</code> . The ItemRange acts like a <code>slice</code> object in Python when used on a Collection, returning a Span&lt;T&gt; of the underlying data.</p>
 <p >An ItemRange is only meaningful in connection with a particular Collection of type T. It doesn't have any persistent connection to its associated collection and thus must be used carefully.</p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000016">Todo:</a></b></dt><dd>It might also be good to have a <code>CollectionMap</code> &ndash; mapping one OpaqueId to another OpaqueId type (with just an offset value). This would be used for example in physics, where <code>ItemRange</code> objects themselves are supposed to be indexed into with a particular ID type.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000014">Todo:</a></b></dt><dd>It might also be good to have a <code>CollectionMap</code> &ndash; mapping one OpaqueId to another OpaqueId type (with just an offset value). This would be used for example in physics, where <code>ItemRange</code> objects themselves are supposed to be indexed into with a particular ID type.</dd></dl>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>MyMaterial</div>
 <div class="line">{</div>
 <div class="line">    real_type number_density;</div>

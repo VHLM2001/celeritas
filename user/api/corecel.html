@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Core package &mdash; Celeritas v0.3.0-dev.62+f351e714 documentation</title>
+  <title>Core package &mdash; Celeritas 0.3.0-rc.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="ORANGE" href="orange.html" />
-    <link rel="prev" title="API documentation" href="../api.html" /> 
+    <link rel="prev" title="Library API" href="../api.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -30,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Celeritas
-            <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Celeritas
+              <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-dev
+                0.3.0-rc.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -47,9 +51,10 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API documentation</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Using Celeritas</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">Library API</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Core package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fundamentals">Fundamentals</a></li>
@@ -89,9 +94,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../api.html">API documentation</a> &raquo;</li>
-      <li>Core package</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">Library API</a></li>
+      <li class="breadcrumb-item active">Core package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/corecel.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -127,7 +132,7 @@ a preprocessor definition, a set of integers, and a descriptive string.</p>
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv417celeritas_version">
-<span id="_CPPv317celeritas_version"></span><span id="_CPPv217celeritas_version"></span><span id="celeritas_version__cCA"></span><span class="target" id="d9/d7f/celeritas__version_8h_1a05e78deb9041e95dddeb6d8f27c8fd0f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">celeritas_version</span></span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;v0.3.0-dev.62+f351e714&quot;</span></span><a class="headerlink" href="#_CPPv417celeritas_version" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv317celeritas_version"></span><span id="_CPPv217celeritas_version"></span><span id="celeritas_version__cCA"></span><span class="target" id="d9/d7f/celeritas__version_8h_1a05e78deb9041e95dddeb6d8f27c8fd0f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">celeritas_version</span></span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;0.3.0-rc.1&quot;</span></span><a class="headerlink" href="#_CPPv417celeritas_version" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
@@ -637,7 +642,7 @@ and “postcondition contract”.</p>
 <span id="_CPPv3N9celeritas12RuntimeError20from_geant_exceptionEPKcPKcPKc"></span><span id="_CPPv2N9celeritas12RuntimeError20from_geant_exceptionEPKcPKcPKc"></span><span id="celeritas::RuntimeError::from_geant_exception__cCP.cCP.cCP"></span><span class="target" id="db/d74/classceleritas_1_1_runtime_error_1a81817bdcad97a838d999da02900b2a5e"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas12RuntimeErrorE" title="celeritas::RuntimeError"><span class="n"><span class="pre">RuntimeError</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">from_geant_exception</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">origin</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">code</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">desc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas12RuntimeError20from_geant_exceptionEPKcPKcPKc" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Construct an error message from a Geant4 exception. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>origin</strong> – Usually the function that throws </p></li>
 <li><p><strong>code</strong> – A computery error code </p></li>
@@ -652,7 +657,7 @@ and “postcondition contract”.</p>
 <span id="_CPPv3N9celeritas12RuntimeError15from_root_errorEPKcPKc"></span><span id="_CPPv2N9celeritas12RuntimeError15from_root_errorEPKcPKc"></span><span id="celeritas::RuntimeError::from_root_error__cCP.cCP"></span><span class="target" id="db/d74/classceleritas_1_1_runtime_error_1ab4af61bb47f7293007755238291c594f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas12RuntimeErrorE" title="celeritas::RuntimeError"><span class="n"><span class="pre">RuntimeError</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">from_root_error</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">origin</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas12RuntimeError15from_root_errorEPKcPKc" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Construct an error message from a Geant4 exception. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>origin</strong> – Usually the function that throws </p></li>
 <li><p><strong>msg</strong> – Description of the failure </p></li>
@@ -758,6 +763,18 @@ and “postcondition contract”.</p>
 <dd><p>Mutable reference to native memory. </p>
 </dd></dl>
 
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4II_9Ownership_8MemSpaceE0_8MemSpaceEN9celeritas7CRefPtrE">
+<span id="_CPPv3II_9Ownership_8MemSpaceE0_8MemSpaceEN9celeritas7CRefPtrE"></span><span id="_CPPv2II_9Ownership_8MemSpaceE0_8MemSpaceEN9celeritas7CRefPtrE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N9celeritas9OwnershipE" title="celeritas::Ownership"><span class="n"><span class="pre">Ownership</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas8MemSpaceE" title="celeritas::MemSpace"><span class="n"><span class="pre">MemSpace</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">P</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas8MemSpaceE" title="celeritas::MemSpace"><span class="n"><span class="pre">MemSpace</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d0/df5/corecel_2_types_8hh_1a3dd4c940b7c4ede68ce02a4b97fc037b"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CRefPtr</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">ObserverPtr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4II_9Ownership_8MemSpaceE0_8MemSpaceEN9celeritas7CRefPtrE" title="celeritas::CRefPtr::P"><span class="n"><span class="pre">P</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N9celeritas9OwnershipE" title="celeritas::Ownership"><span class="n"><span class="pre">Ownership</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas9Ownership15const_referenceE" title="celeritas::Ownership::const_reference"><span class="n"><span class="pre">const_reference</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4II_9Ownership_8MemSpaceE0_8MemSpaceEN9celeritas7CRefPtrE" title="celeritas::CRefPtr::M"><span class="n"><span class="pre">M</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4II_9Ownership_8MemSpaceE0_8MemSpaceEN9celeritas7CRefPtrE" title="celeritas::CRefPtr::M"><span class="n"><span class="pre">M</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4II_9Ownership_8MemSpaceE0_8MemSpaceEN9celeritas7CRefPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Pointer to same-memory <em>const</em> collection group. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4II_9Ownership_8MemSpaceE0_8MemSpaceEN9celeritas6RefPtrE">
+<span id="_CPPv3II_9Ownership_8MemSpaceE0_8MemSpaceEN9celeritas6RefPtrE"></span><span id="_CPPv2II_9Ownership_8MemSpaceE0_8MemSpaceEN9celeritas6RefPtrE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N9celeritas9OwnershipE" title="celeritas::Ownership"><span class="n"><span class="pre">Ownership</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas8MemSpaceE" title="celeritas::MemSpace"><span class="n"><span class="pre">MemSpace</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">S</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas8MemSpaceE" title="celeritas::MemSpace"><span class="n"><span class="pre">MemSpace</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d0/df5/corecel_2_types_8hh_1a5ed35e8f58b0692955ed58aa6a051760"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RefPtr</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">ObserverPtr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4II_9Ownership_8MemSpaceE0_8MemSpaceEN9celeritas6RefPtrE" title="celeritas::RefPtr::S"><span class="n"><span class="pre">S</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N9celeritas9OwnershipE" title="celeritas::Ownership"><span class="n"><span class="pre">Ownership</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas9Ownership9referenceE" title="celeritas::Ownership::reference"><span class="n"><span class="pre">reference</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4II_9Ownership_8MemSpaceE0_8MemSpaceEN9celeritas6RefPtrE" title="celeritas::RefPtr::M"><span class="n"><span class="pre">M</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4II_9Ownership_8MemSpaceE0_8MemSpaceEN9celeritas6RefPtrE" title="celeritas::RefPtr::M"><span class="n"><span class="pre">M</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4II_9Ownership_8MemSpaceE0_8MemSpaceEN9celeritas6RefPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Pointer to same-memory <em>mutable</em> collection group. </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
@@ -836,6 +853,15 @@ and “postcondition contract”.</p>
 </dd></dl>
 
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas10to_cstringE8MemSpace">
+<span id="_CPPv3N9celeritas10to_cstringE8MemSpace"></span><span id="_CPPv2N9celeritas10to_cstringE8MemSpace"></span><span id="celeritas::to_cstring__MemSpaceCE"></span><span class="target" id="d0/df5/corecel_2_types_8hh_1a3f0e68ba11ef01820e5872d31262eb19"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">to_cstring</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N9celeritas8MemSpaceE" title="celeritas::MemSpace"><span class="n"><span class="pre">MemSpace</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">m</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas10to_cstringE8MemSpace" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get a string corresponding to a memory space. </p>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 <dl class="cpp class">
@@ -845,7 +871,7 @@ and “postcondition contract”.</p>
 <p>
 This allows type-safe, read-only indexing/access for a class. The value is ‘true’ if it’s assigned, ‘false’ if invalid. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Template Parameters</dt>
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ValueT</strong> – Type of each item in the array. </p></li>
 <li><p><strong>SizeT</strong> – Integer index</p></li>
@@ -912,7 +938,7 @@ This allows type-safe, read-only indexing/access for a class. The value is ‘tr
 <em>#include &lt;Device.hh&gt;</em></div>
 <p>Manage attributes of the GPU. </p>
 <p>CUDA/HIP translation table:</p>
-<p><table class="colwidths-auto docutils align-default">
+<p><table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>CUDA/NVIDIA   </p></th>
 <th class="head"><p>HIP/AMD   </p></th>
@@ -1042,6 +1068,26 @@ This allows type-safe, read-only indexing/access for a class. The value is ‘tr
 <dd><p>Additional potentially interesting diagnostics. </p>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas6Device11num_streamsEv">
+<span id="_CPPv3NK9celeritas6Device11num_streamsEv"></span><span id="_CPPv2NK9celeritas6Device11num_streamsEv"></span><span id="celeritas::Device::num_streamsC"></span><span class="target" id="d6/def/classceleritas_1_1_device_1af90d669db63c3bf1369e053c03ad5da3"></span><span class="n"><span class="pre">StreamId</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_streams</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas6Device11num_streamsEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Number of streams allocated. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas6Device14create_streamsEj">
+<span id="_CPPv3NK9celeritas6Device14create_streamsEj"></span><span id="_CPPv2NK9celeritas6Device14create_streamsEj"></span><span id="celeritas::Device::create_streams__unsigned-iC"></span><span class="target" id="d6/def/classceleritas_1_1_device_1aec6d1fb23b13d926508cb6b4f3dac964"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">create_streams</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">num_streams</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas6Device14create_streamsEj" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Allocate the given number of streams. </p>
+<p>If no streams have been created, the default stream will be used. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas6Device6streamE8StreamId">
+<span id="_CPPv3NK9celeritas6Device6streamE8StreamId"></span><span id="_CPPv2NK9celeritas6Device6streamE8StreamId"></span><span id="celeritas::Device::stream__StreamIdC"></span><span class="target" id="d6/def/classceleritas_1_1_device_1a9d71a04a760dfcefcf17b6e2fe117633"></span><span class="n"><span class="pre">Stream</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">stream</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">StreamId</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas6Device6streamE8StreamId" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Access a stream. </p>
+<p>This returns the default stream if no streams were allocated. </p>
+</dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
@@ -1058,6 +1104,14 @@ This allows type-safe, read-only indexing/access for a class. The value is ‘tr
 <dd><p>Whether verbose messages and error checking are enabled. </p>
 <p>This is true if <code class="docutils literal notranslate"><span class="pre">CELERITAS_DEBUG</span></code> is set <em>or</em> if the <code class="docutils literal notranslate"><span class="pre">CELER_DEBUG_DEVICE</span></code> environment variable exists and is not empty. </p>
 </dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-types">Private Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas6Device15SPStreamStorageE">
+<span id="_CPPv3N9celeritas6Device15SPStreamStorageE"></span><span id="_CPPv2N9celeritas6Device15SPStreamStorageE"></span><span class="target" id="d6/def/classceleritas_1_1_device_1ac49d053ee5ae66d57884b7991381078e"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SPStreamStorage</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N9celeritas6detailE" title="celeritas::detail"><span class="n"><span class="pre">detail</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">StreamStorage</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas6Device15SPStreamStorageE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -1112,8 +1166,18 @@ This allows type-safe, read-only indexing/access for a class. The value is ‘tr
 <span id="_CPPv3N9celeritas6Device6extra_E"></span><span id="_CPPv2N9celeritas6Device6extra_E"></span><span id="celeritas::Device::extra___MapStrInt"></span><span class="target" id="d6/def/classceleritas_1_1_device_1ab41468c6537e3b632d74c204e77569f5"></span><a class="reference internal" href="#_CPPv4N9celeritas6Device9MapStrIntE" title="celeritas::Device::MapStrInt"><span class="n"><span class="pre">MapStrInt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">extra_</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas6Device6extra_E" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas6Device8streams_E">
+<span id="_CPPv3N9celeritas6Device8streams_E"></span><span id="_CPPv2N9celeritas6Device8streams_E"></span><span id="celeritas::Device::streams___SPStreamStorage"></span><span class="target" id="d6/def/classceleritas_1_1_device_1ab92378bc1f138f0ed6a3bde39c6a7dca"></span><a class="reference internal" href="#_CPPv4N9celeritas6Device15SPStreamStorageE" title="celeritas::Device::SPStreamStorage"><span class="n"><span class="pre">SPStreamStorage</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">streams_</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas6Device8streams_E" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
 </div>
 </dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas6detailE">
+<span id="_CPPv3N9celeritas6detailE"></span><span id="_CPPv2N9celeritas6detailE"></span><span id="celeritas::detail"></span><span class="target" id="d7/d42/namespaceceleritas_1_1detail"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">detail</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas6detailE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -1285,7 +1349,7 @@ This allows type-safe, read-only indexing/access for a class. The value is ‘tr
 Like the <a class="reference internal" href="#dd/dd6/structceleritas_1_1_array"><span class="std std-ref">celeritas::Array</span></a> , this class isn’t 100% compatible with the <code class="docutils literal notranslate"><span class="pre">std::span</span></code> class (partly of course because language features are missing from C++14). The hope is that it will be complete and correct for the use cases needed by Celeritas (and, as a bonus, it will be device-compatible).</p>
 <p>Notably, only a subset of the functions (those having to do with size) are <code class="docutils literal notranslate"><span class="pre">constexpr</span></code>. This is to allow debug assertions. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Template Parameters</dt>
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>T</strong> – value type </p></li>
 <li><p><strong>Extent</strong> – fixed size; defaults to dynamic.</p></li>
@@ -1375,6 +1439,12 @@ Like the <a class="reference internal" href="#dd/dd6/structceleritas_1_1_array">
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I00EN9celeritas8exchangeE1TR1TRR1U">
+<span id="_CPPv3I00EN9celeritas8exchangeER1TRR1U"></span><span id="_CPPv2I00EN9celeritas8exchangeER1TRR1U"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN9celeritas8exchangeE1TR1TRR1U" title="celeritas::exchange::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d1/dee/_algorithms_8hh_1aab72904e4f423e155f04a8c9aba51886"></span><a class="reference internal" href="#_CPPv4I00EN9celeritas8exchangeE1TR1TRR1U" title="celeritas::exchange::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exchange</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN9celeritas8exchangeE1TR1TRR1U" title="celeritas::exchange::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dst</span></span>, <a class="reference internal" href="#_CPPv4I00EN9celeritas8exchangeE1TR1TRR1U" title="celeritas::exchange::U"><span class="n"><span class="pre">U</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I00EN9celeritas8exchangeE1TR1TRR1U" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Exchange values on host or device. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4I0EN9celeritas5clampERK1TRK1TRK1TRK1T">
 <span id="_CPPv3I0EN9celeritas5clampERK1TRK1TRK1T"></span><span id="_CPPv2I0EN9celeritas5clampERK1TRK1TRK1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d1/dee/_algorithms_8hh_1ad8d3c29043753910db60684ec17d400a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN9celeritas5clampERK1TRK1TRK1TRK1T" title="celeritas::clamp::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">clamp</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN9celeritas5clampERK1TRK1TRK1TRK1T" title="celeritas::clamp::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">v</span></span>, <a class="reference internal" href="#_CPPv4I0EN9celeritas5clampERK1TRK1TRK1TRK1T" title="celeritas::clamp::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">lo</span></span>, <a class="reference internal" href="#_CPPv4I0EN9celeritas5clampERK1TRK1TRK1TRK1T" title="celeritas::clamp::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">hi</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN9celeritas5clampERK1TRK1TRK1TRK1T" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Clamp the value between lo and hi values. </p>
@@ -1398,13 +1468,25 @@ Like the <a class="reference internal" href="#dd/dd6/structceleritas_1_1_array">
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4I000EN9celeritas11lower_boundE9ForwardIt9ForwardIt9ForwardItRK1T7Compare">
 <span id="_CPPv3I000EN9celeritas11lower_boundE9ForwardIt9ForwardItRK1T7Compare"></span><span id="_CPPv2I000EN9celeritas11lower_boundE9ForwardIt9ForwardItRK1T7Compare"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ForwardIt</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Compare</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d1/dee/_algorithms_8hh_1a27252bc81ada5b4a6cbb7c8ab3853555"></span><a class="reference internal" href="#_CPPv4I000EN9celeritas11lower_boundE9ForwardIt9ForwardIt9ForwardItRK1T7Compare" title="celeritas::lower_bound::ForwardIt"><span class="n"><span class="pre">ForwardIt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lower_bound</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I000EN9celeritas11lower_boundE9ForwardIt9ForwardIt9ForwardItRK1T7Compare" title="celeritas::lower_bound::ForwardIt"><span class="n"><span class="pre">ForwardIt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">first</span></span>, <a class="reference internal" href="#_CPPv4I000EN9celeritas11lower_boundE9ForwardIt9ForwardIt9ForwardItRK1T7Compare" title="celeritas::lower_bound::ForwardIt"><span class="n"><span class="pre">ForwardIt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">last</span></span>, <a class="reference internal" href="#_CPPv4I000EN9celeritas11lower_boundE9ForwardIt9ForwardIt9ForwardItRK1T7Compare" title="celeritas::lower_bound::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span>, <a class="reference internal" href="#_CPPv4I000EN9celeritas11lower_boundE9ForwardIt9ForwardIt9ForwardItRK1T7Compare" title="celeritas::lower_bound::Compare"><span class="n"><span class="pre">Compare</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">comp</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I000EN9celeritas11lower_boundE9ForwardIt9ForwardIt9ForwardItRK1T7Compare" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Find the insertion point for a value in a sorted list. </p>
+<dd><p>Find the insertion point for a value in a sorted list using a binary search. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4I00EN9celeritas11lower_boundE9ForwardIt9ForwardIt9ForwardItRK1T">
 <span id="_CPPv3I00EN9celeritas11lower_boundE9ForwardIt9ForwardItRK1T"></span><span id="_CPPv2I00EN9celeritas11lower_boundE9ForwardIt9ForwardItRK1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ForwardIt</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d1/dee/_algorithms_8hh_1aef62b21cdf6ab167e54e9f9594cee5fd"></span><a class="reference internal" href="#_CPPv4I00EN9celeritas11lower_boundE9ForwardIt9ForwardIt9ForwardItRK1T" title="celeritas::lower_bound::ForwardIt"><span class="n"><span class="pre">ForwardIt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lower_bound</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN9celeritas11lower_boundE9ForwardIt9ForwardIt9ForwardItRK1T" title="celeritas::lower_bound::ForwardIt"><span class="n"><span class="pre">ForwardIt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">first</span></span>, <a class="reference internal" href="#_CPPv4I00EN9celeritas11lower_boundE9ForwardIt9ForwardIt9ForwardItRK1T" title="celeritas::lower_bound::ForwardIt"><span class="n"><span class="pre">ForwardIt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">last</span></span>, <a class="reference internal" href="#_CPPv4I00EN9celeritas11lower_boundE9ForwardIt9ForwardIt9ForwardItRK1T" title="celeritas::lower_bound::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I00EN9celeritas11lower_boundE9ForwardIt9ForwardIt9ForwardItRK1T" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Find the insertion point for a value in a sorted list. </p>
+<dd><p>Find the insertion point for a value in a sorted list using a binary search. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I000EN9celeritas18lower_bound_linearE9ForwardIt9ForwardIt9ForwardItRK1T7Compare">
+<span id="_CPPv3I000EN9celeritas18lower_bound_linearE9ForwardIt9ForwardItRK1T7Compare"></span><span id="_CPPv2I000EN9celeritas18lower_bound_linearE9ForwardIt9ForwardItRK1T7Compare"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ForwardIt</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Compare</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d1/dee/_algorithms_8hh_1abab8f8f41021873538e765fd4bc14033"></span><a class="reference internal" href="#_CPPv4I000EN9celeritas18lower_bound_linearE9ForwardIt9ForwardIt9ForwardItRK1T7Compare" title="celeritas::lower_bound_linear::ForwardIt"><span class="n"><span class="pre">ForwardIt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lower_bound_linear</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I000EN9celeritas18lower_bound_linearE9ForwardIt9ForwardIt9ForwardItRK1T7Compare" title="celeritas::lower_bound_linear::ForwardIt"><span class="n"><span class="pre">ForwardIt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">first</span></span>, <a class="reference internal" href="#_CPPv4I000EN9celeritas18lower_bound_linearE9ForwardIt9ForwardIt9ForwardItRK1T7Compare" title="celeritas::lower_bound_linear::ForwardIt"><span class="n"><span class="pre">ForwardIt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">last</span></span>, <a class="reference internal" href="#_CPPv4I000EN9celeritas18lower_bound_linearE9ForwardIt9ForwardIt9ForwardItRK1T7Compare" title="celeritas::lower_bound_linear::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span>, <a class="reference internal" href="#_CPPv4I000EN9celeritas18lower_bound_linearE9ForwardIt9ForwardIt9ForwardItRK1T7Compare" title="celeritas::lower_bound_linear::Compare"><span class="n"><span class="pre">Compare</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">comp</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I000EN9celeritas18lower_bound_linearE9ForwardIt9ForwardIt9ForwardItRK1T7Compare" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Find the insertion point for a value in a sorted list using a linear search. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I00EN9celeritas18lower_bound_linearE9ForwardIt9ForwardIt9ForwardItRK1T">
+<span id="_CPPv3I00EN9celeritas18lower_bound_linearE9ForwardIt9ForwardItRK1T"></span><span id="_CPPv2I00EN9celeritas18lower_bound_linearE9ForwardIt9ForwardItRK1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ForwardIt</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d1/dee/_algorithms_8hh_1a89e20cf2c17df7e9933af253deb19b40"></span><a class="reference internal" href="#_CPPv4I00EN9celeritas18lower_bound_linearE9ForwardIt9ForwardIt9ForwardItRK1T" title="celeritas::lower_bound_linear::ForwardIt"><span class="n"><span class="pre">ForwardIt</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lower_bound_linear</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN9celeritas18lower_bound_linearE9ForwardIt9ForwardIt9ForwardItRK1T" title="celeritas::lower_bound_linear::ForwardIt"><span class="n"><span class="pre">ForwardIt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">first</span></span>, <a class="reference internal" href="#_CPPv4I00EN9celeritas18lower_bound_linearE9ForwardIt9ForwardIt9ForwardItRK1T" title="celeritas::lower_bound_linear::ForwardIt"><span class="n"><span class="pre">ForwardIt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">last</span></span>, <a class="reference internal" href="#_CPPv4I00EN9celeritas18lower_bound_linearE9ForwardIt9ForwardIt9ForwardItRK1T" title="celeritas::lower_bound_linear::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I00EN9celeritas18lower_bound_linearE9ForwardIt9ForwardIt9ForwardItRK1T" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Find the insertion point for a value in a sorted list using a linear search. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -1664,7 +1746,16 @@ Like the <a class="reference internal" href="#dd/dd6/structceleritas_1_1_array">
 </div>
 </dd></dl>
 
-<span class="target" id="api-quantity"></span><dl class="cpp type">
+<div class="breathe-sectiondef docutils container" id="api-quantity">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.CELER_DEFINE_QACCESS">
+<span class="target" id="d8/dcb/_quantity_8hh_1ab4b7a7a1a9f6c7938f84b1747865177e"></span><span class="sig-name descname"><span class="n"><span class="pre">CELER_DEFINE_QACCESS</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">FUNC</span></span>, <span class="n"><span class="pre">QUAL</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.CELER_DEFINE_QACCESS" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Access the underlying numeric value, discarding units </p>
+</dd></dl>
+
+</div>
+<dl class="cpp type">
 <dt class="sig sig-object cpp">
 <span class="target" id="d2/dd1/namespaceceleritas"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">celeritas</span></span></span><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
@@ -1727,6 +1818,16 @@ Like the <a class="reference internal" href="#dd/dd6/structceleritas_1_1_array">
  </p>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN9celeritas19accessor_unit_labelEPKcv">
+<span id="_CPPv3I0EN9celeritas19accessor_unit_labelEv"></span><span id="_CPPv2I0EN9celeritas19accessor_unit_labelEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d8/dcb/_quantity_8hh_1a9257f34bcb6e99e66d1f77706329d311"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">accessor_unit_label</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN9celeritas19accessor_unit_labelEPKcv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the label for a unit returned from a class accessor. </p>
+<p>Example: <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">accessor_unit_label</span><span class="o">&lt;&amp;</span><span class="n">ParticleView</span><span class="o">::</span><span class="n">mass</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
 </div>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4I00EN9celeritas8QuantityE">
@@ -1766,7 +1867,7 @@ A quantity is a value expressed in terms of the given unit. Storing values in a 
 <p>The <a class="reference internal" href="#dc/dff/classceleritas_1_1_quantity"><span class="std std-ref">Quantity</span></a> is designed to be a simple “strong type” class, not a complex mathematical class. To operate on quantities, you must use <code class="docutils literal notranslate"><span class="pre">value_as</span></code> (to operate within the <a class="reference internal" href="#dc/dff/classceleritas_1_1_quantity"><span class="std std-ref">Quantity</span></a>’s unit system) or <code class="docutils literal notranslate"><span class="pre">native_value_from</span></code> (to operate in the Celeritas native unit system), use the resulting numeric values in your mathematical expressions, then return a new <a class="reference internal" href="#dc/dff/classceleritas_1_1_quantity"><span class="std std-ref">Quantity</span></a> class with the resulting value and correct type. </p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Template Parameters</dt>
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>UnitT</strong> – unit tag class </p></li>
 <li><p><strong>ValueT</strong> – value type</p></li>
@@ -1792,6 +1893,19 @@ A quantity is a value expressed in terms of the given unit. Storing values in a 
 
 </div>
 <div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-unnamed-group">Unnamed Group</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NR9celeritas8Quantity5valueEv">
+<span id="_CPPv3NR9celeritas8Quantity5valueEv"></span><span id="_CPPv2NR9celeritas8Quantity5valueEv"></span><span id="celeritas::Quantity::valueR"></span><span class="target" id="dc/dff/classceleritas_1_1_quantity_1a2235f8047a88e9fadb352b8fa5f7178a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas8Quantity10value_typeE" title="celeritas::Quantity::value_type"><span class="n"><span class="pre">value_type</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NR9celeritas8Quantity5valueEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NKR9celeritas8Quantity5valueEv">
+<span id="_CPPv3NKR9celeritas8Quantity5valueEv"></span><span id="_CPPv2NKR9celeritas8Quantity5valueEv"></span><span id="celeritas::Quantity::valueCR"></span><span class="target" id="dc/dff/classceleritas_1_1_quantity_1a45b1a9c29f95f3ebd88b1b3095d9b99a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas8Quantity10value_typeE" title="celeritas::Quantity::value_type"><span class="n"><span class="pre">value_type</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NKR9celeritas8Quantity5valueEv" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas8Quantity8QuantityEv">
@@ -1809,12 +1923,6 @@ A quantity is a value expressed in terms of the given unit. Storing values in a 
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas8Quantity8QuantityE8Unitless">
 <span id="_CPPv3N9celeritas8Quantity8QuantityE8Unitless"></span><span id="_CPPv2N9celeritas8Quantity8QuantityE8Unitless"></span><span id="celeritas::Quantity::Quantity__Unitless"></span><span class="target" id="dc/dff/classceleritas_1_1_quantity_1ae8bd72e5d9bb4659c3040b2987f6f4e7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Quantity</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N9celeritas8Quantity8UnitlessE" title="celeritas::Quantity::Unitless"><span class="n"><span class="pre">Unitless</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">uq</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas8Quantity8QuantityE8Unitless" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Construct implicitly from a unitless quantity. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas8Quantity5valueEv">
-<span id="_CPPv3NK9celeritas8Quantity5valueEv"></span><span id="_CPPv2NK9celeritas8Quantity5valueEv"></span><span id="celeritas::Quantity::valueC"></span><span class="target" id="dc/dff/classceleritas_1_1_quantity_1a2685d70ddc7d0f3f9b9a1167fc93dc63"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas8Quantity10value_typeE" title="celeritas::Quantity::value_type"><span class="n"><span class="pre">value_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas8Quantity5valueEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Get numeric value, discarding units. </p>
 </dd></dl>
 
 </div>
@@ -1863,9 +1971,18 @@ A quantity is a value expressed in terms of the given unit. Storing values in a 
 </dd></dl>
 
 <dl class="cpp type">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas6detailE">
-<span id="_CPPv3N9celeritas6detailE"></span><span id="_CPPv2N9celeritas6detailE"></span><span id="celeritas::detail"></span><span class="target" id="d7/d42/namespaceceleritas_1_1detail"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">detail</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas6detailE" title="Permalink to this definition"></a><br /></dt>
-<dd><dl class="cpp struct">
+<dt class="sig sig-object cpp">
+<span class="target" id="d7/d42/namespaceceleritas_1_1detail"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">detail</span></span></span><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN9celeritas6detail18AccessorResultTypeE">
+<span id="_CPPv3I0EN9celeritas6detail18AccessorResultTypeE"></span><span id="_CPPv2I0EN9celeritas6detail18AccessorResultTypeE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d8/dcb/_quantity_8hh_1a15f443d822af69cd10988e8ac618224e"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AccessorResultType</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="n"><span class="pre">AccessorTraits</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN9celeritas6detail18AccessorResultTypeE" title="celeritas::detail::AccessorResultType::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">result_type</span></span><a class="headerlink" href="#_CPPv4I0EN9celeritas6detail18AccessorResultTypeE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Get the result type of a class accessor. </p>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv4I0EN9celeritas6detail16UnitlessQuantityE">
 <span id="_CPPv3I0EN9celeritas6detail16UnitlessQuantityE"></span><span id="_CPPv2I0EN9celeritas6detail16UnitlessQuantityE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="db/dc4/structceleritas_1_1detail_1_1_unitless_quantity"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UnitlessQuantity</span></span></span><a class="headerlink" href="#_CPPv4I0EN9celeritas6detail16UnitlessQuantityE" title="Permalink to this definition"></a><br /></dt>
 <dd><div class="docutils container">
@@ -1953,7 +2070,7 @@ A quantity is a value expressed in terms of the given unit. Storing values in a 
 <span id="_CPPv3N9celeritas9SoftEqual9SoftEqualE10value_type10value_type"></span><span id="_CPPv2N9celeritas9SoftEqual9SoftEqualE10value_type10value_type"></span><span id="celeritas::SoftEqual::SoftEqual__value_type.value_type"></span><span class="target" id="db/d01/classceleritas_1_1_soft_equal_1a051e0cc7e7202e1ca2a69cec7d343a22"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SoftEqual</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N9celeritas9SoftEqual10value_typeE" title="celeritas::SoftEqual::value_type"><span class="n"><span class="pre">value_type</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">rel</span></span>, <a class="reference internal" href="#_CPPv4N9celeritas9SoftEqual10value_typeE" title="celeritas::SoftEqual::value_type"><span class="n"><span class="pre">value_type</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">abs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas9SoftEqual9SoftEqualE10value_type10value_type" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Construct with both relative and absolute precision. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rel</strong> – tolerance of relative error (default 1.0e-12 for doubles)</p></li>
 <li><p><strong>abs</strong> – threshold for absolute error when comparing to zero (default 1.0e-14 for doubles) </p></li>
@@ -1968,7 +2085,7 @@ A quantity is a value expressed in terms of the given unit. Storing values in a 
 <dd><p>Compare two values (implicitly casting arguments). </p>
 <p>Note that to be safe with NaN, only return <code class="docutils literal notranslate"><span class="pre">true</span></code> inside an <code class="docutils literal notranslate"><span class="pre">if</span></code> conditional.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>expected</strong> – scalar floating point reference to which value is compared </p></li>
 <li><p><strong>actual</strong> – scalar floating point value </p></li>
@@ -2045,7 +2162,7 @@ A quantity is a value expressed in terms of the given unit. Storing values in a 
 <span id="_CPPv3N9celeritas8SoftZero8SoftZeroE10value_type"></span><span id="_CPPv2N9celeritas8SoftZero8SoftZeroE10value_type"></span><span id="celeritas::SoftZero::SoftZero__value_type"></span><span class="target" id="d5/d04/classceleritas_1_1_soft_zero_1aed209a0024b38e0804a27457f6cebf19"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SoftZero</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N9celeritas8SoftZero10value_typeE" title="celeritas::SoftZero::value_type"><span class="n"><span class="pre">value_type</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">abs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas8SoftZero8SoftZeroE10value_type" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Construct with specified precision. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>abs</strong> – threshold for absolute error when comparing to zero (default 1.0e-14 for doubles) </p>
 </dd>
 </dl>
@@ -2056,7 +2173,7 @@ A quantity is a value expressed in terms of the given unit. Storing values in a 
 <span id="_CPPv3NK9celeritas8SoftZeroclE10value_type"></span><span id="_CPPv2NK9celeritas8SoftZeroclE10value_type"></span><span id="celeritas::SoftZero::call-operator__value_typeC"></span><span class="target" id="d5/d04/classceleritas_1_1_soft_zero_1a2efeadba29f23d74bb99142a542cfdcd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N9celeritas8SoftZero10value_typeE" title="celeritas::SoftZero::value_type"><span class="n"><span class="pre">value_type</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">actual</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas8SoftZeroclE10value_type" title="Permalink to this definition"></a><br /></dt>
 <dd><p>See if the value is within absolute tolerance of zero. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>actual</strong> – scalar floating point value </p>
 </dd>
 </dl>
@@ -2091,7 +2208,7 @@ A quantity is a value expressed in terms of the given unit. Storing values in a 
 
 </section>
 <section id="i-o">
-<h2>I/O<a class="headerlink" href="#i-o" title="Permalink to this heading"></a></h2>
+<span id="api-io"></span><h2>I/O<a class="headerlink" href="#i-o" title="Permalink to this heading"></a></h2>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
 <dl class="cpp macro">
@@ -2188,6 +2305,71 @@ A quantity is a value expressed in terms of the given unit. Storing values in a 
 
 </dd></dl>
 
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15OutputInterfaceE">
+<span id="_CPPv3N9celeritas15OutputInterfaceE"></span><span id="_CPPv2N9celeritas15OutputInterfaceE"></span><span id="celeritas::OutputInterface"></span><span class="target" id="d1/d7c/classceleritas_1_1_output_interface"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OutputInterface</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15OutputInterfaceE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Pure abstract interface for writing metadata output to JSON. </p>
+<p>At the end of the program/run, the OutputRegistry will call the “output” method on all interfaces.</p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<em><span class="pre">Todo:</span></em></dt>
+<dd><p>Perhaps another output method for saving a schema? </p>
+</dd></dl>
+
+</p>
+<p>Subclassed by celeritas::ActionDiagnostic, celeritas::ActionRegistryOutput, celeritas::BuildOutput, celeritas::ExceptionOutput, celeritas::GeoParamsOutput, celeritas::MaterialParamsOutput, celeritas::OutputInterfaceAdapter&lt; T &gt;, celeritas::ParticleParamsOutput, celeritas::PhysicsParamsOutput, celeritas::SimpleCalo, celeritas::StepDiagnostic</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15OutputInterface8CategoryE">
+<span id="_CPPv3N9celeritas15OutputInterface8CategoryE"></span><span id="_CPPv2N9celeritas15OutputInterface8CategoryE"></span><span class="target" id="d1/d7c/classceleritas_1_1_output_interface_1a018e207aa7411123505fbaf08fd1c3f1"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Category</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15OutputInterface8CategoryE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Output category (TODO: could replace with string/cstring?) </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15OutputInterface8Category5inputE">
+<span id="_CPPv3N9celeritas15OutputInterface8Category5inputE"></span><span id="_CPPv2N9celeritas15OutputInterface8Category5inputE"></span><span class="target" id="d1/d7c/classceleritas_1_1_output_interface_1a018e207aa7411123505fbaf08fd1c3f1aa43c1b0aa53a0c908810c06ab1ff3967"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">input</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15OutputInterface8Category5inputE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15OutputInterface8Category6resultE">
+<span id="_CPPv3N9celeritas15OutputInterface8Category6resultE"></span><span id="_CPPv2N9celeritas15OutputInterface8Category6resultE"></span><span class="target" id="d1/d7c/classceleritas_1_1_output_interface_1a018e207aa7411123505fbaf08fd1c3f1ab4a88417b3d0170d754c647c30b7216a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">result</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15OutputInterface8Category6resultE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15OutputInterface8Category6systemE">
+<span id="_CPPv3N9celeritas15OutputInterface8Category6systemE"></span><span id="_CPPv2N9celeritas15OutputInterface8Category6systemE"></span><span class="target" id="d1/d7c/classceleritas_1_1_output_interface_1a018e207aa7411123505fbaf08fd1c3f1a54b53072540eeeb8f8e9343e71f28176"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">system</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15OutputInterface8Category6systemE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15OutputInterface8Category8internalE">
+<span id="_CPPv3N9celeritas15OutputInterface8Category8internalE"></span><span id="_CPPv2N9celeritas15OutputInterface8Category8internalE"></span><span class="target" id="d1/d7c/classceleritas_1_1_output_interface_1a018e207aa7411123505fbaf08fd1c3f1ad1efad72dc5b17dc66a46767c32fff40"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">internal</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15OutputInterface8Category8internalE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15OutputInterface8Category5size_E">
+<span id="_CPPv3N9celeritas15OutputInterface8Category5size_E"></span><span id="_CPPv2N9celeritas15OutputInterface8Category5size_E"></span><span class="target" id="d1/d7c/classceleritas_1_1_output_interface_1a018e207aa7411123505fbaf08fd1c3f1a4eecfb50c5a20eb78bc4d5304e9d8618"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size_</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15OutputInterface8Category5size_E" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas15OutputInterface8categoryEv">
+<span id="_CPPv3NK9celeritas15OutputInterface8categoryEv"></span><span id="_CPPv2NK9celeritas15OutputInterface8categoryEv"></span><span id="celeritas::OutputInterface::categoryC"></span><span class="target" id="d1/d7c/classceleritas_1_1_output_interface_1a0da0a946bb2ce5782b88cf6478dbf8b9"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas15OutputInterface8CategoryE" title="celeritas::OutputInterface::Category"><span class="n"><span class="pre">Category</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">category</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK9celeritas15OutputInterface8categoryEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Category of data to write. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas15OutputInterface5labelEv">
+<span id="_CPPv3NK9celeritas15OutputInterface5labelEv"></span><span id="_CPPv2NK9celeritas15OutputInterface5labelEv"></span><span id="celeritas::OutputInterface::labelC"></span><span class="target" id="d1/d7c/classceleritas_1_1_output_interface_1a62bbb87c28582fc196e989f59a08aa15"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">label</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK9celeritas15OutputInterface5labelEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Key for the entry inside the category. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </section>
 </section>
 
@@ -2195,7 +2377,7 @@ A quantity is a value expressed in terms of the given unit. Storing values in a 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../api.html" class="btn btn-neutral float-left" title="API documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../api.html" class="btn btn-neutral float-left" title="Library API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="orange.html" class="btn btn-neutral float-right" title="ORANGE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -92,7 +92,11 @@ Inheritance diagram for celeritas::ConcreteAction:</div>
  <div class="center">
   <img src="../../dd/df6/classceleritas_1_1_concrete_action.png" usemap="#celeritas::ConcreteAction_map" alt=""/>
   <map id="celeritas::ConcreteAction_map" name="celeritas::ConcreteAction_map">
-<area href="../../d7/d6f/classceleritas_1_1_action_interface.html" title="Pure abstract interface for an end-of-step action." alt="celeritas::ActionInterface" shape="rect" coords="0,0,154,24"/>
+<area href="../../d7/d6f/classceleritas_1_1_action_interface.html" title="Pure abstract interface for an action that could happen to a track." alt="celeritas::ActionInterface" shape="rect" coords="345,0,565,24"/>
+<area href="../../d6/dd2/classceleritas_1_1detail_1_1_boundary_action.html" title="Move a track across a boundary." alt="celeritas::detail::BoundaryAction" shape="rect" coords="0,112,220,136"/>
+<area href="../../d4/d37/classceleritas_1_1detail_1_1_discrete_select_action.html" title="Select a model for tracks undergoing a discrete interaction." alt="celeritas::detail::DiscreteSelectAction" shape="rect" coords="230,112,450,136"/>
+<area href="../../d4/d1b/classceleritas_1_1detail_1_1_pre_step_action.html" title="Set up the beginning of a physics step." alt="celeritas::detail::PreStepAction" shape="rect" coords="460,112,680,136"/>
+<area href="../../dd/ddd/classceleritas_1_1test_1_1_dummy_action.html" alt="celeritas::test::DummyAction" shape="rect" coords="690,112,910,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -119,15 +123,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaea530caf3fc863dc484ab72e8fafed0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df6/classceleritas_1_1_concrete_action.html#aaea530caf3fc863dc484ab72e8fafed0">description</a> () const final</td></tr>
 <tr class="memdesc:aaea530caf3fc863dc484ab72e8fafed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descriptive label.  <a href="../../dd/df6/classceleritas_1_1_concrete_action.html#aaea530caf3fc863dc484ab72e8fafed0">More...</a><br /></td></tr>
 <tr class="separator:aaea530caf3fc863dc484ab72e8fafed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae25fcd5fdf654ac5bbaaa70526e1576b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a98b21e11852c06d3845c53dd5df84797">ActionId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6f/classceleritas_1_1_action_interface.html#ae25fcd5fdf654ac5bbaaa70526e1576b">action_id</a> () const =0</td></tr>
-<tr class="memdesc:ae25fcd5fdf654ac5bbaaa70526e1576b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of this action for verification.  <a href="../../d7/d6f/classceleritas_1_1_action_interface.html#ae25fcd5fdf654ac5bbaaa70526e1576b">More...</a><br /></td></tr>
-<tr class="separator:ae25fcd5fdf654ac5bbaaa70526e1576b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90e2b9e6e54eb3e59c5a3a7279bfbd96"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6f/classceleritas_1_1_action_interface.html#a90e2b9e6e54eb3e59c5a3a7279bfbd96">label</a> () const =0</td></tr>
-<tr class="memdesc:a90e2b9e6e54eb3e59c5a3a7279bfbd96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short unique label of the action.  <a href="../../d7/d6f/classceleritas_1_1_action_interface.html#a90e2b9e6e54eb3e59c5a3a7279bfbd96">More...</a><br /></td></tr>
-<tr class="separator:a90e2b9e6e54eb3e59c5a3a7279bfbd96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea148a67aa1064b91806108b6fb83a72"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6f/classceleritas_1_1_action_interface.html#aea148a67aa1064b91806108b6fb83a72">description</a> () const =0</td></tr>
-<tr class="memdesc:aea148a67aa1064b91806108b6fb83a72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of the action.  <a href="../../d7/d6f/classceleritas_1_1_action_interface.html#aea148a67aa1064b91806108b6fb83a72">More...</a><br /></td></tr>
-<tr class="separator:aea148a67aa1064b91806108b6fb83a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classceleritas_1_1_action_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classceleritas_1_1_action_interface')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d7/d6f/classceleritas_1_1_action_interface.html">celeritas::ActionInterface</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_classceleritas_1_1_action_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classceleritas_1_1_action_interface')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../d7/d6f/classceleritas_1_1_action_interface.html">celeritas::ActionInterface</a></td></tr>
+<tr class="memitem:a1e28756f86a16e799805ac9aece24aee inherit pub_types_classceleritas_1_1_action_interface"><td class="memItemLeft" align="right" valign="top"><a id="a1e28756f86a16e799805ac9aece24aee" name="a1e28756f86a16e799805ac9aece24aee"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>CoreStateHost</b> = <a class="el" href="../../d0/dee/classceleritas_1_1_core_state.html">CoreState</a>&lt; MemSpace::host &gt;</td></tr>
+<tr class="memdesc:a1e28756f86a16e799805ac9aece24aee inherit pub_types_classceleritas_1_1_action_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of this action for verification. <br /></td></tr>
+<tr class="separator:a1e28756f86a16e799805ac9aece24aee inherit pub_types_classceleritas_1_1_action_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f564e5b38f35a6dc512b01139904581 inherit pub_types_classceleritas_1_1_action_interface"><td class="memItemLeft" align="right" valign="top"><a id="a5f564e5b38f35a6dc512b01139904581" name="a5f564e5b38f35a6dc512b01139904581"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>CoreStateDevice</b> = <a class="el" href="../../d0/dee/classceleritas_1_1_core_state.html">CoreState</a>&lt; MemSpace::device &gt;</td></tr>
+<tr class="memdesc:a5f564e5b38f35a6dc512b01139904581 inherit pub_types_classceleritas_1_1_action_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of this action for verification. <br /></td></tr>
+<tr class="separator:a5f564e5b38f35a6dc512b01139904581 inherit pub_types_classceleritas_1_1_action_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classceleritas_1_1_action_interface"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classceleritas_1_1_action_interface')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d7/d6f/classceleritas_1_1_action_interface.html">celeritas::ActionInterface</a></td></tr>
+<tr class="memitem:ab0fe96b3b51c4caf83eb4ca8a65d8707 inherit pro_methods_classceleritas_1_1_action_interface"><td class="memItemLeft" align="right" valign="top"><a id="ab0fe96b3b51c4caf83eb4ca8a65d8707" name="ab0fe96b3b51c4caf83eb4ca8a65d8707"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~ActionInterface</b> ()=default</td></tr>
+<tr class="memdesc:ab0fe96b3b51c4caf83eb4ca8a65d8707 inherit pro_methods_classceleritas_1_1_action_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of this action for verification. <br /></td></tr>
+<tr class="separator:ab0fe96b3b51c4caf83eb4ca8a65d8707 inherit pro_methods_classceleritas_1_1_action_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Concrete mixin utility class for managing an action. </p>
@@ -138,23 +151,23 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <span class="comment">// Construct with ID and label</span></div>
 <div class="line">    <span class="keyword">using </span>ConcreteAction::ConcreteAction;</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">void</span> execute(<a class="code hl_struct" href="../../dd/da8/structceleritas_1_1_core_ref.html">CoreHostRef</a> <span class="keyword">const</span>&amp;) <span class="keyword">const</span> <span class="keyword">final</span>;</div>
-<div class="line">    <span class="keywordtype">void</span> execute(<a class="code hl_struct" href="../../dd/da8/structceleritas_1_1_core_ref.html">CoreDeviceRef</a> <span class="keyword">const</span>&amp;) <span class="keyword">const</span> <span class="keyword">final</span>;</div>
+<div class="line">    <span class="keywordtype">void</span> execute(<a class="code hl_class" href="../../de/d76/classceleritas_1_1_core_params.html">CoreParams</a> <span class="keyword">const</span>&amp;, <a class="code hl_class" href="../../d0/dee/classceleritas_1_1_core_state.html">CoreStateHost</a>&amp;) <span class="keyword">const</span> <span class="keyword">final</span>;</div>
+<div class="line">    <span class="keywordtype">void</span> execute(<a class="code hl_class" href="../../de/d76/classceleritas_1_1_core_params.html">CoreParams</a> <span class="keyword">const</span>&amp;, <a class="code hl_class" href="../../d0/dee/classceleritas_1_1_core_state.html">CoreStateDevice</a>&amp;) <span class="keyword">const</span> <span class="keyword">final</span>;</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_enumeration" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1">ActionOrder</a> order() const final { <span class="keywordflow">return</span> ActionOrder::post; }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">class </span>PlaceholderPhysicsAction final : <span class="keyword">public</span> ImplicitActionInterface,</div>
-<div class="line">                                       <span class="keyword">public</span> ConcreteAction</div>
+<div class="line"><span class="keyword">class </span>PlaceholderPhysicsAction final : <span class="keyword">public</span> ConcreteAction</div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="comment">// Construct with ID and label</span></div>
 <div class="line">    <span class="keyword">using </span>ConcreteAction::ConcreteAction;</div>
 <div class="line">};</div>
-<div class="ttc" id="aceleritas_2_types_8hh_html_a8cf02fdde066d68cf56bdc61f55215c1"><div class="ttname"><a href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1">celeritas::ActionOrder</a></div><div class="ttdeci">ActionOrder</div><div class="ttdoc">Within-step ordering of explicit actions.</div><div class="ttdef"><b>Definition:</b> celeritas/Types.hh:105</div></div>
-<div class="ttc" id="aclassceleritas_1_1_concrete_action_html"><div class="ttname"><a href="../../dd/df6/classceleritas_1_1_concrete_action.html">celeritas::ConcreteAction</a></div><div class="ttdoc">Concrete mixin utility class for managing an action.</div><div class="ttdef"><b>Definition:</b> ActionInterface.hh:119</div></div>
-<div class="ttc" id="aclassceleritas_1_1_explicit_action_interface_html"><div class="ttname"><a href="../../d8/d6b/classceleritas_1_1_explicit_action_interface.html">celeritas::ExplicitActionInterface</a></div><div class="ttdoc">Interface for an action that launches a kernel or performs an action.</div><div class="ttdef"><b>Definition:</b> ActionInterface.hh:67</div></div>
-<div class="ttc" id="astructceleritas_1_1_core_ref_html"><div class="ttname"><a href="../../dd/da8/structceleritas_1_1_core_ref.html">celeritas::CoreRef</a></div><div class="ttdoc">Reference to core parameters and states.</div><div class="ttdef"><b>Definition:</b> CoreTrackData.hh:156</div></div>
+<div class="ttc" id="aceleritas_2_types_8hh_html_a8cf02fdde066d68cf56bdc61f55215c1"><div class="ttname"><a href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1">celeritas::ActionOrder</a></div><div class="ttdeci">ActionOrder</div><div class="ttdoc">Within-step ordering of explicit actions.</div><div class="ttdef"><b>Definition:</b> celeritas/Types.hh:106</div></div>
+<div class="ttc" id="aclassceleritas_1_1_concrete_action_html"><div class="ttname"><a href="../../dd/df6/classceleritas_1_1_concrete_action.html">celeritas::ConcreteAction</a></div><div class="ttdoc">Concrete mixin utility class for managing an action.</div><div class="ttdef"><b>Definition:</b> ActionInterface.hh:144</div></div>
+<div class="ttc" id="aclassceleritas_1_1_core_params_html"><div class="ttname"><a href="../../de/d76/classceleritas_1_1_core_params.html">celeritas::CoreParams</a></div><div class="ttdoc">Global parameters required to run a problem.</div><div class="ttdef"><b>Definition:</b> CoreParams.hh:42</div></div>
+<div class="ttc" id="aclassceleritas_1_1_core_state_html"><div class="ttname"><a href="../../d0/dee/classceleritas_1_1_core_state.html">celeritas::CoreState</a></div><div class="ttdoc">Store all state data for a single thread.</div><div class="ttdef"><b>Definition:</b> CoreState.hh:65</div></div>
+<div class="ttc" id="aclassceleritas_1_1_explicit_action_interface_html"><div class="ttname"><a href="../../d8/d6b/classceleritas_1_1_explicit_action_interface.html">celeritas::ExplicitActionInterface</a></div><div class="ttdoc">Interface for an action that launches a kernel or performs an action.</div><div class="ttdef"><b>Definition:</b> ActionInterface.hh:100</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a06796be389482f26654facd4ba78c8e7" name="a06796be389482f26654facd4ba78c8e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06796be389482f26654facd4ba78c8e7">&#9670;&#160;</a></span>action_id()</h2>

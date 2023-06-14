@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -80,11 +80,15 @@ $(function() {
   <div class="headertitle"><div class="title">UrbanMscScatter.hh File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../db/dc5/_macros_8hh.html">corecel/Macros.hh</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;cmath&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../db/dc5/_macros_8hh.html">corecel/Macros.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html">corecel/Types.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d1/dee/_algorithms_8hh.html">corecel/math/Algorithms.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/ddc/_array_utils_8hh.html">corecel/math/ArrayUtils.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/d42/_constants_8hh.html">celeritas/Constants.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../de/d40/_quantities_8hh.html">celeritas/Quantities.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../db/da7/celeritas_2_types_8hh.html">celeritas/Types.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/df7/_units_8hh.html">celeritas/Units.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../db/d41/_urban_msc_data_8hh.html">celeritas/em/data/UrbanMscData.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../da/d15/_geo_track_view_8hh.html">celeritas/geo/GeoTrackView.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/df1/_poly_evaluator_8hh.html">celeritas/grid/PolyEvaluator.hh</a>&quot;</code><br />
@@ -93,6 +97,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="../../d0/d1d/_particle_track_view_8hh.html">celeritas/phys/ParticleTrackView.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/dcc/_physics_track_view_8hh.html">celeritas/phys/PhysicsTrackView.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/dca/_bernoulli_distribution_8hh.html">celeritas/random/distribution/BernoulliDistribution.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/d5a/_generate_canonical_8hh.html">celeritas/random/distribution/GenerateCanonical.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d6/d30/_uniform_real_distribution_8hh.html">celeritas/random/distribution/UniformRealDistribution.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/dce/_msc_step_from_geo_8hh.html">MscStepFromGeo.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d1/d7f/_urban_msc_helper_8hh.html">UrbanMscHelper.hh</a>&quot;</code><br />

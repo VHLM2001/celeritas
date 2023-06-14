@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -113,12 +113,20 @@ mapped_type const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>op
 <tr class="memdesc:ad7c81af86593a659077375dcc3a60f6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an environment variable from current or system enviroments. <br /></td></tr>
 <tr class="separator:ad7c81af86593a659077375dcc3a60f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ccdf2708e8e6b4766c67590ba4efa49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/def/classceleritas_1_1_environment.html#a5ccdf2708e8e6b4766c67590ba4efa49">insert</a> (value_type const &amp;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#aeb6446bfcf4853c1dd9248791d829148a2063c1608d6e0baf80249c42e2be5804">value</a>)</td></tr>
-<tr class="memdesc:a5ccdf2708e8e6b4766c67590ba4efa49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set environment variables en masse.  <a href="../../da/def/classceleritas_1_1_environment.html#a5ccdf2708e8e6b4766c67590ba4efa49">More...</a><br /></td></tr>
+<tr class="memdesc:a5ccdf2708e8e6b4766c67590ba4efa49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a single environment variable that hasn't yet been set.  <a href="../../da/def/classceleritas_1_1_environment.html#a5ccdf2708e8e6b4766c67590ba4efa49">More...</a><br /></td></tr>
 <tr class="separator:a5ccdf2708e8e6b4766c67590ba4efa49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29ed5c966c36d056a969be17902da8d6"><td class="memItemLeft" align="right" valign="top"><a id="a29ed5c966c36d056a969be17902da8d6" name="a29ed5c966c36d056a969be17902da8d6"></a>
 VecKVRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>ordered_environment</b> () const</td></tr>
 <tr class="memdesc:a29ed5c966c36d056a969be17902da8d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an ordered (by access) vector of key/value pairs. <br /></td></tr>
 <tr class="separator:a29ed5c966c36d056a969be17902da8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60a1cb12a6226922a61f609eb94ac7d1"><td class="memItemLeft" align="right" valign="top"><a id="a60a1cb12a6226922a61f609eb94ac7d1" name="a60a1cb12a6226922a61f609eb94ac7d1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
+<tr class="memdesc:a60a1cb12a6226922a61f609eb94ac7d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all entries. <br /></td></tr>
+<tr class="separator:a60a1cb12a6226922a61f609eb94ac7d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25e3a3e592871ea906c3770e03ee9be1"><td class="memItemLeft" align="right" valign="top"><a id="a25e3a3e592871ea906c3770e03ee9be1" name="a25e3a3e592871ea906c3770e03ee9be1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>merge</b> (<a class="el" href="../../da/def/classceleritas_1_1_environment.html">Environment</a> const &amp;other)</td></tr>
+<tr class="memdesc:a25e3a3e592871ea906c3770e03ee9be1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert but don't override from another environment. <br /></td></tr>
+<tr class="separator:a25e3a3e592871ea906c3770e03ee9be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Interrogate and extend environment variables. </p>
@@ -142,7 +150,7 @@ VecKVRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>order
       </table>
 </div><div class="memdoc">
 
-<p>Set environment variables en masse. </p>
+<p>Set a single environment variable that hasn't yet been set. </p>
 <p >Existing environment variables will <em>not</em> be overwritten. </p>
 
 </div>

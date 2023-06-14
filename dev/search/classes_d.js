@@ -2,9 +2,9 @@ var searchData=
 [
   ['nativeunit_0',['NativeUnit',['../d8/dc6/structceleritas_1_1units_1_1_native_unit.html',1,'celeritas::units']]],
   ['navstatepooldeleter_1',['NavStatePoolDeleter',['../dd/dcd/structceleritas_1_1detail_1_1_nav_state_pool_deleter.html',1,'celeritas::detail']]],
-  ['nodata_2',['NoData',['../db/d63/structceleritas_1_1_no_data.html',1,'celeritas']]],
-  ['noeloss_3',['NoELoss',['../d1/d8e/structceleritas_1_1detail_1_1_no_e_loss.html',1,'celeritas::detail']]],
-  ['nomsc_4',['NoMsc',['../de/def/structceleritas_1_1detail_1_1_no_msc.html',1,'celeritas::detail']]],
+  ['noeloss_2',['NoELoss',['../d1/d8e/structceleritas_1_1detail_1_1_no_e_loss.html',1,'celeritas::detail']]],
+  ['nomsc_3',['NoMsc',['../de/def/structceleritas_1_1detail_1_1_no_msc.html',1,'celeritas::detail']]],
+  ['nonmasterresultprinter_4',['NonMasterResultPrinter',['../db/d49/classceleritas_1_1testdetail_1_1_non_master_result_printer.html',1,'celeritas::testdetail']]],
   ['nonuniformgrid_5',['NonuniformGrid',['../de/dcc/classceleritas_1_1_nonuniform_grid.html',1,'celeritas']]],
   ['nonuniformgrid_3c_20real_5ftype_20_3e_6',['NonuniformGrid&lt; real_type &gt;',['../de/dcc/classceleritas_1_1_nonuniform_grid.html',1,'celeritas']]],
   ['normaldistribution_7',['NormalDistribution',['../d7/d9a/classceleritas_1_1_normal_distribution.html',1,'celeritas']]],

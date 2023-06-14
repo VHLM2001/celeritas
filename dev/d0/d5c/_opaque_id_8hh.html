@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -77,6 +77,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">OpaqueId.hh File Reference</div></div>
 </div><!--header-->
@@ -94,23 +95,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type-safe index for accessing an array.  <a href="../../dd/dbb/classceleritas_1_1_opaque_id.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a9186e09d17c76823f1483c4a5ec53681"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5c/_opaque_id_8hh.html#a9186e09d17c76823f1483c4a5ec53681">CELER_DEFINE_OPAQUEID_CMP</a>(TOKEN)</td></tr>
+<tr class="separator:a9186e09d17c76823f1483c4a5ec53681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a622c47ec5f4deec3a47bf5bdcca33941"><td class="memTemplParams" colspan="2"><a id="a622c47ec5f4deec3a47bf5bdcca33941" name="a622c47ec5f4deec3a47bf5bdcca33941"></a>
-template&lt;class V , class S &gt; </td></tr>
-<tr class="memitem:a622c47ec5f4deec3a47bf5bdcca33941"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::operator==</b> (OpaqueId&lt; V, S &gt; lhs, OpaqueId&lt; V, S &gt; rhs)</td></tr>
-<tr class="memdesc:a622c47ec5f4deec3a47bf5bdcca33941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test equality. <br /></td></tr>
-<tr class="separator:a622c47ec5f4deec3a47bf5bdcca33941"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f45252fc0dddcfc363c4e58322ca708"><td class="memTemplParams" colspan="2"><a id="a9f45252fc0dddcfc363c4e58322ca708" name="a9f45252fc0dddcfc363c4e58322ca708"></a>
-template&lt;class V , class S &gt; </td></tr>
-<tr class="memitem:a9f45252fc0dddcfc363c4e58322ca708"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::operator!=</b> (OpaqueId&lt; V, S &gt; lhs, OpaqueId&lt; V, S &gt; rhs)</td></tr>
-<tr class="memdesc:a9f45252fc0dddcfc363c4e58322ca708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test inequality. <br /></td></tr>
-<tr class="separator:a9f45252fc0dddcfc363c4e58322ca708"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada94b49be534babfe56cc68dff7b966d"><td class="memTemplParams" colspan="2"><a id="ada94b49be534babfe56cc68dff7b966d" name="ada94b49be534babfe56cc68dff7b966d"></a>
-template&lt;class V , class S &gt; </td></tr>
-<tr class="memitem:ada94b49be534babfe56cc68dff7b966d"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::operator&lt;</b> (OpaqueId&lt; V, S &gt; lhs, OpaqueId&lt; V, S &gt; rhs)</td></tr>
-<tr class="memdesc:ada94b49be534babfe56cc68dff7b966d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow less-than comparison for sorting. <br /></td></tr>
-<tr class="separator:ada94b49be534babfe56cc68dff7b966d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea04243e1330482d8cd39f370c74e11f"><td class="memTemplParams" colspan="2"><a id="aea04243e1330482d8cd39f370c74e11f" name="aea04243e1330482d8cd39f370c74e11f"></a>
 template&lt;class V , class S , class U &gt; </td></tr>
 <tr class="memitem:aea04243e1330482d8cd39f370c74e11f"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::operator&lt;</b> (OpaqueId&lt; V, S &gt; lhs, U rhs)</td></tr>
@@ -131,7 +122,287 @@ template&lt;class V , class S &gt; </td></tr>
 <tr class="memitem:ac1d2145ca3c6abbdce1434196d9297d0"><td class="memTemplItemLeft" align="right" valign="top">OpaqueId&lt; V, S &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::operator-</b> (OpaqueId&lt; V, S &gt; id, std::make_signed_t&lt; S &gt; offset)</td></tr>
 <tr class="memdesc:ac1d2145ca3c6abbdce1434196d9297d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrement an opaque ID by an offset. <br /></td></tr>
 <tr class="separator:ac1d2145ca3c6abbdce1434196d9297d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a622c47ec5f4deec3a47bf5bdcca33941"><td class="memTemplParams" colspan="2">template&lt;class V , class S &gt; </td></tr>
+<tr class="memitem:a622c47ec5f4deec3a47bf5bdcca33941"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d5c/_opaque_id_8hh.html#a622c47ec5f4deec3a47bf5bdcca33941">celeritas::operator==</a> (OpaqueId&lt; V, S &gt; lhs, OpaqueId&lt; V, S &gt; rhs)</td></tr>
+<tr class="separator:a622c47ec5f4deec3a47bf5bdcca33941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f45252fc0dddcfc363c4e58322ca708"><td class="memTemplParams" colspan="2">template&lt;class V , class S &gt; </td></tr>
+<tr class="memitem:a9f45252fc0dddcfc363c4e58322ca708"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d5c/_opaque_id_8hh.html#a9f45252fc0dddcfc363c4e58322ca708">celeritas::operator!=</a> (OpaqueId&lt; V, S &gt; lhs, OpaqueId&lt; V, S &gt; rhs)</td></tr>
+<tr class="separator:a9f45252fc0dddcfc363c4e58322ca708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada94b49be534babfe56cc68dff7b966d"><td class="memTemplParams" colspan="2">template&lt;class V , class S &gt; </td></tr>
+<tr class="memitem:ada94b49be534babfe56cc68dff7b966d"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d5c/_opaque_id_8hh.html#ada94b49be534babfe56cc68dff7b966d">celeritas::operator&lt;</a> (OpaqueId&lt; V, S &gt; lhs, OpaqueId&lt; V, S &gt; rhs)</td></tr>
+<tr class="separator:ada94b49be534babfe56cc68dff7b966d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248086e5bcc8a3cdb9b3bea5c031871d"><td class="memTemplParams" colspan="2">template&lt;class V , class S &gt; </td></tr>
+<tr class="memitem:a248086e5bcc8a3cdb9b3bea5c031871d"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d5c/_opaque_id_8hh.html#a248086e5bcc8a3cdb9b3bea5c031871d">celeritas::operator&gt;</a> (OpaqueId&lt; V, S &gt; lhs, OpaqueId&lt; V, S &gt; rhs)</td></tr>
+<tr class="separator:a248086e5bcc8a3cdb9b3bea5c031871d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0e2b5eeaf6fadd7cc2e3e09b6fa8ad3"><td class="memTemplParams" colspan="2">template&lt;class V , class S &gt; </td></tr>
+<tr class="memitem:ad0e2b5eeaf6fadd7cc2e3e09b6fa8ad3"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d5c/_opaque_id_8hh.html#ad0e2b5eeaf6fadd7cc2e3e09b6fa8ad3">celeritas::operator&lt;=</a> (OpaqueId&lt; V, S &gt; lhs, OpaqueId&lt; V, S &gt; rhs)</td></tr>
+<tr class="separator:ad0e2b5eeaf6fadd7cc2e3e09b6fa8ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5edacc077a8c1f1d97cdf98d56048b11"><td class="memTemplParams" colspan="2">template&lt;class V , class S &gt; </td></tr>
+<tr class="memitem:a5edacc077a8c1f1d97cdf98d56048b11"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d5c/_opaque_id_8hh.html#a5edacc077a8c1f1d97cdf98d56048b11">celeritas::operator&gt;=</a> (OpaqueId&lt; V, S &gt; lhs, OpaqueId&lt; V, S &gt; rhs)</td></tr>
+<tr class="separator:a5edacc077a8c1f1d97cdf98d56048b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a9186e09d17c76823f1483c4a5ec53681" name="a9186e09d17c76823f1483c4a5ec53681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9186e09d17c76823f1483c4a5ec53681">&#9670;&#160;</a></span>CELER_DEFINE_OPAQUEID_CMP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CELER_DEFINE_OPAQUEID_CMP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TOKEN</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">class</span> V, <span class="keyword">class</span> S&gt;                                       \</div>
+<div class="line">    <a class="code hl_define" href="../../db/dc5/_macros_8hh.html#ae6277d86d031ef7cf2b160eeb8bbdb4e">CELER_CONSTEXPR_FUNCTION</a> <span class="keywordtype">bool</span> <span class="keyword">operator</span> TOKEN(OpaqueId&lt;V, S&gt; lhs, \</div>
+<div class="line">                                                 OpaqueId&lt;V, S&gt; rhs) \</div>
+<div class="line">    {                                                                \</div>
+<div class="line">        <span class="keywordflow">return</span> lhs.unchecked_get() TOKEN rhs.unchecked_get();        \</div>
+<div class="line">    }</div>
+<div class="ttc" id="a_macros_8hh_html_ae6277d86d031ef7cf2b160eeb8bbdb4e"><div class="ttname"><a href="../../db/dc5/_macros_8hh.html#ae6277d86d031ef7cf2b160eeb8bbdb4e">CELER_CONSTEXPR_FUNCTION</a></div><div class="ttdeci">#define CELER_CONSTEXPR_FUNCTION</div><div class="ttdoc">Decorate a function that works on both host and device, with and without NVCC, can be evaluated at co...</div><div class="ttdef"><b>Definition:</b> Macros.hh:58</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a9f45252fc0dddcfc363c4e58322ca708" name="a9f45252fc0dddcfc363c4e58322ca708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f45252fc0dddcfc363c4e58322ca708">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class V , class S &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool celeritas::operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/dbb/classceleritas_1_1_opaque_id.html">OpaqueId</a>&lt; V, S &gt;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/dbb/classceleritas_1_1_opaque_id.html">OpaqueId</a>&lt; V, S &gt;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Comparison for OpaqueId </p>
+
+</div>
+</div>
+<a id="ada94b49be534babfe56cc68dff7b966d" name="ada94b49be534babfe56cc68dff7b966d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada94b49be534babfe56cc68dff7b966d">&#9670;&#160;</a></span>operator&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class V , class S &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool celeritas::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/dbb/classceleritas_1_1_opaque_id.html">OpaqueId</a>&lt; V, S &gt;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/dbb/classceleritas_1_1_opaque_id.html">OpaqueId</a>&lt; V, S &gt;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Comparison for OpaqueId </p>
+
+</div>
+</div>
+<a id="ad0e2b5eeaf6fadd7cc2e3e09b6fa8ad3" name="ad0e2b5eeaf6fadd7cc2e3e09b6fa8ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e2b5eeaf6fadd7cc2e3e09b6fa8ad3">&#9670;&#160;</a></span>operator&lt;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class V , class S &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool celeritas::operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/dbb/classceleritas_1_1_opaque_id.html">OpaqueId</a>&lt; V, S &gt;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/dbb/classceleritas_1_1_opaque_id.html">OpaqueId</a>&lt; V, S &gt;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Comparison for OpaqueId </p>
+
+</div>
+</div>
+<a id="a622c47ec5f4deec3a47bf5bdcca33941" name="a622c47ec5f4deec3a47bf5bdcca33941"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a622c47ec5f4deec3a47bf5bdcca33941">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class V , class S &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool celeritas::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/dbb/classceleritas_1_1_opaque_id.html">OpaqueId</a>&lt; V, S &gt;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/dbb/classceleritas_1_1_opaque_id.html">OpaqueId</a>&lt; V, S &gt;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Comparison for OpaqueId </p>
+
+</div>
+</div>
+<a id="a248086e5bcc8a3cdb9b3bea5c031871d" name="a248086e5bcc8a3cdb9b3bea5c031871d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248086e5bcc8a3cdb9b3bea5c031871d">&#9670;&#160;</a></span>operator&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class V , class S &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool celeritas::operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/dbb/classceleritas_1_1_opaque_id.html">OpaqueId</a>&lt; V, S &gt;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/dbb/classceleritas_1_1_opaque_id.html">OpaqueId</a>&lt; V, S &gt;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Comparison for OpaqueId </p>
+
+</div>
+</div>
+<a id="a5edacc077a8c1f1d97cdf98d56048b11" name="a5edacc077a8c1f1d97cdf98d56048b11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5edacc077a8c1f1d97cdf98d56048b11">&#9670;&#160;</a></span>operator&gt;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class V , class S &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool celeritas::operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/dbb/classceleritas_1_1_opaque_id.html">OpaqueId</a>&lt; V, S &gt;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/dbb/classceleritas_1_1_opaque_id.html">OpaqueId</a>&lt; V, S &gt;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Comparison for OpaqueId </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

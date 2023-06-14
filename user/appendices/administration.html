@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Administration &mdash; Celeritas v0.3.0-dev.62+f351e714 documentation</title>
+  <title>Administration &mdash; Celeritas 0.3.0-rc.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -29,15 +29,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Celeritas
-            <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Celeritas
+              <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-dev
+                0.3.0-rc.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -46,9 +50,10 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Using Celeritas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">Library API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgments.html">Acknowledgments</a></li>
@@ -71,7 +76,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#merge-process">Merge process</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#release-process">Release process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#releases">Releases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#release-process">Release process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deprecations">Deprecations</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
@@ -90,8 +99,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Administration</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Administration</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/appendices/administration.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -103,8 +112,8 @@
              
   <section id="administration">
 <span id="id1"></span><h1>Administration<a class="headerlink" href="#administration" title="Permalink to this heading"></a></h1>
-<p>This appendix includes administrative details describing the roles and
-responsibilities of participants. It is meant to be a living document, more
+<p>This appendix includes administrative policies and details describing the roles
+and responsibilities of participants. It is meant to be a living document, more
 descriptive than prescriptive. It should be a basis for future decision making,
 using past decisions as a prior. Changes to this appendix can be made by pull
 request with the leadership team as reviewers.</p>
@@ -207,21 +216,24 @@ the burden of worrying about clean commit messages within a branch.</p>
 <p>Since there are few enough merge requests these days, only <a class="reference internal" href="#roles"><span class="std std-ref">maintainers</span></a> may commit a merge.</p>
 </section>
 </section>
-<section id="release-process">
-<h2>Release process<a class="headerlink" href="#release-process" title="Permalink to this heading"></a></h2>
+<section id="releases">
+<h2>Releases<a class="headerlink" href="#releases" title="Permalink to this heading"></a></h2>
 <p>Celeritas uses <a class="reference external" href="https://semver.org">Semantic Versioning</a> to enumerate releases. During its initial
 development phase, <code class="docutils literal notranslate"><span class="pre">0.x.0</span></code> is a major release and <code class="docutils literal notranslate"><span class="pre">0.x.z</span></code> is a patch
 release. When Celeritas is declared stable, <code class="docutils literal notranslate"><span class="pre">x.0.0</span></code> is a major release,
 <code class="docutils literal notranslate"><span class="pre">x.y.0</span></code> is a minor release, and <code class="docutils literal notranslate"><span class="pre">x.y.z</span></code> is a patch release.</p>
 <p>Major and minor releases (including 0.x.0 development releases) must have a
 milestone in the git issue tracker with a list of issues that can be assigned.
-Only major releases can deprecate or remove features and change
-<a class="reference internal" href="../api.html#api"><span class="std std-ref">public-facing APIs</span></a>. Both major and minor releases should include
-notable improvements to the code.</p>
+Only major releases can remove features and change
+<a class="reference internal" href="../api.html#api"><span class="std std-ref">public-facing APIs</span></a>. Minor releases can
+<a class="reference internal" href="#deprecations"><span class="std std-ref">deprecate features</span></a>. Both major and minor releases should
+include notable improvements to the code.</p>
 <p>Patch releases can be created at any time but should typically include at least
 one critical bug fix or several substantial fixes. Patch releases should focus
 almost exclusively on fixes and should generally not include new features or
 other major code changes.</p>
+<section id="release-process">
+<h3>Release process<a class="headerlink" href="#release-process" title="Permalink to this heading"></a></h3>
 <p>Releases can be created from the primary “develop” branch (major, minor, patch)
 or a “backport” branch (minor, patch).
 The following process must be followed (and may need iteration to converge) for
@@ -280,6 +292,36 @@ commit on the <code class="docutils literal notranslate"><span class="pre">devel
 first new feature) should be tagged with <code class="docutils literal notranslate"><span class="pre">v1.1.0-dev</span></code>, so that
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">describe</span> <span class="pre">--tags</span> <span class="pre">--match</span> <span class="pre">'v*'</span></code> shows the new features as being part of the
 <code class="docutils literal notranslate"><span class="pre">v1.1.0</span></code> series.</p>
+</section>
+<section id="deprecations">
+<span id="id4"></span><h3>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this heading"></a></h3>
+<p>Deprecating obsolete code is vital to the long-term maintainability of an
+open-source project. As new capabilities and better interfaces replace old
+ones, removing the old ones is the only way to pay off technical debt. A
+careful deprecation process is necessary to provide users a way to transition
+to the newer capabilities: there must be separate releases marking code as
+deprecated and removing it, and removal is only allowed in major version
+changes.</p>
+<p>Deprecated public APIs (functions, classes, identifiers, …) should be marked
+in the code with the <code class="docutils literal notranslate"><span class="pre">[[deprecated]]</span></code> C++ attribute and an adjacent comment
+“remove in vX.0”. Here, X is the next major release after the deprecation is
+released <a class="footnote-reference brackets" href="#id6" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. For example, if a function is deprecated after version 1.2 is
+released but a 1.3 release is planned, the comment should specify <code class="docutils literal notranslate"><span class="pre">remove</span> <span class="pre">in</span>
+<span class="pre">v2.0</span></code>. However, if the deprecation is made after the final minor version is
+released (i.e., on or after the <code class="docutils literal notranslate"><span class="pre">v2.0-dev</span></code> tag) the deprecation should be
+marked for <code class="docutils literal notranslate"><span class="pre">v3.0</span></code>.</p>
+<p>Private APIs (those not documented in the user API documentation, <em>not</em> limited
+to classes in the <code class="docutils literal notranslate"><span class="pre">detail</span></code> namespace) are not subject to the deprecation
+policy and can be changed at will. As the Celeritas code and its use cases
+mature, some functionality will become public and others will become “private.”
+Making a public API private should be treated as a deprecation.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id6" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">1</a><span class="fn-bracket">]</span></span>
+<p>During initial development, deprecations will target <code class="docutils literal notranslate"><span class="pre">v0.Y</span></code>.</p>
+</aside>
+</aside>
+</section>
 </section>
 </section>
 

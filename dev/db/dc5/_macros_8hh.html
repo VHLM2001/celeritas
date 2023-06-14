@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -100,7 +100,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CELER_CONSTEXPR_FUNCTION</b>&#160;&#160;&#160;constexpr <a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a></td></tr>
 <tr class="memdesc:ae6277d86d031ef7cf2b160eeb8bbdb4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decorate a function that works on both host and device, with and without NVCC, can be evaluated at compile time, and should be forcibly inlined. <br /></td></tr>
 <tr class="separator:ae6277d86d031ef7cf2b160eeb8bbdb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac043dd2f7956e148168c54220798555c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc5/_macros_8hh.html#ac043dd2f7956e148168c54220798555c">CELER_UNLIKELY</a>(COND)&#160;&#160;&#160;COND</td></tr>
+<tr class="memitem:ac043dd2f7956e148168c54220798555c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc5/_macros_8hh.html#ac043dd2f7956e148168c54220798555c">CELER_UNLIKELY</a>(COND)&#160;&#160;&#160;(COND)</td></tr>
 <tr class="memdesc:ac043dd2f7956e148168c54220798555c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark the result of this condition to be "unlikely".  <a href="../../db/dc5/_macros_8hh.html#ac043dd2f7956e148168c54220798555c">More...</a><br /></td></tr>
 <tr class="separator:ac043dd2f7956e148168c54220798555c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6443ce9eb70e643c4b3b097bb01d757e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc5/_macros_8hh.html#a6443ce9eb70e643c4b3b097bb01d757e">CELER_UNREACHABLE</a></td></tr>
@@ -298,17 +298,17 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="../../db/dc5/_macros_8hh.html#a572ccbb99d1225e67ed87d234b41f436">CELER_TRY_HANDLE</a>(                                     \</div>
-<div class="line">        <span class="keywordflow">do</span> {                                              \</div>
-<div class="line">            <span class="keywordflow">try</span>                                           \</div>
-<div class="line">            {                                             \</div>
-<div class="line">                STATEMENT;                                \</div>
-<div class="line">            }                                             \</div>
-<div class="line">            catch (...)                                   \</div>
-<div class="line">            {                                             \</div>
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="../../db/dc5/_macros_8hh.html#a572ccbb99d1225e67ed87d234b41f436">CELER_TRY_HANDLE</a>(                                      \</div>
+<div class="line">        <span class="keywordflow">do</span> {                                               \</div>
+<div class="line">            <span class="keywordflow">try</span>                                            \</div>
+<div class="line">            {                                              \</div>
+<div class="line">                STATEMENT;                                 \</div>
+<div class="line">            }                                              \</div>
+<div class="line">            catch (...)                                    \</div>
+<div class="line">            {                                              \</div>
 <div class="line">                std::throw_with_nested(CONTEXT_EXCEPTION); \</div>
-<div class="line">            }                                             \</div>
-<div class="line">        } <span class="keywordflow">while</span> (0),                                      \</div>
+<div class="line">            }                                              \</div>
+<div class="line">        } <span class="keywordflow">while</span> (0),                                       \</div>
 <div class="line">        HANDLE_EXCEPTION)</div>
 <div class="ttc" id="a_macros_8hh_html_a572ccbb99d1225e67ed87d234b41f436"><div class="ttname"><a href="../../db/dc5/_macros_8hh.html#a572ccbb99d1225e67ed87d234b41f436">CELER_TRY_HANDLE</a></div><div class="ttdeci">#define CELER_TRY_HANDLE(STATEMENT, HANDLE_EXCEPTION)</div><div class="ttdoc">&quot;Try&quot; to execute the statement, and &quot;handle&quot; all thrown errors by calling the given function-like err...</div><div class="ttdef"><b>Definition:</b> Macros.hh:183</div></div>
 </div><!-- fragment -->
@@ -328,7 +328,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">COND</td><td>)</td>
-          <td>&#160;&#160;&#160;COND</td>
+          <td>&#160;&#160;&#160;(COND)</td>
         </tr>
       </table>
 </div><div class="memdoc">

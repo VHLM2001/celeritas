@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -90,8 +90,11 @@ $(function() {
 <div class="line"><span class="comment"></span><span class="comment">//---------------------------------------------------------------------------//</span></div>
 <div class="line"><span class="preprocessor">#pragma once</span></div>
 <div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d10/_assert_8hh.html">corecel/Assert.hh</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="../../db/dc5/_macros_8hh.html">corecel/Macros.hh</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="../../d1/dee/_algorithms_8hh.html">corecel/math/Algorithms.hh</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="../../de/d40/_quantities_8hh.html">celeritas/Quantities.hh</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="../../de/d3c/_field_driver_options_8hh.html">celeritas/field/FieldDriverOptions.hh</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="../../da/d15/_geo_track_view_8hh.html">celeritas/geo/GeoTrackView.hh</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="../../d0/d1d/_particle_track_view_8hh.html">celeritas/phys/ParticleTrackView.hh</a>&quot;</span></div>
 <div class="line"> </div>
@@ -146,14 +149,17 @@ $(function() {
 <div class="line"><span class="comment">//---------------------------------------------------------------------------//</span></div>
 <div class="line">}  <span class="comment">// namespace celeritas</span></div>
 <div class="ttc" id="a_algorithms_8hh_html"><div class="ttname"><a href="../../d1/dee/_algorithms_8hh.html">Algorithms.hh</a></div></div>
+<div class="ttc" id="a_assert_8hh_html"><div class="ttname"><a href="../../d5/d10/_assert_8hh.html">Assert.hh</a></div><div class="ttdoc">Macros, exceptions, and helpers for assertions and error handling.</div></div>
 <div class="ttc" id="a_assert_8hh_html_a663caefcbb80dac28726e6d711f5bb09"><div class="ttname"><a href="../../d5/d10/_assert_8hh.html#a663caefcbb80dac28726e6d711f5bb09">CELER_ASSERT</a></div><div class="ttdeci">#define CELER_ASSERT(COND)</div><div class="ttdoc">Internal debug assertion macro.</div><div class="ttdef"><b>Definition:</b> Assert.hh:164</div></div>
 <div class="ttc" id="a_field_driver_8hh_html"><div class="ttname"><a href="../../dc/d32/_field_driver_8hh.html">FieldDriver.hh</a></div></div>
+<div class="ttc" id="a_field_driver_options_8hh_html"><div class="ttname"><a href="../../de/d3c/_field_driver_options_8hh.html">FieldDriverOptions.hh</a></div></div>
 <div class="ttc" id="a_field_propagator_8hh_html"><div class="ttname"><a href="../../d9/dd2/_field_propagator_8hh.html">FieldPropagator.hh</a></div></div>
 <div class="ttc" id="a_geo_track_view_8hh_html"><div class="ttname"><a href="../../da/d15/_geo_track_view_8hh.html">GeoTrackView.hh</a></div><div class="ttdoc">Select geometry implementation at configure time.</div></div>
 <div class="ttc" id="a_macros_8hh_html"><div class="ttname"><a href="../../db/dc5/_macros_8hh.html">Macros.hh</a></div><div class="ttdoc">Language and compiler abstraction macro definitions.</div></div>
 <div class="ttc" id="a_macros_8hh_html_ac631c1bc86fa5c49ade05cca94ae1794"><div class="ttname"><a href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a></div><div class="ttdeci">#define CELER_FUNCTION</div><div class="ttdoc">Decorate a function that works on both host and device, with and without NVCC.</div><div class="ttdef"><b>Definition:</b> Macros.hh:28</div></div>
 <div class="ttc" id="a_mag_field_equation_8hh_html"><div class="ttname"><a href="../../d2/d9e/_mag_field_equation_8hh.html">MagFieldEquation.hh</a></div></div>
 <div class="ttc" id="a_particle_track_view_8hh_html"><div class="ttname"><a href="../../d0/d1d/_particle_track_view_8hh.html">ParticleTrackView.hh</a></div></div>
+<div class="ttc" id="a_quantities_8hh_html"><div class="ttname"><a href="../../de/d40/_quantities_8hh.html">Quantities.hh</a></div><div class="ttdoc">Unit struct definitions for use with the Quantity class.</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

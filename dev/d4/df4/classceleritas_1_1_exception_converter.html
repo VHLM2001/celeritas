@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -89,6 +89,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:abf9a9876d17d2f082293715358e64c13"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df4/classceleritas_1_1_exception_converter.html#abf9a9876d17d2f082293715358e64c13">ExceptionConverter</a> (char const *err_code, <a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html">SharedParams</a> const *params)</td></tr>
+<tr class="memdesc:abf9a9876d17d2f082293715358e64c13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with an error code and shared parameters.  <a href="../../d4/df4/classceleritas_1_1_exception_converter.html#abf9a9876d17d2f082293715358e64c13">More...</a><br /></td></tr>
+<tr class="separator:abf9a9876d17d2f082293715358e64c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aced6fc67f4e05f50065af95356b66861"><td class="memItemLeft" align="right" valign="top"><a id="aced6fc67f4e05f50065af95356b66861" name="aced6fc67f4e05f50065af95356b66861"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ExceptionConverter</b> (char const *err_code)</td></tr>
 <tr class="memdesc:aced6fc67f4e05f50065af95356b66861"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with an error code for dispatching to Geant4. <br /></td></tr>
@@ -108,8 +111,48 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (std::
 <div class="line">    <a class="code hl_define" href="../../db/dc5/_macros_8hh.html#a572ccbb99d1225e67ed87d234b41f436">CELER_TRY_HANDLE</a>(transport_-&gt;Flush(), call_g4exception);</div>
 <div class="line">}</div>
 <div class="ttc" id="a_macros_8hh_html_a572ccbb99d1225e67ed87d234b41f436"><div class="ttname"><a href="../../db/dc5/_macros_8hh.html#a572ccbb99d1225e67ed87d234b41f436">CELER_TRY_HANDLE</a></div><div class="ttdeci">#define CELER_TRY_HANDLE(STATEMENT, HANDLE_EXCEPTION)</div><div class="ttdoc">&quot;Try&quot; to execute the statement, and &quot;handle&quot; all thrown errors by calling the given function-like err...</div><div class="ttdef"><b>Definition:</b> Macros.hh:183</div></div>
-<div class="ttc" id="aclassceleritas_1_1_exception_converter_html"><div class="ttname"><a href="../../d4/df4/classceleritas_1_1_exception_converter.html">celeritas::ExceptionConverter</a></div><div class="ttdoc">Translate Celeritas C++ exceptions into Geant4 G4Exception calls.</div><div class="ttdef"><b>Definition:</b> ExceptionConverter.hh:33</div></div>
-</div><!-- fragment --> </div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="ttc" id="aclassceleritas_1_1_exception_converter_html"><div class="ttname"><a href="../../d4/df4/classceleritas_1_1_exception_converter.html">celeritas::ExceptionConverter</a></div><div class="ttdoc">Translate Celeritas C++ exceptions into Geant4 G4Exception calls.</div><div class="ttdef"><b>Definition:</b> ExceptionConverter.hh:34</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="abf9a9876d17d2f082293715358e64c13" name="abf9a9876d17d2f082293715358e64c13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf9a9876d17d2f082293715358e64c13">&#9670;&#160;</a></span>ExceptionConverter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">celeritas::ExceptionConverter::ExceptionConverter </td>
+          <td>(</td>
+          <td class="paramtype">char const *&#160;</td>
+          <td class="paramname"><em>err_code</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html">SharedParams</a> const *&#160;</td>
+          <td class="paramname"><em>params</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct with an error code and shared parameters. </p>
+<p >The error code is reported to the Geant4 exception manager. The shared parameters are used to translate internal particle data if an exception occurs. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="../../de/d25/_exception_converter_8hh.html">ExceptionConverter.hh</a></li>
 <li><a class="el" href="../../dc/de9/_exception_converter_8cc.html">ExceptionConverter.cc</a></li>
 <li><a class="el" href="../../da/d77/_exception_converter_8cu.html">ExceptionConverter.cu</a></li>

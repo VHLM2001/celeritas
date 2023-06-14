@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -79,6 +79,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../de/d1c/_vecgeom_params_8hh.html">VecgeomParams.hh</a>&quot;</code><br />
+<code>#include &lt;cstddef&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;VecGeom/base/Config.h&gt;</code><br />
 <code>#include &lt;VecGeom/base/Cuda.h&gt;</code><br />
@@ -88,14 +89,18 @@ $(function() {
 <code>#include &lt;VecGeom/management/GeoManager.h&gt;</code><br />
 <code>#include &lt;VecGeom/volumes/PlacedVolume.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d8/d28/celeritas__config_8h.html">celeritas_config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/d10/_assert_8hh.html">corecel/Assert.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/db5/_environment_8hh.html">corecel/sys/Environment.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/dd4/_vecgeom_compatibility_8hh.html">celeritas/ext/detail/VecgeomCompatibility.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/de4/_range_8hh.html">corecel/cont/Range.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d9/d84/_join_8hh.html">corecel/io/Join.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d2/d8a/corecel_2io_2_logger_8hh.html">corecel/io/Logger.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d6/d8e/_scoped_time_and_redirect_8hh.html">corecel/io/ScopedTimeAndRedirect.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../db/d47/_string_utils_8hh.html">corecel/io/StringUtils.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../df/dfb/_device_8hh.html">corecel/sys/Device.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d17/_scoped_mem_8hh.html">corecel/sys/ScopedMem.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d1/dd1/_vecgeom_data_8hh.html">VecgeomData.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d6/d0f/_geant_geo_exporter_8hh.html">detail/GeantGeoExporter.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/dac/_converter_8hh.html">g4vg/Converter.hh</a>&quot;</code><br />
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

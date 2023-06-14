@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Celeritas &mdash; Celeritas v0.3.0-dev.62+f351e714 documentation</title>
+  <title>Celeritas &mdash; Celeritas 0.3.0-rc.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -28,15 +28,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="#" class="icon icon-home"> Celeritas
-            <img src="_static/celeritas-square.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Celeritas
+              <img src="_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-dev
+                0.3.0-rc.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -45,9 +49,10 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Using Celeritas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Library API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="acknowledgments.html">Acknowledgments</a></li>
@@ -73,8 +78,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>Celeritas</li>
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Celeritas</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -92,35 +97,42 @@ computational requirements of the High Luminosity upgrade to the Large Hadron
 Collider, the code’s initial goal is to accelerate electromagnetic physics
 simulations of the CMS and ATLAS detectors.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Release</dt>
-<dd class="field-odd"><p>v0.3.0-dev.62+f351e714</p>
+<dt class="field-odd">Release<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0.3.0-rc.1</p>
 </dd>
-<dt class="field-even">Date</dt>
-<dd class="field-even"><p>Apr 03, 2023</p>
+<dt class="field-even">Date<span class="colon">:</span></dt>
+<dd class="field-even"><p>Jun 13, 2023</p>
 </dd>
 </dl>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#dependencies">Dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#toolchain-installation">Toolchain installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#building-celeritas">Building Celeritas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#cmake-presets">CMake Presets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#downstream-usage-as-a-library">Downstream usage as a library</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#units">Units</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#distributions">Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#physics">Physics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#geometry">Geometry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#stepping-loop">Stepping loop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#gpu-usage">GPU usage</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API documentation</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#toolchain-installation">Toolchain installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#building-celeritas">Building Celeritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#cmake-presets">CMake Presets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Using Celeritas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#software-library">Software library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#standalone-simulation-app-celer-sim">Standalone simulation app (celer-sim)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#integrated-geant4-application-celer-g4">Integrated Geant4 application (celer-g4)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#additional-utilities">Additional utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#environment-variables">Environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#logging">Logging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Library API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/corecel.html">Core package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/orange.html">ORANGE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/celeritas.html">Celeritas</a></li>
@@ -129,8 +141,7 @@ simulations of the CMS and ATLAS detectors.</p>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="examples/minimal.html">Minimal Celeritas usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/geant4-minimal.html">Minimal Geant4 integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/geant4-full.html">Geant4 integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/geant4.html">Minimal Geant4 integration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
@@ -141,7 +152,9 @@ simulations of the CMS and ATLAS detectors.</p>
 <p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="appendices/release-history.html">Release History</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="appendices/release-history/v0.2.html">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendices/release-history/v0.3.html">Version 0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendices/release-history/v0.2.html">Version 0.2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendices/release-history/v0.2.html#version-0-2-1">Version 0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendices/release-history/v0.2.html#version-0-2-0">Version 0.2.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendices/release-history/v0.1.html">Version 0.1.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendices/release-history/v0.1.html#version-0-1-4">Version 0.1.4</a></li>
@@ -162,7 +175,7 @@ simulations of the CMS and ATLAS detectors.</p>
 <li class="toctree-l2"><a class="reference internal" href="appendices/administration.html#community-standards">Community standards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendices/administration.html#roles">Roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendices/administration.html#code-review">Code review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendices/administration.html#release-process">Release process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendices/administration.html#releases">Releases</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="appendices/license.html">License</a><ul>

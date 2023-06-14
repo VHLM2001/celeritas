@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -83,12 +83,17 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d1/d59/_kernel_registry_i_o_8json_8hh.html">KernelRegistryIO.json.hh</a>&quot;</code><br />
 <code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d28/celeritas__config_8h.html">celeritas_config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/de4/_range_8hh.html">corecel/cont/Range.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../dc/d11/_kernel_attributes_8hh.html">corecel/sys/KernelAttributes.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../db/d90/_kernel_registry_8hh.html">KernelRegistry.hh</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a1dc8b3ac5ac8246396ad43550d2c3bc2"><td class="memItemLeft" align="right" valign="top"><a id="a1dc8b3ac5ac8246396ad43550d2c3bc2" name="a1dc8b3ac5ac8246396ad43550d2c3bc2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to_json</b> (nlohmann::json &amp;j, KernelAttributes const &amp;attrs)</td></tr>
+<tr class="memdesc:a1dc8b3ac5ac8246396ad43550d2c3bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write one kernel's metadata to JSON. <br /></td></tr>
+<tr class="separator:a1dc8b3ac5ac8246396ad43550d2c3bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f35e0d90ef91211b5ffe0410747758b"><td class="memItemLeft" align="right" valign="top"><a id="a3f35e0d90ef91211b5ffe0410747758b" name="a3f35e0d90ef91211b5ffe0410747758b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to_json</b> (nlohmann::json &amp;j, KernelRegistry const &amp;kr)</td></tr>
 <tr class="memdesc:a3f35e0d90ef91211b5ffe0410747758b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write kernel metadata out to JSON. <br /></td></tr>

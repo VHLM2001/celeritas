@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -114,6 +114,11 @@ template&lt;class T &gt; </td></tr>
 <tr class="memitem:a53119aa8def7008c00aba2940fd2744a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::trivial_swap</b> (T &amp;a, T &amp;b) noexcept</td></tr>
 <tr class="memdesc:a53119aa8def7008c00aba2940fd2744a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Support swapping of trivial types. <br /></td></tr>
 <tr class="separator:a53119aa8def7008c00aba2940fd2744a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73758f1c138310246fca3d646fa6013"><td class="memTemplParams" colspan="2"><a id="ae73758f1c138310246fca3d646fa6013" name="ae73758f1c138310246fca3d646fa6013"></a>
+template&lt;class T , class U  = T&gt; </td></tr>
+<tr class="memitem:ae73758f1c138310246fca3d646fa6013"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::exchange</b> (T &amp;dst, U &amp;&amp;src)</td></tr>
+<tr class="memdesc:ae73758f1c138310246fca3d646fa6013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchange values on host or device. <br /></td></tr>
+<tr class="separator:ae73758f1c138310246fca3d646fa6013"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67ec988c5b3ee7b3f5d2fe50729ce037"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a67ec988c5b3ee7b3f5d2fe50729ce037"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> T const &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/dee/_algorithms_8hh.html#a67ec988c5b3ee7b3f5d2fe50729ce037">celeritas::clamp</a> (T const &amp;v, T const &amp;lo, T const &amp;hi)</td></tr>
 <tr class="memdesc:a67ec988c5b3ee7b3f5d2fe50729ce037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamp the value between lo and hi values.  <a href="../../d1/dee/_algorithms_8hh.html#a67ec988c5b3ee7b3f5d2fe50729ce037">More...</a><br /></td></tr>
@@ -125,13 +130,23 @@ template&lt;class T &gt; </td></tr>
 <tr class="memitem:a73ed2276b50c2848c93d70fec244f847"><td class="memTemplParams" colspan="2"><a id="a73ed2276b50c2848c93d70fec244f847" name="a73ed2276b50c2848c93d70fec244f847"></a>
 template&lt;class ForwardIt , class T , class Compare &gt; </td></tr>
 <tr class="memitem:a73ed2276b50c2848c93d70fec244f847"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a> ForwardIt&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::lower_bound</b> (ForwardIt first, ForwardIt last, T const &amp;value, Compare comp)</td></tr>
-<tr class="memdesc:a73ed2276b50c2848c93d70fec244f847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the insertion point for a value in a sorted list. <br /></td></tr>
+<tr class="memdesc:a73ed2276b50c2848c93d70fec244f847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the insertion point for a value in a sorted list using a binary search. <br /></td></tr>
 <tr class="separator:a73ed2276b50c2848c93d70fec244f847"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfe88c355d3f1e2a649a668e8f6e1169"><td class="memTemplParams" colspan="2"><a id="acfe88c355d3f1e2a649a668e8f6e1169" name="acfe88c355d3f1e2a649a668e8f6e1169"></a>
 template&lt;class ForwardIt , class T &gt; </td></tr>
 <tr class="memitem:acfe88c355d3f1e2a649a668e8f6e1169"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a> ForwardIt&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::lower_bound</b> (ForwardIt first, ForwardIt last, T const &amp;value)</td></tr>
-<tr class="memdesc:acfe88c355d3f1e2a649a668e8f6e1169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the insertion point for a value in a sorted list. <br /></td></tr>
+<tr class="memdesc:acfe88c355d3f1e2a649a668e8f6e1169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the insertion point for a value in a sorted list using a binary search. <br /></td></tr>
 <tr class="separator:acfe88c355d3f1e2a649a668e8f6e1169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a340c43026cbadf5452be791eafb58642"><td class="memTemplParams" colspan="2"><a id="a340c43026cbadf5452be791eafb58642" name="a340c43026cbadf5452be791eafb58642"></a>
+template&lt;class ForwardIt , class T , class Compare &gt; </td></tr>
+<tr class="memitem:a340c43026cbadf5452be791eafb58642"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a> ForwardIt&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::lower_bound_linear</b> (ForwardIt first, ForwardIt last, T const &amp;value, Compare comp)</td></tr>
+<tr class="memdesc:a340c43026cbadf5452be791eafb58642"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the insertion point for a value in a sorted list using a linear search. <br /></td></tr>
+<tr class="separator:a340c43026cbadf5452be791eafb58642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a347f79bd083e274c27e61c7edc510db0"><td class="memTemplParams" colspan="2"><a id="a347f79bd083e274c27e61c7edc510db0" name="a347f79bd083e274c27e61c7edc510db0"></a>
+template&lt;class ForwardIt , class T &gt; </td></tr>
+<tr class="memitem:a347f79bd083e274c27e61c7edc510db0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a> ForwardIt&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::lower_bound_linear</b> (ForwardIt first, ForwardIt last, T const &amp;value)</td></tr>
+<tr class="memdesc:a347f79bd083e274c27e61c7edc510db0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the insertion point for a value in a sorted list using a linear search. <br /></td></tr>
+<tr class="separator:a347f79bd083e274c27e61c7edc510db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5836f232d0549cf1357366e3eb3c144"><td class="memTemplParams" colspan="2"><a id="ab5836f232d0549cf1357366e3eb3c144" name="ab5836f232d0549cf1357366e3eb3c144"></a>
 template&lt;class ForwardIt , class T , class Compare &gt; </td></tr>
 <tr class="memitem:ab5836f232d0549cf1357366e3eb3c144"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a> ForwardIt&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::upper_bound</b> (ForwardIt first, ForwardIt last, T const &amp;value, Compare comp)</td></tr>

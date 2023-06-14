@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -81,13 +81,13 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a4261c584e9fd5af310806fdde740ed96">execute</a>(StateHostRef const &amp;)=0</td><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a037ab88e17c3b220e2df9ef43e82df9c">execute</a>(StateDeviceRef const &amp;)=0</td><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a8fde9750e57072a4382bf00c6adb09bc">filters</a>() const =0</td><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a72e3f023a31ddd87945b23ec47164c45">DeviceStepState</a> typedef</td><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a8fde9750e57072a4382bf00c6adb09bc">filters</a>() const =0</td><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a6a02c3c9deda25d19195de16b283f947">HostStepState</a> typedef</td><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#ada9256c6cc789d3a6ebe0e3862fd3514">MapVolumeDetector</a> typedef</td><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a523e376049116bf35a5800b143e61578">process_steps</a>(HostStepState)=0</td><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a5080ba6aa99249efdf08fcce3d3f6c45">process_steps</a>(DeviceStepState)=0</td><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#af15dc19ee4822aa1ed3950869eca3dc9">selection</a>() const =0</td><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#ab1a50ef5dcf0d2b72b2d6171bb3092ea">StateDeviceRef</a> typedef</td><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a7e422a75399af8523dbcae5445cf109d">StateHostRef</a> typedef</td><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a7c4a75bd3e4825b104e9bbf678265e1b">~StepInterface</a>()=default</td><td class="entry"><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->

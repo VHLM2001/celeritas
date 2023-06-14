@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -82,42 +82,79 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d8/d92/_track_init_algorithms_8hh.html">TrackInitAlgorithms.hh</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;numeric&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../de/d4e/celeritas_2track_2detail_2_utils_8hh.html">Utils.hh</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3a4228e069b1e6d6b360ba613861d995"><td class="memItemLeft" align="right" valign="top"><a id="a3a4228e069b1e6d6b360ba613861d995" name="a3a4228e069b1e6d6b360ba613861d995"></a>
-template&lt;&gt; </td></tr>
-<tr class="memitem:a3a4228e069b1e6d6b360ba613861d995"><td class="memTemplItemLeft" align="right" valign="top">size_type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::detail::remove_if_alive&lt; MemSpace::host &gt;</b> (Span&lt; TrackSlotId &gt; vacancies)</td></tr>
-<tr class="memdesc:a3a4228e069b1e6d6b360ba613861d995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all elements in the vacancy vector that were flagged as active tracks. <br /></td></tr>
-<tr class="separator:a3a4228e069b1e6d6b360ba613861d995"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f89815641886ad1094f8cd5c3c8eba3"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
-<tr class="memitem:a9f89815641886ad1094f8cd5c3c8eba3"><td class="memTemplItemLeft" align="right" valign="top">size_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d26/_track_init_algorithms_8cc.html#a9f89815641886ad1094f8cd5c3c8eba3">celeritas::detail::exclusive_scan_counts&lt; MemSpace::host &gt;</a> (Span&lt; size_type &gt; counts)</td></tr>
-<tr class="memdesc:a9f89815641886ad1094f8cd5c3c8eba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do an exclusive scan of the number of secondaries produced by each track.  <a href="../../df/d26/_track_init_algorithms_8cc.html#a9f89815641886ad1094f8cd5c3c8eba3">More...</a><br /></td></tr>
-<tr class="separator:a9f89815641886ad1094f8cd5c3c8eba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adea386c49407f91de64dbc88bd7acc2d"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d26/_track_init_algorithms_8cc.html#adea386c49407f91de64dbc88bd7acc2d">celeritas::detail::remove_if_alive</a> (StateCollection&lt; TrackSlotId, Ownership::reference, MemSpace::host &gt; const &amp;vacancies, StreamId)</td></tr>
+<tr class="memdesc:adea386c49407f91de64dbc88bd7acc2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all elements in the vacancy vector that were flagged as active tracks.  <a href="../../df/d26/_track_init_algorithms_8cc.html#adea386c49407f91de64dbc88bd7acc2d">More...</a><br /></td></tr>
+<tr class="separator:adea386c49407f91de64dbc88bd7acc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a097d4514dffbf764ec229d0c13830eca"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d26/_track_init_algorithms_8cc.html#a097d4514dffbf764ec229d0c13830eca">celeritas::detail::exclusive_scan_counts</a> (StateCollection&lt; size_type, Ownership::reference, MemSpace::host &gt; const &amp;counts, StreamId)</td></tr>
+<tr class="memdesc:a097d4514dffbf764ec229d0c13830eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do an exclusive scan of the number of secondaries produced by each track.  <a href="../../df/d26/_track_init_algorithms_8cc.html#a097d4514dffbf764ec229d0c13830eca">More...</a><br /></td></tr>
+<tr class="separator:a097d4514dffbf764ec229d0c13830eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a9f89815641886ad1094f8cd5c3c8eba3" name="a9f89815641886ad1094f8cd5c3c8eba3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f89815641886ad1094f8cd5c3c8eba3">&#9670;&#160;</a></span>exclusive_scan_counts&lt; MemSpace::host &gt;()</h2>
+<a id="a097d4514dffbf764ec229d0c13830eca" name="a097d4514dffbf764ec229d0c13830eca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a097d4514dffbf764ec229d0c13830eca">&#9670;&#160;</a></span>exclusive_scan_counts()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_type celeritas::detail::exclusive_scan_counts&lt; MemSpace::host &gt; </td>
+          <td class="memname">size_type celeritas::detail::exclusive_scan_counts </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; size_type &gt;&#160;</td>
-          <td class="paramname"><em>counts</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../db/d8b/_collection_8hh.html#a3b2cddd69a67a4cca1eb022f8a24bb5b">StateCollection</a>&lt; size_type, <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#aeb6446bfcf4853c1dd9248791d829148ab8af13ea9c8fe890c9979a1fa8dbde22">Ownership::reference</a>, MemSpace::host &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>counts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d83/_thread_id_8hh.html#af299ab85716f04c5675e69a71c221718">StreamId</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Do an exclusive scan of the number of secondaries produced by each track. </p>
-<p >For an input array x, this calculates the exclusive prefix sum y of the array elements, i.e., <picture><source srcset="../../form_204_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ y_i = \sum_{j=0}^{i-1} x_j $" src="../../form_204.png" width="73" height="19"/></picture>, where <picture><source srcset="../../form_205_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ y_0 = 0 $" src="../../form_205.png" width="35" height="11"/></picture>, and stores the result in the input array.</p>
-<p >The return value is the sum of all elements in the input array. </p>
+<p >For an input array x, this calculates the exclusive prefix sum y of the array elements, i.e., <picture><source srcset="../../form_191_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ y_i = \sum_{j=0}^{i-1} x_j $" src="../../form_191.png" width="73" height="19"/></picture>, where <picture><source srcset="../../form_192_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ y_0 = 0 $" src="../../form_192.png" width="35" height="11"/></picture>, and stores the result in the input array.</p>
+<p >The input size is one greater than the number of track slots so that the final element will be the total accumulated value. </p>
+
+</div>
+</div>
+<a id="adea386c49407f91de64dbc88bd7acc2d" name="adea386c49407f91de64dbc88bd7acc2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adea386c49407f91de64dbc88bd7acc2d">&#9670;&#160;</a></span>remove_if_alive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_type celeritas::detail::remove_if_alive </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d8b/_collection_8hh.html#a3b2cddd69a67a4cca1eb022f8a24bb5b">StateCollection</a>&lt; <a class="el" href="../../d3/d83/_thread_id_8hh.html#a3fffdf8703eae70bc266e8cd92bf4dd5">TrackSlotId</a>, <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#aeb6446bfcf4853c1dd9248791d829148ab8af13ea9c8fe890c9979a1fa8dbde22">Ownership::reference</a>, MemSpace::host &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>vacancies</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d83/_thread_id_8hh.html#af299ab85716f04c5675e69a71c221718">StreamId</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove all elements in the vacancy vector that were flagged as active tracks. </p>
+<dl class="section return"><dt>Returns</dt><dd>New size of the vacancy vector </dd></dl>
 
 </div>
 </div>

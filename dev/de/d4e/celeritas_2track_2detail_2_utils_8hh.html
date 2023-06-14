@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -84,7 +84,7 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d5/d10/_assert_8hh.html">corecel/Assert.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/d5c/_opaque_id_8hh.html">corecel/OpaqueId.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html">corecel/Types.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d2/d78/_numeric_limits_8hh.html">corecel/math/NumericLimits.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d8b/_collection_8hh.html">corecel/data/Collection.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/d83/_thread_id_8hh.html">corecel/sys/ThreadId.hh</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -98,10 +98,14 @@ Functions</h2></td></tr>
 <a class="el" href="../../db/dc5/_macros_8hh.html#ae6277d86d031ef7cf2b160eeb8bbdb4e">CELER_CONSTEXPR_FUNCTION</a> TrackSlotId&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::detail::occupied</b> ()</td></tr>
 <tr class="memdesc:a9f1284a205b1c250572271bb19a60d98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate that a track slot is occupied by a still-alive track. <br /></td></tr>
 <tr class="separator:a9f1284a205b1c250572271bb19a60d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af201a053932ceb2d7d56a51ca3e0f3cf"><td class="memItemLeft" align="right" valign="top"><a id="af201a053932ceb2d7d56a51ca3e0f3cf" name="af201a053932ceb2d7d56a51ca3e0f3cf"></a>
-<a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a> size_type&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::detail::from_back</b> (size_type size, ThreadId tid)</td></tr>
-<tr class="memdesc:af201a053932ceb2d7d56a51ca3e0f3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a track slot ID a certain number of threads from the end. <br /></td></tr>
-<tr class="separator:af201a053932ceb2d7d56a51ca3e0f3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad430cadd8d895c4732a880a216454e8f"><td class="memItemLeft" align="right" valign="top"><a id="ad430cadd8d895c4732a880a216454e8f" name="ad430cadd8d895c4732a880a216454e8f"></a>
+<a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a> size_type&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::detail::index_before</b> (size_type size, ThreadId tid)</td></tr>
+<tr class="memdesc:ad430cadd8d895c4732a880a216454e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an initializer index where thread 0 has the last valid element. <br /></td></tr>
+<tr class="separator:ad430cadd8d895c4732a880a216454e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e7ce757c5772828bd44b2cb5318dfa3"><td class="memItemLeft" align="right" valign="top"><a id="a7e7ce757c5772828bd44b2cb5318dfa3" name="a7e7ce757c5772828bd44b2cb5318dfa3"></a>
+<a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a> size_type&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::detail::index_after</b> (size_type size, ThreadId tid)</td></tr>
+<tr class="memdesc:a7e7ce757c5772828bd44b2cb5318dfa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an initializer index a certain number of threads past the end. <br /></td></tr>
+<tr class="separator:a7e7ce757c5772828bd44b2cb5318dfa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

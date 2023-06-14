@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -100,22 +100,21 @@ Classes</h2></td></tr>
 Enumerations</h2></td></tr>
 <tr class="memitem:acf5f32379a6c7a59d83d33cb15bf5d89"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/de8/_import_process_8hh.html#acf5f32379a6c7a59d83d33cb15bf5d89">celeritas::ImportProcessType</a> { <br />
 &#160;&#160;<b>other</b>
-, <b>not_defined</b> = other
 , <b>transportation</b>
 , <b>electromagnetic</b>
+, <b>optical</b>
 , <br />
-&#160;&#160;<b>optical</b>
-, <b>hadronic</b>
+&#160;&#160;<b>hadronic</b>
 , <b>photolepton_hadron</b>
 , <b>decay</b>
+, <b>general</b>
 , <br />
-&#160;&#160;<b>general</b>
-, <b>parameterisation</b>
+&#160;&#160;<b>parameterisation</b>
 , <b>user_defined</b>
 , <b>parallel</b>
+, <b>phonon</b>
 , <br />
-&#160;&#160;<b>phonon</b>
-, <b>ucn</b>
+&#160;&#160;<b>ucn</b>
 , <b>size_</b>
 <br />
  }</td></tr>
@@ -123,27 +122,26 @@ Enumerations</h2></td></tr>
 <tr class="separator:acf5f32379a6c7a59d83d33cb15bf5d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee9f70862dd95ace9074262973ad3904"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/de8/_import_process_8hh.html#aee9f70862dd95ace9074262973ad3904">celeritas::ImportProcessClass</a> { <br />
 &#160;&#160;<b>other</b>
-, <b>unknown</b> = other
 , <b>ion_ioni</b>
 , <b>msc</b>
+, <b>h_ioni</b>
 , <br />
-&#160;&#160;<b>h_ioni</b>
-, <b>h_brems</b>
+&#160;&#160;<b>h_brems</b>
 , <b>h_pair_prod</b>
 , <b>coulomb_scat</b>
+, <b>e_ioni</b>
 , <br />
-&#160;&#160;<b>e_ioni</b>
-, <b>e_brems</b>
+&#160;&#160;<b>e_brems</b>
 , <b>photoelectric</b>
 , <b>compton</b>
+, <b>conversion</b>
 , <br />
-&#160;&#160;<b>conversion</b>
-, <b>rayleigh</b>
+&#160;&#160;<b>rayleigh</b>
 , <b>annihilation</b>
 , <b>mu_ioni</b>
+, <b>mu_brems</b>
 , <br />
-&#160;&#160;<b>mu_brems</b>
-, <b>mu_pair_prod</b>
+&#160;&#160;<b>mu_pair_prod</b>
 , <b>gamma_general</b>
 , <b>size_</b>
 <br />

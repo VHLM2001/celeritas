@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; Celeritas v0.3.0-dev.62+f351e714 documentation</title>
+  <title>Installation &mdash; Celeritas 0.3.0-rc.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,8 +20,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Overview" href="overview.html" />
-    <link rel="prev" title="Introduction" href="introduction.html" /> 
+    <link rel="next" title="Using Celeritas" href="usage.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -29,15 +29,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Celeritas
-            <img src="_static/celeritas-square.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Celeritas
+              <img src="_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-dev
+                0.3.0-rc.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -46,16 +50,16 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#toolchain-installation">Toolchain installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#building-celeritas">Building Celeritas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cmake-presets">CMake Presets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#downstream-usage-as-a-library">Downstream usage as a library</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Using Celeritas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Library API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="acknowledgments.html">Acknowledgments</a></li>
@@ -81,8 +85,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Installation</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -94,8 +98,9 @@
              
   <section id="installation">
 <span id="infrastructure"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
+<p>Celeritas is designed to be easy to install for a multitude of use cases.</p>
 <section id="dependencies">
-<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading"></a></h2>
+<span id="id1"></span><h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading"></a></h2>
 <p>Celeritas is built using modern <a class="reference external" href="https://cmake.org">CMake</a>. It has multiple dependencies to operate
 as a full-featured code, but each dependency can be individually disabled as
 needed.</p>
@@ -103,7 +108,7 @@ needed.</p>
 However, any combination of these requirements can be omitted to enable
 limited development on experimental HPC systems or personal machines with
 fewer available components.</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -311,35 +316,14 @@ call <code class="docutils literal notranslate"><span class="pre">scripts/build.
 build, and test. See <code class="file docutils literal notranslate"><span class="pre">scripts/README.md</span></code> in the code repository for more
 details.</p>
 </section>
-<section id="downstream-usage-as-a-library">
-<h2>Downstream usage as a library<a class="headerlink" href="#downstream-usage-as-a-library" title="Permalink to this heading"></a></h2>
-<p>The Celeritas library is most easily used when your downstream app is built with
-CMake. It should require a single line to initialize:</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">Celeritas</span><span class="w"> </span><span class="s">REQUIRED</span><span class="w"> </span><span class="s">CONFIG</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>and if VecGeom or CUDA are disabled a single line to link:</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">mycode</span><span class="w"> </span><span class="s">PUBLIC</span><span class="w"> </span><span class="s">Celeritas::celeritas</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Because of complexities involving CUDA Relocatable Device Code, linking when
-using both CUDA and VecGeom requires an additional include and the replacement
-of <code class="docutils literal notranslate"><span class="pre">target_link_libraries</span></code> with a customized version:</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">include</span><span class="p">(</span><span class="s">CeleritasLibrary</span><span class="p">)</span>
-<span class="nb">celeritas_target_link_libraries</span><span class="p">(</span><span class="s">mycode</span><span class="w"> </span><span class="s">PUBLIC</span><span class="w"> </span><span class="s">Celeritas::celeritas</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>The <a class="reference internal" href="examples/minimal.html#example-minimal"><span class="std std-ref">Minimal Celeritas usage</span></a> example demonstrates how to use Celeritas as a
-library with a short standalone CMake project.</p>
-</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-right" title="Using Celeritas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

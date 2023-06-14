@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -133,7 +133,7 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () cons
 class celeritas::LabelIdMultiMap&lt; I &gt;</div><p >Map IDs to label+sublabel. </p>
 <p >Many Geant4 geometry definitions reuse a label for material or volume definitions, and we need to track the unique name across multiple codes (Geant4, VecGeom+GDML) to differentiate between materials or volumes. This class maps a "label" to a range of "sublabels", each of which corresponds to a unique ID. It also provides the reverse mapping so that an ID can retrieve the corresponding label/sublabel pair.</p>
 <p >There is no requirement that sublabels be ordered adjacent to each other: the IDs corresponding to a label may be noncontiguous.</p>
-<p >Duplicate labels are allowed but will be added to a list of duplicate IDs that can be warned about downstream.</p>
+<p >Duplicate labels are allowed but will be added to a list of duplicate IDs that can be warned about downstream. Empty labels will be ignored.</p>
 <p >If no sublabels or labels are available, an empty span or "false" <a class="el" href="../../dd/dbb/classceleritas_1_1_opaque_id.html" title="Type-safe index for accessing an array.">OpaqueId</a> will be returned. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a80008b1ed33de10eee5a14418c079b20" name="a80008b1ed33de10eee5a14418c079b20"></a>

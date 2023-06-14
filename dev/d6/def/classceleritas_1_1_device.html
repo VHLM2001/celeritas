@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -145,6 +145,16 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>default_block
 MapStrInt const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>extra</b> () const</td></tr>
 <tr class="memdesc:a70a1b0433c70515aad096b20f085d77d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Additional potentially interesting diagnostics. <br /></td></tr>
 <tr class="separator:a70a1b0433c70515aad096b20f085d77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af90d669db63c3bf1369e053c03ad5da3"><td class="memItemLeft" align="right" valign="top"><a id="af90d669db63c3bf1369e053c03ad5da3" name="af90d669db63c3bf1369e053c03ad5da3"></a>
+StreamId::size_type&#160;</td><td class="memItemRight" valign="bottom"><b>num_streams</b> () const</td></tr>
+<tr class="memdesc:af90d669db63c3bf1369e053c03ad5da3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of streams allocated. <br /></td></tr>
+<tr class="separator:af90d669db63c3bf1369e053c03ad5da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6d1fb23b13d926508cb6b4f3dac964"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/def/classceleritas_1_1_device.html#aec6d1fb23b13d926508cb6b4f3dac964">create_streams</a> (unsigned int <a class="el" href="../../d6/def/classceleritas_1_1_device.html#af90d669db63c3bf1369e053c03ad5da3">num_streams</a>) const</td></tr>
+<tr class="memdesc:aec6d1fb23b13d926508cb6b4f3dac964"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate the given number of streams.  <a href="../../d6/def/classceleritas_1_1_device.html#aec6d1fb23b13d926508cb6b4f3dac964">More...</a><br /></td></tr>
+<tr class="separator:aec6d1fb23b13d926508cb6b4f3dac964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d71a04a760dfcefcf17b6e2fe117633"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d2c/classceleritas_1_1_stream.html">Stream</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/def/classceleritas_1_1_device.html#a9d71a04a760dfcefcf17b6e2fe117633">stream</a> (<a class="el" href="../../d3/d83/_thread_id_8hh.html#af299ab85716f04c5675e69a71c221718">StreamId</a>) const</td></tr>
+<tr class="memdesc:a9d71a04a760dfcefcf17b6e2fe117633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access a stream.  <a href="../../d6/def/classceleritas_1_1_device.html#a9d71a04a760dfcefcf17b6e2fe117633">More...</a><br /></td></tr>
+<tr class="separator:a9d71a04a760dfcefcf17b6e2fe117633"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -176,6 +186,27 @@ Static Public Member Functions</h2></td></tr>
 <dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000022">Todo:</a></b></dt><dd>The active CUDA device is a global property&mdash;so this should probably be a singleton, or we could use lower-level API calls.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The current multithreading/multiprocess model is intended to have one GPU serving multiple CPU threads simultaneously, and one MPI process per GPU. If we need to add multiple GPUs per process, then <code>global_device</code> will go away in favor of a thread-independent model. </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aec6d1fb23b13d926508cb6b4f3dac964" name="aec6d1fb23b13d926508cb6b4f3dac964"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec6d1fb23b13d926508cb6b4f3dac964">&#9670;&#160;</a></span>create_streams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void celeritas::Device::create_streams </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>num_streams</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate the given number of streams. </p>
+<p >If no streams have been created, the default stream will be used. </p>
+
+</div>
+</div>
 <a id="adde69237dfdac2bbae37a41b370e8c96" name="adde69237dfdac2bbae37a41b370e8c96"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adde69237dfdac2bbae37a41b370e8c96">&#9670;&#160;</a></span>debug()</h2>
 
@@ -229,6 +260,27 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Get the number of available devices. </p>
 <p >This is nonzero if and only if CUDA support is built-in, if at least one CUDA-capable device is present, and if the <code>CELER_DISABLE_DEVICE</code> environment variable is not set. </p>
+
+</div>
+</div>
+<a id="a9d71a04a760dfcefcf17b6e2fe117633" name="a9d71a04a760dfcefcf17b6e2fe117633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d71a04a760dfcefcf17b6e2fe117633">&#9670;&#160;</a></span>stream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d2c/classceleritas_1_1_stream.html">Stream</a> const  &amp; celeritas::Device::stream </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d83/_thread_id_8hh.html#af299ab85716f04c5675e69a71c221718">StreamId</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Access a stream. </p>
+<p >This returns the default stream if no streams were allocated. </p>
 
 </div>
 </div>

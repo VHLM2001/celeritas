@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -86,11 +86,11 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa7476d94cb64f6aa523ba3286de319f9"><td class="memTemplParams" colspan="2"><a id="aa7476d94cb64f6aa523ba3286de319f9" name="aa7476d94cb64f6aa523ba3286de319f9"></a>
-template&lt;class T , MemSpace M, class I &gt; </td></tr>
-<tr class="memitem:aa7476d94cb64f6aa523ba3286de319f9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::fill</b> (T const &amp;value, Collection&lt; T, Ownership::value, M, I &gt; *col)</td></tr>
-<tr class="memdesc:aa7476d94cb64f6aa523ba3286de319f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the collection with the given value. <br /></td></tr>
-<tr class="separator:aa7476d94cb64f6aa523ba3286de319f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14898198d384676efc2668065219fb2"><td class="memTemplParams" colspan="2"><a id="ac14898198d384676efc2668065219fb2" name="ac14898198d384676efc2668065219fb2"></a>
+template&lt;class T , Ownership W, MemSpace M, class I &gt; </td></tr>
+<tr class="memitem:ac14898198d384676efc2668065219fb2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::fill</b> (T &amp;&amp;value, Collection&lt; T, W, M, I &gt; *col)</td></tr>
+<tr class="memdesc:ac14898198d384676efc2668065219fb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the collection with the given value. <br /></td></tr>
+<tr class="separator:ac14898198d384676efc2668065219fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34cd2504b2fb23abe84b7ab24d1e388"><td class="memTemplParams" colspan="2"><a id="ae34cd2504b2fb23abe84b7ab24d1e388" name="ae34cd2504b2fb23abe84b7ab24d1e388"></a>
 template&lt;class T , Ownership W, MemSpace M, class I , std::size_t E&gt; </td></tr>
 <tr class="memitem:ae34cd2504b2fb23abe84b7ab24d1e388"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::copy_to_host</b> (Collection&lt; T, W, M, I &gt; const &amp;src, Span&lt; T, E &gt; dst)</td></tr>

@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -139,7 +139,7 @@ std::vector&lt; <a class="el" href="../../dc/dff/classceleritas_1_1_quantity.htm
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >CPU results for many in-detector tracks at a single step iteration. </p>
 <p >This convenience class can be used to postprocess the results from sensitive detectors on CPU. The data members will be available based on the <code>selection</code> of the <code><a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html" title="Callback class to gather and process data from many tracks at a single step.">StepInterface</a></code> class that gathered the data.</p>
-<p >Unlike <code><a class="el" href="../../dd/d0b/structceleritas_1_1_step_state_data.html" title="Gathered data for a single step for many tracks in parallel.">StepStateData</a></code>, which leaves gaps for inactive or filtered tracks, every entry of these vectors will be valid and correspond to a single DetectorId. </p>
+<p >Unlike <code><a class="el" href="../../dd/d0b/structceleritas_1_1_step_state_data.html" title="Gathered data and persistent scratch space for gathering and copying data.">StepStateData</a></code>, which leaves gaps for inactive or filtered tracks, every entry of these vectors will be valid and correspond to a single DetectorId. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="../../db/de5/_detector_steps_8hh.html">DetectorSteps.hh</a></li>
 </ul>

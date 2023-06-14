@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -77,7 +77,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">corecel/Types.hh File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -136,6 +137,16 @@ template&lt;template&lt; Ownership, MemSpace &gt; class S&gt; </td></tr>
 <tr class="memitem:a611908e2307d8e68abc7f152c856cbf6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::NativeRef</b> = S&lt; Ownership::reference, MemSpace::native &gt;</td></tr>
 <tr class="memdesc:a611908e2307d8e68abc7f152c856cbf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable reference to native memory. <br /></td></tr>
 <tr class="separator:a611908e2307d8e68abc7f152c856cbf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dd4c940b7c4ede68ce02a4b97fc037b"><td class="memTemplParams" colspan="2"><a id="a3dd4c940b7c4ede68ce02a4b97fc037b" name="a3dd4c940b7c4ede68ce02a4b97fc037b"></a>
+template&lt;template&lt; Ownership, MemSpace &gt; class P, MemSpace M&gt; </td></tr>
+<tr class="memitem:a3dd4c940b7c4ede68ce02a4b97fc037b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::CRefPtr</b> = ObserverPtr&lt; P&lt; Ownership::const_reference, M &gt; const, M &gt;</td></tr>
+<tr class="memdesc:a3dd4c940b7c4ede68ce02a4b97fc037b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to same-memory <em>const</em> collection group. <br /></td></tr>
+<tr class="separator:a3dd4c940b7c4ede68ce02a4b97fc037b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ed35e8f58b0692955ed58aa6a051760"><td class="memTemplParams" colspan="2"><a id="a5ed35e8f58b0692955ed58aa6a051760" name="a5ed35e8f58b0692955ed58aa6a051760"></a>
+template&lt;template&lt; Ownership, MemSpace &gt; class S, MemSpace M&gt; </td></tr>
+<tr class="memitem:a5ed35e8f58b0692955ed58aa6a051760"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::RefPtr</b> = ObserverPtr&lt; S&lt; Ownership::reference, M &gt;, M &gt;</td></tr>
+<tr class="memdesc:a5ed35e8f58b0692955ed58aa6a051760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to same-memory <em>mutable</em> collection group. <br /></td></tr>
+<tr class="separator:a5ed35e8f58b0692955ed58aa6a051760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -154,6 +165,13 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:aeb6446bfcf4853c1dd9248791d829148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data ownership flag.  <a href="../../d0/df5/corecel_2_types_8hh.html#aeb6446bfcf4853c1dd9248791d829148">More...</a><br /></td></tr>
 <tr class="separator:aeb6446bfcf4853c1dd9248791d829148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a3f0e68ba11ef01820e5872d31262eb19"><td class="memItemLeft" align="right" valign="top"><a id="a3f0e68ba11ef01820e5872d31262eb19" name="a3f0e68ba11ef01820e5872d31262eb19"></a>
+constexpr char const *&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to_cstring</b> (MemSpace m)</td></tr>
+<tr class="memdesc:a3f0e68ba11ef01820e5872d31262eb19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string corresponding to a memory space. <br /></td></tr>
+<tr class="separator:a3f0e68ba11ef01820e5872d31262eb19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Type definitions for common Celeritas functionality. </p>

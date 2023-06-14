@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -83,18 +83,26 @@ $(function() {
 
 <p>Helper functions for string processing.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<div class="textblock"><code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a07baec3d3634aae6861bb5dd7f954d00"><td class="memItemLeft" align="right" valign="top"><a id="a07baec3d3634aae6861bb5dd7f954d00" name="a07baec3d3634aae6861bb5dd7f954d00"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::starts_with</b> (std::string const &amp;main_string, std::string const &amp;prefix)</td></tr>
-<tr class="memdesc:a07baec3d3634aae6861bb5dd7f954d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the string starts with another string. <br /></td></tr>
-<tr class="separator:a07baec3d3634aae6861bb5dd7f954d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1874c81ffccd6cd4f81b56d1fe2b0af"><td class="memItemLeft" align="right" valign="top"><a id="ae1874c81ffccd6cd4f81b56d1fe2b0af" name="ae1874c81ffccd6cd4f81b56d1fe2b0af"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::ends_with</b> (std::string const &amp;main_string, std::string const &amp;suffix)</td></tr>
-<tr class="memdesc:ae1874c81ffccd6cd4f81b56d1fe2b0af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the string ends with another string. <br /></td></tr>
-<tr class="separator:ae1874c81ffccd6cd4f81b56d1fe2b0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96b74863cb1cc009c86cef5d0d4ff6a0"><td class="memItemLeft" align="right" valign="top"><a id="a96b74863cb1cc009c86cef5d0d4ff6a0" name="a96b74863cb1cc009c86cef5d0d4ff6a0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::starts_with</b> (std::string_view main_string, std::string_view prefix)</td></tr>
+<tr class="memdesc:a96b74863cb1cc009c86cef5d0d4ff6a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the string starts with another string. <br /></td></tr>
+<tr class="separator:a96b74863cb1cc009c86cef5d0d4ff6a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a57f7e40f3dd8bdd57352f7e6317cbc"><td class="memItemLeft" align="right" valign="top"><a id="a4a57f7e40f3dd8bdd57352f7e6317cbc" name="a4a57f7e40f3dd8bdd57352f7e6317cbc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::ends_with</b> (std::string_view main_string, std::string_view suffix)</td></tr>
+<tr class="memdesc:a4a57f7e40f3dd8bdd57352f7e6317cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the string ends with another string. <br /></td></tr>
+<tr class="separator:a4a57f7e40f3dd8bdd57352f7e6317cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addaf3bebdfc1ebf34fc2db59b296b6f3"><td class="memItemLeft" align="right" valign="top"><a id="addaf3bebdfc1ebf34fc2db59b296b6f3" name="addaf3bebdfc1ebf34fc2db59b296b6f3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::is_ignored_trailing</b> (unsigned char c)</td></tr>
+<tr class="memdesc:addaf3bebdfc1ebf34fc2db59b296b6f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the character is whitespace or unprintable. <br /></td></tr>
+<tr class="separator:addaf3bebdfc1ebf34fc2db59b296b6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16c792ca789904db74c0ab16e8457648"><td class="memItemLeft" align="right" valign="top"><a id="a16c792ca789904db74c0ab16e8457648" name="a16c792ca789904db74c0ab16e8457648"></a>
+std::string_view&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::trim</b> (std::string_view input)</td></tr>
+<tr class="separator:a16c792ca789904db74c0ab16e8457648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Helper functions for string processing. </p>

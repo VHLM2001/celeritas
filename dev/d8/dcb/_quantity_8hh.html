@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;v0.3.0-dev.62+f351e714</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
    </div>
   </td>
  </tr>
@@ -77,6 +77,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Quantity.hh File Reference</div></div>
 </div><!--header-->
@@ -100,6 +101,20 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dec/structceleritas_1_1_unit_product.html">celeritas::UnitProduct&lt; C1, C2 &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value is C1::value() * C2::value()  <a href="../../d7/dec/structceleritas_1_1_unit_product.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:ab4b7a7a1a9f6c7938f84b1747865177e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcb/_quantity_8hh.html#ab4b7a7a1a9f6c7938f84b1747865177e">CELER_DEFINE_QACCESS</a>(FUNC,  QUAL)</td></tr>
+<tr class="separator:ab4b7a7a1a9f6c7938f84b1747865177e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a15f443d822af69cd10988e8ac618224e"><td class="memTemplParams" colspan="2"><a id="a15f443d822af69cd10988e8ac618224e" name="a15f443d822af69cd10988e8ac618224e"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a15f443d822af69cd10988e8ac618224e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::detail::AccessorResultType</b> = typename AccessorTraits&lt; T &gt;::result_type</td></tr>
+<tr class="memdesc:a15f443d822af69cd10988e8ac618224e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the result type of a class accessor. <br /></td></tr>
+<tr class="separator:a15f443d822af69cd10988e8ac618224e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -132,8 +147,77 @@ template&lt;class U , class V &gt; </td></tr>
 <tr class="memitem:a13dff5cd91d74e9b834e82a877811b1c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ae6277d86d031ef7cf2b160eeb8bbdb4e">CELER_CONSTEXPR_FUNCTION</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/dcb/_quantity_8hh.html#a13dff5cd91d74e9b834e82a877811b1c">celeritas::value_as</a> (Quantity&lt; SrcUnitT, ValueT &gt; quant) -&gt; ValueT</td></tr>
 <tr class="memdesc:a13dff5cd91d74e9b834e82a877811b1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use the value of a <a class="el" href="../../dc/dff/classceleritas_1_1_quantity.html" title="A numerical value tagged with a unit.">Quantity</a>.  <a href="../../d8/dcb/_quantity_8hh.html#a13dff5cd91d74e9b834e82a877811b1c">More...</a><br /></td></tr>
 <tr class="separator:a13dff5cd91d74e9b834e82a877811b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9257f34bcb6e99e66d1f77706329d311"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a9257f34bcb6e99e66d1f77706329d311"><td class="memTemplItemLeft" align="right" valign="top">char const *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/dcb/_quantity_8hh.html#a9257f34bcb6e99e66d1f77706329d311">celeritas::accessor_unit_label</a> ()</td></tr>
+<tr class="memdesc:a9257f34bcb6e99e66d1f77706329d311"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the label for a unit returned from a class accessor.  <a href="../../d8/dcb/_quantity_8hh.html#a9257f34bcb6e99e66d1f77706329d311">More...</a><br /></td></tr>
+<tr class="separator:a9257f34bcb6e99e66d1f77706329d311"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ab4b7a7a1a9f6c7938f84b1747865177e" name="ab4b7a7a1a9f6c7938f84b1747865177e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4b7a7a1a9f6c7938f84b1747865177e">&#9670;&#160;</a></span>CELER_DEFINE_QACCESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CELER_DEFINE_QACCESS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">FUNC, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">QUAL&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="../../db/dc5/_macros_8hh.html#ae6277d86d031ef7cf2b160eeb8bbdb4e">CELER_CONSTEXPR_FUNCTION</a> value_type QUAL FUNC() QUAL noexcept \</div>
+<div class="line">    {                                                             \</div>
+<div class="line">        <span class="keywordflow">return</span> value_;                                            \</div>
+<div class="line">    }</div>
+<div class="ttc" id="a_macros_8hh_html_ae6277d86d031ef7cf2b160eeb8bbdb4e"><div class="ttname"><a href="../../db/dc5/_macros_8hh.html#ae6277d86d031ef7cf2b160eeb8bbdb4e">CELER_CONSTEXPR_FUNCTION</a></div><div class="ttdeci">#define CELER_CONSTEXPR_FUNCTION</div><div class="ttdoc">Decorate a function that works on both host and device, with and without NVCC, can be evaluated at co...</div><div class="ttdef"><b>Definition:</b> Macros.hh:58</div></div>
+</div><!-- fragment --><p >Access the underlying numeric value, discarding units </p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a9257f34bcb6e99e66d1f77706329d311" name="a9257f34bcb6e99e66d1f77706329d311"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9257f34bcb6e99e66d1f77706329d311">&#9670;&#160;</a></span>accessor_unit_label()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char const  * celeritas::accessor_unit_label </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the label for a unit returned from a class accessor. </p>
+<p >Example: </p><div class="fragment"><div class="line">cout &lt;&lt; accessor_unit_label&lt;&amp;ParticleView::mass&gt;() &lt;&lt; endl;</div>
+</div><!-- fragment --> 
+</div>
+</div>
 <a id="a55f706d4949ba3e4ab22f6b0d0959d2d" name="a55f706d4949ba3e4ab22f6b0d0959d2d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55f706d4949ba3e4ab22f6b0d0959d2d">&#9670;&#160;</a></span>native_value_from()</h2>
 
