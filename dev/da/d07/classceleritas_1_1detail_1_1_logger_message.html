@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -82,18 +82,11 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Helper class for writing log messages.  
+<p>Stream-like helper class for writing log messages.  
  <a href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html#details">More...</a></p>
 
 <p><code>#include &lt;LoggerMessage.hh&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader">Type aliases</div></td></tr>
-<tr class="memitem:a4733cbcdf94513b1f5fa60ed63cefad7"><td class="memItemLeft" align="right" valign="top"><a id="a4733cbcdf94513b1f5fa60ed63cefad7" name="a4733cbcdf94513b1f5fa60ed63cefad7"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>StreamManip</b> = std::ostream &amp;(*)(std::ostream &amp;)</td></tr>
-<tr class="separator:a4733cbcdf94513b1f5fa60ed63cefad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7edb42d6103d5bd283fe6b5137249b7f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html#a7edb42d6103d5bd283fe6b5137249b7f">LoggerMessage</a> (<a class="el" href="../../da/d0a/_logger_types_8hh.html#a93e3cb59bdb32a7f2568212314e47d24">LogHandler</a> *handle, <a class="el" href="../../de/d98/structceleritas_1_1_provenance.html">Provenance</a> prov, <a class="el" href="../../da/d0a/_logger_types_8hh.html#aef62286134070f3d148ad01bda25a8be">LogLevel</a> lev)</td></tr>
@@ -103,32 +96,54 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~LoggerMessage</b> ()</td></tr>
 <tr class="memdesc:a9c479da8dc12e0d7f23f04a3d9d94814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush message on destruction. <br /></td></tr>
 <tr class="separator:a9c479da8dc12e0d7f23f04a3d9d94814"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4bbc22cc3577143df3c8313437f4cd6"><td class="memItemLeft" align="right" valign="top"><a id="ac4bbc22cc3577143df3c8313437f4cd6" name="ac4bbc22cc3577143df3c8313437f4cd6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LoggerMessage</b> (<a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> &amp;&amp;)=default</td></tr>
-<tr class="separator:ac4bbc22cc3577143df3c8313437f4cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1edf2d5eefdbf9cf3c5f566f98cdf6dc"><td class="memItemLeft" align="right" valign="top"><a id="a1edf2d5eefdbf9cf3c5f566f98cdf6dc" name="a1edf2d5eefdbf9cf3c5f566f98cdf6dc"></a>
-<a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> &amp;&amp;)=default</td></tr>
-<tr class="separator:a1edf2d5eefdbf9cf3c5f566f98cdf6dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af750cebde1579ca7823278a8fc8ae906"><td class="memTemplParams" colspan="2"><a id="af750cebde1579ca7823278a8fc8ae906" name="af750cebde1579ca7823278a8fc8ae906"></a>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:af750cebde1579ca7823278a8fc8ae906"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator&lt;&lt;</b> (T &amp;&amp;rhs)</td></tr>
 <tr class="memdesc:af750cebde1579ca7823278a8fc8ae906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the object to the stream if applicable. <br /></td></tr>
 <tr class="separator:af750cebde1579ca7823278a8fc8ae906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25bd9907b709eb356ef9b201b724bcce"><td class="memItemLeft" align="right" valign="top"><a id="a25bd9907b709eb356ef9b201b724bcce" name="a25bd9907b709eb356ef9b201b724bcce"></a>
-<a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (StreamManip manip)</td></tr>
+<a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (<a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html#a4733cbcdf94513b1f5fa60ed63cefad7">StreamManip</a> manip)</td></tr>
 <tr class="memdesc:a25bd9907b709eb356ef9b201b724bcce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accept a stream manipulator. <br /></td></tr>
 <tr class="separator:a25bd9907b709eb356ef9b201b724bcce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68d3c7631f6c831a5e5bdcb1ea9b631d"><td class="memItemLeft" align="right" valign="top"><a id="a68d3c7631f6c831a5e5bdcb1ea9b631d" name="a68d3c7631f6c831a5e5bdcb1ea9b631d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setstate</b> (std::ostream::iostate state)</td></tr>
 <tr class="memdesc:a68d3c7631f6c831a5e5bdcb1ea9b631d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the steam state (needed by some manipulators). <br /></td></tr>
 <tr class="separator:a68d3c7631f6c831a5e5bdcb1ea9b631d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Type aliases</h2></td></tr>
+<tr class="memitem:a4733cbcdf94513b1f5fa60ed63cefad7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html#a4733cbcdf94513b1f5fa60ed63cefad7">StreamManip</a> = std::ostream &amp;(*)(std::ostream &amp;)</td></tr>
+<tr class="separator:a4733cbcdf94513b1f5fa60ed63cefad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8ad6d3551ccf3f1eb182bc5e48faad7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html#ab8ad6d3551ccf3f1eb182bc5e48faad7">LoggerMessage</a> (<a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> const &amp;)=delete</td></tr>
+<tr class="separator:ab8ad6d3551ccf3f1eb182bc5e48faad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9414bfa70cdbfd08d42fa33a9d94be03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html#a9414bfa70cdbfd08d42fa33a9d94be03">operator=</a> (<a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> const &amp;)=delete</td></tr>
+<tr class="separator:a9414bfa70cdbfd08d42fa33a9d94be03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4bbc22cc3577143df3c8313437f4cd6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html#ac4bbc22cc3577143df3c8313437f4cd6">LoggerMessage</a> (<a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:ac4bbc22cc3577143df3c8313437f4cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1edf2d5eefdbf9cf3c5f566f98cdf6dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html#a1edf2d5eefdbf9cf3c5f566f98cdf6dc">operator=</a> (<a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a1edf2d5eefdbf9cf3c5f566f98cdf6dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Helper class for writing log messages. </p>
+<div class="textblock"><p >Stream-like helper class for writing log messages. </p>
 <p >This class should only be created by a <a class="el" href="../../d4/da5/classceleritas_1_1_logger.html" title="Manage logging in serial and parallel.">Logger</a> instance. When it destructs, the handler is called to print the information. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a4733cbcdf94513b1f5fa60ed63cefad7" name="a4733cbcdf94513b1f5fa60ed63cefad7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4733cbcdf94513b1f5fa60ed63cefad7">&#9670;&#160;</a></span>StreamManip</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html#a4733cbcdf94513b1f5fa60ed63cefad7">celeritas::detail::LoggerMessage::StreamManip</a> =  std::ostream&amp; (*)(std::ostream&amp;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Prevent copying but allow moving </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7edb42d6103d5bd283fe6b5137249b7f" name="a7edb42d6103d5bd283fe6b5137249b7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7edb42d6103d5bd283fe6b5137249b7f">&#9670;&#160;</a></span>LoggerMessage()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7edb42d6103d5bd283fe6b5137249b7f">&#9670;&#160;</a></span>LoggerMessage() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,6 +176,115 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setstate</b> (std::os
 
 <p>Construct with reference to function object, etc. </p>
 <p >The handle <em>may be</em> null, indicating that the output of this message will not be displayed. </p>
+
+</div>
+</div>
+<a id="ab8ad6d3551ccf3f1eb182bc5e48faad7" name="ab8ad6d3551ccf3f1eb182bc5e48faad7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8ad6d3551ccf3f1eb182bc5e48faad7">&#9670;&#160;</a></span>LoggerMessage() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">celeritas::detail::LoggerMessage::LoggerMessage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Prevent copying but allow moving </p>
+
+</div>
+</div>
+<a id="ac4bbc22cc3577143df3c8313437f4cd6" name="ac4bbc22cc3577143df3c8313437f4cd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4bbc22cc3577143df3c8313437f4cd6">&#9670;&#160;</a></span>LoggerMessage() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">celeritas::detail::LoggerMessage::LoggerMessage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Prevent copying but allow moving </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1edf2d5eefdbf9cf3c5f566f98cdf6dc" name="a1edf2d5eefdbf9cf3c5f566f98cdf6dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1edf2d5eefdbf9cf3c5f566f98cdf6dc">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> &amp; celeritas::detail::LoggerMessage::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Prevent copying but allow moving </p>
+
+</div>
+</div>
+<a id="a9414bfa70cdbfd08d42fa33a9d94be03" name="a9414bfa70cdbfd08d42fa33a9d94be03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9414bfa70cdbfd08d42fa33a9d94be03">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> &amp; celeritas::detail::LoggerMessage::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d07/classceleritas_1_1detail_1_1_logger_message.html">LoggerMessage</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Prevent copying but allow moving </p>
 
 </div>
 </div>

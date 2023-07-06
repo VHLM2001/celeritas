@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -140,6 +140,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Process</b> ()</t
 <tr class="memitem:aa02e2176151e44577011cfb46ac31fde"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/db8/classceleritas_1_1_process.html#aa02e2176151e44577011cfb46ac31fde">label</a> () const =0</td></tr>
 <tr class="memdesc:aa02e2176151e44577011cfb46ac31fde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the process.  <a href="../../de/db8/classceleritas_1_1_process.html#aa02e2176151e44577011cfb46ac31fde">More...</a><br /></td></tr>
 <tr class="separator:aa02e2176151e44577011cfb46ac31fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:aa11779a0e5861167a8672da763ae626c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/db8/classceleritas_1_1_process.html#aa11779a0e5861167a8672da763ae626c">Process</a> ()=default</td></tr>
+<tr class="separator:aa11779a0e5861167a8672da763ae626c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >An interface/factory method for creating models. </p>
@@ -150,7 +156,34 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Process</b> ()</t
 <li>energy_loss: dE/dx [MeV/cm]</li>
 <li>range: <a class="el" href="../../d3/d95/classceleritas_1_1_range.html" title="Proxy container for iterating over a range of integral values.">Range</a> limit [cm] </li>
 </ul>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa11779a0e5861167a8672da763ae626c" name="aa11779a0e5861167a8672da763ae626c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa11779a0e5861167a8672da763ae626c">&#9670;&#160;</a></span>Process()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">celeritas::Process::Process </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Allow construction and assignment only through daughter classes </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac33be4c700b1bb04a954072145dde2a0" name="ac33be4c700b1bb04a954072145dde2a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac33be4c700b1bb04a954072145dde2a0">&#9670;&#160;</a></span>build_models()</h2>
 

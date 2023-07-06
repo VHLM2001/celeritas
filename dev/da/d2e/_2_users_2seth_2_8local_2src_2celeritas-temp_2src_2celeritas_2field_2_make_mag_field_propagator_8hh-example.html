@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -115,42 +115,39 @@ $(function() {
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">//---------------------------------------------------------------------------//</span></div>
-<div class="line"><span class="comment"></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> StepperT&gt;</div>
+<div class="line"><span class="comment"></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> StepperT, <span class="keyword">class</span> GTV&gt;</div>
 <div class="line"><a class="code hl_define" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <span class="keyword">decltype</span>(<span class="keyword">auto</span>)</div>
 <div class="line"><a id="a2" name="a2"></a>make_field_propagator(StepperT&amp;&amp; stepper,</div>
 <div class="line">                      FieldDriverOptions <span class="keyword">const</span>&amp; options,</div>
 <div class="line">                      ParticleTrackView <span class="keyword">const</span>&amp; particle,</div>
-<div class="line">                      GeoTrackView* geometry)</div>
+<div class="line">                      GTV&amp;&amp; geometry)</div>
 <div class="line">{</div>
-<div class="line">    <a id="a3" name="a3"></a><a class="code hl_define" href="../../d5/d10/_assert_8hh.html#a663caefcbb80dac28726e6d711f5bb09">CELER_ASSERT</a>(geometry);</div>
-<div class="line">    <span class="keyword">using </span>Driver_t = FieldDriver&lt;StepperT&gt;;</div>
-<div class="line">    <span class="keywordflow">return</span> FieldPropagator&lt;Driver_t&gt;{</div>
-<div class="line">        Driver_t{options, ::celeritas::forward&lt;StepperT&gt;(stepper)},</div>
+<div class="line">    <span class="keywordflow">return</span> FieldPropagator{</div>
+<div class="line">        FieldDriver{options, ::celeritas::forward&lt;StepperT&gt;(stepper)},</div>
 <div class="line">        particle,</div>
-<div class="line">        geometry};</div>
+<div class="line">        ::celeritas::forward&lt;GTV&gt;(geometry)};</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">//---------------------------------------------------------------------------//</span></div>
-<div class="line"><span class="comment"></span><span class="keyword">template</span>&lt;<span class="keyword">template</span>&lt;<span class="keyword">class</span> EquationT&gt; <span class="keyword">class </span>StepperT, <span class="keyword">class </span>FieldT&gt;</div>
+<div class="line"><span class="comment"></span><span class="keyword">template</span>&lt;<span class="keyword">template</span>&lt;<span class="keyword">class</span> EquationT&gt; <span class="keyword">class </span>StepperT, <span class="keyword">class </span>FieldT, <span class="keyword">class </span>GTV&gt;</div>
 <div class="line"><a class="code hl_define" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <span class="keyword">decltype</span>(<span class="keyword">auto</span>)</div>
 <div class="line">make_mag_field_propagator(FieldT&amp;&amp; field,</div>
 <div class="line">                          FieldDriverOptions <span class="keyword">const</span>&amp; options,</div>
 <div class="line">                          ParticleTrackView <span class="keyword">const</span>&amp; particle,</div>
-<div class="line">                          GeoTrackView* geometry)</div>
+<div class="line">                          GTV&amp;&amp; geometry)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordflow">return</span> make_field_propagator(</div>
 <div class="line">        make_mag_field_stepper&lt;StepperT&gt;(::celeritas::forward&lt;FieldT&gt;(field),</div>
 <div class="line">                                         particle.charge()),</div>
 <div class="line">        options,</div>
 <div class="line">        particle,</div>
-<div class="line">        geometry);</div>
+<div class="line">        ::celeritas::forward&lt;GTV&gt;(geometry));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">//---------------------------------------------------------------------------//</span></div>
 <div class="line">}  <span class="comment">// namespace celeritas</span></div>
 <div class="ttc" id="a_algorithms_8hh_html"><div class="ttname"><a href="../../d1/dee/_algorithms_8hh.html">Algorithms.hh</a></div></div>
 <div class="ttc" id="a_assert_8hh_html"><div class="ttname"><a href="../../d5/d10/_assert_8hh.html">Assert.hh</a></div><div class="ttdoc">Macros, exceptions, and helpers for assertions and error handling.</div></div>
-<div class="ttc" id="a_assert_8hh_html_a663caefcbb80dac28726e6d711f5bb09"><div class="ttname"><a href="../../d5/d10/_assert_8hh.html#a663caefcbb80dac28726e6d711f5bb09">CELER_ASSERT</a></div><div class="ttdeci">#define CELER_ASSERT(COND)</div><div class="ttdoc">Internal debug assertion macro.</div><div class="ttdef"><b>Definition:</b> Assert.hh:164</div></div>
 <div class="ttc" id="a_field_driver_8hh_html"><div class="ttname"><a href="../../dc/d32/_field_driver_8hh.html">FieldDriver.hh</a></div></div>
 <div class="ttc" id="a_field_driver_options_8hh_html"><div class="ttname"><a href="../../de/d3c/_field_driver_options_8hh.html">FieldDriverOptions.hh</a></div></div>
 <div class="ttc" id="a_field_propagator_8hh_html"><div class="ttname"><a href="../../d9/dd2/_field_propagator_8hh.html">FieldPropagator.hh</a></div></div>

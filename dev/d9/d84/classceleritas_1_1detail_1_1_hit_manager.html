@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -96,12 +96,44 @@ Inheritance diagram for celeritas::detail::HitManager:</div>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Type aliases</div></td></tr>
+<tr class="memitem:acc7ce368431a87c784ccd1662ab33876"><td class="memItemLeft" align="right" valign="top"><a id="acc7ce368431a87c784ccd1662ab33876" name="acc7ce368431a87c784ccd1662ab33876"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>StepStateHostRef</b> = <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#afcc496fb064835f19a6c4506a430fec6">HostRef</a>&lt; <a class="el" href="../../dd/d0b/structceleritas_1_1_step_state_data.html">StepStateData</a> &gt;</td></tr>
+<tr class="separator:acc7ce368431a87c784ccd1662ab33876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeab478b68e290e2af251a41ee2e27d19"><td class="memItemLeft" align="right" valign="top"><a id="aeab478b68e290e2af251a41ee2e27d19" name="aeab478b68e290e2af251a41ee2e27d19"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>StepStateDeviceRef</b> = <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#abd6577dbd8a882077b6b36372a789f68">DeviceRef</a>&lt; <a class="el" href="../../dd/d0b/structceleritas_1_1_step_state_data.html">StepStateData</a> &gt;</td></tr>
+<tr class="separator:aeab478b68e290e2af251a41ee2e27d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63c6aad5ab3cefb5ee2abfe0c52c8bd7"><td class="memItemLeft" align="right" valign="top"><a id="a63c6aad5ab3cefb5ee2abfe0c52c8bd7" name="a63c6aad5ab3cefb5ee2abfe0c52c8bd7"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>SPConstVecLV</b> = std::shared_ptr&lt; const std::vector&lt; G4LogicalVolume const  * &gt; &gt;</td></tr>
+<tr class="separator:a63c6aad5ab3cefb5ee2abfe0c52c8bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf77565310cd1a5a4dcd7533cedc3ca6"><td class="memItemLeft" align="right" valign="top"><a id="abf77565310cd1a5a4dcd7533cedc3ca6" name="abf77565310cd1a5a4dcd7533cedc3ca6"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>VecVolId</b> = std::vector&lt; <a class="el" href="../../d1/dd1/_vecgeom_data_8hh.html#a8c97752c08c841e3faf0173adb2e1525">VolumeId</a> &gt;</td></tr>
+<tr class="separator:abf77565310cd1a5a4dcd7533cedc3ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36f1084c2b7cf37882fa3bda9a86981a"><td class="memItemLeft" align="right" valign="top"><a id="a36f1084c2b7cf37882fa3bda9a86981a" name="a36f1084c2b7cf37882fa3bda9a86981a"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>VecParticle</b> = std::vector&lt; G4ParticleDefinition const  * &gt;</td></tr>
+<tr class="separator:a36f1084c2b7cf37882fa3bda9a86981a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classceleritas_1_1_step_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classceleritas_1_1_step_interface')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td></tr>
+<tr class="memitem:a6a02c3c9deda25d19195de16b283f947 inherit pub_types_classceleritas_1_1_step_interface"><td class="memItemLeft" align="right" valign="top"><a id="a6a02c3c9deda25d19195de16b283f947" name="a6a02c3c9deda25d19195de16b283f947"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>HostStepState</b> = <a class="el" href="../../da/d07/structceleritas_1_1_step_state.html">StepState</a>&lt; MemSpace::host &gt;</td></tr>
+<tr class="memdesc:a6a02c3c9deda25d19195de16b283f947 inherit pub_types_classceleritas_1_1_step_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector filtering required for this interface. <br /></td></tr>
+<tr class="separator:a6a02c3c9deda25d19195de16b283f947 inherit pub_types_classceleritas_1_1_step_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72e3f023a31ddd87945b23ec47164c45 inherit pub_types_classceleritas_1_1_step_interface"><td class="memItemLeft" align="right" valign="top"><a id="a72e3f023a31ddd87945b23ec47164c45" name="a72e3f023a31ddd87945b23ec47164c45"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>DeviceStepState</b> = <a class="el" href="../../da/d07/structceleritas_1_1_step_state.html">StepState</a>&lt; MemSpace::device &gt;</td></tr>
+<tr class="memdesc:a72e3f023a31ddd87945b23ec47164c45 inherit pub_types_classceleritas_1_1_step_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector filtering required for this interface. <br /></td></tr>
+<tr class="separator:a72e3f023a31ddd87945b23ec47164c45 inherit pub_types_classceleritas_1_1_step_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada9256c6cc789d3a6ebe0e3862fd3514 inherit pub_types_classceleritas_1_1_step_interface"><td class="memItemLeft" align="right" valign="top"><a id="ada9256c6cc789d3a6ebe0e3862fd3514" name="ada9256c6cc789d3a6ebe0e3862fd3514"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>MapVolumeDetector</b> = std::map&lt; <a class="el" href="../../d1/dd1/_vecgeom_data_8hh.html#a8c97752c08c841e3faf0173adb2e1525">VolumeId</a>, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#ac2659ed100e11ccffa767695ca6b8a81">DetectorId</a> &gt;</td></tr>
+<tr class="memdesc:ada9256c6cc789d3a6ebe0e3862fd3514 inherit pub_types_classceleritas_1_1_step_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector filtering required for this interface. <br /></td></tr>
+<tr class="separator:ada9256c6cc789d3a6ebe0e3862fd3514 inherit pub_types_classceleritas_1_1_step_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1cccfc69bb8a85e1ce38b014d195e8a0"><td class="memItemLeft" align="right" valign="top"><a id="a1cccfc69bb8a85e1ce38b014d195e8a0" name="a1cccfc69bb8a85e1ce38b014d195e8a0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>HitManager</b> (<a class="el" href="../../d6/d56/classceleritas_1_1_vecgeom_params.html">GeoParams</a> const &amp;geo, <a class="el" href="../../d1/d65/structceleritas_1_1_s_d_setup_options.html">SDSetupOptions</a> const &amp;setup)</td></tr>
-<tr class="memdesc:a1cccfc69bb8a85e1ce38b014d195e8a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map detector IDs on construction. <br /></td></tr>
-<tr class="separator:a1cccfc69bb8a85e1ce38b014d195e8a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a654ab138d7024aa9dc8d032233a1e7e4"><td class="memItemLeft" align="right" valign="top"><a id="a654ab138d7024aa9dc8d032233a1e7e4" name="a654ab138d7024aa9dc8d032233a1e7e4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>HitManager</b> (<a class="el" href="../../d6/d56/classceleritas_1_1_vecgeom_params.html">GeoParams</a> const &amp;geo, <a class="el" href="../../d8/d0b/classceleritas_1_1_particle_params.html">ParticleParams</a> const &amp;par, <a class="el" href="../../d1/d65/structceleritas_1_1_s_d_setup_options.html">SDSetupOptions</a> const &amp;setup, StreamId::size_type num_streams)</td></tr>
+<tr class="memdesc:a654ab138d7024aa9dc8d032233a1e7e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map detector IDs on construction. <br /></td></tr>
+<tr class="separator:a654ab138d7024aa9dc8d032233a1e7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3b8a85d2a00c03f58c45881d4be4c2d"><td class="memItemLeft" align="right" valign="top"><a id="ac3b8a85d2a00c03f58c45881d4be4c2d" name="ac3b8a85d2a00c03f58c45881d4be4c2d"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~HitManager</b> ()</td></tr>
 <tr class="memdesc:ac3b8a85d2a00c03f58c45881d4be4c2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor. <br /></td></tr>
@@ -118,26 +150,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9cd3659fdcb33542d423cd3e15987fa1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#a9cd3659fdcb33542d423cd3e15987fa1">process_steps</a> (<a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html#a72e3f023a31ddd87945b23ec47164c45">DeviceStepState</a>) final</td></tr>
 <tr class="memdesc:a9cd3659fdcb33542d423cd3e15987fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../de/db8/classceleritas_1_1_process.html" title="An interface/factory method for creating models.">Process</a> CPU-generated hit data.  <a href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#a9cd3659fdcb33542d423cd3e15987fa1">More...</a><br /></td></tr>
 <tr class="separator:a9cd3659fdcb33542d423cd3e15987fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad22053ea25afcfe1efafee73746e59b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#ad22053ea25afcfe1efafee73746e59b0">finalize</a> ()</td></tr>
-<tr class="memdesc:ad22053ea25afcfe1efafee73746e59b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy local data to avoid Geant4 crashes.  <a href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#ad22053ea25afcfe1efafee73746e59b0">More...</a><br /></td></tr>
-<tr class="separator:ad22053ea25afcfe1efafee73746e59b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af56bba3f30cf21d69b94e16927c0b41f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#af56bba3f30cf21d69b94e16927c0b41f">finalize</a> (<a class="el" href="../../d3/d83/_thread_id_8hh.html#af299ab85716f04c5675e69a71c221718">StreamId</a> sid)</td></tr>
+<tr class="memdesc:af56bba3f30cf21d69b94e16927c0b41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy local data to avoid Geant4 crashes.  <a href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html#af56bba3f30cf21d69b94e16927c0b41f">More...</a><br /></td></tr>
+<tr class="separator:af56bba3f30cf21d69b94e16927c0b41f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42e9c2c779356c74eecc17c0e80c9e29"><td class="memItemLeft" align="right" valign="top"><a id="a42e9c2c779356c74eecc17c0e80c9e29" name="a42e9c2c779356c74eecc17c0e80c9e29"></a>
+SPConstVecLV const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>geant_vols</b> () const</td></tr>
+<tr class="memdesc:a42e9c2c779356c74eecc17c0e80c9e29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the logical volumes that have SDs attached. <br /></td></tr>
+<tr class="separator:a42e9c2c779356c74eecc17c0e80c9e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5483c95b503eda3c266f27a04a406b3d"><td class="memItemLeft" align="right" valign="top"><a id="a5483c95b503eda3c266f27a04a406b3d" name="a5483c95b503eda3c266f27a04a406b3d"></a>
+VecVolId const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>celer_vols</b> () const</td></tr>
+<tr class="memdesc:a5483c95b503eda3c266f27a04a406b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the Celeritas volume IDs corresponding to the detectors. <br /></td></tr>
+<tr class="separator:a5483c95b503eda3c266f27a04a406b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d60a81afffc76c8afa37ad710a6989b"><td class="memItemLeft" align="right" valign="top"><a id="a1d60a81afffc76c8afa37ad710a6989b" name="a1d60a81afffc76c8afa37ad710a6989b"></a>
+VecParticle const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>geant_particles</b> () const</td></tr>
+<tr class="memdesc:a1d60a81afffc76c8afa37ad710a6989b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access mapped particles if recreating G4Tracks later. <br /></td></tr>
+<tr class="separator:a1d60a81afffc76c8afa37ad710a6989b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classceleritas_1_1_step_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classceleritas_1_1_step_interface')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_types_classceleritas_1_1_step_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classceleritas_1_1_step_interface')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td></tr>
-<tr class="memitem:a6a02c3c9deda25d19195de16b283f947 inherit pub_types_classceleritas_1_1_step_interface"><td class="memItemLeft" align="right" valign="top"><a id="a6a02c3c9deda25d19195de16b283f947" name="a6a02c3c9deda25d19195de16b283f947"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>HostStepState</b> = <a class="el" href="../../da/d07/structceleritas_1_1_step_state.html">StepState</a>&lt; MemSpace::host &gt;</td></tr>
-<tr class="memdesc:a6a02c3c9deda25d19195de16b283f947 inherit pub_types_classceleritas_1_1_step_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector filtering required for this interface. <br /></td></tr>
-<tr class="separator:a6a02c3c9deda25d19195de16b283f947 inherit pub_types_classceleritas_1_1_step_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72e3f023a31ddd87945b23ec47164c45 inherit pub_types_classceleritas_1_1_step_interface"><td class="memItemLeft" align="right" valign="top"><a id="a72e3f023a31ddd87945b23ec47164c45" name="a72e3f023a31ddd87945b23ec47164c45"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>DeviceStepState</b> = <a class="el" href="../../da/d07/structceleritas_1_1_step_state.html">StepState</a>&lt; MemSpace::device &gt;</td></tr>
-<tr class="memdesc:a72e3f023a31ddd87945b23ec47164c45 inherit pub_types_classceleritas_1_1_step_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector filtering required for this interface. <br /></td></tr>
-<tr class="separator:a72e3f023a31ddd87945b23ec47164c45 inherit pub_types_classceleritas_1_1_step_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada9256c6cc789d3a6ebe0e3862fd3514 inherit pub_types_classceleritas_1_1_step_interface"><td class="memItemLeft" align="right" valign="top"><a id="ada9256c6cc789d3a6ebe0e3862fd3514" name="ada9256c6cc789d3a6ebe0e3862fd3514"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>MapVolumeDetector</b> = std::map&lt; <a class="el" href="../../d1/dd1/_vecgeom_data_8hh.html#a8c97752c08c841e3faf0173adb2e1525">VolumeId</a>, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#ac2659ed100e11ccffa767695ca6b8a81">DetectorId</a> &gt;</td></tr>
-<tr class="memdesc:ada9256c6cc789d3a6ebe0e3862fd3514 inherit pub_types_classceleritas_1_1_step_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detector filtering required for this interface. <br /></td></tr>
-<tr class="separator:ada9256c6cc789d3a6ebe0e3862fd3514 inherit pub_types_classceleritas_1_1_step_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classceleritas_1_1_step_interface"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classceleritas_1_1_step_interface')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d6/dc0/classceleritas_1_1_step_interface.html">celeritas::StepInterface</a></td></tr>
 <tr class="memitem:a7c4a75bd3e4825b104e9bbf678265e1b inherit pro_methods_classceleritas_1_1_step_interface"><td class="memItemLeft" align="right" valign="top"><a id="a7c4a75bd3e4825b104e9bbf678265e1b" name="a7c4a75bd3e4825b104e9bbf678265e1b"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~StepInterface</b> ()=default</td></tr>
@@ -151,8 +182,9 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>MapVolumeDetector</b
 <li>Is shared across threads</li>
 <li>Finds <em>all</em> logical volumes that have SDs attached (TODO: add list of exclusions for SDs that are implemented natively on GPU)</li>
 <li>Maps those volumes to VecGeom geometry</li>
-<li>Creates a <a class="el" href="../../db/d49/classceleritas_1_1detail_1_1_hit_processor.html" title="Transfer Celeritas sensitive detector hits to Geant4.">HitProcessor</a> for each Geant4 thread </li>
+<li>Creates a <a class="el" href="../../db/d49/classceleritas_1_1detail_1_1_hit_processor.html" title="Transfer Celeritas sensitive detector hits to Geant4.">HitProcessor</a> for each Geant4 thread</li>
 </ul>
+<dl class="section warning"><dt>Warning</dt><dd>Because of low-level problems with Geant4 allocators, the hit processors must be allocated and deallocated on the same thread in which they're used. </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="afcaae9ed7dbb85c061e296d5afa78114" name="afcaae9ed7dbb85c061e296d5afa78114"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afcaae9ed7dbb85c061e296d5afa78114">&#9670;&#160;</a></span>filters()</h2>
@@ -183,8 +215,8 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>MapVolumeDetector</b
 
 </div>
 </div>
-<a id="ad22053ea25afcfe1efafee73746e59b0" name="ad22053ea25afcfe1efafee73746e59b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad22053ea25afcfe1efafee73746e59b0">&#9670;&#160;</a></span>finalize()</h2>
+<a id="af56bba3f30cf21d69b94e16927c0b41f" name="af56bba3f30cf21d69b94e16927c0b41f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af56bba3f30cf21d69b94e16927c0b41f">&#9670;&#160;</a></span>finalize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,7 +224,8 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>MapVolumeDetector</b
         <tr>
           <td class="memname">void celeritas::detail::HitManager::finalize </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../d3/d83/_thread_id_8hh.html#af299ab85716f04c5675e69a71c221718">StreamId</a>&#160;</td>
+          <td class="paramname"><em>sid</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

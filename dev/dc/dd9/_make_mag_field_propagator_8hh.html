@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -97,23 +97,23 @@ Functions</h2></td></tr>
 <tr class="memitem:a7138abb8042f1c844d66f5bea1f4b6c1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/dd9/_make_mag_field_propagator_8hh.html#a7138abb8042f1c844d66f5bea1f4b6c1">celeritas::make_mag_field_stepper</a> (FieldT &amp;&amp;field, units::ElementaryCharge charge)</td></tr>
 <tr class="memdesc:a7138abb8042f1c844d66f5bea1f4b6c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a stepper for a charge in a magnetic field.  <a href="../../dc/dd9/_make_mag_field_propagator_8hh.html#a7138abb8042f1c844d66f5bea1f4b6c1">More...</a><br /></td></tr>
 <tr class="separator:a7138abb8042f1c844d66f5bea1f4b6c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac89688a41d98ce654509f8c17494f7bf"><td class="memTemplParams" colspan="2">template&lt;class StepperT &gt; </td></tr>
-<tr class="memitem:ac89688a41d98ce654509f8c17494f7bf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/dd9/_make_mag_field_propagator_8hh.html#ac89688a41d98ce654509f8c17494f7bf">celeritas::make_field_propagator</a> (StepperT &amp;&amp;stepper, FieldDriverOptions const &amp;options, ParticleTrackView const &amp;particle, GeoTrackView *geometry)</td></tr>
-<tr class="memdesc:ac89688a41d98ce654509f8c17494f7bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a field propagator from an existing stepper.  <a href="../../dc/dd9/_make_mag_field_propagator_8hh.html#ac89688a41d98ce654509f8c17494f7bf">More...</a><br /></td></tr>
-<tr class="separator:ac89688a41d98ce654509f8c17494f7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93342eb33716d7fa46bdf980ebc80582"><td class="memTemplParams" colspan="2"><a id="a93342eb33716d7fa46bdf980ebc80582" name="a93342eb33716d7fa46bdf980ebc80582"></a>
-template&lt;template&lt; class EquationT &gt; class StepperT, class FieldT &gt; </td></tr>
-<tr class="memitem:a93342eb33716d7fa46bdf980ebc80582"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::make_mag_field_propagator</b> (FieldT &amp;&amp;field, FieldDriverOptions const &amp;options, ParticleTrackView const &amp;particle, GeoTrackView *geometry)</td></tr>
-<tr class="separator:a93342eb33716d7fa46bdf980ebc80582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02b20fc0270c4eab7b9d0dd629e746bb"><td class="memTemplParams" colspan="2">template&lt;class StepperT , class GTV &gt; </td></tr>
+<tr class="memitem:a02b20fc0270c4eab7b9d0dd629e746bb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/dd9/_make_mag_field_propagator_8hh.html#a02b20fc0270c4eab7b9d0dd629e746bb">celeritas::make_field_propagator</a> (StepperT &amp;&amp;stepper, FieldDriverOptions const &amp;options, ParticleTrackView const &amp;particle, GTV &amp;&amp;geometry)</td></tr>
+<tr class="memdesc:a02b20fc0270c4eab7b9d0dd629e746bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a field propagator from an existing stepper.  <a href="../../dc/dd9/_make_mag_field_propagator_8hh.html#a02b20fc0270c4eab7b9d0dd629e746bb">More...</a><br /></td></tr>
+<tr class="separator:a02b20fc0270c4eab7b9d0dd629e746bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ab479c60e083918768466d1c2e29abe"><td class="memTemplParams" colspan="2"><a id="a6ab479c60e083918768466d1c2e29abe" name="a6ab479c60e083918768466d1c2e29abe"></a>
+template&lt;template&lt; class EquationT &gt; class StepperT, class FieldT , class GTV &gt; </td></tr>
+<tr class="memitem:a6ab479c60e083918768466d1c2e29abe"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::make_mag_field_propagator</b> (FieldT &amp;&amp;field, FieldDriverOptions const &amp;options, ParticleTrackView const &amp;particle, GTV &amp;&amp;geometry)</td></tr>
+<tr class="separator:a6ab479c60e083918768466d1c2e29abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ac89688a41d98ce654509f8c17494f7bf" name="ac89688a41d98ce654509f8c17494f7bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac89688a41d98ce654509f8c17494f7bf">&#9670;&#160;</a></span>make_field_propagator()</h2>
+<a id="a02b20fc0270c4eab7b9d0dd629e746bb" name="a02b20fc0270c4eab7b9d0dd629e746bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02b20fc0270c4eab7b9d0dd629e746bb">&#9670;&#160;</a></span>make_field_propagator()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class StepperT &gt; </div>
+template&lt;class StepperT , class GTV &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> decltype(auto) celeritas::make_field_propagator </td>
@@ -136,7 +136,7 @@ template&lt;class StepperT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d1/d0f/classceleritas_1_1_vecgeom_track_view.html">GeoTrackView</a> *&#160;</td>
+          <td class="paramtype">GTV &amp;&amp;&#160;</td>
           <td class="paramname"><em>geometry</em>&#160;</td>
         </tr>
         <tr>

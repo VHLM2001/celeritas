@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -327,10 +327,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Estimate maximum macroscopic cross section for the process over the step. </p>
-<p >If this is a particle with an energy loss process, this returns the estimate of the maximum cross section over the step. If the energy of the global maximum of the cross section (calculated at initialization) is in the interval <picture><source srcset="../../form_159_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ [\xi E_0, E_0) $" src="../../form_159.png" width="49" height="14"/></picture>, where <picture><source srcset="../../form_154_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E_0 $" src="../../form_154.png" width="14" height="13"/></picture> is the pre-step energy and <picture><source srcset="../../form_160_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \xi $" src="../../form_160.png" width="8" height="13"/></picture> is <code>min_eprime_over_e</code> (defined by default as <picture><source srcset="../../form_161_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \xi = 1 -
-\alpha $" src="../../form_161.png" width="53" height="13"/></picture>, where <picture><source srcset="../../form_55_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \alpha $" src="../../form_55.png" width="8" height="6"/></picture> is <code>max_step_over_range</code>), <picture><source srcset="../../form_162_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$
-\sigma_{\max} $" src="../../form_162.png" width="25" height="9"/></picture> is set to the global maximum. Otherwise, <picture><source srcset="../../form_163_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$
-\sigma_{\max} = \max( \sigma(E_0), \sigma(\xi E_0) ) $" src="../../form_163.png" width="150" height="14"/></picture>. If the cross section is not monotonic in the interval <picture><source srcset="../../form_159_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ [\xi E_0, E_0) $" src="../../form_159.png" width="49" height="14"/></picture> and the interval does not contain the global maximum, the post-step cross section <picture><source srcset="../../form_157_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \sigma(E_1) $" src="../../form_157.png" width="31" height="14"/></picture> may be larger than <picture><source srcset="../../form_164_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \sigma_{\max} $" src="../../form_164.png" width="25" height="9"/></picture>. </p>
+<p >If this is a particle with an energy loss process, this returns the estimate of the maximum cross section over the step. If the energy of the global maximum of the cross section (calculated at initialization) is in the interval <picture><source srcset="../../form_166_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ [\xi E_0, E_0) $" src="../../form_166.png" width="49" height="14"/></picture>, where <picture><source srcset="../../form_161_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E_0 $" src="../../form_161.png" width="14" height="13"/></picture> is the pre-step energy and <picture><source srcset="../../form_167_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \xi $" src="../../form_167.png" width="8" height="13"/></picture> is <code>min_eprime_over_e</code> (defined by default as <picture><source srcset="../../form_168_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \xi = 1 -
+\alpha $" src="../../form_168.png" width="53" height="13"/></picture>, where <picture><source srcset="../../form_55_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \alpha $" src="../../form_55.png" width="8" height="6"/></picture> is <code>max_step_over_range</code>), <picture><source srcset="../../form_169_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$
+\sigma_{\max} $" src="../../form_169.png" width="25" height="9"/></picture> is set to the global maximum. Otherwise, <picture><source srcset="../../form_170_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$
+\sigma_{\max} = \max( \sigma(E_0), \sigma(\xi E_0) ) $" src="../../form_170.png" width="150" height="14"/></picture>. If the cross section is not monotonic in the interval <picture><source srcset="../../form_166_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ [\xi E_0, E_0) $" src="../../form_166.png" width="49" height="14"/></picture> and the interval does not contain the global maximum, the post-step cross section <picture><source srcset="../../form_164_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \sigma(E_1) $" src="../../form_164.png" width="31" height="14"/></picture> may be larger than <picture><source srcset="../../form_171_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \sigma_{\max} $" src="../../form_171.png" width="25" height="9"/></picture>. </p>
 
 </div>
 </div>
@@ -428,15 +428,15 @@ Public Member Functions</h2></td></tr>
 
 <p>Get data for processes that use the integral approach. </p>
 <p >Particles that have energy loss processes will have a different energy at the pre- and post-step points. This means the assumption that the cross section is constant along the step is no longer valid. Instead, Monte Carlo integration can be used to sample the interaction length for the discrete process with the correct probability from the exact distribution,  </p><p class="formulaDsp">
-<picture><source srcset="../../form_153_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<picture><source srcset="../../form_160_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
   p = 1 - \exp \left( -\int_{E_0}^{E_1} n \sigma(E) \dif s \right),
-\]" src="../../form_153.png" width="181" height="39"/></picture>
+\]" src="../../form_160.png" width="181" height="39"/></picture>
 </p>
-<p> where <picture><source srcset="../../form_154_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E_0 $" src="../../form_154.png" width="14" height="13"/></picture> is the pre-step energy, <picture><source srcset="../../form_18_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E_1 $" src="../../form_18.png" width="14" height="13"/></picture> is the post-step energy, <em>n</em> is the atom density, and <em>s</em> is the interaction length.</p>
-<p >At the start of the step, the maximum value of the cross section over the step <picture><source srcset="../../form_155_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \sigma_{max} $" src="../../form_155.png" width="26" height="9"/></picture> is estimated and used as the macroscopic cross section for the process rather than <picture><source srcset="../../form_156_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \sigma_{E_0} $" src="../../form_156.png" width="19" height="10"/></picture>. After the step, the new value of the cross section <picture><source srcset="../../form_157_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \sigma(E_1) $" src="../../form_157.png" width="31" height="14"/></picture> is calculated, and the discrete interaction for the process occurs with probability  </p><p class="formulaDsp">
-<picture><source srcset="../../form_158_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<p> where <picture><source srcset="../../form_161_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E_0 $" src="../../form_161.png" width="14" height="13"/></picture> is the pre-step energy, <picture><source srcset="../../form_18_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E_1 $" src="../../form_18.png" width="14" height="13"/></picture> is the post-step energy, <em>n</em> is the atom density, and <em>s</em> is the interaction length.</p>
+<p >At the start of the step, the maximum value of the cross section over the step <picture><source srcset="../../form_162_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \sigma_{max} $" src="../../form_162.png" width="26" height="9"/></picture> is estimated and used as the macroscopic cross section for the process rather than <picture><source srcset="../../form_163_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \sigma_{E_0} $" src="../../form_163.png" width="19" height="10"/></picture>. After the step, the new value of the cross section <picture><source srcset="../../form_164_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \sigma(E_1) $" src="../../form_164.png" width="31" height="14"/></picture> is calculated, and the discrete interaction for the process occurs with probability  </p><p class="formulaDsp">
+<picture><source srcset="../../form_165_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
   p = \frac{\sigma(E_1)}{\sigma_{\max}}.
-\]" src="../../form_158.png" width="63" height="30"/></picture>
+\]" src="../../form_165.png" width="63" height="30"/></picture>
 </p>
 <p >See section 7.4 of the Geant4 Physics Reference (release 10.6) for details. </p>
 
@@ -557,9 +557,9 @@ template&lt;class T &gt; </div>
 
 <p>Calculate scaled step range. </p>
 <p >This is the updated step function given by Eq. 7.4 of Geant4 Physics Reference Manual, Release 10.6: </p><p class="formulaDsp">
-<picture><source srcset="../../form_165_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<picture><source srcset="../../form_172_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
   s = \alpha r + \rho (1 - \alpha) (2 - \frac{\rho}{r})
-\]" src="../../form_165.png" width="136" height="24"/></picture>
+\]" src="../../form_172.png" width="136" height="24"/></picture>
 </p>
 <p> where alpha is <code>max_step_over_range</code> and rho is <code>min_range</code> .</p>
 <p >Below <code>min_range</code>, no step scaling is applied, but the step can still be arbitrarily small. </p>

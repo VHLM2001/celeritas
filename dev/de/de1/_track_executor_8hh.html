@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -93,46 +93,46 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d42/classceleritas_1_1_track_executor.html">celeritas::TrackExecutor&lt; Ts &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function-like class to execute a CoreTrackView-dependent function.  <a href="../../d0/d42/classceleritas_1_1_track_executor.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d42/classceleritas_1_1_track_executor.html">celeritas::TrackExecutor&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call a <code><a class="el" href="../../da/d9d/classceleritas_1_1_core_track_view.html" title="Helper class to create views from core track data.">CoreTrackView</a></code> executor for a given ThreadId.  <a href="../../d0/d42/classceleritas_1_1_track_executor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d1a/classceleritas_1_1_conditional_track_executor.html">celeritas::ConditionalTrackExecutor&lt; C, Ts &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d1a/classceleritas_1_1_conditional_track_executor.html">celeritas::ConditionalTrackExecutor&lt; C, T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Launch the track only when a certain condition applies.  <a href="../../d6/d1a/classceleritas_1_1_conditional_track_executor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aec4e313e2e6ac068e0bc9f84a85719ae"><td class="memTemplParams" colspan="2"><a id="aec4e313e2e6ac068e0bc9f84a85719ae" name="aec4e313e2e6ac068e0bc9f84a85719ae"></a>
-template&lt;class... Ts&gt; </td></tr>
-<tr class="memitem:aec4e313e2e6ac068e0bc9f84a85719ae"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::TrackExecutor</b> (CoreParamsPtr&lt; MemSpace::native &gt;, CoreStatePtr&lt; MemSpace::native &gt;, Ts &amp;&amp;...) -&gt; TrackExecutor&lt; Ts... &gt;</td></tr>
-<tr class="separator:aec4e313e2e6ac068e0bc9f84a85719ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6c7633dc135a08a7fa6017f55fa3b34"><td class="memTemplParams" colspan="2"><a id="af6c7633dc135a08a7fa6017f55fa3b34" name="af6c7633dc135a08a7fa6017f55fa3b34"></a>
-template&lt;class C , class... Ts&gt; </td></tr>
-<tr class="memitem:af6c7633dc135a08a7fa6017f55fa3b34"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::ConditionalTrackExecutor</b> (CoreParamsPtr&lt; MemSpace::native &gt;, CoreStatePtr&lt; MemSpace::native &gt;, C, Ts &amp;&amp;...) -&gt; ConditionalTrackExecutor&lt; C, Ts... &gt;</td></tr>
-<tr class="separator:af6c7633dc135a08a7fa6017f55fa3b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57f1f81f5f827ad7b0cfde7dd5b680ce"><td class="memTemplParams" colspan="2"><a id="a57f1f81f5f827ad7b0cfde7dd5b680ce" name="a57f1f81f5f827ad7b0cfde7dd5b680ce"></a>
-template&lt;class... Ts&gt; </td></tr>
-<tr class="memitem:a57f1f81f5f827ad7b0cfde7dd5b680ce"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::make_active_track_executor</b> (CoreParamsPtr&lt; MemSpace::native &gt; params, CoreStatePtr&lt; MemSpace::native &gt; const &amp;state, Ts &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a57f1f81f5f827ad7b0cfde7dd5b680ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a track executor that only applies to alive tracks. <br /></td></tr>
-<tr class="separator:a57f1f81f5f827ad7b0cfde7dd5b680ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a267f4bb0acf092a377df63e708ce3c51"><td class="memTemplParams" colspan="2">template&lt;class... Ts&gt; </td></tr>
-<tr class="memitem:a267f4bb0acf092a377df63e708ce3c51"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/de1/_track_executor_8hh.html#a267f4bb0acf092a377df63e708ce3c51">celeritas::make_action_track_executor</a> (CoreParamsPtr&lt; MemSpace::native &gt; params, CoreStatePtr&lt; MemSpace::native &gt; state, ActionId action, Ts &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a267f4bb0acf092a377df63e708ce3c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a track executor that only applies if the action ID matches.  <a href="../../de/de1/_track_executor_8hh.html#a267f4bb0acf092a377df63e708ce3c51">More...</a><br /></td></tr>
-<tr class="separator:a267f4bb0acf092a377df63e708ce3c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2536c8c456141dbcb8fa5c108c4c70f5"><td class="memTemplParams" colspan="2"><a id="a2536c8c456141dbcb8fa5c108c4c70f5" name="a2536c8c456141dbcb8fa5c108c4c70f5"></a>
-template&lt;class... Ts&gt; </td></tr>
-<tr class="memitem:a2536c8c456141dbcb8fa5c108c4c70f5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::make_along_step_track_executor</b> (CoreParamsPtr&lt; MemSpace::native &gt; params, CoreStatePtr&lt; MemSpace::native &gt; state, ActionId action, Ts &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a2536c8c456141dbcb8fa5c108c4c70f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a track executor that only applies for the given along-step action. <br /></td></tr>
-<tr class="separator:a2536c8c456141dbcb8fa5c108c4c70f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19046389ce4c18b82abe3e16e1d27f39"><td class="memTemplParams" colspan="2"><a id="a19046389ce4c18b82abe3e16e1d27f39" name="a19046389ce4c18b82abe3e16e1d27f39"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:a19046389ce4c18b82abe3e16e1d27f39"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::TrackExecutor</b> (CoreParamsPtr&lt; MemSpace::native &gt;, CoreStatePtr&lt; MemSpace::native &gt;, T &amp;&amp;) -&gt; TrackExecutor&lt; T &gt;</td></tr>
+<tr class="separator:a19046389ce4c18b82abe3e16e1d27f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae20ed795c7a28092760efa732408130c"><td class="memTemplParams" colspan="2"><a id="ae20ed795c7a28092760efa732408130c" name="ae20ed795c7a28092760efa732408130c"></a>
+template&lt;class C , class T &gt; </td></tr>
+<tr class="memitem:ae20ed795c7a28092760efa732408130c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::ConditionalTrackExecutor</b> (CoreParamsPtr&lt; MemSpace::native &gt;, CoreStatePtr&lt; MemSpace::native &gt;, C &amp;&amp;, T &amp;&amp;) -&gt; ConditionalTrackExecutor&lt; C, T &gt;</td></tr>
+<tr class="separator:ae20ed795c7a28092760efa732408130c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4b71d5470236b29fa5864686015b347"><td class="memTemplParams" colspan="2"><a id="ad4b71d5470236b29fa5864686015b347" name="ad4b71d5470236b29fa5864686015b347"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:ad4b71d5470236b29fa5864686015b347"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::make_active_track_executor</b> (CoreParamsPtr&lt; MemSpace::native &gt; params, CoreStatePtr&lt; MemSpace::native &gt; const &amp;state, T &amp;&amp;apply_track)</td></tr>
+<tr class="memdesc:ad4b71d5470236b29fa5864686015b347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a track executor that only applies to alive tracks. <br /></td></tr>
+<tr class="separator:ad4b71d5470236b29fa5864686015b347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3baa77b062c1dff2119528b45108ac4f"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a3baa77b062c1dff2119528b45108ac4f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/de1/_track_executor_8hh.html#a3baa77b062c1dff2119528b45108ac4f">celeritas::make_action_track_executor</a> (CoreParamsPtr&lt; MemSpace::native &gt; params, CoreStatePtr&lt; MemSpace::native &gt; state, ActionId action, T &amp;&amp;apply_track)</td></tr>
+<tr class="memdesc:a3baa77b062c1dff2119528b45108ac4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a track executor that only applies if the action ID matches.  <a href="../../de/de1/_track_executor_8hh.html#a3baa77b062c1dff2119528b45108ac4f">More...</a><br /></td></tr>
+<tr class="separator:a3baa77b062c1dff2119528b45108ac4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdc66bbf19d2105cb0d037a337776634"><td class="memTemplParams" colspan="2"><a id="abdc66bbf19d2105cb0d037a337776634" name="abdc66bbf19d2105cb0d037a337776634"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:abdc66bbf19d2105cb0d037a337776634"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::make_along_step_track_executor</b> (CoreParamsPtr&lt; MemSpace::native &gt; params, CoreStatePtr&lt; MemSpace::native &gt; state, ActionId action, T &amp;&amp;apply_track)</td></tr>
+<tr class="memdesc:abdc66bbf19d2105cb0d037a337776634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a track executor that only applies for the given along-step action. <br /></td></tr>
+<tr class="separator:abdc66bbf19d2105cb0d037a337776634"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a267f4bb0acf092a377df63e708ce3c51" name="a267f4bb0acf092a377df63e708ce3c51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a267f4bb0acf092a377df63e708ce3c51">&#9670;&#160;</a></span>make_action_track_executor()</h2>
+<a id="a3baa77b062c1dff2119528b45108ac4f" name="a3baa77b062c1dff2119528b45108ac4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3baa77b062c1dff2119528b45108ac4f">&#9670;&#160;</a></span>make_action_track_executor()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class... Ts&gt; </div>
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -158,8 +158,8 @@ template&lt;class... Ts&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>apply_track</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

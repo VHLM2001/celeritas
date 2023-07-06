@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -97,6 +97,10 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ActionLauncher</b> (<a class="el" href="../../d8/d6b/classceleritas_1_1_explicit_action_interface.html">ExplicitActionInterface</a> const &amp;action, std::string_view ext)</td></tr>
 <tr class="memdesc:a3f052f8eb340b8bc2a6e962e6d5c1ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a launcher with a string extension. <br /></td></tr>
 <tr class="separator:a3f052f8eb340b8bc2a6e962e6d5c1ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb3da094ee6a1d094180f3f8f103901a"><td class="memItemLeft" align="right" valign="top"><a id="aeb3da094ee6a1d094180f3f8f103901a" name="aeb3da094ee6a1d094180f3f8f103901a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="../../d3/d95/classceleritas_1_1_range.html">Range</a>&lt; <a class="el" href="../../d3/d83/_thread_id_8hh.html#acdbd2b3f5402d42bb1349684a00365a4">ThreadId</a> &gt; threads, <a class="el" href="../../d3/d83/_thread_id_8hh.html#af299ab85716f04c5675e69a71c221718">StreamId</a> stream_id, F const &amp;call_thread) const</td></tr>
+<tr class="memdesc:aeb3da094ee6a1d094180f3f8f103901a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Launch a kernel for a thread range. <br /></td></tr>
+<tr class="separator:aeb3da094ee6a1d094180f3f8f103901a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c8a749a4a0fbb160c5a4bd8a9a84fde"><td class="memItemLeft" align="right" valign="top"><a id="a5c8a749a4a0fbb160c5a4bd8a9a84fde" name="a5c8a749a4a0fbb160c5a4bd8a9a84fde"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="../../d0/dee/classceleritas_1_1_core_state.html">CoreState</a>&lt; MemSpace::device &gt; const &amp;state, F const &amp;call_thread) const</td></tr>
 <tr class="memdesc:a5c8a749a4a0fbb160c5a4bd8a9a84fde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Launch a kernel for the wrapped executor. <br /></td></tr>
@@ -105,6 +109,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (<a cl
 void&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (size_type num_threads, <a class="el" href="../../d3/d83/_thread_id_8hh.html#af299ab85716f04c5675e69a71c221718">StreamId</a> stream_id, F const &amp;call_thread) const</td></tr>
 <tr class="memdesc:ad00edc7af70056a39556b57ca664aaae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Launch a kernel with a custom number of threads. <br /></td></tr>
 <tr class="separator:ad00edc7af70056a39556b57ca664aaae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34cc0ddd3c9de8d3fe0d436ddf175752"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d9e/classceleritas_1_1_action_launcher.html#a34cc0ddd3c9de8d3fe0d436ddf175752">operator()</a> (<a class="el" href="../../de/d76/classceleritas_1_1_core_params.html">CoreParams</a> const &amp;params, <a class="el" href="../../d0/dee/classceleritas_1_1_core_state.html">CoreState</a>&lt; MemSpace::device &gt; const &amp;state, <a class="el" href="../../d8/d6b/classceleritas_1_1_explicit_action_interface.html">ExplicitActionInterface</a> const &amp;action, F const &amp;call_thread) const</td></tr>
+<tr class="memdesc:a34cc0ddd3c9de8d3fe0d436ddf175752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Launch a Kernel with reduced grid size if tracks are sorted using the expected track order strategy.  <a href="../../d6/d9e/classceleritas_1_1_action_launcher.html#a34cc0ddd3c9de8d3fe0d436ddf175752">More...</a><br /></td></tr>
+<tr class="separator:a34cc0ddd3c9de8d3fe0d436ddf175752"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class F&gt;<br />
@@ -116,9 +123,63 @@ class celeritas::ActionLauncher&lt; F &gt;</div><p >Profile and launch Celeritas
 <div class="line">   <span class="keyword">static</span> <a class="code hl_class" href="../../d6/d9e/classceleritas_1_1_action_launcher.html">ActionLauncher</a>&lt;<span class="keyword">decltype</span>(execute_thread)&gt; <span class="keyword">const</span> launch_kernel(*<span class="keyword">this</span>);</div>
 <div class="line">   launch_kernel(state, execute_thread);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassceleritas_1_1_action_launcher_html"><div class="ttname"><a href="../../d6/d9e/classceleritas_1_1_action_launcher.html">celeritas::ActionLauncher</a></div><div class="ttdoc">Profile and launch Celeritas kernels from inside an action.</div><div class="ttdef"><b>Definition:</b> ActionLauncher.device.hh:64</div></div>
+<div class="ttc" id="aclassceleritas_1_1_action_launcher_html"><div class="ttname"><a href="../../d6/d9e/classceleritas_1_1_action_launcher.html">celeritas::ActionLauncher</a></div><div class="ttdoc">Profile and launch Celeritas kernels from inside an action.</div><div class="ttdef"><b>Definition:</b> ActionLauncher.device.hh:67</div></div>
 <div class="ttc" id="aclassceleritas_1_1_core_params_html"><div class="ttname"><a href="../../de/d76/classceleritas_1_1_core_params.html">celeritas::CoreParams</a></div><div class="ttdoc">Global parameters required to run a problem.</div><div class="ttdef"><b>Definition:</b> CoreParams.hh:42</div></div>
-</div><!-- fragment --> </div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a34cc0ddd3c9de8d3fe0d436ddf175752" name="a34cc0ddd3c9de8d3fe0d436ddf175752"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34cc0ddd3c9de8d3fe0d436ddf175752">&#9670;&#160;</a></span>operator()()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d6/d9e/classceleritas_1_1_action_launcher.html">celeritas::ActionLauncher</a>&lt; F &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d76/classceleritas_1_1_core_params.html">CoreParams</a> const &amp;&#160;</td>
+          <td class="paramname"><em>params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/dee/classceleritas_1_1_core_state.html">CoreState</a>&lt; MemSpace::device &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d8/d6b/classceleritas_1_1_explicit_action_interface.html">ExplicitActionInterface</a> const &amp;&#160;</td>
+          <td class="paramname"><em>action</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F const &amp;&#160;</td>
+          <td class="paramname"><em>call_thread</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Launch a Kernel with reduced grid size if tracks are sorted using the expected track order strategy. </p>
+<p >TODO: Always use an <a class="el" href="../../d6/d9e/classceleritas_1_1_action_launcher.html" title="Profile and launch Celeritas kernels from inside an action.">ActionLauncher</a> instance with the action passed as constructor argument </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="../../d3/d33/_action_launcher_8device_8hh.html">ActionLauncher.device.hh</a></li>
 </ul>
 </div><!-- contents -->

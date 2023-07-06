@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -127,10 +127,15 @@ static <a class="el" href="../../d1/d7a/classceleritas_1_1_mpi_communicator.html
 static <a class="el" href="../../d1/d7a/classceleritas_1_1_mpi_communicator.html">MpiCommunicator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>comm_world</b> ()</td></tr>
 <tr class="memdesc:aec2545b14ee3e70afd9a8a310f248589"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a communicator with MPI_COMM_WORLD. <br /></td></tr>
 <tr class="separator:aec2545b14ee3e70afd9a8a310f248589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a919b3a98fe33e921b11816c77692ddc1"><td class="memItemLeft" align="right" valign="top"><a id="a919b3a98fe33e921b11816c77692ddc1" name="a919b3a98fe33e921b11816c77692ddc1"></a>
+static <a class="el" href="../../d1/d7a/classceleritas_1_1_mpi_communicator.html">MpiCommunicator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>comm_default</b> ()</td></tr>
+<tr class="memdesc:a919b3a98fe33e921b11816c77692ddc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a communicator with MPI_COMM_WORLD or null if disabled. <br /></td></tr>
+<tr class="separator:a919b3a98fe33e921b11816c77692ddc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Abstraction of an MPI communicator. </p>
-<p >A "null" communicator (the default) does not use MPI calls and can be constructed without calling <code>MPI_Init</code> or having MPI compiled. It will act like <code>MPI_Comm_Self</code> but will not actually use MPI calls. </p>
+<p >A "null" communicator (the default) does not use MPI calls and can be constructed without calling <code>MPI_Init</code> or having MPI compiled. It will act like <code>MPI_Comm_Self</code> but will not actually use MPI calls.</p>
+<p >TODO: drop <code>comm_</code> prefix from static helpers </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a09e6d35ce2c698f4d6299ded632419a1" name="a09e6d35ce2c698f4d6299ded632419a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09e6d35ce2c698f4d6299ded632419a1">&#9670;&#160;</a></span>MpiCommunicator()</h2>

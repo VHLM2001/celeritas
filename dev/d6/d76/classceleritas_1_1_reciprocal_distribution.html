@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -118,16 +118,16 @@ template&lt;class Generator &gt; </td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class RealType = ::celeritas::real_type&gt;<br />
 class celeritas::ReciprocalDistribution&lt; RealType &gt;</div><p >Reciprocal or log-uniform distribution. </p>
-<p >This distribution is defined on a positive range <picture><source srcset="../../form_187_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ [a, b) $" src="../../form_187.png" width="25" height="14"/></picture> and has the normalized PDF:  </p><p class="formulaDsp">
-<picture><source srcset="../../form_188_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<p >This distribution is defined on a positive range <picture><source srcset="../../form_194_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ [a, b) $" src="../../form_194.png" width="25" height="14"/></picture> and has the normalized PDF:  </p><p class="formulaDsp">
+<picture><source srcset="../../form_195_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
  f(x; a, b) = \frac{1}{x (\ln b - \ln a)} \quad \mathrm{for} a \le x &lt; b
- \]" src="../../form_188.png" width="216" height="30"/></picture>
+ \]" src="../../form_195.png" width="216" height="30"/></picture>
 </p>
 <p> which integrated into a CDF and inverted gives a sample:  </p><p class="formulaDsp">
-<picture><source srcset="../../form_189_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<picture><source srcset="../../form_196_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
 x = a \left( \frac{b}{a} \right)^{\xi}
   = a \exp\!\left(\xi \log \frac{b}{a} \right)
- \]" src="../../form_189.png" width="163" height="35"/></picture>
+ \]" src="../../form_196.png" width="163" height="35"/></picture>
 </p>
  </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab1ad55802c7b03003be79d9470105815" name="ab1ad55802c7b03003be79d9470105815"></a>
@@ -157,7 +157,7 @@ template&lt;class RealType &gt; </div>
 </div><div class="memdoc">
 
 <p>Construct on the interval [a, 1). </p>
-<p >The distribution is equivalent to switching a and b, and using <picture><source srcset="../../form_190_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \xi' = 1 - \xi $" src="../../form_190.png" width="55" height="13"/></picture>. </p>
+<p >The distribution is equivalent to switching a and b, and using <picture><source srcset="../../form_197_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \xi' = 1 - \xi $" src="../../form_197.png" width="55" height="13"/></picture>. </p>
 
 </div>
 </div>

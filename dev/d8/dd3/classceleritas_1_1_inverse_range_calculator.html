@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -111,9 +111,9 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p >Calculate the energy that would limit a particle to a particular range. </p>
 <p >This should provide the inverse of the result of <code><a class="el" href="../../dd/d80/classceleritas_1_1_range_calculator.html" title="Find and interpolate range on a uniform log grid.">RangeCalculator</a></code>. The given <code>range</code> is not allowed to be greater than the maximum range in the physics data.</p>
 <p >The range must be monotonically increasing in energy, since it's defined as the integral of the inverse of the stopping power (which is always positive). For ranges shorter than the minimum energy in the table, the resulting energy is scaled:  </p><p class="formulaDsp">
-<picture><source srcset="../../form_138_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<picture><source srcset="../../form_145_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
  E = E_\mathrm{min} \left( \frac{r}{r_\mathrm{min}} \right)^2
-\]" src="../../form_138.png" width="104" height="34"/></picture>
+\]" src="../../form_145.png" width="104" height="34"/></picture>
 </p>
 <p> This scaling is the inverse of the off-the-end energy scaling in the <a class="el" href="../../dd/d80/classceleritas_1_1_range_calculator.html" title="Find and interpolate range on a uniform log grid.">RangeCalculator</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>

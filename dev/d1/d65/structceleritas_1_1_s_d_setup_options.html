@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -119,6 +119,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>energy_deposition</b>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>locate_touchable</b> {false}</td></tr>
 <tr class="memdesc:a5c3c6d07568654fd7970ef8c5890205f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set TouchableHandle for PreStepPoint. <br /></td></tr>
 <tr class="separator:a5c3c6d07568654fd7970ef8c5890205f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10b8544148d178a1af88f9070c5caa12"><td class="memItemLeft" align="right" valign="top"><a id="a10b8544148d178a1af88f9070c5caa12" name="a10b8544148d178a1af88f9070c5caa12"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>track</b> {false}</td></tr>
+<tr class="memdesc:a10b8544148d178a1af88f9070c5caa12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a track with the dynamic particle type and post-step data. <br /></td></tr>
+<tr class="separator:a10b8544148d178a1af88f9070c5caa12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a432bd8e8c4692002efc12c8dddf2baeb"><td class="memItemLeft" align="right" valign="top"><a id="a432bd8e8c4692002efc12c8dddf2baeb" name="a432bd8e8c4692002efc12c8dddf2baeb"></a>
 <a class="el" href="../../d5/dee/structceleritas_1_1_s_d_setup_options_1_1_step_point.html">StepPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pre</b></td></tr>
 <tr class="memdesc:a432bd8e8c4692002efc12c8dddf2baeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Options for saving and converting beginning-of-step data. <br /></td></tr>
@@ -127,9 +131,25 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>locate_touchable</b> 
 <a class="el" href="../../d5/dee/structceleritas_1_1_s_d_setup_options_1_1_step_point.html">StepPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><b>post</b></td></tr>
 <tr class="memdesc:a95a7788954e91edd07060d3e68707621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Options for saving and converting end-of-step data. <br /></td></tr>
 <tr class="separator:a95a7788954e91edd07060d3e68707621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a792fef718924ce8684c7c32d779b6753"><td class="memItemLeft" align="right" valign="top"><a id="a792fef718924ce8684c7c32d779b6753" name="a792fef718924ce8684c7c32d779b6753"></a>
+std::unordered_set&lt; G4LogicalVolume const  * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>force_volumes</b></td></tr>
+<tr class="memdesc:a792fef718924ce8684c7c32d779b6753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually list LVs that don't have an SD on the master thread. <br /></td></tr>
+<tr class="separator:a792fef718924ce8684c7c32d779b6753"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a920a2834e8ad2eb1079ec7102b65dd7b"><td class="memItemLeft" align="right" valign="top"><a id="a920a2834e8ad2eb1079ec7102b65dd7b" name="a920a2834e8ad2eb1079ec7102b65dd7b"></a>
+std::unordered_set&lt; G4LogicalVolume const  * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>skip_volumes</b></td></tr>
+<tr class="memdesc:a920a2834e8ad2eb1079ec7102b65dd7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">List LVs that should <em>not</em> have automatic hit mapping. <br /></td></tr>
+<tr class="separator:a920a2834e8ad2eb1079ec7102b65dd7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Control options for initializing Celeritas SD callbacks. </p>
+<p >These affect only the <code>HitManager</code> construction that is responsible for reconstructing CPU hits and sending directly to the Geant4 detectors.</p>
+<p >Various attributes on the step, track, and pre/post step points may be available depending on the selected options.</p><ul>
+<li>Disabling <code>track</code> will leave <code>G4Step::GetTrack</code> as <code>nullptr</code> </li>
+<li>Enabling <code>locate_touchable</code> will also set <code>Material</code> and <code>MaterialCutsCouple</code> </li>
+<li>Enabling <code>track</code> will set particle the <code>Charge</code> attribute on the pre-step</li>
+<li>Requested post-step data including <code>GlobalTime</code>, <code>Position</code>, <code>KineticEnergy</code>, and <code>MomentumDirection</code> will be copied to the <code>Track</code> when the combination of options is enabled</li>
+<li>Track and Parent IDs will <em>never</em> be a valid value since Celeritas track counters are independent from Geant4 track counters. </li>
+</ul>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="../../d0/d8b/_setup_options_8hh.html">SetupOptions.hh</a></li>
 </ul>

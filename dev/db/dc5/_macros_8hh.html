@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -129,6 +129,12 @@ Macros</h2></td></tr>
 <tr class="memitem:aeeef8a681e72df126c654f74c1a2f950"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc5/_macros_8hh.html#aeeef8a681e72df126c654f74c1a2f950">CELER_TRY_HANDLE_CONTEXT</a>( STATEMENT,  HANDLE_EXCEPTION,  CONTEXT_EXCEPTION)</td></tr>
 <tr class="memdesc:aeeef8a681e72df126c654f74c1a2f950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try the given statement, and if it fails, chain it into the given exception.  <a href="../../db/dc5/_macros_8hh.html#aeeef8a681e72df126c654f74c1a2f950">More...</a><br /></td></tr>
 <tr class="separator:aeeef8a681e72df126c654f74c1a2f950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84999691bbd837d9cb22cef3e5506d82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc5/_macros_8hh.html#a84999691bbd837d9cb22cef3e5506d82">CELER_DEFAULT_COPY_MOVE</a>(CLS)</td></tr>
+<tr class="memdesc:a84999691bbd837d9cb22cef3e5506d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly declares defaulted copy and move constructors ans assignment operators.  <a href="../../db/dc5/_macros_8hh.html#a84999691bbd837d9cb22cef3e5506d82">More...</a><br /></td></tr>
+<tr class="separator:a84999691bbd837d9cb22cef3e5506d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec9f47eb75fadbc55472e5e54d1709e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc5/_macros_8hh.html#aec9f47eb75fadbc55472e5e54d1709e7">CELER_DELETE_COPY_MOVE</a>(CLS)</td></tr>
+<tr class="memdesc:aec9f47eb75fadbc55472e5e54d1709e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly declares deleted copy and move constructors ans assignment operators.  <a href="../../db/dc5/_macros_8hh.html#aec9f47eb75fadbc55472e5e54d1709e7">More...</a><br /></td></tr>
+<tr class="separator:aec9f47eb75fadbc55472e5e54d1709e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Language and compiler abstraction macro definitions. </p>
@@ -152,6 +158,54 @@ Macros</h2></td></tr>
 
 <p>Add an always-on compiler assumption about the input data. </p>
 <p >This should be used very rarely, and perhaps in addition to a CELER_EXPECT macro that makes a similar assertion. Sometimes informing the compiler of an assumption (such as the maximum range of an integer variable) can reduce code bloat and silence odd warnings. </p>
+
+</div>
+</div>
+<a id="a84999691bbd837d9cb22cef3e5506d82" name="a84999691bbd837d9cb22cef3e5506d82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84999691bbd837d9cb22cef3e5506d82">&#9670;&#160;</a></span>CELER_DEFAULT_COPY_MOVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CELER_DEFAULT_COPY_MOVE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CLS</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    CLS(CLS <span class="keyword">const</span>&amp;) = <span class="keywordflow">default</span>;            \</div>
+<div class="line">    CLS&amp; operator=(CLS <span class="keyword">const</span>&amp;) = <span class="keywordflow">default</span>; \</div>
+<div class="line">    CLS(CLS&amp;&amp;) = <span class="keywordflow">default</span>;                 \</div>
+<div class="line">    CLS&amp; operator=(CLS&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+</div><!-- fragment -->
+<p>Explicitly declares defaulted copy and move constructors ans assignment operators. </p>
+
+</div>
+</div>
+<a id="aec9f47eb75fadbc55472e5e54d1709e7" name="aec9f47eb75fadbc55472e5e54d1709e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec9f47eb75fadbc55472e5e54d1709e7">&#9670;&#160;</a></span>CELER_DELETE_COPY_MOVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CELER_DELETE_COPY_MOVE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CLS</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    CLS(CLS <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;            \</div>
+<div class="line">    CLS&amp; operator=(CLS <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>; \</div>
+<div class="line">    CLS(CLS&amp;&amp;) = <span class="keyword">delete</span>;                 \</div>
+<div class="line">    CLS&amp; operator=(CLS&amp;&amp;) = <span class="keyword">delete</span>;</div>
+</div><!-- fragment -->
+<p>Explicitly declares deleted copy and move constructors ans assignment operators. </p>
 
 </div>
 </div>

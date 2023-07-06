@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -140,7 +140,7 @@ static constexpr result_type&#160;</td><td class="memItemRight" valign="bottom">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >"Random" number generator that returns a sequence of values. </p>
 <p >This is useful for testing algorithms that expect a random stream on the host: you can specify the sequence of values to return. When the sequence is used up, the next operator call will raise an exception.</p>
-<p >The factory function <a class="el" href="../../d6/d5f/classceleritas_1_1test_1_1_sequence_engine.html#adf87177ce3257c7c29fc1ff0b775eda6" title="Construct a sequence to nearly reproduce the given stream of reals.">SequenceEngine::from_reals</a> will create an integer sequence that exactly reproduces the given real numbers (which must be in the half-open interval <picture><source srcset="../../form_213_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ [0, 1) $" src="../../form_213.png" width="25" height="14"/></picture>) using the <code>generate_canonical</code> function. </p>
+<p >The factory function <a class="el" href="../../d6/d5f/classceleritas_1_1test_1_1_sequence_engine.html#adf87177ce3257c7c29fc1ff0b775eda6" title="Construct a sequence to nearly reproduce the given stream of reals.">SequenceEngine::from_reals</a> will create an integer sequence that exactly reproduces the given real numbers (which must be in the half-open interval <picture><source srcset="../../form_220_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ [0, 1) $" src="../../form_220.png" width="25" height="14"/></picture>) using the <code>generate_canonical</code> function. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="adf87177ce3257c7c29fc1ff0b775eda6" name="adf87177ce3257c7c29fc1ff0b775eda6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf87177ce3257c7c29fc1ff0b775eda6">&#9670;&#160;</a></span>from_reals()</h2>
@@ -167,7 +167,7 @@ static constexpr result_type&#160;</td><td class="memItemRight" valign="bottom">
 </div><div class="memdoc">
 
 <p>Construct a sequence to nearly reproduce the given stream of reals. </p>
-<p >Values below 1e-64 will not be represented. Furthermore, some other values (see the RngEngine unit test) will not be exactly reproduced. All input values must be bounded in <picture><source srcset="../../form_213_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ [0, 1) $" src="../../form_213.png" width="25" height="14"/></picture> . </p>
+<p >Values below 1e-64 will not be represented. Furthermore, some other values (see the RngEngine unit test) will not be exactly reproduced. All input values must be bounded in <picture><source srcset="../../form_220_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ [0, 1) $" src="../../form_220.png" width="25" height="14"/></picture> . </p>
 
 </div>
 </div>

@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -106,6 +106,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfa/structceleritas_1_1_material_params_1_1_input.html">Input</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/dfa/structceleritas_1_1_material_params_1_1_input.html" title="Input data to construct this class.">Input</a> data to construct this class.  <a href="../../d4/dfa/structceleritas_1_1_material_params_1_1_input.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3f/structceleritas_1_1_material_params_1_1_isotope_input.html">IsotopeInput</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define an element's isotope input data.  <a href="../../da/d3f/structceleritas_1_1_material_params_1_1_isotope_input.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da8/structceleritas_1_1_material_params_1_1_material_input.html">MaterialInput</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a material's input data.  <a href="../../d5/da8/structceleritas_1_1_material_params_1_1_material_input.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,6 +122,9 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>SpanConstMaterialId<
 <tr class="memitem:a4473284a094a31dd408d99651edb2217"><td class="memItemLeft" align="right" valign="top"><a id="a4473284a094a31dd408d99651edb2217" name="a4473284a094a31dd408d99651edb2217"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>SpanConstElementId</b> = <a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#ab9ec76ea37164a7e42b557b38e4aacbb">ElementId</a> const  &gt;</td></tr>
 <tr class="separator:a4473284a094a31dd408d99651edb2217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae52d9b31c67f083d675789b0924fa65e"><td class="memItemLeft" align="right" valign="top"><a id="ae52d9b31c67f083d675789b0924fa65e" name="ae52d9b31c67f083d675789b0924fa65e"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>SpanConstIsotopeId</b> = <a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#aebe013590e64a6b88691a69b84d9dd5e">IsotopeId</a> const  &gt;</td></tr>
+<tr class="separator:ae52d9b31c67f083d675789b0924fa65e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classceleritas_1_1_params_data_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classceleritas_1_1_params_data_interface')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html">celeritas::ParamsDataInterface&lt; MaterialParamsData &gt;</a></td></tr>
 <tr class="memitem:a6d53ec9725737d47ec03998d63d57ef7 inherit pub_types_classceleritas_1_1_params_data_interface"><td class="memItemLeft" align="right" valign="top"><a id="a6d53ec9725737d47ec03998d63d57ef7" name="a6d53ec9725737d47ec03998d63d57ef7"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>HostRef</b> = <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#a68689dbf9eb486a67222e2fe2b496e71">HostCRef</a>&lt; <a class="el" href="../../de/d29/structceleritas_1_1_material_params_data.html">MaterialParamsData</a> &gt;</td></tr>
@@ -145,10 +151,22 @@ MaterialId::size_type&#160;</td><td class="memItemRight" valign="bottom"><b>size
 <a class="el" href="../../dc/de6/classceleritas_1_1_element_view.html">ElementView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#ab9ec76ea37164a7e42b557b38e4aacbb">ElementId</a> id) const</td></tr>
 <tr class="memdesc:a15db8d524c7d67b697a6dee5214df7c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get properties for the given element. <br /></td></tr>
 <tr class="separator:a15db8d524c7d67b697a6dee5214df7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ebf63982f422888f0eebf203cff9a1e"><td class="memItemLeft" align="right" valign="top"><a id="a9ebf63982f422888f0eebf203cff9a1e" name="a9ebf63982f422888f0eebf203cff9a1e"></a>
+<a class="el" href="../../d7/d60/classceleritas_1_1_isotope_view.html">IsotopeView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#aebe013590e64a6b88691a69b84d9dd5e">IsotopeId</a> id) const</td></tr>
+<tr class="memdesc:a9ebf63982f422888f0eebf203cff9a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get properties for the given isotope. <br /></td></tr>
+<tr class="separator:a9ebf63982f422888f0eebf203cff9a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7340f71082ecf6ad902509f63299a16"><td class="memItemLeft" align="right" valign="top"><a id="ac7340f71082ecf6ad902509f63299a16" name="ac7340f71082ecf6ad902509f63299a16"></a>
+IsotopeComponentId::size_type&#160;</td><td class="memItemRight" valign="bottom"><b>max_isotope_components</b> () const</td></tr>
+<tr class="memdesc:ac7340f71082ecf6ad902509f63299a16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of isotopes in any one element. <br /></td></tr>
+<tr class="separator:ac7340f71082ecf6ad902509f63299a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6894c0942d1d1129195cfb6224780d19"><td class="memItemLeft" align="right" valign="top"><a id="a6894c0942d1d1129195cfb6224780d19" name="a6894c0942d1d1129195cfb6224780d19"></a>
 ElementComponentId::size_type&#160;</td><td class="memItemRight" valign="bottom"><b>max_element_components</b> () const</td></tr>
 <tr class="memdesc:a6894c0942d1d1129195cfb6224780d19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of elements in any one material. <br /></td></tr>
 <tr class="separator:a6894c0942d1d1129195cfb6224780d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6da0b0306e4711f67311a4ff10646e9"><td class="memItemLeft" align="right" valign="top"><a id="ae6da0b0306e4711f67311a4ff10646e9" name="ae6da0b0306e4711f67311a4ff10646e9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_missing_isotopes</b> () const</td></tr>
+<tr class="memdesc:ae6da0b0306e4711f67311a4ff10646e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether isotopic data is present (may be false for EM-only physics) <br /></td></tr>
+<tr class="separator:ae6da0b0306e4711f67311a4ff10646e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb7a2708c4cc8d18419e7b562486da40"><td class="memItemLeft" align="right" valign="top">HostRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d18/classceleritas_1_1_material_params.html#aeb7a2708c4cc8d18419e7b562486da40">host_ref</a> () const final</td></tr>
 <tr class="memdesc:aeb7a2708c4cc8d18419e7b562486da40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access material properties on the host.  <a href="../../df/d18/classceleritas_1_1_material_params.html#aeb7a2708c4cc8d18419e7b562486da40">More...</a><br /></td></tr>
 <tr class="separator:aeb7a2708c4cc8d18419e7b562486da40"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,8 +189,6 @@ MaterialId::size_type&#160;</td><td class="memItemRight" valign="bottom"><b>num_
 <tr class="memdesc:a650316766f946e56fb20143da88b1498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get zero or more material IDs corresponding to a name.  <a href="../../df/d18/classceleritas_1_1_material_params.html#a650316766f946e56fb20143da88b1498">More...</a><br /></td></tr>
 <tr class="separator:a650316766f946e56fb20143da88b1498"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Element metadata</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Number of distinct elements definitions </p>
-</div></td></tr>
 <tr class="memitem:a930c94c4f44264be36f89639572fc4ee"><td class="memItemLeft" align="right" valign="top"><a id="a930c94c4f44264be36f89639572fc4ee" name="a930c94c4f44264be36f89639572fc4ee"></a>
 ElementId::size_type&#160;</td><td class="memItemRight" valign="bottom"><b>num_elements</b> () const</td></tr>
 <tr class="memdesc:a930c94c4f44264be36f89639572fc4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the label of a element. <br /></td></tr>
@@ -188,6 +204,24 @@ ElementId::size_type&#160;</td><td class="memItemRight" valign="bottom"><b>num_e
 <a class="el" href="../../dd/d15/classceleritas_1_1_span.html">SpanConstElementId</a>&#160;</td><td class="memItemRight" valign="bottom"><b>find_elements</b> (std::string const &amp;name) const</td></tr>
 <tr class="memdesc:aea81c376b0957988fb6c53b28ca179c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get zero or more element IDs corresponding to a name. <br /></td></tr>
 <tr class="separator:aea81c376b0957988fb6c53b28ca179c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Isotope metadata</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >Number of distinct isotope definitions </p>
+</div></td></tr>
+<tr class="memitem:abe790f25052452a4b51d3f7d0ff3866a"><td class="memItemLeft" align="right" valign="top"><a id="abe790f25052452a4b51d3f7d0ff3866a" name="abe790f25052452a4b51d3f7d0ff3866a"></a>
+IsotopeId::size_type&#160;</td><td class="memItemRight" valign="bottom"><b>num_isotopes</b> () const</td></tr>
+<tr class="memdesc:abe790f25052452a4b51d3f7d0ff3866a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the label of an isotope. <br /></td></tr>
+<tr class="separator:abe790f25052452a4b51d3f7d0ff3866a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89eaaebdff998eea4945e9a369f6bad1"><td class="memItemLeft" align="right" valign="top"><a id="a89eaaebdff998eea4945e9a369f6bad1" name="a89eaaebdff998eea4945e9a369f6bad1"></a>
+<a class="el" href="../../da/d86/structceleritas_1_1_label.html">Label</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>id_to_label</b> (<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#aebe013590e64a6b88691a69b84d9dd5e">IsotopeId</a> id) const</td></tr>
+<tr class="memdesc:a89eaaebdff998eea4945e9a369f6bad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the label of an isotope. <br /></td></tr>
+<tr class="separator:a89eaaebdff998eea4945e9a369f6bad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d1ae80fc1abacc191a6257e4df2f99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/da7/celeritas_2_types_8hh.html#aebe013590e64a6b88691a69b84d9dd5e">IsotopeId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d18/classceleritas_1_1_material_params.html#aa9d1ae80fc1abacc191a6257e4df2f99">find_isotope</a> (std::string const &amp;name) const</td></tr>
+<tr class="memdesc:aa9d1ae80fc1abacc191a6257e4df2f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the isotope ID corresponding to a label.  <a href="../../df/d18/classceleritas_1_1_material_params.html#aa9d1ae80fc1abacc191a6257e4df2f99">More...</a><br /></td></tr>
+<tr class="separator:aa9d1ae80fc1abacc191a6257e4df2f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8874cc046b0b0f3b002d92cf0bb1dc27"><td class="memItemLeft" align="right" valign="top"><a id="a8874cc046b0b0f3b002d92cf0bb1dc27" name="a8874cc046b0b0f3b002d92cf0bb1dc27"></a>
+<a class="el" href="../../dd/d15/classceleritas_1_1_span.html">SpanConstIsotopeId</a>&#160;</td><td class="memItemRight" valign="bottom"><b>find_isotopes</b> (std::string const &amp;name) const</td></tr>
+<tr class="memdesc:a8874cc046b0b0f3b002d92cf0bb1dc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get zero or more isotope IDs corresponding to a name. <br /></td></tr>
+<tr class="separator:a8874cc046b0b0f3b002d92cf0bb1dc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classceleritas_1_1_params_data_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classceleritas_1_1_params_data_interface')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html">celeritas::ParamsDataInterface&lt; MaterialParamsData &gt;</a></td></tr>
 <tr class="memitem:adf6901a7db942b30b9d58ff3b8fcf5a7 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="memItemLeft" align="right" valign="top">virtual HostRef const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d03/classceleritas_1_1_params_data_interface.html#adf6901a7db942b30b9d58ff3b8fcf5a7">host_ref</a> () const=0</td></tr>
 <tr class="memdesc:adf6901a7db942b30b9d58ff3b8fcf5a7 inherit pub_methods_classceleritas_1_1_params_data_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference CPU geometry data.  <a href="../../d5/d03/classceleritas_1_1_params_data_interface.html#adf6901a7db942b30b9d58ff3b8fcf5a7">More...</a><br /></td></tr>
@@ -259,7 +293,28 @@ static std::shared_ptr&lt; <a class="el" href="../../df/d18/classceleritas_1_1_m
 </div><div class="memdoc">
 
 <p>Locate the element ID corresponding to a label. </p>
-<p >If the label isn't among the materials, a null ID will be returned. </p>
+<p >If the label isn't among the elements, a null ID will be returned. </p>
+
+</div>
+</div>
+<a id="aa9d1ae80fc1abacc191a6257e4df2f99" name="aa9d1ae80fc1abacc191a6257e4df2f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d1ae80fc1abacc191a6257e4df2f99">&#9670;&#160;</a></span>find_isotope()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/da7/celeritas_2_types_8hh.html#aebe013590e64a6b88691a69b84d9dd5e">IsotopeId</a> celeritas::MaterialParams::find_isotope </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Locate the isotope ID corresponding to a label. </p>
+<p >If the label isn't among the isotopes, a null ID will be returned. </p>
 
 </div>
 </div>

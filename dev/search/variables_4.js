@@ -24,12 +24,13 @@ var searchData=
   ['energy_5fmax_5fxs_21',['energy_max_xs',['../d2/dc9/structceleritas_1_1_integral_xs_process.html#ad674c83feb0a2f6eb0e415b7b96542ae',1,'celeritas::IntegralXsProcess']]],
   ['epsilon_22',['epsilon',['../dc/d5b/structceleritas_1_1test_1_1_field_test_params.html#a49c72e9cd26f1d89b104de07209a3801',1,'celeritas::test::FieldTestParams']]],
   ['epsilon_5ffactor_23',['epsilon_factor',['../d5/d18/structceleritas_1_1_rel_brem_element_data.html#aa9bc786c064fdb9b6ef594a33e642676',1,'celeritas::RelBremElementData']]],
-  ['epsilon_5frel_5fmax_24',['epsilon_rel_max',['../d4/dc7/structceleritas_1_1_field_driver_options.html#ad8b3bd7d14cbc3b6c5e8dc575c164878',1,'celeritas::FieldDriverOptions']]],
-  ['epsilon_5fstep_25',['epsilon_step',['../d4/dc7/structceleritas_1_1_field_driver_options.html#aca91bc08c3c8da66e1c455e63f23793c',1,'celeritas::FieldDriverOptions']]],
-  ['err_5fstate_26',['err_state',['../dc/d34/structceleritas_1_1_field_stepper_result.html#a4df57f1f212cc1bee068bc12c6a264a4',1,'celeritas::FieldStepperResult']]],
-  ['errcon_27',['errcon',['../d4/dc7/structceleritas_1_1_field_driver_options.html#a10d304275c709574ae7907a4fd262855',1,'celeritas::FieldDriverOptions']]],
-  ['event_5fid_28',['event_id',['../d8/d7a/structceleritas_1_1_sim_track_initializer.html#a4b6f908f0522502fb8071d57dbfa32cb',1,'celeritas::SimTrackInitializer']]],
-  ['event_5fids_29',['event_ids',['../d2/d6b/structceleritas_1_1_sim_state_data.html#a7c9af50f1ab62635db09dea9b4c4f881',1,'celeritas::SimStateData']]],
-  ['ext_30',['ext',['../da/d86/structceleritas_1_1_label.html#abc83670ab89db65846678c83de384046',1,'celeritas::Label']]],
-  ['extent_31',['extent',['../dd/d15/classceleritas_1_1_span.html#a509f9baac973d7aeaa2a60db49e3e747',1,'celeritas::Span']]]
+  ['epsilon_5flong_5fchord_24',['epsilon_long_chord',['../d4/dc7/structceleritas_1_1_field_driver_options.html#a5c6911dd5ea0b9399d9dab4a4b4b26cc',1,'celeritas::FieldDriverOptions']]],
+  ['epsilon_5frel_5fmax_25',['epsilon_rel_max',['../d4/dc7/structceleritas_1_1_field_driver_options.html#ad8b3bd7d14cbc3b6c5e8dc575c164878',1,'celeritas::FieldDriverOptions']]],
+  ['epsilon_5fstep_26',['epsilon_step',['../d4/dc7/structceleritas_1_1_field_driver_options.html#aca91bc08c3c8da66e1c455e63f23793c',1,'celeritas::FieldDriverOptions']]],
+  ['err_5fstate_27',['err_state',['../dc/d34/structceleritas_1_1_field_stepper_result.html#a4df57f1f212cc1bee068bc12c6a264a4',1,'celeritas::FieldStepperResult']]],
+  ['errcon_28',['errcon',['../d4/dc7/structceleritas_1_1_field_driver_options.html#a10d304275c709574ae7907a4fd262855',1,'celeritas::FieldDriverOptions']]],
+  ['event_5fid_29',['event_id',['../d8/d7a/structceleritas_1_1_sim_track_initializer.html#a4b6f908f0522502fb8071d57dbfa32cb',1,'celeritas::SimTrackInitializer']]],
+  ['event_5fids_30',['event_ids',['../d2/d6b/structceleritas_1_1_sim_state_data.html#a7c9af50f1ab62635db09dea9b4c4f881',1,'celeritas::SimStateData']]],
+  ['ext_31',['ext',['../da/d86/structceleritas_1_1_label.html#abc83670ab89db65846678c83de384046',1,'celeritas::Label']]],
+  ['extent_32',['extent',['../dd/d15/classceleritas_1_1_span.html#a509f9baac973d7aeaa2a60db49e3e747',1,'celeritas::Span']]]
 ];

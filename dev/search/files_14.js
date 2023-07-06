@@ -3,7 +3,7 @@ var searchData=
   ['uniformboxdistribution_2ehh_0',['UniformBoxDistribution.hh',['../d6/d2c/_uniform_box_distribution_8hh.html',1,'']]],
   ['uniformfield_2ehh_1',['UniformField.hh',['../d4/d25/_uniform_field_8hh.html',1,'']]],
   ['uniformfielddata_2ehh_2',['UniformFieldData.hh',['../d8/da7/_uniform_field_data_8hh.html',1,'']]],
-  ['uniformfieldtrackpropagator_2ehh_3',['UniformFieldTrackPropagator.hh',['../d3/d5c/_uniform_field_track_propagator_8hh.html',1,'']]],
+  ['uniformfieldpropagatorfactory_2ehh_3',['UniformFieldPropagatorFactory.hh',['../d7/dfd/_uniform_field_propagator_factory_8hh.html',1,'']]],
   ['uniformgrid_2ehh_4',['UniformGrid.hh',['../d1/d9c/_uniform_grid_8hh.html',1,'']]],
   ['uniformgriddata_2ehh_5',['UniformGridData.hh',['../de/da4/_uniform_grid_data_8hh.html',1,'']]],
   ['uniformrealdistribution_2ehh_6',['UniformRealDistribution.hh',['../d6/d30/_uniform_real_distribution_8hh.html',1,'']]],

@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -115,6 +115,10 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::ElementId
 using&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::EventId</b> = OpaqueId&lt; struct Event &gt;</td></tr>
 <tr class="memdesc:aa18dd26663111c85cf45bc6652e02d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter for the initiating event for a track. <br /></td></tr>
 <tr class="separator:aa18dd26663111c85cf45bc6652e02d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebe013590e64a6b88691a69b84d9dd5e"><td class="memItemLeft" align="right" valign="top"><a id="aebe013590e64a6b88691a69b84d9dd5e" name="aebe013590e64a6b88691a69b84d9dd5e"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::IsotopeId</b> = OpaqueId&lt; struct IsotopeRecord &gt;</td></tr>
+<tr class="memdesc:aebe013590e64a6b88691a69b84d9dd5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opaque index to <a class="el" href="../../df/db5/structceleritas_1_1_isotope_record.html" title="Fundamental, invariant properties of an isotope.">IsotopeRecord</a> in a vector. <br /></td></tr>
+<tr class="separator:aebe013590e64a6b88691a69b84d9dd5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cade572974306b924a14c099e1a5ef0"><td class="memItemLeft" align="right" valign="top"><a id="a1cade572974306b924a14c099e1a5ef0" name="a1cade572974306b924a14c099e1a5ef0"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::MaterialId</b> = OpaqueId&lt; struct MaterialRecord &gt;</td></tr>
 <tr class="memdesc:a1cade572974306b924a14c099e1a5ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opaque index to <a class="el" href="../../d1/df9/structceleritas_1_1_material_record.html" title="Fundamental (static) properties of a material.">MaterialRecord</a> in a vector: represents a material ID. <br /></td></tr>
@@ -135,10 +139,18 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::ProcessId
 using&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::TrackId</b> = OpaqueId&lt; struct Track &gt;</td></tr>
 <tr class="memdesc:a8818fc42ce8589e94fa581a2a9804d68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique ID (for an event) of a track among all primaries and secondaries. <br /></td></tr>
 <tr class="separator:a8818fc42ce8589e94fa581a2a9804d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2659ed100e11ccffa767695ca6b8a81"><td class="memItemLeft" align="right" valign="top"><a id="ac2659ed100e11ccffa767695ca6b8a81" name="ac2659ed100e11ccffa767695ca6b8a81"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::DetectorId</b> = OpaqueId&lt; struct Detector &gt;</td></tr>
+<tr class="memdesc:ac2659ed100e11ccffa767695ca6b8a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opaque index for mapping volume-specific "sensitive detector" objects. <br /></td></tr>
+<tr class="separator:ac2659ed100e11ccffa767695ca6b8a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10c227542094bac9e84cc8430c944f38"><td class="memItemLeft" align="right" valign="top"><a id="a10c227542094bac9e84cc8430c944f38" name="a10c227542094bac9e84cc8430c944f38"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::ElementComponentId</b> = OpaqueId&lt; struct MatElementComponent &gt;</td></tr>
 <tr class="memdesc:a10c227542094bac9e84cc8430c944f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opaque index to one elemental component datum in a particular material. <br /></td></tr>
 <tr class="separator:a10c227542094bac9e84cc8430c944f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afefd515a4196fcc62e7c43a3f8289f95"><td class="memItemLeft" align="right" valign="top"><a id="afefd515a4196fcc62e7c43a3f8289f95" name="afefd515a4196fcc62e7c43a3f8289f95"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::IsotopeComponentId</b> = OpaqueId&lt; struct ElIsotopeComponent &gt;</td></tr>
+<tr class="memdesc:afefd515a4196fcc62e7c43a3f8289f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opaque index to one isotopic component datum in a particular element. <br /></td></tr>
+<tr class="separator:afefd515a4196fcc62e7c43a3f8289f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae04f001a89ad5c11b8161531f2f83120"><td class="memItemLeft" align="right" valign="top"><a id="ae04f001a89ad5c11b8161531f2f83120" name="ae04f001a89ad5c11b8161531f2f83120"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::ParticleProcessId</b> = OpaqueId&lt; ProcessId &gt;</td></tr>
 <tr class="memdesc:ae04f001a89ad5c11b8161531f2f83120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opaque index of a process applicable to a single particle type. <br /></td></tr>
@@ -151,10 +163,6 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::ParticleM
 using&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::SubshellId</b> = OpaqueId&lt; struct Subshell &gt;</td></tr>
 <tr class="memdesc:ae4e83ddb97d2719cf9caada8e8244998"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opaque index of electron subshell. <br /></td></tr>
 <tr class="separator:ae4e83ddb97d2719cf9caada8e8244998"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2659ed100e11ccffa767695ca6b8a81"><td class="memItemLeft" align="right" valign="top"><a id="ac2659ed100e11ccffa767695ca6b8a81" name="ac2659ed100e11ccffa767695ca6b8a81"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::DetectorId</b> = OpaqueId&lt; struct Detector &gt;</td></tr>
-<tr class="memdesc:ac2659ed100e11ccffa767695ca6b8a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opaque index for mapping volume-specific "sensitive detector" objects. <br /></td></tr>
-<tr class="separator:ac2659ed100e11ccffa767695ca6b8a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -189,9 +197,10 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a66c2500371dfb92fd5c8503511ad3b28">along</a>
 , <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1ae4da819753a4f919fa7bd2659157d40d">sort_along</a>
 , <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1ac051881e5985fc37169e0bff74a39e69">pre_post</a>
-, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a42b90196b487c54069097a68fe98ab6f">post</a>
+, <b>sort_pre_post</b>
 , <br />
-&#160;&#160;<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a42f6312cdda13f7f3ca6a6497c7b8d79">post_post</a>
+&#160;&#160;<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a42b90196b487c54069097a68fe98ab6f">post</a>
+, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a42f6312cdda13f7f3ca6a6497c7b8d79">post_post</a>
 , <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1a7f021a1415b86f2d013b2618fb31ae53">end</a>
 , <b>size_</b>
 <br />
@@ -232,6 +241,9 @@ char const *&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to
 char const *&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to_cstring</b> (TrackOrder value)</td></tr>
 <tr class="memdesc:acb6669ea3b1cb8a6dc5dd8d88e1f2c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string corresponding to a track ordering policy. <br /></td></tr>
 <tr class="separator:acb6669ea3b1cb8a6dc5dd8d88e1f2c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af127b24c0713023c64119f5c2a52c39e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3a/_types_8cc.html#af127b24c0713023c64119f5c2a52c39e">celeritas::is_action_sorted</a> (ActionOrder action, TrackOrder track)</td></tr>
+<tr class="memdesc:af127b24c0713023c64119f5c2a52c39e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks that the TrackOrder will sort tracks by actions applied at the given ActionOrder.  <a href="../../d0/d3a/_types_8cc.html#af127b24c0713023c64119f5c2a52c39e">More...</a><br /></td></tr>
+<tr class="separator:af127b24c0713023c64119f5c2a52c39e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Type definitions for simulation management. </p>
@@ -272,7 +284,8 @@ char const *&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to
 </td></tr>
 <tr><td class="fieldname"><a id="a8cf02fdde066d68cf56bdc61f55215c1ac051881e5985fc37169e0bff74a39e69" name="a8cf02fdde066d68cf56bdc61f55215c1ac051881e5985fc37169e0bff74a39e69"></a>pre_post&#160;</td><td class="fielddoc"><p >Discrete selection kernel. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a8cf02fdde066d68cf56bdc61f55215c1a42b90196b487c54069097a68fe98ab6f" name="a8cf02fdde066d68cf56bdc61f55215c1a42b90196b487c54069097a68fe98ab6f"></a>post&#160;</td><td class="fielddoc"><p >After step. </p>
+<tr><td class="fieldname"><a id="a8cf02fdde066d68cf56bdc61f55215c1a42b90196b487c54069097a68fe98ab6f" name="a8cf02fdde066d68cf56bdc61f55215c1a42b90196b487c54069097a68fe98ab6f"></a>post&#160;</td><td class="fielddoc"><p >Sort track slots after selecting discrete interaction. </p>
+<p >After step </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a8cf02fdde066d68cf56bdc61f55215c1a42f6312cdda13f7f3ca6a6497c7b8d79" name="a8cf02fdde066d68cf56bdc61f55215c1a42f6312cdda13f7f3ca6a6497c7b8d79"></a>post_post&#160;</td><td class="fielddoc"><p >User actions after boundary crossing, collision. </p>
 </td></tr>
@@ -349,6 +362,39 @@ char const *&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to
 <tr><td class="fieldname"><a id="a598dde2863bcfe90a35289a2418218fda7bd3d5f5b3cdb13aed632121206e729c" name="a598dde2863bcfe90a35289a2418218fda7bd3d5f5b3cdb13aed632121206e729c"></a>alive&#160;</td><td class="fielddoc"><p >Track is active and alive. </p>
 </td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="af127b24c0713023c64119f5c2a52c39e" name="af127b24c0713023c64119f5c2a52c39e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af127b24c0713023c64119f5c2a52c39e">&#9670;&#160;</a></span>is_action_sorted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool celeritas::is_action_sorted </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1">ActionOrder</a>&#160;</td>
+          <td class="paramname"><em>action</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6">TrackOrder</a>&#160;</td>
+          <td class="paramname"><em>track</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks that the TrackOrder will sort tracks by actions applied at the given ActionOrder. </p>
+<p >This should match the mapping in the <code>SortTracksAction</code> constructor.</p>
+<p >TODO: Have a single source of truth for mapping TrackOrder to ActionOrder </p>
 
 </div>
 </div>

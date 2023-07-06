@@ -5,7 +5,7 @@ var searchData=
   ['uniformboxdistribution_2',['UniformBoxDistribution',['../d1/db5/classceleritas_1_1_uniform_box_distribution.html',1,'celeritas']]],
   ['uniformfield_3',['UniformField',['../d5/d90/classceleritas_1_1_uniform_field.html',1,'celeritas']]],
   ['uniformfieldparams_4',['UniformFieldParams',['../d7/daa/structceleritas_1_1_uniform_field_params.html',1,'celeritas']]],
-  ['uniformfieldtrackpropagator_5',['UniformFieldTrackPropagator',['../d8/dfa/structceleritas_1_1detail_1_1_uniform_field_track_propagator.html',1,'celeritas::detail']]],
+  ['uniformfieldpropagatorfactory_5',['UniformFieldPropagatorFactory',['../de/d5c/structceleritas_1_1detail_1_1_uniform_field_propagator_factory.html',1,'celeritas::detail']]],
   ['uniformgrid_6',['UniformGrid',['../d4/d50/classceleritas_1_1_uniform_grid.html',1,'celeritas']]],
   ['uniformgriddata_7',['UniformGridData',['../d6/d49/structceleritas_1_1_uniform_grid_data.html',1,'celeritas']]],
   ['uniformrealdistribution_8',['UniformRealDistribution',['../d2/dca/classceleritas_1_1_uniform_real_distribution.html',1,'celeritas']]],

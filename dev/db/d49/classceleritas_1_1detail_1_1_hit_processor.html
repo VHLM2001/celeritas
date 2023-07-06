@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -96,16 +96,19 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>StepStateHostRef</b>
 <tr class="memitem:a1e50d040758d6ef068c86c1cb4ed9a9d"><td class="memItemLeft" align="right" valign="top"><a id="a1e50d040758d6ef068c86c1cb4ed9a9d" name="a1e50d040758d6ef068c86c1cb4ed9a9d"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>StepStateDeviceRef</b> = <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#abd6577dbd8a882077b6b36372a789f68">DeviceRef</a>&lt; <a class="el" href="../../dd/d0b/structceleritas_1_1_step_state_data.html">StepStateData</a> &gt;</td></tr>
 <tr class="separator:a1e50d040758d6ef068c86c1cb4ed9a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e0a2ed753bc697c3b7201e2d5ce5d34"><td class="memItemLeft" align="right" valign="top"><a id="a5e0a2ed753bc697c3b7201e2d5ce5d34" name="a5e0a2ed753bc697c3b7201e2d5ce5d34"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>SPConstVecLV</b> = std::shared_ptr&lt; const std::vector&lt; G4LogicalVolume * &gt; &gt;</td></tr>
-<tr class="separator:a5e0a2ed753bc697c3b7201e2d5ce5d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa53d1ff7c743532644cd503ba740d08"><td class="memItemLeft" align="right" valign="top"><a id="aaa53d1ff7c743532644cd503ba740d08" name="aaa53d1ff7c743532644cd503ba740d08"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>SPConstVecLV</b> = std::shared_ptr&lt; const std::vector&lt; G4LogicalVolume const  * &gt; &gt;</td></tr>
+<tr class="separator:aaa53d1ff7c743532644cd503ba740d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42c837ee71ecbde80152e310977c213"><td class="memItemLeft" align="right" valign="top"><a id="af42c837ee71ecbde80152e310977c213" name="af42c837ee71ecbde80152e310977c213"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>VecParticle</b> = std::vector&lt; G4ParticleDefinition const  * &gt;</td></tr>
+<tr class="separator:af42c837ee71ecbde80152e310977c213"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a267630ab2f207818bf68a4e0a3f8f407"><td class="memItemLeft" align="right" valign="top"><a id="a267630ab2f207818bf68a4e0a3f8f407" name="a267630ab2f207818bf68a4e0a3f8f407"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>HitProcessor</b> (SPConstVecLV detector_volumes, <a class="el" href="../../d7/d26/structceleritas_1_1_step_selection.html">StepSelection</a> const &amp;selection, bool locate_touchable)</td></tr>
-<tr class="memdesc:a267630ab2f207818bf68a4e0a3f8f407"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct local navigator and step data. <br /></td></tr>
-<tr class="separator:a267630ab2f207818bf68a4e0a3f8f407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1301f95bbc4b5e1c8d572ac5ebeb922"><td class="memItemLeft" align="right" valign="top"><a id="ac1301f95bbc4b5e1c8d572ac5ebeb922" name="ac1301f95bbc4b5e1c8d572ac5ebeb922"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>HitProcessor</b> (SPConstVecLV detector_volumes, VecParticle const &amp;particles, <a class="el" href="../../d7/d26/structceleritas_1_1_step_selection.html">StepSelection</a> const &amp;selection, bool locate_touchable)</td></tr>
+<tr class="memdesc:ac1301f95bbc4b5e1c8d572ac5ebeb922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct local navigator and step data. <br /></td></tr>
+<tr class="separator:ac1301f95bbc4b5e1c8d572ac5ebeb922"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad881806d01b1b4fa75bac2fe0308da27"><td class="memItemLeft" align="right" valign="top"><a id="ad881806d01b1b4fa75bac2fe0308da27" name="ad881806d01b1b4fa75bac2fe0308da27"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (StepStateHostRef const &amp;)</td></tr>
 <tr class="memdesc:ad881806d01b1b4fa75bac2fe0308da27"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../de/db8/classceleritas_1_1_process.html" title="An interface/factory method for creating models.">Process</a> detector tallies (CPU). <br /></td></tr>
@@ -117,6 +120,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (StepS
 <tr class="memitem:a7eaeab9b804ba6339bd153177ed6df2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d49/classceleritas_1_1detail_1_1_hit_processor.html#a7eaeab9b804ba6339bd153177ed6df2a">operator()</a> (<a class="el" href="../../db/dfe/structceleritas_1_1_detector_step_output.html">DetectorStepOutput</a> const &amp;out) const</td></tr>
 <tr class="memdesc:a7eaeab9b804ba6339bd153177ed6df2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate and call hits from a detector output.  <a href="../../db/d49/classceleritas_1_1detail_1_1_hit_processor.html#a7eaeab9b804ba6339bd153177ed6df2a">More...</a><br /></td></tr>
 <tr class="separator:a7eaeab9b804ba6339bd153177ed6df2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7097cd68c08af7533ec0544a29eea087"><td class="memItemLeft" align="right" valign="top"><a id="a7097cd68c08af7533ec0544a29eea087" name="a7097cd68c08af7533ec0544a29eea087"></a>
+G4LogicalVolume const *&#160;</td><td class="memItemRight" valign="bottom"><b>detector_volume</b> (<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#ac2659ed100e11ccffa767695ca6b8a81">DetectorId</a>) const</td></tr>
+<tr class="memdesc:a7097cd68c08af7533ec0544a29eea087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access detector volume corresponding to an ID. <br /></td></tr>
+<tr class="separator:a7097cd68c08af7533ec0544a29eea087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc358999ff696e343e1bce136e89c456"><td class="memItemLeft" align="right" valign="top"><a id="adc358999ff696e343e1bce136e89c456" name="adc358999ff696e343e1bce136e89c456"></a>
+G4VSensitiveDetector *&#160;</td><td class="memItemRight" valign="bottom"><b>detector</b> (<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#ac2659ed100e11ccffa767695ca6b8a81">DetectorId</a>) const</td></tr>
+<tr class="memdesc:adc358999ff696e343e1bce136e89c456"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access thread-local sensitive detector corresponding to an ID. <br /></td></tr>
+<tr class="separator:adc358999ff696e343e1bce136e89c456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Transfer Celeritas sensitive detector hits to Geant4. </p>

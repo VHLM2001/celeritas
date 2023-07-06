@@ -18,5 +18,8 @@ var searchData=
   ['is_5fauger_5fenabled_15',['is_auger_enabled',['../db/dc7/structceleritas_1_1_atomic_relaxation_params_1_1_input.html#a6952e07faebdca0365bf8959056e160b',1,'celeritas::AtomicRelaxationParams::Input']]],
   ['is_5fconst_5faction_5fv_16',['is_const_action_v',['../db/d9d/_action_registry_impl_8hh.html#a85c4718d3ad247394b77a0647c1aeff1',1,'celeritas::detail']]],
   ['is_5fdisplaced_17',['is_displaced',['../da/da0/structceleritas_1_1_msc_step.html#a204aee551985c6c68bf6741396cabbf6',1,'celeritas::MscStep']]],
-  ['is_5fmutable_5faction_5fv_18',['is_mutable_action_v',['../db/d9d/_action_registry_impl_8hh.html#a0ee1787799a9afc91dda73f0e441b4d9',1,'celeritas::detail']]]
+  ['is_5fmutable_5faction_5fv_18',['is_mutable_action_v',['../db/d9d/_action_registry_impl_8hh.html#a0ee1787799a9afc91dda73f0e441b4d9',1,'celeritas::detail']]],
+  ['isotope_19',['isotope',['../db/d14/structceleritas_1_1_el_isotope_component.html#af7b2a8d13359a45b2436ecf280eaf492',1,'celeritas::ElIsotopeComponent']]],
+  ['isotopes_20',['isotopes',['../da/d0b/structceleritas_1_1_element_record.html#a96074a9d5ed77d90b5340ab816cfafee',1,'celeritas::ElementRecord']]],
+  ['isotopes_5ffractions_21',['isotopes_fractions',['../d9/d46/structceleritas_1_1_import_element.html#a1defb9790d605b1576abd6f1b8e64867',1,'celeritas::ImportElement::isotopes_fractions()'],['../d1/dfb/structceleritas_1_1_material_params_1_1_element_input.html#aa44facfa66f6412061d78f7c3b87c801',1,'celeritas::MaterialParams::ElementInput::isotopes_fractions()']]]
 ];

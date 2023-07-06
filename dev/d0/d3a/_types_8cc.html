@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,43 @@ char const *&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to
 char const *&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to_cstring</b> (TrackOrder value)</td></tr>
 <tr class="memdesc:acb6669ea3b1cb8a6dc5dd8d88e1f2c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string corresponding to a track ordering policy. <br /></td></tr>
 <tr class="separator:acb6669ea3b1cb8a6dc5dd8d88e1f2c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af127b24c0713023c64119f5c2a52c39e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3a/_types_8cc.html#af127b24c0713023c64119f5c2a52c39e">celeritas::is_action_sorted</a> (ActionOrder action, TrackOrder track)</td></tr>
+<tr class="memdesc:af127b24c0713023c64119f5c2a52c39e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks that the TrackOrder will sort tracks by actions applied at the given ActionOrder.  <a href="../../d0/d3a/_types_8cc.html#af127b24c0713023c64119f5c2a52c39e">More...</a><br /></td></tr>
+<tr class="separator:af127b24c0713023c64119f5c2a52c39e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="af127b24c0713023c64119f5c2a52c39e" name="af127b24c0713023c64119f5c2a52c39e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af127b24c0713023c64119f5c2a52c39e">&#9670;&#160;</a></span>is_action_sorted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool celeritas::is_action_sorted </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1">ActionOrder</a>&#160;</td>
+          <td class="paramname"><em>action</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6">TrackOrder</a>&#160;</td>
+          <td class="paramname"><em>track</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks that the TrackOrder will sort tracks by actions applied at the given ActionOrder. </p>
+<p >This should match the mapping in the <code>SortTracksAction</code> constructor.</p>
+<p >TODO: Have a single source of truth for mapping TrackOrder to ActionOrder </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

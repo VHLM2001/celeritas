@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Celeritas: celeritas::TrackExecutor&lt; Ts &gt; Class Template Reference</title>
+<title>Celeritas: celeritas::TrackExecutor&lt; T &gt; Class Template Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -78,11 +78,11 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="../../da/d79/classceleritas_1_1_track_executor-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">celeritas::TrackExecutor&lt; Ts &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">celeritas::TrackExecutor&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Function-like class to execute a CoreTrackView-dependent function.  
+<p>Call a <code><a class="el" href="../../da/d9d/classceleritas_1_1_core_track_view.html" title="Helper class to create views from core track data.">CoreTrackView</a></code> executor for a given ThreadId.  
  <a href="../../d0/d42/classceleritas_1_1_track_executor.html#details">More...</a></p>
 
 <p><code>#include &lt;TrackExecutor.hh&gt;</code></p>
@@ -90,48 +90,43 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Type aliases</div></td></tr>
-<tr class="memitem:a5a4c8e7833468631009af32aa8cc60dc"><td class="memItemLeft" align="right" valign="top"><a id="a5a4c8e7833468631009af32aa8cc60dc" name="a5a4c8e7833468631009af32aa8cc60dc"></a>
+<tr class="memitem:afc3e192540697763e84040fb56eea903"><td class="memItemLeft" align="right" valign="top"><a id="afc3e192540697763e84040fb56eea903" name="afc3e192540697763e84040fb56eea903"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>ParamsPtr</b> = <a class="el" href="../../d6/d72/classceleritas_1_1_observer_ptr.html">CoreParamsPtr</a>&lt; MemSpace::native &gt;</td></tr>
-<tr class="separator:a5a4c8e7833468631009af32aa8cc60dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77c16744261aef37d3578dfc06108b88"><td class="memItemLeft" align="right" valign="top"><a id="a77c16744261aef37d3578dfc06108b88" name="a77c16744261aef37d3578dfc06108b88"></a>
+<tr class="separator:afc3e192540697763e84040fb56eea903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7615ed9256c8ea8050bd36dd81084cb5"><td class="memItemLeft" align="right" valign="top"><a id="a7615ed9256c8ea8050bd36dd81084cb5" name="a7615ed9256c8ea8050bd36dd81084cb5"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>StatePtr</b> = <a class="el" href="../../d6/d72/classceleritas_1_1_observer_ptr.html">CoreStatePtr</a>&lt; MemSpace::native &gt;</td></tr>
-<tr class="separator:a77c16744261aef37d3578dfc06108b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a7615ed9256c8ea8050bd36dd81084cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad24ac717dd9904af67f5656d18473c48"><td class="memItemLeft" align="right" valign="top"><a id="ad24ac717dd9904af67f5656d18473c48" name="ad24ac717dd9904af67f5656d18473c48"></a>
-<a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a>&#160;</td><td class="memItemRight" valign="bottom"><b>TrackExecutor</b> (<a class="el" href="../../d6/d72/classceleritas_1_1_observer_ptr.html">ParamsPtr</a> params, <a class="el" href="../../d6/d72/classceleritas_1_1_observer_ptr.html">StatePtr</a> state, Ts... args)</td></tr>
-<tr class="separator:ad24ac717dd9904af67f5656d18473c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a360bd482ef7111b337b5aca4321e85ff"><td class="memItemLeft" align="right" valign="top"><a id="a360bd482ef7111b337b5aca4321e85ff" name="a360bd482ef7111b337b5aca4321e85ff"></a>
+<tr class="memitem:a32fcbc71245066aa4c7501f37c24ce46"><td class="memItemLeft" align="right" valign="top"><a id="a32fcbc71245066aa4c7501f37c24ce46" name="a32fcbc71245066aa4c7501f37c24ce46"></a>
+<a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a>&#160;</td><td class="memItemRight" valign="bottom"><b>TrackExecutor</b> (<a class="el" href="../../d6/d72/classceleritas_1_1_observer_ptr.html">ParamsPtr</a> params, <a class="el" href="../../d6/d72/classceleritas_1_1_observer_ptr.html">StatePtr</a> state, T &amp;&amp;execute_track)</td></tr>
+<tr class="memdesc:a32fcbc71245066aa4c7501f37c24ce46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with core data and executor. <br /></td></tr>
+<tr class="separator:a32fcbc71245066aa4c7501f37c24ce46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae63a3c76db6bc55794c45bebe6791acd"><td class="memItemLeft" align="right" valign="top"><a id="ae63a3c76db6bc55794c45bebe6791acd" name="ae63a3c76db6bc55794c45bebe6791acd"></a>
 <a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> void&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="../../d3/d83/_thread_id_8hh.html#acdbd2b3f5402d42bb1349684a00365a4">ThreadId</a> thread)</td></tr>
-<tr class="separator:a360bd482ef7111b337b5aca4321e85ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:ae63a3c76db6bc55794c45bebe6791acd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the underlying function using the core track for this thread. <br /></td></tr>
+<tr class="separator:ae63a3c76db6bc55794c45bebe6791acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class... Ts&gt;<br />
-class celeritas::TrackExecutor&lt; Ts &gt;</div><p >Function-like class to execute a CoreTrackView-dependent function. </p>
-<p >This class should be used primarily by generated kernel functions:</p>
-<div class="fragment"><div class="line">__global__ <span class="keywordtype">void</span> foo_kernel(<a class="code hl_class" href="../../d6/d72/classceleritas_1_1_observer_ptr.html">CoreParamsPtr</a> <span class="keyword">const</span> params,</div>
-<div class="line">                           <a class="code hl_class" href="../../d6/d72/classceleritas_1_1_observer_ptr.html">CoreParamsPtr</a> <span class="keyword">const</span> state,</div>
-<div class="line">                           OtherData <span class="keyword">const</span> other)</div>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
+class celeritas::TrackExecutor&lt; T &gt;</div><p >Call a <code><a class="el" href="../../da/d9d/classceleritas_1_1_core_track_view.html" title="Helper class to create views from core track data.">CoreTrackView</a></code> executor for a given ThreadId. </p>
+<p >This class can be used to call a functor that applies to <code><a class="el" href="../../da/d9d/classceleritas_1_1_core_track_view.html" title="Helper class to create views from core track data.">CoreTrackView</a></code> using a <code>ThreadId</code>, so that the tracks can be easily looped over as a group on CPU or GPU.</p>
+<p >This is primarily used by <code><a class="el" href="../../d6/d9e/classceleritas_1_1_action_launcher.html" title="Profile and launch Celeritas kernels from inside an action.">ActionLauncher</a></code> .</p>
+<p >TODO: maybe rename this <code>ThreadExecutor</code> (since it takes a thread?) and call the embedded class a <code><a class="el" href="../../d0/d42/classceleritas_1_1_track_executor.html" title="Call a CoreTrackView executor for a given ThreadId.">TrackExecutor</a></code> (since it takes a <a class="el" href="../../da/d9d/classceleritas_1_1_core_track_view.html" title="Helper class to create views from core track data.">CoreTrackView</a>?)</p>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> foo_kernel(<a class="code hl_class" href="../../d6/d72/classceleritas_1_1_observer_ptr.html">CoreParamsPtr</a> <span class="keyword">const</span> params,</div>
+<div class="line">                <a class="code hl_class" href="../../d6/d72/classceleritas_1_1_observer_ptr.html">CoreStatePtr</a> <span class="keyword">const</span> state)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code hl_class" href="../../d0/d42/classceleritas_1_1_track_executor.html">TrackExecutor</a> execute{params, state, apply_to_track, OtherView{other}};</div>
-<div class="line">    execute(<a class="code hl_function" href="../../d8/d8e/classceleritas_1_1_kernel_param_calculator.html#ace9f14aafdb3ca889a70ad33a34faf28">KernelParamCalculator::thread_id</a>());</div>
+<div class="line">    <a class="code hl_class" href="../../d0/d42/classceleritas_1_1_track_executor.html">TrackExecutor</a> execute{params, state, MyTrackApplier{}};</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> tid : range(ThreadID{123}))</div>
+<div class="line">    {</div>
+<div class="line">        execute(tid);</div>
+<div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassceleritas_1_1_kernel_param_calculator_html_ace9f14aafdb3ca889a70ad33a34faf28"><div class="ttname"><a href="../../d8/d8e/classceleritas_1_1_kernel_param_calculator.html#ace9f14aafdb3ca889a70ad33a34faf28">celeritas::KernelParamCalculator::thread_id</a></div><div class="ttdeci">static CELER_FUNCTION ThreadId thread_id()</div><div class="ttdoc">Get the linear thread ID.</div><div class="ttdef"><b>Definition:</b> KernelParamCalculator.device.hh:139</div></div>
 <div class="ttc" id="aclassceleritas_1_1_observer_ptr_html"><div class="ttname"><a href="../../d6/d72/classceleritas_1_1_observer_ptr.html">celeritas::ObserverPtr</a></div><div class="ttdoc">Type-safe non-owning pointer.</div><div class="ttdef"><b>Definition:</b> ObserverPtr.hh:32</div></div>
-<div class="ttc" id="aclassceleritas_1_1_track_executor_html"><div class="ttname"><a href="../../d0/d42/classceleritas_1_1_track_executor.html">celeritas::TrackExecutor</a></div><div class="ttdoc">Function-like class to execute a CoreTrackView-dependent function.</div><div class="ttdef"><b>Definition:</b> TrackExecutor.hh:59</div></div>
-</div><!-- fragment --><p >where the user-written code defines an inline function using the core track view:</p>
-<div class="fragment"><div class="line"><span class="keyword">inline</span> <a class="code hl_define" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <span class="keywordtype">void</span> apply_to_track(</div>
-<div class="line">    <a class="code hl_class" href="../../da/d9d/classceleritas_1_1_core_track_view.html">CoreTrackView</a> <span class="keyword">const</span>&amp; track,</div>
-<div class="line">    OtherView <span class="keyword">const</span>&amp; other)</div>
-<div class="line">{</div>
-<div class="line">    <span class="comment">// ...</span></div>
-<div class="line">}</div>
-<div class="ttc" id="a_macros_8hh_html_ac631c1bc86fa5c49ade05cca94ae1794"><div class="ttname"><a href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a></div><div class="ttdeci">#define CELER_FUNCTION</div><div class="ttdoc">Decorate a function that works on both host and device, with and without NVCC.</div><div class="ttdef"><b>Definition:</b> Macros.hh:28</div></div>
-<div class="ttc" id="aclassceleritas_1_1_core_track_view_html"><div class="ttname"><a href="../../da/d9d/classceleritas_1_1_core_track_view.html">celeritas::CoreTrackView</a></div><div class="ttdoc">Helper class to create views from core track data.</div><div class="ttdef"><b>Definition:</b> CoreTrackView.hh:30</div></div>
-</div><!-- fragment --><p >It will call the function with <em>all</em> thread slots, including inactive.</p>
-<dl class="section note"><dt>Note</dt><dd>The ThreadId can be no greater than the state size on CPU (since we always loop over the exact range), but on GPU we automatically ignore thread IDs outside the valid bounds to simplify the kernel. </dd></dl>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="ttc" id="aclassceleritas_1_1_track_executor_html"><div class="ttname"><a href="../../d0/d42/classceleritas_1_1_track_executor.html">celeritas::TrackExecutor</a></div><div class="ttdoc">Call a CoreTrackView executor for a given ThreadId.</div><div class="ttdef"><b>Definition:</b> TrackExecutor.hh:51</div></div>
+</div><!-- fragment --> </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="../../de/de1/_track_executor_8hh.html">TrackExecutor.hh</a></li>
 </ul>
 </div><!-- contents -->

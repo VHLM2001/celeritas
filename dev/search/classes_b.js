@@ -10,7 +10,7 @@ var searchData=
   ['less_3c_20void_20_3e_7',['Less&lt; void &gt;',['../d3/dfb/structceleritas_1_1_less_3_01void_01_4.html',1,'celeritas']]],
   ['levelstateaccessor_8',['LevelStateAccessor',['../da/dfb/classceleritas_1_1_level_state_accessor.html',1,'celeritas']]],
   ['linearpropagator_9',['LinearPropagator',['../de/dee/classceleritas_1_1_linear_propagator.html',1,'celeritas']]],
-  ['lineartrackpropagator_10',['LinearTrackPropagator',['../d8/de8/structceleritas_1_1detail_1_1_linear_track_propagator.html',1,'celeritas::detail']]],
+  ['linearpropagatorfactory_10',['LinearPropagatorFactory',['../d5/da3/structceleritas_1_1detail_1_1_linear_propagator_factory.html',1,'celeritas::detail']]],
   ['livermoreelement_11',['LivermoreElement',['../de/dc7/structceleritas_1_1_livermore_element.html',1,'celeritas']]],
   ['livermorepedata_12',['LivermorePEData',['../d2/d19/structceleritas_1_1_livermore_p_e_data.html',1,'celeritas']]],
   ['livermorepedata_3c_20ownership_3a_3avalue_2c_20memspace_3a_3adevice_20_3e_13',['LivermorePEData&lt; Ownership::value, MemSpace::device &gt;',['../d2/d19/structceleritas_1_1_livermore_p_e_data.html',1,'celeritas']]],

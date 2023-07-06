@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -155,12 +155,75 @@ T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>value</b> () &amp;
 T &amp;&amp;&#160;</td><td class="memItemRight" valign="bottom"><b>value</b> () &amp;&amp;</td></tr>
 <tr class="memdesc:a89966c3a8c81f6a28527a5e99c80b3a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implicit reference to stored value. <br /></td></tr>
 <tr class="separator:a89966c3a8c81f6a28527a5e99c80b3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a7b5526d5d75bb4f92587cbbb14a16af4"><td class="memItemLeft" align="right" valign="top">Finalizer const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/classceleritas_1_1_initialized_value.html#a7b5526d5d75bb4f92587cbbb14a16af4">finalizer</a> () const</td></tr>
+<tr class="separator:a7b5526d5d75bb4f92587cbbb14a16af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab22188587bb6f0500c9bc7b134f04e8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9a/classceleritas_1_1_initialized_value.html#ab22188587bb6f0500c9bc7b134f04e8c">finalizer</a> (Finalizer fin)</td></tr>
+<tr class="separator:ab22188587bb6f0500c9bc7b134f04e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T, class Finalizer = detail::DefaultFinalize&lt;T&gt;&gt;<br />
 class celeritas::InitializedValue&lt; T, Finalizer &gt;</div><p >Clear the value of the object on initialization and moving. </p>
 <p >This helper class is used to simplify the "rule of 5" for classes that have to treat one member data specially but can use default assign/construct for the other elements. The default behavior is just to default-initialize when assigning and clearing the RHS when moving; this is useful for handling managed memory. The <em>finalizer</em> is useful when the type has a destructor-type method that has to be called before clearing it. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7b5526d5d75bb4f92587cbbb14a16af4" name="a7b5526d5d75bb4f92587cbbb14a16af4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b5526d5d75bb4f92587cbbb14a16af4">&#9670;&#160;</a></span>finalizer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class Finalizer  = detail::DefaultFinalize&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Finalizer const  &amp; <a class="el" href="../../dc/d9a/classceleritas_1_1_initialized_value.html">celeritas::InitializedValue</a>&lt; T, Finalizer &gt;::finalizer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Access finalizer </p>
+
+</div>
+</div>
+<a id="ab22188587bb6f0500c9bc7b134f04e8c" name="ab22188587bb6f0500c9bc7b134f04e8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab22188587bb6f0500c9bc7b134f04e8c">&#9670;&#160;</a></span>finalizer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class Finalizer  = detail::DefaultFinalize&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d9a/classceleritas_1_1_initialized_value.html">celeritas::InitializedValue</a>&lt; T, Finalizer &gt;::finalizer </td>
+          <td>(</td>
+          <td class="paramtype">Finalizer&#160;</td>
+          <td class="paramname"><em>fin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Access finalizer </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="../../dd/d78/_initialized_value_8hh.html">InitializedValue.hh</a></li>
 </ul>
 </div><!-- contents -->

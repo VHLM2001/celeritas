@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -83,6 +83,8 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d5/d01/_geant_geo_utils_8hh.html">GeantGeoUtils.hh</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
+<code>#include &lt;unordered_set&gt;</code><br />
 <code>#include &lt;G4GDMLParser.hh&gt;</code><br />
 <code>#include &lt;G4LogicalVolume.hh&gt;</code><br />
 <code>#include &lt;G4LogicalVolumeStore.hh&gt;</code><br />
@@ -93,6 +95,7 @@ $(function() {
 <code>#include &lt;G4ios.hh&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/d10/_assert_8hh.html">corecel/Assert.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/de4/_range_8hh.html">corecel/cont/Range.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/d84/_join_8hh.html">corecel/io/Join.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d2/d8a/corecel_2io_2_logger_8hh.html">corecel/io/Logger.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/d87/_scoped_stream_redirect_8hh.html">corecel/io/ScopedStreamRedirect.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../db/d47/_scoped_time_log_8hh.html">corecel/io/ScopedTimeLog.hh</a>&quot;</code><br />
@@ -122,8 +125,34 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>celerit
 <tr class="memitem:a4f9549d1e0cb5fa2c52aa7e4477319a1"><td class="memItemLeft" align="right" valign="top">Span&lt; G4LogicalVolume * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d87/_geant_geo_utils_8cc.html#a4f9549d1e0cb5fa2c52aa7e4477319a1">celeritas::geant_logical_volumes</a> ()</td></tr>
 <tr class="memdesc:a4f9549d1e0cb5fa2c52aa7e4477319a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a view to the Geant4 LV store.  <a href="../../d2/d87/_geant_geo_utils_8cc.html#a4f9549d1e0cb5fa2c52aa7e4477319a1">More...</a><br /></td></tr>
 <tr class="separator:a4f9549d1e0cb5fa2c52aa7e4477319a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a607d998c298b10cc840e65e41c62130e"><td class="memItemLeft" align="right" valign="top">std::unordered_set&lt; G4LogicalVolume const * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d87/_geant_geo_utils_8cc.html#a607d998c298b10cc840e65e41c62130e">celeritas::find_geant_volumes</a> (std::unordered_set&lt; std::string &gt; names)</td></tr>
+<tr class="memdesc:a607d998c298b10cc840e65e41c62130e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find Geant4 logical volumes corresponding to a list of names.  <a href="../../d2/d87/_geant_geo_utils_8cc.html#a607d998c298b10cc840e65e41c62130e">More...</a><br /></td></tr>
+<tr class="separator:a607d998c298b10cc840e65e41c62130e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a607d998c298b10cc840e65e41c62130e" name="a607d998c298b10cc840e65e41c62130e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a607d998c298b10cc840e65e41c62130e">&#9670;&#160;</a></span>find_geant_volumes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_set&lt; G4LogicalVolume const * &gt; celeritas::find_geant_volumes </td>
+          <td>(</td>
+          <td class="paramtype">std::unordered_set&lt; std::string &gt;&#160;</td>
+          <td class="paramname"><em>names</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find Geant4 logical volumes corresponding to a list of names. </p>
+<p >If logical volumes with duplicate names are present, they will all show up in the output and a warning will be emitted. If one is missing, a <code>RuntimeError</code> will be raised.</p>
+<div class="fragment"><div class="line"><span class="keyword">static</span> std::string_view <span class="keyword">const</span> labels[] = {<span class="stringliteral">&quot;Vol1&quot;</span>, <span class="stringliteral">&quot;Vol2&quot;</span>};</div>
+<div class="line"><span class="keyword">auto</span> vols = find_geant_volumes(make_span(labels));</div>
+</div><!-- fragment --> 
+</div>
+</div>
 <a id="a4f9549d1e0cb5fa2c52aa7e4477319a1" name="a4f9549d1e0cb5fa2c52aa7e4477319a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f9549d1e0cb5fa2c52aa7e4477319a1">&#9670;&#160;</a></span>geant_logical_volumes()</h2>
 

@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -108,6 +108,10 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>Ptr</b> = <a class="
 <tr class="memitem:a27e3b918162f835c47414331d7e4408f"><td class="memItemLeft" align="right" valign="top"><a id="a27e3b918162f835c47414331d7e4408f" name="a27e3b918162f835c47414331d7e4408f"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>PrimaryCRef</b> = <a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">Collection</a>&lt; <a class="el" href="../../d1/dcf/structceleritas_1_1_primary.html">Primary</a>, <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#aeb6446bfcf4853c1dd9248791d829148ad94c6b535266ab339640e84b2f13f3c1">Ownership::const_reference</a>, M &gt;</td></tr>
 <tr class="separator:a27e3b918162f835c47414331d7e4408f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0325002ff75dc9e4750a07c9fc71049"><td class="memTemplParams" colspan="2"><a id="aa0325002ff75dc9e4750a07c9fc71049" name="aa0325002ff75dc9e4750a07c9fc71049"></a>
+template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> M2&gt; </td></tr>
+<tr class="memitem:aa0325002ff75dc9e4750a07c9fc71049"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ActionThreads</b> = <a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">Collection</a>&lt; <a class="el" href="../../d3/d83/_thread_id_8hh.html#acdbd2b3f5402d42bb1349684a00365a4">ThreadId</a>, <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#aeb6446bfcf4853c1dd9248791d829148a2063c1608d6e0baf80249c42e2be5804">Ownership::value</a>, M2, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a98b21e11852c06d3845c53dd5df84797">ActionId</a> &gt;</td></tr>
+<tr class="separator:aa0325002ff75dc9e4750a07c9fc71049"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classceleritas_1_1_core_state_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classceleritas_1_1_core_state_interface')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../de/d06/classceleritas_1_1_core_state_interface.html">celeritas::CoreStateInterface</a></td></tr>
 <tr class="memitem:a2a96d3dc84003d81f24f6c40716382ac inherit pub_types_classceleritas_1_1_core_state_interface"><td class="memItemLeft" align="right" valign="top"><a id="a2a96d3dc84003d81f24f6c40716382ac" name="a2a96d3dc84003d81f24f6c40716382ac"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>size_type</b> = TrackSlotId::size_type</td></tr>
@@ -162,6 +166,29 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clear_primaries</b> ()</td></tr>
 <tr class="memdesc:a67d8bdfd0e19cab54e4a56eb4c10686b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear primaries after constructing initializers from them. <br /></td></tr>
 <tr class="separator:a67d8bdfd0e19cab54e4a56eb4c10686b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1555ef255fef533331c46148a465699"><td class="memItemLeft" align="right" valign="top"><a id="ac1555ef255fef533331c46148a465699" name="ac1555ef255fef533331c46148a465699"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>num_actions</b> (size_type n)</td></tr>
+<tr class="memdesc:ac1555ef255fef533331c46148a465699"><td class="mdescLeft">&#160;</td><td class="mdescRight">resize ActionThreads collection to the number of actions <br /></td></tr>
+<tr class="separator:ac1555ef255fef533331c46148a465699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dd11419b533fc36ab2fefa7bb5980be"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dee/classceleritas_1_1_core_state.html#a1dd11419b533fc36ab2fefa7bb5980be">num_actions</a> () const</td></tr>
+<tr class="memdesc:a1dd11419b533fc36ab2fefa7bb5980be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of actions, i.e.  <a href="../../d0/dee/classceleritas_1_1_core_state.html#a1dd11419b533fc36ab2fefa7bb5980be">More...</a><br /></td></tr>
+<tr class="separator:a1dd11419b533fc36ab2fefa7bb5980be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0ab9c511d7dea078bd9aab182d99b24"><td class="memItemLeft" align="right" valign="top"><a id="aa0ab9c511d7dea078bd9aab182d99b24" name="aa0ab9c511d7dea078bd9aab182d99b24"></a>
+<a class="el" href="../../d3/d95/classceleritas_1_1_range.html">Range</a>&lt; <a class="el" href="../../d3/d83/_thread_id_8hh.html#acdbd2b3f5402d42bb1349684a00365a4">ThreadId</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_action_range</b> (<a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a98b21e11852c06d3845c53dd5df84797">ActionId</a> action_id) const</td></tr>
+<tr class="memdesc:aa0ab9c511d7dea078bd9aab182d99b24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a range delimiting the [start, end) of the track partition assigned action_id in track_slots. <br /></td></tr>
+<tr class="separator:aa0ab9c511d7dea078bd9aab182d99b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca3e29cb899e57b49fd0dbc358e5ff1f"><td class="memItemLeft" align="right" valign="top"><a id="aca3e29cb899e57b49fd0dbc358e5ff1f" name="aca3e29cb899e57b49fd0dbc358e5ff1f"></a>
+<a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">ActionThreads</a>&lt; MemSpace::host &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>action_thread_offsets</b> ()</td></tr>
+<tr class="memdesc:aca3e29cb899e57b49fd0dbc358e5ff1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the host ActionThread collection for holding result of action counting. <br /></td></tr>
+<tr class="separator:aca3e29cb899e57b49fd0dbc358e5ff1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b282153b9ef74ae0289ecebb6414d7d"><td class="memItemLeft" align="right" valign="top"><a id="a7b282153b9ef74ae0289ecebb6414d7d" name="a7b282153b9ef74ae0289ecebb6414d7d"></a>
+<a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">ActionThreads</a>&lt; MemSpace::host &gt; const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>action_thread_offsets</b> () const</td></tr>
+<tr class="memdesc:a7b282153b9ef74ae0289ecebb6414d7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const reference to the host ActionThread collection for holding result of action counting. <br /></td></tr>
+<tr class="separator:a7b282153b9ef74ae0289ecebb6414d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae801b3066a6e99fc0181c4a7b34d9770"><td class="memItemLeft" align="right" valign="top"><a id="ae801b3066a6e99fc0181c4a7b34d9770" name="ae801b3066a6e99fc0181c4a7b34d9770"></a>
+<a class="el" href="../../d7/dd4/classceleritas_1_1_collection.html">ActionThreads</a>&lt; M &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>native_action_thread_offsets</b> ()</td></tr>
+<tr class="memdesc:ae801b3066a6e99fc0181c4a7b34d9770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the ActionThread collection matching the state memory space. <br /></td></tr>
+<tr class="separator:ae801b3066a6e99fc0181c4a7b34d9770"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc57d3b72ead92d8fbb22ed586cd5dff"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d3/d83/_thread_id_8hh.html#af299ab85716f04c5675e69a71c221718">StreamId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d06/classceleritas_1_1_core_state_interface.html#adc57d3b72ead92d8fbb22ed586cd5dff">stream_id</a> () const =0</td></tr>
 <tr class="memdesc:adc57d3b72ead92d8fbb22ed586cd5dff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread/stream ID.  <a href="../../de/d06/classceleritas_1_1_core_state_interface.html#adc57d3b72ead92d8fbb22ed586cd5dff">More...</a><br /></td></tr>
 <tr class="separator:adc57d3b72ead92d8fbb22ed586cd5dff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,6 +267,25 @@ template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd8
 <p >These will be converted by the ProcessPrimaries action. </p>
 
 <p>Implements <a class="el" href="../../de/d06/classceleritas_1_1_core_state_interface.html">celeritas::CoreStateInterface</a>.</p>
+
+</div>
+</div>
+<a id="a1dd11419b533fc36ab2fefa7bb5980be" name="a1dd11419b533fc36ab2fefa7bb5980be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dd11419b533fc36ab2fefa7bb5980be">&#9670;&#160;</a></span>num_actions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> M&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">size_type <a class="el" href="../../d0/dee/classceleritas_1_1_core_state.html">celeritas::CoreState</a>&lt; M &gt;::num_actions</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the number of actions, i.e. </p>
+<p >thread_offsets_ size </p>
 
 </div>
 </div>

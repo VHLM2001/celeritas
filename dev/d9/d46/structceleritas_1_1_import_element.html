@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -87,6 +87,19 @@ $(function() {
 
 <p><code>#include &lt;ImportElement.hh&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">type aliases</div></td></tr>
+<tr class="memitem:a44d99ee2151703bf171fa0d353d3ee1d"><td class="memItemLeft" align="right" valign="top"><a id="a44d99ee2151703bf171fa0d353d3ee1d" name="a44d99ee2151703bf171fa0d353d3ee1d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>IsotopeIndex</b> = unsigned int</td></tr>
+<tr class="separator:a44d99ee2151703bf171fa0d353d3ee1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae810f3c62d8bff6e9942993d94aad80d"><td class="memItemLeft" align="right" valign="top"><a id="ae810f3c62d8bff6e9942993d94aad80d" name="ae810f3c62d8bff6e9942993d94aad80d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>IsotopeFrac</b> = std::pair&lt; IsotopeIndex, double &gt;</td></tr>
+<tr class="separator:ae810f3c62d8bff6e9942993d94aad80d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a5b44787cb147690ed729d1b3d724e"><td class="memItemLeft" align="right" valign="top"><a id="a97a5b44787cb147690ed729d1b3d724e" name="a97a5b44787cb147690ed729d1b3d724e"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>VecIsotopeFrac</b> = std::vector&lt; IsotopeFrac &gt;</td></tr>
+<tr class="separator:a97a5b44787cb147690ed729d1b3d724e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a3477b0fb5696f1e4ce0fc27aebf9964e"><td class="memItemLeft" align="right" valign="top"><a id="a3477b0fb5696f1e4ce0fc27aebf9964e" name="a3477b0fb5696f1e4ce0fc27aebf9964e"></a>
@@ -106,9 +119,14 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>radiation_length_ts
 <tr class="memitem:aef280d91b14d08324ded9a363d96b200"><td class="memItemLeft" align="right" valign="top"><a id="aef280d91b14d08324ded9a363d96b200" name="aef280d91b14d08324ded9a363d96b200"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>coulomb_factor</b></td></tr>
 <tr class="separator:aef280d91b14d08324ded9a363d96b200"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1defb9790d605b1576abd6f1b8e64867"><td class="memItemLeft" align="right" valign="top"><a id="a1defb9790d605b1576abd6f1b8e64867" name="a1defb9790d605b1576abd6f1b8e64867"></a>
+VecIsotopeFrac&#160;</td><td class="memItemRight" valign="bottom"><b>isotopes_fractions</b></td></tr>
+<tr class="memdesc:a1defb9790d605b1576abd6f1b8e64867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Isotopic fractional abundance. <br /></td></tr>
+<tr class="separator:a1defb9790d605b1576abd6f1b8e64867"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Store element data. </p>
+<p ><code>IsotopeIndex</code> maps the isotope in the <code>ImportData::isotopes</code> vector. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="../../de/d99/_import_element_8hh.html">ImportElement.hh</a></li>
 </ul>

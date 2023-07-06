@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-rc.1</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
    </div>
   </td>
  </tr>
@@ -113,6 +113,10 @@ Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:ac157d8df477dc1d9e5ca6b8ce2b4df4d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html#ac157d8df477dc1d9e5ca6b8ce2b4df4d">~StepCollector</a> ()</td></tr>
 <tr class="separator:ac157d8df477dc1d9e5ca6b8ce2b4df4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dc2d0b7aa3438751f97da1204db35c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html#a6dc2d0b7aa3438751f97da1204db35c5">StepCollector</a> (<a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html">StepCollector</a> const &amp;)</td></tr>
+<tr class="separator:a6dc2d0b7aa3438751f97da1204db35c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8de815486af6aacbf8fec04f56707f1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html">StepCollector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html#a8de815486af6aacbf8fec04f56707f1f">operator=</a> (<a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html">StepCollector</a> const &amp;)</td></tr>
+<tr class="separator:a8de815486af6aacbf8fec04f56707f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1da95dbd77377da896e36d1cbccc00d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html#a1da95dbd77377da896e36d1cbccc00d2">StepCollector</a> (<a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html">StepCollector</a> &amp;&amp;)</td></tr>
 <tr class="separator:a1da95dbd77377da896e36d1cbccc00d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9f1a730ac7ce528e92cf9dad6e3fd5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html">StepCollector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html#ad9f1a730ac7ce528e92cf9dad6e3fd5b">operator=</a> (<a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html">StepCollector</a> &amp;&amp;)</td></tr>
@@ -146,12 +150,39 @@ detectors" (mapping volume IDs to detector IDs and ignoring unmapped volumes) an
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Default destructor and move </p>
+<p >Default destructor and move and copy </p>
+
+</div>
+</div>
+<a id="a6dc2d0b7aa3438751f97da1204db35c5" name="a6dc2d0b7aa3438751f97da1204db35c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dc2d0b7aa3438751f97da1204db35c5">&#9670;&#160;</a></span>StepCollector() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">celeritas::StepCollector::StepCollector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html">StepCollector</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Default destructor and move and copy </p>
 
 </div>
 </div>
 <a id="a1da95dbd77377da896e36d1cbccc00d2" name="a1da95dbd77377da896e36d1cbccc00d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1da95dbd77377da896e36d1cbccc00d2">&#9670;&#160;</a></span>StepCollector()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1da95dbd77377da896e36d1cbccc00d2">&#9670;&#160;</a></span>StepCollector() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -173,13 +204,13 @@ detectors" (mapping volume IDs to detector IDs and ignoring unmapped volumes) an
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Default destructor and move </p>
+<p >Default destructor and move and copy </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad9f1a730ac7ce528e92cf9dad6e3fd5b" name="ad9f1a730ac7ce528e92cf9dad6e3fd5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9f1a730ac7ce528e92cf9dad6e3fd5b">&#9670;&#160;</a></span>operator=()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9f1a730ac7ce528e92cf9dad6e3fd5b">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,7 +232,34 @@ detectors" (mapping volume IDs to detector IDs and ignoring unmapped volumes) an
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Default destructor and move </p>
+<p >Default destructor and move and copy </p>
+
+</div>
+</div>
+<a id="a8de815486af6aacbf8fec04f56707f1f" name="a8de815486af6aacbf8fec04f56707f1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8de815486af6aacbf8fec04f56707f1f">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html">StepCollector</a> &amp; celeritas::StepCollector::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d0f/classceleritas_1_1_step_collector.html">StepCollector</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Default destructor and move and copy </p>
 
 </div>
 </div>
