@@ -4,17 +4,15 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Administration &mdash; Celeritas 0.3.0-rc.1 documentation</title>
+  <title>Administration &mdash; Celeritas 0.3.1-rc.1.1+16ced01c2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -37,7 +35,7 @@
               <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-rc.1
+                0.3.2-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -123,8 +121,9 @@ request with the leadership team as reviewers.</p>
 <section id="resolution-process">
 <h3>Resolution process<a class="headerlink" href="#resolution-process" title="Permalink to this heading"></a></h3>
 <p>If a disagreement about Celeritas can’t be immediately resolved, it’s OK to
-postpone resolution (maybe you need more data, more time to think, or it’s not
-important enough at the end of the day). In the case that a resolution is
+postpone resolution (maybe you need more data or more time to think, perhaps to
+decide it’s not important enough at the end of the day). In the case that a
+resolution is
 needed quickly (e.g., if it’s a blocking issue), it should be discussed among
 the <a class="reference internal" href="#roles"><span class="std std-ref">core team</span></a> until an agreement is reached. If the issue is
 still contentious, the leadership team should make an executive decision,
@@ -238,29 +237,35 @@ other major code changes.</p>
 or a “backport” branch (minor, patch).
 The following process must be followed (and may need iteration to converge) for
 each release.</p>
-<ul class="simple">
+<ol class="arabic simple">
 <li><p>Create a <code class="docutils literal notranslate"><span class="pre">release-vX.Y.Z</span></code> branch.</p></li>
-<li><p>Ensure all CI jobs passed for the release in question. This is automatic for
-releases from the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch (since every pull request must pass) but
-should
-be checked manually for backports.</p></li>
-<li><p>Run regression tests on Summit (for performance testing), Crusher (for HIP
-testing), and an additional machine with debug assertions enabled (e.g.
-Wildstyle). Postpone the release
-temporarily if major new bugs or performance regressions are detected. If
-minor updates are needed to fix the build or tests on a particular machine,
-include those as part of the “pre-release” pull request that includes new
-documentation.</p></li>
-<li><p>[TODO: define high-level validation tests like <a class="reference external" href="https://geant-val.cern.ch">geant-val</a> and a test matrix
-correlating capability areas (code files/directories changed) to test names.]
-Rerun and perform a cursory check on all validation tests that might be
-affected by changes since the previous release. More complete validation
-(since a change in results might not be an error) can be done separately.</p></li>
-<li><p>Update documentation with release notes from all pull requests newly included
-in the release. Follow the format for previous releases: add a summary of
-highlights, and enumerate the pull requests (with PR numbers and
+<li><p>Ensure all CI jobs passed for the release in question. This is automatic
+for releases from the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch (since every pull request must
+pass) but should be checked manually for backports.</p></li>
+<li><p>Update documentation with release notes from all pull requests newly
+included in the release. Follow the format for previous releases: add a
+summary of highlights, and enumerate the pull requests (with PR numbers and
 authorship attribution) separated by features and bug requests. Use the
 <a class="reference external" href="https://github.com/celeritas-project/celeritas-docs/blob/master/nb/admin/github-stats.ipynb">helper notebook</a> in the Celeritas documents repository to automate this.</p></li>
+<li><p>Tag the branch on your fork with <code class="docutils literal notranslate"><span class="pre">vX.Y.Z-rc.N</span></code> where N starts with 1, and
+increment for every time you return to this step due to new pull requests.</p></li>
+<li><p>Run regression tests on Summit (for performance testing), Crusher (for HIP
+testing), and an additional machine with debug assertions enabled (e.g.,
+Wildstyle).</p></li>
+<li><p>[TODO: define high-level validation tests like <a class="reference external" href="https://geant-val.cern.ch">geant-val</a> and a test
+matrix correlating capability areas (code files/directories changed) to
+test names.] Rerun and perform a cursory check on all validation tests that
+might be affected by changes since the previous release. More complete
+validation (since a change in results might not be an error) can be done
+separately.</p></li>
+<li><p>Postpone the release temporarily if major new bugs or performance
+regressions are detected. Create new pull requests for the serious errors
+using the standard <a class="reference internal" href="development.html#contributing"><span class="std std-ref">contributing</span></a> process, and once the
+fixes are merged into develop, merge develop into the release branch.
+Return to step 4.</p></li>
+<li><p>If only minor updates are needed to fix the build or tests on a particular
+machine, include those as part of the “pre-release” pull request that
+includes new documentation.</p></li>
 <li><p>Ensure the code documentation builds, preferably without warnings, on a
 configuration that has Sphinx, Doxygen, and Breathe active. [TODO: automate
 this with CI for doc publishing]</p></li>
@@ -270,12 +275,13 @@ release-related tweaks, and wait until it’s reviewed and merged.</p></li>
 commit into the backport branch.</p></li>
 <li><p>Use the GitHub interface to create a new release with the documentation
 update that was just added.</p></li>
-</ul>
+</ol>
 <p>After committing the release tag:</p>
-<ul class="simple">
-<li><p>Save the <code class="docutils literal notranslate"><span class="pre">tar.gz</span></code> and attach to the release, because the hash changes if the
-git “describe” function returns a different result for the release tag’s hash
-(e.g., if a collaborative branch on the main repository points to that commit).</p></li>
+<ol class="arabic simple">
+<li><p>Save the <code class="docutils literal notranslate"><span class="pre">tar.gz</span></code> and attach to the release, because the hash changes if
+the git “describe” function returns a different result for the release tag’s
+hash (e.g., if a collaborative branch on the main repository points to that
+commit).</p></li>
 <li><p>Pull locally (make sure to use the <code class="docutils literal notranslate"><span class="pre">--tags</span></code> option) and build PDF user
 documentation for the release. Ensure breathe is activated (so the API is
 listed) and that the version is embedded correctly.  [TODO: We should add a
@@ -283,7 +289,7 @@ documentation pipeline that builds and uploads to GitHub pages.]</p></li>
 <li><p>Update the Spack recipe for Celeritas with the new version and sha256 value
 (either manually or using <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">checksum</span></code>) and submit a pull request to
 the Spack project.</p></li>
-</ul>
+</ol>
 <p>The first commit that deviates from the most recent major or minor branch
 should be tagged (but not released!) with the next version number with a
 <code class="docutils literal notranslate"><span class="pre">-dev</span></code> suffix. For example, after releasing version 1.0.0, the next

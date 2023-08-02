@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.1-rc.1.1+16ced01c2</span>
    </div>
   </td>
  </tr>
@@ -314,9 +314,9 @@ changed" (reflecting/periodic), "position changed" (bump/periodic). </p>
 
 <p>Whether a position is logically "inside" or "outside" a surface. </p>
 <p >For a plane, "outside" (true) is the "positive" sense and equivalent to  </p><p class="formulaDsp">
-<picture><source srcset="../../form_214_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<picture><source srcset="../../form_212_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
 \vec x \cdot \vec n &gt;= 0
-\]" src="../../form_214.png" width="56" height="11"/></picture>
+\]" src="../../form_212.png" width="56" height="11"/></picture>
 </p>
 <p> and "inside" is to the left of the plane's normal. Likewise, for a sphere, "inside" is where the dot product of the position and outward normal is negative. </p>
 <table class="fieldtable">
@@ -350,9 +350,9 @@ changed" (reflecting/periodic), "position changed" (bump/periodic). </p>
 
 <p>Evaluated quadric expression allowing for distinct 'on surface' state. </p>
 <p >For a plane, "outside" is equivalent to  </p><p class="formulaDsp">
-<picture><source srcset="../../form_215_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<picture><source srcset="../../form_213_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
 \vec x \cdot \vec n &gt; 0
-\]" src="../../form_215.png" width="46" height="11"/></picture>
+\]" src="../../form_213.png" width="46" height="11"/></picture>
 </p>
 <p> and "inside" is to the left of the plane's normal (a negative dot product). The exact equality to zero is literally an "edge case" but it can happen with inter-universe coincident surfaces as well as carefully placed particle sources and ray tracing.</p>
 <p >As an implementataion detail, the "on" case is currently <em>exact</em>, but future changes might increase the width of "on" to a finite but small range ("fuzziness"). </p>

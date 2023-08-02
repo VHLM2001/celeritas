@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.1-rc.1.1+16ced01c2</span>
    </div>
   </td>
  </tr>
@@ -161,13 +161,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3bb5b18f609ea863631f1347053df0a3"><td class="memItemLeft" align="right" valign="top"><a id="a3bb5b18f609ea863631f1347053df0a3" name="a3bb5b18f609ea863631f1347053df0a3"></a>
 <a class="el" href="../../db/dc5/_macros_8hh.html#a6432ab370302dc0ea4c1534472544182">CELER_FORCEINLINE_FUNCTION</a> const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>cend</b> () const</td></tr>
 <tr class="separator:a3bb5b18f609ea863631f1347053df0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Capacity</div></td></tr>
-<tr class="memitem:aae6e834fa2b53a0a8172fec664ef4235"><td class="memItemLeft" align="right" valign="top"><a id="aae6e834fa2b53a0a8172fec664ef4235" name="aae6e834fa2b53a0a8172fec664ef4235"></a>
-<a class="el" href="../../db/dc5/_macros_8hh.html#ae6277d86d031ef7cf2b160eeb8bbdb4e">CELER_CONSTEXPR_FUNCTION</a> bool&#160;</td><td class="memItemRight" valign="bottom"><b>empty</b> () const</td></tr>
-<tr class="separator:aae6e834fa2b53a0a8172fec664ef4235"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab56ad1267b21783b3d62956b2f06f6af"><td class="memItemLeft" align="right" valign="top"><a id="ab56ad1267b21783b3d62956b2f06f6af" name="ab56ad1267b21783b3d62956b2f06f6af"></a>
-<a class="el" href="../../db/dc5/_macros_8hh.html#ae6277d86d031ef7cf2b160eeb8bbdb4e">CELER_CONSTEXPR_FUNCTION</a> size_type&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () const</td></tr>
-<tr class="separator:ab56ad1267b21783b3d62956b2f06f6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Operations</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p >Fill the array with a constant value </p>
 </div></td></tr>
@@ -181,11 +174,26 @@ Public Attributes</h2></td></tr>
 T&#160;</td><td class="memItemRight" valign="bottom"><b>data_</b> [N]</td></tr>
 <tr class="memdesc:a33ca648452c9f0e2110dd16ac9a2ce52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Storage. <br /></td></tr>
 <tr class="separator:a33ca648452c9f0e2110dd16ac9a2ce52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Capacity</h2></td></tr>
+<tr class="memitem:aae6e834fa2b53a0a8172fec664ef4235"><td class="memItemLeft" align="right" valign="top"><a id="aae6e834fa2b53a0a8172fec664ef4235" name="aae6e834fa2b53a0a8172fec664ef4235"></a>
+<a class="el" href="../../db/dc5/_macros_8hh.html#ae6277d86d031ef7cf2b160eeb8bbdb4e">CELER_CONSTEXPR_FUNCTION</a> bool&#160;</td><td class="memItemRight" valign="bottom"><b>empty</b> () const</td></tr>
+<tr class="separator:aae6e834fa2b53a0a8172fec664ef4235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a074a8b9397ce20bacb2b0a59c0549a63"><td class="memItemLeft" align="right" valign="top"><a id="a074a8b9397ce20bacb2b0a59c0549a63" name="a074a8b9397ce20bacb2b0a59c0549a63"></a>
+static <a class="el" href="../../db/dc5/_macros_8hh.html#ae6277d86d031ef7cf2b160eeb8bbdb4e">CELER_CONSTEXPR_FUNCTION</a> size_type&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> ()</td></tr>
+<tr class="separator:a074a8b9397ce20bacb2b0a59c0549a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T, ::celeritas::size_type N&gt;<br />
 struct celeritas::Array&lt; T, N &gt;</div><p >Fixed-size simple array for storage. </p>
-<p >This isn't fully standards-compliant with std::array: there's no support for N=0 for example. Additionally it uses the native celeritas <code>size_type</code>, even though this has <em>no</em> effect on generated code for values of N inside the range of <code>size_type</code>. </p>
+<p >This isn't fully standards-compliant with std::array: there's no support for N=0 for example. Additionally it uses the native celeritas <code>size_type</code>, even though this has <em>no</em> effect on generated code for values of N inside the range of <code>size_type</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>For supplementary functionality, include:<ul>
+<li><code><a class="el" href="../../d7/ddc/_array_utils_8hh.html" title="Math functions using celeritas::Array.">corecel/math/ArrayUtils.hh</a></code> for real-number vector/matrix applications</li>
+<li><code><a class="el" href="../../df/dd5/_array_operators_8hh.html" title="Mathematical operators for the Array type.">corecel/math/ArrayOperators.hh</a></code> for mathematical operators</li>
+<li><code><a class="el" href="../../de/d7f/_array_i_o_8hh.html">ArrayIO.hh</a></code> for streaming and string conversion</li>
+<li><code><a class="el" href="../../d0/d5d/_array_i_o_8json_8hh.html">ArrayIO.json.hh</a></code> for JSON input and output </li>
+</ul>
+</dd></dl>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="../../dc/de9/_array_8hh.html">Array.hh</a></li>
 </ul>

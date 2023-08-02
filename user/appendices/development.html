@@ -4,17 +4,15 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Development Guide &mdash; Celeritas 0.3.0-rc.1 documentation</title>
+  <title>Development Guide &mdash; Celeritas 0.3.1-rc.1.1+16ced01c2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -37,7 +35,7 @@
               <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-rc.1
+                0.3.2-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -354,21 +352,21 @@ member data in structs should not have trailing underscores.</p>
 <p>Functors (classes whose instances act like a function) should be an <em>agent
 noun</em>: the noun form of an action verb. Instances of a functor should be a
 verb. For example:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ModelEvaluator</span><span class="w"> </span><span class="nf">evaluate_something</span><span class="p">(</span><span class="n">parameters</span><span class="p">...);</span><span class="w"></span>
-<span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">evaluate_something</span><span class="p">(</span><span class="n">arguments</span><span class="p">...);</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ModelEvaluator</span><span class="w"> </span><span class="nf">evaluate_something</span><span class="p">(</span><span class="n">parameters</span><span class="p">...);</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">evaluate_something</span><span class="p">(</span><span class="n">arguments</span><span class="p">...);</span>
 </pre></div>
 </div>
 <p>There are many opportunities to use <code class="docutils literal notranslate"><span class="pre">OpaqueId</span></code> in GPU code to indicate
 indexing into particular vectors. To maintain consistency, we let an
 index into a vector of <code class="docutils literal notranslate"><span class="pre">Foo</span></code> have a corresponding <code class="docutils literal notranslate"><span class="pre">OpaqueId</span></code>  type:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">FooId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OpaqueId</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">FooId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OpaqueId</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>and ideally be defined either immediately after <code class="docutils literal notranslate"><span class="pre">Foo</span></code> or in a
 <code class="file docutils literal notranslate"><span class="pre">Types.hh</span></code> file.  Some <code class="docutils literal notranslate"><span class="pre">OpaqueId</span></code> types may have only a “symbolic”
 corresponding type, in which case
 a tag struct can be be defined inline:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">BarId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OpaqueId</span><span class="o">&lt;</span><span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">BarId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OpaqueId</span><span class="o">&lt;</span><span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -435,7 +433,7 @@ as it <code class="docutils literal notranslate"><span class="pre">#include</spa
 downstream code, it will also have to propagate the CUDA include directories.)</p>
 <p>Choosing to compile code with the host compiler rather than NVCC also provides
 a check against surprise kernel launches. For example, the declaration:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dv</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dv</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>actually launches a kernel to fill the vector’s initial state. The code will

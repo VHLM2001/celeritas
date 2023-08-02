@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.1-rc.1.1+16ced01c2</span>
    </div>
   </td>
  </tr>
@@ -86,6 +86,11 @@ $(function() {
 
 <p><code>#include &lt;ScopedRootErrorHandler.hh&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a08b4869139c487274510eb438ad718b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d4e/classceleritas_1_1_scoped_root_error_handler.html#a08b4869139c487274510eb438ad718b3">CELER_DELETE_COPY_MOVE</a> (<a class="el" href="../../df/d4e/classceleritas_1_1_scoped_root_error_handler.html">ScopedRootErrorHandler</a>)</td></tr>
+<tr class="separator:a08b4869139c487274510eb438ad718b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a351defc3a7b4afb3a2480c3713f2cb6a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d4e/classceleritas_1_1_scoped_root_error_handler.html#a351defc3a7b4afb3a2480c3713f2cb6a">disable_signal_handler</a> ()</td></tr>
 <tr class="memdesc:a351defc3a7b4afb3a2480c3713f2cb6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear ROOT's signal handlers that get installed on startup/activation.  <a href="../../df/d4e/classceleritas_1_1_scoped_root_error_handler.html#a351defc3a7b4afb3a2480c3713f2cb6a">More...</a><br /></td></tr>
 <tr class="separator:a351defc3a7b4afb3a2480c3713f2cb6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,6 +109,25 @@ $(function() {
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Install a ROOT Error Handler to redirect the message toward the Celeritas <a class="el" href="../../d4/da5/classceleritas_1_1_logger.html" title="Manage logging in serial and parallel.">Logger</a>. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a08b4869139c487274510eb438ad718b3" name="a08b4869139c487274510eb438ad718b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08b4869139c487274510eb438ad718b3">&#9670;&#160;</a></span>CELER_DELETE_COPY_MOVE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">celeritas::ScopedRootErrorHandler::CELER_DELETE_COPY_MOVE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d4e/classceleritas_1_1_scoped_root_error_handler.html">ScopedRootErrorHandler</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Prevent copying and moving for RAII class </p>
+
+</div>
+</div>
 <a id="a351defc3a7b4afb3a2480c3713f2cb6a" name="a351defc3a7b4afb3a2480c3713f2cb6a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a351defc3a7b4afb3a2480c3713f2cb6a">&#9670;&#160;</a></span>disable_signal_handler()</h2>
 

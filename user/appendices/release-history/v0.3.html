@@ -4,17 +4,15 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Version 0.3.0 &mdash; Celeritas 0.3.0-rc.1 documentation</title>
+  <title>Version 0.3.1 &mdash; Celeritas 0.3.1-rc.1.1+16ced01c2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -37,7 +35,7 @@
               <img src="../../_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-rc.1
+                0.3.2-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -61,11 +59,18 @@
 <p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../release-history.html">Release History</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Version 0.3.0</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Version 0.3.1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#new-features">New features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bug-fixes">Bug fixes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#documentation-improvements">Documentation improvements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#minor-internal-changes">Minor internal changes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-3-0">Version 0.3.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Bug fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Documentation improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Minor internal changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="v0.2.html">Version 0.2.2</a></li>
@@ -99,7 +104,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../release-history.html">Release History</a></li>
-      <li class="breadcrumb-item active">Version 0.3.0</li>
+      <li class="breadcrumb-item active">Version 0.3.1</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/appendices/release-history/v0.3.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -109,9 +114,96 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="version-0-3-0">
+  <section id="version-0-3-1">
+<span id="release-v0-3-1"></span><h1>Version 0.3.1<a class="headerlink" href="#version-0-3-1" title="Permalink to this heading"></a></h1>
+<p><em>Released 2023/08/01</em></p>
+<p>Version 0.3.1 is a bug fix and minor feature release of Celeritas targeted at supporting
+experiment frameworks. Key enhancements are:</p>
+<ul class="simple">
+<li><p>More track and step attributes can be set when calling back to Geant4
+sensitive detectors</p></li>
+<li><p>Offloaded tracks can be exported as a HepMC3 event file</p></li>
+<li><p>Sensitive detectors callbacks from Celeritas can bebe disabled with a new
+macro flag</p></li>
+<li><p>Geant4 10.5 is now supported</p></li>
+<li><p>A new step diagnostic in <code class="docutils literal notranslate"><span class="pre">celer-g4</span></code> prints step distributions from Geant4
+CPU execution</p></li>
+</ul>
+<p>Key fixes:</p>
+<ul class="simple">
+<li><p>Backward compatibility with Geant4 10.6 is fixed</p></li>
+<li><p>Support more than one MSC model being defined in Geant4</p></li>
+<li><p>Initializer capacity in <code class="docutils literal notranslate"><span class="pre">celer-sim</span></code> is nos scaled to be per thread</p></li>
+</ul>
+<section id="new-features">
+<h2>New features<a class="headerlink" href="#new-features" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Launch kernels only with active tracks using “action range” <em>(&#64;esseivaju, #765)</em></p></li>
+<li><p>Add utility for constructing SD “force_volumes” option <em>(&#64;sethrj, #825)</em></p></li>
+<li><p>Add scoped NVTX ranges for improved profiling <em>(&#64;esseivaju, #827)</em></p></li>
+<li><p>Add isotope data to <code class="docutils literal notranslate"><span class="pre">MaterialParams</span></code> <em>(&#64;stognini, #831)</em></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">ScopedProfiling</span></code> to device actions <em>(&#64;esseivaju, #836)</em></p></li>
+<li><p>Gather and set more Step/Track attributes when calling sensitive detectors <em>(&#64;sethrj, #839)</em></p></li>
+<li><p>Add isotope selector <em>(&#64;stognini, #843)</em></p></li>
+<li><p>Add a HepMC3 event writer <em>(&#64;sethrj, #851)</em></p></li>
+<li><p>Add option to disable Celeritas offloading in celer-g4 <em>(&#64;amandalund, #860)</em></p></li>
+<li><p>Add option to dump offloaded tracks as an event file <em>(&#64;sethrj, #854)</em></p></li>
+<li><p>Expose SDSetupOptions “enabled” flag in SetupOptionsMessenger <em>(&#64;drbenmorgan, #859)</em></p></li>
+<li><p>Add track step counter to celer-g4 <em>(&#64;amandalund, #862)</em></p></li>
+<li><p>Define arithmetic operators for Array <em>(&#64;sethrj, #868)</em></p></li>
+<li><p>Support <a class="reference external" href="mailto:Geant4&#37;&#52;&#48;10&#46;5">Geant4<span>&#64;</span>10<span>&#46;</span>5</a> <em>(&#64;sethrj, #869)</em></p></li>
+</ul>
+<p>Reviewers: &#64;sethrj <em>(8)</em>, &#64;amandalund <em>(3)</em>, &#64;whokion <em>(2)</em>, &#64;hhollenb <em>(1)</em>, &#64;drbenmorgan <em>(1)</em></p>
+</section>
+<section id="bug-fixes">
+<h2>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Fix errors when building and loading Celeritas through CMSSW <em>(&#64;sethrj, #821)</em></p></li>
+<li><p>Divide initializer capacity by number of streams in celer-sim <em>(&#64;amandalund, #824)</em></p></li>
+<li><p>Fix build errors from <a class="reference external" href="mailto:Geant4&#37;&#52;&#48;10">Geant4<span>&#64;</span>10</a> <em>(&#64;drbenmorgan, #830)</em></p></li>
+<li><p>Fix default <code class="docutils literal notranslate"><span class="pre">combined_brems</span></code> option to work with multiple-element materials <em>(&#64;sethrj, #837)</em></p></li>
+<li><p>Fix app/demo-geo-check test failure when using MPI <em>(&#64;stognini, #838)</em></p></li>
+<li><p>Unify convergence criteria in field driver <em>(&#64;sethrj, #829)</em></p></li>
+<li><p>Fix minor issues with exceptions <em>(&#64;sethrj, #846)</em></p></li>
+<li><p>Fix linking errors with CUDA+VecGeom caused by #847 <em>(&#64;pcanal, #856)</em></p></li>
+<li><p>Fix inconsistencies in Geant4-to-VecGeom boolean conversion <em>(&#64;sethrj, #857)</em></p></li>
+<li><p>Fix HepMC3 reading of vertices and status codes <em>(&#64;sethrj, #863)</em></p></li>
+</ul>
+<p>Reviewers: &#64;sethrj <em>(4)</em>, &#64;amandalund <em>(4)</em>, &#64;whokion <em>(2)</em>, &#64;esseivaju <em>(1)</em></p>
+</section>
+<section id="documentation-improvements">
+<h2>Documentation improvements<a class="headerlink" href="#documentation-improvements" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Update CI to VecGeom 1.2.3 <em>(&#64;sethrj, #819)</em></p></li>
+<li><p>Document how to link loadable shared libraries with Celeritas <em>(&#64;drbenmorgan, #842)</em></p></li>
+</ul>
+<p>Reviewers: &#64;pcanal <em>(1)</em>, &#64;sethrj <em>(1)</em></p>
+</section>
+<section id="minor-internal-changes">
+<h2>Minor internal changes<a class="headerlink" href="#minor-internal-changes" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Add field template deduction and parameterized test <em>(&#64;sethrj, #820)</em></p></li>
+<li><p>Improve logger construction and add test helper class <em>(&#64;sethrj, #826)</em></p></li>
+<li><p>Hotfix: fix warning when building with <a class="reference external" href="mailto:Geant4&#37;&#52;&#48;11">Geant4<span>&#64;</span>11</a> <em>(&#64;sethrj, #833)</em></p></li>
+<li><p>Remove variadic templating from track executor <em>(&#64;sethrj, #832)</em></p></li>
+<li><p>Refactor hit manager SD mapping <em>(&#64;sethrj, #835)</em></p></li>
+<li><p>Apply C++ core guidelines for copy/move assignment/construction <em>(&#64;esseivaju, #834)</em></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">screening_factor</span></code> to <code class="docutils literal notranslate"><span class="pre">ImportEmParameters</span></code> <em>(&#64;stognini, #840)</em></p></li>
+<li><p>cmake-rdc: add support for MODULE library. <em>(&#64;pcanal, #848)</em></p></li>
+<li><p>Add some quality-of-life CMake defaults <em>(&#64;sethrj, #847)</em></p></li>
+<li><p>Require semicolon for statement-like CELER_X_COPY_MOVE macros <em>(&#64;sethrj, #855)</em></p></li>
+<li><p>Hotfix: fix duplicate HepMC3 symbols by creating a wrapper function <em>(&#64;sethrj, #865)</em></p></li>
+<li><p>Fix large function warnings by disabling device debug code by default <em>(&#64;sethrj, #866)</em></p></li>
+<li><p>Add PolyEvaluator deduction guides <em>(&#64;hhollenb, #871)</em></p></li>
+<li><p>Add thread-safe assertion to RootStepWriter <em>(&#64;stognini, #873)</em></p></li>
+</ul>
+<p>Reviewers: &#64;amandalund <em>(5)</em>, &#64;sethrj <em>(5)</em>, &#64;pcanal <em>(2)</em>, &#64;drbenmorgan <em>(2)</em>, &#64;hhollenb <em>(1)</em>, &#64;esseivaju <em>(1)</em></p>
+<p><strong>Full Changelog</strong>: <a class="reference external" href="https://github.com/celeritas-project/celeritas/compare/v0.3.0...v0.3.1">https://github.com/celeritas-project/celeritas/compare/v0.3.0…v0.3.1</a></p>
+</section>
+</section>
+<section id="version-0-3-0">
 <span id="release-v0-3-0"></span><h1>Version 0.3.0<a class="headerlink" href="#version-0-3-0" title="Permalink to this heading"></a></h1>
-<p><em>Released 2023/06/13</em></p>
+<p><em>Released 2023/06/15</em></p>
 <p>Version 0.3.0 is a major new release of Celeritas. Key enhancements are:</p>
 <ul class="simple">
 <li><p>Full, efficient support for multithreading inside Geant4 apps</p></li>
@@ -126,10 +218,10 @@
 <li><p>The Urban cross section model is used by default for all energies</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">demo-loop</span></code> is now <code class="docutils literal notranslate"><span class="pre">celer-sim</span></code> and is installed alongside the library</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">demo-geant</span></code> is now <code class="docutils literal notranslate"><span class="pre">celer-g4</span></code> and is also installed</p></li>
-<li><p>Building with the C++17 or later is required</p></li>
+<li><p>Building with the C++17 standard or later is required</p></li>
 </ul>
-<section id="new-features">
-<h2>New features<a class="headerlink" href="#new-features" title="Permalink to this heading"></a></h2>
+<section id="id1">
+<h2>New features<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Add filtering to <cite>RootStepWriter</cite> <em>(&#64;stognini, #630)</em></p></li>
 <li><p>Add math operators to Quantity <em>(&#64;sethrj, #658)</em></p></li>
@@ -157,6 +249,7 @@
 <li><p>Add simple calorimeter <em>(&#64;sethrj, #733)</em></p></li>
 <li><p>Add debugging/profiling utilities <em>(&#64;sethrj, #738)</em></p></li>
 <li><p>Add an along step action with a RZMapField <em>(&#64;whokion, #736)</em></p></li>
+<li><p>Add G4LogicalVolume* to VolumeId mapping <em>(&#64;mrguilima, #739)</em></p></li>
 <li><p>Add ActionDiagnostic, replacing ParticleProcessDiagnostic <em>(&#64;amandalund, #740)</em></p></li>
 <li><p>Replace demo loop <cite>StepDiagnostic</cite> with thread-safe version <em>(&#64;amandalund, #746)</em></p></li>
 <li><p>Improve and add internal utilities before refactoring action interface <em>(&#64;sethrj, #742)</em></p></li>
@@ -179,11 +272,12 @@
 <li><p>Add G4ExtrudedSolid conversion <em>(&#64;sethrj, #813)</em></p></li>
 <li><p>Improve performance of gathering and copying detector step data on device <em>(&#64;amandalund, #814)</em></p></li>
 <li><p>Extend user-facing app/environment options <em>(&#64;sethrj, #816)</em></p></li>
+<li><p>Support manual addition/exclusion of volumes in HitManager <em>(&#64;sethrj, #772)</em></p></li>
 </ul>
-<p>Reviewers: &#64;sethrj <em>(20)</em>, &#64;amandalund <em>(19)</em>, &#64;pcanal <em>(4)</em>, &#64;esseivaju <em>(4)</em>, &#64;whokion <em>(3)</em>, &#64;stognini <em>(2)</em>, &#64;drbenmorgan <em>(1)</em>, &#64;mrguilima <em>(1)</em></p>
+<p>Reviewers: &#64;sethrj <em>(21)</em>, &#64;amandalund <em>(19)</em>, &#64;pcanal <em>(4)</em>, &#64;esseivaju <em>(4)</em>, &#64;whokion <em>(4)</em>, &#64;stognini <em>(2)</em>, &#64;drbenmorgan <em>(1)</em>, &#64;mrguilima <em>(1)</em></p>
 </section>
-<section id="bug-fixes">
-<h2>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this heading"></a></h2>
+<section id="id2">
+<h2>Bug fixes<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Fix MSC cross section units <em>(&#64;sethrj, #644)</em></p></li>
 <li><p>Fix SWIG and update requirements <em>(&#64;sethrj, #657)</em></p></li>
@@ -218,8 +312,8 @@
 </ul>
 <p>Reviewers: &#64;amandalund <em>(12)</em>, &#64;sethrj <em>(8)</em>, &#64;whokion <em>(4)</em>, &#64;pcanal <em>(3)</em>, &#64;stognini <em>(1)</em>, &#64;drbenmorgan <em>(1)</em>, &#64;elliottbiondo <em>(1)</em>, &#64;mrguilima <em>(1)</em></p>
 </section>
-<section id="documentation-improvements">
-<h2>Documentation improvements<a class="headerlink" href="#documentation-improvements" title="Permalink to this heading"></a></h2>
+<section id="id3">
+<h2>Documentation improvements<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Add minimal failing test for #620 <em>(&#64;amandalund, #655)</em></p></li>
 <li><p>Fix documentation links and update celeritas logo <em>(&#64;sethrj, #686)</em></p></li>
@@ -236,8 +330,8 @@
 </ul>
 <p>Reviewers: &#64;amandalund <em>(6)</em>, &#64;sethrj <em>(3)</em>, &#64;mrguilima <em>(1)</em>, &#64;paulromano <em>(1)</em>, &#64;stognini <em>(1)</em></p>
 </section>
-<section id="minor-internal-changes">
-<h2>Minor internal changes<a class="headerlink" href="#minor-internal-changes" title="Permalink to this heading"></a></h2>
+<section id="id4">
+<h2>Minor internal changes<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Remove multiple scattering from Processes <em>(&#64;sethrj, #631)</em></p></li>
 <li><p>Require C++17 and use a few C++17 features <em>(&#64;sethrj, #633)</em></p></li>
@@ -278,7 +372,7 @@
 <li><p>Improve VecGeom testing <em>(&#64;sethrj, #770)</em></p></li>
 <li><p>Refactor track initialization kernels and initialization scalars <em>(&#64;sethrj, #766)</em></p></li>
 <li><p>Separate app CMakeLists and install executables <em>(&#64;sethrj, #775)</em></p></li>
-<li><p>Rename Launch⇄Execute <em>(&#64;sethrj, #781)</em></p></li>
+<li><p>Rename Launch&lt;-&gt;Execute <em>(&#64;sethrj, #781)</em></p></li>
 <li><p>Add a Launch helper functor to fully abstract device execution <em>(&#64;sethrj, #783)</em></p></li>
 <li><p>Use <cite>ActionLauncher</cite> for Moller-Bhabha, action diagnostic, and step gather action <em>(&#64;amandalund, #790)</em></p></li>
 <li><p>Use ActionLauncher for LivermorePE, CombinedBrem, MuBremsstrahlung, RelativisticBrem <em>(&#64;pcanal, #789)</em></p></li>

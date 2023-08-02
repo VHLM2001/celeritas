@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.1-rc.1.1+16ced01c2</span>
    </div>
   </td>
  </tr>
@@ -95,6 +95,9 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:aa5222ca205f4eaa5eb85bbb59b872830"><td class="memItemLeft" align="right" valign="top"><a id="aa5222ca205f4eaa5eb85bbb59b872830" name="aa5222ca205f4eaa5eb85bbb59b872830"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DS_FAST_GET</b>(CONT,  TID)&#160;&#160;&#160;CONT.data().get()[TID.unchecked_get()]</td></tr>
+<tr class="separator:aa5222ca205f4eaa5eb85bbb59b872830"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c648d5c0a1876609deeb5682be93790"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/da6/_detector_steps_8cu.html#a6c648d5c0a1876609deeb5682be93790">DS_COPY_IF_SELECTED</a>(FIELD)</td></tr>
 <tr class="separator:a6c648d5c0a1876609deeb5682be93790"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac145d17177e16f1e845098e6a086ebed"><td class="memItemLeft" align="right" valign="top"><a id="ac145d17177e16f1e845098e6a086ebed" name="ac145d17177e16f1e845098e6a086ebed"></a>
@@ -125,12 +128,13 @@ template&lt;&gt; </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                                                              \</div>
-<div class="line">    {                                                               \</div>
-<div class="line">        if (!state.data.FIELD.empty())                              \</div>
-<div class="line">        {                                                           \</div>
-<div class="line">            state.scratch.FIELD[tid] = state.data.FIELD[valid_tid]; \</div>
-<div class="line">        }                                                           \</div>
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                                                      \</div>
+<div class="line">    {                                                       \</div>
+<div class="line">        if (!state.data.FIELD.empty())                      \</div>
+<div class="line">        {                                                   \</div>
+<div class="line">            DS_FAST_GET(state.scratch.FIELD, tid)           \</div>
+<div class="line">                = DS_FAST_GET(state.data.FIELD, valid_tid); \</div>
+<div class="line">        }                                                   \</div>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment -->
 </div>

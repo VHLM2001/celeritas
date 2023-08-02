@@ -37,11 +37,10 @@ var searchData=
   ['discrete_5faction_34',['discrete_action',['../d2/d44/structceleritas_1_1_physics_params_scalars.html#a37cd88f67fc97f815d40f460a9683c38',1,'celeritas::PhysicsParamsScalars']]],
   ['discreteselectaction_35',['DiscreteSelectAction',['../d4/d37/classceleritas_1_1detail_1_1_discrete_select_action.html#a96fa40cde352fafc7e5828f781c2d353',1,'celeritas::detail::DiscreteSelectAction']]],
   ['distance_36',['distance',['../d7/ddc/_array_utils_8hh.html#a2a182871cf6c535f40565edb41d82437',1,'celeritas']]],
-  ['distance_5fchord_37',['distance_chord',['../db/dab/_field_utils_8hh.html#abd1b45ff66789cc5101a0c90ecb14f74',1,'celeritas::detail']]],
-  ['distance_5fsq_38',['distance_sq',['../d7/ddc/_array_utils_8hh.html#a02c69dedd48ef21c342c3ee27cfa957e',1,'celeritas']]],
-  ['dormandprincestepper_39',['DormandPrinceStepper',['../d5/d65/classceleritas_1_1_dormand_prince_stepper.html#a948d507e592926473dec8f9e9263f4ff',1,'celeritas::DormandPrinceStepper']]],
-  ['dot_5fproduct_40',['dot_product',['../d7/ddc/_array_utils_8hh.html#a67c2e1fac73f1c6c94da1f8297fa4f67',1,'celeritas']]],
-  ['dtrl_41',['dtrl',['../dc/dbd/structceleritas_1_1_urban_msc_parameters.html#a8021f7fd48af50219e06a7183cf2d87d',1,'celeritas::UrbanMscParameters']]],
-  ['dummy_5faction_42',['dummy_action',['../db/dff/classceleritas_1_1test_1_1_stepper_test_base.html#a72351046b9ed2fd2484d66ea970cfb26',1,'celeritas::test::StepperTestBase']]],
-  ['duplicates_43',['duplicates',['../d2/d80/classceleritas_1_1_label_id_multi_map.html#aa90679283bb38d777009f695c57bdfb2',1,'celeritas::LabelIdMultiMap']]]
+  ['distance_5fchord_37',['distance_chord',['../db/dab/_field_utils_8hh.html#a8ded5a1f5179983fae44db2bfab8a5b7',1,'celeritas::detail']]],
+  ['dormandprincestepper_38',['DormandPrinceStepper',['../d5/d65/classceleritas_1_1_dormand_prince_stepper.html#a948d507e592926473dec8f9e9263f4ff',1,'celeritas::DormandPrinceStepper']]],
+  ['dot_5fproduct_39',['dot_product',['../d7/ddc/_array_utils_8hh.html#a67c2e1fac73f1c6c94da1f8297fa4f67',1,'celeritas']]],
+  ['dtrl_40',['dtrl',['../dc/dbd/structceleritas_1_1_urban_msc_parameters.html#a8021f7fd48af50219e06a7183cf2d87d',1,'celeritas::UrbanMscParameters']]],
+  ['dummy_5faction_41',['dummy_action',['../db/dff/classceleritas_1_1test_1_1_stepper_test_base.html#a72351046b9ed2fd2484d66ea970cfb26',1,'celeritas::test::StepperTestBase']]],
+  ['duplicates_42',['duplicates',['../d2/d80/classceleritas_1_1_label_id_multi_map.html#aa90679283bb38d777009f695c57bdfb2',1,'celeritas::LabelIdMultiMap']]]
 ];

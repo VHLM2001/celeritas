@@ -4,17 +4,15 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ORANGE &mdash; Celeritas 0.3.0-rc.1 documentation</title>
+  <title>ORANGE &mdash; Celeritas 0.3.1-rc.1.1+16ced01c2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -37,7 +35,7 @@
               <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-rc.1
+                0.3.2-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -221,9 +219,9 @@ under development as the version in SCALE is ported to GPU.</p>
 <p>Ordering requirements:<ul class="simple">
 <li><p>initialize (through assignment) must come first</p></li>
 <li><p>access (pos, dir, volume/surface/is_outside/is_on_boundary) good at any time</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">find_next_step</span></code> </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">find_safety</span></code> or <code class="docutils literal notranslate"><span class="pre">move_internal</span></code> or <code class="docutils literal notranslate"><span class="pre">move_to_boundary</span></code> </p></li>
-<li><p>if on boundary, <code class="docutils literal notranslate"><span class="pre">cross_boundary</span></code> </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">find_next_step</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">find_safety</span></code> or <code class="docutils literal notranslate"><span class="pre">move_internal</span></code> or <code class="docutils literal notranslate"><span class="pre">move_to_boundary</span></code></p></li>
+<li><p>if on boundary, <code class="docutils literal notranslate"><span class="pre">cross_boundary</span></code></p></li>
 <li><p>at any time, <code class="docutils literal notranslate"><span class="pre">set_dir</span></code> , but then must do <code class="docutils literal notranslate"><span class="pre">find_next_step</span></code> before any <code class="docutils literal notranslate"><span class="pre">move</span></code> or <code class="docutils literal notranslate"><span class="pre">cross</span></code> action above</p></li>
 </ul>
 </p>

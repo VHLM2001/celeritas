@@ -3,17 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; Celeritas 0.3.0-rc.1 documentation</title>
+  <title>Index &mdash; Celeritas 0.3.1-rc.1.1+16ced01c2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -34,7 +32,7 @@
               <img src="_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-rc.1
+                0.3.2-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -109,7 +107,11 @@
 </li>
       <li><a href="api/corecel.html#c.CELER_CUDA_CALL">CELER_CUDA_CALL (C macro)</a>
 </li>
+      <li><a href="api/corecel.html#c.CELER_DEFAULT_COPY_MOVE">CELER_DEFAULT_COPY_MOVE (C macro)</a>
+</li>
       <li><a href="api/corecel.html#c.CELER_DEFINE_QACCESS">CELER_DEFINE_QACCESS (C macro)</a>
+</li>
+      <li><a href="api/corecel.html#c.CELER_DELETE_COPY_MOVE">CELER_DELETE_COPY_MOVE (C macro)</a>
 </li>
       <li><a href="api/corecel.html#c.CELER_DEVICE_CALL_PREFIX">CELER_DEVICE_CALL_PREFIX (C macro)</a>
 </li>
@@ -197,7 +199,7 @@
 </li>
       <li><a href="api/corecel.html#_CPPv4N9celeritas5Array9referenceE">celeritas::Array::reference (C++ type)</a>
 </li>
-      <li><a href="api/corecel.html#_CPPv4NK9celeritas5Array4sizeEv">celeritas::Array::size (C++ function)</a>
+      <li><a href="api/corecel.html#_CPPv4N9celeritas5Array4sizeEv">celeritas::Array::size (C++ function)</a>
 </li>
       <li><a href="api/corecel.html#_CPPv4N9celeritas5Array9size_typeE">celeritas::Array::size_type (C++ type)</a>
 </li>
@@ -505,11 +507,11 @@
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas10GeantSetup22disable_signal_handlerEv">celeritas::GeantSetup::disable_signal_handler (C++ function)</a>
 </li>
-      <li><a href="api/celeritas.html#_CPPv4N9celeritas10GeantSetup10GeantSetupERKNSt6stringE7Options">celeritas::GeantSetup::GeantSetup (C++ function)</a>, <a href="api/celeritas.html#_CPPv4N9celeritas10GeantSetup10GeantSetupERR10GeantSetup">[1]</a>
+      <li><a href="api/celeritas.html#_CPPv4N9celeritas10GeantSetup10GeantSetupERK10GeantSetup">celeritas::GeantSetup::GeantSetup (C++ function)</a>, <a href="api/celeritas.html#_CPPv4N9celeritas10GeantSetup10GeantSetupERKNSt6stringE7Options">[1]</a>, <a href="api/celeritas.html#_CPPv4N9celeritas10GeantSetup10GeantSetupERR10GeantSetup">[2]</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4NK9celeritas10GeantSetupcvbEv">celeritas::GeantSetup::operator bool (C++ function)</a>
 </li>
-      <li><a href="api/celeritas.html#_CPPv4N9celeritas10GeantSetupaSERR10GeantSetup">celeritas::GeantSetup::operator= (C++ function)</a>
+      <li><a href="api/celeritas.html#_CPPv4N9celeritas10GeantSetupaSERK10GeantSetup">celeritas::GeantSetup::operator= (C++ function)</a>, <a href="api/celeritas.html#_CPPv4N9celeritas10GeantSetupaSERR10GeantSetup">[1]</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas10GeantSetup7OptionsE">celeritas::GeantSetup::Options (C++ type)</a>
 </li>
@@ -559,6 +561,8 @@
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas10ImportData11ImportSBMapE">celeritas::ImportData::ImportSBMap (C++ type)</a>
 </li>
+      <li><a href="api/celeritas.html#_CPPv4N9celeritas10ImportData8isotopesE">celeritas::ImportData::isotopes (C++ member)</a>
+</li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas10ImportData17livermore_pe_dataE">celeritas::ImportData::livermore_pe_data (C++ member)</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas10ImportData9materialsE">celeritas::ImportData::materials (C++ member)</a>
@@ -585,9 +589,17 @@
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas13ImportElement14coulomb_factorE">celeritas::ImportElement::coulomb_factor (C++ member)</a>
 </li>
+      <li><a href="api/celeritas.html#_CPPv4N9celeritas13ImportElement11IsotopeFracE">celeritas::ImportElement::IsotopeFrac (C++ type)</a>
+</li>
+      <li><a href="api/celeritas.html#_CPPv4N9celeritas13ImportElement12IsotopeIndexE">celeritas::ImportElement::IsotopeIndex (C++ type)</a>
+</li>
+      <li><a href="api/celeritas.html#_CPPv4N9celeritas13ImportElement18isotopes_fractionsE">celeritas::ImportElement::isotopes_fractions (C++ member)</a>
+</li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas13ImportElement4nameE">celeritas::ImportElement::name (C++ member)</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas13ImportElement21radiation_length_tsaiE">celeritas::ImportElement::radiation_length_tsai (C++ member)</a>
+</li>
+      <li><a href="api/celeritas.html#_CPPv4N9celeritas13ImportElement14VecIsotopeFracE">celeritas::ImportElement::VecIsotopeFrac (C++ type)</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas18ImportEmParametersE">celeritas::ImportEmParameters (C++ struct)</a>
 </li>
@@ -612,6 +624,8 @@
       <li><a href="api/celeritas.html#_CPPv4N9celeritas18ImportEmParameters17msc_safety_factorE">celeritas::ImportEmParameters::msc_safety_factor (C++ member)</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4NK9celeritas18ImportEmParameterscvbEv">celeritas::ImportEmParameters::operator bool (C++ function)</a>
+</li>
+      <li><a href="api/celeritas.html#_CPPv4N9celeritas18ImportEmParameters16screening_factorE">celeritas::ImportEmParameters::screening_factor (C++ member)</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas17ImportLivermorePEE">celeritas::ImportLivermorePE (C++ struct)</a>
 </li>
@@ -933,8 +947,6 @@
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas15ImportTableType17dedx_unrestrictedE">celeritas::ImportTableType::dedx_unrestricted (C++ enumerator)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas15ImportTableType13inverse_rangeE">celeritas::ImportTableType::inverse_range (C++ enumerator)</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas15ImportTableType17ionization_subsecE">celeritas::ImportTableType::ionization_subsec (C++ enumerator)</a>
@@ -947,6 +959,8 @@
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas15ImportTableType5rangeE">celeritas::ImportTableType::range (C++ enumerator)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas15ImportTableType15secondary_rangeE">celeritas::ImportTableType::secondary_range (C++ enumerator)</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas15ImportTableType5size_E">celeritas::ImportTableType::size_ (C++ enumerator)</a>
@@ -1031,11 +1045,13 @@
 </li>
       <li><a href="api/corecel.html#_CPPv4N9celeritas6LoggerE">celeritas::Logger (C++ class)</a>
 </li>
+      <li><a href="api/corecel.html#_CPPv4N9celeritas6Logger13default_levelEv">celeritas::Logger::default_level (C++ function)</a>
+</li>
       <li><a href="api/corecel.html#_CPPv4N9celeritas6Logger7handle_E">celeritas::Logger::handle_ (C++ member)</a>
 </li>
       <li><a href="api/corecel.html#_CPPv4N9celeritas6Logger5levelE8LogLevel">celeritas::Logger::level (C++ function)</a>, <a href="api/corecel.html#_CPPv4NK9celeritas6Logger5levelEv">[1]</a>
 </li>
-      <li><a href="api/corecel.html#_CPPv4N9celeritas6Logger6LoggerERK15MpiCommunicator10LogHandlerPKc">celeritas::Logger::Logger (C++ function)</a>
+      <li><a href="api/corecel.html#_CPPv4N9celeritas6Logger6LoggerE10LogHandler">celeritas::Logger::Logger (C++ function)</a>, <a href="api/corecel.html#_CPPv4N9celeritas6Logger6LoggerERK15MpiCommunicator10LogHandler">[1]</a>
 </li>
       <li><a href="api/corecel.html#_CPPv4N9celeritas6Logger7MessageE">celeritas::Logger::Message (C++ type)</a>
 </li>
@@ -1059,11 +1075,17 @@
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas14MaterialParams12ElementInput13atomic_numberE">celeritas::MaterialParams::ElementInput::atomic_number (C++ member)</a>
 </li>
+      <li><a href="api/celeritas.html#_CPPv4N9celeritas14MaterialParams12ElementInput18isotopes_fractionsE">celeritas::MaterialParams::ElementInput::isotopes_fractions (C++ member)</a>
+</li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas14MaterialParams12ElementInput5labelE">celeritas::MaterialParams::ElementInput::label (C++ member)</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams12find_elementERKNSt6stringE">celeritas::MaterialParams::find_element (C++ function)</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams13find_elementsERKNSt6stringE">celeritas::MaterialParams::find_elements (C++ function)</a>
+</li>
+      <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams12find_isotopeERKNSt6stringE">celeritas::MaterialParams::find_isotope (C++ function)</a>
+</li>
+      <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams13find_isotopesERKNSt6stringE">celeritas::MaterialParams::find_isotopes (C++ function)</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams13find_materialERKNSt6stringE">celeritas::MaterialParams::find_material (C++ function)</a>
 </li>
@@ -1071,13 +1093,25 @@
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas14MaterialParams11from_importERK10ImportData">celeritas::MaterialParams::from_import (C++ function)</a>
 </li>
-      <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams3getE10MaterialId">celeritas::MaterialParams::get (C++ function)</a>, <a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams3getE9ElementId">[1]</a>
+      <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams3getE10MaterialId">celeritas::MaterialParams::get (C++ function)</a>, <a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams3getE9ElementId">[1]</a>, <a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams3getE9IsotopeId">[2]</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams8host_refEv">celeritas::MaterialParams::host_ref (C++ function)</a>
 </li>
-      <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams11id_to_labelE10MaterialId">celeritas::MaterialParams::id_to_label (C++ function)</a>, <a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams11id_to_labelE9ElementId">[1]</a>
+      <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams11id_to_labelE10MaterialId">celeritas::MaterialParams::id_to_label (C++ function)</a>, <a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams11id_to_labelE9ElementId">[1]</a>, <a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams11id_to_labelE9IsotopeId">[2]</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas14MaterialParams5InputE">celeritas::MaterialParams::Input (C++ struct)</a>
+</li>
+      <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams19is_missing_isotopesEv">celeritas::MaterialParams::is_missing_isotopes (C++ function)</a>
+</li>
+      <li><a href="api/celeritas.html#_CPPv4N9celeritas14MaterialParams12IsotopeInputE">celeritas::MaterialParams::IsotopeInput (C++ struct)</a>
+</li>
+      <li><a href="api/celeritas.html#_CPPv4N9celeritas14MaterialParams12IsotopeInput18atomic_mass_numberE">celeritas::MaterialParams::IsotopeInput::atomic_mass_number (C++ member)</a>
+</li>
+      <li><a href="api/celeritas.html#_CPPv4N9celeritas14MaterialParams12IsotopeInput13atomic_numberE">celeritas::MaterialParams::IsotopeInput::atomic_number (C++ member)</a>
+</li>
+      <li><a href="api/celeritas.html#_CPPv4N9celeritas14MaterialParams12IsotopeInput5labelE">celeritas::MaterialParams::IsotopeInput::label (C++ member)</a>
+</li>
+      <li><a href="api/celeritas.html#_CPPv4N9celeritas14MaterialParams12IsotopeInput12nuclear_massE">celeritas::MaterialParams::IsotopeInput::nuclear_mass (C++ member)</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas14MaterialParams13MaterialInputE">celeritas::MaterialParams::MaterialInput (C++ struct)</a>
 </li>
@@ -1095,7 +1129,11 @@
 </li>
       <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams22max_element_componentsEv">celeritas::MaterialParams::max_element_components (C++ function)</a>
 </li>
+      <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams22max_isotope_componentsEv">celeritas::MaterialParams::max_isotope_components (C++ function)</a>
+</li>
       <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams12num_elementsEv">celeritas::MaterialParams::num_elements (C++ function)</a>
+</li>
+      <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams12num_isotopesEv">celeritas::MaterialParams::num_isotopes (C++ function)</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4NK9celeritas14MaterialParams13num_materialsEv">celeritas::MaterialParams::num_materials (C++ function)</a>
 </li>
@@ -1497,6 +1535,8 @@
 </li>
       <li><a href="api/accel.html#_CPPv4N9celeritas14SDSetupOptions17energy_depositionE">celeritas::SDSetupOptions::energy_deposition (C++ member)</a>
 </li>
+      <li><a href="api/accel.html#_CPPv4N9celeritas14SDSetupOptions13force_volumesE">celeritas::SDSetupOptions::force_volumes (C++ member)</a>
+</li>
       <li><a href="api/accel.html#_CPPv4N9celeritas14SDSetupOptions22ignore_zero_depositionE">celeritas::SDSetupOptions::ignore_zero_deposition (C++ member)</a>
 </li>
       <li><a href="api/accel.html#_CPPv4N9celeritas14SDSetupOptions16locate_touchableE">celeritas::SDSetupOptions::locate_touchable (C++ member)</a>
@@ -1507,7 +1547,13 @@
 </li>
       <li><a href="api/accel.html#_CPPv4N9celeritas14SDSetupOptions3preE">celeritas::SDSetupOptions::pre (C++ member)</a>
 </li>
+      <li><a href="api/accel.html#_CPPv4N9celeritas14SDSetupOptions12skip_volumesE">celeritas::SDSetupOptions::skip_volumes (C++ member)</a>
+</li>
       <li><a href="api/accel.html#_CPPv4N9celeritas14SDSetupOptions9StepPointE">celeritas::SDSetupOptions::StepPoint (C++ struct)</a>
+</li>
+      <li><a href="api/accel.html#_CPPv4N9celeritas14SDSetupOptions9StepPoint9directionE">celeritas::SDSetupOptions::StepPoint::direction (C++ member)</a>
+</li>
+      <li><a href="api/accel.html#_CPPv4N9celeritas14SDSetupOptions5trackE">celeritas::SDSetupOptions::track (C++ member)</a>
 </li>
       <li><a href="api/celeritas.html#_CPPv4N9celeritas23SeltzerBergerInteractorE">celeritas::SeltzerBergerInteractor (C++ class)</a>
 </li>
@@ -1533,6 +1579,8 @@
 </li>
       <li><a href="api/accel.html#_CPPv4N9celeritas12SetupOptions12no_max_stepsEv">celeritas::SetupOptions::no_max_steps (C++ function)</a>
 </li>
+      <li><a href="api/accel.html#_CPPv4N9celeritas12SetupOptions19offload_output_fileE">celeritas::SetupOptions::offload_output_file (C++ member)</a>
+</li>
       <li><a href="api/accel.html#_CPPv4N9celeritas12SetupOptions11output_fileE">celeritas::SetupOptions::output_file (C++ member)</a>
 </li>
       <li><a href="api/accel.html#_CPPv4N9celeritas12SetupOptions19physics_output_fileE">celeritas::SetupOptions::physics_output_file (C++ member)</a>
@@ -1553,6 +1601,8 @@
 </li>
       <li><a href="api/accel.html#_CPPv4N9celeritas12SharedParams16InitializeWorkerERK12SetupOptions">celeritas::SharedParams::InitializeWorker (C++ function)</a>
 </li>
+      <li><a href="api/accel.html#_CPPv4NK9celeritas12SharedParams14offload_writerEv">celeritas::SharedParams::offload_writer (C++ function)</a>
+</li>
       <li><a href="api/accel.html#_CPPv4NK9celeritas12SharedParams16OffloadParticlesEv">celeritas::SharedParams::OffloadParticles (C++ function)</a>
 </li>
       <li><a href="api/accel.html#_CPPv4NK9celeritas12SharedParamscvbEv">celeritas::SharedParams::operator bool (C++ function)</a>
@@ -1560,6 +1610,10 @@
       <li><a href="api/accel.html#_CPPv4NK9celeritas12SharedParams6ParamsEv">celeritas::SharedParams::Params (C++ function)</a>
 </li>
       <li><a href="api/accel.html#_CPPv4N9celeritas12SharedParams12SharedParamsERK12SetupOptions">celeritas::SharedParams::SharedParams (C++ function)</a>, <a href="api/accel.html#_CPPv4N9celeritas12SharedParams12SharedParamsEv">[1]</a>
+</li>
+      <li><a href="api/accel.html#_CPPv4N9celeritas12SharedParams12SPHitManagerE">celeritas::SharedParams::SPHitManager (C++ type)</a>
+</li>
+      <li><a href="api/accel.html#_CPPv4N9celeritas12SharedParams15SPOffloadWriterE">celeritas::SharedParams::SPOffloadWriter (C++ type)</a>
 </li>
       <li><a href="api/accel.html#_CPPv4N9celeritas13SimpleOffloadE">celeritas::SimpleOffload (C++ class)</a>
 </li>

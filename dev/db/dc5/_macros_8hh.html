@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.1-rc.1.1+16ced01c2</span>
    </div>
   </td>
  </tr>
@@ -130,10 +130,10 @@ Macros</h2></td></tr>
 <tr class="memdesc:aeeef8a681e72df126c654f74c1a2f950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try the given statement, and if it fails, chain it into the given exception.  <a href="../../db/dc5/_macros_8hh.html#aeeef8a681e72df126c654f74c1a2f950">More...</a><br /></td></tr>
 <tr class="separator:aeeef8a681e72df126c654f74c1a2f950"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84999691bbd837d9cb22cef3e5506d82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc5/_macros_8hh.html#a84999691bbd837d9cb22cef3e5506d82">CELER_DEFAULT_COPY_MOVE</a>(CLS)</td></tr>
-<tr class="memdesc:a84999691bbd837d9cb22cef3e5506d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly declares defaulted copy and move constructors ans assignment operators.  <a href="../../db/dc5/_macros_8hh.html#a84999691bbd837d9cb22cef3e5506d82">More...</a><br /></td></tr>
+<tr class="memdesc:a84999691bbd837d9cb22cef3e5506d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly declare defaulted copy and move constructors and assignment operators.  <a href="../../db/dc5/_macros_8hh.html#a84999691bbd837d9cb22cef3e5506d82">More...</a><br /></td></tr>
 <tr class="separator:a84999691bbd837d9cb22cef3e5506d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec9f47eb75fadbc55472e5e54d1709e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc5/_macros_8hh.html#aec9f47eb75fadbc55472e5e54d1709e7">CELER_DELETE_COPY_MOVE</a>(CLS)</td></tr>
-<tr class="memdesc:aec9f47eb75fadbc55472e5e54d1709e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly declares deleted copy and move constructors ans assignment operators.  <a href="../../db/dc5/_macros_8hh.html#aec9f47eb75fadbc55472e5e54d1709e7">More...</a><br /></td></tr>
+<tr class="memdesc:aec9f47eb75fadbc55472e5e54d1709e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly declare <em>deleted</em> copy and move constructors and assignment operators.  <a href="../../db/dc5/_macros_8hh.html#aec9f47eb75fadbc55472e5e54d1709e7">More...</a><br /></td></tr>
 <tr class="separator:aec9f47eb75fadbc55472e5e54d1709e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -179,9 +179,10 @@ Macros</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">    CLS(CLS <span class="keyword">const</span>&amp;) = <span class="keywordflow">default</span>;            \</div>
 <div class="line">    CLS&amp; operator=(CLS <span class="keyword">const</span>&amp;) = <span class="keywordflow">default</span>; \</div>
 <div class="line">    CLS(CLS&amp;&amp;) = <span class="keywordflow">default</span>;                 \</div>
-<div class="line">    CLS&amp; operator=(CLS&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line">    CLS&amp; operator=(CLS&amp;&amp;) = <span class="keywordflow">default</span></div>
 </div><!-- fragment -->
-<p>Explicitly declares defaulted copy and move constructors ans assignment operators. </p>
+<p>Explicitly declare defaulted copy and move constructors and assignment operators. </p>
+<p >Use this if the destructor is declared explicitly. </p>
 
 </div>
 </div>
@@ -203,9 +204,10 @@ Macros</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">    CLS(CLS <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;            \</div>
 <div class="line">    CLS&amp; operator=(CLS <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>; \</div>
 <div class="line">    CLS(CLS&amp;&amp;) = <span class="keyword">delete</span>;                 \</div>
-<div class="line">    CLS&amp; operator=(CLS&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line">    CLS&amp; operator=(CLS&amp;&amp;) = <span class="keyword">delete</span></div>
 </div><!-- fragment -->
-<p>Explicitly declares deleted copy and move constructors ans assignment operators. </p>
+<p>Explicitly declare <em>deleted</em> copy and move constructors and assignment operators. </p>
+<p >Use this for scoped RAII classes. </p>
 
 </div>
 </div>

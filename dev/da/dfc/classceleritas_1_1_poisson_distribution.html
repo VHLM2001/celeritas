@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.1-rc.1.1+16ced01c2</span>
    </div>
   </td>
  </tr>
@@ -125,17 +125,17 @@ static <a class="el" href="../../db/dc5/_macros_8hh.html#ae6277d86d031ef7cf2b160
 <div class="textblock"><div class="compoundTemplParams">template&lt;class RealType = ::celeritas::real_type&gt;<br />
 class celeritas::PoissonDistribution&lt; RealType &gt;</div><p >Sample from a Poisson distribution. </p>
 <p >The Poisson distribution describes the probability of <picture><source srcset="../../form_58_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ k $" src="../../form_58.png" width="6" height="10"/></picture> events occuring in a fixed interval given a mean rate of occurance <picture><source srcset="../../form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \lambda $" src="../../form_7.png" width="8" height="10"/></picture> and has the PMF:  </p><p class="formulaDsp">
-<picture><source srcset="../../form_188_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<picture><source srcset="../../form_186_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
 f(k; \lambda) = \frac{\lambda^k e^{-\lambda}}{k!}.
-\]" src="../../form_188.png" width="94" height="29"/></picture>
+\]" src="../../form_186.png" width="94" height="29"/></picture>
 </p>
 <p> For small <picture><source srcset="../../form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \lambda $" src="../../form_7.png" width="8" height="10"/></picture>, a direct method described in Knuth, Donald E., Seminumerical Algorithms, The Art of Computer Programming, Volume 2 can be used to generate samples from the Poisson distribution. Uniformly distributed random numbers are generated until the relation  </p><p class="formulaDsp">
-<picture><source srcset="../../form_189_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<picture><source srcset="../../form_187_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
 \prod_{k = 1}^n U_k \le e^{-\lambda}
-\]" src="../../form_189.png" width="71" height="36"/></picture>
+\]" src="../../form_187.png" width="71" height="36"/></picture>
 </p>
-<p> is satisfied; then, the random variable <picture><source srcset="../../form_190_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ X = n - 1 $" src="../../form_190.png" width="58" height="10"/></picture> will have a Poisson distribution. On average this approach requires the generation of <picture><source srcset="../../form_191_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \lambda + 1 $" src="../../form_191.png" width="28" height="11"/></picture> uniform random samples, so a different method should be used for large <picture><source srcset="../../form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \lambda $" src="../../form_7.png" width="8" height="10"/></picture>.</p>
-<p >Geant4 uses Knuth's algorithm for <picture><source srcset="../../form_192_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \lambda \le 16 $" src="../../form_192.png" width="36" height="13"/></picture> and a Gaussian approximation for <picture><source srcset="../../form_193_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \lambda &gt; 16 $" src="../../form_193.png" width="36" height="11"/></picture> (see G4Poisson), which is faster but less accurate than other methods. The same approach is used here. </p>
+<p> is satisfied; then, the random variable <picture><source srcset="../../form_188_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ X = n - 1 $" src="../../form_188.png" width="58" height="10"/></picture> will have a Poisson distribution. On average this approach requires the generation of <picture><source srcset="../../form_189_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \lambda + 1 $" src="../../form_189.png" width="28" height="11"/></picture> uniform random samples, so a different method should be used for large <picture><source srcset="../../form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \lambda $" src="../../form_7.png" width="8" height="10"/></picture>.</p>
+<p >Geant4 uses Knuth's algorithm for <picture><source srcset="../../form_190_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \lambda \le 16 $" src="../../form_190.png" width="36" height="13"/></picture> and a Gaussian approximation for <picture><source srcset="../../form_191_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \lambda &gt; 16 $" src="../../form_191.png" width="36" height="11"/></picture> (see G4Poisson), which is faster but less accurate than other methods. The same approach is used here. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="../../d8/d5a/_poisson_distribution_8hh.html">PoissonDistribution.hh</a></li>
 </ul>

@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.1-rc.1.1+16ced01c2</span>
    </div>
   </td>
  </tr>
@@ -75,19 +75,88 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">EventReader.cc File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d2/d39/_event_reader_8hh.html">EventReader.hh</a>&quot;</code><br />
+<code>#include &lt;set&gt;</code><br />
 <code>#include &lt;HepMC3/GenEvent.h&gt;</code><br />
 <code>#include &lt;HepMC3/ReaderFactory.h&gt;</code><br />
+<code>#include &lt;HepMC3/Setup.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/d84/_join_8hh.html">corecel/io/Join.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d2/d8a/corecel_2io_2_logger_8hh.html">corecel/io/Logger.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d8e/_scoped_time_and_redirect_8hh.html">corecel/io/ScopedTimeAndRedirect.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d7/ddc/_array_utils_8hh.html">corecel/math/ArrayUtils.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/db5/_environment_8hh.html">corecel/sys/Environment.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d5a/_type_demangler_8hh.html">corecel/sys/TypeDemangler.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../dc/d42/_constants_8hh.html">celeritas/Constants.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../de/d40/_quantities_8hh.html">celeritas/Quantities.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d7/d90/_particle_params_8hh.html">celeritas/phys/ParticleParams.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d1/d04/_primary_8hh.html">celeritas/phys/Primary.hh</a>&quot;</code><br />
-</div></div><!-- contents -->
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:af03333948ef8e33948277ad95da7704d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/_event_reader_8cc.html#af03333948ef8e33948277ad95da7704d">celeritas::set_hepmc3_verbosity_from_env</a> ()</td></tr>
+<tr class="memdesc:af03333948ef8e33948277ad95da7704d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set HepMC3 verbosity from the environment.  <a href="../../d8/d31/_event_reader_8cc.html#af03333948ef8e33948277ad95da7704d">More...</a><br /></td></tr>
+<tr class="separator:af03333948ef8e33948277ad95da7704d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26fe72375ecfd9e5eadd917748eb54e6"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; HepMC3::Reader &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/_event_reader_8cc.html#a26fe72375ecfd9e5eadd917748eb54e6">celeritas::open_hepmc3</a> (std::string const &amp;filename)</td></tr>
+<tr class="memdesc:a26fe72375ecfd9e5eadd917748eb54e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper function for HepMC3::deduce_reader to avoid duplicate symbols.  <a href="../../d8/d31/_event_reader_8cc.html#a26fe72375ecfd9e5eadd917748eb54e6">More...</a><br /></td></tr>
+<tr class="separator:a26fe72375ecfd9e5eadd917748eb54e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a26fe72375ecfd9e5eadd917748eb54e6" name="a26fe72375ecfd9e5eadd917748eb54e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26fe72375ecfd9e5eadd917748eb54e6">&#9670;&#160;</a></span>open_hepmc3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; HepMC3::Reader &gt; celeritas::open_hepmc3 </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wrapper function for HepMC3::deduce_reader to avoid duplicate symbols. </p>
+<p >HepMC3 through 3.2.6 has a ReaderFactory.h that includes function <em>definitions</em> without <code>inline</code> keywords, leading to duplicate symbols. Reusing this function rather than including ReaderFactory multiple times in Celeritas is the easiest way to work around the problem.</p>
+<p >It also sets the debug level from the environment, prints a status message,and validates the file. </p>
+
+</div>
+</div>
+<a id="af03333948ef8e33948277ad95da7704d" name="af03333948ef8e33948277ad95da7704d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af03333948ef8e33948277ad95da7704d">&#9670;&#160;</a></span>set_hepmc3_verbosity_from_env()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void celeritas::set_hepmc3_verbosity_from_env </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set HepMC3 verbosity from the environment. </p>
+<p >The default debug level is 5. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5

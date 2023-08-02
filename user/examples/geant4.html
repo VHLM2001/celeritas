@@ -4,17 +4,15 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Minimal Geant4 integration &mdash; Celeritas 0.3.0-rc.1 documentation</title>
+  <title>Minimal Geant4 integration &mdash; Celeritas 0.3.1-rc.1.1+16ced01c2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -37,7 +35,7 @@
               <img src="../_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-rc.1
+                0.3.2-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -138,195 +136,195 @@ integrate into Geant4 application’s UserActions.</p>
 the <a class="reference internal" href="../usage.html#celer-g4"><span class="std std-ref">Integrated Geant4 application (celer-g4)</span></a> app. Its use of global variables rather than shared
 pointers is easier to implement but may be more problematic with experiment
 frameworks or other apps that use a task-based runner.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iterator&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;type_traits&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;FTFP_BERT.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Box.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Electron.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Gamma.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4LogicalVolume.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Material.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4PVPlacement.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4ParticleDefinition.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4ParticleGun.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4ParticleTable.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Positron.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4RunManagerFactory.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4SystemOfUnits.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Threading.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4ThreeVector.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Track.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4TrackStatus.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Types.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4UserEventAction.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4UserRunAction.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4UserTrackingAction.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4VUserActionInitialization.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4VUserDetectorConstruction.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4VUserPrimaryGeneratorAction.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/AlongStepFactory.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/LocalTransporter.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/SetupOptions.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/SharedParams.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/SimpleOffload.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;corecel/Macros.hh&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;corecel/io/Logger.hh&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iterator&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;type_traits&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;FTFP_BERT.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Box.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Electron.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Gamma.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4LogicalVolume.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Material.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4PVPlacement.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4ParticleDefinition.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4ParticleGun.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4ParticleTable.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Positron.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4RunManagerFactory.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4SystemOfUnits.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Threading.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4ThreeVector.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Track.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4TrackStatus.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Types.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4UserEventAction.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4UserRunAction.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4UserTrackingAction.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4VUserActionInitialization.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4VUserDetectorConstruction.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4VUserPrimaryGeneratorAction.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/AlongStepFactory.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/LocalTransporter.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/SetupOptions.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/SharedParams.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/SimpleOffload.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;corecel/Macros.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;corecel/io/Logger.hh&gt;</span>
 
-<span class="k">namespace</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span>
+<span class="p">{</span>
 <span class="c1">//---------------------------------------------------------------------------//</span>
 <span class="c1">// Global shared setup options</span>
-<span class="n">celeritas</span><span class="o">::</span><span class="n">SetupOptions</span><span class="w"> </span><span class="n">setup_options</span><span class="p">;</span><span class="w"></span>
+<span class="n">celeritas</span><span class="o">::</span><span class="n">SetupOptions</span><span class="w"> </span><span class="n">setup_options</span><span class="p">;</span>
 <span class="c1">// Shared data and GPU setup</span>
-<span class="n">celeritas</span><span class="o">::</span><span class="n">SharedParams</span><span class="w"> </span><span class="n">shared_params</span><span class="p">;</span><span class="w"></span>
+<span class="n">celeritas</span><span class="o">::</span><span class="n">SharedParams</span><span class="w"> </span><span class="n">shared_params</span><span class="p">;</span>
 <span class="c1">// Thread-local transporter</span>
-<span class="n">G4ThreadLocal</span><span class="w"> </span><span class="n">celeritas</span><span class="o">::</span><span class="n">LocalTransporter</span><span class="w"> </span><span class="n">local_transporter</span><span class="p">;</span><span class="w"></span>
+<span class="n">G4ThreadLocal</span><span class="w"> </span><span class="n">celeritas</span><span class="o">::</span><span class="n">LocalTransporter</span><span class="w"> </span><span class="n">local_transporter</span><span class="p">;</span>
 
 <span class="c1">// Simple interface to running celeritas</span>
-<span class="n">G4ThreadLocal</span><span class="w"> </span><span class="n">celeritas</span><span class="o">::</span><span class="n">SimpleOffload</span><span class="w"> </span><span class="n">simple_offload</span><span class="p">;</span><span class="w"></span>
+<span class="n">G4ThreadLocal</span><span class="w"> </span><span class="n">celeritas</span><span class="o">::</span><span class="n">SimpleOffload</span><span class="w"> </span><span class="n">simple_offload</span><span class="p">;</span>
 
 <span class="c1">//---------------------------------------------------------------------------//</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">DetectorConstruction</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4VUserDetectorConstruction</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">DetectorConstruction</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">aluminum_</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="n">G4Material</span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="s">&quot;Aluminium&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">13.</span><span class="p">,</span><span class="w"> </span><span class="mf">26.98</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">mole</span><span class="p">,</span><span class="w"> </span><span class="mf">2.700</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">cm3</span><span class="p">}}</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">setup_options</span><span class="p">.</span><span class="n">make_along_step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">celeritas</span><span class="o">::</span><span class="n">UniformAlongStepFactory</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DetectorConstruction</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4VUserDetectorConstruction</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">DetectorConstruction</span><span class="p">()</span>
+<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">aluminum_</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="n">G4Material</span><span class="p">{</span>
+<span class="w">            </span><span class="s">&quot;Aluminium&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">13.</span><span class="p">,</span><span class="w"> </span><span class="mf">26.98</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">mole</span><span class="p">,</span><span class="w"> </span><span class="mf">2.700</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">cm3</span><span class="p">}}</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">setup_options</span><span class="p">.</span><span class="n">make_along_step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">celeritas</span><span class="o">::</span><span class="n">UniformAlongStepFactory</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">G4VPhysicalVolume</span><span class="o">*</span><span class="w"> </span><span class="n">Construct</span><span class="p">()</span><span class="w"> </span><span class="k">final</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Setting up detector&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">G4Box</span><span class="p">(</span><span class="s">&quot;world&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cm</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cm</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cm</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">lv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">G4LogicalVolume</span><span class="p">(</span><span class="n">box</span><span class="p">,</span><span class="w"> </span><span class="n">aluminum_</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">pv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">G4PVPlacement</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">G4ThreeVector</span><span class="p">{},</span><span class="w"> </span><span class="n">lv</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pv</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">G4VPhysicalVolume</span><span class="o">*</span><span class="w"> </span><span class="n">Construct</span><span class="p">()</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Setting up detector&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">G4Box</span><span class="p">(</span><span class="s">&quot;world&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cm</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cm</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cm</span><span class="p">);</span>
+<span class="w">        </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">lv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">G4LogicalVolume</span><span class="p">(</span><span class="n">box</span><span class="p">,</span><span class="w"> </span><span class="n">aluminum_</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">pv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">G4PVPlacement</span><span class="p">(</span>
+<span class="w">            </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">G4ThreeVector</span><span class="p">{},</span><span class="w"> </span><span class="n">lv</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pv</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">ConstructSDandField</span><span class="p">()</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">ConstructSDandField</span><span class="p">()</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="p">{}</span>
 
-<span class="w">  </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">G4Material</span><span class="o">*</span><span class="w"> </span><span class="n">aluminum_</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">G4Material</span><span class="o">*</span><span class="w"> </span><span class="n">aluminum_</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="c1">//---------------------------------------------------------------------------//</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">PrimaryGeneratorAction</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4VUserPrimaryGeneratorAction</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">PrimaryGeneratorAction</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">g4particle_def</span><span class="w"></span>
-<span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="n">G4ParticleTable</span><span class="o">::</span><span class="n">GetParticleTable</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">FindParticle</span><span class="p">(</span><span class="mi">2112</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">gun_</span><span class="p">.</span><span class="n">SetParticleDefinition</span><span class="p">(</span><span class="n">g4particle_def</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">gun_</span><span class="p">.</span><span class="n">SetParticleEnergy</span><span class="p">(</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">GeV</span><span class="p">);</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PrimaryGeneratorAction</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4VUserPrimaryGeneratorAction</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">PrimaryGeneratorAction</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">g4particle_def</span>
+<span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="n">G4ParticleTable</span><span class="o">::</span><span class="n">GetParticleTable</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">FindParticle</span><span class="p">(</span><span class="mi">2112</span><span class="p">);</span>
+<span class="w">        </span><span class="n">gun_</span><span class="p">.</span><span class="n">SetParticleDefinition</span><span class="p">(</span><span class="n">g4particle_def</span><span class="p">);</span>
+<span class="w">        </span><span class="n">gun_</span><span class="p">.</span><span class="n">SetParticleEnergy</span><span class="p">(</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">GeV</span><span class="p">);</span>
 <span class="w">        </span><span class="n">gun_</span><span class="p">.</span><span class="n">SetParticlePosition</span><span class="p">(</span><span class="n">G4ThreeVector</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">});</span><span class="w">  </span><span class="c1">// origin</span>
 <span class="w">        </span><span class="n">gun_</span><span class="p">.</span><span class="n">SetParticleMomentumDirection</span><span class="p">(</span><span class="n">G4ThreeVector</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">});</span><span class="w">  </span><span class="c1">// +x</span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="c1">// Generate 100 GeV neutrons</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">GeneratePrimaries</span><span class="p">(</span><span class="n">G4Event</span><span class="o">*</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="k">final</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Generating primaries&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">gun_</span><span class="p">.</span><span class="n">GeneratePrimaryVertex</span><span class="p">(</span><span class="n">event</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">GeneratePrimaries</span><span class="p">(</span><span class="n">G4Event</span><span class="o">*</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Generating primaries&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">gun_</span><span class="p">.</span><span class="n">GeneratePrimaryVertex</span><span class="p">(</span><span class="n">event</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">  </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">G4ParticleGun</span><span class="w"> </span><span class="n">gun_</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-<span class="c1">//---------------------------------------------------------------------------//</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">RunAction</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4UserRunAction</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">BeginOfRunAction</span><span class="p">(</span><span class="n">G4Run</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">run</span><span class="p">)</span><span class="w"> </span><span class="k">final</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">BeginOfRunAction</span><span class="p">(</span><span class="n">run</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">EndOfRunAction</span><span class="p">(</span><span class="n">G4Run</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">run</span><span class="p">)</span><span class="w"> </span><span class="k">final</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">EndOfRunAction</span><span class="p">(</span><span class="n">run</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">G4ParticleGun</span><span class="w"> </span><span class="n">gun_</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="c1">//---------------------------------------------------------------------------//</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">EventAction</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4UserEventAction</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">BeginOfEventAction</span><span class="p">(</span><span class="n">G4Event</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="k">final</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">BeginOfEventAction</span><span class="p">(</span><span class="n">event</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">EndOfEventAction</span><span class="p">(</span><span class="n">G4Event</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="k">final</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">EndOfEventAction</span><span class="p">(</span><span class="n">event</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-<span class="c1">//---------------------------------------------------------------------------//</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">TrackingAction</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4UserTrackingAction</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">PreUserTrackingAction</span><span class="p">(</span><span class="n">G4Track</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">track</span><span class="p">)</span><span class="w"> </span><span class="k">final</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">PreUserTrackingAction</span><span class="p">(</span><span class="k">const_cast</span><span class="o">&lt;</span><span class="n">G4Track</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">track</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RunAction</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4UserRunAction</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">BeginOfRunAction</span><span class="p">(</span><span class="n">G4Run</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">run</span><span class="p">)</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">BeginOfRunAction</span><span class="p">(</span><span class="n">run</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">EndOfRunAction</span><span class="p">(</span><span class="n">G4Run</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">run</span><span class="p">)</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">EndOfRunAction</span><span class="p">(</span><span class="n">run</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
 
 <span class="c1">//---------------------------------------------------------------------------//</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">ActionInitialization</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4VUserActionInitialization</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">BuildForMaster</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">final</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">BuildForMaster</span><span class="p">(</span><span class="o">&amp;</span><span class="n">setup_options</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">shared_params</span><span class="p">);</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">EventAction</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4UserEventAction</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">BeginOfEventAction</span><span class="p">(</span><span class="n">G4Event</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">BeginOfEventAction</span><span class="p">(</span><span class="n">event</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Constructing user actions&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">EndOfEventAction</span><span class="p">(</span><span class="n">G4Event</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">EndOfEventAction</span><span class="p">(</span><span class="n">event</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
 
-<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">SetUserAction</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">RunAction</span><span class="p">{});</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">Build</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">final</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">Build</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="o">&amp;</span><span class="n">setup_options</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">shared_params</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">local_transporter</span><span class="p">);</span><span class="w"></span>
+<span class="c1">//---------------------------------------------------------------------------//</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TrackingAction</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4UserTrackingAction</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">PreUserTrackingAction</span><span class="p">(</span><span class="n">G4Track</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">track</span><span class="p">)</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">PreUserTrackingAction</span><span class="p">(</span><span class="k">const_cast</span><span class="o">&lt;</span><span class="n">G4Track</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">track</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
 
-<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Constructing user actions&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">//---------------------------------------------------------------------------//</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ActionInitialization</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4VUserActionInitialization</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">BuildForMaster</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">BuildForMaster</span><span class="p">(</span><span class="o">&amp;</span><span class="n">setup_options</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">shared_params</span><span class="p">);</span>
 
-<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">SetUserAction</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PrimaryGeneratorAction</span><span class="p">{});</span><span class="w"></span>
-<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">SetUserAction</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">RunAction</span><span class="p">{});</span><span class="w"></span>
-<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">SetUserAction</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">EventAction</span><span class="p">{});</span><span class="w"></span>
-<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">SetUserAction</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">TrackingAction</span><span class="p">{});</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Constructing user actions&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">SetUserAction</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">RunAction</span><span class="p">{});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">Build</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">Build</span><span class="p">(</span>
+<span class="w">            </span><span class="o">&amp;</span><span class="n">setup_options</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">shared_params</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">local_transporter</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Constructing user actions&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">SetUserAction</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PrimaryGeneratorAction</span><span class="p">{});</span>
+<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">SetUserAction</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">RunAction</span><span class="p">{});</span>
+<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">SetUserAction</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">EventAction</span><span class="p">{});</span>
+<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">SetUserAction</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">TrackingAction</span><span class="p">{});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
 
 <span class="c1">//---------------------------------------------------------------------------//</span>
 <span class="p">}</span><span class="w">  </span><span class="c1">// namespace</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">G4RunManager</span><span class="o">&gt;</span><span class="w"> </span><span class="n">run_manager</span><span class="p">{</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">G4RunManager</span><span class="o">&gt;</span><span class="w"> </span><span class="n">run_manager</span><span class="p">{</span>
 <span class="w">        </span><span class="n">G4RunManagerFactory</span><span class="o">::</span><span class="n">CreateRunManager</span><span class="p">()};</span><span class="w">  </span><span class="c1">// G4RunManagerType::SerialOnly)};</span>
 
-<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">SetUserInitialization</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">DetectorConstruction</span><span class="p">{});</span><span class="w"></span>
-<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">SetUserInitialization</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FTFP_BERT</span><span class="p">{</span><span class="cm">/* verbosity = */</span><span class="w"> </span><span class="mi">0</span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">SetUserInitialization</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ActionInitialization</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">SetUserInitialization</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">DetectorConstruction</span><span class="p">{});</span>
+<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">SetUserInitialization</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FTFP_BERT</span><span class="p">{</span><span class="cm">/* verbosity = */</span><span class="w"> </span><span class="mi">0</span><span class="p">});</span>
+<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">SetUserInitialization</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ActionInitialization</span><span class="p">());</span>
 
 <span class="w">    </span><span class="c1">// NOTE: these numbers are appropriate for CPU execution</span>
-<span class="w">    </span><span class="n">setup_options</span><span class="p">.</span><span class="n">max_num_tracks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">setup_options</span><span class="p">.</span><span class="n">initializer_capacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">setup_options</span><span class="p">.</span><span class="n">max_num_tracks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span>
+<span class="w">    </span><span class="n">setup_options</span><span class="p">.</span><span class="n">initializer_capacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span>
 <span class="w">    </span><span class="c1">// This parameter will eventually be removed</span>
-<span class="w">    </span><span class="n">setup_options</span><span class="p">.</span><span class="n">max_num_events</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">setup_options</span><span class="p">.</span><span class="n">max_num_events</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span>
 <span class="w">    </span><span class="c1">// Celeritas does not support EmStandard MSC physics above 100 MeV</span>
-<span class="w">    </span><span class="n">setup_options</span><span class="p">.</span><span class="n">ignore_processes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;CoulombScat&quot;</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="n">setup_options</span><span class="p">.</span><span class="n">ignore_processes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;CoulombScat&quot;</span><span class="p">};</span>
 
-<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">Initialize</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">BeamOn</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">Initialize</span><span class="p">();</span>
+<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">BeamOn</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>

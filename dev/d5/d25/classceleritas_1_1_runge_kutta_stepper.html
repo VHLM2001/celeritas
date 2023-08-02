@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.1-rc.1.1+16ced01c2</span>
    </div>
   </td>
  </tr>
@@ -139,19 +139,19 @@ template&lt;class E &gt; </div>
 
 <p>Adaptive step size control. </p>
 <p >For a magnetic field equation <em>f</em> along a charged particle trajectory with state <em>y</em>, which includes position and momentum but may also include time and spin. For N-variables (<em>i</em> = 1, ... N), the right hand side of the equation  </p><p class="formulaDsp">
-<picture><source srcset="../../form_132_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<picture><source srcset="../../form_130_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
  \frac{\dif y_{i}}{\dif s} = f_i (s, y_{i})
-\]" src="../../form_132.png" width="80" height="28"/></picture>
+\]" src="../../form_130.png" width="80" height="28"/></picture>
 </p>
 <p> and the fouth order Runge-Kutta solution for a given step size, <em>h</em> is  </p><p class="formulaDsp">
-<picture><source srcset="../../form_133_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<picture><source srcset="../../form_131_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
  y_{n+1} - y_{n} = h f(x_n, y_n) = \frac{h}{6} (k_1 + 2 k_2 + 2 k_3 + k_4)
-\]" src="../../form_133.png" width="270" height="28"/></picture>
+\]" src="../../form_131.png" width="270" height="28"/></picture>
 </p>
 <p> which is the average slope at four different points, The truncation error is the difference of the final states of one full step (<em>y1</em>) and two half steps (<em>y2</em>)  </p><p class="formulaDsp">
-<picture><source srcset="../../form_134_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+<picture><source srcset="../../form_132_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
  \Delta = y_2 - y_1, y(x+h) = y_2 + \frac{\Delta}{15} + \mathrm{O}(h^{6})
-\]" src="../../form_134.png" width="223" height="28"/></picture>
+\]" src="../../form_132.png" width="223" height="28"/></picture>
 </p>
  
 </div>

@@ -4,17 +4,15 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Using Celeritas &mdash; Celeritas 0.3.0-rc.1 documentation</title>
+  <title>Using Celeritas &mdash; Celeritas 0.3.1-rc.1.1+16ced01c2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -37,7 +35,7 @@
               <img src="_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-rc.1
+                0.3.2-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -133,13 +131,48 @@ CMake. It should require a single line to initialize:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>target_link_libraries(mycode PUBLIC Celeritas::celeritas)
 </pre></div>
 </div>
-<p>Because of complexities involving CUDA Relocatable Device Code, linking when
-using both CUDA and VecGeom requires an additional include and the replacement
-of <code class="docutils literal notranslate"><span class="pre">target_link_libraries</span></code> with a customized version:</p>
+<p>Because of complexities involving CUDA Relocatable Device Code, consuming
+Celeritas with CUDA and VecGeom support requires an additional include and the
+use of wrappers around CMake’s target commands:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>include(CeleritasLibrary)
+celeritas_add_executable(mycode ...)
 celeritas_target_link_libraries(mycode PUBLIC Celeritas::celeritas)
 </pre></div>
 </div>
+<p>As the <code class="docutils literal notranslate"><span class="pre">celeritas_...</span></code> functions decay to the wrapped CMake commands if CUDA
+and VecGeom you can use them to safely build and link nearly all targets
+consuming Celeritas in your project. This provides tracking of the appropriate
+sequence of linking for the final application whether it uses CUDA code or not,
+and whether Celeritas is CPU-only or CUDA enabled:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>celeritas_add_library(myconsumer SHARED ...)
+celeritas_target_link_libraries(myconsumer PUBLIC Celeritas::celeritas)
+
+celeritas_add_executable(myapplication ...)
+celeritas_target_link_libraries(myapplication PRIVATE myconsumer)
+</pre></div>
+</div>
+<p>If your project builds shared libraries that are intended to be loaded at application
+runtime (e.g. via <code class="docutils literal notranslate"><span class="pre">dlopen</span></code>), you should prefer use the the CMake <code class="docutils literal notranslate"><span class="pre">MODULE</span></code> target type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>celeritas_add_library(myplugin MODULE ...)
+celeritas_target_link_libraries(myplugin PRIVATE Celeritas::celeritas)
+</pre></div>
+</div>
+<p>This is recommended as <code class="docutils literal notranslate"><span class="pre">celeritas_target_link_libraries</span></code> understands these as
+a final target for which all device symbols require resolving. If you are
+forced to use the <code class="docutils literal notranslate"><span class="pre">SHARED</span></code> target type for plugin libraries (e.g. via your
+project’s own wrapper functions), then these should be declared with the CMake
+or project-specific commands with linking to both the primary Celeritas target
+and its device code counterpart:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>add_library(mybadplugin SHARED ...)
+# ... or myproject_add_library(mybadplugin ...)
+target_link_libraries(mybadplugin PRIVATE Celeritas::celeritas $&lt;TARGET_NAME_IF_EXISTS:Celeritas::celeritas_final&gt;)
+# ... or otherwise declare the plugin as requiring linking to the two targets
+</pre></div>
+</div>
+<p>Celeritas device code counterpart target names are always the name of the
+primary target appended with <code class="docutils literal notranslate"><span class="pre">_final</span></code>. They are only present if Celeritas was
+built with CUDA support so it is recommended to use the CMake generator
+expression above to support CUDA or CPU-only builds transparently.</p>
 <p>The <a class="reference internal" href="examples/minimal.html#example-minimal"><span class="std std-ref">Minimal Celeritas usage</span></a> example demonstrates how to use Celeritas as a
 library with a short standalone CMake project.</p>
 </section>
@@ -309,35 +342,47 @@ tell what variables are in use or may be useful.</p>
 <td><p>corecel</p></td>
 <td><p>Disable MPI support</p></td>
 </tr>
-<tr class="row-odd"><td><p>CELER_LOG</p></td>
+<tr class="row-odd"><td><p>CELER_ENABLE_PROFILING</p></td>
+<td><p>corecel</p></td>
+<td><p>Set up NVTX profiling ranges</p></td>
+</tr>
+<tr class="row-even"><td><p>CELER_LOG</p></td>
 <td><p>corecel</p></td>
 <td><p>Set the “global” logger verbosity</p></td>
 </tr>
-<tr class="row-even"><td><p>CELER_LOG_LOCAL</p></td>
+<tr class="row-odd"><td><p>CELER_LOG_LOCAL</p></td>
 <td><p>corecel</p></td>
 <td><p>Set the “local” logger verbosity</p></td>
 </tr>
-<tr class="row-odd"><td><p>CELER_PROFILE_DEVICE</p></td>
+<tr class="row-even"><td><p>CELER_PROFILE_DEVICE</p></td>
 <td><p>corecel</p></td>
 <td><p>Record extra kernel launch information</p></td>
-</tr>
-<tr class="row-even"><td><p>CUDA_STACK_SIZE</p></td>
-<td><p>celeritas</p></td>
-<td><p>Change <code class="docutils literal notranslate"><span class="pre">cudaLimitStackSize</span></code> for VecGeom</p></td>
 </tr>
 <tr class="row-odd"><td><p>CUDA_HEAP_SIZE</p></td>
 <td><p>celeritas</p></td>
 <td><p>Change <code class="docutils literal notranslate"><span class="pre">cudaLimitMallocHeapSize</span></code> (VG)</p></td>
 </tr>
-<tr class="row-even"><td><p>G4VG_COMPARE_VOLUMES</p></td>
+<tr class="row-even"><td><p>CUDA_STACK_SIZE</p></td>
+<td><p>celeritas</p></td>
+<td><p>Change <code class="docutils literal notranslate"><span class="pre">cudaLimitStackSize</span></code> for VecGeom</p></td>
+</tr>
+<tr class="row-odd"><td><p>G4VG_COMPARE_VOLUMES</p></td>
 <td><p>celeritas</p></td>
 <td><p>Check G4VG volume capacity when converting</p></td>
 </tr>
-<tr class="row-odd"><td><p>CELER_DISABLE</p></td>
+<tr class="row-even"><td><p>HEPMC3_VERBOSE</p></td>
+<td><p>celeritas</p></td>
+<td><p>HepMC3 debug verbosity</p></td>
+</tr>
+<tr class="row-odd"><td><p>VECGEOM_VERBOSE</p></td>
+<td><p>celeritas</p></td>
+<td><p>VecGeom CUDA verbosity</p></td>
+</tr>
+<tr class="row-even"><td><p>CELER_DISABLE</p></td>
 <td><p>accel</p></td>
 <td><p>Disable Celeritas offloading entirely</p></td>
 </tr>
-<tr class="row-even"><td><p>CELER_STRIP_SOURCEDIR</p></td>
+<tr class="row-odd"><td><p>CELER_STRIP_SOURCEDIR</p></td>
 <td><p>accel</p></td>
 <td><p>Strip directories from exception output</p></td>
 </tr>

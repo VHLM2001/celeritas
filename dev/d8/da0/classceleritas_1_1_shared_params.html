@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.1-rc.1.1+16ced01c2</span>
    </div>
   </td>
  </tr>
@@ -92,9 +92,6 @@ Public Types</h2></td></tr>
 <tr class="memitem:ad4a79dac7799b7b9d29bc7bed05d769f"><td class="memItemLeft" align="right" valign="top"><a id="ad4a79dac7799b7b9d29bc7bed05d769f" name="ad4a79dac7799b7b9d29bc7bed05d769f"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>SPConstParams</b> = std::shared_ptr&lt; <a class="el" href="../../de/d76/classceleritas_1_1_core_params.html">CoreParams</a> const  &gt;</td></tr>
 <tr class="separator:ad4a79dac7799b7b9d29bc7bed05d769f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac2438c355b4dc01880da331e525aed3"><td class="memItemLeft" align="right" valign="top"><a id="aac2438c355b4dc01880da331e525aed3" name="aac2438c355b4dc01880da331e525aed3"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>SPHitManager</b> = std::shared_ptr&lt; <a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html">detail::HitManager</a> &gt;</td></tr>
-<tr class="separator:aac2438c355b4dc01880da331e525aed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad17fb372e6d63bbf548dba8b7db66bb0"><td class="memItemLeft" align="right" valign="top"><a id="ad17fb372e6d63bbf548dba8b7db66bb0" name="ad17fb372e6d63bbf548dba8b7db66bb0"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>VecG4ParticleDef</b> = std::vector&lt; G4ParticleDefinition const  * &gt;</td></tr>
 <tr class="separator:ad17fb372e6d63bbf548dba8b7db66bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -112,11 +109,24 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>operator bool</b> () const</td></tr>
 <tr class="memdesc:aa7bfe6c0dd81faa8f7cf167184d7c34e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this instance is initialized. <br /></td></tr>
 <tr class="separator:aa7bfe6c0dd81faa8f7cf167184d7c34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Internal use only</div></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Internal use only</h2></td></tr>
+<tr class="memitem:aac2438c355b4dc01880da331e525aed3"><td class="memItemLeft" align="right" valign="top"><a id="aac2438c355b4dc01880da331e525aed3" name="aac2438c355b4dc01880da331e525aed3"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>SPHitManager</b> = std::shared_ptr&lt; <a class="el" href="../../d9/d84/classceleritas_1_1detail_1_1_hit_manager.html">detail::HitManager</a> &gt;</td></tr>
+<tr class="memdesc:aac2438c355b4dc01880da331e525aed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hit manager, to be used only by <a class="el" href="../../d2/d13/classceleritas_1_1_local_transporter.html" title="Manage offloading of tracks to Celeritas.">LocalTransporter</a>. <br /></td></tr>
+<tr class="separator:aac2438c355b4dc01880da331e525aed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace3865257b1a3cc67870105caf9aeff2"><td class="memItemLeft" align="right" valign="top"><a id="ace3865257b1a3cc67870105caf9aeff2" name="ace3865257b1a3cc67870105caf9aeff2"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>SPOffloadWriter</b> = std::shared_ptr&lt; <a class="el" href="../../dd/d0d/classceleritas_1_1detail_1_1_offload_writer.html">detail::OffloadWriter</a> &gt;</td></tr>
+<tr class="memdesc:ace3865257b1a3cc67870105caf9aeff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hit manager, to be used only by <a class="el" href="../../d2/d13/classceleritas_1_1_local_transporter.html" title="Manage offloading of tracks to Celeritas.">LocalTransporter</a>. <br /></td></tr>
+<tr class="separator:ace3865257b1a3cc67870105caf9aeff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a551acaad3c398e4f0fe6f8d298ec6340"><td class="memItemLeft" align="right" valign="top"><a id="a551acaad3c398e4f0fe6f8d298ec6340" name="a551acaad3c398e4f0fe6f8d298ec6340"></a>
-SPHitManager const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>hit_manager</b> () const</td></tr>
+<a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html#aac2438c355b4dc01880da331e525aed3">SPHitManager</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>hit_manager</b> () const</td></tr>
 <tr class="memdesc:a551acaad3c398e4f0fe6f8d298ec6340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hit manager, to be used only by <a class="el" href="../../d2/d13/classceleritas_1_1_local_transporter.html" title="Manage offloading of tracks to Celeritas.">LocalTransporter</a>. <br /></td></tr>
 <tr class="separator:a551acaad3c398e4f0fe6f8d298ec6340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf522e96c33e9f2e9b23776ff336f8b9"><td class="memItemLeft" align="right" valign="top"><a id="acf522e96c33e9f2e9b23776ff336f8b9" name="acf522e96c33e9f2e9b23776ff336f8b9"></a>
+<a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html#ace3865257b1a3cc67870105caf9aeff2">SPOffloadWriter</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>offload_writer</b> () const</td></tr>
+<tr class="memdesc:acf522e96c33e9f2e9b23776ff336f8b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional offload writer, only for use by <a class="el" href="../../d2/d13/classceleritas_1_1_local_transporter.html" title="Manage offloading of tracks to Celeritas.">LocalTransporter</a>. <br /></td></tr>
+<tr class="separator:acf522e96c33e9f2e9b23776ff336f8b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Construction</h2></td></tr>
 <tr class="memitem:a505bbc17eb3683de90121c7a6c2f1545"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html#a505bbc17eb3683de90121c7a6c2f1545">SharedParams</a> ()=default</td></tr>

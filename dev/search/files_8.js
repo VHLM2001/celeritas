@@ -36,6 +36,7 @@ var searchData=
   ['interpolator_2ehh_33',['Interpolator.hh',['../d5/df8/_interpolator_8hh.html',1,'']]],
   ['interpolatortraits_2ehh_34',['InterpolatorTraits.hh',['../d3/d3a/_interpolator_traits_8hh.html',1,'']]],
   ['inverserangecalculator_2ehh_35',['InverseRangeCalculator.hh',['../dc/dd2/_inverse_range_calculator_8hh.html',1,'']]],
-  ['isotopeview_2ehh_36',['IsotopeView.hh',['../de/d9a/_isotope_view_8hh.html',1,'']]],
-  ['isotropicdistribution_2ehh_37',['IsotropicDistribution.hh',['../d6/d6a/_isotropic_distribution_8hh.html',1,'']]]
+  ['isotopeselector_2ehh_36',['IsotopeSelector.hh',['../d8/da6/_isotope_selector_8hh.html',1,'']]],
+  ['isotopeview_2ehh_37',['IsotopeView.hh',['../de/d9a/_isotope_view_8hh.html',1,'']]],
+  ['isotropicdistribution_2ehh_38',['IsotropicDistribution.hh',['../d6/d6a/_isotropic_distribution_8hh.html',1,'']]]
 ];

@@ -4,17 +4,15 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; Celeritas 0.3.0-rc.1 documentation</title>
+  <title>Installation &mdash; Celeritas 0.3.1-rc.1.1+16ced01c2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -37,7 +35,7 @@
               <img src="_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-rc.1
+                0.3.2-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -226,65 +224,71 @@ the command <code class="docutils literal notranslate"><span class="pre">spack</
 <li><p>Install all the dependencies with <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">-e</span> <span class="pre">celeritas</span> <span class="pre">install</span></code>.</p></li>
 </ul>
 <p>The current Spack environment for full-featured development is:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">spack</span><span class="p">:</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">spack</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">specs</span><span class="p">:</span><span class="w"> </span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cmake</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doxygen</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;geant4@11:11.0</span><span class="nv"> </span><span class="s">cxxstd=17&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git-lfs</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;googletest@1.10:&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hepmc3</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ninja</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nlohmann-json</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mpi</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;python@3.6:&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">py-breathe</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">py-sphinx</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">py-sphinx-rtd-theme</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">py-sphinxcontrib-bibtex</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;root@6.24:</span><span class="nv"> </span><span class="s">cxxstd=17&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;swig@4.1:&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;vecgeom@1.2:</span><span class="nv"> </span><span class="s">+gdml</span><span class="nv"> </span><span class="s">cxxstd=17&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="nt">view</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="w">  </span><span class="nt">concretizer</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">unify</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="w">  </span><span class="nt">packages</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">root</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="c1"># Note: ~gsl and ~math are removed because dd4hep requires them</span><span class="w"></span>
-<span class="w">      </span><span class="nt">variants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~aqua ~davix ~examples ~opengl ~x ~tbb</span><span class="w"></span>
-<span class="w">    </span><span class="nt">all</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">providers</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">blas</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">openblas</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">        </span><span class="nt">lapack</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">openblas</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">        </span><span class="nt">mpi</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">openmpi</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">      </span><span class="nt">variants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cxxstd=17</span><span class="w"></span>
-<span class="w">      </span><span class="c1"># NOTE: add `+cuda cuda_arch=70` (or similar) to your site packages.py</span><span class="w"></span>
-<span class="w">      </span><span class="c1"># spack config add --scope=site packages:all:variants:&quot;+cuda cuda_arch=70&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cmake</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doxygen</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;geant4@11</span><span class="nv"> </span><span class="s">cxxstd=17&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git-lfs</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;googletest@1.10:&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hepmc3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ninja</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nlohmann-json</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mpi</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;python@3.6:&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">py-breathe</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">py-sphinx</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">py-sphinx-rtd-theme</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">py-sphinxcontrib-bibtex</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;root@6.24:</span><span class="nv"> </span><span class="s">cxxstd=17&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;swig@4.1:&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;vecgeom@1.2.3:</span><span class="nv"> </span><span class="s">+gdml</span><span class="nv"> </span><span class="s">cxxstd=17&quot;</span>
+<span class="w">  </span><span class="nt">view</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">concretizer</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">unify</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">packages</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">root</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># Note: ~gsl and ~math are removed because dd4hep requires them</span>
+<span class="w">      </span><span class="nt">variants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~aqua ~davix ~examples ~opengl ~x ~tbb</span>
+<span class="w">    </span><span class="nt">all</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">providers</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">blas</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">openblas</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">lapack</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">openblas</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">mpi</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">openmpi</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">variants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cxxstd=17</span>
+<span class="w">      </span><span class="c1"># NOTE: add `+cuda cuda_arch=70` (or similar) to your site packages.py</span>
+<span class="w">      </span><span class="c1"># spack config add --scope=site packages:all:variants:&quot;+cuda cuda_arch=70&quot;</span>
 </pre></div>
 </div>
+<p>With this environment (with CUDA enabled), all Celeritas tests should be
+enabled and all should pass. Celeritas is build-compatible with older versions
+of some dependencies (e.g., <a class="reference external" href="mailto:Geant4&#37;&#52;&#48;10&#46;6">Geant4<span>&#64;</span>10<span>&#46;</span>6</a> and <a class="reference external" href="mailto:VecGeom&#37;&#52;&#48;1&#46;2&#46;2">VecGeom<span>&#64;</span>1<span>&#46;</span>2<span>&#46;</span>2</a>), but some tests may
+fail, indicating a change in behavior or a bug fix in that package.
+Specifically, older versions of VecGeom have shapes and configurations that are
+incompatible on GPU with new CMS detector descriptions.</p>
 </section>
 <section id="building-celeritas">
 <h2>Building Celeritas<a class="headerlink" href="#building-celeritas" title="Permalink to this heading"></a></h2>
 <p>Once the Celeritas Spack environment has been installed, set your shell’s environment
 variables (<code class="docutils literal notranslate"><span class="pre">PATH</span></code>, <code class="docutils literal notranslate"><span class="pre">CMAKE_PREFIX_PATH</span></code>, …) by activating it.</p>
 <p>To clone the latest development version of Celeritas:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git clone https://github.com/celeritas-project/celeritas.git
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/celeritas-project/celeritas.git
 </pre></div>
 </div>
 <p>or download it from the GitHub-generated <a class="reference external" href="https://github.com/celeritas-project/celeritas/archive/refs/heads/develop.zip">zip file</a>.</p>
 <p>, you can configure, build, and test using the provided helper script:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> celeritas
-<span class="gp">$ </span>spack env activate celeritas
-<span class="gp">$ </span>./scripts/build.sh base
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>celeritas
+<span class="gp">$ </span>spack<span class="w"> </span>env<span class="w"> </span>activate<span class="w"> </span>celeritas
+<span class="gp">$ </span>./scripts/build.sh<span class="w"> </span>base
 </pre></div>
 </div>
 <p>or manually with:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> celeritas
-<span class="gp">$ </span>spack env activate celeritas
-<span class="gp">$ </span>mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
-<span class="gp">$ </span>cmake ..
-<span class="gp">$ </span>make <span class="o">&amp;&amp;</span> ctest
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>celeritas
+<span class="gp">$ </span>spack<span class="w"> </span>env<span class="w"> </span>activate<span class="w"> </span>celeritas
+<span class="gp">$ </span>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+<span class="gp">$ </span>cmake<span class="w"> </span>..
+<span class="gp">$ </span>make<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>ctest
 </pre></div>
 </div>
 </section>
@@ -294,7 +298,7 @@ variables (<code class="docutils literal notranslate"><span class="pre">PATH</sp
 configure options (debug or release, VecGeom or ORANGE), you can use the
 CMake presets provided by Celeritas via the <code class="docutils literal notranslate"><span class="pre">CMakePresets.json</span></code> file for CMake
 3.21 and higher:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cmake --preset<span class="o">=</span>default
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cmake<span class="w"> </span>--preset<span class="o">=</span>default
 </pre></div>
 </div>
 <p>The three main options are “minimal”, “default”, and “full”, which all set

@@ -23,7 +23,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.0-27+9e2a4bf2d</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.3.1-rc.1.1+16ced01c2</span>
    </div>
   </td>
  </tr>
@@ -88,17 +88,10 @@ $(function() {
 
 <p><code>#include &lt;ScopedProfiling.hh&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader">Type aliases</div></td></tr>
-<tr class="memitem:af539723b00fb2778115109732d3353c9"><td class="memItemLeft" align="right" valign="top"><a id="af539723b00fb2778115109732d3353c9" name="af539723b00fb2778115109732d3353c9"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Input</b> = <a class="el" href="../../d3/d57/structceleritas_1_1_scoped_profiling_input.html">ScopedProfilingInput</a></td></tr>
-<tr class="separator:af539723b00fb2778115109732d3353c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a467dd2a9288e231161437b42eeb65609"><td class="memItemLeft" align="right" valign="top"><a id="a467dd2a9288e231161437b42eeb65609" name="a467dd2a9288e231161437b42eeb65609"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ScopedProfiling</b> (<a class="el" href="../../d3/d57/structceleritas_1_1_scoped_profiling_input.html">Input</a> input)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ScopedProfiling</b> (<a class="el" href="../../d2/dd3/classceleritas_1_1_scoped_profiling.html#af539723b00fb2778115109732d3353c9">Input</a> input)</td></tr>
 <tr class="memdesc:a467dd2a9288e231161437b42eeb65609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activate nvtx profiling with options. <br /></td></tr>
 <tr class="separator:a467dd2a9288e231161437b42eeb65609"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add66a3231cb12ce3e0c62a2c82bb4db4"><td class="memItemLeft" align="right" valign="top"><a id="add66a3231cb12ce3e0c62a2c82bb4db4" name="add66a3231cb12ce3e0c62a2c82bb4db4"></a>
@@ -115,12 +108,53 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aff8b8688fa6c39e7607d1face80809e6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd3/classceleritas_1_1_scoped_profiling.html#aff8b8688fa6c39e7607d1face80809e6">enable_profiling</a> ()</td></tr>
 <tr class="memdesc:aff8b8688fa6c39e7607d1face80809e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether profiling is enabled.  <a href="../../d2/dd3/classceleritas_1_1_scoped_profiling.html#aff8b8688fa6c39e7607d1face80809e6">More...</a><br /></td></tr>
 <tr class="separator:aff8b8688fa6c39e7607d1face80809e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Type aliases</h2></td></tr>
+<tr class="memitem:af539723b00fb2778115109732d3353c9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd3/classceleritas_1_1_scoped_profiling.html#af539723b00fb2778115109732d3353c9">Input</a> = <a class="el" href="../../d3/d57/structceleritas_1_1_scoped_profiling_input.html">ScopedProfilingInput</a></td></tr>
+<tr class="separator:af539723b00fb2778115109732d3353c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb8dd1b5c3d8150018a23f8d611eb61e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd3/classceleritas_1_1_scoped_profiling.html#afb8dd1b5c3d8150018a23f8d611eb61e">CELER_DELETE_COPY_MOVE</a> (<a class="el" href="../../d2/dd3/classceleritas_1_1_scoped_profiling.html">ScopedProfiling</a>)</td></tr>
+<tr class="separator:afb8dd1b5c3d8150018a23f8d611eb61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >RAII class for scoped profiling. </p>
 <p >Implementations should support multithreaded context where each thread have one or more alive instance of this class.</p>
 <p >This is useful for wrapping specific code fragment in a range for profiling, e.g. ignoring of VecGeom instantiation kernels, profiling a specific action or loop on the CPU. TODO: Template <a class="el" href="../../d2/dd3/classceleritas_1_1_scoped_profiling.html" title="RAII class for scoped profiling.">ScopedProfiling</a> over profiling backend if we need to add a new one </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="af539723b00fb2778115109732d3353c9" name="af539723b00fb2778115109732d3353c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af539723b00fb2778115109732d3353c9">&#9670;&#160;</a></span>Input</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/dd3/classceleritas_1_1_scoped_profiling.html#af539723b00fb2778115109732d3353c9">celeritas::ScopedProfiling::Input</a> =  <a class="el" href="../../d3/d57/structceleritas_1_1_scoped_profiling_input.html">ScopedProfilingInput</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Prevent copying and moving for RAII class </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="afb8dd1b5c3d8150018a23f8d611eb61e" name="afb8dd1b5c3d8150018a23f8d611eb61e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb8dd1b5c3d8150018a23f8d611eb61e">&#9670;&#160;</a></span>CELER_DELETE_COPY_MOVE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">celeritas::ScopedProfiling::CELER_DELETE_COPY_MOVE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/dd3/classceleritas_1_1_scoped_profiling.html">ScopedProfiling</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Prevent copying and moving for RAII class </p>
+
+</div>
+</div>
 <a id="aff8b8688fa6c39e7607d1face80809e6" name="aff8b8688fa6c39e7607d1face80809e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aff8b8688fa6c39e7607d1face80809e6">&#9670;&#160;</a></span>enable_profiling()</h2>
 

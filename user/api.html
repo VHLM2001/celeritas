@@ -4,17 +4,15 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Library API &mdash; Celeritas 0.3.0-rc.1 documentation</title>
+  <title>Library API &mdash; Celeritas 0.3.1-rc.1.1+16ced01c2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -37,7 +35,7 @@
               <img src="_static/celeritas-square.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.3.0-rc.1
+                0.3.2-dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -114,7 +112,7 @@ configuration attributes.</p>
 <p>When building Celeritas, regardless of the configured <a class="reference internal" href="installation.html#dependencies"><span class="std std-ref">dependencies</span></a>, all of the documented API code in <code class="docutils literal notranslate"><span class="pre">corecel</span></code>, <code class="docutils literal notranslate"><span class="pre">orange</span></code>,
 and <code class="docutils literal notranslate"><span class="pre">celeritas</span></code> (except possibly headers ending in <code class="docutils literal notranslate"><span class="pre">.json.hh</span></code>,
 <code class="docutils literal notranslate"><span class="pre">.device.hh</span></code>, etc.) will compile and can link to downstream code. However,
-some classes will throw <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code> if they lack the required
+some classes will throw <code class="docutils literal notranslate"><span class="pre">celeritas::RuntimeError</span></code> if they lack the required
 functionality.</p>
 <p>If Geant4 is disabled, the <code class="docutils literal notranslate"><span class="pre">accel</span></code> library will not be built or installed,
 because every component of that library requires Geant4.</p>

@@ -20,12 +20,14 @@ var searchData=
   ['spconstrng_17',['SPConstRng',['../de/d76/classceleritas_1_1_core_params.html#abea0195e7339602e12e951b2862940c5',1,'celeritas::CoreParams::SPConstRng()'],['../dc/dba/classceleritas_1_1test_1_1_global_test_base.html#a134b532bac3455601c07006be9318975',1,'celeritas::test::GlobalTestBase::SPConstRng()']]],
   ['spconstsim_18',['SPConstSim',['../de/d76/classceleritas_1_1_core_params.html#aeb71d9477af22737d37dd4113eabdcb4',1,'celeritas::CoreParams::SPConstSim()'],['../dc/dba/classceleritas_1_1test_1_1_global_test_base.html#a8fb21d39a019693b6cef4c3dd69e76c1',1,'celeritas::test::GlobalTestBase::SPConstSim()']]],
   ['spconsttrackinit_19',['SPConstTrackInit',['../de/d76/classceleritas_1_1_core_params.html#a156c53f43da00235bad757a57df4a47d',1,'celeritas::CoreParams::SPConstTrackInit()'],['../dc/dba/classceleritas_1_1test_1_1_global_test_base.html#a921d316ef50639096bac84288c34d9f2',1,'celeritas::test::GlobalTestBase::SPConstTrackInit()']]],
-  ['spoutputregistry_20',['SPOutputRegistry',['../de/d76/classceleritas_1_1_core_params.html#a9f56276ccd657a57042ab209e9fc36e7',1,'celeritas::CoreParams::SPOutputRegistry()'],['../dc/dba/classceleritas_1_1test_1_1_global_test_base.html#a664aab71bb937d6cdd226d74b2af5e88',1,'celeritas::test::GlobalTestBase::SPOutputRegistry()']]],
-  ['statecollection_21',['StateCollection',['../db/d8b/_collection_8hh.html#a3b2cddd69a67a4cca1eb022f8a24bb5b',1,'celeritas']]],
-  ['stateref_22',['StateRef',['../da/dfb/classceleritas_1_1_level_state_accessor.html#ae195528efe39577fbe39c96a86b07545',1,'celeritas::LevelStateAccessor']]],
-  ['step_5ftype_23',['step_type',['../d3/d95/classceleritas_1_1_range.html#ac03cdd6ec2f5326ae7a6ac18502da97c',1,'celeritas::Range']]],
-  ['streamid_24',['StreamId',['../d3/d83/_thread_id_8hh.html#af299ab85716f04c5675e69a71c221718',1,'celeritas']]],
-  ['streammanip_25',['StreamManip',['../da/d07/classceleritas_1_1detail_1_1_logger_message.html#a4733cbcdf94513b1f5fa60ed63cefad7',1,'celeritas::detail::LoggerMessage']]],
-  ['subshellid_26',['SubshellId',['../db/da7/celeritas_2_types_8hh.html#ae4e83ddb97d2719cf9caada8e8244998',1,'celeritas']]],
-  ['surfaceid_27',['SurfaceId',['../d7/d97/orange_2_types_8hh.html#ae443850a3d9a3384da72b13186d85964',1,'celeritas']]]
+  ['sphitmanager_20',['SPHitManager',['../d8/da0/classceleritas_1_1_shared_params.html#aac2438c355b4dc01880da331e525aed3',1,'celeritas::SharedParams']]],
+  ['spoffloadwriter_21',['SPOffloadWriter',['../d8/da0/classceleritas_1_1_shared_params.html#ace3865257b1a3cc67870105caf9aeff2',1,'celeritas::SharedParams']]],
+  ['spoutputregistry_22',['SPOutputRegistry',['../de/d76/classceleritas_1_1_core_params.html#a9f56276ccd657a57042ab209e9fc36e7',1,'celeritas::CoreParams::SPOutputRegistry()'],['../dc/dba/classceleritas_1_1test_1_1_global_test_base.html#a664aab71bb937d6cdd226d74b2af5e88',1,'celeritas::test::GlobalTestBase::SPOutputRegistry()']]],
+  ['statecollection_23',['StateCollection',['../db/d8b/_collection_8hh.html#a3b2cddd69a67a4cca1eb022f8a24bb5b',1,'celeritas']]],
+  ['stateref_24',['StateRef',['../da/dfb/classceleritas_1_1_level_state_accessor.html#ae195528efe39577fbe39c96a86b07545',1,'celeritas::LevelStateAccessor']]],
+  ['step_5ftype_25',['step_type',['../d3/d95/classceleritas_1_1_range.html#ac03cdd6ec2f5326ae7a6ac18502da97c',1,'celeritas::Range']]],
+  ['streamid_26',['StreamId',['../d3/d83/_thread_id_8hh.html#af299ab85716f04c5675e69a71c221718',1,'celeritas']]],
+  ['streammanip_27',['StreamManip',['../da/d07/classceleritas_1_1detail_1_1_logger_message.html#a4733cbcdf94513b1f5fa60ed63cefad7',1,'celeritas::detail::LoggerMessage']]],
+  ['subshellid_28',['SubshellId',['../db/da7/celeritas_2_types_8hh.html#ae4e83ddb97d2719cf9caada8e8244998',1,'celeritas']]],
+  ['surfaceid_29',['SurfaceId',['../d7/d97/orange_2_types_8hh.html#ae443850a3d9a3384da72b13186d85964',1,'celeritas']]]
 ];

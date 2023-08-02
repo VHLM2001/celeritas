@@ -55,8 +55,7 @@ var searchData=
   ['propagation_5flimit_5faction_52',['propagation_limit_action',['../da/d9d/classceleritas_1_1_core_track_view.html#a87aa21af244c59d5c92362dbe9726b2e',1,'celeritas::CoreTrackView']]],
   ['proton_53',['proton',['../d1/de0/_p_d_g_number_8hh.html#a0d58dd6d2ad36817be8cc1f7b1b9f882',1,'celeritas::pdg']]],
   ['ptr_54',['ptr',['../de/d76/classceleritas_1_1_core_params.html#a19200997ed7e328f937c39e7be395bb5',1,'celeritas::CoreParams::ptr()'],['../d0/dee/classceleritas_1_1_core_state.html#a28c4efc4676c05d9584a102d6cbd13e0',1,'celeritas::CoreState::ptr()']]],
-  ['push_55',['push',['../d9/dbb/classceleritas_1_1_mem_registry.html#a6633bd8ab2a0530e63be18d06d3128ba',1,'celeritas::MemRegistry::push()'],['../d3/d55/classceleritas_1_1_mini_stack.html#a7f1e8cffd4b5448ca8abbb7fd804dfb9',1,'celeritas::MiniStack::push()']]],
+  ['push_55',['push',['../d6/d43/classceleritas_1_1detail_1_1_logic_stack.html#a30623190e7eeed0d9286ad5f6f710707',1,'celeritas::detail::LogicStack::push()'],['../d9/dbb/classceleritas_1_1_mem_registry.html#a6633bd8ab2a0530e63be18d06d3128ba',1,'celeritas::MemRegistry::push()'],['../d3/d55/classceleritas_1_1_mini_stack.html#a7f1e8cffd4b5448ca8abbb7fd804dfb9',1,'celeritas::MiniStack::push()']]],
   ['push_56',['Push',['../d2/d13/classceleritas_1_1_local_transporter.html#a4447682ff34959357b8a8e0a22427b99',1,'celeritas::LocalTransporter']]],
-  ['push_57',['push',['../d6/d43/classceleritas_1_1detail_1_1_logic_stack.html#a30623190e7eeed0d9286ad5f6f710707',1,'celeritas::detail::LogicStack']]],
-  ['push_5fback_58',['push_back',['../d3/df7/classceleritas_1_1_collection_builder.html#a1aacb551628a0fcf50e21c49b1b3e946',1,'celeritas::CollectionBuilder']]]
+  ['push_5fback_57',['push_back',['../d3/df7/classceleritas_1_1_collection_builder.html#a1aacb551628a0fcf50e21c49b1b3e946',1,'celeritas::CollectionBuilder']]]
 ];
