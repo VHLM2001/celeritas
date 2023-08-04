@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Version 0.2.2" href="v0.2.html" /><link rel="prev" title="Release History" href="../release-history.html" />
 
     <!-- Generated with Sphinx 7.0.1 and Furo 2023.05.20 -->
-        <title>Version 0.3.1 - Celeritas 0.3.1-rc.1.1+16ced01c2 documentation</title>
+        <title>Version 0.3.1 - Celeritas 0.3.1-rc.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Celeritas 0.3.1-rc.1.1+16ced01c2 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Celeritas 0.3.1-rc.2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="../../_static/celeritas-square.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Celeritas 0.3.1-rc.1.1+16ced01c2 documentation</span>
+  <span class="sidebar-brand-text">Celeritas 0.3.1-rc.2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -233,7 +233,7 @@
         <article role="main">
           <section id="version-0-3-1">
 <span id="release-v0-3-1"></span><h1>Version 0.3.1<a class="headerlink" href="#version-0-3-1" title="Permalink to this heading">#</a></h1>
-<p><em>Released 2023/08/01</em></p>
+<p><em>Released 2023/08/04</em></p>
 <p>Version 0.3.1 is a bug fix and minor feature release of Celeritas targeted at supporting
 experiment frameworks. Key enhancements are:</p>
 <ul class="simple">
@@ -270,8 +270,9 @@ aborting execution.</p></li>
 <li><p>Add track step counter to celer-g4 <em>(&#64;amandalund, #862)</em></p></li>
 <li><p>Define arithmetic operators for Array <em>(&#64;sethrj, #868)</em></p></li>
 <li><p>Support <a class="reference external" href="mailto:Geant4&#37;&#52;&#48;10&#46;5">Geant4<span>&#64;</span>10<span>&#46;</span>5</a> <em>(&#64;sethrj, #869)</em></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">__launch_bounds__</span></code> to kernels based on Executor properties <em>(&#64;esseivaju, #853)</em></p></li>
 </ul>
-<p>Reviewers: &#64;sethrj <em>(8)</em>, &#64;amandalund <em>(3)</em>, &#64;whokion <em>(2)</em>, &#64;hhollenb <em>(1)</em>, &#64;drbenmorgan <em>(1)</em></p>
+<p>Reviewers: &#64;sethrj <em>(9)</em>, &#64;amandalund <em>(3)</em>, &#64;whokion <em>(2)</em>, &#64;hhollenb <em>(1)</em>, &#64;drbenmorgan <em>(1)</em></p>
 </section>
 <section id="bug-fixes">
 <h2>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this heading">#</a></h2>
@@ -294,8 +295,9 @@ aborting execution.</p></li>
 <ul class="simple">
 <li><p>Update CI to VecGeom 1.2.3 <em>(&#64;sethrj, #819)</em></p></li>
 <li><p>Document how to link loadable shared libraries with Celeritas <em>(&#64;drbenmorgan, #842)</em></p></li>
+<li><p>Extend geometry robustness testing <em>(&#64;sethrj, #858)</em></p></li>
 </ul>
-<p>Reviewers: &#64;pcanal <em>(1)</em>, &#64;sethrj <em>(1)</em></p>
+<p>Reviewers: &#64;pcanal <em>(1)</em>, &#64;sethrj <em>(1)</em>, &#64;amandalund <em>(1)</em></p>
 </section>
 <section id="minor-internal-changes">
 <h2>Minor internal changes<a class="headerlink" href="#minor-internal-changes" title="Permalink to this heading">#</a></h2>
@@ -314,8 +316,12 @@ aborting execution.</p></li>
 <li><p>Fix large function warnings by disabling device debug code by default <em>(&#64;sethrj, #866)</em></p></li>
 <li><p>Add PolyEvaluator deduction guides <em>(&#64;hhollenb, #871)</em></p></li>
 <li><p>Add thread-safe assertion to RootStepWriter <em>(&#64;stognini, #873)</em></p></li>
+<li><p>Export full Celeritas version string as well as defaulted CMake variables <em>(&#64;sethrj, #870)</em></p></li>
+<li><p>Reuse chord length between successive field advances <em>(&#64;sethrj, #875)</em></p></li>
+<li><p>Improve polynomial deduction guide <em>(&#64;sethrj, #878)</em></p></li>
+<li><p>Validate <code class="docutils literal notranslate"><span class="pre">KernelParamCalculator</span></code> block size using CUDA/HIP function attributes <em>(&#64;esseivaju, #877)</em></p></li>
 </ul>
-<p>Reviewers: &#64;amandalund <em>(5)</em>, &#64;sethrj <em>(5)</em>, &#64;pcanal <em>(2)</em>, &#64;drbenmorgan <em>(2)</em>, &#64;hhollenb <em>(1)</em>, &#64;esseivaju <em>(1)</em></p>
+<p>Reviewers: &#64;sethrj <em>(6)</em>, &#64;amandalund <em>(5)</em>, &#64;drbenmorgan <em>(3)</em>, &#64;pcanal <em>(2)</em>, &#64;hhollenb <em>(2)</em>, &#64;esseivaju <em>(1)</em>, &#64;whokion <em>(1)</em></p>
 <p><strong>Full Changelog</strong>: <a class="reference external" href="https://github.com/celeritas-project/celeritas/compare/v0.3.0...v0.3.1">https://github.com/celeritas-project/celeritas/compare/v0.3.0…v0.3.1</a></p>
 </section>
 </section>
