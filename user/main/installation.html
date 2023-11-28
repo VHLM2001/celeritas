@@ -1,0 +1,542 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Using Celeritas" href="usage.html" /><link rel="prev" title="Overview" href="overview.html" />
+
+    <!-- Generated with Sphinx 7.2.3 and Furo 2023.09.10 -->
+        <title>Installation - Celeritas 0.4.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Celeritas 0.4.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/celeritas-square.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Celeritas 0.4.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Using Celeritas</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">Library API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Library API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/corecel.html">Core package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/orange.html">ORANGE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/celeritas.html">Celeritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/accel.html">Acceleritas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/minimal.html">Minimal Celeritas usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/geant4.html">Minimal Geant4 integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgments.html">Acknowledgments</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../appendix/release-history.html">Release History</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Release History</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.4.html">Version 0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.3.html">Version 0.3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.3.html#version-0-3-1">Version 0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.3.html#version-0-3-0">Version 0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.2.html">Version 0.2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.2.html#version-0-2-1">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.2.html#version-0-2-0">Version 0.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html">Version 0.1.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-4">Version 0.1.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-3">Version 0.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-2">Version 0.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-1">Version 0.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-0">Version 0.1.0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/development.html">Development Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/license.html">License</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="installation">
+<span id="infrastructure"></span><h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
+<p>Celeritas is designed to be easy to install for a multitude of use cases.</p>
+<section id="dependencies">
+<span id="id1"></span><h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">#</a></h2>
+<p>Celeritas is built using modern <a class="reference external" href="https://cmake.org">CMake</a>. It has multiple dependencies to operate
+as a full-featured code, but each dependency can be individually disabled as
+needed.</p>
+<p>The code requires external dependencies to build with full functionality.
+However, any combination of these requirements can be omitted to enable
+limited development on experimental HPC systems or personal machines with
+fewer available components.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://developer.nvidia.com/cuda-toolkit">CUDA</a></p></td>
+<td><p>Runtime</p></td>
+<td><p>GPU computation</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://geant4.web.cern.ch/support/download">Geant4</a></p></td>
+<td><p>Runtime</p></td>
+<td><p>Preprocessing physics data for a problem input</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://geant4.web.cern.ch/support/download">G4EMLOW</a></p></td>
+<td><p>Runtime</p></td>
+<td><p>EM physics model data</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://hepmc.web.cern.ch/hepmc/">HepMC3</a></p></td>
+<td><p>Runtime</p></td>
+<td><p>Event input</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://docs.amd.com">HIP</a></p></td>
+<td><p>Runtime</p></td>
+<td><p>GPU computation</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/nlohmann/json">nljson</a></p></td>
+<td><p>Runtime</p></td>
+<td><p>Simple text-based I/O for diagnostics and program setup</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.open-mpi.org">Open MPI</a></p></td>
+<td><p>Runtime</p></td>
+<td><p>Shared-memory parallelism</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://root.cern">ROOT</a></p></td>
+<td><p>Runtime</p></td>
+<td><p>Input and output</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://swig.org">SWIG</a></p></td>
+<td><p>Runtime</p></td>
+<td><p>Low-level Python wrappers</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://gitlab.cern.ch/VecGeom/VecGeom">VecGeom</a></p></td>
+<td><p>Runtime</p></td>
+<td><p>On-device navigation of GDML-defined detector geometry</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/michaeljones/breathe#readme">Breathe</a></p></td>
+<td><p>Docs</p></td>
+<td><p>Generating code documentation inside user docs</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.doxygen.nl">Doxygen</a></p></td>
+<td><p>Docs</p></td>
+<td><p>Code documentation</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a></p></td>
+<td><p>Docs</p></td>
+<td><p>User documentation</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://pypi.org/project/sphinxcontrib-bibtex/">sphinxbib</a></p></td>
+<td><p>Docs</p></td>
+<td><p>Reference generation for user documentation</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://clang.llvm.org/docs/ClangFormat.html">clang-format</a></p></td>
+<td><p>Development</p></td>
+<td><p>Code formatting enforcement</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://cmake.org">CMake</a></p></td>
+<td><p>Development</p></td>
+<td><p>Build system</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://git-scm.com">Git</a></p></td>
+<td><p>Development</p></td>
+<td><p>Repository management</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/google/googletest">GoogleTest</a></p></td>
+<td><p>Development</p></td>
+<td><p>Test harness</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ideally you will build Celeritas with all dependencies to gain the full
+functionality of the code, but there are circumstances in which you may not
+have (or want) all the dependencies or features available. By default, the CMake code in
+Celeritas queries available packages and sets several
+<code class="docutils literal notranslate"><span class="pre">CELERITAS_USE_{package}</span></code>
+options based on what it finds, so you have a good chance of successfully
+configuring Celeritas on the first go. Some optional features
+will error out in the configure if their required
+dependencies are missing, but they will update the CMake cache variable so that
+the next configure will succeed (with that component disabled).</p>
+</section>
+<section id="toolchain-installation">
+<h2>Toolchain installation<a class="headerlink" href="#toolchain-installation" title="Link to this heading">#</a></h2>
+<p>The recommended way to install dependencies is with <code class="docutils literal notranslate"><span class="pre">Spack</span></code>,
+an HPC-oriented package manager that includes numerous scientific packages,
+including those used in HEP. Celeritas includes a Spack environment at
+<code class="file docutils literal notranslate"><span class="pre">scripts/spack.yaml</span></code> that describes the code’s full suite
+of dependencies (including testing and documentation). To install these
+dependencies:</p>
+<ul class="simple">
+<li><p>Clone and load Spack following its <a class="reference external" href="https://spack.readthedocs.io/en/latest/getting_started.html">getting started instructions</a>.</p></li>
+<li><p>If using CUDA: run <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">external</span> <span class="pre">find</span> <span class="pre">cuda</span></code> to inform Spack of the existing
+installation, and tell Spack to default to building with CUDA support with
+the command <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">config</span> <span class="pre">add</span> <span class="pre">packages:all:variants:&quot;+cuda</span>
+<span class="pre">cuda_arch=&lt;ARCH&gt;&quot;</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;ARCH&gt;</span></code> is the numeric portion of the
+<a class="reference external" href="https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/">CUDA architecture flags</a>.</p></li>
+<li><p>Create the Celeritas development environment with <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">env</span> <span class="pre">create</span>
+<span class="pre">celeritas</span> <span class="pre">scripts/spack.yaml</span></code>.</p></li>
+<li><p>Install all the dependencies with <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">-e</span> <span class="pre">celeritas</span> <span class="pre">install</span></code>.</p></li>
+</ul>
+<p>The current Spack environment for full-featured development is:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">spack</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">specs</span><span class="p">:</span><span class="w"> </span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cmake</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doxygen</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;geant4@11</span><span class="nv"> </span><span class="s">cxxstd=17&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git-lfs</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;googletest@1.10:&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hepmc3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ninja</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nlohmann-json</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mpi</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;python@3.6:&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">py-breathe</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">py-furo</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">py-sphinx</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">py-sphinxcontrib-bibtex</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;root@6.24:</span><span class="nv"> </span><span class="s">cxxstd=17&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;swig@4.1:&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;vecgeom@1.2.3:</span><span class="nv"> </span><span class="s">+gdml</span><span class="nv"> </span><span class="s">cxxstd=17&quot;</span>
+<span class="w">  </span><span class="nt">view</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">concretizer</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">unify</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">packages</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">root</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># Note: ~gsl and ~math are removed because dd4hep requires them</span>
+<span class="w">      </span><span class="nt">variants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~aqua ~davix ~examples ~opengl ~x ~tbb</span>
+<span class="w">    </span><span class="nt">all</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">providers</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">blas</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">openblas</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">lapack</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">openblas</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">mpi</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">openmpi</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">variants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cxxstd=17</span>
+<span class="w">      </span><span class="c1"># NOTE: add `+cuda cuda_arch=70` (or similar) to your site packages.py</span>
+<span class="w">      </span><span class="c1"># spack config add --scope=site packages:all:variants:&quot;+cuda cuda_arch=70&quot;</span>
+</pre></div>
+</div>
+<p>With this environment (with CUDA enabled), all Celeritas tests should be
+enabled and all should pass. Celeritas is build-compatible with older versions
+of some dependencies (e.g., <a class="reference external" href="mailto:Geant4&#37;&#52;&#48;10&#46;6">Geant4<span>&#64;</span>10<span>&#46;</span>6</a> and <a class="reference external" href="mailto:VecGeom&#37;&#52;&#48;1&#46;2&#46;2">VecGeom<span>&#64;</span>1<span>&#46;</span>2<span>&#46;</span>2</a>), but some tests may
+fail, indicating a change in behavior or a bug fix in that package.
+Specifically, older versions of VecGeom have shapes and configurations that are
+incompatible on GPU with new CMS detector descriptions.</p>
+</section>
+<section id="building-celeritas">
+<h2>Building Celeritas<a class="headerlink" href="#building-celeritas" title="Link to this heading">#</a></h2>
+<p>Once the Celeritas Spack environment has been installed, set your shell’s environment
+variables (<code class="docutils literal notranslate"><span class="pre">PATH</span></code>, <code class="docutils literal notranslate"><span class="pre">CMAKE_PREFIX_PATH</span></code>, …) by activating it.</p>
+<p>To clone the latest development version of Celeritas:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/celeritas-project/celeritas.git
+</pre></div>
+</div>
+<p>or download it from the GitHub-generated <a class="reference external" href="https://github.com/celeritas-project/celeritas/archive/refs/heads/develop.zip">zip file</a>.</p>
+<p>, you can configure, build, and test using the provided helper script:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>celeritas
+<span class="gp">$ </span>spack<span class="w"> </span>env<span class="w"> </span>activate<span class="w"> </span>celeritas
+<span class="gp">$ </span>./scripts/build.sh<span class="w"> </span>base
+</pre></div>
+</div>
+<p>or manually with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>celeritas
+<span class="gp">$ </span>spack<span class="w"> </span>env<span class="w"> </span>activate<span class="w"> </span>celeritas
+<span class="gp">$ </span>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+<span class="gp">$ </span>cmake<span class="w"> </span>..
+<span class="gp">$ </span>make<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>ctest
+</pre></div>
+</div>
+</section>
+<section id="cmake-presets">
+<h2>CMake Presets<a class="headerlink" href="#cmake-presets" title="Link to this heading">#</a></h2>
+<p>To manage multiple builds with different
+configure options (debug or release, VecGeom or ORANGE), you can use the
+CMake presets provided by Celeritas via the <code class="docutils literal notranslate"><span class="pre">CMakePresets.json</span></code> file for CMake
+3.21 and higher:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cmake<span class="w"> </span>--preset<span class="o">=</span>default
+</pre></div>
+</div>
+<p>The three main options are “minimal”, “default”, and “full”, which all set
+different expectations for available dependencies.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your CMake version is too old, you may get an unhelpful message:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">CMake Error: Could not read presets from celeritas: Unrecognized &quot;version&quot;</span>
+<span class="go">field</span>
+</pre></div>
+</div>
+<p>which is just a poor way of saying the version in the <code class="docutils literal notranslate"><span class="pre">CMakePresets.json</span></code>
+file is newer than that version knows how to handle.</p>
+</div>
+<p>If you want to add your own set of custom options and flags, create a
+<code class="docutils literal notranslate"><span class="pre">CMakeUserPresets.json</span></code> file or, if you wish to contribute on a regular
+basis, create a preset at <code class="file docutils literal notranslate"><span class="pre">scripts/cmake-presets/</span><em><span class="pre">HOSTNAME</span></em><span class="pre">.json</span></code> and
+call <code class="docutils literal notranslate"><span class="pre">scripts/build.sh</span> <span class="pre">{preset}</span></code> to create the symlink, configure the preset,
+build, and test. See <code class="file docutils literal notranslate"><span class="pre">scripts/README.md</span></code> in the code repository for more
+details.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="usage.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Using Celeritas</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="overview.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Overview</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, UT–Battelle/ORNL and Celeritas team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li><a class="reference internal" href="#toolchain-installation">Toolchain installation</a></li>
+<li><a class="reference internal" href="#building-celeritas">Building Celeritas</a></li>
+<li><a class="reference internal" href="#cmake-presets">CMake Presets</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=6c02275b"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

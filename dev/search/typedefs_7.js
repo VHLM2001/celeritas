@@ -1,5 +1,13 @@
 var searchData=
 [
-  ['kernelid_0',['KernelId',['../db/d90/_kernel_registry_8hh.html#a5f8b9c1907402e30f0b3bb9be789c3c2',1,'celeritas']]],
-  ['kibibytes_1',['KibiBytes',['../d7/d7b/_mem_registry_8hh.html#ab456a4eff1dbce169ae172a0b276b52c',1,'celeritas']]]
+  ['input_0',['input',['../d4/de0/classceleritas_1_1_r_z_map_field_params.html#aa49f831587bee91a34a5fe6e85c6eff0',1,'celeritas::RZMapFieldParams::Input'],['../d8/d0b/classceleritas_1_1_particle_params.html#a5db013b1794bff4c8e06438025aed886',1,'celeritas::ParticleParams::Input'],['../d2/dd3/classceleritas_1_1_scoped_profiling.html#af539723b00fb2778115109732d3353c9',1,'celeritas::ScopedProfiling::Input']]],
+  ['intersections_1',['intersections',['../da/d64/classceleritas_1_1_cone_aligned.html#afc7b859172ef2b8bb468af40dfdb4b6b',1,'celeritas::ConeAligned::Intersections'],['../da/d5c/classceleritas_1_1_cyl_aligned.html#a62d25e8ab095013dbd15e0bf881a0342',1,'celeritas::CylAligned::Intersections'],['../d4/dec/classceleritas_1_1_cyl_centered.html#ac7d2b192cd17969d6833adbda8460b08',1,'celeritas::CylCentered::Intersections'],['../d0/d23/classceleritas_1_1_general_quadric.html#a39bda5156dd32e40bc1dc44967fca2d1',1,'celeritas::GeneralQuadric::Intersections'],['../d3/d43/classceleritas_1_1_plane.html#a1fc0b94879895aa0158904f41b3b8fad',1,'celeritas::Plane::Intersections'],['../d4/d05/classceleritas_1_1_plane_aligned.html#a241b738757e44cfd5e6277a0709a8044',1,'celeritas::PlaneAligned::Intersections'],['../d2/dfd/classceleritas_1_1_simple_quadric.html#a99749eeb58547be79041a58b1fe09745',1,'celeritas::SimpleQuadric::Intersections'],['../dc/d4f/classceleritas_1_1_sphere.html#a47a98647a337cff01c4ba6d634f72215',1,'celeritas::Sphere::Intersections'],['../dd/d92/classceleritas_1_1_sphere_centered.html#a7138f8e7848c5588ca71573cb8c6db42',1,'celeritas::SphereCentered::Intersections']]],
+  ['isotopecomponentid_2',['IsotopeComponentId',['../db/da7/celeritas_2_types_8hh.html#afefd515a4196fcc62e7c43a3f8289f95',1,'celeritas']]],
+  ['isotopeid_3',['IsotopeId',['../db/da7/celeritas_2_types_8hh.html#aebe013590e64a6b88691a69b84d9dd5e',1,'celeritas']]],
+  ['itemid_4',['ItemId',['../db/d8b/_collection_8hh.html#a6f8d0c7bc5dfadc09ac2b566b3a55c24',1,'celeritas']]],
+  ['itemidt_5',['ItemIdT',['../d7/dd4/classceleritas_1_1_collection.html#a87df3f38469d1b7d82e529fc53e245bb',1,'celeritas::Collection']]],
+  ['itemrange_6',['ItemRange',['../db/d8b/_collection_8hh.html#a89741da60e12f348c4d1fd59e39c5dda',1,'celeritas']]],
+  ['itemranget_7',['ItemRangeT',['../d7/dd4/classceleritas_1_1_collection.html#a1ff88e5de52902e2b26af9373d21dd91',1,'celeritas::Collection']]],
+  ['iterator_8',['iterator',['../d6/d42/classceleritas_1_1detail_1_1_disabled_storage.html#a811cccc0c08d762387d6645565b1bb38',1,'celeritas::detail::DisabledStorage']]],
+  ['iterator_5fcategory_9',['iterator_category',['../d7/d0a/classceleritas_1_1_ldg_iterator.html#a4f3b90198e0e274223c694d905da4621',1,'celeritas::LdgIterator']]]
 ];

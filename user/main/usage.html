@@ -1,0 +1,803 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Library API" href="api.html" /><link rel="prev" title="Installation" href="installation.html" />
+
+    <!-- Generated with Sphinx 7.2.3 and Furo 2023.09.10 -->
+        <title>Using Celeritas - Celeritas 0.4.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Celeritas 0.4.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/celeritas-square.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Celeritas 0.4.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Using Celeritas</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">Library API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Library API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/corecel.html">Core package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/orange.html">ORANGE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/celeritas.html">Celeritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/accel.html">Acceleritas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/minimal.html">Minimal Celeritas usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/geant4.html">Minimal Geant4 integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgments.html">Acknowledgments</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../appendix/release-history.html">Release History</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Release History</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.4.html">Version 0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.3.html">Version 0.3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.3.html#version-0-3-1">Version 0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.3.html#version-0-3-0">Version 0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.2.html">Version 0.2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.2.html#version-0-2-1">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.2.html#version-0-2-0">Version 0.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html">Version 0.1.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-4">Version 0.1.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-3">Version 0.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-2">Version 0.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-1">Version 0.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-0">Version 0.1.0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/development.html">Development Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/license.html">License</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="using-celeritas">
+<span id="usage"></span><h1>Using Celeritas<a class="headerlink" href="#using-celeritas" title="Link to this heading">#</a></h1>
+<p>Celeritas includes a core set of libraries for internal and external use, as
+well as several helper applications and front ends.</p>
+<section id="software-library">
+<h2>Software library<a class="headerlink" href="#software-library" title="Link to this heading">#</a></h2>
+<p>The most stable part of Celeritas is, at the present time, the high-level
+program interface to the <a class="reference internal" href="api/accel.html#accel"><span class="std std-ref">Acceleritas</span></a> code library. However, many other
+components of the API are stable and documented in the <code class="code docutils literal notranslate"><span class="pre">api</span></code> section.</p>
+<section id="cmake-integration">
+<h3>CMake integration<a class="headerlink" href="#cmake-integration" title="Link to this heading">#</a></h3>
+<p>The Celeritas library is most easily used when your downstream app is built with
+CMake. It should require a single line to initialize:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>find_package(Celeritas REQUIRED CONFIG)
+</pre></div>
+</div>
+<p>and if VecGeom or CUDA are disabled a single line to link:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>target_link_libraries(mycode PUBLIC Celeritas::celeritas)
+</pre></div>
+</div>
+<p>Because of complexities involving CUDA Relocatable Device Code, consuming
+Celeritas with CUDA and VecGeom support requires an additional include and the
+use of wrappers around CMake’s target commands:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>include(CeleritasLibrary)
+celeritas_add_executable(mycode ...)
+celeritas_target_link_libraries(mycode PUBLIC Celeritas::celeritas)
+</pre></div>
+</div>
+<p>As the <code class="docutils literal notranslate"><span class="pre">celeritas_...</span></code> functions decay to the wrapped CMake commands if CUDA
+and VecGeom you can use them to safely build and link nearly all targets
+consuming Celeritas in your project. This provides tracking of the appropriate
+sequence of linking for the final application whether it uses CUDA code or not,
+and whether Celeritas is CPU-only or CUDA enabled:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>celeritas_add_library(myconsumer SHARED ...)
+celeritas_target_link_libraries(myconsumer PUBLIC Celeritas::celeritas)
+
+celeritas_add_executable(myapplication ...)
+celeritas_target_link_libraries(myapplication PRIVATE myconsumer)
+</pre></div>
+</div>
+<p>If your project builds shared libraries that are intended to be loaded at application
+runtime (e.g. via <code class="docutils literal notranslate"><span class="pre">dlopen</span></code>), you should prefer use the the CMake <code class="docutils literal notranslate"><span class="pre">MODULE</span></code> target type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>celeritas_add_library(myplugin MODULE ...)
+celeritas_target_link_libraries(myplugin PRIVATE Celeritas::celeritas)
+</pre></div>
+</div>
+<p>This is recommended as <code class="docutils literal notranslate"><span class="pre">celeritas_target_link_libraries</span></code> understands these as
+a final target for which all device symbols require resolving. If you are
+forced to use the <code class="docutils literal notranslate"><span class="pre">SHARED</span></code> target type for plugin libraries (e.g. via your
+project’s own wrapper functions), then these should be declared with the CMake
+or project-specific commands with linking to both the primary Celeritas target
+and its device code counterpart:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>add_library(mybadplugin SHARED ...)
+# ... or myproject_add_library(mybadplugin ...)
+target_link_libraries(mybadplugin PRIVATE Celeritas::celeritas $&lt;TARGET_NAME_IF_EXISTS:Celeritas::celeritas_final&gt;)
+# ... or otherwise declare the plugin as requiring linking to the two targets
+</pre></div>
+</div>
+<p>Celeritas device code counterpart target names are always the name of the
+primary target appended with <code class="docutils literal notranslate"><span class="pre">_final</span></code>. They are only present if Celeritas was
+built with CUDA support so it is recommended to use the CMake generator
+expression above to support CUDA or CPU-only builds transparently.</p>
+<p>The <a class="reference internal" href="examples/minimal.html#example-minimal"><span class="std std-ref">Minimal Celeritas usage</span></a> example demonstrates how to use Celeritas as a
+library with a short standalone CMake project.</p>
+</section>
+</section>
+<section id="standalone-simulation-app-celer-sim">
+<span id="celer-sim"></span><h2>Standalone simulation app (celer-sim)<a class="headerlink" href="#standalone-simulation-app-celer-sim" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">celer-sim</span></code> application is the primary means of running test problems for
+independent validation and performance analysis.</p>
+<p>Usage:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: celer-sim {input}.json
+       celer-sim [--help|-h]
+       celer-sim --version
+       celer-sim --config
+       celer-sim --dump-default
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="file docutils literal notranslate"><em><span class="pre">input</span></em><span class="pre">.json</span></code> is the path to the input file, or <code class="docutils literal notranslate"><span class="pre">-</span></code> to read the
+JSON from <code class="docutils literal notranslate"><span class="pre">stdin</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">--config</span></code> option prints the contents of the <code class="docutils literal notranslate"><span class="pre">[&quot;system&quot;][&quot;build&quot;]</span></code>
+diagnostic output. It includes configuration options and the version number.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">--dump-default</span></code> option prints the default options for the execution.
+Not all variables will be shown, because some are conditional on others.</p></li>
+</ul>
+<section id="input">
+<h3>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h3>
+<p>In addition to these input parameters, <a class="reference internal" href="#environment"><span class="std std-ref">Environment variables</span></a> can be specified to
+change the program behavior.</p>
+</section>
+<section id="output">
+<h3>Output<a class="headerlink" href="#output" title="Link to this heading">#</a></h3>
+<p>The primary output from <code class="docutils literal notranslate"><span class="pre">celer-sim</span></code> is a JSON object that includes several
+levels of diagnostic and result data (see <a class="reference internal" href="api/corecel.html#api-io"><span class="std std-ref">I/O</span></a>). The JSON
+output should be the only data sent to <code class="docutils literal notranslate"><span class="pre">stdout</span></code>, so it should be suitable for
+piping directly into other executables such as Python or <code class="docutils literal notranslate"><span class="pre">jq</span></code>.</p>
+<p>Additional user-oriented output is sent to <code class="docutils literal notranslate"><span class="pre">stderr</span></code> via the Logger facility
+(see <a class="reference internal" href="#logging"><span class="std std-ref">Logging</span></a>).</p>
+</section>
+</section>
+<section id="integrated-geant4-application-celer-g4">
+<span id="celer-g4"></span><h2>Integrated Geant4 application (celer-g4)<a class="headerlink" href="#integrated-geant4-application-celer-g4" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">celer-g4</span></code> app is a Geant4 application that offloads EM tracks to
+Celeritas. It takes as input a GDML file with the detector description and
+sensitive detectors marked via an <code class="docutils literal notranslate"><span class="pre">auxiliary</span></code> annotation. The input particles
+must be specified with a HepMC3-compatible file or with a JSON-specified
+“particle gun.”</p>
+<p>Usage:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>celer-g4 {input}.json
+         {commands}.mac
+         --interactive
+</pre></div>
+</div>
+<section id="id2">
+<h3>Input<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The macro file usage is in the process of being replaced by JSON
+input for improved automation.</p>
+</div>
+<p>The input is a Geant4 macro file for executing the program. Celeritas defines
+several macros in the <code class="docutils literal notranslate"><span class="pre">/celer</span></code> and (if CUDA is available) <code class="docutils literal notranslate"><span class="pre">/celer/cuda/</span></code>
+directories: see <a class="reference internal" href="api/accel.html#api-accel-high-level"><span class="std std-ref">High-level interface</span></a> for a listing.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">celer-g4</span></code> app defines several additional configuration commands under
+<code class="docutils literal notranslate"><span class="pre">/celerg4</span></code>:</p>
+<div class="table-wrapper docutils container" id="id8">
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Geant4 UI commands defined by <code class="docutils literal notranslate"><span class="pre">celer-g4</span></code>.</span><a class="headerlink" href="#id8" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>geometryFile</p></td>
+<td><p>Filename of the GDML detector geometry</p></td>
+</tr>
+<tr class="row-odd"><td><p>eventFile</p></td>
+<td><p>Filename of the event input read by HepMC3</p></td>
+</tr>
+<tr class="row-even"><td><p>rootBufferSize</p></td>
+<td><p>Buffer size of output root file [bytes]</p></td>
+</tr>
+<tr class="row-odd"><td><p>writeSDHits</p></td>
+<td><p>Write a ROOT output file with hits from the SDs</p></td>
+</tr>
+<tr class="row-even"><td><p>stepDiagnostic</p></td>
+<td><p>Collect the distribution of steps per Geant4 track</p></td>
+</tr>
+<tr class="row-odd"><td><p>stepDiagnosticBins</p></td>
+<td><p>Number of bins for the Geant4 step diagnostic</p></td>
+</tr>
+<tr class="row-even"><td><p>fieldType</p></td>
+<td><p>Select the field type [rzmap|uniform]</p></td>
+</tr>
+<tr class="row-odd"><td><p>fieldFile</p></td>
+<td><p>Filename of the rz-map loaded by RZMapFieldInput</p></td>
+</tr>
+<tr class="row-even"><td><p>magFieldZ</p></td>
+<td><p>Set Z-axis magnetic field strength (T)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In addition to these input parameters, <a class="reference internal" href="#environment"><span class="std std-ref">Environment variables</span></a> can be specified to
+change the program behavior.</p>
+</section>
+<section id="id3">
+<h3>Output<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>The ROOT “MC truth” output file, if enabled with the command above, contains
+hits from all the sensitive detectors.</p>
+</section>
+</section>
+<section id="additional-utilities">
+<h2>Additional utilities<a class="headerlink" href="#additional-utilities" title="Link to this heading">#</a></h2>
+<p>The Celeritas installation includes additional utilities for inspecting input
+and output.</p>
+<section id="celer-export-geant">
+<span id="id4"></span><h3>celer-export-geant<a class="headerlink" href="#celer-export-geant" title="Link to this heading">#</a></h3>
+<p>This utility exports the physics and geometry data needed to run Celeritas
+without directly calling Geant4 for an independent run. Since it isolates
+Celeritas from any existing Geant4 installation it can also be a means of
+debugging whether a behavior change is due to a code change in Celeritas or
+(for example) a change in cross sections from Geant4.</p>
+<hr class="docutils" />
+<p>Usage:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>celer-export-geant {input}.gdml [{options}.json, -, &#39;&#39;] {output}.root
+celer-export-geant --dump-default
+</pre></div>
+</div>
+<dl class="simple">
+<dt>input</dt><dd><p>Detector definition file</p>
+</dd>
+<dt>options</dt><dd><p>An optional argument for specifying a JSON file with Geant4 setup options
+corresponding to the <a class="reference internal" href="api/celeritas.html#api-geant4-physics-options"><span class="std std-ref">Geant4 physics options</span></a> struct.</p>
+</dd>
+<dt>output</dt><dd><p>A ROOT output file with the exported <a class="reference internal" href="api/celeritas.html#api-importdata"><span class="std std-ref">Physics data</span></a>.</p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">--dump-default</span></code> usage renders the default options.</p>
+</section>
+<section id="celer-dump-data">
+<h3>celer-dump-data<a class="headerlink" href="#celer-dump-data" title="Link to this heading">#</a></h3>
+<p>This utility prints an RST-formatted high-level dump of physics data exported
+via <a class="reference internal" href="#celer-export-geant"><span class="std std-ref">celer-export-geant</span></a>.</p>
+<hr class="docutils" />
+<p>Usage:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>celer-dump-data {output}.root
+</pre></div>
+</div>
+<dl class="simple">
+<dt>output</dt><dd><p>A ROOT file containing exported <a class="reference internal" href="api/celeritas.html#api-importdata"><span class="std std-ref">Physics data</span></a>.</p>
+</dd>
+</dl>
+</section>
+<section id="orange-update">
+<h3>orange-update<a class="headerlink" href="#orange-update" title="Link to this heading">#</a></h3>
+<p>Read an ORANGE JSON input file and write it out again. This is used for
+updating from an older version of the input to a newer version.</p>
+<hr class="docutils" />
+<p>Usage:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>orange-update {input}.org.json {output}.org.json
+</pre></div>
+</div>
+<p>Either of the filenames can be replaced by <code class="docutils literal notranslate"><span class="pre">-</span></code> to read from stdin or write to
+stdout.</p>
+</section>
+</section>
+<section id="environment-variables">
+<span id="environment"></span><h2>Environment variables<a class="headerlink" href="#environment-variables" title="Link to this heading">#</a></h2>
+<p>Some pieces of core Celeritas code interrogate the environment for variables to
+change system- or output-level behavior. These variables are checked once per
+execution, and checking them inserts the key and user-defined value (or empty)
+into a diagnostic database saved to Celeritas’ JSON output, so the user can
+tell what variables are in use or may be useful.</p>
+<div class="table-wrapper docutils container" id="id9">
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Environment variables used by Celeritas.</span><a class="headerlink" href="#id9" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Component</p></th>
+<th class="head"><p>Brief description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CELER_COLOR</p></td>
+<td><p>corecel</p></td>
+<td><p>Enable/disable ANSI color logging</p></td>
+</tr>
+<tr class="row-odd"><td><p>CELER_DEBUG_DEVICE</p></td>
+<td><p>corecel</p></td>
+<td><p>Increase device error checking and output</p></td>
+</tr>
+<tr class="row-even"><td><p>CELER_DISABLE_DEVICE</p></td>
+<td><p>corecel</p></td>
+<td><p>Disable CUDA/HIP support</p></td>
+</tr>
+<tr class="row-odd"><td><p>CELER_DISABLE_PARALLEL</p></td>
+<td><p>corecel</p></td>
+<td><p>Disable MPI support</p></td>
+</tr>
+<tr class="row-even"><td><p>CELER_DISABLE_ROOT</p></td>
+<td><p>corecel</p></td>
+<td><p>Disable ROOT I/O calls</p></td>
+</tr>
+<tr class="row-odd"><td><p>CELER_ENABLE_PROFILING</p></td>
+<td><p>corecel</p></td>
+<td><p>Set up NVTX/ROCTX profiling ranges [#pr]</p></td>
+</tr>
+<tr class="row-even"><td><p>CELER_LOG</p></td>
+<td><p>corecel</p></td>
+<td><p>Set the “global” logger verbosity</p></td>
+</tr>
+<tr class="row-odd"><td><p>CELER_LOG_LOCAL</p></td>
+<td><p>corecel</p></td>
+<td><p>Set the “local” logger verbosity</p></td>
+</tr>
+<tr class="row-even"><td><p>CELER_MEMPOOL… <a class="footnote-reference brackets" href="#mp" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>celeritas</p></td>
+<td><p>Change <code class="docutils literal notranslate"><span class="pre">cudaMemPoolAttrReleaseThreshold</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>CELER_PROFILE_DEVICE</p></td>
+<td><p>corecel</p></td>
+<td><p>Record extra kernel launch information</p></td>
+</tr>
+<tr class="row-even"><td><p>CUDA_HEAP_SIZE</p></td>
+<td><p>celeritas</p></td>
+<td><p>Change <code class="docutils literal notranslate"><span class="pre">cudaLimitMallocHeapSize</span></code> (VG)</p></td>
+</tr>
+<tr class="row-odd"><td><p>CUDA_STACK_SIZE</p></td>
+<td><p>celeritas</p></td>
+<td><p>Change <code class="docutils literal notranslate"><span class="pre">cudaLimitStackSize</span></code> for VecGeom</p></td>
+</tr>
+<tr class="row-even"><td><p>G4VG_COMPARE_VOLUMES</p></td>
+<td><p>celeritas</p></td>
+<td><p>Check G4VG volume capacity when converting</p></td>
+</tr>
+<tr class="row-odd"><td><p>HEPMC3_VERBOSE</p></td>
+<td><p>celeritas</p></td>
+<td><p>HepMC3 debug verbosity</p></td>
+</tr>
+<tr class="row-even"><td><p>VECGEOM_VERBOSE</p></td>
+<td><p>celeritas</p></td>
+<td><p>VecGeom CUDA verbosity</p></td>
+</tr>
+<tr class="row-odd"><td><p>CELER_DISABLE</p></td>
+<td><p>accel</p></td>
+<td><p>Disable Celeritas offloading entirely</p></td>
+</tr>
+<tr class="row-even"><td><p>CELER_STRIP_SOURCEDIR</p></td>
+<td><p>accel</p></td>
+<td><p>Strip directories from exception output</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="mp" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">1</a><span class="fn-bracket">]</span></span>
+<p>CELER_MEMPOOL_RELEASE_THRESHOLD</p>
+</aside>
+<aside class="footnote brackets" id="pr" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>See <a class="reference internal" href="#profiling"><span class="std std-ref">Profiling</span></a></p>
+</aside>
+</aside>
+<p>Environment variables from external libraries can also be referenced by
+Celeritas or its apps:</p>
+<div class="table-wrapper docutils container" id="id10">
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">Environment variables used by relevant external libraries.</span><a class="headerlink" href="#id10" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Library</p></th>
+<th class="head"><p>Brief description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CUDA_VISIBLE_DEVICES</p></td>
+<td><p>CUDA</p></td>
+<td><p>Set the active CUDA device</p></td>
+</tr>
+<tr class="row-odd"><td><p>HIP_VISIBLE_DEVICES</p></td>
+<td><p>HIP</p></td>
+<td><p>Set the active HIP device</p></td>
+</tr>
+<tr class="row-even"><td><p>G4LEDATA</p></td>
+<td><p>Geant4</p></td>
+<td><p>Path to low-energy EM data</p></td>
+</tr>
+<tr class="row-odd"><td><p>G4FORCE_RUN_MANAGER_TYPE</p></td>
+<td><p>Geant4</p></td>
+<td><p>Use MT or Serial thread layout</p></td>
+</tr>
+<tr class="row-even"><td><p>G4FORCENUMBEROFTHREADS</p></td>
+<td><p>Geant4</p></td>
+<td><p>Set CPU worker thread count</p></td>
+</tr>
+<tr class="row-odd"><td><p>OMP_NUM_THREADS</p></td>
+<td><p>OpenMP</p></td>
+<td><p>Number of threads per process</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="logging">
+<span id="id6"></span><h2>Logging<a class="headerlink" href="#logging" title="Link to this heading">#</a></h2>
+<p>The Celeritas library writes informational messages to <code class="docutils literal notranslate"><span class="pre">stderr</span></code>. The given
+levels can be used with the <code class="docutils literal notranslate"><span class="pre">CELER_LOG</span></code> and <code class="docutils literal notranslate"><span class="pre">CELER_LOG_LOCAL</span></code> environment
+variables to suppress or increase the output. The default is to print
+diagnostic messages and higher.</p>
+<div class="table-wrapper docutils container" id="id11">
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">Logging levels in increasing severity.</span><a class="headerlink" href="#id11" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Level</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>debug</p></td>
+<td><p>Low-level debugging messages</p></td>
+</tr>
+<tr class="row-odd"><td><p>diagnostic</p></td>
+<td><p>Diagnostics about current program execution</p></td>
+</tr>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>Program execution status (what stage is beginning)</p></td>
+</tr>
+<tr class="row-odd"><td><p>info</p></td>
+<td><p>Important informational messages</p></td>
+</tr>
+<tr class="row-even"><td><p>warning</p></td>
+<td><p>Warnings about unusual events</p></td>
+</tr>
+<tr class="row-odd"><td><p>error</p></td>
+<td><p>Something went wrong, but execution can continue</p></td>
+</tr>
+<tr class="row-even"><td><p>critical</p></td>
+<td><p>Something went terribly wrong, program termination imminent</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="profiling">
+<span id="id7"></span><h2>Profiling<a class="headerlink" href="#profiling" title="Link to this heading">#</a></h2>
+<p>Since the primary motivator of Celeritas is performance on GPU hardware,
+profiling is a necessity. Celeritas uses NVTX (or ROCTX when using AMD HIP)
+to annotate the different sections of the code, allowing for fine-grained
+profiling and improved visualization.</p>
+<section id="timelines">
+<h3>Timelines<a class="headerlink" href="#timelines" title="Link to this heading">#</a></h3>
+<p>A detailed timeline of the Celeritas construction, steps, and kernel launches
+can be gathered using <a class="reference external" href="https://docs.nvidia.com/nsight-systems/UserGuide/index.html">NVIDIA Nsight systems</a>.</p>
+<p>Here is an example using the <code class="docutils literal notranslate"><span class="pre">celer-sim</span></code> app to generate a timeline:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">$ </span><span class="nv">CELER_ENABLE_PROFILING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">2</span><span class="gp">&gt; </span>nsys<span class="w"> </span>profile<span class="w"> </span><span class="se">\</span>
+<span class="linenos">3</span><span class="gp">&gt; </span>-c<span class="w"> </span>nvtx<span class="w">  </span>--trace<span class="o">=</span>cuda,nvtx,osrt
+<span class="linenos">4</span><span class="go">&gt; -p celer-sim@celeritas</span>
+<span class="linenos">5</span><span class="go">&gt; --osrt-backtrace-stack-size=16384 --backtrace=fp</span>
+<span class="linenos">6</span><span class="go">&gt; -f true -o report.qdrep \</span>
+<span class="linenos">7</span><span class="go">&gt; celer-sim inp.json</span>
+</pre></div>
+</div>
+<p>To use the NVTX ranges, you must enable the <code class="docutils literal notranslate"><span class="pre">CELER_ENABLE_PROFILING</span></code> variable
+and use the NVTX “capture” option (lines 1 and 3). The <code class="docutils literal notranslate"><span class="pre">celer-sim</span></code> range in
+the <code class="docutils literal notranslate"><span class="pre">celeritas</span></code> domain (line 4) enables profiling over the whole application.
+Additional system backtracing is specified in line 5; line 6 writes (and
+overwrites) to a particular output file; the final line invokes the
+application.</p>
+<p>Timelines can also be generated on AMD hardware using the <a class="reference external" href="https://rocm.docs.amd.com/projects/rocprofiler/en/latest/rocprofv1.html#roctx-trace">ROCProfiler</a>
+applications. Here’s an example that writes out timeline information:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">$ </span><span class="nv">CELER_ENABLE_PROFILING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">2</span><span class="gp">&gt; </span>rocprof<span class="w"> </span><span class="se">\</span>
+<span class="linenos">3</span><span class="gp">&gt; </span>--roctx-trace<span class="w"> </span><span class="se">\</span>
+<span class="linenos">4</span><span class="gp">&gt; </span>--hip-trace<span class="w"> </span><span class="se">\</span>
+<span class="linenos">5</span><span class="gp">&gt; </span>celer-sim<span class="w"> </span>inp.json
+</pre></div>
+</div>
+<p>It will output a <code class="file docutils literal notranslate"><span class="pre">results.json</span></code> file that contains profiling data for
+both the Celeritas annotations (line 3) and HIP function calls (line 4) in
+a “trace event format” which can be viewed in the <a class="reference external" href="https://ui.perfetto.dev/">Perfetto</a> data visualization
+tool.</p>
+</section>
+<section id="kernel-profiling">
+<h3>Kernel profiling<a class="headerlink" href="#kernel-profiling" title="Link to this heading">#</a></h3>
+<p>Detailed kernel diagnostics including occupancy and memory bandwidth can be
+gathered with the <a class="reference external" href="https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html">NVIDIA Compute systems</a> profiler.</p>
+<p>This example gathers kernel statistics for 10 “propagate” kernels (for both
+charged and uncharged particles) starting with the 300th launch.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">$ </span><span class="nv">CELER_ENABLE_PROFILING</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">2</span><span class="gp">&gt; </span>ncu<span class="w"> </span><span class="se">\</span>
+<span class="linenos">3</span><span class="gp">&gt; </span>--nvtx<span class="w"> </span>--nvtx-include<span class="w"> </span><span class="s2">&quot;celeritas@celer-sim/step/*/propagate&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">4</span><span class="gp">&gt; </span>--launch-skip<span class="w"> </span><span class="m">300</span><span class="w"> </span>--launch-count<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">5</span><span class="gp">&gt; </span>-f<span class="w"> </span>-o<span class="w"> </span>propagate
+<span class="linenos">6</span><span class="go">&gt; celer-sim inp.json</span>
+</pre></div>
+</div>
+<p>It will write to <code class="file docutils literal notranslate"><span class="pre">propagate.ncu-rep</span></code> output file. Note that the domain
+and range are flipped compared to <code class="docutils literal notranslate"><span class="pre">nsys</span></code> since the kernel profiling allows
+detailed top-down stack specification.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="api.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Library API</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="installation.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Installation</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, UT–Battelle/ORNL and Celeritas team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Using Celeritas</a><ul>
+<li><a class="reference internal" href="#software-library">Software library</a><ul>
+<li><a class="reference internal" href="#cmake-integration">CMake integration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#standalone-simulation-app-celer-sim">Standalone simulation app (celer-sim)</a><ul>
+<li><a class="reference internal" href="#input">Input</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#integrated-geant4-application-celer-g4">Integrated Geant4 application (celer-g4)</a><ul>
+<li><a class="reference internal" href="#id2">Input</a></li>
+<li><a class="reference internal" href="#id3">Output</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#additional-utilities">Additional utilities</a><ul>
+<li><a class="reference internal" href="#celer-export-geant">celer-export-geant</a></li>
+<li><a class="reference internal" href="#celer-dump-data">celer-dump-data</a></li>
+<li><a class="reference internal" href="#orange-update">orange-update</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#environment-variables">Environment variables</a></li>
+<li><a class="reference internal" href="#logging">Logging</a></li>
+<li><a class="reference internal" href="#profiling">Profiling</a><ul>
+<li><a class="reference internal" href="#timelines">Timelines</a></li>
+<li><a class="reference internal" href="#kernel-profiling">Kernel profiling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=6c02275b"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

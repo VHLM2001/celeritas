@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['build_2esh_2c_20cmake_2dpresents_2c_20and_20env_0',['Build.sh, cmake-presents, and env',['../d1/d7f/md___users_seth__local_src_celeritas_temp_scripts__r_e_a_d_m_e.html',1,'']]]
+  ['a_20data_20portability_20class_0',['Collection: a data portability class',['../d2/d16/collections.html',1,'']]],
+  ['and_20env_1',['Build.sh, cmake-presents, and env',['../dc/d5a/md__2_users_2seth_2_code_2celeritas-temp_2scripts_2_r_e_a_d_m_e.html',1,'']]]
 ];

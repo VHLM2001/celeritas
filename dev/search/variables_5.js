@@ -12,7 +12,8 @@ var searchData=
   ['flags_9',['flags',['../d6/dfb/structceleritas_1_1_volume_input.html#a1934430707383e3caec4d2e2471512f4',1,'celeritas::VolumeInput']]],
   ['fluor_10',['fluor',['../dc/d3c/structceleritas_1_1_import_atomic_subshell.html#a3b7590ac4f530105fd98b726060f365b',1,'celeritas::ImportAtomicSubshell']]],
   ['force_5fvolumes_11',['force_volumes',['../d1/d65/structceleritas_1_1_s_d_setup_options.html#a792fef718924ce8684c7c32d779b6753',1,'celeritas::SDSetupOptions']]],
-  ['fraction_12',['fraction',['../db/d14/structceleritas_1_1_el_isotope_component.html#a13b70d1f5734d22d3670aad2793985da',1,'celeritas::ElIsotopeComponent::fraction()'],['../dd/de8/structceleritas_1_1_mat_element_component.html#ac8e900692301d463f9622c3ed5ab57d6',1,'celeritas::MatElementComponent::fraction()'],['../d5/d3b/structceleritas_1_1_find_interp.html#a34435a005bb638c55b69e749b66e7cf2',1,'celeritas::FindInterp::fraction()']]],
-  ['front_13',['front',['../d6/d49/structceleritas_1_1_uniform_grid_data.html#a0f2c0c0f84c7a2f2de4a00126b259546',1,'celeritas::UniformGridData']]],
-  ['fz_14',['fz',['../d5/d18/structceleritas_1_1_rel_brem_element_data.html#a607ff0c4725d26823f50b1aacaf8ddc9',1,'celeritas::RelBremElementData']]]
+  ['form_5ffactor_5fmodel_12',['form_factor_model',['../d9/d00/structceleritas_1_1_wentzel_model_1_1_options.html#a0dc52043946232dc88ae555a1ef20cf8',1,'celeritas::WentzelModel::Options']]],
+  ['fraction_13',['fraction',['../db/d14/structceleritas_1_1_el_isotope_component.html#a13b70d1f5734d22d3670aad2793985da',1,'celeritas::ElIsotopeComponent::fraction'],['../dd/de8/structceleritas_1_1_mat_element_component.html#ac8e900692301d463f9622c3ed5ab57d6',1,'celeritas::MatElementComponent::fraction'],['../d5/d3b/structceleritas_1_1_find_interp.html#a34435a005bb638c55b69e749b66e7cf2',1,'celeritas::FindInterp::fraction']]],
+  ['front_14',['front',['../d6/d49/structceleritas_1_1_uniform_grid_data.html#a0f2c0c0f84c7a2f2de4a00126b259546',1,'celeritas::UniformGridData']]],
+  ['fz_15',['fz',['../d5/d18/structceleritas_1_1_rel_brem_element_data.html#a607ff0c4725d26823f50b1aacaf8ddc9',1,'celeritas::RelBremElementData']]]
 ];

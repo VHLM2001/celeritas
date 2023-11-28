@@ -1,0 +1,465 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Installation" href="installation.html" /><link rel="prev" title="Introduction" href="introduction.html" />
+
+    <!-- Generated with Sphinx 7.2.3 and Furo 2023.09.10 -->
+        <title>Overview - Celeritas 0.4.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Celeritas 0.4.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/celeritas-square.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Celeritas 0.4.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Using Celeritas</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">Library API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Library API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/corecel.html">Core package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/orange.html">ORANGE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/celeritas.html">Celeritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/accel.html">Acceleritas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/minimal.html">Minimal Celeritas usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/geant4.html">Minimal Geant4 integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgments.html">Acknowledgments</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../appendix/release-history.html">Release History</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Release History</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.4.html">Version 0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.3.html">Version 0.3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.3.html#version-0-3-1">Version 0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.3.html#version-0-3-0">Version 0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.2.html">Version 0.2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.2.html#version-0-2-1">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.2.html#version-0-2-0">Version 0.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html">Version 0.1.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-4">Version 0.1.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-3">Version 0.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-2">Version 0.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-1">Version 0.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.1.html#version-0-1-0">Version 0.1.0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/development.html">Development Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/license.html">License</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="overview">
+<span id="id1"></span><h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h1>
+<p>This section summarizes key usage patterns and implementation details from
+Celeritas, especially those that differ from Geant4.</p>
+<section id="units">
+<h2>Units<a class="headerlink" href="#units" title="Link to this heading">#</a></h2>
+<p>The unit system in Celeritas is CGS with centimeter (cm), gram (g), second (s),
+gauss (Ga?), and kelvin (K) all having a value of unity. With these definitions,
+densities can be defined in natural units of <span class="math notranslate nohighlight">\(\mathrm{g}/\mathrm{cm}^3\)</span>,
+and macroscopic cross sections are in units of <span class="math notranslate nohighlight">\(\mathrm{cm}^{-1}\)</span>. See
+the <a class="reference internal" href="api/celeritas.html#api-units"><span class="std std-ref">units documentation</span></a> for more descriptions of the core
+unit system and the exactly defined values for SI units such as tesla.</p>
+<p>Celeritas defines <a class="reference internal" href="api/celeritas.html#api-constants"><span class="std std-ref">constants</span></a> from a few different sources.
+Mathematical constants are defined as truncated floating point values. Some
+physical constants such as the speed of light, Planck’s constant, and the
+electron charge, have exact numerical values as specified by the SI unit system
+<span id="id2">[<a class="reference internal" href="references.html#id78" title="Bureau International des Poids et Mesures. The International System of Units. Technical Report, International Bureau of Weights and Measures, 2019.">BureauIdPeMesures19</a>]</span>. Other physical constants such as the atomic mass unit and electron
+radius are derived from experimental measurements in CODATA 2018. Because the
+reported constants are derived from regression fits to experimental data
+points, some exactly defined physical relationships (such as the fine structure
+<span class="math notranslate nohighlight">\(\alpha = \frac{e^2}{2 \epsilon_0 h c}\)</span> are only approximate.</p>
+<p>Unlike Geant4 and the CLHEP unit systems, Celeritas avoids using “natural”
+units in its definitions. Although a natural unit system makes some
+expressions easier to evaluate, it can lead to errors in the definition of
+derivative constants and is fundamentally in conflict with consistent unit
+systems such as SI. To enable special unit systems in harmony with the
+native Celeritas unit system, the <a class="reference internal" href="api/corecel.html#api-quantity"><span class="std std-ref">Quantity</span></a> class
+stores quantities in another unit system with a compile-time constant that
+allows their conversion back to native units. This allows, for example,
+particles to represent their energy as MeV and charge as fractions of e but
+work seamlessly with a field definition in native (macro-scale quantity) units.</p>
+</section>
+<section id="physics">
+<h2>Physics<a class="headerlink" href="#physics" title="Link to this heading">#</a></h2>
+<p>Celeritas implements physics processes and models for transporting electron, positron,
+and gamma particles as shown in the accompanying table. Implementation details of these models
+and their corresponding Geant4 classes are documented in <a class="reference internal" href="api/celeritas.html#celeritas-physics"><span class="std std-ref">Physics distributions</span></a>.</p>
+<div class="table-wrapper docutils container" id="id3">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Electromagnetic physics processes and models available in Celeritas.</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><strong>Particle</strong></p></td>
+<td><p><strong>Processes</strong></p></td>
+<td><p><strong>Models</strong></p></td>
+<td><p><strong>Celeritas Implementation</strong></p></td>
+<td><p><strong>Applicability</strong></p></td>
+</tr>
+<tr class="row-even"><td rowspan="4"><p><span class="math notranslate nohighlight">\(e^-\)</span></p></td>
+<td><p>Ionisation</p></td>
+<td><p>Møller</p></td>
+<td><p><a class="reference internal" href="api/celeritas.html#_CPPv4N9celeritas22MollerBhabhaInteractorE" title="celeritas::MollerBhabhaInteractor"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">celeritas::MollerBhabhaInteractor</span></code></a></p></td>
+<td><p>0–100 TeV</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>Bremsstrahlung</p></td>
+<td><p>Seltzer–Berger</p></td>
+<td><p><a class="reference internal" href="api/celeritas.html#_CPPv4N9celeritas23SeltzerBergerInteractorE" title="celeritas::SeltzerBergerInteractor"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">celeritas::SeltzerBergerInteractor</span></code></a></p></td>
+<td><p>0–1 GeV</p></td>
+</tr>
+<tr class="row-even"><td><p>Relativistic</p></td>
+<td><p><a class="reference internal" href="api/celeritas.html#_CPPv4N9celeritas26RelativisticBremInteractorE" title="celeritas::RelativisticBremInteractor"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">celeritas::RelativisticBremInteractor</span></code></a></p></td>
+<td><p>1 GeV – 100 TeV</p></td>
+</tr>
+<tr class="row-odd"><td><p>Coulomb scattering</p></td>
+<td><p>Urban</p></td>
+<td><p><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">celeritas::UrbanMscScatter</span></code></p></td>
+<td><p>100 eV – 100 TeV</p></td>
+</tr>
+<tr class="row-even"><td rowspan="5"><p><span class="math notranslate nohighlight">\(e^+\)</span></p></td>
+<td><p>Ionisation</p></td>
+<td><p>Bhabha</p></td>
+<td><p><a class="reference internal" href="api/celeritas.html#_CPPv4N9celeritas22MollerBhabhaInteractorE" title="celeritas::MollerBhabhaInteractor"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">celeritas::MollerBhabhaInteractor</span></code></a></p></td>
+<td><p>0–100 TeV</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>Bremsstrahlung</p></td>
+<td><p>Seltzer-Berger</p></td>
+<td><p><a class="reference internal" href="api/celeritas.html#_CPPv4N9celeritas23SeltzerBergerInteractorE" title="celeritas::SeltzerBergerInteractor"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">celeritas::SeltzerBergerInteractor</span></code></a></p></td>
+<td><p>0–1 GeV</p></td>
+</tr>
+<tr class="row-even"><td><p>Relativistic</p></td>
+<td><p><a class="reference internal" href="api/celeritas.html#_CPPv4N9celeritas26RelativisticBremInteractorE" title="celeritas::RelativisticBremInteractor"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">celeritas::RelativisticBremInteractor</span></code></a></p></td>
+<td><p>1 GeV – 100 TeV</p></td>
+</tr>
+<tr class="row-odd"><td><p>Coulomb scattering</p></td>
+<td><p>Urban</p></td>
+<td><p><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">celeritas::UrbanMscScatter</span></code></p></td>
+<td><p>100 eV – 100 TeV</p></td>
+</tr>
+<tr class="row-even"><td><p>Annihilation</p></td>
+<td><p><span class="math notranslate nohighlight">\(e^+,e^- \to 2\gamma\)</span></p></td>
+<td><p><a class="reference internal" href="api/celeritas.html#_CPPv4N9celeritas17EPlusGGInteractorE" title="celeritas::EPlusGGInteractor"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">celeritas::EPlusGGInteractor</span></code></a></p></td>
+<td><p>0–100 TeV</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><p><span class="math notranslate nohighlight">\(\gamma\)</span></p></td>
+<td><p>Photoelectric</p></td>
+<td><p>Livermore</p></td>
+<td><p><a class="reference internal" href="api/celeritas.html#_CPPv4N9celeritas21LivermorePEInteractorE" title="celeritas::LivermorePEInteractor"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">celeritas::LivermorePEInteractor</span></code></a></p></td>
+<td><p>0–100 TeV</p></td>
+</tr>
+<tr class="row-even"><td><p>Compton scattering</p></td>
+<td><p>Klein–Nishina</p></td>
+<td><p><a class="reference internal" href="api/celeritas.html#_CPPv4N9celeritas22KleinNishinaInteractorE" title="celeritas::KleinNishinaInteractor"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">celeritas::KleinNishinaInteractor</span></code></a></p></td>
+<td><p>0–100 TeV</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pair production</p></td>
+<td><p>Bethe–Heitler</p></td>
+<td><p><a class="reference internal" href="api/celeritas.html#_CPPv4N9celeritas22BetheHeitlerInteractorE" title="celeritas::BetheHeitlerInteractor"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">celeritas::BetheHeitlerInteractor</span></code></a></p></td>
+<td><p>0–100 TeV</p></td>
+</tr>
+<tr class="row-even"><td><p>Rayleigh scattering</p></td>
+<td><p>Livermore</p></td>
+<td><p><a class="reference internal" href="api/celeritas.html#_CPPv4N9celeritas18RayleighInteractorE" title="celeritas::RayleighInteractor"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">celeritas::RayleighInteractor</span></code></a></p></td>
+<td><p>0–100 TeV</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The implemented physics models are meant to match the defaults constructed in
+<code class="docutils literal notranslate"><span class="pre">G4EmStandardPhysics</span></code>.  Known differences are:</p>
+<ul class="simple">
+<li><p>Particles other than electrons, positrons, and gammas are not currently
+supported.</p></li>
+<li><p>As with the AdePT project, Celeritas currently extends the range of Urban MSC
+to higher energies rather than implementing the Wentzel-VI and discrete
+Coulomb scattering.</p></li>
+<li><p>Celeritas imports tracking cutoffs and other parameters from
+<code class="docutils literal notranslate"><span class="pre">G4EmParameters</span></code>, but some custom model cutoffs are not accessible to
+Celeritas.</p></li>
+</ul>
+</section>
+<section id="geometry">
+<h2>Geometry<a class="headerlink" href="#geometry" title="Link to this heading">#</a></h2>
+<p>Celeritas has two choices of geometry implementation. <a class="reference external" href="https://gitlab.cern.ch/VecGeom/VecGeom">VecGeom</a> is a
+CUDA-compatible library for navigation on Geant4 detector geometries.
+<a class="reference internal" href="api/orange.html#api-orange"><span class="std std-ref">ORANGE</span></a> is a work in progress for surface-based geometry navigation
+that is “platform portable”, i.e. able to run on GPUs from multiple vendors.</p>
+<p>Celeritas wraps both geometry packages with a uniform interface for changing
+and querying the geometry state.</p>
+</section>
+<section id="stepping-loop">
+<h2>Stepping loop<a class="headerlink" href="#stepping-loop" title="Link to this heading">#</a></h2>
+<p>The stepping loop in Celeritas is a sorted loop over “actions”, each of which
+is usually a kernel launch (or an inner loop over tracks if running on CPU).</p>
+</section>
+<section id="gpu-usage">
+<h2>GPU usage<a class="headerlink" href="#gpu-usage" title="Link to this heading">#</a></h2>
+<p>Celeritas automatically copies data to device when constructing objects as long
+as the GPU is enabled.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="installation.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Installation</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="introduction.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Introduction</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, UT–Battelle/ORNL and Celeritas team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Overview</a><ul>
+<li><a class="reference internal" href="#units">Units</a></li>
+<li><a class="reference internal" href="#physics">Physics</a></li>
+<li><a class="reference internal" href="#geometry">Geometry</a></li>
+<li><a class="reference internal" href="#stepping-loop">Stepping loop</a></li>
+<li><a class="reference internal" href="#gpu-usage">GPU usage</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=6c02275b"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script>window.MathJax = {"tex": {"macros": {"dif": "\\;\\mathrm{d}"}}, "loader": {"load": ["ui/lazy", "output/svg"]}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

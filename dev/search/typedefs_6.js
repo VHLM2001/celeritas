@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['input_0',['Input',['../d4/de0/classceleritas_1_1_r_z_map_field_params.html#aa49f831587bee91a34a5fe6e85c6eff0',1,'celeritas::RZMapFieldParams::Input()'],['../d8/d0b/classceleritas_1_1_particle_params.html#a5db013b1794bff4c8e06438025aed886',1,'celeritas::ParticleParams::Input()'],['../d2/dd3/classceleritas_1_1_scoped_profiling.html#af539723b00fb2778115109732d3353c9',1,'celeritas::ScopedProfiling::Input()']]],
-  ['intersections_1',['Intersections',['../d4/dec/classceleritas_1_1_cyl_centered.html#ac7d2b192cd17969d6833adbda8460b08',1,'celeritas::CylCentered::Intersections()'],['../d0/d23/classceleritas_1_1_general_quadric.html#a39bda5156dd32e40bc1dc44967fca2d1',1,'celeritas::GeneralQuadric::Intersections()'],['../d4/d05/classceleritas_1_1_plane_aligned.html#a241b738757e44cfd5e6277a0709a8044',1,'celeritas::PlaneAligned::Intersections()'],['../dc/d4f/classceleritas_1_1_sphere.html#a47a98647a337cff01c4ba6d634f72215',1,'celeritas::Sphere::Intersections()'],['../dd/d92/classceleritas_1_1_sphere_centered.html#a7138f8e7848c5588ca71573cb8c6db42',1,'celeritas::SphereCentered::Intersections()']]],
-  ['isotopecomponentid_2',['IsotopeComponentId',['../db/da7/celeritas_2_types_8hh.html#afefd515a4196fcc62e7c43a3f8289f95',1,'celeritas']]],
-  ['isotopeid_3',['IsotopeId',['../db/da7/celeritas_2_types_8hh.html#aebe013590e64a6b88691a69b84d9dd5e',1,'celeritas']]],
-  ['itemid_4',['ItemId',['../db/d8b/_collection_8hh.html#a6f8d0c7bc5dfadc09ac2b566b3a55c24',1,'celeritas']]],
-  ['itemidt_5',['ItemIdT',['../d7/dd4/classceleritas_1_1_collection.html#a87df3f38469d1b7d82e529fc53e245bb',1,'celeritas::Collection']]],
-  ['itemrange_6',['ItemRange',['../db/d8b/_collection_8hh.html#a89741da60e12f348c4d1fd59e39c5dda',1,'celeritas']]],
-  ['itemranget_7',['ItemRangeT',['../d7/dd4/classceleritas_1_1_collection.html#a1ff88e5de52902e2b26af9373d21dd91',1,'celeritas::Collection']]],
-  ['iterator_8',['iterator',['../d6/d42/classceleritas_1_1detail_1_1_disabled_storage.html#a811cccc0c08d762387d6645565b1bb38',1,'celeritas::detail::DisabledStorage']]]
+  ['hostcref_0',['HostCRef',['../d0/df5/corecel_2_types_8hh.html#a68689dbf9eb486a67222e2fe2b496e71',1,'celeritas']]],
+  ['hostref_1',['hostref',['../d4/d9f/classceleritas_1_1_rayleigh_model.html#ae6971f3e1092cd61f0d02a1bc33df5f1',1,'celeritas::RayleighModel::HostRef'],['../d4/dae/classceleritas_1_1_relativistic_brem_model.html#ac3fea33a62dcdb485ad820fe26d7437d',1,'celeritas::RelativisticBremModel::HostRef'],['../d0/df5/corecel_2_types_8hh.html#afcc496fb064835f19a6c4506a430fec6',1,'celeritas::HostRef']]],
+  ['hoststepstate_2',['HostStepState',['../d6/dc0/classceleritas_1_1_step_interface.html#a6a02c3c9deda25d19195de16b283f947',1,'celeritas::StepInterface']]],
+  ['hostval_3',['HostVal',['../d0/df5/corecel_2_types_8hh.html#a814b20bcb60644da86cf39b162383acd',1,'celeritas']]]
 ];

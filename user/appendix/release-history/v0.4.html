@@ -1,0 +1,552 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Version 0.3.2" href="v0.3.html" /><link rel="prev" title="Release History" href="../release-history.html" />
+
+    <!-- Generated with Sphinx 7.2.3 and Furo 2023.09.10 -->
+        <title>Version 0.4.0 - Celeritas 0.4.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Celeritas 0.4.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/celeritas-square.svg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Celeritas 0.4.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../main/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../main/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../main/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../main/usage.html">Using Celeritas</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../main/api.html">Library API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Library API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../main/api/corecel.html">Core package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../main/api/orange.html">ORANGE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../main/api/celeritas.html">Celeritas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../main/api/accel.html">Acceleritas</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../main/examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../main/examples/minimal.html">Minimal Celeritas usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../main/examples/geant4.html">Minimal Geant4 integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../main/references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../main/acknowledgments.html">Acknowledgments</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../release-history.html">Release History</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Release History</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Version 0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.3.html">Version 0.3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.3.html#version-0-3-1">Version 0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.3.html#version-0-3-0">Version 0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.2.html">Version 0.2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.2.html#version-0-2-1">Version 0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.2.html#version-0-2-0">Version 0.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.1.html">Version 0.1.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.1.html#version-0-1-4">Version 0.1.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.1.html#version-0-1-3">Version 0.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.1.html#version-0-1-2">Version 0.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.1.html#version-0-1-1">Version 0.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v0.1.html#version-0-1-0">Version 0.1.0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administration.html">Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="version-0-4-0">
+<span id="release-v0-4-0"></span><h1>Version 0.4.0<a class="headerlink" href="#version-0-4-0" title="Link to this heading">#</a></h1>
+<p><em>Released 2023/11/27</em></p>
+<p>Version 0.4.0 is a major update to Celeritas that focuses on performance and
+integration with Geant4. It also contains major improvements to the ORANGE
+navigation engine.</p>
+<p>This is the first version of ORANGE that supports GPU neutron transport in SCALE.
+It is also the first version to fully support integration into ATLAS FullSimLight
+and CMSSW.</p>
+<p>Key enhancements compared to version 0.3.2 are:</p>
+<ul class="simple">
+<li><p>Addition of the single Coulomb scattering process and Wentzel model</p></li>
+<li><p>Major performance improvements when running Celeritas to accelerate
+multithreaded Geant4</p></li>
+<li><p>Major performance improvements when using ORANGE</p></li>
+<li><p>A new <code class="docutils literal notranslate"><span class="pre">G4VFastSimulationModel</span></code> interface to Celeritas for offloading tracks
+with Geant4 11.1</p></li>
+<li><p>Experimental support for surface-based VecGeom</p></li>
+<li><p>Experimental support for Windows and for single-precision arithmetic</p></li>
+</ul>
+<p>Key changes are:</p>
+<ul class="simple">
+<li><p>The interface for <code class="docutils literal notranslate"><span class="pre">celer-g4</span></code> now takes JSON input and writes JSON output,
+as the app is to be less of an example and more of a Celeritas front end to
+Geant4 with support for offloading.</p></li>
+<li><p>The hit output from <code class="docutils literal notranslate"><span class="pre">celer-g4</span></code> has been rewritten so that it can be opened
+in downstream applications that have <code class="docutils literal notranslate"><span class="pre">celeritas</span></code> in their library path.</p></li>
+</ul>
+<section id="new-features">
+<h2>New features<a class="headerlink" href="#new-features" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Launch kernels only with active tracks using “action range” <em>(&#64;esseivaju, #765)</em></p></li>
+<li><p>Add utility for constructing SD “force_volumes” option <em>(&#64;sethrj, #825)</em></p></li>
+<li><p>Add scoped NVTX ranges for improved profiling <em>(&#64;esseivaju, #827)</em></p></li>
+<li><p>Add isotope data to <code class="docutils literal notranslate"><span class="pre">MaterialParams</span></code> <em>(&#64;stognini, #831)</em></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">ScopedProfiling</span></code> to device actions <em>(&#64;esseivaju, #836)</em></p></li>
+<li><p>Gather and set more Step/Track attributes when calling sensitive detectors <em>(&#64;sethrj, #839)</em></p></li>
+<li><p>Add isotope selector <em>(&#64;stognini, #843)</em></p></li>
+<li><p>Add a HepMC3 event writer <em>(&#64;sethrj, #851)</em></p></li>
+<li><p>Add option to disable Celeritas offloading in celer-g4 <em>(&#64;amandalund, #860)</em></p></li>
+<li><p>Add option to dump offloaded tracks as an event file <em>(&#64;sethrj, #854)</em></p></li>
+<li><p>Expose SDSetupOptions “enabled” flag in SetupOptionsMessenger <em>(&#64;drbenmorgan, #859)</em></p></li>
+<li><p>Add track step counter to celer-g4 <em>(&#64;amandalund, #862)</em></p></li>
+<li><p>Define arithmetic operators for Array <em>(&#64;sethrj, #868)</em></p></li>
+<li><p>Support <a class="reference external" href="mailto:Geant4&#37;&#52;&#48;10&#46;5">Geant4<span>&#64;</span>10<span>&#46;</span>5</a> <em>(&#64;sethrj, #869)</em></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">__launch_bounds__</span></code> to kernels based on Executor properties <em>(&#64;esseivaju, #853)</em></p></li>
+<li><p>Add option to use RZ magnetic field and along step action in the celer-g4 application <em>(&#64;whokion, #874)</em></p></li>
+<li><p>Add basic field driver option support to RZ map field <em>(&#64;sethrj, #880)</em></p></li>
+<li><p>Implement BIH tree <em>(&#64;elliottbiondo, #849)</em></p></li>
+<li><p>Implement new matrix utilities for ORANGE <em>(&#64;sethrj, #885)</em></p></li>
+<li><p>Implement remaining quadric surfaces <em>(&#64;sethrj, #867)</em></p></li>
+<li><p>Add Wentzel single Coulomb scattering model <em>(&#64;hhollenb, #861)</em></p></li>
+<li><p>Accelerate ORANGE track initialization with Bounding Interval Hierarchy <em>(&#64;elliottbiondo, #881)</em></p></li>
+<li><p>Implement GPU-compatible transformations with ORANGE <em>(&#64;sethrj, #872)</em></p></li>
+<li><p>Add e-/e+ single Coulomb scattering process <em>(&#64;hhollenb, #899)</em></p></li>
+<li><p>Add JSON input and more control options to celer-g4 <em>(&#64;amandalund, #890)</em></p></li>
+<li><p>Implement surface promotion in ORANGE <em>(&#64;sethrj, #893)</em></p></li>
+<li><p>Refactor StepLimit to SoA <em>(&#64;esseivaju, #901)</em></p></li>
+<li><p>Implement surface translation and transformation <em>(&#64;sethrj, #887)</em></p></li>
+<li><p>Add more bounding box utilities <em>(&#64;sethrj, #889)</em></p></li>
+<li><p>Add surface “variant” class for host processing <em>(&#64;sethrj, #895)</em></p></li>
+<li><p>Add ROOT-based event exporter <em>(&#64;stognini, #900)</em></p></li>
+<li><p>Use radix sort for ordering tracks <em>(&#64;esseivaju, #903)</em></p></li>
+<li><p>Implement chained transformations/translations <em>(&#64;sethrj, #897)</em></p></li>
+<li><p>Connect ROOT event writer to accel and reader to celer-sim <em>(&#64;sethrj, #904)</em></p></li>
+<li><p>Define CELER_ASSUME for simpler always-on compiler assumptions <em>(&#64;sethrj, #905)</em></p></li>
+<li><p>Implement surface simplification <em>(&#64;sethrj, #894)</em></p></li>
+<li><p>Accelerate ORANGE boundary crossing with BIH <em>(&#64;elliottbiondo, #909)</em></p></li>
+<li><p>Add bounding box transformation <em>(&#64;sethrj, #906)</em></p></li>
+<li><p>Add surface clipping helper class <em>(&#64;sethrj, #896)</em></p></li>
+<li><p>Add option to generate primaries without an event file in celer-g4 <em>(&#64;amandalund, #914)</em></p></li>
+<li><p>Automatically calculate ORANGE universe depth <em>(&#64;elliottbiondo, #915)</em></p></li>
+<li><p>Use par_nosync execution policy to execute thrust algorithms <em>(&#64;esseivaju, #908)</em></p></li>
+<li><p>Implement generic transforms in multi-universe ORANGE <em>(&#64;sethrj, #917)</em></p></li>
+<li><p>Implement CSG tree simplification in ORANGE <em>(&#64;sethrj, #923)</em></p></li>
+<li><p>Add Windows support <em>(&#64;sethrj, #930)</em></p></li>
+<li><p>Add soft equivalence for quadric surfaces <em>(&#64;sethrj, #933)</em></p></li>
+<li><p>Add pinned allocator and asynchronous memory operations <em>(&#64;esseivaju, #910)</em></p></li>
+<li><p>Add option to disable SD hit collection in celer-g4 <em>(&#64;amandalund, #943)</em></p></li>
+<li><p>Define unified tolerances class for ORANGE <em>(&#64;sethrj, #941)</em></p></li>
+<li><p>Add timers to celer-g4 <em>(&#64;amandalund, #944)</em></p></li>
+<li><p>Implement asynchronous <code class="docutils literal notranslate"><span class="pre">DeviceAllocation</span></code> <em>(&#64;esseivaju, #953)</em></p></li>
+<li><p>Support energy loss fluctuations in uniform field along-step <em>(&#64;amandalund, #954)</em></p></li>
+<li><p>Add collection builder that deduplicates on insertion <em>(&#64;sethrj, #955)</em></p></li>
+<li><p>Improve CPU along-step performance <em>(&#64;amandalund, #961)</em></p></li>
+<li><p>Implement TrackerVisitor for multiply-dispatched tracker types <em>(&#64;elliottbiondo, #959)</em></p></li>
+<li><p>Deduplicate ORANGE geometry on insertion <em>(&#64;sethrj, #956)</em></p></li>
+<li><p>Implement CSG tree simplification algorithms <em>(&#64;sethrj, #939)</em></p></li>
+<li><p>Improve JSON conversion for bounding box edge cases <em>(&#64;sethrj, #962)</em></p></li>
+<li><p>Add unified memory support <em>(&#64;esseivaju, #965)</em></p></li>
+<li><p>Implement ScopedProfiling for HIP/ROCM <em>(&#64;esseivaju, #970)</em></p></li>
+<li><p>Enable tracking through rectangular arrays <em>(&#64;elliottbiondo, #973)</em></p></li>
+<li><p>Export ORANGE input from JSON and add full support for transforms <em>(&#64;sethrj, #976)</em></p></li>
+<li><p>Improve Quantity for field conversions and non-real_type use cases <em>(&#64;sethrj, #987)</em></p></li>
+<li><p>Adapt to the new BVH navigator from VecGeom <em>(&#64;mrguilima, #978)</em></p></li>
+<li><p>Implement concrete G4VFastSimulationModel for offload to Celeritas <em>(&#64;drbenmorgan, #992)</em></p></li>
+<li><p>Add compile-time support for single-precision Celeritas <em>(&#64;sethrj, #988)</em></p></li>
+<li><p>Implement LdgIterator abstraction <em>(&#64;esseivaju, #996)</em></p></li>
+<li><p>Use LdgIterator in Collection and Span <em>(&#64;esseivaju, #1000)</em></p></li>
+<li><p>Add ORANGE surface construction components <em>(&#64;sethrj, #1001)</em></p></li>
+<li><p>Allow <code class="docutils literal notranslate"><span class="pre">celer-g4</span></code> hit output to be opened in downstream ROOT <em>(&#64;stognini, #999)</em></p></li>
+<li><p>Add environment variable to disable ROOT and update celer-g4 input <em>(&#64;sethrj, #1011)</em></p></li>
+<li><p>Refactor ParticleState and ParticleParams to SoA <em>(&#64;esseivaju, #1012)</em></p></li>
+<li><p>Use Celeritas error and output handling in celer-g4 app <em>(&#64;sethrj, #1013)</em></p></li>
+<li><p>Add support for VecGeom surface model <em>(&#64;mrguilima, #1016)</em></p></li>
+<li><p>Add G4SD “simple calorimeter” that outputs to JSON <em>(&#64;sethrj, #1014)</em></p></li>
+<li><p>Optimize data access through ORANGE visitors <em>(&#64;esseivaju, #1018)</em></p></li>
+<li><p>Add multithread exception support and logging to Geant4 app <em>(&#64;sethrj, #1026)</em></p></li>
+</ul>
+<p>Reviewers: &#64;sethrj <em>(38)</em>, &#64;elliottbiondo <em>(19)</em>, &#64;amandalund <em>(16)</em>, &#64;whokion <em>(5)</em>, &#64;stognini <em>(2)</em>, &#64;hhollenb <em>(1)</em>, &#64;drbenmorgan <em>(1)</em>, &#64;esseivaju <em>(1)</em>, &#64;pcanal <em>(1)</em></p>
+</section>
+<section id="bug-fixes">
+<h2>Bug fixes<a class="headerlink" href="#bug-fixes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fix errors when building and loading Celeritas through CMSSW <em>(&#64;sethrj, #821)</em></p></li>
+<li><p>Divide initializer capacity by number of streams in celer-sim <em>(&#64;amandalund, #824)</em></p></li>
+<li><p>Fix build errors from <a class="reference external" href="mailto:Geant4&#37;&#52;&#48;10">Geant4<span>&#64;</span>10</a> <em>(&#64;drbenmorgan, #830)</em></p></li>
+<li><p>Fix default <code class="docutils literal notranslate"><span class="pre">combined_brems</span></code> option to work with multiple-element materials <em>(&#64;sethrj, #837)</em></p></li>
+<li><p>Fix app/demo-geo-check test failure when using MPI <em>(&#64;stognini, #838)</em></p></li>
+<li><p>Unify convergence criteria in field driver <em>(&#64;sethrj, #829)</em></p></li>
+<li><p>Fix minor issues with exceptions <em>(&#64;sethrj, #846)</em></p></li>
+<li><p>Fix linking errors with CUDA+VecGeom caused by #847 <em>(&#64;pcanal, #856)</em></p></li>
+<li><p>Fix inconsistencies in Geant4-to-VecGeom boolean conversion <em>(&#64;sethrj, #857)</em></p></li>
+<li><p>Fix HepMC3 reading of vertices and status codes <em>(&#64;sethrj, #863)</em></p></li>
+<li><p>Restore “small step updates momentum” condition (part of #875) in field propagator <em>(&#64;sethrj, #882)</em></p></li>
+<li><p>Fix sampling of secondary gamma energies in EPlusGGInteractor <em>(&#64;whokion, #888)</em></p></li>
+<li><p>Fix multi-level ORANGE direction change <em>(&#64;tmdelellis, #912)</em></p></li>
+<li><p>Fix unit conversion errors when reading from event file <em>(&#64;amandalund, #916)</em></p></li>
+<li><p>Fix Seltzer-Berger max xs for positrons <em>(&#64;amandalund, #922)</em></p></li>
+<li><p>Fix Geant4 step limiter when ionization is disabled <em>(&#64;amandalund, #920)</em></p></li>
+<li><p>Fix resetting of CUDA streams when running through accel <em>(&#64;sethrj, #927)</em></p></li>
+<li><p>Fix uniform field unit conversion <em>(&#64;amandalund, #931)</em></p></li>
+<li><p>Correctly map HepMC3 events to Geant4 events <em>(&#64;sethrj, #938)</em></p></li>
+<li><p>Improve and fix Geant4 volume conversion on boundaries <em>(&#64;sethrj, #936)</em></p></li>
+<li><p>Fix ORANGE multi-level surface crossing <em>(&#64;tmdelellis, #929)</em></p></li>
+<li><p>Fix ORANGE bounding box bumping to be consistent with tracking tolerances <em>(&#64;sethrj, #940)</em></p></li>
+<li><p>Fix Geant4 field construction in celer-g4 <em>(&#64;amandalund, #942)</em></p></li>
+<li><p>Fix accumulated action times in celer-sim <em>(&#64;amandalund, #951)</em></p></li>
+<li><p>Fix using ORANGE  geometry with pointer-appended GDML <em>(&#64;sethrj, #960)</em></p></li>
+<li><p>Fix performance regression on HIP <em>(&#64;sethrj, #968)</em></p></li>
+<li><p>Fix uninitialized memory access in <code class="docutils literal notranslate"><span class="pre">TrackInitParams</span></code> <em>(&#64;amandalund, #974)</em></p></li>
+<li><p>Run “warmup step” to hide once-off overhead from total run time <em>(&#64;sethrj, #985)</em></p></li>
+<li><p>Fix linking to CUDA toolkit when using VecGeom <em>(&#64;esseivaju, #989)</em></p></li>
+</ul>
+<p>Reviewers: &#64;sethrj <em>(15)</em>, &#64;amandalund <em>(9)</em>, &#64;esseivaju <em>(4)</em>, &#64;whokion <em>(2)</em>, &#64;mrguilima <em>(1)</em>, &#64;stognini <em>(1)</em>, &#64;tmdelellis <em>(1)</em></p>
+</section>
+<section id="documentation-improvements">
+<h2>Documentation improvements<a class="headerlink" href="#documentation-improvements" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Document how to link loadable shared libraries with Celeritas <em>(&#64;drbenmorgan, #842)</em></p></li>
+<li><p>Extend geometry robustness testing <em>(&#64;sethrj, #858)</em></p></li>
+<li><p>Release v0.3.1 <em>(&#64;sethrj, #876)</em></p></li>
+<li><p>Fix density correction calculation in Seltzer-Berger test <em>(&#64;amandalund, #921)</em></p></li>
+<li><p>Release v0.3.2 <em>(&#64;sethrj, #925)</em></p></li>
+<li><p>Update roles to distinguish “core advisor” <em>(&#64;sethrj, #947)</em></p></li>
+<li><p>Add environment scripts for exalearn4 <em>(&#64;esseivaju, #971)</em></p></li>
+<li><p>Stop previous builds when new changes are pushed <em>(&#64;aprokop, #997)</em></p></li>
+<li><p>Fix test build with single precision and disable failing tests <em>(&#64;sethrj, #998)</em></p></li>
+<li><p>Add Orange Shift tracking flow control test <em>(&#64;tmdelellis, #1003)</em></p></li>
+<li><p>Use consistent energy intervals for model applicability and selection <em>(&#64;amandalund, #1015)</em></p></li>
+<li><p>Update cmake presets for Zeus <em>(&#64;esseivaju, #1028)</em></p></li>
+</ul>
+<p>Reviewers: &#64;sethrj <em>(7)</em>, &#64;amandalund <em>(4)</em>, &#64;paulromano <em>(1)</em>, &#64;pcanal <em>(1)</em>, &#64;stognini <em>(1)</em></p>
+</section>
+<section id="minor-internal-changes">
+<h2>Minor internal changes<a class="headerlink" href="#minor-internal-changes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Add field template deduction and parameterized test <em>(&#64;sethrj, #820)</em></p></li>
+<li><p>Update CI to VecGeom 1.2.3 <em>(&#64;sethrj, #819)</em></p></li>
+<li><p>Improve logger construction and add test helper class <em>(&#64;sethrj, #826)</em></p></li>
+<li><p>Hotfix: fix warning when building with <a class="reference external" href="mailto:Geant4&#37;&#52;&#48;11">Geant4<span>&#64;</span>11</a> <em>(&#64;sethrj, #833)</em></p></li>
+<li><p>Remove variadic templating from track executor <em>(&#64;sethrj, #832)</em></p></li>
+<li><p>Refactor hit manager SD mapping <em>(&#64;sethrj, #835)</em></p></li>
+<li><p>Apply C++ core guidelines for copy/move assignment/construction <em>(&#64;esseivaju, #834)</em></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">screening_factor</span></code> to <code class="docutils literal notranslate"><span class="pre">ImportEmParameters</span></code> <em>(&#64;stognini, #840)</em></p></li>
+<li><p>cmake-rdc: add support for MODULE library. <em>(&#64;pcanal, #848)</em></p></li>
+<li><p>Add some quality-of-life CMake defaults <em>(&#64;sethrj, #847)</em></p></li>
+<li><p>Require semicolon for statement-like CELER_X_COPY_MOVE macros <em>(&#64;sethrj, #855)</em></p></li>
+<li><p>Hotfix: fix duplicate HepMC3 symbols by creating a wrapper function <em>(&#64;sethrj, #865)</em></p></li>
+<li><p>Fix large function warnings by disabling device debug code by default <em>(&#64;sethrj, #866)</em></p></li>
+<li><p>Add PolyEvaluator deduction guides <em>(&#64;hhollenb, #871)</em></p></li>
+<li><p>Add thread-safe assertion to RootStepWriter <em>(&#64;stognini, #873)</em></p></li>
+<li><p>Export full Celeritas version string as well as defaulted CMake variables <em>(&#64;sethrj, #870)</em></p></li>
+<li><p>Reuse chord length between successive field advances <em>(&#64;sethrj, #875)</em></p></li>
+<li><p>Improve polynomial deduction guide <em>(&#64;sethrj, #878)</em></p></li>
+<li><p>Validate <code class="docutils literal notranslate"><span class="pre">KernelParamCalculator</span></code> block size using CUDA/HIP function attributes <em>(&#64;esseivaju, #877)</em></p></li>
+<li><p>Refactor and extend BoundingBox <em>(&#64;elliottbiondo, #879)</em></p></li>
+<li><p>Allow downstream packages to find a newer version of Celeritas <em>(&#64;sethrj, #884)</em></p></li>
+<li><p>Hotfix: fix missing include from #849 <em>(&#64;stognini, #898)</em></p></li>
+<li><p>Refactor event IO test for reusability <em>(&#64;sethrj, #902)</em></p></li>
+<li><p>Hardcode <code class="docutils literal notranslate"><span class="pre">PrimaryGenerator</span></code> RNG engine and inherit from <code class="docutils literal notranslate"><span class="pre">EventReaderInterface</span></code> <em>(&#64;amandalund, #913)</em></p></li>
+<li><p>Define variant helpers and refactor surface type dispatch <em>(&#64;sethrj, #911)</em></p></li>
+<li><p>Use trailing underscore for “sentinel” classes in OpaqueId <em>(&#64;sethrj, #919)</em></p></li>
+<li><p>Bikeshedding changes to BIH <em>(&#64;sethrj, #918)</em></p></li>
+<li><p>Hotfix: fix crash when running celer-g4 without cuda <em>(&#64;sethrj, #928)</em></p></li>
+<li><p>Rewrite soft equality for simplicity <em>(&#64;sethrj, #932)</em></p></li>
+<li><p>Optimize ORANGE surface intersection testing <em>(&#64;sethrj, #934)</em></p></li>
+<li><p>Hotfix: warning in ipow template instantiation <em>(&#64;sethrj, #937)</em></p></li>
+<li><p>Update documentation and precalculate Wenzel nuclear form factor constants <em>(&#64;sethrj, #926)</em></p></li>
+<li><p>Use async allocation for temporary track sorting storage. <em>(&#64;esseivaju, #946)</em></p></li>
+<li><p>Fix build errors on macOS <em>(&#64;stognini, #950)</em></p></li>
+<li><p>Add defaults and runtime checking to primary generator <em>(&#64;sethrj, #957)</em></p></li>
+<li><p>Simplify nearly-zero surface displacements to zero <em>(&#64;sethrj, #945)</em></p></li>
+<li><p>Avoid maybe_unused attribute because of old GCC <em>(&#64;sethrj, #952)</em></p></li>
+<li><p>Fix ORANGE rectangular array construction from SCALE <em>(&#64;elliottbiondo, #958)</em></p></li>
+<li><p>Fix build errors in SCALE CI <em>(&#64;sethrj, #963)</em></p></li>
+<li><p>Add option to disable track count output in celer-sim <em>(&#64;amandalund, #964)</em></p></li>
+<li><p>Hotfix: windows build error and missing bbox construction <em>(&#64;sethrj, #966)</em></p></li>
+<li><p>Hotfix: build errors due to <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">constexpr</span></code> on NVCC &lt; 11.5 <em>(&#64;sethrj, #969)</em></p></li>
+<li><p>Reorganize JSON input and unit test for ORANGE <em>(&#64;sethrj, #972)</em></p></li>
+<li><p>Improve inlining and warning messages for scoped profiling <em>(&#64;sethrj, #975)</em></p></li>
+<li><p>Drop trailing underscores for private functions and leading <code class="docutils literal notranslate"><span class="pre">this-&gt;</span></code> for private data <em>(&#64;sethrj, #980)</em></p></li>
+<li><p>Support HIP 5.1.0 and add Frontier build scripts <em>(&#64;sethrj, #981)</em></p></li>
+<li><p>Add more profiling ranges and fix return code checks <em>(&#64;sethrj, #982)</em></p></li>
+<li><p>Refactor surface input with vector of variants <em>(&#64;sethrj, #924)</em></p></li>
+<li><p>Improve performance with lower launch bounds <em>(&#64;sethrj, #984)</em></p></li>
+<li><p>Refactor universe insertion and add universe accessors to orange params <em>(&#64;sethrj, #977)</em></p></li>
+<li><p>Unify names for celer-sim and celer-g4 input <em>(&#64;amandalund, #993)</em></p></li>
+<li><p>Use fused multiply-add to improve performance and numerical accuracy <em>(&#64;sethrj, #995)</em></p></li>
+<li><p>Support device-specific launch bounds <em>(&#64;esseivaju, #986)</em></p></li>
+<li><p>Make boundary distance persistent to improve Shift performance <em>(&#64;sethrj, #1002)</em></p></li>
+<li><p>Fix exception handling flags for Windows MSVC builds <em>(&#64;sethrj, #1005)</em></p></li>
+<li><p>Optimize ORANGE surface crossings and checks <em>(&#64;sethrj, #1004)</em></p></li>
+<li><p>Refactor detector construction and SharedParams output <em>(&#64;sethrj, #1007)</em></p></li>
+<li><p>Add GitHub actions to CI <em>(&#64;sethrj, #1020)</em></p></li>
+<li><p>Fix unchecked merge train wreck <em>(&#64;sethrj, #1021)</em></p></li>
+<li><p>Refactor vecgeom setup in preparation for surface support <em>(&#64;sethrj, #1017)</em></p></li>
+<li><p>Fix CI for “push” events <em>(&#64;sethrj, #1022)</em></p></li>
+<li><p>Use default field driver options in celer-g4 test <em>(&#64;amandalund, #1024)</em></p></li>
+<li><p>Fix duplicate libvecgeom.a in some components’ build <em>(&#64;mrguilima, #1027)</em></p></li>
+<li><p>Simplify data access for host collections <em>(&#64;esseivaju, #1029)</em></p></li>
+<li><p>Update Celeritas CMake defaults and add documentation build <em>(&#64;sethrj, #1030)</em></p></li>
+<li><p>Hotfix: CUDA 12.3.52 build error <em>(&#64;sethrj, #1033)</em></p></li>
+<li><p>Add preflight github action <em>(&#64;sethrj, #1032)</em></p></li>
+</ul>
+<p>Reviewers: &#64;amandalund <em>(19)</em>, &#64;sethrj <em>(18)</em>, &#64;pcanal <em>(13)</em>, &#64;elliottbiondo <em>(8)</em>, &#64;esseivaju <em>(7)</em>, &#64;drbenmorgan <em>(3)</em>, &#64;hhollenb <em>(3)</em>, &#64;whokion <em>(1)</em>, &#64;tmdelellis <em>(1)</em>, &#64;mrguilima <em>(1)</em></p>
+<p><strong>Full Changelog</strong>: <a class="reference external" href="https://github.com/celeritas-project/celeritas/compare/v0.3.0...v0.4.0">https://github.com/celeritas-project/celeritas/compare/v0.3.0…v0.4.0</a></p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="v0.3.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Version 0.3.2</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../release-history.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Release History</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, UT–Battelle/ORNL and Celeritas team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Version 0.4.0</a><ul>
+<li><a class="reference internal" href="#new-features">New features</a></li>
+<li><a class="reference internal" href="#bug-fixes">Bug fixes</a></li>
+<li><a class="reference internal" href="#documentation-improvements">Documentation improvements</a></li>
+<li><a class="reference internal" href="#minor-internal-changes">Minor internal changes</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=6c02275b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

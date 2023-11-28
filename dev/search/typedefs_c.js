@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['paramsref_0',['ParamsRef',['../d9/d10/classceleritas_1_1_surfaces.html#ac276ce0d79327578800e1f64a5831795',1,'celeritas::Surfaces::ParamsRef()'],['../d0/d95/classceleritas_1_1_volume_view.html#a65b76bb92329b945751c725caa43ce92',1,'celeritas::VolumeView::ParamsRef()']]],
-  ['particleid_1',['ParticleId',['../db/da7/celeritas_2_types_8hh.html#a3cea071f272f04902f40d2de68a9d7d6',1,'celeritas']]],
-  ['particlemodelid_2',['ParticleModelId',['../db/da7/celeritas_2_types_8hh.html#aa8381ad95301f0b3a10898b06acc6a08',1,'celeritas']]],
-  ['particleprocessid_3',['ParticleProcessId',['../db/da7/celeritas_2_types_8hh.html#ae04f001a89ad5c11b8161531f2f83120',1,'celeritas']]],
-  ['pointer_4',['pointer',['../d7/dd4/classceleritas_1_1_collection.html#aeed5ae57c36a479e968d04a8106985fa',1,'celeritas::Collection::pointer()'],['../d6/d42/classceleritas_1_1detail_1_1_disabled_storage.html#aed2e5d5fc258da6d8dd2f9c2763c69fd',1,'celeritas::detail::DisabledStorage::pointer()'],['../d6/d72/classceleritas_1_1_observer_ptr.html#a31ecc81210300a499af8ea59d9ab3eff',1,'celeritas::ObserverPtr::pointer()']]],
-  ['processid_5',['ProcessId',['../db/da7/celeritas_2_types_8hh.html#aee0178570d710ff06caf41f419b916f2',1,'celeritas']]]
+  ['operatortoken_0',['OperatorToken',['../de/d3b/_csg_types_8hh.html#a8718e23740e2c0c7aa525f65e0f8fdd7',1,'celeritas::csg']]],
+  ['options_1',['Options',['../de/d0d/classceleritas_1_1_geant_setup.html#a2e278a71b582345a670c5f15fc499f73',1,'celeritas::GeantSetup']]]
 ];

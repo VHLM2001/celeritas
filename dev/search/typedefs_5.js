@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['hostcref_0',['HostCRef',['../d0/df5/corecel_2_types_8hh.html#a68689dbf9eb486a67222e2fe2b496e71',1,'celeritas']]],
-  ['hostref_1',['HostRef',['../d4/d9f/classceleritas_1_1_rayleigh_model.html#ae6971f3e1092cd61f0d02a1bc33df5f1',1,'celeritas::RayleighModel::HostRef()'],['../d4/dae/classceleritas_1_1_relativistic_brem_model.html#ac3fea33a62dcdb485ad820fe26d7437d',1,'celeritas::RelativisticBremModel::HostRef()'],['../d0/df5/corecel_2_types_8hh.html#afcc496fb064835f19a6c4506a430fec6',1,'celeritas::HostRef()']]],
-  ['hoststepstate_2',['HostStepState',['../d6/dc0/classceleritas_1_1_step_interface.html#a6a02c3c9deda25d19195de16b283f947',1,'celeritas::StepInterface']]],
-  ['hostval_3',['HostVal',['../d0/df5/corecel_2_types_8hh.html#a814b20bcb60644da86cf39b162383acd',1,'celeritas']]]
+  ['faceid_0',['FaceId',['../d7/d3b/_orange_types_8hh.html#af74dca180647155d1b4f83d9a5665c08',1,'celeritas']]],
+  ['fast_5freal_5ftype_1',['fast_real_type',['../d7/d3b/_orange_types_8hh.html#ab4304c595b0df88cef189ac5bb059973',1,'celeritas']]],
+  ['fastbbox_2',['FastBBox',['../d7/d3b/_orange_types_8hh.html#a377110a800ebad4d6ce44def45d657fe',1,'celeritas']]],
+  ['fastbboxid_3',['FastBBoxId',['../d7/d3b/_orange_types_8hh.html#a133b3b3d1221ce7a0591e45887ea04cc',1,'celeritas']]],
+  ['flags_4',['Flags',['../de/d6a/structceleritas_1_1_geant_import_data_selection.html#aa07279057ae82e3d03943245cdda56bc',1,'celeritas::GeantImportDataSelection']]]
 ];

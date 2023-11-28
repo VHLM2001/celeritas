@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['tableselection_0',['TableSelection',['../dc/da4/_geant_process_importer_8hh.html#ac95c8f25c85c7c9d5f3fe68f54562c71',1,'celeritas::detail']]],
-  ['trackorder_1',['TrackOrder',['../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6',1,'celeritas']]],
-  ['trackstatus_2',['TrackStatus',['../db/da7/celeritas_2_types_8hh.html#a598dde2863bcfe90a35289a2418218fd',1,'celeritas']]]
+  ['relaxationselection_0',['RelaxationSelection',['../d7/d98/_geant_physics_options_8hh.html#a9f2911f461c6f4865a1a5d9a37e1b3c6',1,'celeritas']]],
+  ['runtimeerrortype_1',['RuntimeErrorType',['../d5/d10/_assert_8hh.html#a0605e3c922b91d617295e66c03dc1c7a',1,'celeritas']]]
 ];

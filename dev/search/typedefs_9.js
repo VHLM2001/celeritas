@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['mapvolumedetector_0',['MapVolumeDetector',['../d6/dc0/classceleritas_1_1_step_interface.html#ada9256c6cc789d3a6ebe0e3862fd3514',1,'celeritas::StepInterface']]],
-  ['materialid_1',['MaterialId',['../db/da7/celeritas_2_types_8hh.html#a1cade572974306b924a14c099e1a5ef0',1,'celeritas']]],
-  ['memusageid_2',['MemUsageId',['../d7/d7b/_mem_registry_8hh.html#a1a46a7297dbf6d80191b43f964b69de0',1,'celeritas']]],
-  ['mevenergy_3',['MevEnergy',['../d1/da7/classceleritas_1_1_atomic_relaxation_params.html#ad0e93e9cf50f896576819f6023b32a57',1,'celeritas::AtomicRelaxationParams::MevEnergy()'],['../db/d44/classceleritas_1_1test_1_1_interactor_host_test_base.html#a58046deb3a9175d374394858eb2913db',1,'celeritas::test::InteractorHostTestBase::MevEnergy()']]],
-  ['mevpercm_4',['MevPerCm',['../d6/dee/_physics_constants_8hh.html#a5411b4f2f174cd3a4dfa9bf9ca5db566',1,'celeritas::detail']]],
-  ['modelid_5',['ModelId',['../db/da7/celeritas_2_types_8hh.html#a5fd58fac38548ff1ee78d4a2145e1d12',1,'celeritas']]]
+  ['ldgspan_0',['LdgSpan',['../df/dbd/_span_8hh.html#a2ddb4004ee192d895fab140dfb2d9498',1,'celeritas']]],
+  ['levelid_1',['LevelId',['../d7/d3b/_orange_types_8hh.html#a9549e27f9952f2a01a45b7bf484b92b9',1,'celeritas']]],
+  ['linearinterpolator_2',['LinearInterpolator',['../d5/df8/_interpolator_8hh.html#ae1939e2e2c56ee0951f69348ae574d32',1,'celeritas']]],
+  ['localsurfaceid_3',['LocalSurfaceId',['../d7/d3b/_orange_types_8hh.html#a46d6d95ecc3210996519f60921ecfb0d',1,'celeritas']]],
+  ['localvolumeid_4',['LocalVolumeId',['../d7/d3b/_orange_types_8hh.html#a71a9e6bb40a1b4708c60ff8427caa209',1,'celeritas']]],
+  ['loghandler_5',['LogHandler',['../da/d0a/_logger_types_8hh.html#a93e3cb59bdb32a7f2568212314e47d24',1,'celeritas']]],
+  ['logic_5fint_6',['logic_int',['../d7/d3b/_orange_types_8hh.html#a91b2b5b8f23b6a660cc3debf15545b1c',1,'celeritas']]]
 ];
