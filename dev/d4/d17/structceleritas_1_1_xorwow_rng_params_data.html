@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.0</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.1</span>
    </div>
   </td>
  </tr>
@@ -86,7 +86,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="../../d3/d58/structceleritas_1_1_xorwow_rng_params_data-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">celeritas::XorwowRngParamsData&lt; W, M &gt; Struct Template Reference</div></div>
@@ -98,6 +100,18 @@ $(function() {
 
 <p><code>#include &lt;XorwowRngData.hh&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a7c4be0df099389127ebc7495d4e6c2c5" id="r_a7c4be0df099389127ebc7495d4e6c2c5"><td class="memItemLeft" align="right" valign="top"><a id="a7c4be0df099389127ebc7495d4e6c2c5" name="a7c4be0df099389127ebc7495d4e6c2c5"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>uint_t</b> = unsigned int</td></tr>
+<tr class="separator:a7c4be0df099389127ebc7495d4e6c2c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac398e7f1499ce6a0bd36a87d38872478" id="r_ac398e7f1499ce6a0bd36a87d38872478"><td class="memItemLeft" align="right" valign="top"><a id="ac398e7f1499ce6a0bd36a87d38872478" name="ac398e7f1499ce6a0bd36a87d38872478"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>JumpPoly</b> = <a class="el" href="../../dd/dd6/structceleritas_1_1_array.html">Array</a>&lt; uint_t, 5 &gt;</td></tr>
+<tr class="separator:ac398e7f1499ce6a0bd36a87d38872478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4613a56199b13f50d5758ae32c75ae25" id="r_a4613a56199b13f50d5758ae32c75ae25"><td class="memItemLeft" align="right" valign="top"><a id="a4613a56199b13f50d5758ae32c75ae25" name="a4613a56199b13f50d5758ae32c75ae25"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ArrayJumpPoly</b> = <a class="el" href="../../dd/dd6/structceleritas_1_1_array.html">Array</a>&lt; <a class="el" href="../../dd/dd6/structceleritas_1_1_array.html">JumpPoly</a>, 32 &gt;</td></tr>
+<tr class="separator:a4613a56199b13f50d5758ae32c75ae25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3994bb4e4f3799483e25b249a17d01b0" id="r_a3994bb4e4f3799483e25b249a17d01b0"><td class="memItemLeft" align="right" valign="top"><a id="a3994bb4e4f3799483e25b249a17d01b0" name="a3994bb4e4f3799483e25b249a17d01b0"></a>
@@ -110,16 +124,30 @@ template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#aeb6446bfc
 <tr class="memdesc:a46514bd6cc09efb33032427a9c5d25a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign from another set of data. <br /></td></tr>
 <tr class="separator:a46514bd6cc09efb33032427a9c5d25a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a4c3793efb41ba0f5cd6015acfb75d975" id="r_a4c3793efb41ba0f5cd6015acfb75d975"><td class="memItemLeft" align="right" valign="top"><a id="a4c3793efb41ba0f5cd6015acfb75d975" name="a4c3793efb41ba0f5cd6015acfb75d975"></a>
+static <a class="el" href="../../db/dc5/_macros_8hh.html#ae6277d86d031ef7cf2b160eeb8bbdb4e">CELER_CONSTEXPR_FUNCTION</a> <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#a2e255ada6f961f5f241b1d828d7509d9">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>num_words</b> ()</td></tr>
+<tr class="separator:a4c3793efb41ba0f5cd6015acfb75d975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afad285827cf4c9c2cfefaa274e6a268e" id="r_afad285827cf4c9c2cfefaa274e6a268e"><td class="memItemLeft" align="right" valign="top"><a id="afad285827cf4c9c2cfefaa274e6a268e" name="afad285827cf4c9c2cfefaa274e6a268e"></a>
+static <a class="el" href="../../db/dc5/_macros_8hh.html#ae6277d86d031ef7cf2b160eeb8bbdb4e">CELER_CONSTEXPR_FUNCTION</a> <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#a2e255ada6f961f5f241b1d828d7509d9">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>num_bits</b> ()</td></tr>
+<tr class="separator:afad285827cf4c9c2cfefaa274e6a268e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a4b6e38bdf34d64a46528714906c43bd2" id="r_a4b6e38bdf34d64a46528714906c43bd2"><td class="memItemLeft" align="right" valign="top"><a id="a4b6e38bdf34d64a46528714906c43bd2" name="a4b6e38bdf34d64a46528714906c43bd2"></a>
-<a class="el" href="../../dd/dd6/structceleritas_1_1_array.html">Array</a>&lt; unsigned int, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>seed</b></td></tr>
-<tr class="separator:a4b6e38bdf34d64a46528714906c43bd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eb8237fe3b412fce4f53c3a6753ad15" id="r_a6eb8237fe3b412fce4f53c3a6753ad15"><td class="memItemLeft" align="right" valign="top"><a id="a6eb8237fe3b412fce4f53c3a6753ad15" name="a6eb8237fe3b412fce4f53c3a6753ad15"></a>
+<a class="el" href="../../dd/dd6/structceleritas_1_1_array.html">Array</a>&lt; uint_t, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>seed</b></td></tr>
+<tr class="separator:a6eb8237fe3b412fce4f53c3a6753ad15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a023fa093fbb21bf6448bc4fea929ee45" id="r_a023fa093fbb21bf6448bc4fea929ee45"><td class="memItemLeft" align="right" valign="top"><a id="a023fa093fbb21bf6448bc4fea929ee45" name="a023fa093fbb21bf6448bc4fea929ee45"></a>
+<a class="el" href="../../dd/dd6/structceleritas_1_1_array.html">ArrayJumpPoly</a>&#160;</td><td class="memItemRight" valign="bottom"><b>jump</b></td></tr>
+<tr class="separator:a023fa093fbb21bf6448bc4fea929ee45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d8c1f05cbfda055bf2e780b526589b6" id="r_a9d8c1f05cbfda055bf2e780b526589b6"><td class="memItemLeft" align="right" valign="top"><a id="a9d8c1f05cbfda055bf2e780b526589b6" name="a9d8c1f05cbfda055bf2e780b526589b6"></a>
+<a class="el" href="../../dd/dd6/structceleritas_1_1_array.html">ArrayJumpPoly</a>&#160;</td><td class="memItemRight" valign="bottom"><b>jump_subsequence</b></td></tr>
+<tr class="separator:a9d8c1f05cbfda055bf2e780b526589b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#aeb6446bfcf4853c1dd9248791d829148">Ownership</a> W, <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> M&gt;<br />
 struct celeritas::XorwowRngParamsData&lt; W, M &gt;</div><p>Persistent data for XORWOW generator. </p>
-<p>If we want to add the "discard" operation or support initialization with a subsequence or offset, we can add the precomputed XORWOW jump matrices here. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="../../db/d47/_xorwow_rng_data_8hh.html">XorwowRngData.hh</a></li>
 </ul>

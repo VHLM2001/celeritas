@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.0</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.1</span>
    </div>
   </td>
  </tr>
@@ -95,7 +95,6 @@ $(function() {
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;VecGeom/base/Config.h&gt;</code><br />
 <code>#include &lt;VecGeom/base/Cuda.h&gt;</code><br />
-<code>#include &lt;VecGeom/gdml/Frontend.h&gt;</code><br />
 <code>#include &lt;VecGeom/management/ABBoxManager.h&gt;</code><br />
 <code>#include &lt;VecGeom/management/BVHManager.h&gt;</code><br />
 <code>#include &lt;VecGeom/management/GeoManager.h&gt;</code><br />
@@ -104,17 +103,18 @@ $(function() {
 <code>#include &quot;<a class="el" href="../../d3/d0e/device__runtime__api_8h.html">corecel/device_runtime_api.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/d10/_assert_8hh.html">corecel/Assert.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../db/dc5/_macros_8hh.html">corecel/Macros.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d5/db5/_environment_8hh.html">corecel/sys/Environment.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d7/d81/_scoped_limit_saver_8hh.html">corecel/sys/ScopedLimitSaver.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d1/dd7/_scoped_profiling_8hh.html">corecel/sys/ScopedProfiling.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../dc/dd4/_vecgeom_compatibility_8hh.html">celeritas/ext/detail/VecgeomCompatibility.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/de4/_range_8hh.html">corecel/cont/Range.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d9/d84/_join_8hh.html">corecel/io/Join.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d2/d8a/corecel_2io_2_logger_8hh.html">corecel/io/Logger.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d6/d8e/_scoped_time_and_redirect_8hh.html">corecel/io/ScopedTimeAndRedirect.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../db/d47/_string_utils_8hh.html">corecel/io/StringUtils.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../df/dfb/_device_8hh.html">corecel/sys/Device.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/db5/_environment_8hh.html">corecel/sys/Environment.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d81/_scoped_limit_saver_8hh.html">corecel/sys/ScopedLimitSaver.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d7/d17/_scoped_mem_8hh.html">corecel/sys/ScopedMem.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/dd7/_scoped_profiling_8hh.html">corecel/sys/ScopedProfiling.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/dd4/_vecgeom_compatibility_8hh.html">celeritas/ext/detail/VecgeomCompatibility.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/d01/_geant_geo_utils_8hh.html">GeantGeoUtils.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d1/dd1/_vecgeom_data_8hh.html">VecgeomData.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d9/dac/_converter_8hh.html">g4vg/Converter.hh</a>&quot;</code><br />
 </div><table class="memberdecls">

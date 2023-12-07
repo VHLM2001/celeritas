@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Using Celeritas" href="usage.html" /><link rel="prev" title="Overview" href="overview.html" />
 
     <!-- Generated with Sphinx 7.2.3 and Furo 2023.09.10 -->
-        <title>Installation - Celeritas 0.4.0 documentation</title>
+        <title>Installation - Celeritas 0.4.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Celeritas 0.4.0 documentation</div></a>
+      <a href="../index.html"><div class="brand">Celeritas 0.4.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="../_static/celeritas-square.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Celeritas 0.4.0 documentation</span>
+  <span class="sidebar-brand-text">Celeritas 0.4.1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -181,7 +181,8 @@
 <p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../appendix/release-history.html">Release History</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Release History</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.4.html">Version 0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.4.html">Version 0.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.4.html#version-0-4-0">Version 0.4.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.3.html">Version 0.3.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.3.html#version-0-3-1">Version 0.3.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../appendix/release-history/v0.3.html#version-0-3-0">Version 0.3.0</a></li>
@@ -356,12 +357,13 @@ dependencies:</p>
 <ul class="simple">
 <li><p>Clone and load Spack following its <a class="reference external" href="https://spack.readthedocs.io/en/latest/getting_started.html">getting started instructions</a>.</p></li>
 <li><p>If using CUDA: run <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">external</span> <span class="pre">find</span> <span class="pre">cuda</span></code> to inform Spack of the existing
-installation, and tell Spack to default to building with CUDA support with
-the command <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">config</span> <span class="pre">add</span> <span class="pre">packages:all:variants:&quot;+cuda</span>
-<span class="pre">cuda_arch=&lt;ARCH&gt;&quot;</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;ARCH&gt;</span></code> is the numeric portion of the
-<a class="reference external" href="https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/">CUDA architecture flags</a>.</p></li>
+installation</p></li>
 <li><p>Create the Celeritas development environment with <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">env</span> <span class="pre">create</span>
 <span class="pre">celeritas</span> <span class="pre">scripts/spack.yaml</span></code>.</p></li>
+<li><p>Tell Spack to default to building with CUDA support with
+the command <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">-e</span> <span class="pre">celeritas</span> <span class="pre">config</span> <span class="pre">add</span> <span class="pre">packages:all:variants:&quot;cxxstd=17</span> <span class="pre">+cuda</span>
+<span class="pre">cuda_arch=&lt;ARCH&gt;&quot;</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;ARCH&gt;</span></code> is the numeric portion of the
+<a class="reference external" href="https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/">CUDA architecture flags</a>.</p></li>
 <li><p>Install all the dependencies with <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">-e</span> <span class="pre">celeritas</span> <span class="pre">install</span></code>.</p></li>
 </ul>
 <p>The current Spack environment for full-featured development is:</p>
@@ -384,7 +386,7 @@ the command <code class="docutils literal notranslate"><span class="pre">spack</
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">py-sphinxcontrib-bibtex</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;root@6.24:</span><span class="nv"> </span><span class="s">cxxstd=17&quot;</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;swig@4.1:&quot;</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;vecgeom@1.2.3:</span><span class="nv"> </span><span class="s">+gdml</span><span class="nv"> </span><span class="s">cxxstd=17&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;vecgeom@1.2.4:</span><span class="nv"> </span><span class="s">+gdml</span><span class="nv"> </span><span class="s">cxxstd=17&quot;</span>
 <span class="w">  </span><span class="nt">view</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">concretizer</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">unify</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -397,9 +399,9 @@ the command <code class="docutils literal notranslate"><span class="pre">spack</
 <span class="w">        </span><span class="nt">blas</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">openblas</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="nt">lapack</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">openblas</span><span class="p p-Indicator">]</span>
 <span class="w">        </span><span class="nt">mpi</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">openmpi</span><span class="p p-Indicator">]</span>
-<span class="w">      </span><span class="nt">variants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cxxstd=17</span>
-<span class="w">      </span><span class="c1"># NOTE: add `+cuda cuda_arch=70` (or similar) to your site packages.py</span>
-<span class="w">      </span><span class="c1"># spack config add --scope=site packages:all:variants:&quot;+cuda cuda_arch=70&quot;</span>
+<span class="w">      </span><span class="c1"># Uncomment to enable cuda build or run within the spack env:</span>
+<span class="w">      </span><span class="c1"># spack config add packages:all:variants:&quot;cxxstd=17 +cuda cuda_arch=&lt;ARCH&gt;&quot;</span>
+<span class="w">      </span><span class="nt">variants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cxxstd=17</span><span class="w"> </span><span class="c1"># +cuda cuda_arch=&lt;ARCH&gt;</span>
 </pre></div>
 </div>
 <p>With this environment (with CUDA enabled), all Celeritas tests should be
@@ -534,7 +536,7 @@ details.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=6c02275b"></script>
+</div><script src="../_static/documentation_options.js?v=c87aa342"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

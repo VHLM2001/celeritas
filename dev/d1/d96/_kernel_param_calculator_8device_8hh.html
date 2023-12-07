@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.0</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.1</span>
    </div>
   </td>
  </tr>
@@ -117,6 +117,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a7f93e79a81009bc6c31031b19b5b7535" id="r_a7f93e79a81009bc6c31031b19b5b7535"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d96/_kernel_param_calculator_8device_8hh.html#a7f93e79a81009bc6c31031b19b5b7535">CELER_LAUNCH_KERNEL</a>(NAME,  THREADS,  STREAM, ...)</td></tr>
 <tr class="memdesc:a7f93e79a81009bc6c31031b19b5b7535"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a kernel param calculator with the given kernel, assuming the function itself has a <code>_kernel</code> suffix, and launch with the given block/thread sizes and arguments list.  <br /></td></tr>
 <tr class="separator:a7f93e79a81009bc6c31031b19b5b7535"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef63ec4085aa08eab745836c4d75c878" id="r_aef63ec4085aa08eab745836c4d75c878"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d96/_kernel_param_calculator_8device_8hh.html#aef63ec4085aa08eab745836c4d75c878">CELER_LAUNCH_KERNEL_TEMPLATE_1</a>(NAME,  T1,  THREADS,  STREAM, ...)</td></tr>
+<tr class="memdesc:aef63ec4085aa08eab745836c4d75c878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a kernel param calculator with the given kernel with one template parameter, assuming the unction itself has a <code>_kernel</code> suffix, and launch with the given block/thread sizes and arguments list.  <br /></td></tr>
+<tr class="separator:aef63ec4085aa08eab745836c4d75c878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0171abfe3023dc1de3dd8c68356e9456" id="r_a0171abfe3023dc1de3dd8c68356e9456"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d96/_kernel_param_calculator_8device_8hh.html#a0171abfe3023dc1de3dd8c68356e9456">CELER_LAUNCH_KERNEL_IMPL</a>(KERNEL,  GRID,  BLOCK,  SHARED,  STREAM, ...)</td></tr>
 <tr class="separator:a0171abfe3023dc1de3dd8c68356e9456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -230,8 +233,70 @@ Macros</h2></td></tr>
 <div class="line">        CELER_DISCARD(GRID)                                                    \</div>
 <div class="line">        CELER_DISCARD(KERNEL)                                                  \</div>
 <div class="line">        CELER_DISCARD(__VA_ARGS__);</div>
-<div class="ttc" id="a_assert_8hh_html_a52e9a3b68665d86ccaecad2279cc1cf1"><div class="ttname"><a href="../../d5/d10/_assert_8hh.html#a52e9a3b68665d86ccaecad2279cc1cf1">CELER_NOT_CONFIGURED</a></div><div class="ttdeci">#define CELER_NOT_CONFIGURED(WHAT)</div><div class="ttdoc">Assert if the code point is reached because an optional feature is disabled.</div><div class="ttdef"><b>Definition</b> Assert.hh:217</div></div>
+<div class="ttc" id="a_assert_8hh_html_a52e9a3b68665d86ccaecad2279cc1cf1"><div class="ttname"><a href="../../d5/d10/_assert_8hh.html#a52e9a3b68665d86ccaecad2279cc1cf1">CELER_NOT_CONFIGURED</a></div><div class="ttdeci">#define CELER_NOT_CONFIGURED(WHAT)</div><div class="ttdoc">Assert if the code point is reached because an optional feature is disabled.</div><div class="ttdef"><b>Definition</b> Assert.hh:225</div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="aef63ec4085aa08eab745836c4d75c878" name="aef63ec4085aa08eab745836c4d75c878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef63ec4085aa08eab745836c4d75c878">&#9670;&#160;</a></span>CELER_LAUNCH_KERNEL_TEMPLATE_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CELER_LAUNCH_KERNEL_TEMPLATE_1</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">NAME, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">T1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">THREADS, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">STREAM, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                                                                       \</div>
+<div class="line">    {                                                                        \</div>
+<div class="line">        <span class="keyword">static</span> const ::celeritas::KernelParamCalculator calc_launch_params_( \</div>
+<div class="line">            #NAME, NAME##_kernel&lt;T1&gt;);                                       \</div>
+<div class="line">        <span class="keyword">auto</span> grid_ = calc_launch_params_(THREADS);                           \</div>
+<div class="line">                                                                             \</div>
+<div class="line">        CELER_LAUNCH_KERNEL_IMPL(NAME##_kernel&lt;T1&gt;,                          \</div>
+<div class="line">                                 grid_.blocks_per_grid,                      \</div>
+<div class="line">                                 grid_.threads_per_block,                    \</div>
+<div class="line">                                 0,                                          \</div>
+<div class="line">                                 STREAM,                                     \</div>
+<div class="line">                                 __VA_ARGS__);                               \</div>
+<div class="line">        CELER_DEVICE_CHECK_ERROR();                                          \</div>
+<div class="line">    } <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>Create a kernel param calculator with the given kernel with one template parameter, assuming the unction itself has a <code>_kernel</code> suffix, and launch with the given block/thread sizes and arguments list. </p>
+
 </div>
 </div>
 </div><!-- contents -->

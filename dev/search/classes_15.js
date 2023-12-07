@@ -16,13 +16,14 @@ var searchData=
   ['vecgeomnavcollection_3c_20ownership_3a_3avalue_2c_20memspace_3a_3ahost_20_3e_13',['VecgeomNavCollection&lt; Ownership::value, MemSpace::host &gt;',['../dd/dca/structceleritas_1_1detail_1_1_vecgeom_nav_collection_3_01_ownership_1_1value_00_01_mem_space_1_1host_01_4.html',1,'celeritas::detail']]],
   ['vecgeomparams_14',['VecgeomParams',['../d6/d56/classceleritas_1_1_vecgeom_params.html',1,'celeritas']]],
   ['vecgeomparamsdata_15',['VecgeomParamsData',['../d3/d08/structceleritas_1_1_vecgeom_params_data.html',1,'celeritas']]],
-  ['vecgeomstatedata_16',['VecgeomStateData',['../d1/d4a/structceleritas_1_1_vecgeom_state_data.html',1,'celeritas']]],
-  ['vecgeomtrackview_17',['VecgeomTrackView',['../d1/d0f/classceleritas_1_1_vecgeom_track_view.html',1,'celeritas']]],
-  ['vecgeomtraits_18',['VecgeomTraits',['../db/d41/structceleritas_1_1detail_1_1_vecgeom_traits.html',1,'celeritas::detail']]],
-  ['vecgeomtraits_3c_20memspace_3a_3adevice_20_3e_19',['VecgeomTraits&lt; MemSpace::device &gt;',['../d4/d67/structceleritas_1_1detail_1_1_vecgeom_traits_3_01_mem_space_1_1device_01_4.html',1,'celeritas::detail']]],
-  ['vecgeomtraits_3c_20memspace_3a_3ahost_20_3e_20',['VecgeomTraits&lt; MemSpace::host &gt;',['../d6/d5d/structceleritas_1_1detail_1_1_vecgeom_traits_3_01_mem_space_1_1host_01_4.html',1,'celeritas::detail']]],
-  ['version_21',['Version',['../d4/dac/classceleritas_1_1_version.html',1,'celeritas']]],
-  ['volumeinput_22',['VolumeInput',['../d6/dfb/structceleritas_1_1_volume_input.html',1,'celeritas']]],
-  ['volumerecord_23',['VolumeRecord',['../d2/de3/structceleritas_1_1_volume_record.html',1,'celeritas']]],
-  ['volumeview_24',['VolumeView',['../d0/d95/classceleritas_1_1_volume_view.html',1,'celeritas']]]
+  ['vecgeomparamsoutput_16',['VecgeomParamsOutput',['../da/d2f/classceleritas_1_1_vecgeom_params_output.html',1,'celeritas']]],
+  ['vecgeomstatedata_17',['VecgeomStateData',['../d1/d4a/structceleritas_1_1_vecgeom_state_data.html',1,'celeritas']]],
+  ['vecgeomtrackview_18',['VecgeomTrackView',['../d1/d0f/classceleritas_1_1_vecgeom_track_view.html',1,'celeritas']]],
+  ['vecgeomtraits_19',['VecgeomTraits',['../db/d41/structceleritas_1_1detail_1_1_vecgeom_traits.html',1,'celeritas::detail']]],
+  ['vecgeomtraits_3c_20memspace_3a_3adevice_20_3e_20',['VecgeomTraits&lt; MemSpace::device &gt;',['../d4/d67/structceleritas_1_1detail_1_1_vecgeom_traits_3_01_mem_space_1_1device_01_4.html',1,'celeritas::detail']]],
+  ['vecgeomtraits_3c_20memspace_3a_3ahost_20_3e_21',['VecgeomTraits&lt; MemSpace::host &gt;',['../d6/d5d/structceleritas_1_1detail_1_1_vecgeom_traits_3_01_mem_space_1_1host_01_4.html',1,'celeritas::detail']]],
+  ['version_22',['Version',['../d4/dac/classceleritas_1_1_version.html',1,'celeritas']]],
+  ['volumeinput_23',['VolumeInput',['../d6/dfb/structceleritas_1_1_volume_input.html',1,'celeritas']]],
+  ['volumerecord_24',['VolumeRecord',['../d2/de3/structceleritas_1_1_volume_record.html',1,'celeritas']]],
+  ['volumeview_25',['VolumeView',['../d0/d95/classceleritas_1_1_volume_view.html',1,'celeritas']]]
 ];

@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.0</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.1</span>
    </div>
   </td>
  </tr>
@@ -157,6 +157,15 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>num_streams</b> () con
 <a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html#a47d78bbfc567a8028a5510d29581d303">SPConstGeantGeoParams</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>geant_geo_params</b> () const</td></tr>
 <tr class="memdesc:adde209150f875511ea9b696818a5b926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lazily created Geant geometry parameters. <br /></td></tr>
 <tr class="separator:adde209150f875511ea9b696818a5b926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fc596969ab7343c42a09983320ebe05" id="r_a7fc596969ab7343c42a09983320ebe05"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html#a7fc596969ab7343c42a09983320ebe05">SharedParams</a> (<a class="el" href="../../d9/df4/structceleritas_1_1_setup_options.html">SetupOptions</a> const &amp;options, <a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html#aac63afa3c04346de11f1c85efefb45f9">SPOutputRegistry</a> reg)</td></tr>
+<tr class="memdesc:a7fc596969ab7343c42a09983320ebe05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up Celeritas using Geant4 data and existing output registery.  <br /></td></tr>
+<tr class="separator:a7fc596969ab7343c42a09983320ebe05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fe5e8874aa18c50464fa7de844beb7b" id="r_a5fe5e8874aa18c50464fa7de844beb7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html#a5fe5e8874aa18c50464fa7de844beb7b">Initialize</a> (<a class="el" href="../../d9/df4/structceleritas_1_1_setup_options.html">SetupOptions</a> const &amp;options, <a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html#aac63afa3c04346de11f1c85efefb45f9">SPOutputRegistry</a> reg)</td></tr>
+<tr class="memdesc:a5fe5e8874aa18c50464fa7de844beb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize shared data with existing output registry.  <br /></td></tr>
+<tr class="separator:a5fe5e8874aa18c50464fa7de844beb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85051dfabec084c8771bdcba24a54e2f" id="r_a85051dfabec084c8771bdcba24a54e2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html#a85051dfabec084c8771bdcba24a54e2f">set_output_filename</a> (std::string const &amp;)</td></tr>
+<tr class="memdesc:a85051dfabec084c8771bdcba24a54e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save a diagnostic output filename from a Geant4 app when Celeritas is off.  <br /></td></tr>
+<tr class="separator:a85051dfabec084c8771bdcba24a54e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Construction</h2></td></tr>
 <tr class="memitem:ae022dc9c8155f292819c523d816e0ec2" id="r_ae022dc9c8155f292819c523d816e0ec2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html#ae022dc9c8155f292819c523d816e0ec2">CeleritasDisabled</a> ()</td></tr>
@@ -186,7 +195,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (<a cl
 <p>Some low-level objects, such as the output diagnostics and Geant4 geometry wrapper, can be created independently of Celeritas being enabled. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a505bbc17eb3683de90121c7a6c2f1545" name="a505bbc17eb3683de90121c7a6c2f1545"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a505bbc17eb3683de90121c7a6c2f1545">&#9670;&#160;</a></span>SharedParams() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a505bbc17eb3683de90121c7a6c2f1545">&#9670;&#160;</a></span>SharedParams() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,7 +223,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (<a cl
 </div>
 </div>
 <a id="af6d49c00144e068e263440f82868831e" name="af6d49c00144e068e263440f82868831e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6d49c00144e068e263440f82868831e">&#9670;&#160;</a></span>SharedParams() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af6d49c00144e068e263440f82868831e">&#9670;&#160;</a></span>SharedParams() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -239,6 +248,37 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (<a cl
 
 <p>Set up Celeritas using Geant4 data. </p>
 <p>This is a separate step from construction because it has to happen at the beginning of the run, not when user classes are created. It should be called from the "master" thread (for MT mode) or from the main thread (for Serial), and it must complete before any worker thread tries to access the shared data. </p>
+
+</div>
+</div>
+<a id="a7fc596969ab7343c42a09983320ebe05" name="a7fc596969ab7343c42a09983320ebe05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fc596969ab7343c42a09983320ebe05">&#9670;&#160;</a></span>SharedParams() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">celeritas::SharedParams::SharedParams </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/df4/structceleritas_1_1_setup_options.html">SetupOptions</a> const &amp;&#160;</td>
+          <td class="paramname"><em>options</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html#aac63afa3c04346de11f1c85efefb45f9">SPOutputRegistry</a>&#160;</td>
+          <td class="paramname"><em>oreg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set up Celeritas using Geant4 data and existing output registery. </p>
+<p>A design oversight in the <code><a class="el" href="../../d3/d7c/classceleritas_1_1_geant_simple_calo.html" title="Manage a simple calorimeter sensitive detector across threads.">GeantSimpleCalo</a></code> means that the action registry <em>must</em> be created before <code><a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html" title="Shared (one instance for all threads) Celeritas problem data.">SharedParams</a></code> is initialized, and in the case where Celeritas is not disabled, initialization clears the existing registry. This prevents the calorimeter from writing output. </p>
 
 </div>
 </div>
@@ -288,6 +328,37 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (<a cl
 
 <p>Clear shared data after writing out diagnostics. </p>
 <p>This should be executed exactly <em>once</em> across all threads and at the end of the run. </p>
+
+</div>
+</div>
+<a id="a5fe5e8874aa18c50464fa7de844beb7b" name="a5fe5e8874aa18c50464fa7de844beb7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fe5e8874aa18c50464fa7de844beb7b">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void celeritas::SharedParams::Initialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/df4/structceleritas_1_1_setup_options.html">SetupOptions</a> const &amp;&#160;</td>
+          <td class="paramname"><em>options</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d8/da0/classceleritas_1_1_shared_params.html#aac63afa3c04346de11f1c85efefb45f9">SPOutputRegistry</a>&#160;</td>
+          <td class="paramname"><em>reg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize shared data with existing output registry. </p>
+<p>TODO: this is a hack to be deleted in v0.5. </p>
 
 </div>
 </div>
@@ -373,6 +444,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (<a cl
 
 <p>Access Celeritas data. </p>
 <p>This can only be called after <code>Initialize</code>. </p>
+
+</div>
+</div>
+<a id="a85051dfabec084c8771bdcba24a54e2f" name="a85051dfabec084c8771bdcba24a54e2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85051dfabec084c8771bdcba24a54e2f">&#9670;&#160;</a></span>set_output_filename()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void celeritas::SharedParams::set_output_filename </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Save a diagnostic output filename from a Geant4 app when Celeritas is off. </p>
+<p>This will be overwritten when calling Initialized with setup options.</p>
+<p>TODO: this hack should be deleted in v0.5. </p>
 
 </div>
 </div>

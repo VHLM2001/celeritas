@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Version 0.3.2" href="v0.3.html" /><link rel="prev" title="Release History" href="../release-history.html" />
 
     <!-- Generated with Sphinx 7.2.3 and Furo 2023.09.10 -->
-        <title>Version 0.4.0 - Celeritas 0.4.0 documentation</title>
+        <title>Version 0.4.1 - Celeritas 0.4.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Celeritas 0.4.0 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Celeritas 0.4.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="../../_static/celeritas-square.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Celeritas 0.4.0 documentation</span>
+  <span class="sidebar-brand-text">Celeritas 0.4.1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -181,7 +181,8 @@
 <p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../release-history.html">Release History</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Release History</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Version 0.4.0</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Version 0.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-0-4-0">Version 0.4.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="v0.3.html">Version 0.3.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="v0.3.html#version-0-3-1">Version 0.3.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="v0.3.html#version-0-3-0">Version 0.3.0</a></li>
@@ -233,7 +234,65 @@
           </label>
         </div>
         <article role="main">
-          <section id="version-0-4-0">
+          <section id="version-0-4-1">
+<span id="release-v0-4-1"></span><h1>Version 0.4.1<a class="headerlink" href="#version-0-4-1" title="Link to this heading">#</a></h1>
+<p><em>Released 2023/12/07</em></p>
+<p>Version 0.4.1 is a bugfix and minor feature update to Celeritas, primarily to
+support CMSSW integration.</p>
+<p>Key enhancements compared to version 0.4.0 are:</p>
+<ul class="simple">
+<li><p>A new <code class="docutils literal notranslate"><span class="pre">G4VTrackingManager</span></code> interface to Celeritas from Geant4</p></li>
+<li><p>Support for using a GDML-free VecGeom installation</p></li>
+<li><p>Improved provenance and reporting in JSON output for apps</p></li>
+<li><p>The ability to use stdin/stdout to drive <code class="docutils literal notranslate"><span class="pre">celer-g4</span></code> with JSON</p></li>
+</ul>
+<p>Important bug fixes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GeantSimpleCalo</span></code> can now be used with Celeritas offload enabled.</p></li>
+</ul>
+<section id="new-features">
+<h2>New features<a class="headerlink" href="#new-features" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Write celer-g4 input to output file or screen <em>(&#64;sethrj, #1034)</em></p></li>
+<li><p>Support sorting tracks by particle types <em>(&#64;esseivaju, #1044)</em></p></li>
+<li><p>Improve JSON I/O for celer-g4/sim apps <em>(&#64;sethrj, #1045)</em></p></li>
+<li><p>Support JSON via stdin for celer-g4 <em>(&#64;sethrj, #1048)</em></p></li>
+<li><p>Support using VecGeom without VGDML <em>(&#64;sethrj, #1046)</em></p></li>
+<li><p>Implement jump ahead for XORWOW RNG <em>(&#64;amandalund, #1049)</em></p></li>
+<li><p>Implement offload to Celeritas from Geant4 using G4VTrackingManager hook <em>(&#64;drbenmorgan, #1050)</em></p></li>
+</ul>
+<p>Reviewers: &#64;amandalund <em>(3)</em>, &#64;sethrj <em>(3)</em>, &#64;whokion <em>(1)</em></p>
+</section>
+<section id="bug-fixes">
+<h2>Bug fixes<a class="headerlink" href="#bug-fixes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fix GeantSimpleCalo output when Celeritas is enabled <em>(&#64;sethrj, #1040)</em></p></li>
+<li><p>Uniquify ROOT file name when output is directed to stdout <em>(&#64;pcanal, #1051)</em></p></li>
+<li><p>Fix ROOT dictionary paths <em>(&#64;pcanal, #1054)</em></p></li>
+</ul>
+<p>Reviewers: &#64;sethrj <em>(2)</em>, &#64;amandalund <em>(1)</em></p>
+</section>
+<section id="documentation-improvements">
+<h2>Documentation improvements<a class="headerlink" href="#documentation-improvements" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Update tests to pass with cuRAND <em>(&#64;amandalund, #1052)</em></p></li>
+</ul>
+<p>Reviewers: &#64;sethrj <em>(1)</em></p>
+</section>
+<section id="minor-internal-changes">
+<h2>Minor internal changes<a class="headerlink" href="#minor-internal-changes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fix Jenkins CI build and ccache use <em>(&#64;sethrj, #1036)</em></p></li>
+<li><p>Update Perlmutter CMake profile and env script <em>(&#64;esseivaju, #1041)</em></p></li>
+<li><p>Fix Jenkins CI <em>(&#64;sethrj, #1038)</em></p></li>
+<li><p>Update cuda build instructions <em>(&#64;esseivaju, #1043)</em></p></li>
+<li><p>Refactor TrackSortUtils <em>(&#64;esseivaju, #1047)</em></p></li>
+</ul>
+<p>Reviewers: &#64;sethrj <em>(3)</em>, &#64;pcanal <em>(2)</em></p>
+<p><strong>Full Changelog</strong>: <a class="reference external" href="https://github.com/celeritas-project/celeritas/compare/v0.4.0...v0.4.1">https://github.com/celeritas-project/celeritas/compare/v0.4.0…v0.4.1</a></p>
+</section>
+</section>
+<section id="version-0-4-0">
 <span id="release-v0-4-0"></span><h1>Version 0.4.0<a class="headerlink" href="#version-0-4-0" title="Link to this heading">#</a></h1>
 <p><em>Released 2023/11/27</em></p>
 <p>Version 0.4.0 is a major update to Celeritas that focuses on performance and
@@ -261,8 +320,8 @@ Geant4 with support for offloading.</p></li>
 <li><p>The hit output from <code class="docutils literal notranslate"><span class="pre">celer-g4</span></code> has been rewritten so that it can be opened
 in downstream applications that have <code class="docutils literal notranslate"><span class="pre">celeritas</span></code> in their library path.</p></li>
 </ul>
-<section id="new-features">
-<h2>New features<a class="headerlink" href="#new-features" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2>New features<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Launch kernels only with active tracks using “action range” <em>(&#64;esseivaju, #765)</em></p></li>
 <li><p>Add utility for constructing SD “force_volumes” option <em>(&#64;sethrj, #825)</em></p></li>
@@ -344,8 +403,8 @@ in downstream applications that have <code class="docutils literal notranslate">
 </ul>
 <p>Reviewers: &#64;sethrj <em>(38)</em>, &#64;elliottbiondo <em>(19)</em>, &#64;amandalund <em>(16)</em>, &#64;whokion <em>(5)</em>, &#64;stognini <em>(2)</em>, &#64;hhollenb <em>(1)</em>, &#64;drbenmorgan <em>(1)</em>, &#64;esseivaju <em>(1)</em>, &#64;pcanal <em>(1)</em></p>
 </section>
-<section id="bug-fixes">
-<h2>Bug fixes<a class="headerlink" href="#bug-fixes" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h2>Bug fixes<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fix errors when building and loading Celeritas through CMSSW <em>(&#64;sethrj, #821)</em></p></li>
 <li><p>Divide initializer capacity by number of streams in celer-sim <em>(&#64;amandalund, #824)</em></p></li>
@@ -379,8 +438,8 @@ in downstream applications that have <code class="docutils literal notranslate">
 </ul>
 <p>Reviewers: &#64;sethrj <em>(15)</em>, &#64;amandalund <em>(9)</em>, &#64;esseivaju <em>(4)</em>, &#64;whokion <em>(2)</em>, &#64;mrguilima <em>(1)</em>, &#64;stognini <em>(1)</em>, &#64;tmdelellis <em>(1)</em></p>
 </section>
-<section id="documentation-improvements">
-<h2>Documentation improvements<a class="headerlink" href="#documentation-improvements" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h2>Documentation improvements<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Document how to link loadable shared libraries with Celeritas <em>(&#64;drbenmorgan, #842)</em></p></li>
 <li><p>Extend geometry robustness testing <em>(&#64;sethrj, #858)</em></p></li>
@@ -397,8 +456,8 @@ in downstream applications that have <code class="docutils literal notranslate">
 </ul>
 <p>Reviewers: &#64;sethrj <em>(7)</em>, &#64;amandalund <em>(4)</em>, &#64;paulromano <em>(1)</em>, &#64;pcanal <em>(1)</em>, &#64;stognini <em>(1)</em></p>
 </section>
-<section id="minor-internal-changes">
-<h2>Minor internal changes<a class="headerlink" href="#minor-internal-changes" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h2>Minor internal changes<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Add field template deduction and parameterized test <em>(&#64;sethrj, #820)</em></p></li>
 <li><p>Update CI to VecGeom 1.2.3 <em>(&#64;sethrj, #819)</em></p></li>
@@ -528,11 +587,18 @@ in downstream applications that have <code class="docutils literal notranslate">
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Version 0.4.0</a><ul>
+<li><a class="reference internal" href="#">Version 0.4.1</a><ul>
 <li><a class="reference internal" href="#new-features">New features</a></li>
 <li><a class="reference internal" href="#bug-fixes">Bug fixes</a></li>
 <li><a class="reference internal" href="#documentation-improvements">Documentation improvements</a></li>
 <li><a class="reference internal" href="#minor-internal-changes">Minor internal changes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-0-4-0">Version 0.4.0</a><ul>
+<li><a class="reference internal" href="#id1">New features</a></li>
+<li><a class="reference internal" href="#id2">Bug fixes</a></li>
+<li><a class="reference internal" href="#id3">Documentation improvements</a></li>
+<li><a class="reference internal" href="#id4">Minor internal changes</a></li>
 </ul>
 </li>
 </ul>
@@ -544,7 +610,7 @@ in downstream applications that have <code class="docutils literal notranslate">
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=6c02275b"></script>
+</div><script src="../../_static/documentation_options.js?v=c87aa342"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>

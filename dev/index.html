@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.0</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.1</span>
    </div>
   </td>
  </tr>
@@ -95,26 +95,39 @@ Installation for applications</h1>
 <li>Install Celeritas with <code>spack install celeritas</code></li>
 <li>Use <code>spack load celeritas</code> to add the installation to your <code>PATH</code>.</li>
 </ul>
-<p>Then see the "Downstream usage as a library" section of the <a href="doc/installation.rst">installation documentation</a> for how to use Celeritas in your application or framework.</p>
+<p>Then see the "Downstream usage as a library" section of the <a href="doc/main/installation.rst">installation documentation</a> for how to use Celeritas in your application or framework.</p>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Installation for developers</h1>
-<p>Since Celeritas is still under heavy development and is not yet full-featured for downstream integration, you are likely installing it for development purposes. The <a href="doc/installation.rst">installation documentation</a> has a complete description of the code's dependencies and installation process for development.</p>
+<p>Since Celeritas is still under heavy development and is not yet full-featured for downstream integration, you are likely installing it for development purposes. The <a href="doc/main/installation.rst">installation documentation</a> has a complete description of the code's dependencies and installation process for development.</p>
 <p>As an example, if you have the <a href="https://github.com/spack/spack">Spack</a> package manager installed and want to do development on a CUDA system with Volta-class graphics cards, execute the following steps from within the cloned Celeritas source directory: </p><div class="fragment"><div class="line"># Set up CUDA (optional)</div>
 <div class="line">$ spack external find cuda</div>
-<div class="line">$ spack config add packages:all:variants:&quot;+cuda cuda_arch=70&quot;</div>
 <div class="line"># Install celeritas dependencies</div>
 <div class="line">$ spack env create celeritas scripts/spack.yaml</div>
 <div class="line">$ spack env activate celeritas</div>
+<div class="line">$ spack config add packages:all:variants:&quot;cxxstd=17 +cuda cuda_arch=70&quot;</div>
 <div class="line">$ spack install</div>
 <div class="line"># Configure, build, and test</div>
 <div class="line">$ ./build.sh base</div>
 </div><!-- fragment --><p>If you don't use Spack but have all the dependencies you want (Geant4, googletest, VecGeom, etc.) in your <code>CMAKE_PREFIX_PATH</code>, you can configure and build Celeritas as you would any other project: </p><div class="fragment"><div class="line">$ mkdir build &amp;&amp; cd build</div>
 <div class="line">$ cmake ..</div>
 <div class="line">$ make &amp;&amp; ctest</div>
-</div><!-- fragment --><p>Celeritas guarantees full compatibility and correctness only on the combinations of compilers and dependencies tested under continuous integration. Currently supported compilers are GCC 11.2 + NVCC 11.8, and HIP-Clang 15.0, but since we compile with extra warning flags and avoid non-portable code, most other compilers <em>should</em> work. Currently Geant4 11.0 and VecGeom 1.2 are the only versions that are guaranteed to work, but older versions might be OK. The full set of configurations is viewable on <a href="https://cloud.cees.ornl.gov/jenkins-ci/blue/organizations/jenkins/Celeritas/activity?branch=master">the CI web site</a>. Compatibility fixes that do not cause newer versions to fail are welcome.</p>
+</div><!-- fragment --><p>Celeritas guarantees full compatibility and correctness only on the combinations of compilers and dependencies tested under continuous integration:</p><ul>
+<li>Compilers:<ul>
+<li>GCC 8.4, 12.3</li>
+<li>GCC 11.3 + NVCC 11.8</li>
+<li>HIP-Clang 10.0, 15.0</li>
+</ul>
+</li>
+<li>Dependencies:<ul>
+<li>Geant4 11.0.3</li>
+<li>VecGeom 1.2.5</li>
+</ul>
+</li>
+</ul>
+<p>Since we compile with extra warning flags and avoid non-portable code, most other compilers <em>should</em> work. The full set of configurations is viewable on CI platforms (<a href="https://cloud.cees.ornl.gov/jenkins-ci/job/celeritas/job/develop">Jenkins</a> and <a href="https://github.com/celeritas-project/celeritas/actions">GitHub Actions</a>). Compatibility fixes that do not cause newer versions to fail are welcome.</p>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Development</h1>
-<p>See the <a href="CONTRIBUTING.rst">contribution guide</a> for the contribution process, <a href="doc/appendices/development.rst">the development guidelines</a> for further details on coding in Celeritas, and <a href="doc/appendices/administration.rst">the administration guidelines</a> for community standards and roles.</p>
+<p>See the <a href="CONTRIBUTING.rst">contribution guide</a> for the contribution process, <a href="doc/appendix/development.rst">the development guidelines</a> for further details on coding in Celeritas, and <a href="doc/appendix/administration.rst">the administration guidelines</a> for community standards and roles.</p>
 <h1><a class="anchor" id="autotoc_md5"></a>
 Citing Celeritas</h1>
 <p>If using Celeritas in your work, we ask that you cite the code using its <a href="https://www.osti.gov/doecode/biblio/94866">DOECode</a> registration:</p>

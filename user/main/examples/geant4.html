@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="References" href="../references.html" /><link rel="prev" title="Minimal Celeritas usage" href="minimal.html" />
 
     <!-- Generated with Sphinx 7.2.3 and Furo 2023.09.10 -->
-        <title>Minimal Geant4 integration - Celeritas 0.4.0 documentation</title>
+        <title>Minimal Geant4 integration - Celeritas 0.4.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Celeritas 0.4.0 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Celeritas 0.4.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="../../_static/celeritas-square.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Celeritas 0.4.0 documentation</span>
+  <span class="sidebar-brand-text">Celeritas 0.4.1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -181,7 +181,8 @@
 <p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/release-history.html">Release History</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Release History</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html">Version 0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html">Version 0.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html#version-0-4-0">Version 0.4.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.3.html">Version 0.3.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.3.html#version-0-3-1">Version 0.3.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.3.html#version-0-3-0">Version 0.3.0</a></li>
@@ -240,6 +241,7 @@ or multithreaded environment using:</p>
 <ol class="arabic simple">
 <li><p>A concrete G4UserTrackingAction user action class</p></li>
 <li><p>A concrete G4VFastSimulationModel</p></li>
+<li><p>A concrete G4VTrackingManager</p></li>
 </ol>
 <p>The <a class="reference internal" href="../api/accel.html#accel"><span class="std std-ref">Acceleritas</span></a> library is the only part of Celeritas that needs to be understood.
 The key components are global SetupOptions and SharedParams, coupled to thread-local
@@ -276,6 +278,16 @@ methods needed to integrate into a Geant4 application’s UserActions or other u
 <span class="w">  </span><span class="s">Celeritas::accel</span>
 <span class="w">  </span><span class="o">${</span><span class="nv">Geant4_LIBRARIES</span><span class="o">}</span>
 <span class="p">)</span>
+
+<span class="nb">if</span><span class="p">(</span><span class="s">Geant4_VERSION</span><span class="w"> </span><span class="s">VERSION_LESS</span><span class="w"> </span><span class="s">11.0</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">message</span><span class="p">(</span><span class="s">WARNING</span><span class="w"> </span><span class="s2">&quot;G4VTrackingManager offload requires Geant4 11.0 or higher&quot;</span><span class="p">)</span>
+<span class="nb">else</span><span class="p">()</span>
+<span class="w">  </span><span class="nb">add_executable</span><span class="p">(</span><span class="s">trackingmanager-offload</span><span class="w"> </span><span class="s">trackingmanager-offload.cc</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">celeritas_target_link_libraries</span><span class="p">(</span><span class="s">trackingmanager-offload</span>
+<span class="w">    </span><span class="s">Celeritas::accel</span>
+<span class="w">    </span><span class="o">${</span><span class="nv">Geant4_LIBRARIES</span><span class="o">}</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="nb">endif</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
@@ -482,13 +494,14 @@ frameworks or other apps that use a task-based runner.</p>
 </section>
 <section id="offload-using-a-concrete-g4vfastsimulationmodel">
 <h2>Offload using a concrete G4VFastSimulationModel<a class="headerlink" href="#offload-using-a-concrete-g4vfastsimulationmodel" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iterator&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;type_traits&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;FTFP_BERT.hh&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Box.hh&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Electron.hh&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4FastSimulationPhysics.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4EmStandardPhysics.hh&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Gamma.hh&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4LogicalVolume.hh&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Material.hh&gt;</span>
@@ -513,11 +526,11 @@ frameworks or other apps that use a task-based runner.</p>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4VUserDetectorConstruction.hh&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4VUserPrimaryGeneratorAction.hh&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/AlongStepFactory.hh&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/FastSimulationOffload.hh&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/LocalTransporter.hh&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/SetupOptions.hh&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/SharedParams.hh&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/SimpleOffload.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/TrackingManagerOffload.hh&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;corecel/Macros.hh&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;corecel/io/Logger.hh&gt;</span>
 
@@ -555,22 +568,28 @@ frameworks or other apps that use a task-based runner.</p>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pv</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">ConstructSDandField</span><span class="p">()</span><span class="w"> </span><span class="k">final</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Creating FastSimulationOffload for &quot;</span>
-<span class="w">                                   </span><span class="s">&quot;default region&quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="n">G4Region</span><span class="o">*</span><span class="w"> </span><span class="n">default_region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">G4RegionStore</span><span class="o">::</span><span class="n">GetInstance</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetRegion</span><span class="p">(</span>
-<span class="w">            </span><span class="s">&quot;DefaultRegionForTheWorld&quot;</span><span class="p">);</span>
-<span class="w">        </span><span class="c1">// Underlying GVFastSimulationModel constructor handles ownership, so</span>
-<span class="w">        </span><span class="c1">// we can ignore the returned pointer...</span>
-<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">celeritas</span><span class="o">::</span><span class="n">FastSimulationOffload</span><span class="p">(</span><span class="s">&quot;accel::FastSimulationOffload&quot;</span><span class="p">,</span>
-<span class="w">                                             </span><span class="n">default_region</span><span class="p">,</span>
-<span class="w">                                             </span><span class="o">&amp;</span><span class="n">shared_params</span><span class="p">,</span>
-<span class="w">                                             </span><span class="o">&amp;</span><span class="n">local_transporter</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-
 <span class="w">  </span><span class="k">private</span><span class="o">:</span>
 <span class="w">    </span><span class="n">G4Material</span><span class="o">*</span><span class="w"> </span><span class="n">aluminum_</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">//---------------------------------------------------------------------------//</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">EMPhysicsConstructor</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4EmStandardPhysics</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">G4EmStandardPhysics</span><span class="o">::</span><span class="n">G4EmStandardPhysics</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">ConstructProcess</span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Setting up tracking manager offload&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">G4EmStandardPhysics</span><span class="o">::</span><span class="n">ConstructProcess</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Add Celeritas tracking manager to electron, positron, gamma.</span>
+<span class="w">        </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">celer_tracking</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">celeritas</span><span class="o">::</span><span class="n">TrackingManagerOffload</span><span class="p">(</span>
+<span class="w">            </span><span class="o">&amp;</span><span class="n">shared_params</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">local_transporter</span><span class="p">);</span>
+<span class="w">        </span><span class="n">G4Electron</span><span class="o">::</span><span class="n">Definition</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTrackingManager</span><span class="p">(</span><span class="n">celer_tracking</span><span class="p">);</span>
+<span class="w">        </span><span class="n">G4Positron</span><span class="o">::</span><span class="n">Definition</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTrackingManager</span><span class="p">(</span><span class="n">celer_tracking</span><span class="p">);</span>
+<span class="w">        </span><span class="n">G4Gamma</span><span class="o">::</span><span class="n">Definition</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTrackingManager</span><span class="p">(</span><span class="n">celer_tracking</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">};</span>
 
 <span class="c1">//---------------------------------------------------------------------------//</span>
@@ -657,15 +676,10 @@ frameworks or other apps that use a task-based runner.</p>
 
 <span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">SetUserInitialization</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">DetectorConstruction</span><span class="p">{});</span>
 
-<span class="w">    </span><span class="c1">// We must add support for fast simulation models to the Physics List</span>
-<span class="w">    </span><span class="c1">// NOTE: we have to explicitly name the particles and this should be a</span>
-<span class="w">    </span><span class="c1">// superset of what Celeritas can offload</span>
+<span class="w">    </span><span class="c1">// Use FTFP_BERT, but replace EM constructor with our own that</span>
+<span class="w">    </span><span class="c1">// overrides ConstructProcess to use Celeritas tracking for e-/e+/g</span>
 <span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">physics_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FTFP_BERT</span><span class="p">{</span><span class="cm">/* verbosity = */</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span>
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">fast_physics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">G4FastSimulationPhysics</span><span class="p">();</span>
-<span class="w">    </span><span class="n">fast_physics</span><span class="o">-&gt;</span><span class="n">ActivateFastSimulation</span><span class="p">(</span><span class="s">&quot;e-&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">fast_physics</span><span class="o">-&gt;</span><span class="n">ActivateFastSimulation</span><span class="p">(</span><span class="s">&quot;e+&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">fast_physics</span><span class="o">-&gt;</span><span class="n">ActivateFastSimulation</span><span class="p">(</span><span class="s">&quot;gamma&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">physics_list</span><span class="o">-&gt;</span><span class="n">RegisterPhysics</span><span class="p">(</span><span class="n">fast_physics</span><span class="p">);</span>
+<span class="w">    </span><span class="n">physics_list</span><span class="o">-&gt;</span><span class="n">ReplacePhysics</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">EMPhysicsConstructor</span><span class="p">);</span>
 <span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">SetUserInitialization</span><span class="p">(</span><span class="n">physics_list</span><span class="p">);</span>
 
 <span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">SetUserInitialization</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ActionInitialization</span><span class="p">());</span>
@@ -759,7 +773,7 @@ frameworks or other apps that use a task-based runner.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=6c02275b"></script>
+</div><script src="../../_static/documentation_options.js?v=c87aa342"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>

@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.0</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.1</span>
    </div>
   </td>
  </tr>
@@ -93,16 +93,18 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d7/d09/_geant_physics_options_i_o_8json_8hh.html">GeantPhysicsOptionsIO.json.hh</a>&quot;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/d6b/_json_utils_8json_8hh.html">corecel/io/JsonUtils.json.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d6/d32/_string_enum_mapper_8hh.html">corecel/io/StringEnumMapper.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d6/d09/_quantity_i_o_8json_8hh.html">corecel/math/QuantityIO.json.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d7/d98/_geant_physics_options_8hh.html">GeantPhysicsOptions.hh</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a881ac591fa756641aba6ab3b2513fc53" id="r_a881ac591fa756641aba6ab3b2513fc53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d63/_geant_physics_options_i_o_8json_8cc.html#a881ac591fa756641aba6ab3b2513fc53">GPO_LOAD_OPTION</a>(NAME)</td></tr>
+<tr class="memitem:a881ac591fa756641aba6ab3b2513fc53" id="r_a881ac591fa756641aba6ab3b2513fc53"><td class="memItemLeft" align="right" valign="top"><a id="a881ac591fa756641aba6ab3b2513fc53" name="a881ac591fa756641aba6ab3b2513fc53"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>GPO_LOAD_OPTION</b>(NAME)&#160;&#160;&#160;<a class="el" href="../../dd/d6b/_json_utils_8json_8hh.html#af2499fb46d2f651831750a24867255e4">CELER_JSON_LOAD_OPTION</a>(j, options, NAME)</td></tr>
 <tr class="separator:a881ac591fa756641aba6ab3b2513fc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f8b86a36ada24357e241607304ebc68" id="r_a2f8b86a36ada24357e241607304ebc68"><td class="memItemLeft" align="right" valign="top"><a id="a2f8b86a36ada24357e241607304ebc68" name="a2f8b86a36ada24357e241607304ebc68"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>GPO_SAVE_OPTION</b>(NAME)&#160;&#160;&#160;j[#NAME] = options.NAME</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>GPO_SAVE_OPTION</b>(NAME)&#160;&#160;&#160;<a class="el" href="../../dd/d6b/_json_utils_8json_8hh.html#ac1eef7c1555e8617a53fdaae46fe50a8">CELER_JSON_SAVE</a>(j, options, NAME)</td></tr>
 <tr class="separator:a2f8b86a36ada24357e241607304ebc68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -134,30 +136,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to_json</b
 <tr class="memdesc:a4cc2dbf27346d63e62389cdffe6150df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write options to JSON. <br /></td></tr>
 <tr class="separator:a4cc2dbf27346d63e62389cdffe6150df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a881ac591fa756641aba6ab3b2513fc53" name="a881ac591fa756641aba6ab3b2513fc53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a881ac591fa756641aba6ab3b2513fc53">&#9670;&#160;</a></span>GPO_LOAD_OPTION</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define GPO_LOAD_OPTION</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">NAME</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                                        \</div>
-<div class="line">    {                                         \</div>
-<div class="line">        if (j.contains(#NAME))                \</div>
-<div class="line">            j.at(#NAME).get_to(options.NAME); \</div>
-<div class="line">    } <span class="keywordflow">while</span> (0)</div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

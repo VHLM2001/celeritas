@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.0</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.1</span>
    </div>
   </td>
  </tr>
@@ -102,19 +102,19 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dcd/structceleritas_1_1detail_1_1alive__predicate.html">celeritas::detail::alive_predicate</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d2f/structceleritas_1_1detail_1_1_alive_predicate.html">celeritas::detail::AlivePredicate</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d4f/structceleritas_1_1detail_1_1action__comparator.html">celeritas::detail::action_comparator</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df2/structceleritas_1_1detail_1_1_id_comparator.html">celeritas::detail::IdComparator&lt; Id &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d99/structceleritas_1_1detail_1_1_action_accessor.html">celeritas::detail::ActionAccessor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7fbec811cbd6b97fa817ccc86a48a0c4" id="r_a7fbec811cbd6b97fa817ccc86a48a0c4"><td class="memTemplParams" colspan="2"><a id="a7fbec811cbd6b97fa817ccc86a48a0c4" name="a7fbec811cbd6b97fa817ccc86a48a0c4"></a>
-template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> M, typename Size , typename  = std::enable_if_t&lt;std::is_unsigned_v&lt;Size&gt;&gt;&gt; </td></tr>
-<tr class="memitem:a7fbec811cbd6b97fa817ccc86a48a0c4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::detail::fill_track_slots</b> (<a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; Size &gt; track_slots, <a class="el" href="../../d3/d83/_thread_id_8hh.html#ab498d19d857801f0f3e5b763406812b0">StreamId</a>)</td></tr>
-<tr class="separator:a7fbec811cbd6b97fa817ccc86a48a0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba5143f1a4b32b87fe21532527da3be2" id="r_aba5143f1a4b32b87fe21532527da3be2"><td class="memTemplParams" colspan="2"><a id="aba5143f1a4b32b87fe21532527da3be2" name="aba5143f1a4b32b87fe21532527da3be2"></a>
+template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> M&gt; </td></tr>
+<tr class="memitem:aba5143f1a4b32b87fe21532527da3be2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::detail::fill_track_slots</b> (<a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; TrackSlotId::size_type &gt; track_slots, <a class="el" href="../../d3/d83/_thread_id_8hh.html#ab498d19d857801f0f3e5b763406812b0">StreamId</a>)</td></tr>
+<tr class="separator:aba5143f1a4b32b87fe21532527da3be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66702ca145c0f3644c4c15cfc84aaa93" id="r_a66702ca145c0f3644c4c15cfc84aaa93"><td class="memItemLeft" align="right" valign="top"><a id="a66702ca145c0f3644c4c15cfc84aaa93" name="a66702ca145c0f3644c4c15cfc84aaa93"></a>
 template&lt;&gt; </td></tr>
 <tr class="memitem:a66702ca145c0f3644c4c15cfc84aaa93"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::detail::fill_track_slots&lt; MemSpace::host &gt;</b> (<a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; TrackSlotId::size_type &gt; track_slots, <a class="el" href="../../d3/d83/_thread_id_8hh.html#ab498d19d857801f0f3e5b763406812b0">StreamId</a>)</td></tr>
@@ -124,10 +124,10 @@ template&lt;&gt; </td></tr>
 <tr class="memitem:aca847e88057dbd29e2a7f7bdb0ba4996"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d9e/_track_sort_utils_8hh.html#aca847e88057dbd29e2a7f7bdb0ba4996">celeritas::detail::fill_track_slots&lt; MemSpace::device &gt;</a> (<a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; TrackSlotId::size_type &gt; track_slots, <a class="el" href="../../d3/d83/_thread_id_8hh.html#ab498d19d857801f0f3e5b763406812b0">StreamId</a>)</td></tr>
 <tr class="memdesc:aca847e88057dbd29e2a7f7bdb0ba4996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize default threads to track_slots mapping, track_slots[i] = i.  <br /></td></tr>
 <tr class="separator:aca847e88057dbd29e2a7f7bdb0ba4996"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19f46c5e9c6c9c090ee1f32964819bd3" id="r_a19f46c5e9c6c9c090ee1f32964819bd3"><td class="memTemplParams" colspan="2"><a id="a19f46c5e9c6c9c090ee1f32964819bd3" name="a19f46c5e9c6c9c090ee1f32964819bd3"></a>
-template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> M, typename Size , typename  = std::enable_if_t&lt;std::is_unsigned_v&lt;Size&gt;&gt;&gt; </td></tr>
-<tr class="memitem:a19f46c5e9c6c9c090ee1f32964819bd3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::detail::shuffle_track_slots</b> (<a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; Size &gt; track_slots, <a class="el" href="../../d3/d83/_thread_id_8hh.html#ab498d19d857801f0f3e5b763406812b0">StreamId</a>)</td></tr>
-<tr class="separator:a19f46c5e9c6c9c090ee1f32964819bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eea780c0b12a36692bebacfcb46c431" id="r_a5eea780c0b12a36692bebacfcb46c431"><td class="memTemplParams" colspan="2"><a id="a5eea780c0b12a36692bebacfcb46c431" name="a5eea780c0b12a36692bebacfcb46c431"></a>
+template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> M&gt; </td></tr>
+<tr class="memitem:a5eea780c0b12a36692bebacfcb46c431"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::detail::shuffle_track_slots</b> (<a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; TrackSlotId::size_type &gt; track_slots, <a class="el" href="../../d3/d83/_thread_id_8hh.html#ab498d19d857801f0f3e5b763406812b0">StreamId</a>)</td></tr>
+<tr class="separator:a5eea780c0b12a36692bebacfcb46c431"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaf5cbd67b76b02e876a570dec88a32e" id="r_aeaf5cbd67b76b02e876a570dec88a32e"><td class="memItemLeft" align="right" valign="top"><a id="aeaf5cbd67b76b02e876a570dec88a32e" name="aeaf5cbd67b76b02e876a570dec88a32e"></a>
 template&lt;&gt; </td></tr>
 <tr class="memitem:aeaf5cbd67b76b02e876a570dec88a32e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::detail::shuffle_track_slots&lt; MemSpace::host &gt;</b> (<a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; TrackSlotId::size_type &gt; track_slots, <a class="el" href="../../d3/d83/_thread_id_8hh.html#ab498d19d857801f0f3e5b763406812b0">StreamId</a>)</td></tr>
@@ -153,7 +153,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::detail::so
 <tr class="separator:aa344bf732dc048d92183110e94d39213"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80dded52739d66b4895c41a5eb241e90" id="r_a80dded52739d66b4895c41a5eb241e90"><td class="memItemLeft" align="right" valign="top"><a id="a80dded52739d66b4895c41a5eb241e90" name="a80dded52739d66b4895c41a5eb241e90"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::detail::backfill_action_count</b> (<a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; <a class="el" href="../../d3/d83/_thread_id_8hh.html#afb6a761675c1a6643696c946825836a7">ThreadId</a> &gt; offsets, <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#a2e255ada6f961f5f241b1d828d7509d9">size_type</a> num_actions)</td></tr>
+<tr class="memdesc:a80dded52739d66b4895c41a5eb241e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill missing action offsets. <br /></td></tr>
 <tr class="separator:a80dded52739d66b4895c41a5eb241e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f5a0fa898e8b5af13dc215f6270f2e5" id="r_a9f5a0fa898e8b5af13dc215f6270f2e5"><td class="memTemplParams" colspan="2"><a id="a9f5a0fa898e8b5af13dc215f6270f2e5" name="a9f5a0fa898e8b5af13dc215f6270f2e5"></a>
+template&lt;<a class="el" href="../../d0/df5/corecel_2_types_8hh.html#aeb6446bfcf4853c1dd9248791d829148">Ownership</a> W, <a class="el" href="../../d0/df5/corecel_2_types_8hh.html#af21a33cd854346b7988591378fcfe138">MemSpace</a> M&gt; </td></tr>
+<tr class="memitem:a9f5a0fa898e8b5af13dc215f6270f2e5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/dc5/_macros_8hh.html#ac631c1bc86fa5c49ade05cca94ae1794">CELER_FUNCTION</a> <a class="el" href="../../d6/d72/classceleritas_1_1_observer_ptr.html">ObserverPtr</a>&lt; <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a98b21e11852c06d3845c53dd5df84797">ActionId</a> const &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::detail::get_action_ptr</b> (<a class="el" href="../../d2/d29/structceleritas_1_1_core_state_data.html">CoreStateData</a>&lt; W, M &gt; const &amp;states, <a class="el" href="../../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6">TrackOrder</a> order)</td></tr>
+<tr class="separator:a9f5a0fa898e8b5af13dc215f6270f2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac27322eb4a1610c7bd5cc36edd639844" id="r_ac27322eb4a1610c7bd5cc36edd639844"><td class="memTemplParams" colspan="2"><a id="ac27322eb4a1610c7bd5cc36edd639844" name="ac27322eb4a1610c7bd5cc36edd639844"></a>
+template&lt;class Id &gt; </td></tr>
+<tr class="memitem:ac27322eb4a1610c7bd5cc36edd639844"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>celeritas::detail::IdComparator</b> (<a class="el" href="../../d6/d72/classceleritas_1_1_observer_ptr.html">ObserverPtr</a>&lt; Id &gt;) -&gt; <a class="el" href="../../de/df2/structceleritas_1_1detail_1_1_id_comparator.html">IdComparator</a>&lt; Id &gt;</td></tr>
+<tr class="separator:ac27322eb4a1610c7bd5cc36edd639844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a793e404f326dbb27179a150834832a46" id="r_a793e404f326dbb27179a150834832a46"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
 <tr class="memitem:a793e404f326dbb27179a150834832a46"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d9e/_track_sort_utils_8hh.html#a793e404f326dbb27179a150834832a46">celeritas::detail::fill_track_slots&lt; MemSpace::device &gt;</a> (<a class="el" href="../../dd/d15/classceleritas_1_1_span.html">Span</a>&lt; TrackSlotId::size_type &gt;, <a class="el" href="../../d3/d83/_thread_id_8hh.html#ab498d19d857801f0f3e5b763406812b0">StreamId</a>)</td></tr>
 <tr class="memdesc:a793e404f326dbb27179a150834832a46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize default threads to track_slots mapping, track_slots[i] = i.  <br /></td></tr>

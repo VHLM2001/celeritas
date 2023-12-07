@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.0</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.1</span>
    </div>
   </td>
  </tr>
@@ -93,13 +93,16 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d7/de5/_root_step_writer_i_o_8json_8hh.html">RootStepWriterIO.json.hh</a>&quot;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/d6b/_json_utils_8json_8hh.html">corecel/io/JsonUtils.json.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d2/d64/_root_step_writer_8hh.html">RootStepWriter.hh</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aa4dfc5428697a0e422d960558170ade1" id="r_aa4dfc5428697a0e422d960558170ade1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d54/_root_step_writer_i_o_8json_8cc.html#aa4dfc5428697a0e422d960558170ade1">SRFI_LOAD_OPTION</a>(NAME)</td></tr>
+<tr class="memitem:aa4dfc5428697a0e422d960558170ade1" id="r_aa4dfc5428697a0e422d960558170ade1"><td class="memItemLeft" align="right" valign="top"><a id="aa4dfc5428697a0e422d960558170ade1" name="aa4dfc5428697a0e422d960558170ade1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SRFI_LOAD_OPTION</b>(NAME)&#160;&#160;&#160;<a class="el" href="../../dd/d6b/_json_utils_8json_8hh.html#af2499fb46d2f651831750a24867255e4">CELER_JSON_LOAD_OPTION</a>(j, options, NAME)</td></tr>
 <tr class="separator:aa4dfc5428697a0e422d960558170ade1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36350f07d10cef0a95189bf6138b566f" id="r_a36350f07d10cef0a95189bf6138b566f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d54/_root_step_writer_i_o_8json_8cc.html#a36350f07d10cef0a95189bf6138b566f">SRFI_SAVE_OPTION</a>(NAME)</td></tr>
+<tr class="memitem:a36350f07d10cef0a95189bf6138b566f" id="r_a36350f07d10cef0a95189bf6138b566f"><td class="memItemLeft" align="right" valign="top"><a id="a36350f07d10cef0a95189bf6138b566f" name="a36350f07d10cef0a95189bf6138b566f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SRFI_SAVE_OPTION</b>(NAME)&#160;&#160;&#160;    <a class="el" href="../../dd/d6b/_json_utils_8json_8hh.html#ab2db4b30a8c1cb4155d27a94e967e394">CELER_JSON_SAVE_WHEN</a>(j, options, NAME, options.NAME != options.unspecified)</td></tr>
 <tr class="separator:a36350f07d10cef0a95189bf6138b566f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -113,53 +116,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::to_json</b
 <tr class="memdesc:a99bfc61274cce736768c265bab39c12c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write options to JSON. <br /></td></tr>
 <tr class="separator:a99bfc61274cce736768c265bab39c12c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="aa4dfc5428697a0e422d960558170ade1" name="aa4dfc5428697a0e422d960558170ade1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4dfc5428697a0e422d960558170ade1">&#9670;&#160;</a></span>SRFI_LOAD_OPTION</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SRFI_LOAD_OPTION</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">NAME</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                                        \</div>
-<div class="line">    {                                         \</div>
-<div class="line">        if (j.contains(#NAME))                \</div>
-<div class="line">            j.at(#NAME).get_to(options.NAME); \</div>
-<div class="line">    } <span class="keywordflow">while</span> (0)</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a36350f07d10cef0a95189bf6138b566f" name="a36350f07d10cef0a95189bf6138b566f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36350f07d10cef0a95189bf6138b566f">&#9670;&#160;</a></span>SRFI_SAVE_OPTION</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SRFI_SAVE_OPTION</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">NAME</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>                                           \</div>
-<div class="line">    {                                            \</div>
-<div class="line">        if (options.NAME != options.unspecified) \</div>
-<div class="line">            j[#NAME] = options.NAME;             \</div>
-<div class="line">    } <span class="keywordflow">while</span> (0)</div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

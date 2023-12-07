@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../celeritas-square.svg"/></td>
   <td id="projectalign">
-   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.0</span>
+   <div id="projectname">Celeritas<span id="projectnumber">&#160;0.4.1</span>
    </div>
   </td>
  </tr>
@@ -169,7 +169,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>celeritas::get_geant_t
 </div><div class="memdoc">
 
 <p>Get the number of threads in a version-portable way. </p>
-<p>G4RunManager::GetNumberOfThreads isn't virtual before Geant4 v10.7.0 so we need to explicitly dynamic cast to G4MTRunManager to get the number of threads. </p>
+<p>G4RunManager::GetNumberOfThreads isn't virtual before Geant4 v10.7.0 so we need to explicitly dynamic cast to G4MTRunManager to get the number of threads.</p>
+<p>In tasking mode, the result may be zero! </p>
 
 </div>
 </div>
