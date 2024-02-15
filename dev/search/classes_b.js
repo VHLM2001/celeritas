@@ -43,7 +43,8 @@ var searchData=
   ['logicevaluator_40',['LogicEvaluator',['../d5/dca/classceleritas_1_1detail_1_1_logic_evaluator.html',1,'celeritas::detail']]],
   ['logicstack_41',['LogicStack',['../d6/d43/classceleritas_1_1detail_1_1_logic_stack.html',1,'celeritas::detail']]],
   ['logmev_42',['LogMev',['../d8/d9a/structceleritas_1_1units_1_1_log_mev.html',1,'celeritas::units']]],
-  ['loopingthreshold_43',['LoopingThreshold',['../d1/d08/structceleritas_1_1_looping_threshold.html',1,'celeritas']]],
-  ['lpmcalculator_44',['LPMCalculator',['../d0/dc1/classceleritas_1_1_l_p_m_calculator.html',1,'celeritas']]],
-  ['lpmfunctions_45',['LPMFunctions',['../d2/dc7/structceleritas_1_1_l_p_m_calculator_1_1_l_p_m_functions.html',1,'celeritas::LPMCalculator']]]
+  ['logprovenance_43',['LogProvenance',['../de/d44/structceleritas_1_1_log_provenance.html',1,'celeritas']]],
+  ['loopingthreshold_44',['LoopingThreshold',['../d1/d08/structceleritas_1_1_looping_threshold.html',1,'celeritas']]],
+  ['lpmcalculator_45',['LPMCalculator',['../d0/dc1/classceleritas_1_1_l_p_m_calculator.html',1,'celeritas']]],
+  ['lpmfunctions_46',['LPMFunctions',['../d2/dc7/structceleritas_1_1_l_p_m_calculator_1_1_l_p_m_functions.html',1,'celeritas::LPMCalculator']]]
 ];

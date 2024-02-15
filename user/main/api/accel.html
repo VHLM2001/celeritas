@@ -5,8 +5,8 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Examples" href="../examples.html" /><link rel="prev" title="Celeritas" href="celeritas.html" />
 
-    <!-- Generated with Sphinx 7.2.3 and Furo 2023.09.10 -->
-        <title>Acceleritas - Celeritas 0.4.1 documentation</title>
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Acceleritas - Celeritas 0.4.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Celeritas 0.4.1 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Celeritas 0.4.2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="../../_static/celeritas-square.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Celeritas 0.4.1 documentation</span>
+  <span class="sidebar-brand-text">Celeritas 0.4.2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -181,7 +181,8 @@
 <p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/release-history.html">Release History</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Release History</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html">Version 0.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html">Version 0.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html#version-0-4-1">Version 0.4.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html#version-0-4-0">Version 0.4.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.3.html">Version 0.3.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.3.html#version-0-3-1">Version 0.3.1</a></li>
@@ -291,7 +292,7 @@ provided.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas13SimpleOffload18BeginOfEventActionEPK7G4Event">
 <span id="_CPPv3N9celeritas13SimpleOffload18BeginOfEventActionEPK7G4Event"></span><span id="_CPPv2N9celeritas13SimpleOffload18BeginOfEventActionEPK7G4Event"></span><span id="celeritas::SimpleOffload::BeginOfEventAction__G4EventCP"></span><span class="target" id="d3/d72/classceleritas_1_1_simple_offload_1a7ea7ad0431e244daf27727203f0cdc56"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BeginOfEventAction</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">G4Event</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">event</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas13SimpleOffload18BeginOfEventActionEPK7G4Event" title="Link to this definition">#</a><br /></dt>
-<dd><p>Send Celeritas the event ID. </p>
+<dd><p>Send Celeritas the event ID and reseed the Celeritas RNG. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -323,7 +324,7 @@ provided.</p>
 
 <p>The SetupOptionsMessenger can be instantiated with a reference to a global
 SetupOptions instance in order to provide a Geant4 “UI” macro interface to an
-app’s celeritas options.</p>
+app’s Celeritas options.</p>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas21SetupOptionsMessengerE">
 <span id="_CPPv3N9celeritas21SetupOptionsMessengerE"></span><span id="_CPPv2N9celeritas21SetupOptionsMessengerE"></span><span id="celeritas::SetupOptionsMessenger"></span><span class="target" id="d0/d56/classceleritas_1_1_setup_options_messenger"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SetupOptionsMessenger</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">G4UImessenger</span></span><a class="headerlink" href="#_CPPv4N9celeritas21SetupOptionsMessengerE" title="Link to this definition">#</a><br /></dt>
@@ -661,6 +662,22 @@ settings.</p>
 </div>
 </dd></dl>
 
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas26RZMapFieldAlongStepFactoryE">
+<span id="_CPPv3N9celeritas26RZMapFieldAlongStepFactoryE"></span><span id="_CPPv2N9celeritas26RZMapFieldAlongStepFactoryE"></span><span id="celeritas::RZMapFieldAlongStepFactory"></span><span class="target" id="df/dde/classceleritas_1_1_r_z_map_field_along_step_factory"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RZMapFieldAlongStepFactory</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="celeritas.html#_CPPv49celeritas" title="celeritas"><span class="n"><span class="pre">celeritas</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas25AlongStepFactoryInterfaceE" title="celeritas::AlongStepFactoryInterface"><span class="n"><span class="pre">AlongStepFactoryInterface</span></span></a><a class="headerlink" href="#_CPPv4N9celeritas26RZMapFieldAlongStepFactoryE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Create an along-step method for a two-dimensional (r-z in the cylindical coordinate system) map field (RZMapField). </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas26RZMapFieldAlongStepFactory26RZMapFieldAlongStepFactoryE18RZMapFieldFunction">
+<span id="_CPPv3N9celeritas26RZMapFieldAlongStepFactory26RZMapFieldAlongStepFactoryE18RZMapFieldFunction"></span><span id="_CPPv2N9celeritas26RZMapFieldAlongStepFactory26RZMapFieldAlongStepFactoryE18RZMapFieldFunction"></span><span id="celeritas::RZMapFieldAlongStepFactory::RZMapFieldAlongStepFactory__RZMapFieldFunction"></span><span class="target" id="df/dde/classceleritas_1_1_r_z_map_field_along_step_factory_1af5525690f23b3752aef1a24077073256"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RZMapFieldAlongStepFactory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">RZMapFieldFunction</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">f</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas26RZMapFieldAlongStepFactory26RZMapFieldAlongStepFactoryE18RZMapFieldFunction" title="Link to this definition">#</a><br /></dt>
+<dd><p>Emit an along-step action with a non-uniform magnetic field. </p>
+<p>The action will embed the field propagator with a RZMapField. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </section>
 <section id="detailed-interface">
 <h2>Detailed interface<a class="headerlink" href="#detailed-interface" title="Link to this heading">#</a></h2>
@@ -734,7 +751,7 @@ applications you can choose to use these classes directly instead of it.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas12SharedParams12SharedParamsERK12SetupOptions16SPOutputRegistry">
 <span id="_CPPv3N9celeritas12SharedParams12SharedParamsERK12SetupOptions16SPOutputRegistry"></span><span id="_CPPv2N9celeritas12SharedParams12SharedParamsERK12SetupOptions16SPOutputRegistry"></span><span id="celeritas::SharedParams::SharedParams__SetupOptionsCR.SPOutputRegistry"></span><span class="target" id="d8/da0/classceleritas_1_1_shared_params_1a7fc596969ab7343c42a09983320ebe05"></span><span class="sig-name descname"><span class="n"><span class="pre">SharedParams</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N9celeritas12SetupOptionsE" title="celeritas::SetupOptions"><span class="n"><span class="pre">SetupOptions</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span>, <a class="reference internal" href="#_CPPv4N9celeritas12SharedParams16SPOutputRegistryE" title="celeritas::SharedParams::SPOutputRegistry"><span class="n"><span class="pre">SPOutputRegistry</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">reg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas12SharedParams12SharedParamsERK12SetupOptions16SPOutputRegistry" title="Link to this definition">#</a><br /></dt>
 <dd><p>Set up Celeritas using Geant4 data and existing output registery. </p>
-<p>A design oversight in the <code class="docutils literal notranslate"><span class="pre">GeantSimpleCalo</span></code> means that the action registry <em>must</em> be created before <code class="docutils literal notranslate"><a class="reference internal" href="#d8/da0/classceleritas_1_1_shared_params"><span class="std std-ref"><span class="pre">SharedParams</span></span></a></code> is initialized, and in the case where Celeritas is not disabled, initialization clears the existing registry. This prevents the calorimeter from writing output. </p>
+<p>A design oversight in the <code class="docutils literal notranslate"><a class="reference internal" href="#d3/d7c/classceleritas_1_1_geant_simple_calo"><span class="std std-ref"><span class="pre">GeantSimpleCalo</span></span></a></code> means that the action registry <em>must</em> be created before <code class="docutils literal notranslate"><a class="reference internal" href="#d8/da0/classceleritas_1_1_shared_params"><span class="std std-ref"><span class="pre">SharedParams</span></span></a></code> is initialized, and in the case where Celeritas is not disabled, initialization clears the existing registry. This prevents the calorimeter from writing output. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -758,6 +775,13 @@ applications you can choose to use these classes directly instead of it.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas12SharedParams17CeleritasDisabledEv">
 <span id="_CPPv3N9celeritas12SharedParams17CeleritasDisabledEv"></span><span id="_CPPv2N9celeritas12SharedParams17CeleritasDisabledEv"></span><span id="celeritas::SharedParams::CeleritasDisabled"></span><span class="target" id="d8/da0/classceleritas_1_1_shared_params_1ae022dc9c8155f292819c523d816e0ec2"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CeleritasDisabled</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas12SharedParams17CeleritasDisabledEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>On worker threads, set up data with thread storage duration. </p>
+<p>Some data that has “static” storage duration (such as CUDA device properties) in single-thread mode has “thread” storage in a multithreaded application. It must be initialized on all threads. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas12SharedParams17KillOffloadTracksEv">
+<span id="_CPPv3N9celeritas12SharedParams17KillOffloadTracksEv"></span><span id="_CPPv2N9celeritas12SharedParams17KillOffloadTracksEv"></span><span id="celeritas::SharedParams::KillOffloadTracks"></span><span class="target" id="d8/da0/classceleritas_1_1_shared_params_1a2764e1745864fcdc527164eae757329e"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">KillOffloadTracks</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas12SharedParams17KillOffloadTracksEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>On worker threads, set up data with thread storage duration. </p>
 <p>Some data that has “static” storage duration (such as CUDA device properties) in single-thread mode has “thread” storage in a multithreaded application. It must be initialized on all threads. </p>
 </dd></dl>
@@ -808,9 +832,8 @@ applications you can choose to use these classes directly instead of it.</p>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK9celeritas12SharedParams16OffloadParticlesEv">
-<span id="_CPPv3NK9celeritas12SharedParams16OffloadParticlesEv"></span><span id="_CPPv2NK9celeritas12SharedParams16OffloadParticlesEv"></span><span id="celeritas::SharedParams::OffloadParticlesC"></span><span class="target" id="d8/da0/classceleritas_1_1_shared_params_1a8d27b45e6aad036fca34db0fc15576a7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">VecG4ParticleDef</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">OffloadParticles</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas12SharedParams16OffloadParticlesEv" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3NK9celeritas12SharedParams16OffloadParticlesEv"></span><span id="_CPPv2NK9celeritas12SharedParams16OffloadParticlesEv"></span><span id="celeritas::SharedParams::OffloadParticlesC"></span><span class="target" id="d8/da0/classceleritas_1_1_shared_params_1a8d27b45e6aad036fca34db0fc15576a7"></span><span class="n"><span class="pre">VecG4ParticleDef</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">OffloadParticles</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas12SharedParams16OffloadParticlesEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Get a vector of particles supported by Celeritas offloading. </p>
-<p>This can only be called after <code class="docutils literal notranslate"><span class="pre">Initialize</span></code>. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -848,9 +871,9 @@ applications you can choose to use these classes directly instead of it.</p>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas16LocalTransporter10SetEventIdEi">
-<span id="_CPPv3N9celeritas16LocalTransporter10SetEventIdEi"></span><span id="_CPPv2N9celeritas16LocalTransporter10SetEventIdEi"></span><span id="celeritas::LocalTransporter::SetEventId__i"></span><span class="target" id="d2/d13/classceleritas_1_1_local_transporter_1a723f795ba912838b92bd01c20c15da4a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SetEventId</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas16LocalTransporter10SetEventIdEi" title="Link to this definition">#</a><br /></dt>
-<dd><p>Set the event ID at the start of an event. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas16LocalTransporter15InitializeEventEi">
+<span id="_CPPv3N9celeritas16LocalTransporter15InitializeEventEi"></span><span id="_CPPv2N9celeritas16LocalTransporter15InitializeEventEi"></span><span id="celeritas::LocalTransporter::InitializeEvent__i"></span><span class="target" id="d2/d13/classceleritas_1_1_local_transporter_1a009202f679d07b3c371abfd5f62852a1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InitializeEvent</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas16LocalTransporter15InitializeEventEi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the event ID and reseed the Celeritas RNG at the start of an event. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -946,7 +969,126 @@ applications you can choose to use these classes directly instead of it.</p>
 <p>Currently Celeritas accepts a single along-step action (i.e., the same stepper is used for both neutral and charged particles, across all energies and regions of the problem). The along-step action is a single GPU kernel that combines the field stepper selection, the magnetic field, slowing-down calculation, multiple scattering, and energy loss fluctuations.</p>
 <p>The factory will be called from the thread that initializes <code class="docutils literal notranslate"><a class="reference internal" href="#d8/da0/classceleritas_1_1_shared_params"><span class="std std-ref"><span class="pre">SharedParams</span></span></a></code>. Instead of a daughter class, you can provide any function-like object that has the same interface.</p>
 <p>Celeritas provides a few “default” configurations of along-step actions in <code class="docutils literal notranslate"><span class="pre">celeritas/global/alongstep</span></code>. </p>
-<p>Subclassed by celeritas::RZMapFieldAlongStepFactory, <a class="reference internal" href="#d3/d64/classceleritas_1_1_uniform_along_step_factory"><span class="std std-ref">celeritas::UniformAlongStepFactory</span></a></p>
+<p>Subclassed by <a class="reference internal" href="#df/dde/classceleritas_1_1_r_z_map_field_along_step_factory"><span class="std std-ref">celeritas::RZMapFieldAlongStepFactory</span></a>, <a class="reference internal" href="#d3/d64/classceleritas_1_1_uniform_along_step_factory"><span class="std std-ref">celeritas::UniformAlongStepFactory</span></a></p>
+</dd></dl>
+
+</section>
+<section id="classes-usable-by-geant4">
+<h2>Classes usable by Geant4<a class="headerlink" href="#classes-usable-by-geant4" title="Link to this heading">#</a></h2>
+<p>These utilities are based on Celeritas data structures and capabilities but are
+written to be usable both by the <code class="docutils literal notranslate"><span class="pre">celer-g4</span></code> app and potential other users.</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15GeantSimpleCaloE">
+<span id="_CPPv3N9celeritas15GeantSimpleCaloE"></span><span id="_CPPv2N9celeritas15GeantSimpleCaloE"></span><span id="celeritas::GeantSimpleCalo"></span><span class="target" id="d3/d7c/classceleritas_1_1_geant_simple_calo"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GeantSimpleCalo</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="celeritas.html#_CPPv49celeritas" title="celeritas"><span class="n"><span class="pre">celeritas</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas15OutputInterfaceE" title="celeritas::OutputInterface"><span class="n"><span class="pre">OutputInterface</span></span></a><a class="headerlink" href="#_CPPv4N9celeritas15GeantSimpleCaloE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Manage a simple calorimeter sensitive detector across threads. </p>
+<p>The factory should be created in DetectorConstruction or DetectorConstruction::Construct and added to the output parameters. Calling <code class="docutils literal notranslate"><span class="pre">MakeSensitiveDetector</span></code> will emit a sensitive detector for the local thread <em>and attach it</em> to the logical volumes on the local thread. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-output-interface">Output interface</p>
+<p>Category of data to write </p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas15GeantSimpleCalo8categoryEv">
+<span id="_CPPv3NK9celeritas15GeantSimpleCalo8categoryEv"></span><span id="_CPPv2NK9celeritas15GeantSimpleCalo8categoryEv"></span><span id="celeritas::GeantSimpleCalo::categoryC"></span><span class="target" id="d3/d7c/classceleritas_1_1_geant_simple_calo_1a788489ec306124de9e2a35cefffc75d7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">Category</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">category</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas15GeantSimpleCalo8categoryEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Return the key in the JSON output. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas15GeantSimpleCalo5labelEv">
+<span id="_CPPv3NK9celeritas15GeantSimpleCalo5labelEv"></span><span id="_CPPv2NK9celeritas15GeantSimpleCalo5labelEv"></span><span id="celeritas::GeantSimpleCalo::labelC"></span><span class="target" id="d3/d7c/classceleritas_1_1_geant_simple_calo_1a39c6c1f2394d70a579ce838cc952a662"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">label</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas15GeantSimpleCalo5labelEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Return the key in the JSON output. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas15GeantSimpleCalo6outputEP9JsonPimpl">
+<span id="_CPPv3NK9celeritas15GeantSimpleCalo6outputEP9JsonPimpl"></span><span id="_CPPv2NK9celeritas15GeantSimpleCalo6outputEP9JsonPimpl"></span><span id="celeritas::GeantSimpleCalo::output__JsonPimplPC"></span><span class="target" id="d3/d7c/classceleritas_1_1_geant_simple_calo_1a7871cc69469635831c89ec5de75673ae"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">JsonPimpl</span></span><span class="p"><span class="pre">*</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas15GeantSimpleCalo6outputEP9JsonPimpl" title="Link to this definition">#</a><br /></dt>
+<dd><p>Write output to the given JSON object. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15GeantSimpleCalo15GeantSimpleCaloENSt6stringE13SPConstParams5VecLV">
+<span id="_CPPv3N9celeritas15GeantSimpleCalo15GeantSimpleCaloENSt6stringE13SPConstParams5VecLV"></span><span id="_CPPv2N9celeritas15GeantSimpleCalo15GeantSimpleCaloENSt6stringE13SPConstParams5VecLV"></span><span id="celeritas::GeantSimpleCalo::GeantSimpleCalo__ss.SPConstParams.VecLV"></span><span class="target" id="d3/d7c/classceleritas_1_1_geant_simple_calo_1aa8b77dba7c42fa4f875d331bf26b8e43"></span><span class="sig-name descname"><span class="n"><span class="pre">GeantSimpleCalo</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span>, <span class="n"><span class="pre">SPConstParams</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">params</span></span>, <span class="n"><span class="pre">VecLV</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">volumes</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas15GeantSimpleCalo15GeantSimpleCaloENSt6stringE13SPConstParams5VecLV" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct with name and logical volume pointers. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15GeantSimpleCalo21MakeSensitiveDetectorEv">
+<span id="_CPPv3N9celeritas15GeantSimpleCalo21MakeSensitiveDetectorEv"></span><span id="_CPPv2N9celeritas15GeantSimpleCalo21MakeSensitiveDetectorEv"></span><span id="celeritas::GeantSimpleCalo::MakeSensitiveDetector"></span><span class="target" id="d3/d7c/classceleritas_1_1_geant_simple_calo_1a8497eb48bbe2c39b8215ad1e277b03fb"></span><span class="n"><span class="pre">UPSensitiveDetector</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MakeSensitiveDetector</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas15GeantSimpleCalo21MakeSensitiveDetectorEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Emit a new detector for the local thread and attach to the stored LVs. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas15GeantSimpleCalo7VolumesEv">
+<span id="_CPPv3NK9celeritas15GeantSimpleCalo7VolumesEv"></span><span id="_CPPv2NK9celeritas15GeantSimpleCalo7VolumesEv"></span><span id="celeritas::GeantSimpleCalo::VolumesC"></span><span class="target" id="d3/d7c/classceleritas_1_1_geant_simple_calo_1ac98472dc32b0551dbf8980e7d3ee8d13"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">VecLV</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">Volumes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas15GeantSimpleCalo7VolumesEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the list of volumes with this SD attached. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas15GeantSimpleCalo25CalcTotalEnergyDepositionEv">
+<span id="_CPPv3NK9celeritas15GeantSimpleCalo25CalcTotalEnergyDepositionEv"></span><span id="_CPPv2NK9celeritas15GeantSimpleCalo25CalcTotalEnergyDepositionEv"></span><span id="celeritas::GeantSimpleCalo::CalcTotalEnergyDepositionC"></span><span class="target" id="d3/d7c/classceleritas_1_1_geant_simple_calo_1a15ab92a89bf0e7faadada454037eb6a9"></span><span class="n"><span class="pre">VecReal</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CalcTotalEnergyDeposition</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas15GeantSimpleCalo25CalcTotalEnergyDepositionEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Calculate thread-integrated energy deposition. </p>
+<p>This function should only be called after all detector data has been collected. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas22HepMC3PrimaryGeneratorE">
+<span id="_CPPv3N9celeritas22HepMC3PrimaryGeneratorE"></span><span id="_CPPv2N9celeritas22HepMC3PrimaryGeneratorE"></span><span id="celeritas::HepMC3PrimaryGenerator"></span><span class="target" id="d7/db6/classceleritas_1_1_hep_m_c3_primary_generator"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HepMC3PrimaryGenerator</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">G4VPrimaryGenerator</span></span><a class="headerlink" href="#_CPPv4N9celeritas22HepMC3PrimaryGeneratorE" title="Link to this definition">#</a><br /></dt>
+<dd><p>HepMC3 reader class for sharing across threads. </p>
+<p>This singleton is shared among threads so that events can be correctly split up between them, being constructed the first time <code class="docutils literal notranslate"><span class="pre">instance()</span></code> is invoked. As this is a derived <code class="docutils literal notranslate"><span class="pre">G4VPrimaryGenerator</span></code> class, the <a class="reference internal" href="#d7/db6/classceleritas_1_1_hep_m_c3_primary_generator"><span class="std std-ref">HepMC3PrimaryGenerator</span></a> must be used by a concrete implementation of the <code class="docutils literal notranslate"><span class="pre">G4VUserPrimaryGeneratorAction</span></code> class: <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">PrimaryGeneratorAction::GeneratePrimaries</span><span class="p">(</span><span class="n">G4Event</span><span class="o">*</span><span class="w"> </span><span class="n">event</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">HepMC3PrimaryGenerator</span><span class="o">::</span><span class="n">Instance</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GeneratePrimaryVertex</span><span class="p">(</span><span class="n">event</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas22HepMC3PrimaryGenerator22HepMC3PrimaryGeneratorERKNSt6stringE">
+<span id="_CPPv3N9celeritas22HepMC3PrimaryGenerator22HepMC3PrimaryGeneratorERKNSt6stringE"></span><span id="_CPPv2N9celeritas22HepMC3PrimaryGenerator22HepMC3PrimaryGeneratorERKNSt6stringE"></span><span id="celeritas::HepMC3PrimaryGenerator::HepMC3PrimaryGenerator__ssCR"></span><span class="target" id="d7/db6/classceleritas_1_1_hep_m_c3_primary_generator_1a14c47f49101db0aa673082a9799fb41d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HepMC3PrimaryGenerator</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas22HepMC3PrimaryGenerator22HepMC3PrimaryGeneratorERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct with a path to a HepMC3-compatible input file. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas22HepMC3PrimaryGenerator21GeneratePrimaryVertexEP7G4Event">
+<span id="_CPPv3N9celeritas22HepMC3PrimaryGenerator21GeneratePrimaryVertexEP7G4Event"></span><span id="_CPPv2N9celeritas22HepMC3PrimaryGenerator21GeneratePrimaryVertexEP7G4Event"></span><span id="celeritas::HepMC3PrimaryGenerator::GeneratePrimaryVertex__G4EventP"></span><span class="target" id="d7/db6/classceleritas_1_1_hep_m_c3_primary_generator_1a1daa010168b99b61464d8543b9433870"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GeneratePrimaryVertex</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">G4Event</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">g4_event</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4N9celeritas22HepMC3PrimaryGenerator21GeneratePrimaryVertexEP7G4Event" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add primaries to Geant4 event. </p>
+<p>Add HepMC3 primaries to a Geant4 event.</p>
+<p>This function should be called by <code class="docutils literal notranslate"><span class="pre">G4VUserPrimaryGeneratorAction::GeneratePrimaries</span></code> . </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas22HepMC3PrimaryGenerator9NumEventsEv">
+<span id="_CPPv3N9celeritas22HepMC3PrimaryGenerator9NumEventsEv"></span><span id="_CPPv2N9celeritas22HepMC3PrimaryGenerator9NumEventsEv"></span><span id="celeritas::HepMC3PrimaryGenerator::NumEvents"></span><span class="target" id="d7/db6/classceleritas_1_1_hep_m_c3_primary_generator_1a9e7bd50b263c43d9ce7f63e7ed2acc19"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NumEvents</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas22HepMC3PrimaryGenerator9NumEventsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get total number of events. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18RZMapMagneticFieldE">
+<span id="_CPPv3N9celeritas18RZMapMagneticFieldE"></span><span id="_CPPv2N9celeritas18RZMapMagneticFieldE"></span><span id="celeritas::RZMapMagneticField"></span><span class="target" id="db/d70/classceleritas_1_1_r_z_map_magnetic_field"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RZMapMagneticField</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">G4MagneticField</span></span><a class="headerlink" href="#_CPPv4N9celeritas18RZMapMagneticFieldE" title="Link to this definition">#</a><br /></dt>
+<dd><p>A user magnetic field equivalent to celeritas::RZMapField. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18RZMapMagneticField18RZMapMagneticFieldE18SPConstFieldParams">
+<span id="_CPPv3N9celeritas18RZMapMagneticField18RZMapMagneticFieldE18SPConstFieldParams"></span><span id="_CPPv2N9celeritas18RZMapMagneticField18RZMapMagneticFieldE18SPConstFieldParams"></span><span id="celeritas::RZMapMagneticField::RZMapMagneticField__SPConstFieldParams"></span><span class="target" id="db/d70/classceleritas_1_1_r_z_map_magnetic_field_1a686594177184be85995af7a66dcfe1f4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RZMapMagneticField</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">SPConstFieldParams</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">field_params</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas18RZMapMagneticField18RZMapMagneticFieldE18SPConstFieldParams" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct with the Celeritas shared RZMapFieldParams. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas18RZMapMagneticField13GetFieldValueEAL3E_KdPd">
+<span id="_CPPv3NK9celeritas18RZMapMagneticField13GetFieldValueEAL3E_KdPd"></span><span id="_CPPv2NK9celeritas18RZMapMagneticField13GetFieldValueEA3_KdPd"></span><span id="celeritas::RZMapMagneticField::GetFieldValue__doubleCA.doublePC"></span><span class="target" id="db/d70/classceleritas_1_1_r_z_map_magnetic_field_1ad5d0f1762145650ce1708ac682b59e95"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetFieldValue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">point</span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">3</span></span><span class="p"><span class="pre">]</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">field</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas18RZMapMagneticField13GetFieldValueEAL3E_KdPd" title="Link to this definition">#</a><br /></dt>
+<dd><p>Calculate the magnetic field vector at the given position. </p>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 </section>
@@ -981,7 +1123,7 @@ applications you can choose to use these classes directly instead of it.</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2023, UT–Battelle/ORNL and Celeritas team
+                Copyright &#169; 2024, UT–Battelle/ORNL and Celeritas team
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -1067,6 +1209,10 @@ applications you can choose to use these classes directly instead of it.</p>
 <li><a class="reference internal" href="#_CPPv4NK9celeritas23UniformAlongStepFactoryclE13argument_type"><code class="docutils literal notranslate"><span class="pre">UniformAlongStepFactory::operator()()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas26RZMapFieldAlongStepFactoryE"><code class="docutils literal notranslate"><span class="pre">RZMapFieldAlongStepFactory</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N9celeritas26RZMapFieldAlongStepFactory26RZMapFieldAlongStepFactoryE18RZMapFieldFunction"><code class="docutils literal notranslate"><span class="pre">RZMapFieldAlongStepFactory::RZMapFieldAlongStepFactory()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#detailed-interface">Detailed interface</a><ul>
@@ -1084,6 +1230,7 @@ applications you can choose to use these classes directly instead of it.</p>
 <li><a class="reference internal" href="#_CPPv4N9celeritas12SharedParams10InitializeERK12SetupOptions16SPOutputRegistry"><code class="docutils literal notranslate"><span class="pre">SharedParams::Initialize()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas12SharedParams19set_output_filenameERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">SharedParams::set_output_filename()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas12SharedParams17CeleritasDisabledEv"><code class="docutils literal notranslate"><span class="pre">SharedParams::CeleritasDisabled()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas12SharedParams17KillOffloadTracksEv"><code class="docutils literal notranslate"><span class="pre">SharedParams::KillOffloadTracks()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas12SharedParams16InitializeWorkerERK12SetupOptions"><code class="docutils literal notranslate"><span class="pre">SharedParams::InitializeWorker()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas12SharedParams12SharedParamsEv"><code class="docutils literal notranslate"><span class="pre">SharedParams::SharedParams()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas12SharedParams12SharedParamsERK12SetupOptions"><code class="docutils literal notranslate"><span class="pre">SharedParams::SharedParams()</span></code></a></li>
@@ -1097,7 +1244,7 @@ applications you can choose to use these classes directly instead of it.</p>
 <li><a class="reference internal" href="#_CPPv4N9celeritas16LocalTransporterE"><code class="docutils literal notranslate"><span class="pre">LocalTransporter</span></code></a><ul>
 <li><a class="reference internal" href="#_CPPv4N9celeritas16LocalTransporter16LocalTransporterERK12SetupOptionsRK12SharedParams"><code class="docutils literal notranslate"><span class="pre">LocalTransporter::LocalTransporter()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas16LocalTransporter10InitializeERK12SetupOptionsRK12SharedParams"><code class="docutils literal notranslate"><span class="pre">LocalTransporter::Initialize()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N9celeritas16LocalTransporter10SetEventIdEi"><code class="docutils literal notranslate"><span class="pre">LocalTransporter::SetEventId()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas16LocalTransporter15InitializeEventEi"><code class="docutils literal notranslate"><span class="pre">LocalTransporter::InitializeEvent()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas16LocalTransporter4PushERK7G4Track"><code class="docutils literal notranslate"><span class="pre">LocalTransporter::Push()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas16LocalTransporter5FlushEv"><code class="docutils literal notranslate"><span class="pre">LocalTransporter::Flush()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas16LocalTransporter8FinalizeEv"><code class="docutils literal notranslate"><span class="pre">LocalTransporter::Finalize()</span></code></a></li>
@@ -1118,6 +1265,30 @@ applications you can choose to use these classes directly instead of it.</p>
 <li><a class="reference internal" href="#_CPPv4N9celeritas25AlongStepFactoryInterfaceE"><code class="docutils literal notranslate"><span class="pre">AlongStepFactoryInterface</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#classes-usable-by-geant4">Classes usable by Geant4</a><ul>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15GeantSimpleCaloE"><code class="docutils literal notranslate"><span class="pre">GeantSimpleCalo</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4NK9celeritas15GeantSimpleCalo8categoryEv"><code class="docutils literal notranslate"><span class="pre">GeantSimpleCalo::category()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK9celeritas15GeantSimpleCalo5labelEv"><code class="docutils literal notranslate"><span class="pre">GeantSimpleCalo::label()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK9celeritas15GeantSimpleCalo6outputEP9JsonPimpl"><code class="docutils literal notranslate"><span class="pre">GeantSimpleCalo::output()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15GeantSimpleCalo15GeantSimpleCaloENSt6stringE13SPConstParams5VecLV"><code class="docutils literal notranslate"><span class="pre">GeantSimpleCalo::GeantSimpleCalo()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15GeantSimpleCalo21MakeSensitiveDetectorEv"><code class="docutils literal notranslate"><span class="pre">GeantSimpleCalo::MakeSensitiveDetector()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK9celeritas15GeantSimpleCalo7VolumesEv"><code class="docutils literal notranslate"><span class="pre">GeantSimpleCalo::Volumes()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK9celeritas15GeantSimpleCalo25CalcTotalEnergyDepositionEv"><code class="docutils literal notranslate"><span class="pre">GeantSimpleCalo::CalcTotalEnergyDeposition()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas22HepMC3PrimaryGeneratorE"><code class="docutils literal notranslate"><span class="pre">HepMC3PrimaryGenerator</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N9celeritas22HepMC3PrimaryGenerator22HepMC3PrimaryGeneratorERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">HepMC3PrimaryGenerator::HepMC3PrimaryGenerator()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas22HepMC3PrimaryGenerator21GeneratePrimaryVertexEP7G4Event"><code class="docutils literal notranslate"><span class="pre">HepMC3PrimaryGenerator::GeneratePrimaryVertex()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas22HepMC3PrimaryGenerator9NumEventsEv"><code class="docutils literal notranslate"><span class="pre">HepMC3PrimaryGenerator::NumEvents()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18RZMapMagneticFieldE"><code class="docutils literal notranslate"><span class="pre">RZMapMagneticField</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18RZMapMagneticField18RZMapMagneticFieldE18SPConstFieldParams"><code class="docutils literal notranslate"><span class="pre">RZMapMagneticField::RZMapMagneticField()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK9celeritas18RZMapMagneticField13GetFieldValueEAL3E_KdPd"><code class="docutils literal notranslate"><span class="pre">RZMapMagneticField::GetFieldValue()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1129,7 +1300,7 @@ applications you can choose to use these classes directly instead of it.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=c87aa342"></script>
+</div><script src="../../_static/documentation_options.js?v=ff822928"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>

@@ -5,7 +5,7 @@ var searchData=
   ['leaf_5fnodes_2',['leaf_nodes',['../d5/df4/structceleritas_1_1detail_1_1_b_i_h_tree.html#a13c8a104e78d4b934c672cf7fbc12ecf',1,'celeritas::detail::BIHTree']]],
   ['lifetime_3',['lifetime',['../db/ddc/structceleritas_1_1_import_particle.html#aaaa5490f89b8336319d41eb1bc0888f3',1,'celeritas::ImportParticle']]],
   ['limit_5fmin_4',['limit_min',['../db/df0/structceleritas_1_1_msc_range.html#a9ab3c9d582270c1c522a18fd97b30fa9',1,'celeritas::MscRange']]],
-  ['line_5',['line',['../de/d98/structceleritas_1_1_provenance.html#a4975e802c0bed32c77bccf8be4b1e8fe',1,'celeritas::Provenance']]],
+  ['line_5',['line',['../de/d44/structceleritas_1_1_log_provenance.html#a37f14f3debcf19b6ac38c752b2dd866e',1,'celeritas::LogProvenance']]],
   ['linear_5floss_5flimit_6',['linear_loss_limit',['../da/da1/structceleritas_1_1_geant_physics_options.html#a67ee218110adc5e1623b806d2899fd23',1,'celeritas::GeantPhysicsOptions::linear_loss_limit'],['../db/d18/structceleritas_1_1_import_em_parameters.html#a3e32bd892197997c60dd10d25618c6e2',1,'celeritas::ImportEmParameters::linear_loss_limit'],['../d2/d44/structceleritas_1_1_physics_params_scalars.html#a956b2cb7dc332fdde8ca2f5db5f3775e',1,'celeritas::PhysicsParamsScalars::linear_loss_limit']]],
   ['local_5fmem_7',['local_mem',['../dc/d2d/structceleritas_1_1_kernel_attributes.html#a1aef3d4144f96d4352d3b97cfa249dfb',1,'celeritas::KernelAttributes']]],
   ['locate_5ftouchable_8',['locate_touchable',['../d1/d65/structceleritas_1_1_s_d_setup_options.html#a5c3c6d07568654fd7970ef8c5890205f',1,'celeritas::SDSetupOptions']]],

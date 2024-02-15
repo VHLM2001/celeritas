@@ -45,6 +45,6 @@ var searchData=
   ['twodsubgridcalculator_42',['TwodSubgridCalculator',['../db/d05/classceleritas_1_1_twod_subgrid_calculator.html',1,'celeritas']]],
   ['twopi_43',['TwoPi',['../df/d03/structceleritas_1_1_two_pi.html',1,'celeritas']]],
   ['twovolinput_44',['TwoVolInput',['../dc/d2d/structceleritas_1_1test_1_1_orange_geo_test_base_1_1_two_vol_input.html',1,'celeritas::test::OrangeGeoTestBase']]],
-  ['type_45',['type',['../d1/d1e/structceleritas_1_1detail_1_1_enum_with_size_1_1type.html',1,'celeritas::detail::EnumWithSize']]],
+  ['type_20_3e_45',['type &gt;',['../dc/da1/structceleritas_1_1detail_1_1_enum_with_size_1_1type_01_4.html',1,'celeritas::detail::EnumWithSize']]],
   ['typedemangler_46',['TypeDemangler',['../de/db1/classceleritas_1_1_type_demangler.html',1,'celeritas']]]
 ];

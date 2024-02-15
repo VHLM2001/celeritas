@@ -15,6 +15,5 @@ var searchData=
   ['sort_5fstep_5flimit_5faction_12',['sort_step_limit_action',['../db/da7/celeritas_2_types_8hh.html#a235414f18146be6e98cf4e1e5ccf0fe6aa4bb2354b598b609dc852c6b149cdc4c',1,'celeritas']]],
   ['sq_13',['sq',['../d7/d3b/_orange_types_8hh.html#a6e38ea21d9877ba8a45b3a6fee0c299ca4bc92a7aeb9478e6bf3f989025232b22',1,'celeritas']]],
   ['start_14',['start',['../db/da7/celeritas_2_types_8hh.html#a8cf02fdde066d68cf56bdc61f55215c1aea2b2676c28c0db26d39331a336c6b92',1,'celeritas']]],
-  ['status_15',['status',['../da/d0a/_logger_types_8hh.html#aef62286134070f3d148ad01bda25a8bea9acb44549b41563697bb490144ec6258',1,'celeritas']]],
-  ['sublambda_16',['sublambda',['../d4/db9/_import_physics_table_8hh.html#ade92a0a20d624cf5bb80797e1fe627f3a7e4d57496afc602ce3656a87ae921180',1,'celeritas']]]
+  ['status_15',['status',['../da/d0a/_logger_types_8hh.html#aef62286134070f3d148ad01bda25a8bea9acb44549b41563697bb490144ec6258',1,'celeritas']]]
 ];

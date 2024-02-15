@@ -15,7 +15,7 @@ var searchData=
   ['defaultfinalize_3c_20size_5ftype_20_3e_12',['DefaultFinalize&lt; size_type &gt;',['../d5/d4b/structceleritas_1_1detail_1_1_default_finalize.html',1,'celeritas::detail']]],
   ['deltadistribution_13',['DeltaDistribution',['../d7/da7/classceleritas_1_1_delta_distribution.html',1,'celeritas']]],
   ['depthcalculator_14',['DepthCalculator',['../d5/dd7/classceleritas_1_1_depth_calculator.html',1,'celeritas']]],
-  ['detailedinitializer_15',['detailedinitializer',['../d1/dab/structceleritas_1_1_geant_geo_track_view_1_1_detailed_initializer.html',1,'celeritas::GeantGeoTrackView::DetailedInitializer'],['../d6/d97/structceleritas_1_1_orange_track_view_1_1_detailed_initializer.html',1,'celeritas::OrangeTrackView::DetailedInitializer'],['../d0/df7/structceleritas_1_1_vecgeom_track_view_1_1_detailed_initializer.html',1,'celeritas::VecgeomTrackView::DetailedInitializer']]],
+  ['detailedinitializer_15',['DetailedInitializer',['../d1/dab/structceleritas_1_1_geant_geo_track_view_1_1_detailed_initializer.html',1,'celeritas::GeantGeoTrackView::DetailedInitializer'],['../d6/d97/structceleritas_1_1_orange_track_view_1_1_detailed_initializer.html',1,'celeritas::OrangeTrackView::DetailedInitializer'],['../d0/df7/structceleritas_1_1_vecgeom_track_view_1_1_detailed_initializer.html',1,'celeritas::VecgeomTrackView::DetailedInitializer']]],
   ['detectorstepoutput_16',['DetectorStepOutput',['../db/dfe/structceleritas_1_1_detector_step_output.html',1,'celeritas']]],
   ['detectorsteppointoutput_17',['DetectorStepPointOutput',['../df/d95/structceleritas_1_1_detector_step_point_output.html',1,'celeritas']]],
   ['device_18',['Device',['../d6/def/classceleritas_1_1_device.html',1,'celeritas']]],

@@ -1,18 +1,18 @@
 var searchData=
 [
-  ['qconstant_0',['QConstant',['../d8/dcb/_quantity_8hh.html#a99018d9081b6591b8ae92333daffe18d',1,'celeritas::detail']]],
-  ['quadraticsolver_1',['quadraticsolver',['../dd/d63/classceleritas_1_1detail_1_1_quadratic_solver.html',1,'celeritas::detail::QuadraticSolver'],['../dd/d63/classceleritas_1_1detail_1_1_quadratic_solver.html#a0c926b351ae77030def0c9ab4591d693',1,'celeritas::detail::QuadraticSolver::QuadraticSolver()']]],
+  ['qconstant_0',['QConstant',['../d6/dab/_quantity_impl_8hh.html#a99018d9081b6591b8ae92333daffe18d',1,'celeritas::detail']]],
+  ['quadraticsolver_1',['QuadraticSolver',['../dd/d63/classceleritas_1_1detail_1_1_quadratic_solver.html',1,'celeritas::detail::QuadraticSolver'],['../dd/d63/classceleritas_1_1detail_1_1_quadratic_solver.html#a0c926b351ae77030def0c9ab4591d693',1,'celeritas::detail::QuadraticSolver::QuadraticSolver()']]],
   ['quadraticsolver_2ehh_2',['QuadraticSolver.hh',['../df/d09/_quadratic_solver_8hh.html',1,'']]],
-  ['quadricconeconverter_3',['quadricconeconverter',['../d8/db1/classceleritas_1_1detail_1_1_quadric_cone_converter.html',1,'celeritas::detail::QuadricConeConverter'],['../d8/db1/classceleritas_1_1detail_1_1_quadric_cone_converter.html#a0bae4647fb301fcbb49d3e936bc78c0e',1,'celeritas::detail::QuadricConeConverter::QuadricConeConverter()']]],
+  ['quadricconeconverter_3',['QuadricConeConverter',['../d8/db1/classceleritas_1_1detail_1_1_quadric_cone_converter.html',1,'celeritas::detail::QuadricConeConverter'],['../d8/db1/classceleritas_1_1detail_1_1_quadric_cone_converter.html#a0bae4647fb301fcbb49d3e936bc78c0e',1,'celeritas::detail::QuadricConeConverter::QuadricConeConverter()']]],
   ['quadricconeconverter_2ehh_4',['QuadricConeConverter.hh',['../d1/dec/_quadric_cone_converter_8hh.html',1,'']]],
-  ['quadriccylconverter_5',['quadriccylconverter',['../d7/da2/classceleritas_1_1detail_1_1_quadric_cyl_converter.html',1,'celeritas::detail::QuadricCylConverter'],['../d7/da2/classceleritas_1_1detail_1_1_quadric_cyl_converter.html#a077916362a19db683b8c6cfbee377179',1,'celeritas::detail::QuadricCylConverter::QuadricCylConverter()']]],
+  ['quadriccylconverter_5',['QuadricCylConverter',['../d7/da2/classceleritas_1_1detail_1_1_quadric_cyl_converter.html',1,'celeritas::detail::QuadricCylConverter'],['../d7/da2/classceleritas_1_1detail_1_1_quadric_cyl_converter.html#a077916362a19db683b8c6cfbee377179',1,'celeritas::detail::QuadricCylConverter::QuadricCylConverter()']]],
   ['quadriccylconverter_2ehh_6',['QuadricCylConverter.hh',['../d5/d98/_quadric_cyl_converter_8hh.html',1,'']]],
-  ['quadricplaneconverter_7',['quadricplaneconverter',['../d1/dd5/classceleritas_1_1detail_1_1_quadric_plane_converter.html#afee5bbf2057d92f55bee6fdfe1af8902',1,'celeritas::detail::QuadricPlaneConverter::QuadricPlaneConverter()'],['../d1/dd5/classceleritas_1_1detail_1_1_quadric_plane_converter.html',1,'celeritas::detail::QuadricPlaneConverter']]],
+  ['quadricplaneconverter_7',['QuadricPlaneConverter',['../d1/dd5/classceleritas_1_1detail_1_1_quadric_plane_converter.html',1,'celeritas::detail::QuadricPlaneConverter'],['../d1/dd5/classceleritas_1_1detail_1_1_quadric_plane_converter.html#afee5bbf2057d92f55bee6fdfe1af8902',1,'celeritas::detail::QuadricPlaneConverter::QuadricPlaneConverter()']]],
   ['quadricplaneconverter_2ehh_8',['QuadricPlaneConverter.hh',['../d6/d96/_quadric_plane_converter_8hh.html',1,'']]],
-  ['quadricsphereconverter_9',['quadricsphereconverter',['../d6/dfc/classceleritas_1_1detail_1_1_quadric_sphere_converter.html#aa19dd77b57fab8c28c1cbdd13ea0ce23',1,'celeritas::detail::QuadricSphereConverter::QuadricSphereConverter()'],['../d6/dfc/classceleritas_1_1detail_1_1_quadric_sphere_converter.html',1,'celeritas::detail::QuadricSphereConverter']]],
+  ['quadricsphereconverter_9',['QuadricSphereConverter',['../d6/dfc/classceleritas_1_1detail_1_1_quadric_sphere_converter.html',1,'celeritas::detail::QuadricSphereConverter'],['../d6/dfc/classceleritas_1_1detail_1_1_quadric_sphere_converter.html#aa19dd77b57fab8c28c1cbdd13ea0ce23',1,'celeritas::detail::QuadricSphereConverter::QuadricSphereConverter()']]],
   ['quadricsphereconverter_2ehh_10',['QuadricSphereConverter.hh',['../d5/db3/_quadric_sphere_converter_8hh.html',1,'']]],
   ['quantities_2ehh_11',['Quantities.hh',['../de/d40/_quantities_8hh.html',1,'']]],
-  ['quantity_12',['quantity',['../dc/dff/classceleritas_1_1_quantity.html#ac6f6a3c63dbae477d243095976ae7c4e',1,'celeritas::Quantity::Quantity(detail::UnitlessQuantity&lt; QC &gt;) noexcept'],['../dc/dff/classceleritas_1_1_quantity.html#ae634dbece27c384eafb4088fe21135b0',1,'celeritas::Quantity::Quantity(value_type value) noexcept'],['../dc/dff/classceleritas_1_1_quantity.html#a68d22fca09594cabc46478d77b062158',1,'celeritas::Quantity::Quantity()=default'],['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas::Quantity&lt; UnitT, ValueT &gt;']]],
+  ['quantity_12',['Quantity',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas::Quantity&lt; UnitT, ValueT &gt;'],['../dc/dff/classceleritas_1_1_quantity.html#a68d22fca09594cabc46478d77b062158',1,'celeritas::Quantity::Quantity()=default'],['../dc/dff/classceleritas_1_1_quantity.html#ae634dbece27c384eafb4088fe21135b0',1,'celeritas::Quantity::Quantity(value_type value) noexcept'],['../dc/dff/classceleritas_1_1_quantity.html#ac6f6a3c63dbae477d243095976ae7c4e',1,'celeritas::Quantity::Quantity(detail::UnitlessQuantity&lt; QC &gt;) noexcept']]],
   ['quantity_2ehh_13',['Quantity.hh',['../d8/dcb/_quantity_8hh.html',1,'']]],
   ['quantity_3c_20amu_20_3e_14',['Quantity&lt; Amu &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
   ['quantity_3c_20eelectron_20_3e_15',['Quantity&lt; EElectron &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
@@ -22,7 +22,8 @@ var searchData=
   ['quantity_3c_20mev_20_3e_19',['Quantity&lt; Mev &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
   ['quantity_3c_20mevpercsq_20_3e_20',['Quantity&lt; MevPerCsq &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
   ['quantity_3c_20units_3a_3amev_2c_20double_20_3e_21',['Quantity&lt; units::Mev, double &gt;',['../dc/dff/classceleritas_1_1_quantity.html',1,'celeritas']]],
-  ['quantityio_2ehh_22',['QuantityIO.hh',['../de/d1c/_quantity_i_o_8hh.html',1,'']]],
-  ['quantityio_2ejson_2ehh_23',['QuantityIO.json.hh',['../d6/d09/_quantity_i_o_8json_8hh.html',1,'']]],
-  ['queued_24',['queued',['../d1/dd0/structceleritas_1_1_stepper_result.html#adb71afdd81269dd706c0d69889514c36',1,'celeritas::StepperResult']]]
+  ['quantityimpl_2ehh_22',['QuantityImpl.hh',['../d6/dab/_quantity_impl_8hh.html',1,'']]],
+  ['quantityio_2ehh_23',['QuantityIO.hh',['../de/d1c/_quantity_i_o_8hh.html',1,'']]],
+  ['quantityio_2ejson_2ehh_24',['QuantityIO.json.hh',['../d6/d09/_quantity_i_o_8json_8hh.html',1,'']]],
+  ['queued_25',['queued',['../d1/dd0/structceleritas_1_1_stepper_result.html#adb71afdd81269dd706c0d69889514c36',1,'celeritas::StepperResult']]]
 ];

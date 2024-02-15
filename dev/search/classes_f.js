@@ -96,6 +96,5 @@ var searchData=
   ['propagationapplier_93',['PropagationApplier',['../de/db6/structceleritas_1_1detail_1_1_propagation_applier.html',1,'celeritas::detail']]],
   ['propagationapplier_3c_20mp_2c_20std_3a_3aenable_5fif_5ft_3c_20kernel_5fmax_5fblocks_3c_20mp_20_3e_20_3e_20_3e_94',['PropagationApplier&lt; MP, std::enable_if_t&lt; kernel_max_blocks&lt; MP &gt; &gt; &gt;',['../d7/d54/structceleritas_1_1detail_1_1_propagation_applier_3_01_m_p_00_01std_1_1enable__if__t_3_01kernel_0873a436b290d74b64d1fa3ca4e6fd33.html',1,'celeritas::detail']]],
   ['propagationapplier_3c_20mp_2c_20std_3a_3aenable_5fif_5ft_3c_20kernel_5fmax_5fblocks_5fmin_5fwarps_3c_20mp_20_3e_20_3e_20_3e_95',['PropagationApplier&lt; MP, std::enable_if_t&lt; kernel_max_blocks_min_warps&lt; MP &gt; &gt; &gt;',['../da/df7/structceleritas_1_1detail_1_1_propagation_applier_3_01_m_p_00_01std_1_1enable__if__t_3_01kernel_c68b05913e13827f5239807c2807af51.html',1,'celeritas::detail']]],
-  ['propagationapplierbaseimpl_96',['PropagationApplierBaseImpl',['../d9/df4/structceleritas_1_1detail_1_1_propagation_applier_base_impl.html',1,'celeritas::detail']]],
-  ['provenance_97',['Provenance',['../de/d98/structceleritas_1_1_provenance.html',1,'celeritas']]]
+  ['propagationapplierbaseimpl_96',['PropagationApplierBaseImpl',['../d9/df4/structceleritas_1_1detail_1_1_propagation_applier_base_impl.html',1,'celeritas::detail']]]
 ];

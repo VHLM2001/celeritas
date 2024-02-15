@@ -5,8 +5,8 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Acceleritas" href="accel.html" /><link rel="prev" title="ORANGE" href="orange.html" />
 
-    <!-- Generated with Sphinx 7.2.3 and Furo 2023.09.10 -->
-        <title>Celeritas - Celeritas 0.4.1 documentation</title>
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Celeritas - Celeritas 0.4.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Celeritas 0.4.1 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Celeritas 0.4.2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="../../_static/celeritas-square.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Celeritas 0.4.1 documentation</span>
+  <span class="sidebar-brand-text">Celeritas 0.4.2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -181,7 +181,8 @@
 <p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/release-history.html">Release History</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Release History</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html">Version 0.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html">Version 0.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html#version-0-4-1">Version 0.4.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html#version-0-4-0">Version 0.4.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.3.html">Version 0.3.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.3.html#version-0-3-1">Version 0.3.1</a></li>
@@ -244,11 +245,12 @@ implementation for the Celeritas codebase, using components from the
 <dl class="cpp type" id="api-units">
 <dt class="sig sig-object cpp" id="_CPPv45units">
 <span id="_CPPv35units"></span><span id="_CPPv25units"></span><span id="units"></span><span class="target" id="dc/def/namespaceunits"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">units</span></span></span><a class="headerlink" href="#_CPPv45units" title="Link to this definition">#</a><br /></dt>
-<dd><p>Units and constants in Celeritas for macro-scale quantities. </p>
-<p>The following units have numerical values of 1 in this system:<ul class="simple">
+<dd><p>Units in Celeritas for macro-scale quantities. </p>
+<p>The following units have numerical values of 1 in the default Celeritas system (Gaussian CGS):<ul class="simple">
 <li><p>cm for standard unit of length</p></li>
 <li><p>s for standard unit of time</p></li>
-<li><p>g for standard unit of mass.</p></li>
+<li><p>g for standard unit of mass</p></li>
+<li><p>G for standard unit of field strength</p></li>
 </ul>
 </p>
 <p>Unless otherwise specified, this unit system is used for input and output numerical values. They are meant for macro-scale quantities coupling the different code components of Celeritas.</p>
@@ -265,7 +267,7 @@ See also:<ul class="simple">
 </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This system of units should be fully consistent so that constants can be precisely defined. (E.g., you cannot define both MeV as 1 and Joule as 1.) To express quantities in another system of units, e.g. MeV, use the Quantity class.</p>
+<p>This system of units should be fully consistent so that constants can be precisely defined. (E.g., you cannot define both MeV as 1 and Joule as 1.) To express quantities in another system of units, such as MeV and “natural” units, use the Quantity class.</p>
 </div>
 </dd></dl>
 
@@ -335,6 +337,7 @@ See also:<ul class="simple">
 </table>
 </div>
 </p>
+<p>In the CLHEP unit system, the value of the constant <code class="docutils literal notranslate"><span class="pre">e_electron</span></code> is defined to be 1 and <code class="docutils literal notranslate"><span class="pre">coulomb</span></code> is derivative from that. To avoid floating point arithmetic issues that would lead to the “units” and “constants” having different values for it, a special case redefines the value for CLHEP.</p>
 <p>Some experimental physical constants are derived from the other physical constants, but for consistency and clarity they are presented numerically with the units provided in the CODATA 2018 dataset. The <code class="docutils literal notranslate"><span class="pre">Constants.test.cc</span></code> unit tests compare the numerical value against the derivative values inside the celeritas unit system. All experimental values include the final (ususally two) imprecise digits; their precision is usually on the order of <span class="math notranslate nohighlight">\( 10^{-11} \)</span>. </p>
 </dd></dl>
 
@@ -378,7 +381,7 @@ See also:<ul class="simple">
 
 </div>
 <div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-exact-unit-transformations-for-si-units">Exact unit transformations for SI units</p>
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-exact-unit-transformations-to-si-units">Exact unit transformations to SI units</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units5meterE">
 <span id="_CPPv3N9celeritas5units5meterE"></span><span id="_CPPv2N9celeritas5units5meterE"></span><span id="celeritas::units::meter__real_type"></span><span class="target" id="db/df7/_units_8hh_1aab0660f4366a2c9693354bd4d437525f"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">meter</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">100</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5units10centimeterE" title="celeritas::units::centimeter"><span class="n"><span class="pre">centimeter</span></span></a><a class="headerlink" href="#_CPPv4N9celeritas5units5meterE" title="Link to this definition">#</a><br /></dt>
@@ -394,6 +397,9 @@ See also:<ul class="simple">
 <span id="_CPPv3N9celeritas5units5teslaE"></span><span id="_CPPv2N9celeritas5units5teslaE"></span><span id="celeritas::units::tesla__real_type"></span><span class="target" id="db/df7/_units_8hh_1a81f3fb58b64dca6a1de5a6b1d5a501b1"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tesla</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">10000</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5units5gaussE" title="celeritas::units::gauss"><span class="n"><span class="pre">gauss</span></span></a><a class="headerlink" href="#_CPPv4N9celeritas5units5teslaE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-exact-unit-transformations-using-si-unit-definitions">Exact unit transformations using SI unit definitions</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units6newtonE">
 <span id="_CPPv3N9celeritas5units6newtonE"></span><span id="_CPPv2N9celeritas5units6newtonE"></span><span id="celeritas::units::newton__real_type"></span><span class="target" id="db/df7/_units_8hh_1a991a067f01b371920f0db042959dba0b"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">newton</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5units8kilogramE" title="celeritas::units::kilogram"><span class="n"><span class="pre">kilogram</span></span></a><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5units5meterE" title="celeritas::units::meter"><span class="n"><span class="pre">meter</span></span></a><span class="w"> </span><span class="o"><span class="pre">/</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#_CPPv4N9celeritas5units6secondE" title="celeritas::units::second"><span class="n"><span class="pre">second</span></span></a><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5units6secondE" title="celeritas::units::second"><span class="n"><span class="pre">second</span></span></a><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units6newtonE" title="Link to this definition">#</a><br /></dt>
@@ -426,12 +432,20 @@ See also:<ul class="simple">
 
 </div>
 <div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-other-common-units">Other common units</p>
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-clhep-units">CLHEP units</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units10millimeterE">
 <span id="_CPPv3N9celeritas5units10millimeterE"></span><span id="_CPPv2N9celeritas5units10millimeterE"></span><span id="celeritas::units::millimeter__real_type"></span><span class="target" id="db/df7/_units_8hh_1ad831ae04dea156c942fc4d6edd07c77b"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">millimeter</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">0.1</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5units10centimeterE" title="celeritas::units::centimeter"><span class="n"><span class="pre">centimeter</span></span></a><a class="headerlink" href="#_CPPv4N9celeritas5units10millimeterE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units10nanosecondE">
+<span id="_CPPv3N9celeritas5units10nanosecondE"></span><span id="_CPPv2N9celeritas5units10nanosecondE"></span><span id="celeritas::units::nanosecond__real_type"></span><span class="target" id="db/df7/_units_8hh_1ae623e0700f9e42287fc8b1ed0908f2ae"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nanosecond</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">1e-9</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5units6secondE" title="celeritas::units::second"><span class="n"><span class="pre">second</span></span></a><a class="headerlink" href="#_CPPv4N9celeritas5units10nanosecondE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-other-common-units">Other common units</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units10femtometerE">
 <span id="_CPPv3N9celeritas5units10femtometerE"></span><span id="_CPPv2N9celeritas5units10femtometerE"></span><span id="celeritas::units::femtometer__real_type"></span><span class="target" id="db/df7/_units_8hh_1a802ee4554f23cf383f6bee67ec6a0961"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">femtometer</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="p"><span class="pre">(</span></span><span class="m"><span class="pre">1e-13</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5units10centimeterE" title="celeritas::units::centimeter"><span class="n"><span class="pre">centimeter</span></span></a><a class="headerlink" href="#_CPPv4N9celeritas5units10femtometerE" title="Link to this definition">#</a><br /></dt>
@@ -462,47 +476,70 @@ See also:<ul class="simple">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-units-for-particle-quantities">Units for particle quantities</p>
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units16ElementaryChargeE">
-<span id="_CPPv3N9celeritas5units16ElementaryChargeE"></span><span id="_CPPv2N9celeritas5units16ElementaryChargeE"></span><span class="target" id="de/d40/_quantities_8hh_1aed3693f034cf055fd47e1de6f9f1c4e8"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ElementaryCharge</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">EElectron</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units16ElementaryChargeE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N9celeritas5units16ElementaryChargeE"></span><span id="_CPPv2N9celeritas5units16ElementaryChargeE"></span><span class="target" id="de/d40/_quantities_8hh_1a8784993b1b4ae4b0c4d79d1572121523"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ElementaryCharge</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">EElectron</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units16ElementaryChargeE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units9MevEnergyE">
-<span id="_CPPv3N9celeritas5units9MevEnergyE"></span><span id="_CPPv2N9celeritas5units9MevEnergyE"></span><span class="target" id="de/d40/_quantities_8hh_1ab016d8ce94d9a1e2a77552395078cce0"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MevEnergy</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Mev</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units9MevEnergyE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N9celeritas5units9MevEnergyE"></span><span id="_CPPv2N9celeritas5units9MevEnergyE"></span><span class="target" id="de/d40/_quantities_8hh_1a77321e6a59547fedd0b8d3fc97481f91"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MevEnergy</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Mev</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units9MevEnergyE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units12LogMevEnergyE">
-<span id="_CPPv3N9celeritas5units12LogMevEnergyE"></span><span id="_CPPv2N9celeritas5units12LogMevEnergyE"></span><span class="target" id="de/d40/_quantities_8hh_1a234475d1dfab585324a28860a8c0aed8"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogMevEnergy</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">LogMev</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units12LogMevEnergyE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N9celeritas5units12LogMevEnergyE"></span><span id="_CPPv2N9celeritas5units12LogMevEnergyE"></span><span class="target" id="de/d40/_quantities_8hh_1a3b3659f83986606e1e0b1f468f26206a"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogMevEnergy</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">LogMev</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units12LogMevEnergyE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units7MevMassE">
-<span id="_CPPv3N9celeritas5units7MevMassE"></span><span id="_CPPv2N9celeritas5units7MevMassE"></span><span class="target" id="de/d40/_quantities_8hh_1a5d737b573a3188ef62801ba24a08a22f"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MevMass</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">MevPerCsq</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units7MevMassE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N9celeritas5units7MevMassE"></span><span id="_CPPv2N9celeritas5units7MevMassE"></span><span class="target" id="de/d40/_quantities_8hh_1a58c3648a894e5a76cd135248f52e50da"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MevMass</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">MevPerCsq</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units7MevMassE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units11MevMomentumE">
-<span id="_CPPv3N9celeritas5units11MevMomentumE"></span><span id="_CPPv2N9celeritas5units11MevMomentumE"></span><span class="target" id="de/d40/_quantities_8hh_1a8035b9710e14c7b447dcdccd82667a0d"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MevMomentum</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas10UnitDivideE" title="celeritas::UnitDivide"><span class="n"><span class="pre">UnitDivide</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Mev</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">CLight</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units11MevMomentumE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N9celeritas5units11MevMomentumE"></span><span id="_CPPv2N9celeritas5units11MevMomentumE"></span><span class="target" id="de/d40/_quantities_8hh_1a9d9fd9ba8acfc108bd7e515df9c8233a"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MevMomentum</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">MevPerC</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units11MevMomentumE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units13MevMomentumSqE">
-<span id="_CPPv3N9celeritas5units13MevMomentumSqE"></span><span id="_CPPv2N9celeritas5units13MevMomentumSqE"></span><span class="target" id="de/d40/_quantities_8hh_1a1a52a4ddb60aadac08539a1af65f1239"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MevMomentumSq</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas10UnitDivideE" title="celeritas::UnitDivide"><span class="n"><span class="pre">UnitDivide</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas11UnitProductE" title="celeritas::UnitProduct"><span class="n"><span class="pre">UnitProduct</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Mev</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Mev</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">CLightSq</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units13MevMomentumSqE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N9celeritas5units13MevMomentumSqE"></span><span id="_CPPv2N9celeritas5units13MevMomentumSqE"></span><span class="target" id="de/d40/_quantities_8hh_1ad7b8e0aece0e1289095c20b4bd64972c"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MevMomentumSq</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">UnitProduct</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">MevPerC</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">MevPerC</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units13MevMomentumSqE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units10LightSpeedE">
-<span id="_CPPv3N9celeritas5units10LightSpeedE"></span><span id="_CPPv2N9celeritas5units10LightSpeedE"></span><span class="target" id="de/d40/_quantities_8hh_1a5bcaba097675f190d7c96829513fa33d"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LightSpeed</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">CLight</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units10LightSpeedE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N9celeritas5units10LightSpeedE"></span><span id="_CPPv2N9celeritas5units10LightSpeedE"></span><span class="target" id="de/d40/_quantities_8hh_1acdf39215d8daf700b324715b2e280063"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LightSpeed</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">CLight</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units10LightSpeedE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units7AmuMassE">
-<span id="_CPPv3N9celeritas5units7AmuMassE"></span><span id="_CPPv2N9celeritas5units7AmuMassE"></span><span class="target" id="de/d40/_quantities_8hh_1af4d2745ed3630dfd6ef55e346b3b5a21"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AmuMass</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Amu</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units7AmuMassE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N9celeritas5units7AmuMassE"></span><span id="_CPPv2N9celeritas5units7AmuMassE"></span><span class="target" id="de/d40/_quantities_8hh_1a581fb4936b27611dffbe8f58f63571f2"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AmuMass</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Amu</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units7AmuMassE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-units-for-manual-input-and/or-test-harnesses">Units for manual input and/or test harnesses</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units8CmLengthE">
+<span id="_CPPv3N9celeritas5units8CmLengthE"></span><span id="_CPPv2N9celeritas5units8CmLengthE"></span><span class="target" id="de/d40/_quantities_8hh_1a90cafa2e9e209061f2be434e4f66f593"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CmLength</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Centimeter</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units8CmLengthE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units7InvCmXsE">
+<span id="_CPPv3N9celeritas5units7InvCmXsE"></span><span id="_CPPv2N9celeritas5units7InvCmXsE"></span><span class="target" id="de/d40/_quantities_8hh_1a690b60f1e7dd93be2fe812001f15ec03"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InvCmXs</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">UnitInverse</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Centimeter</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units7InvCmXsE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units12InvCcDensityE">
+<span id="_CPPv3N9celeritas5units12InvCcDensityE"></span><span id="_CPPv2N9celeritas5units12InvCcDensityE"></span><span class="target" id="de/d40/_quantities_8hh_1a6abe18f758b73a2261306d7af6576c74"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InvCcDensity</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">InvCentimeterCubed</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units12InvCcDensityE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units12MolCcDensityE">
+<span id="_CPPv3N9celeritas5units12MolCcDensityE"></span><span id="_CPPv2N9celeritas5units12MolCcDensityE"></span><span class="target" id="de/d40/_quantities_8hh_1ae24a28bfacacf230297108790bffe7d9"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MolCcDensity</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">MolPerCentimeterCubed</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units12MolCcDensityE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp type">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas5units10FieldTeslaE">
-<span id="_CPPv3N9celeritas5units10FieldTeslaE"></span><span id="_CPPv2N9celeritas5units10FieldTeslaE"></span><span class="target" id="de/d40/_quantities_8hh_1a79b810b1ca3ba2489322187e3bd3f38a"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FieldTesla</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Tesla</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units10FieldTeslaE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N9celeritas5units10FieldTeslaE"></span><span id="_CPPv2N9celeritas5units10FieldTeslaE"></span><span class="target" id="de/d40/_quantities_8hh_1a82665b1bab164d6893594c5d6960f19b"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FieldTesla</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4I00EN9celeritas8QuantityE" title="celeritas::Quantity"><span class="n"><span class="pre">Quantity</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Tesla</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N9celeritas5units10FieldTeslaE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -530,7 +567,7 @@ See also:<ul class="simple">
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas9constants10e_electronE">
-<span id="_CPPv3N9celeritas9constants10e_electronE"></span><span id="_CPPv2N9celeritas9constants10e_electronE"></span><span id="celeritas::constants::e_electron__real_type"></span><span class="target" id="d6/d56/celeritas_2_constants_8hh_1a50bd7d5819e8f07c6cd7afa15dab6785"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">e_electron</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1.602176634e-19</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5unitsE" title="celeritas::units"><span class="n"><span class="pre">units</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas5units7coulombE" title="celeritas::units::coulomb"><span class="n"><span class="pre">coulomb</span></span></a><a class="headerlink" href="#_CPPv4N9celeritas9constants10e_electronE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N9celeritas9constants10e_electronE"></span><span id="_CPPv2N9celeritas9constants10e_electronE"></span><span id="celeritas::constants::e_electron__real_type"></span><span class="target" id="d6/d56/celeritas_2_constants_8hh_1a50bd7d5819e8f07c6cd7afa15dab6785"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">e_electron</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">CELERITAS_UNITS</span></span><span class="w"> </span><span class="o"><span class="pre">==</span></span><span class="w"> </span><span class="n"><span class="pre">CELERITAS_UNITS_CLHEP</span></span><span class="w"> </span><span class="o"><span class="pre">?</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="w"> </span><span class="o"><span class="pre">:</span></span><span class="w"> </span><span class="m"><span class="pre">1.602176634e-19</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5unitsE" title="celeritas::units"><span class="n"><span class="pre">units</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas5units7coulombE" title="celeritas::units::coulomb"><span class="n"><span class="pre">coulomb</span></span></a><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N9celeritas9constants10e_electronE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
@@ -873,7 +910,7 @@ See also:<ul class="simple">
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas14MaterialParams13MaterialInput14number_densityE">
 <span id="_CPPv3N9celeritas14MaterialParams13MaterialInput14number_densityE"></span><span id="_CPPv2N9celeritas14MaterialParams13MaterialInput14number_densityE"></span><span id="celeritas::MaterialParams::MaterialInput::number_density__real_type"></span><span class="target" id="d5/da8/structceleritas_1_1_material_params_1_1_material_input_1a10b0272a8657810bac299c5b9421eddc"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">number_density</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas14MaterialParams13MaterialInput14number_densityE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Atomic number density [1/cm^3]. </p>
+<dd><p>Atomic number density [1/length^3]. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -1186,6 +1223,13 @@ See also:<ul class="simple">
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas7Stepper6reseedE7EventId">
+<span id="_CPPv3N9celeritas7Stepper6reseedE7EventId"></span><span id="_CPPv2N9celeritas7Stepper6reseedE7EventId"></span><span id="celeritas::Stepper::reseed__EventId"></span><span class="target" id="d4/db3/classceleritas_1_1_stepper_1a6c8c36e6fa4ea9e9627743cd559946d2"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reseed</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">EventId</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">event_id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4N9celeritas7Stepper6reseedE7EventId" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reseed the RNGs at the start of an event for “strong” reproducibility. </p>
+<p>This reinitializes the RNG states using a single seed and unique subsequence for each thread. It ensures that given an event number, that event can be reproduced. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK9celeritas7Stepper7actionsEv">
 <span id="_CPPv3NK9celeritas7Stepper7actionsEv"></span><span id="_CPPv2NK9celeritas7Stepper7actionsEv"></span><span id="celeritas::Stepper::actionsC"></span><span class="target" id="d4/db3/classceleritas_1_1_stepper_1aef8743acd80a257bffb56355b0c3d613"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">ActionSequence</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">actions</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK9celeritas7Stepper7actionsEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Get action sequence for timing diagnostics. </p>
@@ -1475,7 +1519,7 @@ See also:<ul class="simple">
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions14default_cutoffE">
 <span id="_CPPv3N9celeritas19GeantPhysicsOptions14default_cutoffE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions14default_cutoffE"></span><span id="celeritas::GeantPhysicsOptions::default_cutoff__double"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a48e5a0f1165dc2b05a7c452346162505"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">default_cutoff</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.1</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions14default_cutoffE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Set the default production cut for all particle types [cm]. </p>
+<dd><p>Set the default production cut for all particle types [len]. </p>
 </dd></dl>
 
 </div>
@@ -1496,8 +1540,8 @@ See also:<ul class="simple">
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas19GeantPhysicsOptions16msc_lambda_limitE">
-<span id="_CPPv3N9celeritas19GeantPhysicsOptions16msc_lambda_limitE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions16msc_lambda_limitE"></span><span id="celeritas::GeantPhysicsOptions::msc_lambda_limit__double"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a274cd21471baf674d66511236553c9f1"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">msc_lambda_limit</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.1</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions16msc_lambda_limitE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Lambda limit for MSC models [cm]. </p>
+<span id="_CPPv3N9celeritas19GeantPhysicsOptions16msc_lambda_limitE"></span><span id="_CPPv2N9celeritas19GeantPhysicsOptions16msc_lambda_limitE"></span><span id="celeritas::GeantPhysicsOptions::msc_lambda_limit__double"></span><span class="target" id="da/da1/structceleritas_1_1_geant_physics_options_1a274cd21471baf674d66511236553c9f1"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">msc_lambda_limit</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.1</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5unitsE" title="celeritas::units"><span class="n"><span class="pre">units</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas5units10centimeterE" title="celeritas::units::centimeter"><span class="n"><span class="pre">centimeter</span></span></a><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19GeantPhysicsOptions16msc_lambda_limitE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Lambda limit for MSC models [len]. </p>
 </dd></dl>
 
 </div>
@@ -2206,6 +2250,335 @@ p^2 = \frac{K^2}{c^2} + 2 * m * K
 </dd></dl>
 
 </section>
+<section id="propagation-and-magnetic-field">
+<h2>Propagation and magnetic field<a class="headerlink" href="#propagation-and-magnetic-field" title="Link to this heading">#</a></h2>
+<p>The propagation interface is built on top of the geometry to allow both curved
+and straight-line movement. Field propagation is based on a composition of:</p>
+<dl class="simple">
+<dt>Field</dt><dd><p>Maps a point in space and time to a field vector.</p>
+</dd>
+<dt>Equation of motion</dt><dd><p>Calculates the path derivative of position and momentum given their current
+state and the templated field.</p>
+</dd>
+<dt>Integrator</dt><dd><p>Numerically integrates a new position/momentum state given the start,
+path derivative, and step length.</p>
+</dd>
+<dt>Driver</dt><dd><p>Integrate path segments that satisfy certain error conditions, solving for
+the required segment length.</p>
+</dd>
+<dt>Propagator</dt><dd><p>Given a maximum physics step, advance the geometry state and momentum along
+the field lines, satisfying constraints (see <a class="reference internal" href="#api-field-data"><span class="std std-ref">field driver
+options</span></a>) for the maximum geometry error.</p>
+</dd>
+</dl>
+<section id="propagation">
+<h3>Propagation<a class="headerlink" href="#propagation" title="Link to this heading">#</a></h3>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN9celeritas16LinearPropagatorE">
+<span id="_CPPv3I0EN9celeritas16LinearPropagatorE"></span><span id="_CPPv2I0EN9celeritas16LinearPropagatorE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GTV</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="de/dee/classceleritas_1_1_linear_propagator"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LinearPropagator</span></span></span><a class="headerlink" href="#_CPPv4I0EN9celeritas16LinearPropagatorE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Propagate (move) a particle in a straight line. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas16LinearPropagator16LinearPropagatorERR3GTV">
+<span id="_CPPv3N9celeritas16LinearPropagator16LinearPropagatorERR3GTV"></span><span id="_CPPv2N9celeritas16LinearPropagator16LinearPropagatorERR3GTV"></span><span id="celeritas::LinearPropagator::LinearPropagator__GTVRR"></span><span class="target" id="de/dee/classceleritas_1_1_linear_propagator_1a88557105b8f1e63443478a4008870919"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LinearPropagator</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN9celeritas16LinearPropagatorE" title="celeritas::LinearPropagator::GTV"><span class="n"><span class="pre">GTV</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">track</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas16LinearPropagator16LinearPropagatorERR3GTV" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct from a geo track view. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas16LinearPropagatorclEv">
+<span id="_CPPv3N9celeritas16LinearPropagatorclEv"></span><span id="_CPPv2N9celeritas16LinearPropagatorclEv"></span><span id="celeritas::LinearPropagator::call-operator"></span><span class="target" id="de/dee/classceleritas_1_1_linear_propagator_1a28b1d4a4fb112b4b4b06bc95d9155f14"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">result_type</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas16LinearPropagatorclEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move track to next volume boundary. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas16LinearPropagatorclE9real_type">
+<span id="_CPPv3N9celeritas16LinearPropagatorclE9real_type"></span><span id="_CPPv2N9celeritas16LinearPropagatorclE9real_type"></span><span id="celeritas::LinearPropagator::call-operator__real_type"></span><span class="target" id="de/dee/classceleritas_1_1_linear_propagator_1aebd319756711e2e89e5f0cf74861c234"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">result_type</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dist</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas16LinearPropagatorclE9real_type" title="Link to this definition">#</a><br /></dt>
+<dd><p>Move track by a user-provided distance up to the next boundary. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas16LinearPropagator15tracks_can_loopEv">
+<span id="_CPPv3N9celeritas16LinearPropagator15tracks_can_loopEv"></span><span id="_CPPv2N9celeritas16LinearPropagator15tracks_can_loopEv"></span><span id="celeritas::LinearPropagator::tracks_can_loop"></span><span class="target" id="de/dee/classceleritas_1_1_linear_propagator_1a1e93b547010bc3c5a44360fdd4f0608f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tracks_can_loop</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas16LinearPropagator15tracks_can_loopEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Whether it’s possible to have tracks that are looping. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I00EN9celeritas15FieldPropagatorE">
+<span id="_CPPv3I00EN9celeritas15FieldPropagatorE"></span><span id="_CPPv2I00EN9celeritas15FieldPropagatorE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DriverT</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GTV</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d9/de0/classceleritas_1_1_field_propagator"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FieldPropagator</span></span></span><a class="headerlink" href="#_CPPv4I00EN9celeritas15FieldPropagatorE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Propagate a charged particle in a field. </p>
+<p>For a given initial state (position, momentum), it propagates a charged particle along a curved trajectory up to an interaction length proposed by a chosen physics process for the step, possibly integrating sub-steps by an adaptive step control with a required accuracy of tracking in a field. It updates the final state (position, momentum, boundary) along with the step actually taken. If the final position is outside the current volume, it returns a geometry limited step and the state at the intersection between the curve trajectory and the first volume boundary using an iterative step control method within a tolerance error imposed on the closest distance between two positions by the field stepper and the linear projection to the volume boundary.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This follows similar methods as in Geant4’s G4PropagatorInField class. </p>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15FieldPropagator15FieldPropagatorERR7DriverTRK17ParticleTrackViewRR3GTV">
+<span id="_CPPv3N9celeritas15FieldPropagator15FieldPropagatorERR7DriverTRK17ParticleTrackViewRR3GTV"></span><span id="_CPPv2N9celeritas15FieldPropagator15FieldPropagatorERR7DriverTRK17ParticleTrackViewRR3GTV"></span><span id="celeritas::FieldPropagator::FieldPropagator__DriverTRR.ParticleTrackViewCR.GTVRR"></span><span class="target" id="d9/de0/classceleritas_1_1_field_propagator_1aab0152f597f5fb924b075ee45ee08ef0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FieldPropagator</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00EN9celeritas15FieldPropagatorE" title="celeritas::FieldPropagator::DriverT"><span class="n"><span class="pre">DriverT</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">driver</span></span>, <a class="reference internal" href="#_CPPv4N9celeritas17ParticleTrackViewE" title="celeritas::ParticleTrackView"><span class="n"><span class="pre">ParticleTrackView</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">particle</span></span>, <a class="reference internal" href="#_CPPv4I00EN9celeritas15FieldPropagatorE" title="celeritas::FieldPropagator::GTV"><span class="n"><span class="pre">GTV</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">geo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas15FieldPropagator15FieldPropagatorERR7DriverTRK17ParticleTrackViewRR3GTV" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct with shared field parameters and the field driver. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15FieldPropagatorclEv">
+<span id="_CPPv3N9celeritas15FieldPropagatorclEv"></span><span id="_CPPv2N9celeritas15FieldPropagatorclEv"></span><span id="celeritas::FieldPropagator::call-operator"></span><span class="target" id="d9/de0/classceleritas_1_1_field_propagator_1adac66f0a92dfa65b715ab94710522af7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">result_type</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas15FieldPropagatorclEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Propagate a charged particle until it hits a boundary. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15FieldPropagatorclE9real_type">
+<span id="_CPPv3N9celeritas15FieldPropagatorclE9real_type"></span><span id="_CPPv2N9celeritas15FieldPropagatorclE9real_type"></span><span id="celeritas::FieldPropagator::call-operator__real_type"></span><span class="target" id="d9/de0/classceleritas_1_1_field_propagator_1a45710f3d7b7839425cd4fa4b4e42c27c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">result_type</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dist</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas15FieldPropagatorclE9real_type" title="Link to this definition">#</a><br /></dt>
+<dd><p>Propagate a charged particle in a field. </p>
+<p>It utilises a field driver (based on an adaptive step control to limit the length traveled based on the magnetic field behavior and geometric tolerances) to track a charged particle along a curved trajectory for a given step length within a required accuracy or intersects with a new volume (geometry limited step).</p>
+<p>The position of the internal OdeState <code class="docutils literal notranslate"><span class="pre">state_</span></code> should be consistent with the geometry <code class="docutils literal notranslate"><span class="pre">geo_</span></code>’s position, but the geometry’s direction will be a series of “trial” directions that are the chords between the start and end points of a curved substep through the field. At the end of the propagation step, the geometry state’s direction is updated based on the actual value of the calculated momentum.</p>
+<p>Caveats:<ul class="simple">
+<li><p>The physical (geometry track state) position may deviate from the exact curved propagation position up to a driver-based tolerance at every boundary crossing. The momentum will always be conserved, though.</p></li>
+<li><p>In some unusual cases (e.g. a very small caller-requested step, or an unusual accumulation in the driver’s substeps) the distance returned may be slightly higher (again, up to a driver-based tolerance) than the physical distance travelled. </p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas15FieldPropagator18delta_intersectionEv">
+<span id="_CPPv3NK9celeritas15FieldPropagator18delta_intersectionEv"></span><span id="_CPPv2NK9celeritas15FieldPropagator18delta_intersectionEv"></span><span id="celeritas::FieldPropagator::delta_intersectionC"></span><span class="target" id="d9/de0/classceleritas_1_1_field_propagator_1a216914f86a63f2b1ed7c6336e75996ac"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">delta_intersection</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas15FieldPropagator18delta_intersectionEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Distance close enough to a boundary to mark as being on the boundary. </p>
+<p>TODO: change delta intersection from property in <a class="reference internal" href="#d4/dc7/structceleritas_1_1_field_driver_options"><span class="std std-ref">FieldDriverOptions</span></a> to another FieldPropagatorOptions</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas15FieldPropagator13bump_distanceEv">
+<span id="_CPPv3NK9celeritas15FieldPropagator13bump_distanceEv"></span><span id="_CPPv2NK9celeritas15FieldPropagator13bump_distanceEv"></span><span id="celeritas::FieldPropagator::bump_distanceC"></span><span class="target" id="d9/de0/classceleritas_1_1_field_propagator_1a8be3753ba52671c41b70516d66bd9b86"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bump_distance</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas15FieldPropagator13bump_distanceEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Distance to bump or to consider a “zero” movement. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas15FieldPropagator15minimum_substepEv">
+<span id="_CPPv3NK9celeritas15FieldPropagator15minimum_substepEv"></span><span id="_CPPv2NK9celeritas15FieldPropagator15minimum_substepEv"></span><span id="celeritas::FieldPropagator::minimum_substepC"></span><span class="target" id="d9/de0/classceleritas_1_1_field_propagator_1a68f4ab60e79d2681f0f34104082e7033"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">minimum_substep</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas15FieldPropagator15minimum_substepEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Distance to bump or to consider a “zero” movement. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15FieldPropagator15tracks_can_loopEv">
+<span id="_CPPv3N9celeritas15FieldPropagator15tracks_can_loopEv"></span><span id="_CPPv2N9celeritas15FieldPropagator15tracks_can_loopEv"></span><span id="celeritas::FieldPropagator::tracks_can_loop"></span><span class="target" id="d9/de0/classceleritas_1_1_field_propagator_1aece733cdb871da256a9c4996f4452079"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tracks_can_loop</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas15FieldPropagator15tracks_can_loopEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Whether it’s possible to have tracks that are looping. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15FieldPropagator12max_substepsEv">
+<span id="_CPPv3N9celeritas15FieldPropagator12max_substepsEv"></span><span id="_CPPv2N9celeritas15FieldPropagator12max_substepsEv"></span><span id="celeritas::FieldPropagator::max_substeps"></span><span class="target" id="d9/de0/classceleritas_1_1_field_propagator_1a600df00eb93361f32876fa735374a6d9"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_substeps</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9celeritas15FieldPropagator12max_substepsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Limit on substeps. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4II0E000EN9celeritas25make_mag_field_propagatorEDcRR6FieldTRK18FieldDriverOptionsRK17ParticleTrackViewRR3GTV">
+<span id="_CPPv3II0E000EN9celeritas25make_mag_field_propagatorERR6FieldTRK18FieldDriverOptionsRK17ParticleTrackViewRR3GTV"></span><span id="_CPPv2II0E000EN9celeritas25make_mag_field_propagatorERR6FieldTRK18FieldDriverOptionsRK17ParticleTrackViewRR3GTV"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="n"><span class="pre">EquationT</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StepperT</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FieldT</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GTV</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="dc/dd9/_make_mag_field_propagator_8hh_1a1edccc3b32d871cddae51020718caa54"></span><span class="k"><span class="pre">decltype</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">auto</span></span><span class="p"><span class="pre">)</span></span><span class="w"> </span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv49celeritas" title="celeritas"><span class="n"><span class="pre">celeritas</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">make_mag_field_propagator</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4II0E000EN9celeritas25make_mag_field_propagatorEDcRR6FieldTRK18FieldDriverOptionsRK17ParticleTrackViewRR3GTV" title="celeritas::make_mag_field_propagator::FieldT"><span class="n"><span class="pre">FieldT</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">field</span></span>, <a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptionsE" title="celeritas::FieldDriverOptions"><span class="n"><span class="pre">FieldDriverOptions</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">options</span></span>, <a class="reference internal" href="#_CPPv4N9celeritas17ParticleTrackViewE" title="celeritas::ParticleTrackView"><span class="n"><span class="pre">ParticleTrackView</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">particle</span></span>, <a class="reference internal" href="#_CPPv4II0E000EN9celeritas25make_mag_field_propagatorEDcRR6FieldTRK18FieldDriverOptionsRK17ParticleTrackViewRR3GTV" title="celeritas::make_mag_field_propagator::GTV"><span class="n"><span class="pre">GTV</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">geometry</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4II0E000EN9celeritas25make_mag_field_propagatorEDcRR6FieldTRK18FieldDriverOptionsRK17ParticleTrackViewRR3GTV" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</section>
+<section id="field-data-input-and-options">
+<span id="api-field-data"></span><h3>Field data input and options<a class="headerlink" href="#field-data-input-and-options" title="Link to this heading">#</a></h3>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptionsE">
+<span id="_CPPv3N9celeritas18FieldDriverOptionsE"></span><span id="_CPPv2N9celeritas18FieldDriverOptionsE"></span><span id="celeritas::FieldDriverOptions"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FieldDriverOptions</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptionsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Configuration options for the field driver. </p>
+<p>TODO: replace epsilon_rel_max with 1/epsilon_rel_max^2 TODO: replace safety with step_shrink_mul (or something to indicate that it’s a multiplicative factor for reducing the step, not anything with geometry) TODO: remove errcon </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas18FieldDriverOptionscvbEv">
+<span id="_CPPv3NK9celeritas18FieldDriverOptionscvbEv"></span><span id="_CPPv2NK9celeritas18FieldDriverOptionscvbEv"></span><span id="celeritas::FieldDriverOptions::castto-b-operatorC"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1a5c726c3c3c7858d2c5af299c147958cf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas18FieldDriverOptionscvbEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Whether all data are assigned and valid. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions12minimum_stepE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions12minimum_stepE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions12minimum_stepE"></span><span id="celeritas::FieldDriverOptions::minimum_step__real_type"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1a371cca9ad421a48a25dcbe86217d1694"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">minimum_step</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1.0e-5</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5unitsE" title="celeritas::units"><span class="n"><span class="pre">units</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas5units10millimeterE" title="celeritas::units::millimeter"><span class="n"><span class="pre">millimeter</span></span></a><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions12minimum_stepE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The minimum length of the field step. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions11delta_chordE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions11delta_chordE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions11delta_chordE"></span><span id="celeritas::FieldDriverOptions::delta_chord__real_type"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1a7465c7a3b8e6b4a5e2c7e559b7084ef0"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">delta_chord</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.25</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5unitsE" title="celeritas::units"><span class="n"><span class="pre">units</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas5units10millimeterE" title="celeritas::units::millimeter"><span class="n"><span class="pre">millimeter</span></span></a><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions11delta_chordE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The maximum sagitta of each substep (“miss distance”) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions18delta_intersectionE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions18delta_intersectionE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions18delta_intersectionE"></span><span id="celeritas::FieldDriverOptions::delta_intersection__real_type"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1abc4e4c10aee8587e8ac9a7f437251dcf"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">delta_intersection</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1.0e-4</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5unitsE" title="celeritas::units"><span class="n"><span class="pre">units</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas5units10millimeterE" title="celeritas::units::millimeter"><span class="n"><span class="pre">millimeter</span></span></a><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions18delta_intersectionE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Accuracy of intersection of the boundary crossing. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions12epsilon_stepE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions12epsilon_stepE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions12epsilon_stepE"></span><span id="celeritas::FieldDriverOptions::epsilon_step__real_type"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1aca91bc08c3c8da66e1c455e63f23793c"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">epsilon_step</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1.0e-5</span></span><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions12epsilon_stepE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Discretization error tolerance for each field substep. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions15epsilon_rel_maxE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions15epsilon_rel_maxE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions15epsilon_rel_maxE"></span><span id="celeritas::FieldDriverOptions::epsilon_rel_max__real_type"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1ad8b3bd7d14cbc3b6c5e8dc575c164878"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">epsilon_rel_max</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1.0e-3</span></span><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions15epsilon_rel_maxE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Targeted discretization error for “integrate step”. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions6errconE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions6errconE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions6errconE"></span><span id="celeritas::FieldDriverOptions::errcon__real_type"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1a10d304275c709574ae7907a4fd262855"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">errcon</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1.0e-4</span></span><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions6errconE" title="Link to this definition">#</a><br /></dt>
+<dd><p>UNUSED: Targeted discretization error for “one good step”. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions5pgrowE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions5pgrowE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions5pgrowE"></span><span id="celeritas::FieldDriverOptions::pgrow__real_type"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1ae4065d39db4e4b3260cded1247bd86bc"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pgrow</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">0.20</span></span><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions5pgrowE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Exponent to increase a step size. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions7pshrinkE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions7pshrinkE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions7pshrinkE"></span><span id="celeritas::FieldDriverOptions::pshrink__real_type"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1ad201c42f6658a6dcce12b50f3e29e6ac"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pshrink</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">0.25</span></span><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions7pshrinkE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Exponent to decrease a step size. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions6safetyE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions6safetyE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions6safetyE"></span><span id="celeritas::FieldDriverOptions::safety__real_type"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1acc121bab1b2b354ee7482e9f59205cc2"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">safety</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.9</span></span><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions6safetyE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Scale factor for the predicted step size. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions21max_stepping_increaseE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions21max_stepping_increaseE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions21max_stepping_increaseE"></span><span id="celeritas::FieldDriverOptions::max_stepping_increase__real_type"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1a7e37220c8fddad6a26cf921894846232"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_stepping_increase</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">5</span></span><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions21max_stepping_increaseE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Largest allowable relative increase a step size. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions21max_stepping_decreaseE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions21max_stepping_decreaseE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions21max_stepping_decreaseE"></span><span id="celeritas::FieldDriverOptions::max_stepping_decrease__real_type"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1a45f1517e96caaa9f8b56f57c4704526b"></span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_stepping_decrease</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.1</span></span><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions21max_stepping_decreaseE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Smallest allowable relative decrease in step size. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions10max_nstepsE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions10max_nstepsE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions10max_nstepsE"></span><span id="celeritas::FieldDriverOptions::max_nsteps__short-i"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1a971e651924662ab367af5882ae3c4edc"></span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_nsteps</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">100</span></span><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions10max_nstepsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Maximum number of integrations (or trials) </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions16initial_step_tolE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions16initial_step_tolE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions16initial_step_tolE"></span><span id="celeritas::FieldDriverOptions::initial_step_tol__real_type"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1a96d997f7c4918f75d867a6f1a0afb00e"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initial_step_tol</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-6</span></span><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions16initial_step_tolE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Initial step tolerance. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions10dchord_tolE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions10dchord_tolE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions10dchord_tolE"></span><span id="celeritas::FieldDriverOptions::dchord_tol__real_type"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1a1d441e343d2b672eb81928fe026f940f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dchord_tol</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">1e-5</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5unitsE" title="celeritas::units"><span class="n"><span class="pre">units</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas5units10millimeterE" title="celeritas::units::millimeter"><span class="n"><span class="pre">millimeter</span></span></a><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions10dchord_tolE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Chord distance fudge factor. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18FieldDriverOptions16min_chord_shrinkE">
+<span id="_CPPv3N9celeritas18FieldDriverOptions16min_chord_shrinkE"></span><span id="_CPPv2N9celeritas18FieldDriverOptions16min_chord_shrinkE"></span><span id="celeritas::FieldDriverOptions::min_chord_shrink__real_type"></span><span class="target" id="d4/dc7/structceleritas_1_1_field_driver_options_1a8dc49bdc6d8352926b50b6749d7c3335"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="corecel.html#_CPPv4N9celeritas9real_typeE" title="celeritas::real_type"><span class="n"><span class="pre">real_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_chord_shrink</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.5</span></span><a class="headerlink" href="#_CPPv4N9celeritas18FieldDriverOptions16min_chord_shrinkE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Lowest allowable scaling factor when searching for a chord. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="field-data">
+<h3>Field data<a class="headerlink" href="#field-data" title="Link to this heading">#</a></h3>
+<p>These classes correspond to JSON input files to the field setup.</p>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18UniformFieldParamsE">
+<span id="_CPPv3N9celeritas18UniformFieldParamsE"></span><span id="_CPPv2N9celeritas18UniformFieldParamsE"></span><span id="celeritas::UniformFieldParams"></span><span class="target" id="d7/daa/structceleritas_1_1_uniform_field_params"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UniformFieldParams</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas18UniformFieldParamsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Input data and options for a uniform field. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas18UniformFieldParams5fieldE">
+<span id="_CPPv3N9celeritas18UniformFieldParams5fieldE"></span><span id="_CPPv2N9celeritas18UniformFieldParams5fieldE"></span><span id="celeritas::UniformFieldParams::field__Real3"></span><span class="target" id="d7/daa/structceleritas_1_1_uniform_field_params_1a1c038b17dc135393e1b5d04e795dc4a9"></span><span class="n"><span class="pre">Real3</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">field</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas18UniformFieldParams5fieldE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Field strength (native units) </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15RZMapFieldInputE">
+<span id="_CPPv3N9celeritas15RZMapFieldInputE"></span><span id="_CPPv2N9celeritas15RZMapFieldInputE"></span><span id="celeritas::RZMapFieldInput"></span><span class="target" id="de/de5/structceleritas_1_1_r_z_map_field_input"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RZMapFieldInput</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15RZMapFieldInputE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Input data for an magnetic R-Z vector field stored on an R-Z grid. </p>
+<p>The magnetic field is discretized at nodes on an R-Z grid, and each point the field vector is approximated by a 2-D vector in R-Z. The input units of this field are in <em>NATIVE UNITS</em> (cm/gauss when CGS). An optional <code class="docutils literal notranslate"><span class="pre">_units</span></code> field in the input can specify whether the input is in tesla or native units, with allowable values of “T”, “tesla”, “gauss”, or “native”.</p>
+<p>The field values are all indexed with R having stride 1: [Z][R] </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK9celeritas15RZMapFieldInputcvbEv">
+<span id="_CPPv3NK9celeritas15RZMapFieldInputcvbEv"></span><span id="_CPPv2NK9celeritas15RZMapFieldInputcvbEv"></span><span id="celeritas::RZMapFieldInput::castto-b-operatorC"></span><span class="target" id="de/de5/structceleritas_1_1_r_z_map_field_input_1a83f5ccbba44bf35643ad270e747174e9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK9celeritas15RZMapFieldInputcvbEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Whether all data are assigned and valid. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15RZMapFieldInput5min_zE">
+<span id="_CPPv3N9celeritas15RZMapFieldInput5min_zE"></span><span id="_CPPv2N9celeritas15RZMapFieldInput5min_zE"></span><span id="celeritas::RZMapFieldInput::min_z__double"></span><span class="target" id="de/de5/structceleritas_1_1_r_z_map_field_input_1a88b0d6645fd20e101a80dec9103de2b5"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_z</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas15RZMapFieldInput5min_zE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Lower z coordinate [len]. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15RZMapFieldInput5min_rE">
+<span id="_CPPv3N9celeritas15RZMapFieldInput5min_rE"></span><span id="_CPPv2N9celeritas15RZMapFieldInput5min_rE"></span><span id="celeritas::RZMapFieldInput::min_r__double"></span><span class="target" id="de/de5/structceleritas_1_1_r_z_map_field_input_1af1f0114a692b2b72905a008fa89c5bb7"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_r</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas15RZMapFieldInput5min_rE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Lower r coordinate [len]. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15RZMapFieldInput5max_zE">
+<span id="_CPPv3N9celeritas15RZMapFieldInput5max_zE"></span><span id="_CPPv2N9celeritas15RZMapFieldInput5max_zE"></span><span id="celeritas::RZMapFieldInput::max_z__double"></span><span class="target" id="de/de5/structceleritas_1_1_r_z_map_field_input_1a6a16c7f03a93498998941fd81a015a1a"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_z</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas15RZMapFieldInput5max_zE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Last z coordinate [len]. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15RZMapFieldInput5max_rE">
+<span id="_CPPv3N9celeritas15RZMapFieldInput5max_rE"></span><span id="_CPPv2N9celeritas15RZMapFieldInput5max_rE"></span><span id="celeritas::RZMapFieldInput::max_r__double"></span><span class="target" id="de/de5/structceleritas_1_1_r_z_map_field_input_1a18dd8d50f0345dede76f73bb6aa049b1"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_r</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas15RZMapFieldInput5max_rE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Last r coordinate [len]. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15RZMapFieldInput7field_zE">
+<span id="_CPPv3N9celeritas15RZMapFieldInput7field_zE"></span><span id="_CPPv2N9celeritas15RZMapFieldInput7field_zE"></span><span id="celeritas::RZMapFieldInput::field_z__std::vector:double:"></span><span class="target" id="de/de5/structceleritas_1_1_r_z_map_field_input_1a174c82795c3f22cbffd00a61d2150da0"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">field_z</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15RZMapFieldInput7field_zE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Flattened Z field component [bfield]. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15RZMapFieldInput7field_rE">
+<span id="_CPPv3N9celeritas15RZMapFieldInput7field_rE"></span><span id="_CPPv2N9celeritas15RZMapFieldInput7field_rE"></span><span id="celeritas::RZMapFieldInput::field_r__std::vector:double:"></span><span class="target" id="de/de5/structceleritas_1_1_r_z_map_field_input_1ab3a454d36e691d9824bb674995c001d7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">field_r</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15RZMapFieldInput7field_rE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Flattened R field component [bfield]. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
 <section id="random-number-distributions">
 <span id="celeritas-random"></span><h2>Random number distributions<a class="headerlink" href="#random-number-distributions" title="Link to this heading">#</a></h2>
 <p>The 2011 ISO C++ standard defined a new functional paradigm for sampling from
@@ -2651,9 +3024,8 @@ The following classes enumerate all the data used at runtime.</p>
 <span id="_CPPv3N9celeritas10ImportDataE"></span><span id="_CPPv2N9celeritas10ImportDataE"></span><span id="celeritas::ImportData"></span><span class="target" id="d2/dd6/structceleritas_1_1_import_data"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ImportData</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas10ImportDataE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Store imported physics data from external sources. </p>
 <p>All the data imported to Celeritas is stored in this single entity. This struct can be used in memory or recorded in a ROOT TBranch as a single TTree entry, which will be read by <code class="docutils literal notranslate"><span class="pre">RootImporter</span></code> to load the data into Celeritas. Currently, the TTree and TBranch names are hardcoded as <em>geant4_data</em> and <em><a class="reference internal" href="#d2/dd6/structceleritas_1_1_import_data"><span class="std std-ref">ImportData</span></a></em> in <code class="docutils literal notranslate"><span class="pre">RootImporter</span></code> .</p>
-<p>Each entity’s id is defined by its vector position. An <code class="docutils literal notranslate"><a class="reference internal" href="#d9/d46/structceleritas_1_1_import_element"><span class="std std-ref"><span class="pre">ImportElement</span></span></a></code> with id = 3 is stored at <code class="docutils literal notranslate"><span class="pre">elements.at(3)</span></code> . Same for materials and volumes.</p>
+<p>Each entity’s id is defined by its vector position. An <code class="docutils literal notranslate"><a class="reference internal" href="#d9/d46/structceleritas_1_1_import_element"><span class="std std-ref"><span class="pre">ImportElement</span></span></a></code> with id = 3 is stored at <code class="docutils literal notranslate"><span class="pre">elements</span></code>[3] . Same for materials and volumes.</p>
 <p>Seltzer-Berger, Livermore PE, and atomic relaxation data are loaded based on atomic numbers, and thus are stored in maps. To retrieve specific data use <code class="docutils literal notranslate"><span class="pre">find(atomic_number)</span></code> .</p>
-<p>All units must be converted at import time to be in accordance to the Celeritas’ unit standard. Refer to <code class="docutils literal notranslate"><span class="pre">base/Units.hh</span></code> for further information.</p>
 <p>The “processes” field may be empty for testing applications. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-type-aliases">Type aliases</p>
@@ -2783,13 +3155,13 @@ The following classes enumerate all the data used at runtime.</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas13ImportElement11atomic_massE">
 <span id="_CPPv3N9celeritas13ImportElement11atomic_massE"></span><span id="_CPPv2N9celeritas13ImportElement11atomic_massE"></span><span id="celeritas::ImportElement::atomic_mass__double"></span><span class="target" id="d9/d46/structceleritas_1_1_import_element_1a9caf206ac51047d78a7fccc75f6026b2"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atomic_mass</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas13ImportElement11atomic_massE" title="Link to this definition">#</a><br /></dt>
-<dd><p>[atomic mass unit] </p>
+<dd><p>[amu] </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas13ImportElement21radiation_length_tsaiE">
 <span id="_CPPv3N9celeritas13ImportElement21radiation_length_tsaiE"></span><span id="_CPPv2N9celeritas13ImportElement21radiation_length_tsaiE"></span><span id="celeritas::ImportElement::radiation_length_tsai__double"></span><span class="target" id="d9/d46/structceleritas_1_1_import_element_1acc10f22d1000356a871bcd6d1b9e4685"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">radiation_length_tsai</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas13ImportElement21radiation_length_tsaiE" title="Link to this definition">#</a><br /></dt>
-<dd><p>[g/cm^2] </p>
+<dd><p>[mass/length^2] </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -2821,7 +3193,7 @@ The following classes enumerate all the data used at runtime.</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas19ImportProductionCut5rangeE">
 <span id="_CPPv3N9celeritas19ImportProductionCut5rangeE"></span><span id="_CPPv2N9celeritas19ImportProductionCut5rangeE"></span><span id="celeritas::ImportProductionCut::range__double"></span><span class="target" id="d5/d51/structceleritas_1_1_import_production_cut_1a0f63176fd7bf8eca04b01db215215298"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">range</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19ImportProductionCut5rangeE" title="Link to this definition">#</a><br /></dt>
-<dd><p>[cm] </p>
+<dd><p>[length] </p>
 </dd></dl>
 
 </div>
@@ -2842,7 +3214,7 @@ The following classes enumerate all the data used at runtime.</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas22ImportMatElemComponent13mass_fractionE">
 <span id="_CPPv3N9celeritas22ImportMatElemComponent13mass_fractionE"></span><span id="_CPPv2N9celeritas22ImportMatElemComponent13mass_fractionE"></span><span id="celeritas::ImportMatElemComponent::mass_fraction__double"></span><span class="target" id="da/dc6/structceleritas_1_1_import_mat_elem_component_1a842ade5664a3179d47cae882ae338265"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mass_fraction</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas22ImportMatElemComponent13mass_fractionE" title="Link to this definition">#</a><br /></dt>
-<dd><p>[g/cm^3] </p>
+<dd><p>[mass/length^3] </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -2891,31 +3263,31 @@ The following classes enumerate all the data used at runtime.</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas14ImportMaterial7densityE">
 <span id="_CPPv3N9celeritas14ImportMaterial7densityE"></span><span id="_CPPv2N9celeritas14ImportMaterial7densityE"></span><span id="celeritas::ImportMaterial::density__double"></span><span class="target" id="d4/d4c/structceleritas_1_1_import_material_1a8c4a6a9fa21673967879c6a074aa4e3a"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">density</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas14ImportMaterial7densityE" title="Link to this definition">#</a><br /></dt>
-<dd><p>[g/cm^3] </p>
+<dd><p>[mass/length^3] </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas14ImportMaterial16electron_densityE">
 <span id="_CPPv3N9celeritas14ImportMaterial16electron_densityE"></span><span id="_CPPv2N9celeritas14ImportMaterial16electron_densityE"></span><span id="celeritas::ImportMaterial::electron_density__double"></span><span class="target" id="d4/d4c/structceleritas_1_1_import_material_1a06b38f2581d01a9dd1cdccfbb462a3a6"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">electron_density</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas14ImportMaterial16electron_densityE" title="Link to this definition">#</a><br /></dt>
-<dd><p>[1/cm^3] </p>
+<dd><p>[1/length^3] </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas14ImportMaterial14number_densityE">
 <span id="_CPPv3N9celeritas14ImportMaterial14number_densityE"></span><span id="_CPPv2N9celeritas14ImportMaterial14number_densityE"></span><span id="celeritas::ImportMaterial::number_density__double"></span><span class="target" id="d4/d4c/structceleritas_1_1_import_material_1ac5ade59a8df2c00c187ea27d7b136031"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">number_density</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas14ImportMaterial14number_densityE" title="Link to this definition">#</a><br /></dt>
-<dd><p>[1/cm^3] </p>
+<dd><p>[1/length^3] </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas14ImportMaterial16radiation_lengthE">
 <span id="_CPPv3N9celeritas14ImportMaterial16radiation_lengthE"></span><span id="_CPPv2N9celeritas14ImportMaterial16radiation_lengthE"></span><span id="celeritas::ImportMaterial::radiation_length__double"></span><span class="target" id="d4/d4c/structceleritas_1_1_import_material_1abdfa96d0944c94750e56ff7642467879"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">radiation_length</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas14ImportMaterial16radiation_lengthE" title="Link to this definition">#</a><br /></dt>
-<dd><p>[cm] </p>
+<dd><p>[length] </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas14ImportMaterial18nuclear_int_lengthE">
 <span id="_CPPv3N9celeritas14ImportMaterial18nuclear_int_lengthE"></span><span id="_CPPv2N9celeritas14ImportMaterial18nuclear_int_lengthE"></span><span id="celeritas::ImportMaterial::nuclear_int_length__double"></span><span class="target" id="d4/d4c/structceleritas_1_1_import_material_1a99e06e7b7d553ae127edb2f48b8142a5"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nuclear_int_length</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas14ImportMaterial18nuclear_int_lengthE" title="Link to this definition">#</a><br /></dt>
-<dd><p>[cm] </p>
+<dd><p>[length] </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -3099,7 +3471,7 @@ The following classes enumerate all the data used at runtime.</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas14ImportParticle6chargeE">
 <span id="_CPPv3N9celeritas14ImportParticle6chargeE"></span><span id="_CPPv2N9celeritas14ImportParticle6chargeE"></span><span id="celeritas::ImportParticle::charge__double"></span><span class="target" id="db/ddc/structceleritas_1_1_import_particle_1affd57c56c6bf963c7e1b9b56c2fe8461"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">charge</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas14ImportParticle6chargeE" title="Link to this definition">#</a><br /></dt>
-<dd><p>[Multiple of electron charge] </p>
+<dd><p>[Multiple of electron charge value] </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -3111,7 +3483,7 @@ The following classes enumerate all the data used at runtime.</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas14ImportParticle8lifetimeE">
 <span id="_CPPv3N9celeritas14ImportParticle8lifetimeE"></span><span id="_CPPv2N9celeritas14ImportParticle8lifetimeE"></span><span id="celeritas::ImportParticle::lifetime__double"></span><span class="target" id="db/ddc/structceleritas_1_1_import_particle_1aaaa5490f89b8336319d41eb1bc0888f3"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lifetime</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas14ImportParticle8lifetimeE" title="Link to this definition">#</a><br /></dt>
-<dd><p>[s] </p>
+<dd><p>[time] </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -3238,7 +3610,7 @@ The following classes enumerate all the data used at runtime.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas19ImportModelMaterialE">
 <span id="_CPPv3N9celeritas19ImportModelMaterialE"></span><span id="_CPPv2N9celeritas19ImportModelMaterialE"></span><span id="celeritas::ImportModelMaterial"></span><span class="target" id="dc/dc5/structceleritas_1_1_import_model_material"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ImportModelMaterial</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas19ImportModelMaterialE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Imported data for one material in a particular model. </p>
-<p>Microscopic cross-section data are stored in the element-selector physics vector is in cm^2. They will not be present for all model types, as some models only do on-the-fly calculation (e.g., photoelectric effect) or don’t depend on elemental interactions (e.g., compton scattering). The <code class="docutils literal notranslate"><span class="pre">needs_micro_xs</span></code> function indicates which models should store the cross section data.</p>
+<p>Microscopic cross-section data are stored in the element-selector physics vector is in length^2. They will not be present for all model types, as some models only do on-the-fly calculation (e.g., photoelectric effect) or don’t depend on elemental interactions (e.g., compton scattering). The <code class="docutils literal notranslate"><span class="pre">needs_micro_xs</span></code> function indicates which models should store the cross section data.</p>
 <p>The energy grid’s boundaries determine the model’s energy bounds and will always be set. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-type-aliases">Type aliases</p>
@@ -3280,7 +3652,7 @@ The following classes enumerate all the data used at runtime.</p>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas19ImportModelMaterial8xs_unitsE">
-<span id="_CPPv3N9celeritas19ImportModelMaterial8xs_unitsE"></span><span id="_CPPv2N9celeritas19ImportModelMaterial8xs_unitsE"></span><span id="celeritas::ImportModelMaterial::xs_units__auto"></span><span class="target" id="dc/dc5/structceleritas_1_1_import_model_material_1a3f1a3a3ae8a01e642bcbfee9d8c8c03e"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">xs_units</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnitsE" title="celeritas::ImportUnits"><span class="n"><span class="pre">ImportUnits</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits4cm_2E" title="celeritas::ImportUnits::cm_2"><span class="n"><span class="pre">cm_2</span></span></a><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19ImportModelMaterial8xs_unitsE" title="Link to this definition">#</a><br /></dt>
+<span id="_CPPv3N9celeritas19ImportModelMaterial8xs_unitsE"></span><span id="_CPPv2N9celeritas19ImportModelMaterial8xs_unitsE"></span><span id="celeritas::ImportModelMaterial::xs_units__auto"></span><span class="target" id="dc/dc5/structceleritas_1_1_import_model_material_1a3f1a3a3ae8a01e642bcbfee9d8c8c03e"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">xs_units</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnitsE" title="celeritas::ImportUnits"><span class="n"><span class="pre">ImportUnits</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits6len_sqE" title="celeritas::ImportUnits::len_sq"><span class="n"><span class="pre">len_sq</span></span></a><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas19ImportModelMaterial8xs_unitsE" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -3709,50 +4081,6 @@ The following classes enumerate all the data used at runtime.</p>
 </dd></dl>
 
 <dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15ImportTableType12dedx_processE">
-<span id="_CPPv3N9celeritas15ImportTableType12dedx_processE"></span><span id="_CPPv2N9celeritas15ImportTableType12dedx_processE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1ade92a0a20d624cf5bb80797e1fe627f3a595bd8578eab7401252f185378c82fee"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dedx_process</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15ImportTableType12dedx_processE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Energy loss table for a process. </p>
-</dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15ImportTableType17dedx_unrestrictedE">
-<span id="_CPPv3N9celeritas15ImportTableType17dedx_unrestrictedE"></span><span id="_CPPv2N9celeritas15ImportTableType17dedx_unrestrictedE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1ade92a0a20d624cf5bb80797e1fe627f3af0c33e975e47e3d7f1f5f74e83e8bd7f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dedx_unrestricted</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15ImportTableType17dedx_unrestrictedE" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15ImportTableType10csda_rangeE">
-<span id="_CPPv3N9celeritas15ImportTableType10csda_rangeE"></span><span id="_CPPv2N9celeritas15ImportTableType10csda_rangeE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1ade92a0a20d624cf5bb80797e1fe627f3aa10e0d42e6e94c38d449cbfede72b626"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">csda_range</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15ImportTableType10csda_rangeE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Continuous slowing down approximation. </p>
-</dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15ImportTableType11dedx_subsecE">
-<span id="_CPPv3N9celeritas15ImportTableType11dedx_subsecE"></span><span id="_CPPv2N9celeritas15ImportTableType11dedx_subsecE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1ade92a0a20d624cf5bb80797e1fe627f3afa24485a8971662200caddb2bae0008e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dedx_subsec</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15ImportTableType11dedx_subsecE" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15ImportTableType17ionization_subsecE">
-<span id="_CPPv3N9celeritas15ImportTableType17ionization_subsecE"></span><span id="_CPPv2N9celeritas15ImportTableType17ionization_subsecE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1ade92a0a20d624cf5bb80797e1fe627f3a1541b09ae315a173f0d19ec48f1967b9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ionization_subsec</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15ImportTableType17ionization_subsecE" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15ImportTableType15secondary_rangeE">
-<span id="_CPPv3N9celeritas15ImportTableType15secondary_rangeE"></span><span id="_CPPv2N9celeritas15ImportTableType15secondary_rangeE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1ade92a0a20d624cf5bb80797e1fe627f3ae58ba00e939ea07d75262c0d8a512cb4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">secondary_range</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15ImportTableType15secondary_rangeE" title="Link to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15ImportTableType13inverse_rangeE">
-<span id="_CPPv3N9celeritas15ImportTableType13inverse_rangeE"></span><span id="_CPPv2N9celeritas15ImportTableType13inverse_rangeE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1ade92a0a20d624cf5bb80797e1fe627f3aecfb241470b5a3a2346fcfbaa65da79f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inverse_range</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15ImportTableType13inverse_rangeE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Inverse mapping of range: (range -&gt; energy) </p>
-</dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9celeritas15ImportTableType9sublambdaE">
-<span id="_CPPv3N9celeritas15ImportTableType9sublambdaE"></span><span id="_CPPv2N9celeritas15ImportTableType9sublambdaE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1ade92a0a20d624cf5bb80797e1fe627f3a7e4d57496afc602ce3656a87ae921180"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sublambda</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15ImportTableType9sublambdaE" title="Link to this definition">#</a><br /></dt>
-<dd><p>For subcutoff regions. </p>
-</dd></dl>
-
-<dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas15ImportTableType5size_E">
 <span id="_CPPv3N9celeritas15ImportTableType5size_E"></span><span id="_CPPv2N9celeritas15ImportTableType5size_E"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1ade92a0a20d624cf5bb80797e1fe627f3a4eecfb50c5a20eb78bc4d5304e9d8618"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size_</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas15ImportTableType5size_E" title="Link to this definition">#</a><br /></dt>
 <dd></dd></dl>
@@ -3763,6 +4091,7 @@ The following classes enumerate all the data used at runtime.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas11ImportUnitsE">
 <span id="_CPPv3N9celeritas11ImportUnitsE"></span><span id="_CPPv2N9celeritas11ImportUnitsE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1a784fe5e889a18317c1c1d195ab9d37d3"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv49celeritas" title="celeritas"><span class="n"><span class="pre">celeritas</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ImportUnits</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas11ImportUnitsE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Units of a physics table. </p>
+<p>These depend on the unit selection in the main import data </p>
 <p><em>Values:</em></p>
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas11ImportUnits4noneE">
@@ -3777,39 +4106,75 @@ The following classes enumerate all the data used at runtime.</p>
 </dd></dl>
 
 <dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas11ImportUnits11mev_per_lenE">
+<span id="_CPPv3N9celeritas11ImportUnits11mev_per_lenE"></span><span id="_CPPv2N9celeritas11ImportUnits11mev_per_lenE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1a784fe5e889a18317c1c1d195ab9d37d3a5b04619bef8fef69731591dd812f56e8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mev_per_len</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas11ImportUnits11mev_per_lenE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Energy loss [MeV/len]. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas11ImportUnits10mev_per_cmE">
 <span id="_CPPv3N9celeritas11ImportUnits10mev_per_cmE"></span><span id="_CPPv2N9celeritas11ImportUnits10mev_per_cmE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1a784fe5e889a18317c1c1d195ab9d37d3ae88ab80b4046b1a63beb9d4416587f82"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mev_per_cm</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas11ImportUnits10mev_per_cmE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Energy loss [MeV/cm]. </p>
+<dd><p>Deprecated. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas11ImportUnits3lenE">
+<span id="_CPPv3N9celeritas11ImportUnits3lenE"></span><span id="_CPPv2N9celeritas11ImportUnits3lenE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1a784fe5e889a18317c1c1d195ab9d37d3af5a8e923f8cd24b56b3bab32358cc58a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">len</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas11ImportUnits3lenE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Range [len]. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas11ImportUnits2cmE">
 <span id="_CPPv3N9celeritas11ImportUnits2cmE"></span><span id="_CPPv2N9celeritas11ImportUnits2cmE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1a784fe5e889a18317c1c1d195ab9d37d3a820eb5b696ea2a657c0db1e258dc7d81"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cm</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas11ImportUnits2cmE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Range [cm]. </p>
+<dd><p>Deprecated. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas11ImportUnits7len_invE">
+<span id="_CPPv3N9celeritas11ImportUnits7len_invE"></span><span id="_CPPv2N9celeritas11ImportUnits7len_invE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1a784fe5e889a18317c1c1d195ab9d37d3a8400f0ac57ac3baf3bbd0d4e47fdc384"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">len_inv</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas11ImportUnits7len_invE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Macroscopic xs [1/len]. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas11ImportUnits6cm_invE">
 <span id="_CPPv3N9celeritas11ImportUnits6cm_invE"></span><span id="_CPPv2N9celeritas11ImportUnits6cm_invE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1a784fe5e889a18317c1c1d195ab9d37d3aed4bbaf29595aa2e254bc9ab6fb0977b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cm_inv</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas11ImportUnits6cm_invE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Macroscopic xs [1/cm]. </p>
+<dd><p>Deprecated. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas11ImportUnits11len_mev_invE">
+<span id="_CPPv3N9celeritas11ImportUnits11len_mev_invE"></span><span id="_CPPv2N9celeritas11ImportUnits11len_mev_invE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1a784fe5e889a18317c1c1d195ab9d37d3a43a149292da8d1ddc84674cec8d0e879"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">len_mev_inv</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas11ImportUnits11len_mev_invE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Scaled [1/E] macroscopic xs [1/len-MeV]. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas11ImportUnits10cm_mev_invE">
 <span id="_CPPv3N9celeritas11ImportUnits10cm_mev_invE"></span><span id="_CPPv2N9celeritas11ImportUnits10cm_mev_invE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1a784fe5e889a18317c1c1d195ab9d37d3aec8d059cf2e2e49867ec66d71c378859"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cm_mev_inv</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas11ImportUnits10cm_mev_invE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Macroscopic xs divided by energy [1/cm-MeV]. </p>
+<dd><p>Deprecated. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas11ImportUnits14mev_sq_per_lenE">
+<span id="_CPPv3N9celeritas11ImportUnits14mev_sq_per_lenE"></span><span id="_CPPv2N9celeritas11ImportUnits14mev_sq_per_lenE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1a784fe5e889a18317c1c1d195ab9d37d3aeb4b5eb4cb2cd1cfbaa2d238399cf370"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mev_sq_per_len</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas11ImportUnits14mev_sq_per_lenE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Scaled [E^2] macroscopic xs [MeV^2/len]. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas11ImportUnits12mev_2_per_cmE">
 <span id="_CPPv3N9celeritas11ImportUnits12mev_2_per_cmE"></span><span id="_CPPv2N9celeritas11ImportUnits12mev_2_per_cmE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1a784fe5e889a18317c1c1d195ab9d37d3a652f7eeaaf5437d2c27e24849ace2bbd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mev_2_per_cm</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas11ImportUnits12mev_2_per_cmE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Macroscopic xs with energy^2 factored in [MeV^2/cm]. </p>
+<dd><p>Deprecated. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9celeritas11ImportUnits6len_sqE">
+<span id="_CPPv3N9celeritas11ImportUnits6len_sqE"></span><span id="_CPPv2N9celeritas11ImportUnits6len_sqE"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1a784fe5e889a18317c1c1d195ab9d37d3a73ff438f8847bd5948c822f5492360b7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">len_sq</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas11ImportUnits6len_sqE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Microscopic cross section [len^2]. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas11ImportUnits4cm_2E">
 <span id="_CPPv3N9celeritas11ImportUnits4cm_2E"></span><span id="_CPPv2N9celeritas11ImportUnits4cm_2E"></span><span class="target" id="d4/db9/_import_physics_table_8hh_1a784fe5e889a18317c1c1d195ab9d37d3a80dbd1a98f40d585f1d264b4ec2e5057"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cm_2</span></span></span><a class="headerlink" href="#_CPPv4N9celeritas11ImportUnits4cm_2E" title="Link to this definition">#</a><br /></dt>
-<dd><p>Microscopic cross section [cm^2]. </p>
+<dd><p>Deprecated. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
@@ -3926,8 +4291,8 @@ The following classes enumerate all the data used at runtime.</p>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9celeritas18ImportEmParameters16msc_lambda_limitE">
-<span id="_CPPv3N9celeritas18ImportEmParameters16msc_lambda_limitE"></span><span id="_CPPv2N9celeritas18ImportEmParameters16msc_lambda_limitE"></span><span id="celeritas::ImportEmParameters::msc_lambda_limit__double"></span><span class="target" id="db/d18/structceleritas_1_1_import_em_parameters_1a7c46d387c371749538335f6d562f917f"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">msc_lambda_limit</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">0.1</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas18ImportEmParameters16msc_lambda_limitE" title="Link to this definition">#</a><br /></dt>
-<dd><p>MSC lambda limit [cm]. </p>
+<span id="_CPPv3N9celeritas18ImportEmParameters16msc_lambda_limitE"></span><span id="_CPPv2N9celeritas18ImportEmParameters16msc_lambda_limitE"></span><span id="celeritas::ImportEmParameters::msc_lambda_limit__double"></span><span class="target" id="db/d18/structceleritas_1_1_import_em_parameters_1a7c46d387c371749538335f6d562f917f"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">msc_lambda_limit</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">1</span></span><span class="w"> </span><span class="o"><span class="pre">*</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N9celeritas5unitsE" title="celeritas::units"><span class="n"><span class="pre">units</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9celeritas5units10millimeterE" title="celeritas::units::millimeter"><span class="n"><span class="pre">millimeter</span></span></a><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N9celeritas18ImportEmParameters16msc_lambda_limitE" title="Link to this definition">#</a><br /></dt>
+<dd><p>MSC lambda limit [length]. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -4153,7 +4518,7 @@ The following classes enumerate all the data used at runtime.</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2023, UT–Battelle/ORNL and Celeritas team
+                Copyright &#169; 2024, UT–Battelle/ORNL and Celeritas team
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -4200,6 +4565,7 @@ The following classes enumerate all the data used at runtime.</p>
 <li><a class="reference internal" href="#_CPPv4N9celeritas5units4voltE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::volt</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas5units5faradE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::farad</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas5units10millimeterE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::millimeter</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas5units10nanosecondE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::nanosecond</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas5units10femtometerE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::femtometer</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas5units4barnE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::barn</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas5units16ElementaryChargeE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::ElementaryCharge</span></code></a></li>
@@ -4210,6 +4576,10 @@ The following classes enumerate all the data used at runtime.</p>
 <li><a class="reference internal" href="#_CPPv4N9celeritas5units13MevMomentumSqE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::MevMomentumSq</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas5units10LightSpeedE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::LightSpeed</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas5units7AmuMassE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::AmuMass</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas5units8CmLengthE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::CmLength</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas5units7InvCmXsE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::InvCmXs</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas5units12InvCcDensityE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::InvCcDensity</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas5units12MolCcDensityE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::MolCcDensity</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas5units10FieldTeslaE"><code class="docutils literal notranslate"><span class="pre">celeritas::units::FieldTesla</span></code></a></li>
 </ul>
 </li>
@@ -4337,6 +4707,7 @@ The following classes enumerate all the data used at runtime.</p>
 <li><a class="reference internal" href="#_CPPv4N9celeritas7StepperD0Ev"><code class="docutils literal notranslate"><span class="pre">Stepper::~Stepper()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas7StepperclEv"><code class="docutils literal notranslate"><span class="pre">Stepper::operator()()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas7StepperclE16SpanConstPrimary"><code class="docutils literal notranslate"><span class="pre">Stepper::operator()()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas7Stepper6reseedE7EventId"><code class="docutils literal notranslate"><span class="pre">Stepper::reseed()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4NK9celeritas7Stepper7actionsEv"><code class="docutils literal notranslate"><span class="pre">Stepper::actions()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4NK9celeritas7Stepper9state_refEv"><code class="docutils literal notranslate"><span class="pre">Stepper::state_ref()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4NK9celeritas7Stepper5stateEv"><code class="docutils literal notranslate"><span class="pre">Stepper::state()</span></code></a></li>
@@ -4499,6 +4870,70 @@ The following classes enumerate all the data used at runtime.</p>
 <li><a class="reference internal" href="#_CPPv4I0ENK9celeritas16PhysicsTrackView15make_calculatorE1T11ValueGridId"><code class="docutils literal notranslate"><span class="pre">PhysicsTrackView::make_calculator()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4NK9celeritas16PhysicsTrackView15hardwired_modelE17ParticleProcessId6Energy"><code class="docutils literal notranslate"><span class="pre">PhysicsTrackView::hardwired_model()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4NK9celeritas16PhysicsTrackView10eloss_ppidEv"><code class="docutils literal notranslate"><span class="pre">PhysicsTrackView::eloss_ppid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#propagation-and-magnetic-field">Propagation and magnetic field</a><ul>
+<li><a class="reference internal" href="#propagation">Propagation</a><ul>
+<li><a class="reference internal" href="#_CPPv4I0EN9celeritas16LinearPropagatorE"><code class="docutils literal notranslate"><span class="pre">LinearPropagator</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N9celeritas16LinearPropagator16LinearPropagatorERR3GTV"><code class="docutils literal notranslate"><span class="pre">LinearPropagator::LinearPropagator()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas16LinearPropagatorclEv"><code class="docutils literal notranslate"><span class="pre">LinearPropagator::operator()()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas16LinearPropagatorclE9real_type"><code class="docutils literal notranslate"><span class="pre">LinearPropagator::operator()()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas16LinearPropagator15tracks_can_loopEv"><code class="docutils literal notranslate"><span class="pre">LinearPropagator::tracks_can_loop()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv4I00EN9celeritas15FieldPropagatorE"><code class="docutils literal notranslate"><span class="pre">FieldPropagator</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15FieldPropagator15FieldPropagatorERR7DriverTRK17ParticleTrackViewRR3GTV"><code class="docutils literal notranslate"><span class="pre">FieldPropagator::FieldPropagator()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15FieldPropagatorclEv"><code class="docutils literal notranslate"><span class="pre">FieldPropagator::operator()()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15FieldPropagatorclE9real_type"><code class="docutils literal notranslate"><span class="pre">FieldPropagator::operator()()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK9celeritas15FieldPropagator18delta_intersectionEv"><code class="docutils literal notranslate"><span class="pre">FieldPropagator::delta_intersection()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK9celeritas15FieldPropagator13bump_distanceEv"><code class="docutils literal notranslate"><span class="pre">FieldPropagator::bump_distance()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK9celeritas15FieldPropagator15minimum_substepEv"><code class="docutils literal notranslate"><span class="pre">FieldPropagator::minimum_substep()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15FieldPropagator15tracks_can_loopEv"><code class="docutils literal notranslate"><span class="pre">FieldPropagator::tracks_can_loop()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15FieldPropagator12max_substepsEv"><code class="docutils literal notranslate"><span class="pre">FieldPropagator::max_substeps()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv4II0E000EN9celeritas25make_mag_field_propagatorEDcRR6FieldTRK18FieldDriverOptionsRK17ParticleTrackViewRR3GTV"><code class="docutils literal notranslate"><span class="pre">make_mag_field_propagator()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#field-data-input-and-options">Field data input and options</a><ul>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptionsE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4NK9celeritas18FieldDriverOptionscvbEv"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::operator</span> <span class="pre">bool()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions12minimum_stepE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::minimum_step</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions11delta_chordE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::delta_chord</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions18delta_intersectionE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::delta_intersection</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions12epsilon_stepE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::epsilon_step</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions15epsilon_rel_maxE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::epsilon_rel_max</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions6errconE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::errcon</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions5pgrowE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::pgrow</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions7pshrinkE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::pshrink</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions6safetyE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::safety</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions21max_stepping_increaseE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::max_stepping_increase</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions21max_stepping_decreaseE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::max_stepping_decrease</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions10max_nstepsE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::max_nsteps</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions16initial_step_tolE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::initial_step_tol</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions10dchord_tolE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::dchord_tol</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18FieldDriverOptions16min_chord_shrinkE"><code class="docutils literal notranslate"><span class="pre">FieldDriverOptions::min_chord_shrink</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#field-data">Field data</a><ul>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18UniformFieldParamsE"><code class="docutils literal notranslate"><span class="pre">UniformFieldParams</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N9celeritas18UniformFieldParams5fieldE"><code class="docutils literal notranslate"><span class="pre">UniformFieldParams::field</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15RZMapFieldInputE"><code class="docutils literal notranslate"><span class="pre">RZMapFieldInput</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4NK9celeritas15RZMapFieldInputcvbEv"><code class="docutils literal notranslate"><span class="pre">RZMapFieldInput::operator</span> <span class="pre">bool()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15RZMapFieldInput5min_zE"><code class="docutils literal notranslate"><span class="pre">RZMapFieldInput::min_z</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15RZMapFieldInput5min_rE"><code class="docutils literal notranslate"><span class="pre">RZMapFieldInput::min_r</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15RZMapFieldInput5max_zE"><code class="docutils literal notranslate"><span class="pre">RZMapFieldInput::max_z</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15RZMapFieldInput5max_rE"><code class="docutils literal notranslate"><span class="pre">RZMapFieldInput::max_r</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15RZMapFieldInput7field_zE"><code class="docutils literal notranslate"><span class="pre">RZMapFieldInput::field_z</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas15RZMapFieldInput7field_rE"><code class="docutils literal notranslate"><span class="pre">RZMapFieldInput::field_r</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -4763,25 +5198,23 @@ The following classes enumerate all the data used at runtime.</p>
 <li><a class="reference internal" href="#_CPPv4N9celeritas15ImportTableType4dedxE"><code class="docutils literal notranslate"><span class="pre">ImportTableType::dedx</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas15ImportTableType5rangeE"><code class="docutils literal notranslate"><span class="pre">ImportTableType::range</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas15ImportTableType6msc_xsE"><code class="docutils literal notranslate"><span class="pre">ImportTableType::msc_xs</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N9celeritas15ImportTableType12dedx_processE"><code class="docutils literal notranslate"><span class="pre">ImportTableType::dedx_process</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N9celeritas15ImportTableType17dedx_unrestrictedE"><code class="docutils literal notranslate"><span class="pre">ImportTableType::dedx_unrestricted</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N9celeritas15ImportTableType10csda_rangeE"><code class="docutils literal notranslate"><span class="pre">ImportTableType::csda_range</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N9celeritas15ImportTableType11dedx_subsecE"><code class="docutils literal notranslate"><span class="pre">ImportTableType::dedx_subsec</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N9celeritas15ImportTableType17ionization_subsecE"><code class="docutils literal notranslate"><span class="pre">ImportTableType::ionization_subsec</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N9celeritas15ImportTableType15secondary_rangeE"><code class="docutils literal notranslate"><span class="pre">ImportTableType::secondary_range</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N9celeritas15ImportTableType13inverse_rangeE"><code class="docutils literal notranslate"><span class="pre">ImportTableType::inverse_range</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N9celeritas15ImportTableType9sublambdaE"><code class="docutils literal notranslate"><span class="pre">ImportTableType::sublambda</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas15ImportTableType5size_E"><code class="docutils literal notranslate"><span class="pre">ImportTableType::size_</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnitsE"><code class="docutils literal notranslate"><span class="pre">ImportUnits</span></code></a><ul>
 <li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits4noneE"><code class="docutils literal notranslate"><span class="pre">ImportUnits::none</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits3mevE"><code class="docutils literal notranslate"><span class="pre">ImportUnits::mev</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits11mev_per_lenE"><code class="docutils literal notranslate"><span class="pre">ImportUnits::mev_per_len</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits10mev_per_cmE"><code class="docutils literal notranslate"><span class="pre">ImportUnits::mev_per_cm</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits3lenE"><code class="docutils literal notranslate"><span class="pre">ImportUnits::len</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits2cmE"><code class="docutils literal notranslate"><span class="pre">ImportUnits::cm</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits7len_invE"><code class="docutils literal notranslate"><span class="pre">ImportUnits::len_inv</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits6cm_invE"><code class="docutils literal notranslate"><span class="pre">ImportUnits::cm_inv</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits11len_mev_invE"><code class="docutils literal notranslate"><span class="pre">ImportUnits::len_mev_inv</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits10cm_mev_invE"><code class="docutils literal notranslate"><span class="pre">ImportUnits::cm_mev_inv</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits14mev_sq_per_lenE"><code class="docutils literal notranslate"><span class="pre">ImportUnits::mev_sq_per_len</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits12mev_2_per_cmE"><code class="docutils literal notranslate"><span class="pre">ImportUnits::mev_2_per_cm</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits6len_sqE"><code class="docutils literal notranslate"><span class="pre">ImportUnits::len_sq</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits4cm_2E"><code class="docutils literal notranslate"><span class="pre">ImportUnits::cm_2</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9celeritas11ImportUnits5size_E"><code class="docutils literal notranslate"><span class="pre">ImportUnits::size_</span></code></a></li>
 </ul>
@@ -4865,7 +5298,7 @@ The following classes enumerate all the data used at runtime.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=c87aa342"></script>
+</div><script src="../../_static/documentation_options.js?v=ff822928"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>

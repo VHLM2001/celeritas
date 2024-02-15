@@ -1,7 +1,7 @@
 var searchData=
 [
   ['g_5finvalid_5fstring_0',['g_invalid_string',['../d4/d99/_enum_string_mapper_impl_8cc.html#a674a0066d4c8f49915aaca22308e37d8',1,'celeritas::detail']]],
-  ['gamma_1',['gamma',['../d9/dad/structceleritas_1_1_electron_brem_ids.html#ad2c9ed77bcd552d770462a6a2a6c4185',1,'celeritas::ElectronBremIds::gamma'],['../d2/db4/structceleritas_1_1_e_plus_g_g_data.html#ac14304ec014b7e0d2517be9eea1e0058',1,'celeritas::EPlusGGData::gamma'],['../d4/d0b/structceleritas_1_1_livermore_p_e_ids.html#a850d96b8a18a397a528b1fbe9c2c14d2',1,'celeritas::LivermorePEIds::gamma'],['../d8/dac/structceleritas_1_1_bethe_heitler_ids.html#abed559112d1d8dd1402f0d95a163314b',1,'celeritas::BetheHeitlerIds::gamma']]],
+  ['gamma_1',['gamma',['../d8/dac/structceleritas_1_1_bethe_heitler_ids.html#abed559112d1d8dd1402f0d95a163314b',1,'celeritas::BetheHeitlerIds::gamma'],['../d9/dad/structceleritas_1_1_electron_brem_ids.html#ad2c9ed77bcd552d770462a6a2a6c4185',1,'celeritas::ElectronBremIds::gamma'],['../d2/db4/structceleritas_1_1_e_plus_g_g_data.html#ac14304ec014b7e0d2517be9eea1e0058',1,'celeritas::EPlusGGData::gamma'],['../d4/d0b/structceleritas_1_1_livermore_p_e_ids.html#a850d96b8a18a397a528b1fbe9c2c14d2',1,'celeritas::LivermorePEIds::gamma']]],
   ['gamma_5fconversion_2',['gamma_conversion',['../da/da1/structceleritas_1_1_geant_physics_options.html#ab0caf39079fd43cc047dcf7c2903a980',1,'celeritas::GeantPhysicsOptions']]],
   ['gamma_5ffactor_3',['gamma_factor',['../d5/d18/structceleritas_1_1_rel_brem_element_data.html#a0bf99eb74984a5d4ccf9ff04211d748c',1,'celeritas::RelBremElementData']]],
   ['gamma_5fgeneral_4',['gamma_general',['../da/da1/structceleritas_1_1_geant_physics_options.html#aa3e8d377e96d5d3276b339f59cf1c035',1,'celeritas::GeantPhysicsOptions']]],

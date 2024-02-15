@@ -5,8 +5,8 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="References" href="../references.html" /><link rel="prev" title="Minimal Celeritas usage" href="minimal.html" />
 
-    <!-- Generated with Sphinx 7.2.3 and Furo 2023.09.10 -->
-        <title>Minimal Geant4 integration - Celeritas 0.4.1 documentation</title>
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Minimal Geant4 integration - Celeritas 0.4.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Celeritas 0.4.1 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Celeritas 0.4.2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="../../_static/celeritas-square.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Celeritas 0.4.1 documentation</span>
+  <span class="sidebar-brand-text">Celeritas 0.4.2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -181,7 +181,8 @@
 <p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../appendix/release-history.html">Release History</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Release History</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html">Version 0.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html">Version 0.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html#version-0-4-1">Version 0.4.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.4.html#version-0-4-0">Version 0.4.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.3.html">Version 0.3.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../appendix/release-history/v0.3.html#version-0-3-1">Version 0.3.1</a></li>
@@ -494,7 +495,212 @@ frameworks or other apps that use a task-based runner.</p>
 </section>
 <section id="offload-using-a-concrete-g4vfastsimulationmodel">
 <h2>Offload using a concrete G4VFastSimulationModel<a class="headerlink" href="#offload-using-a-concrete-g4vfastsimulationmodel" title="Link to this heading">#</a></h2>
-<hr class="docutils" />
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iterator&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;type_traits&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;FTFP_BERT.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Box.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Electron.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4FastSimulationPhysics.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Gamma.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4LogicalVolume.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Material.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4PVPlacement.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4ParticleDefinition.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4ParticleGun.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4ParticleTable.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Positron.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Region.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4RegionStore.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4RunManagerFactory.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4SystemOfUnits.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Threading.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4ThreeVector.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Track.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4TrackStatus.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4Types.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4UserEventAction.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4UserRunAction.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4UserTrackingAction.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4VUserActionInitialization.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4VUserDetectorConstruction.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;G4VUserPrimaryGeneratorAction.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/AlongStepFactory.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/FastSimulationOffload.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/LocalTransporter.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/SetupOptions.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/SharedParams.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;accel/SimpleOffload.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;corecel/Macros.hh&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;corecel/io/Logger.hh&gt;</span>
+
+<span class="k">namespace</span>
+<span class="p">{</span>
+<span class="c1">//---------------------------------------------------------------------------//</span>
+<span class="c1">// Global shared setup options</span>
+<span class="n">celeritas</span><span class="o">::</span><span class="n">SetupOptions</span><span class="w"> </span><span class="n">setup_options</span><span class="p">;</span>
+<span class="c1">// Shared data and GPU setup</span>
+<span class="n">celeritas</span><span class="o">::</span><span class="n">SharedParams</span><span class="w"> </span><span class="n">shared_params</span><span class="p">;</span>
+<span class="c1">// Thread-local transporter</span>
+<span class="n">G4ThreadLocal</span><span class="w"> </span><span class="n">celeritas</span><span class="o">::</span><span class="n">LocalTransporter</span><span class="w"> </span><span class="n">local_transporter</span><span class="p">;</span>
+
+<span class="c1">// Simple interface to running celeritas</span>
+<span class="n">G4ThreadLocal</span><span class="w"> </span><span class="n">celeritas</span><span class="o">::</span><span class="n">SimpleOffload</span><span class="w"> </span><span class="n">simple_offload</span><span class="p">;</span>
+
+<span class="c1">//---------------------------------------------------------------------------//</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DetectorConstruction</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4VUserDetectorConstruction</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">DetectorConstruction</span><span class="p">()</span>
+<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">aluminum_</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="n">G4Material</span><span class="p">{</span>
+<span class="w">            </span><span class="s">&quot;Aluminium&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">13.</span><span class="p">,</span><span class="w"> </span><span class="mf">26.98</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">mole</span><span class="p">,</span><span class="w"> </span><span class="mf">2.700</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">cm3</span><span class="p">}}</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">setup_options</span><span class="p">.</span><span class="n">make_along_step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">celeritas</span><span class="o">::</span><span class="n">UniformAlongStepFactory</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">G4VPhysicalVolume</span><span class="o">*</span><span class="w"> </span><span class="n">Construct</span><span class="p">()</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Setting up detector&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">G4Box</span><span class="p">(</span><span class="s">&quot;world&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cm</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cm</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cm</span><span class="p">);</span>
+<span class="w">        </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">lv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">G4LogicalVolume</span><span class="p">(</span><span class="n">box</span><span class="p">,</span><span class="w"> </span><span class="n">aluminum_</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">pv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">G4PVPlacement</span><span class="p">(</span>
+<span class="w">            </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">G4ThreeVector</span><span class="p">{},</span><span class="w"> </span><span class="n">lv</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pv</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">ConstructSDandField</span><span class="p">()</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Creating FastSimulationOffload for &quot;</span>
+<span class="w">                                   </span><span class="s">&quot;default region&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">G4Region</span><span class="o">*</span><span class="w"> </span><span class="n">default_region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">G4RegionStore</span><span class="o">::</span><span class="n">GetInstance</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetRegion</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;DefaultRegionForTheWorld&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Underlying GVFastSimulationModel constructor handles ownership, so</span>
+<span class="w">        </span><span class="c1">// we can ignore the returned pointer...</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">celeritas</span><span class="o">::</span><span class="n">FastSimulationOffload</span><span class="p">(</span><span class="s">&quot;accel::FastSimulationOffload&quot;</span><span class="p">,</span>
+<span class="w">                                             </span><span class="n">default_region</span><span class="p">,</span>
+<span class="w">                                             </span><span class="o">&amp;</span><span class="n">shared_params</span><span class="p">,</span>
+<span class="w">                                             </span><span class="o">&amp;</span><span class="n">local_transporter</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">G4Material</span><span class="o">*</span><span class="w"> </span><span class="n">aluminum_</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">//---------------------------------------------------------------------------//</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PrimaryGeneratorAction</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4VUserPrimaryGeneratorAction</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">PrimaryGeneratorAction</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">g4particle_def</span>
+<span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="n">G4ParticleTable</span><span class="o">::</span><span class="n">GetParticleTable</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">FindParticle</span><span class="p">(</span><span class="mi">2112</span><span class="p">);</span>
+<span class="w">        </span><span class="n">gun_</span><span class="p">.</span><span class="n">SetParticleDefinition</span><span class="p">(</span><span class="n">g4particle_def</span><span class="p">);</span>
+<span class="w">        </span><span class="n">gun_</span><span class="p">.</span><span class="n">SetParticleEnergy</span><span class="p">(</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">GeV</span><span class="p">);</span>
+<span class="w">        </span><span class="n">gun_</span><span class="p">.</span><span class="n">SetParticlePosition</span><span class="p">(</span><span class="n">G4ThreeVector</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">});</span><span class="w">  </span><span class="c1">// origin</span>
+<span class="w">        </span><span class="n">gun_</span><span class="p">.</span><span class="n">SetParticleMomentumDirection</span><span class="p">(</span><span class="n">G4ThreeVector</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">});</span><span class="w">  </span><span class="c1">// +x</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Generate 100 GeV neutrons</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">GeneratePrimaries</span><span class="p">(</span><span class="n">G4Event</span><span class="o">*</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Generating primaries&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">gun_</span><span class="p">.</span><span class="n">GeneratePrimaryVertex</span><span class="p">(</span><span class="n">event</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">G4ParticleGun</span><span class="w"> </span><span class="n">gun_</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">//---------------------------------------------------------------------------//</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RunAction</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4UserRunAction</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">BeginOfRunAction</span><span class="p">(</span><span class="n">G4Run</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">run</span><span class="p">)</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">BeginOfRunAction</span><span class="p">(</span><span class="n">run</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">EndOfRunAction</span><span class="p">(</span><span class="n">G4Run</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">run</span><span class="p">)</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">EndOfRunAction</span><span class="p">(</span><span class="n">run</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">//---------------------------------------------------------------------------//</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">EventAction</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4UserEventAction</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">BeginOfEventAction</span><span class="p">(</span><span class="n">G4Event</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">BeginOfEventAction</span><span class="p">(</span><span class="n">event</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">//---------------------------------------------------------------------------//</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ActionInitialization</span><span class="w"> </span><span class="k">final</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">G4VUserActionInitialization</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">BuildForMaster</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">BuildForMaster</span><span class="p">(</span><span class="o">&amp;</span><span class="n">setup_options</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">shared_params</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Constructing user actions&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">SetUserAction</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">RunAction</span><span class="p">{});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">Build</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">final</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">simple_offload</span><span class="p">.</span><span class="n">Build</span><span class="p">(</span>
+<span class="w">            </span><span class="o">&amp;</span><span class="n">setup_options</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">shared_params</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">local_transporter</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">CELER_LOG_LOCAL</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Constructing user actions&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">SetUserAction</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PrimaryGeneratorAction</span><span class="p">{});</span>
+<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">SetUserAction</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">RunAction</span><span class="p">{});</span>
+<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">SetUserAction</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">EventAction</span><span class="p">{});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">//---------------------------------------------------------------------------//</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">G4RunManager</span><span class="o">&gt;</span><span class="w"> </span><span class="n">run_manager</span><span class="p">{</span>
+<span class="w">        </span><span class="n">G4RunManagerFactory</span><span class="o">::</span><span class="n">CreateRunManager</span><span class="p">()};</span><span class="w">  </span><span class="c1">// G4RunManagerType::SerialOnly)};</span>
+
+<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">SetUserInitialization</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">DetectorConstruction</span><span class="p">{});</span>
+
+<span class="w">    </span><span class="c1">// We must add support for fast simulation models to the Physics List</span>
+<span class="w">    </span><span class="c1">// NOTE: we have to explicitly name the particles and this should be a</span>
+<span class="w">    </span><span class="c1">// superset of what Celeritas can offload</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">physics_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FTFP_BERT</span><span class="p">{</span><span class="cm">/* verbosity = */</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">fast_physics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">G4FastSimulationPhysics</span><span class="p">();</span>
+<span class="w">    </span><span class="n">fast_physics</span><span class="o">-&gt;</span><span class="n">ActivateFastSimulation</span><span class="p">(</span><span class="s">&quot;e-&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">fast_physics</span><span class="o">-&gt;</span><span class="n">ActivateFastSimulation</span><span class="p">(</span><span class="s">&quot;e+&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">fast_physics</span><span class="o">-&gt;</span><span class="n">ActivateFastSimulation</span><span class="p">(</span><span class="s">&quot;gamma&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">physics_list</span><span class="o">-&gt;</span><span class="n">RegisterPhysics</span><span class="p">(</span><span class="n">fast_physics</span><span class="p">);</span>
+<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">SetUserInitialization</span><span class="p">(</span><span class="n">physics_list</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">SetUserInitialization</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ActionInitialization</span><span class="p">());</span>
+
+<span class="w">    </span><span class="c1">// NOTE: these numbers are appropriate for CPU execution</span>
+<span class="w">    </span><span class="n">setup_options</span><span class="p">.</span><span class="n">max_num_tracks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span>
+<span class="w">    </span><span class="n">setup_options</span><span class="p">.</span><span class="n">initializer_capacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// This parameter will eventually be removed</span>
+<span class="w">    </span><span class="n">setup_options</span><span class="p">.</span><span class="n">max_num_events</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Celeritas does not support EmStandard MSC physics above 100 MeV</span>
+<span class="w">    </span><span class="n">setup_options</span><span class="p">.</span><span class="n">ignore_processes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;CoulombScat&quot;</span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">Initialize</span><span class="p">();</span>
+<span class="w">    </span><span class="n">run_manager</span><span class="o">-&gt;</span><span class="n">BeamOn</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="offload-using-a-concrete-g4vtrackingmanager">
+<h2>Offload using a concrete G4VTrackingManager<a class="headerlink" href="#offload-using-a-concrete-g4vtrackingmanager" title="Link to this heading">#</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iterator&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;type_traits&gt;</span>
@@ -731,7 +937,7 @@ frameworks or other apps that use a task-based runner.</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2023, UT–Battelle/ORNL and Celeritas team
+                Copyright &#169; 2024, UT–Battelle/ORNL and Celeritas team
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -762,6 +968,7 @@ frameworks or other apps that use a task-based runner.</p>
 <li><a class="reference internal" href="#main-executables">Main Executables</a></li>
 <li><a class="reference internal" href="#offload-using-a-concrete-g4usertrackingaction">Offload using a concrete G4UserTrackingAction</a></li>
 <li><a class="reference internal" href="#offload-using-a-concrete-g4vfastsimulationmodel">Offload using a concrete G4VFastSimulationModel</a></li>
+<li><a class="reference internal" href="#offload-using-a-concrete-g4vtrackingmanager">Offload using a concrete G4VTrackingManager</a></li>
 </ul>
 </li>
 </ul>
@@ -773,7 +980,7 @@ frameworks or other apps that use a task-based runner.</p>
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=c87aa342"></script>
+</div><script src="../../_static/documentation_options.js?v=ff822928"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>

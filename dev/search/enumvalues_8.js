@@ -8,6 +8,5 @@ var searchData=
   ['inside_5',['inside',['../d7/d3b/_orange_types_8hh.html#a71ab8678dcf1b07beab18d3cc954e297a335cf4508dd597be4bfc9caa3e08b901',1,'celeritas']]],
   ['internal_6',['internal',['../d5/d10/_assert_8hh.html#aadae531fea5593be95fcd209f49e7176ad1efad72dc5b17dc66a46767c32fff40',1,'celeritas']]],
   ['internal_5fsurfaces_7',['internal_surfaces',['../d2/de3/structceleritas_1_1_volume_record.html#a60cc760bb363c9d5076bdb964598ce69a97e41e39d87e5071fdfcfed2b228093b',1,'celeritas::VolumeRecord']]],
-  ['invalid_8',['invalid',['../d7/d3b/_orange_types_8hh.html#a89414bcbfb392e7ac8d512be6beff98dafedb2d84cafe20862cb4399751a8a7e3',1,'celeritas']]],
-  ['inverse_5frange_9',['inverse_range',['../d4/db9/_import_physics_table_8hh.html#ade92a0a20d624cf5bb80797e1fe627f3aecfb241470b5a3a2346fcfbaa65da79f',1,'celeritas']]]
+  ['invalid_8',['invalid',['../d7/d3b/_orange_types_8hh.html#a89414bcbfb392e7ac8d512be6beff98dafedb2d84cafe20862cb4399751a8a7e3',1,'celeritas']]]
 ];

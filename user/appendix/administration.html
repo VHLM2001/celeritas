@@ -5,8 +5,8 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="License" href="license.html" /><link rel="prev" title="Development Guide" href="development.html" />
 
-    <!-- Generated with Sphinx 7.2.3 and Furo 2023.09.10 -->
-        <title>Administration - Celeritas 0.4.1 documentation</title>
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Administration - Celeritas 0.4.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Celeritas 0.4.1 documentation</div></a>
+      <a href="../index.html"><div class="brand">Celeritas 0.4.2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="../_static/celeritas-square.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Celeritas 0.4.1 documentation</span>
+  <span class="sidebar-brand-text">Celeritas 0.4.2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -181,7 +181,8 @@
 <p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="current">
 <li class="toctree-l1 has-children"><a class="reference internal" href="release-history.html">Release History</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Release History</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="release-history/v0.4.html">Version 0.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-history/v0.4.html">Version 0.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-history/v0.4.html#version-0-4-1">Version 0.4.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="release-history/v0.4.html#version-0-4-0">Version 0.4.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="release-history/v0.3.html">Version 0.3.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="release-history/v0.3.html#version-0-3-1">Version 0.3.1</a></li>
@@ -451,22 +452,19 @@ or a “backport” branch (minor, patch).
 The following process must be followed (and may need iteration to converge) for
 each release.</p>
 <ol class="arabic simple">
-<li><p>Create a <code class="docutils literal notranslate"><span class="pre">release-vX.Y.Z</span></code> branch.</p></li>
-<li><p>Ensure all CI jobs passed for the release in question. This is automatic
-for releases from the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch (since every pull request must
-pass) but should be checked manually for backports.</p></li>
-<li><p>Update documentation with release notes from all pull requests newly
-included in the release. <em>Make sure this happens after all pull requests
-targeted for this milestone have been merged</em>.
-Follow the format for previous releases: add a
-summary of highlights, and enumerate the pull requests (with PR numbers and
-authorship attribution) separated by features and bug requests. Use the
-<a class="reference external" href="https://github.com/celeritas-project/celeritas-docs/blob/master/nb/admin/github-stats.ipynb">helper notebook</a> in the Celeritas documents repository to automate this.</p></li>
-<li><p>Tag the branch on your fork with <code class="docutils literal notranslate"><span class="pre">vX.Y.Z-rc.N</span></code> where N starts with 1, and
-increment for every time you return to this step due to new pull requests.</p></li>
-<li><p>Run performance regression tests on Summit (for performance testing),
-Crusher/Frontier (for HIP testing), and an additional machine with debug
-assertions enabled (e.g., Wildstyle).</p></li>
+<li><p>Ensure all CI jobs pass for the target branch to be released (develop or
+backports/vX.Y). This is automatic
+for releases from the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch, since every pull request must
+pass, but should be checked manually for backports.</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">release-vX.Y.Z</span></code> branch from <em>upstream/develop</em>.</p></li>
+<li><p>If creating a new release from develop, tag the target branch with
+<code class="docutils literal notranslate"><span class="pre">vX.Y.Z-rc.N</span></code> where N starts with 1, and
+increment for every time you return to this step due to new pull requests.
+The tag can be pushed to your fork, or to the main repository if it should
+be shared with other team members.</p></li>
+<li><p>Run performance regression tests on Perlmutter (for performance
+testing), Frontier (for HIP testing), and an additional machine
+with debug assertions enabled (e.g., Wildstyle).</p></li>
 <li><p>[TODO: define high-level validation tests like <a class="reference external" href="https://geant-val.cern.ch">geant-val</a> and a test
 matrix correlating capability areas (code files/directories changed) to
 test names.] Rerun and perform a cursory check on all validation tests that
@@ -477,15 +475,22 @@ separately.</p></li>
 regressions are detected. Create new pull requests for the serious errors
 using the standard <a class="reference internal" href="development.html#contributing"><span class="std std-ref">contributing</span></a> process, and once the
 fixes are merged into develop, merge develop into the release branch.
-Return to step 3.</p></li>
+Return to step 2.</p></li>
 <li><p>If only minor updates are needed to fix the build or tests on a particular
-machine, include those as part of the “pre-release” pull request that
-includes new documentation.</p></li>
-<li><p>Ensure the code documentation builds, preferably without warnings, on a
-configuration that has Sphinx, Doxygen, and Breathe active. [TODO: automate
-this with CI for doc publishing]</p></li>
+machine, include those as part of the release branch.</p></li>
+<li><p>If this is a “major” release (see <a class="reference internal" href="#deprecations"><span class="std std-ref">Deprecations</span></a>),
+check for and remove code marked as <code class="docutils literal notranslate"><span class="pre">DEPRECATED:</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">removed</span>
+<span class="pre">in</span> <span class="pre">vX.Y</span></code>.</p></li>
+<li><p>Update documentation with release notes from all pull requests newly
+included in the release. <em>Make sure this happens after all pull requests
+targeted for this milestone have been merged</em>.
+Follow the format for previous releases: add a
+summary of highlights, and enumerate the pull requests (with PR numbers and
+authorship attribution) separated by features and bug requests. Use the
+<a class="reference external" href="https://github.com/celeritas-project/celeritas-docs/blob/master/nb/admin/github-stats.ipynb">helper notebook</a> in the Celeritas documents repository to automate this.</p></li>
 <li><p>Submit a pull request with the newly added documentation and any
-release-related tweaks, and wait until it’s reviewed and merged.</p></li>
+release-related tweaks, and wait until it’s reviewed and merged. The unit
+tests and documentation should all build and pass the CI.</p></li>
 <li><p>If releasing a backported version branch, cherry-pick this documentation
 commit into the backport branch.</p></li>
 <li><p>Use the GitHub interface to create a new release with the documentation
@@ -576,7 +581,7 @@ Making a public API private should be treated as a deprecation.</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2023, UT–Battelle/ORNL and Celeritas team
+                Copyright &#169; 2024, UT–Battelle/ORNL and Celeritas team
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -641,7 +646,7 @@ Making a public API private should be treated as a deprecation.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=c87aa342"></script>
+</div><script src="../_static/documentation_options.js?v=ff822928"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>

@@ -6,7 +6,9 @@ var searchData=
   ['mev_3',['mev',['../d4/db9/_import_physics_table_8hh.html#a784fe5e889a18317c1c1d195ab9d37d3a3671768d0593382cd6cf23552e08db2d',1,'celeritas']]],
   ['mev_5f2_5fper_5fcm_4',['mev_2_per_cm',['../d4/db9/_import_physics_table_8hh.html#a784fe5e889a18317c1c1d195ab9d37d3a652f7eeaaf5437d2c27e24849ace2bbd',1,'celeritas']]],
   ['mev_5fper_5fcm_5',['mev_per_cm',['../d4/db9/_import_physics_table_8hh.html#a784fe5e889a18317c1c1d195ab9d37d3ae88ab80b4046b1a63beb9d4416587f82',1,'celeritas']]],
-  ['minimal_6',['minimal',['../dc/da4/_geant_process_importer_8hh.html#ac95c8f25c85c7c9d5f3fe68f54562c71adc43e863c176e9b9f2a0b6054b24bd1a',1,'celeritas::detail']]],
-  ['mpi_7',['mpi',['../d5/d10/_assert_8hh.html#a0605e3c922b91d617295e66c03dc1c7aa37dc018a7f069ec130d0be0a75c32ffb',1,'celeritas']]],
-  ['msc_5fxs_8',['msc_xs',['../d4/db9/_import_physics_table_8hh.html#ade92a0a20d624cf5bb80797e1fe627f3add73f856471589a47a611a02e8b00f4e',1,'celeritas']]]
+  ['mev_5fper_5flen_6',['mev_per_len',['../d4/db9/_import_physics_table_8hh.html#a784fe5e889a18317c1c1d195ab9d37d3a5b04619bef8fef69731591dd812f56e8',1,'celeritas']]],
+  ['mev_5fsq_5fper_5flen_7',['mev_sq_per_len',['../d4/db9/_import_physics_table_8hh.html#a784fe5e889a18317c1c1d195ab9d37d3aeb4b5eb4cb2cd1cfbaa2d238399cf370',1,'celeritas']]],
+  ['minimal_8',['minimal',['../dc/da4/_geant_process_importer_8hh.html#ac95c8f25c85c7c9d5f3fe68f54562c71adc43e863c176e9b9f2a0b6054b24bd1a',1,'celeritas::detail']]],
+  ['mpi_9',['mpi',['../d5/d10/_assert_8hh.html#a0605e3c922b91d617295e66c03dc1c7aa37dc018a7f069ec130d0be0a75c32ffb',1,'celeritas']]],
+  ['msc_5fxs_10',['msc_xs',['../d4/db9/_import_physics_table_8hh.html#ade92a0a20d624cf5bb80797e1fe627f3add73f856471589a47a611a02e8b00f4e',1,'celeritas']]]
 ];
